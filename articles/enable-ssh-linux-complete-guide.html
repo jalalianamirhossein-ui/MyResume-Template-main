@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <!-- ===============================================
+    SSH LINUX CONFIGURATION ARTICLE
+    ===============================================
+    
+    Complete Guide to Enabling and Configuring SSH in Linux
+    
+    Features:
+    - SSH installation and activation
+    - Key-based authentication setup
+    - Security configurations and best practices
+    - Troubleshooting and monitoring
+    - Enterprise-level recommendations
+    
+    Technical Content:
+    - SSH server installation
+    - Public/Private key authentication
+    - Security hardening
+    - Fail2ban integration
+    - Root login management
+    
+    Author: AmirHossein Jalalian
+    Version: 1.0.0
+    Last Updated: 2024-01-15
+    =============================================== -->
+
+    <!-- Character encoding and responsive viewport configuration -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- ===============================================
+    SEO META TAGS - PRIMARY OPTIMIZATION
+    ===============================================
+    Essential meta tags for search engine optimization,
+    social media sharing, and browser compatibility
+    =============================================== -->
+    <title>راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس | آموزش کامل امنیت سرور</title>
+    <meta
+      content="آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس. شامل احراز هویت با کلید، تنظیمات امنیتی، Fail2ban، مدیریت Root Login و Best Practices برای سازمان‌ها."
+      name="description"
+    />
+    <meta
+      content="SSH Linux Configuration, SSH Security Setup, Linux SSH Server, SSH Key Authentication, SSH Fail2ban, SSH Root Login, SSH Best Practices, Ubuntu SSH, CentOS SSH, SSH Troubleshooting, آموزش SSH لینوکس, پیکربندی SSH امن, نصب SSH سرور"
+      name="keywords"
+    />
+    <meta name="author" content="AmirHossein Jalalian" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="fa, en" />
+    <meta name="theme-color" content="#2E7D32" />
+    <meta name="msapplication-TileColor" content="#2E7D32" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Meet AJ" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Meet AJ" />
+    <meta name="msapplication-tooltip" content="Meet AJ - Technical Articles" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta name="msapplication-navbutton-color" content="#007aff" />
+    <meta
+      name="msapplication-TileImage"
+      content="../assets/img/apple-touch-icon.png"
+    />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/enable-ssh-linux-complete-guide.html"
+    />
+
+    <!-- Alternate Language Versions -->
+    <link
+      rel="alternate"
+      hreflang="fa"
+      href="https://meetaj.ir/articles/enable-ssh-linux-complete-guide.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://meetaj.ir/articles/enable-ssh-linux-complete-guide.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://meetaj.ir/articles/enable-ssh-linux-complete-guide.html"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس | آموزش کامل امنیت سرور"
+    />
+    <meta
+      property="og:description"
+      content="آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس. شامل احراز هویت با کلید، تنظیمات امنیتی، Fail2ban، مدیریت Root Login و Best Practices برای سازمان‌ها."
+    />
+    <meta property="og:image" content="../assets/img/my-profile-img.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="آموزش پیکربندی SSH در لینوکس - AmirHossein Jalalian" />
+    <meta
+      property="og:url"
+      content="https://meetaj.ir/articles/enable-ssh-linux-complete-guide.html"
+    />
+    <meta property="og:site_name" content="Meet AJ - Technical Articles" />
+    <meta property="og:locale" content="fa_IR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس | آموزش کامل امنیت سرور"
+    />
+    <meta
+      property="twitter:description"
+      content="آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس. شامل احراز هویت با کلید، تنظیمات امنیتی، Fail2ban، مدیریت Root Login و Best Practices برای سازمان‌ها."
+    />
+    <meta property="twitter:image" content="../assets/img/my-profile-img.jpg" />
+    <meta property="twitter:image:alt" content="آموزش پیکربندی SSH در لینوکس - AmirHossein Jalalian" />
+    <meta property="twitter:site" content="@RealAjMercury" />
+    <meta property="twitter:creator" content="@RealAjMercury" />
+
+    <!-- Article Specific Meta Tags -->
+    <meta property="article:author" content="AmirHossein Jalalian" />
+    <meta
+      property="article:published_time"
+      content="2024-01-15T00:00:00+03:30"
+    />
+    <meta
+      property="article:modified_time"
+      content="2024-01-15T00:00:00+03:30"
+    />
+    <meta property="article:section" content="Linux Security Configuration" />
+    <meta property="article:tag" content="SSH" />
+    <meta property="article:tag" content="Linux" />
+    <meta property="article:tag" content="Security" />
+    <meta property="article:tag" content="Server Administration" />
+    <meta property="article:tag" content="Key Authentication" />
+    <meta property="article:tag" content="Fail2ban" />
+    <meta property="article:tag" content="Root Login" />
+    <meta property="article:tag" content="Ubuntu" />
+    <meta property="article:tag" content="CentOS" />
+    <meta property="article:tag" content="Troubleshooting" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#2E7D32" />
+    <meta name="msapplication-TileColor" content="#2E7D32" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Meet AJ" />
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon" />
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===============================================
+    VENDOR CSS LIBRARIES - EXTERNAL DEPENDENCIES
+    ===============================================
+    Third-party CSS libraries for enhanced functionality
+    and consistent cross-browser compatibility
+    =============================================== -->
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      href="../assets/vendor/aos/aos.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- ===============================================
+    MAIN STYLESHEETS - CORE DESIGN SYSTEM
+    ===============================================
+    Primary CSS files containing custom styles,
+    RTL support, and responsive design patterns
+    =============================================== -->
+    <link href="../assets/css/main.css?v=999" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=999" rel="stylesheet" />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=999"
+      rel="stylesheet"
+      disabled
+    />
+
+    <!-- Preload critical resources for better performance -->
+    <link
+      rel="preload"
+      href="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      as="script"
+    />
+    <link rel="preload" href="../assets/js/main.js?v=999" as="script" />
+    <link rel="preload" href="../assets/js/i18n.js?v=999" as="script" />
+    <link rel="preload" href="../assets/css/main.css?v=999" as="style" />
+    <link rel="preload" href="../assets/css/articles.css?v=999" as="style" />
+    <link rel="preload" href="../assets/img/my-profile-img.jpg" as="image" />
+    
+    <!-- Preload critical fonts for better typography -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" />
+    
+    <!-- Resource hints for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ===============================================
+    STRUCTURED DATA - SCHEMA.ORG MARKUP
+    ===============================================
+    JSON-LD structured data for enhanced SEO,
+    rich snippets, and search engine understanding
+    =============================================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس | آموزش کامل امنیت سرور",
+        "description": "آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس. شامل احراز هویت با کلید، تنظیمات امنیتی، Fail2ban، مدیریت Root Login و Best Practices برای سازمان‌ها.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "../assets/img/my-profile-img.jpg",
+          "width": 1200,
+          "height": 630,
+          "caption": "آموزش پیکربندی SSH در لینوکس - AmirHossein Jalalian"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "AmirHossein Jalalian",
+          "url": "https://meetaj.ir",
+          "jobTitle": "Linux & Security Expert",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Meet AJ"
+          },
+          "sameAs": [
+            "https://linkedin.com/in/amirhosseinjalalian",
+            "https://github.com/jalalianamirhossein-ui",
+            "https://twitter.com/RealAjMercury"
+          ]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Meet AJ",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "../assets/img/logo.png",
+            "width": 200,
+            "height": 200
+          },
+          "url": "https://meetaj.ir"
+        },
+        "datePublished": "2024-01-15T00:00:00+03:30",
+        "dateModified": "2024-01-15T00:00:00+03:30",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://meetaj.ir/articles/enable-ssh-linux-complete-guide.html"
+        },
+        "articleSection": "Linux Security Configuration",
+        "keywords": [
+          "SSH Linux Configuration",
+          "SSH Security Setup",
+          "Linux SSH Server",
+          "SSH Key Authentication",
+          "SSH Fail2ban",
+          "SSH Root Login",
+          "SSH Best Practices",
+          "Ubuntu SSH",
+          "CentOS SSH",
+          "SSH Troubleshooting",
+          "آموزش SSH لینوکس",
+          "پیکربندی SSH امن",
+          "نصب SSH سرور",
+          "امنیت SSH",
+          "مدیریت SSH"
+        ],
+        "inLanguage": ["fa", "en"],
+        "wordCount": "4000",
+        "timeRequired": "PT20M",
+        "educationalLevel": "Intermediate",
+        "learningResourceType": "Tutorial",
+        "about": {
+          "@type": "Thing",
+          "name": "SSH Linux Configuration Guide",
+          "description": "Complete guide to enabling and configuring SSH in Linux with security best practices",
+          "category": "Linux Security"
+        },
+        "mentions": [
+          {
+            "@type": "Thing",
+            "name": "SSH Protocol"
+          },
+          {
+            "@type": "Thing", 
+            "name": "Linux Server Security"
+          },
+          {
+            "@type": "Thing",
+            "name": "Key-based Authentication"
+          },
+          {
+            "@type": "Thing",
+            "name": "Fail2ban Security"
+          },
+          {
+            "@type": "Thing",
+            "name": "Ubuntu Linux"
+          },
+          {
+            "@type": "Thing",
+            "name": "CentOS Linux"
+          }
+        ]
+      }
+    </script>
+
+    <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+  <!-- ===============================================
+  PAGE BODY - MAIN CONTAINER
+  ===============================================
+  Article-specific body classes for theme customization
+  and accessibility features for screen readers
+  =============================================== -->
+  <body
+    class="article-page article-ssh"
+    data-page="ssh-linux-guide"
+  >
+    <!-- Skip to main content link for accessibility compliance -->
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable">
+      <span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      >
+    </a>
+
+    <!-- ===============================================
+    ==================== MOBILE MENU TOGGLE ==============
+    =============================================== -->
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i>
+      <span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
+
+    <!-- ===============================================
+    ==================== HEADER SECTION ================
+    =============================================== -->
+    <header id="header" class="header d-flex flex-column">
+      <!-- ===============================================
+      ==================== PROFILE IMAGE =================
+      =============================================== -->
+      <div class="profile-img">
+        <img
+          src="../assets/img/my-profile-img.jpg"
+          loading="lazy"
+          alt="AmirHossein Jalalian - Linux & Security Expert Profile Picture"
+          class="img-fluid rounded-circle"
+          width="150"
+          height="150"
+          decoding="async"
+        />
+      </div>
+
+      <!-- ===============================================
+      ==================== LOGO SECTION ==================
+      =============================================== -->
+      <div
+        class="logo-section d-flex align-items-center justify-content-between"
+      >
+        <!-- Site Logo & Name -->
+        <a href="../index.html#hero" class="logo d-flex align-items-center">
+          <img 
+            src="../assets/img/logo.png" 
+            alt="Meet AJ - Linux Security and Technical Articles" 
+            loading="lazy"
+            width="40"
+            height="40"
+            decoding="async"
+          />
+          <h1 class="sitename">Meet AJ</h1>
+        </a>
+
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+          <button
+            id="lang-toggle"
+            class="lang-toggle-btn"
+            type="button"
+            aria-label="تغییر زبان / Switch language"
+            title="کلیک کنید تا زبان را تغییر دهید / Click to switch language"
+          >
+            <div class="lang-content">
+              <span class="lang-text" data-en="English" data-fa="فارسی"
+                >English</span
+              >
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===============================================
+      ==================== SOCIAL LINKS ====================
+      =============================================== -->
+      <div class="social-links text-center">
+        <!-- ردیف اول: لینکدین، گیت‌هاب، واتساپ، تلگرام -->
+        <div class="social-row social-row-main">
+          <a
+            href="https://linkedin.com/in/amirhosseinjalalian"
+            class="linkedin"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/jalalianamirhossein-ui"
+            class="github"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://wa.me/989197276219"
+            class="whatsapp"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            ><i class="bi bi-whatsapp"></i
+          ></a>
+          <a
+            href="https://t.me/Aj_mercury"
+            class="telegram"
+            target="_blank"
+            rel="noopener"
+            aria-label="Telegram"
+            ><i class="bi bi-telegram"></i
+          ></a>
+        </div>
+
+        <!-- ردیف دوم: بقیه -->
+        <div class="social-row social-row-secondary">
+          <a
+            href="https://twitter.com/RealAjMercury"
+            class="twitter"
+            target="_blank"
+            rel="noopener"
+            aria-label="X (Twitter)"
+            ><svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://stackoverflow.com/users/24522280/amir-jalalian"
+            class="stackoverflow"
+            target="_blank"
+            rel="noopener"
+            aria-label="Stack Overflow"
+            ><i class="bi bi-stack-overflow"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/amir.jalalian.37"
+            class="facebook"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a
+            href="https://instagram.com/aj.mercury"
+            class="instagram"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="tel:+989197276219" class="google-plus" aria-label="Phone"
+            ><i class="bi bi-telephone"></i
+          ></a>
+        </div>
+      </div>
+
+      <!-- ===============================================
+      ==================== NAVIGATION MENU ================
+      =============================================== -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <!-- Home Section -->
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon"></i
+              ><span data-en="Home" data-fa="صفحه اصلی">Home</span></a
+            >
+          </li>
+
+          <!-- SSH Article Sections -->
+          <li>
+            <a href="#introduction"
+              ><i class="bi bi-info-circle navicon"></i
+              ><span data-en="Introduction" data-fa="مقدمه"
+                >Introduction</span
+              ></a
+            >
+          </li>
+
+          <li>
+            <a href="#installation"
+              ><i class="bi bi-download navicon"></i
+              ><span data-en="Installation" data-fa="نصب و فعال‌سازی"
+                >Installation</span
+              ></a
+            >
+          </li>
+
+          <li>
+            <a href="#authentication"
+              ><i class="bi bi-key navicon"></i
+              ><span data-en="Authentication" data-fa="احراز هویت"
+                >Authentication</span
+              ></a
+            >
+          </li>
+
+          <li>
+            <a href="#security"
+              ><i class="bi bi-shield-check navicon"></i
+              ><span data-en="Security" data-fa="امنیت"
+                >Security</span
+              ></a
+            >
+          </li>
+
+          <li>
+            <a href="#troubleshooting"
+              ><i class="bi bi-tools navicon"></i
+              ><span data-en="Troubleshooting" data-fa="عیب‌یابی"
+                >Troubleshooting</span
+              ></a
+            >
+          </li>
+
+          <li>
+            <a href="#best-practices"
+              ><i class="bi bi-star navicon"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها"
+                >Best Practices</span
+              ></a
+            >
+          </li>
+
+          <li>
+            <a href="#faq"
+              ><i class="bi bi-question-circle navicon"></i
+              ><span data-en="FAQ" data-fa="پرسش‌های متداول"
+                >FAQ</span
+              ></a
+            >
+          </li>
+
+          <li>
+            <a href="#author"
+              ><i class="bi bi-person navicon"></i
+              ><span data-en="Author" data-fa="نویسنده"
+                >Author</span
+              ></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main Content -->
+    <main id="main-content" class="main" role="main">
+      <!-- ===============================================
+      ==================== BREADCRUMBS ===================
+      =============================================== -->
+      <nav class="breadcrumbs" role="region" aria-label="Breadcrumb">
+        <ol>
+          <li>
+            <a href="../index.html">صفحه اصلی</a>
+          </li>
+          <li class="separator" aria-hidden="true"></li>
+          <li>
+            <a href="../index.html#articles">مقالات</a>
+          </li>
+          <li class="separator" aria-hidden="true"></li>
+          <li>
+            <span aria-current="page">پیکربندی SSH لینوکس</span>
+          </li>
+        </ol>
+      </nav>
+        
+      <!-- ===============================================
+      ==================== ARTICLE HEADER ================
+      =============================================== -->
+      <section class="article-header hero" role="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <!-- Article Meta Information -->
+              <div class="article-meta" data-aos="fade-up" data-aos-delay="100">
+                <div class="meta-badge">
+                  <span
+                    class="article-category"
+                    data-en="Linux & Security"
+                    data-fa="لینوکس و امنیت"
+                    >Linux & Security</span
+                  >
+                </div>
+                <div class="meta-date">
+                  <span
+                    class="article-date"
+                    data-en="Published on"
+                    data-fa="منتشر شده در"
+                    >Published on</span
+                  >
+                  <time
+                    datetime="2024-01-15"
+                    data-en="January 15, 2024"
+                    data-fa="25 دی 1402"
+                    >January 15, 2024</time
+                  >
+                </div>
+              </div>
+
+              <!-- Article Title -->
+              <h1
+                class="article-title hero-title"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-en="Complete Guide to Enabling and Configuring SSH in Linux"
+                data-fa="راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس"
+              >
+                راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس
+              </h1>
+
+              <!-- Article Excerpt -->
+              <p
+                class="article-excerpt hero-subtitle"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-en="Complete guide to installing, activating, configuring and securing SSH in Linux. Includes key authentication, security settings, Fail2ban and best practices for organizations."
+                data-fa="آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس. شامل احراز هویت با کلید، تنظیمات امنیتی، Fail2ban و بهترین روش‌ها برای سازمان‌ها."
+              >
+                آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس. شامل احراز هویت با کلید، تنظیمات امنیتی، Fail2ban و بهترین روش‌ها برای سازمان‌ها.
+              </p>
+
+              <!-- Article Stats -->
+              <div
+                class="article-stats"
+                data-aos="fade-up"
+                data-aos-delay="350"
+              >
+                <div class="stats-container">
+                  <div class="stat-item">
+                    <div class="stat-icon">
+                      <i class="bi bi-terminal"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">SSH</span>
+                      <span class="stat-label" data-en="Protocol" data-fa="پروتکل"
+                        >Protocol</span
+                      >
+                    </div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-icon">
+                      <i class="bi bi-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">20</span>
+                      <span class="stat-label" data-en="Minutes" data-fa="دقیقه"
+                        >Minutes</span
+                      >
+                    </div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-icon">
+                      <i class="bi bi-award"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">Intermediate</span>
+                      <span class="stat-label" data-en="Level" data-fa="سطح"
+                        >Level</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Article Banner -->
+              <div
+                class="article-banner"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <div class="banner-card">
+                  <div class="banner-icon">
+                    <i class="bi bi-terminal"></i>
+                  </div>
+                  <div class="banner-content">
+                    <h3
+                      class="banner-title"
+                      data-en="SSH Configuration"
+                      data-fa="پیکربندی SSH"
+                    >
+                      پیکربندی SSH
+                    </h3>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Secure Shell for Linux Servers"
+                      data-fa="Secure Shell برای سرورهای لینوکس"
+                    >
+                      Secure Shell برای سرورهای لینوکس
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div
+                class="article-actions"
+                data-aos="fade-up"
+                data-aos-delay="450"
+              >
+                <a
+                  href="#introduction"
+                  class="btn btn-primary btn-lg action-btn"
+                >
+                  <div class="btn-content">
+                    <i class="bi bi-play-circle"></i>
+                    <span data-en="Start Reading" data-fa="شروع مطالعه"
+                      >Start Reading</span
+                    >
+                  </div>
+                  <div class="btn-arrow">
+                    <i class="bi bi-arrow-right"></i>
+                  </div>
+                </a>
+                <a
+                  href="#installation"
+                  class="btn btn-outline-secondary btn-lg action-btn"
+                >
+                  <div class="btn-content">
+                    <i class="bi bi-download"></i>
+                    <span data-en="Installation" data-fa="نصب">Installation</span>
+                  </div>
+                  <div class="btn-arrow">
+                    <i class="bi bi-arrow-right"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Background -->
+        <div class="hero-background">
+          <h1>راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس</h1>
+          <p>آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس با بهترین روش‌های امنیتی</p>
+        </div>
+      </section>
+        
+      <!-- ===============================================
+      ==================== ARTICLE CONTENT ================
+      =============================================== -->
+      <section class="article-content" role="main">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <!-- Main Article Body -->
+              <article class="article-body">
+                <!-- Introduction -->
+                <section id="introduction" class="article-section">
+                  <h2 data-en="Introduction" data-fa="مقدمه">مقدمه</h2>
+                  <div class="intro-content">
+                    <p
+                      data-en="SSH (Secure Shell) is one of the main tools for secure server management. With SSH, you can connect to Linux servers encrypted, transfer files and execute administrative commands. This article step-by-step explains how to install, activate, configure and secure SSH in Linux with examples and best practices."
+                      data-fa="پروتکل SSH (Secure Shell) یکی از ابزارهای اصلی برای مدیریت ایمن سرورهاست. با استفاده از SSH می‌توان به‌صورت رمزنگاری‌شده به سرورهای لینوکس متصل شد، فایل‌ها را منتقل کرد و دستورات مدیریتی اجرا کرد. این مقاله گام‌به‌گام نحوه نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس را همراه با مثال‌ها و Best Practices توضیح می‌دهد."
+                    >
+                      پروتکل SSH (Secure Shell) یکی از ابزارهای اصلی برای مدیریت ایمن سرورهاست. با استفاده از SSH می‌توان به‌صورت رمزنگاری‌شده به سرورهای لینوکس متصل شد، فایل‌ها را منتقل کرد و دستورات مدیریتی اجرا کرد. این مقاله گام‌به‌گام نحوه نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس را همراه با مثال‌ها و Best Practices توضیح می‌دهد.
+                    </p>
+                  </div>
+                </section>
+
+                <!-- Installation -->
+                <section id="installation" class="article-section">
+                  <h2 data-en="Installation and Activation" data-fa="نصب و فعال‌سازی SSH">نصب و فعال‌سازی SSH</h2>
+
+                    <!-- Ubuntu/Debian Installation -->
+                    <div class="method-card">
+                        <div class="method-number-badge">1</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-ubuntu"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="در Ubuntu/Debian" data-en="In Ubuntu/Debian">در Ubuntu/Debian</h3>
+                        <p class="method-description" data-fa="نصب SSH Server در سیستم‌های مبتنی بر Debian" data-en="Install SSH Server on Debian-based systems">
+                            نصب SSH Server در سیستم‌های مبتنی بر Debian
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                        <div class="method-tips">
+                            <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                            <ul>
+                                <li data-fa="پکیج openssh-server نصب می‌شود" data-en="openssh-server package will be installed">پکیج openssh-server نصب می‌شود</li>
+                                <li data-fa="سرویس به صورت خودکار شروع می‌شود" data-en="Service will start automatically">سرویس به صورت خودکار شروع می‌شود</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                            </div>
+                            <pre><code>sudo apt update
+sudo apt install openssh-server -y</code></pre>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Service Management -->
+                <section id="service-management" class="article-section">
+                  <h2 data-en="Service Management" data-fa="مدیریت سرویس SSH">مدیریت سرویس SSH</h2>
+                  
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">1</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-gear"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="بررسی وضعیت" data-en="Check Status">بررسی وضعیت</h3>
+                        <p class="method-description" data-fa="بررسی وضعیت سرویس SSH" data-en="Check SSH service status">
+                          بررسی وضعیت سرویس SSH
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="سرویس باید فعال باشد" data-en="Service should be active">سرویس باید فعال باشد</li>
+                          <li data-fa="پورت 22 باید باز باشد" data-en="Port 22 should be open">پورت 22 باید باز باشد</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>systemctl status ssh</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">2</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-arrow-clockwise"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="راه‌اندازی مجدد" data-en="Restart Service">راه‌اندازی مجدد</h3>
+                        <p class="method-description" data-fa="راه‌اندازی مجدد سرویس SSH" data-en="Restart SSH service">
+                          راه‌اندازی مجدد سرویس SSH
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="اتصالات فعال قطع می‌شوند" data-en="Active connections will be dropped">اتصالات فعال قطع می‌شوند</li>
+                          <li data-fa="تغییرات تنظیمات اعمال می‌شود" data-en="Configuration changes will be applied">تغییرات تنظیمات اعمال می‌شود</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>sudo systemctl restart ssh</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">3</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-play-circle"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="فعال‌سازی در بوت" data-en="Enable on Boot">فعال‌سازی در بوت</h3>
+                        <p class="method-description" data-fa="فعال‌سازی سرویس SSH در بوت سیستم" data-en="Enable SSH service on system boot">
+                          فعال‌سازی سرویس SSH در بوت سیستم
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="سرویس به صورت خودکار شروع می‌شود" data-en="Service will start automatically">سرویس به صورت خودکار شروع می‌شود</li>
+                          <li data-fا="در صورت ریبوت سیستم سرویس فعال می‌ماند" data-en="Service remains active after system reboot">در صورت ریبوت سیستم سرویس فعال می‌ماند</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>sudo systemctl enable ssh</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Initial Password Connection -->
+                <section id="password-connection" class="article-section">
+                  <h2 data-en="Initial Password Connection" data-fa="اتصال اولیه با رمز عبور">اتصال اولیه با رمز عبور</h2>
+                  
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">1</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-terminal"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="اتصال در لینوکس/macOS" data-en="Connection in Linux/macOS">اتصال در لینوکس/macOS</h3>
+                        <p class="method-description" data-fa="اتصال SSH با رمز عبور در سیستم‌های لینوکس و macOS" data-en="SSH connection with password in Linux and macOS systems">
+                          اتصال SSH با رمز عبور در سیستم‌های لینوکس و macOS
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="نام کاربری و رمز عبور مورد نیاز است" data-en="Username and password required">نام کاربری و رمز عبور مورد نیاز است</li>
+                          <li data-fa="IP آدرس سرور را وارد کنید" data-en="Enter server IP address">IP آدرس سرور را وارد کنید</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>ssh user@192.168.1.100</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">2</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-windows"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="اتصال در ویندوز" data-en="Connection in Windows">اتصال در ویندوز</h3>
+                        <p class="method-description" data-fa="اتصال SSH با رمز عبور در ویندوز PowerShell" data-en="SSH connection with password in Windows PowerShell">
+                          اتصال SSH با رمز عبور در ویندوز PowerShell
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="PowerShell یا Command Prompt استفاده کنید" data-en="Use PowerShell or Command Prompt">PowerShell یا Command Prompt استفاده کنید</li>
+                          <li data-fa="SSH Client باید نصب باشد" data-en="SSH Client must be installed">SSH Client باید نصب باشد</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="PowerShell" data-en="PowerShell">PowerShell</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>ssh user@server-ip</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Key-based Authentication -->
+                <section id="key-authentication" class="article-section">
+                  <h2 data-en="Key-based Authentication" data-fa="احراز هویت با کلید عمومی و خصوصی">احراز هویت با کلید عمومی و خصوصی</h2>
+                  
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">1</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-key"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="ایجاد کلید در ویندوز" data-en="Generate Key in Windows">ایجاد کلید در ویندوز</h3>
+                        <p class="method-description" data-fa="ایجاد کلید SSH RSA در سیستم ویندوز" data-en="Generate SSH RSA key in Windows system">
+                          ایجاد کلید SSH RSA در سیستم ویندوز
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="کلید RSA با طول 4096 بیت ایجاد می‌شود" data-en="RSA key with 4096 bit length will be generated">کلید RSA با طول 4096 بیت ایجاد می‌شود</li>
+                          <li data-fa="مسیر پیش‌فرض: C:\Users\&lt;username&gt;\.ssh\" data-en="Default path: C:\Users\&lt;username&gt;\.ssh\">مسیر پیش‌فرض: C:\Users\&lt;username&gt;\.ssh\</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>ssh-keygen -t rsa -b 4096</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">2</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-terminal"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="ایجاد کلید در لینوکس" data-en="Generate Key in Linux">ایجاد کلید در لینوکس</h3>
+                        <p class="method-description" data-fa="ایجاد کلید SSH ED25519 در سیستم لینوکس" data-en="Generate SSH ED25519 key in Linux system">
+                          ایجاد کلید SSH ED25519 در سیستم لینوکس
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="ED25519 سریع‌تر و امن‌تر از RSA است" data-en="ED25519 is faster and more secure than RSA">ED25519 سریع‌تر و امن‌تر از RSA است</li>
+                          <li data-fa="کلید در ~/.ssh/ ذخیره می‌شود" data-en="Key will be saved in ~/.ssh/">کلید در ~/.ssh/ ذخیره می‌شود</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>ssh-keygen -t ed25519</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">3</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-upload"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="کپی کلید به سرور" data-en="Copy Key to Server">کپی کلید به سرور</h3>
+                        <p class="method-description" data-fa="انتقال کلید عمومی به سرور SSH" data-en="Transfer public key to SSH server">
+                          انتقال کلید عمومی به سرور SSH
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="کلید عمومی به authorized_keys اضافه می‌شود" data-en="Public key will be added to authorized_keys">کلید عمومی به authorized_keys اضافه می‌شود</li>
+                          <li data-fa="در لینوکس از ssh-copy-id استفاده کنید" data-en="Use ssh-copy-id in Linux">در لینوکس از ssh-copy-id استفاده کنید</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>ssh-copy-id user@server-ip</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">4</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-shield-check"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="تنظیم مجوز فایل‌ها" data-en="Set File Permissions">تنظیم مجوز فایل‌ها</h3>
+                        <p class="method-description" data-fa="تنظیم مجوزهای امنیتی برای فایل‌های SSH" data-en="Set security permissions for SSH files">
+                          تنظیم مجوزهای امنیتی برای فایل‌های SSH
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="پوشه .ssh باید مجوز 700 داشته باشد" data-en="Directory .ssh should have 700 permission">پوشه .ssh باید مجوز 700 داشته باشد</li>
+                          <li data-fa="فایل authorized_keys باید مجوز 600 داشته باشد" data-en="File authorized_keys should have 600 permission">فایل authorized_keys باید مجوز 600 داشته باشد</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Security Settings -->
+                <section id="security-settings" class="article-section">
+                  <h2 data-en="Important Security Settings" data-fa="تنظیمات امنیتی مهم در SSH">تنظیمات امنیتی مهم در SSH</h2>
+                  
+                  <p><strong>فایل اصلی:</strong> <code>/etc/ssh/sshd_config</code></p>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">1</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-shield-lock"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="تغییر پورت پیش‌فرض" data-en="Change Default Port">تغییر پورت پیش‌فرض</h3>
+                        <p class="method-description" data-fa="تغییر پورت SSH از 22 به پورت امن‌تر" data-en="Change SSH port from 22 to a more secure port">
+                          تغییر پورت SSH از 22 به پورت امن‌تر
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="پورت 22 هدف حملات اسکریپتی است" data-en="Port 22 is target of script attacks">پورت 22 هدف حملات اسکریپتی است</li>
+                          <li data-fa="پورت‌های 2222، 2200، 2022 پیشنهاد می‌شود" data-en="Ports 2222, 2200, 2022 are recommended">پورت‌های 2222، 2200، 2022 پیشنهاد می‌شود</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Config" data-en="Config">Config</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>Port 2222</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">2</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-person-x"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="غیرفعال‌کردن Root Login" data-en="Disable Root Login">غیرفعال‌کردن Root Login</h3>
+                        <p class="method-description" data-fa="غیرفعال‌سازی ورود مستقیم Root از طریق SSH" data-en="Disable direct Root login through SSH">
+                          غیرفعال‌سازی ورود مستقیم Root از طریق SSH
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="امنیت سیستم را افزایش می‌دهد" data-en="Increases system security">امنیت سیستم را افزایش می‌دهد</li>
+                          <li data-fa="از sudo برای دسترسی Root استفاده کنید" data-en="Use sudo for Root access">از sudo برای دسترسی Root استفاده کنید</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Config" data-en="Config">Config</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>PermitRootLogin no</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">3</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-exclamation-triangle"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="فعال‌سازی Root Login (غیرتوصیه‌شده)" data-en="Enable Root Login (Not Recommended)">فعال‌سازی Root Login (غیرتوصیه‌شده)</h3>
+                        <p class="method-description" data-fa="فعال‌سازی ورود Root فقط برای تست" data-en="Enable Root login only for testing">
+                          فعال‌سازی ورود Root فقط برای تست
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="⚠️ ریسک امنیتی بالا دارد" data-en="⚠️ High security risk">⚠️ ریسک امنیتی بالا دارد</li>
+                          <li data-fa="فقط در محیط تست استفاده کنید" data-en="Use only in testing environment">فقط در محیط تست استفاده کنید</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && sudo systemctl restart ssh && sudo passwd</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">4</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="محدود کردن کاربران مجاز" data-en="Limit Allowed Users">محدود کردن کاربران مجاز</h3>
+                        <p class="method-description" data-fa="محدودسازی دسترسی SSH به کاربران خاص" data-en="Limit SSH access to specific users">
+                          محدودسازی دسترسی SSH به کاربران خاص
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="فقط کاربران مشخص شده دسترسی دارند" data-en="Only specified users have access">فقط کاربران مشخص شده دسترسی دارند</li>
+                          <li data-fa="امنیت سیستم را افزایش می‌دهد" data-en="Increases system security">امنیت سیستم را افزایش می‌دهد</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Config" data-en="Config">Config</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>AllowUsers admin devops</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">5</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-shield-exclamation"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="نصب Fail2ban" data-en="Install Fail2ban">نصب Fail2ban</h3>
+                        <p class="method-description" data-fa="نصب Fail2ban برای جلوگیری از حملات Brute Force" data-en="Install Fail2ban to prevent Brute Force attacks">
+                          نصب Fail2ban برای جلوگیری از حملات Brute Force
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="حملات Brute Force را مسدود می‌کند" data-en="Blocks Brute Force attacks">حملات Brute Force را مسدود می‌کند</li>
+                          <li data-fa="IP های مشکوک را بلاک می‌کند" data-en="Blocks suspicious IPs">IP های مشکوک را بلاک می‌کند</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>sudo apt install fail2ban -y</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Testing and Troubleshooting -->
+                <section id="testing" class="article-section">
+                  <h2 data-en="Testing and Troubleshooting" data-fa="تست و عیب‌یابی اتصال SSH">تست و عیب‌یابی اتصال SSH</h2>
+                  
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">1</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-file-text"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="مشاهده لاگ‌ها" data-en="View Logs">مشاهده لاگ‌ها</h3>
+                        <p class="method-description" data-fa="مشاهده لاگ‌های سرویس SSH برای عیب‌یابی" data-en="View SSH service logs for troubleshooting">
+                          مشاهده لاگ‌های سرویس SSH برای عیب‌یابی
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="لاگ‌ها را به صورت Real-time مشاهده کنید" data-en="View logs in real-time">لاگ‌ها را به صورت Real-time مشاهده کنید</li>
+                          <li data-fa="خطاهای اتصال را بررسی کنید" data-en="Check connection errors">خطاهای اتصال را بررسی کنید</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>sudo journalctl -u ssh -f</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">2</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-wifi"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="تست باز بودن پورت" data-en="Test Port Open">تست باز بودن پورت</h3>
+                        <p class="method-description" data-fa="بررسی باز بودن پورت SSH از راه دور" data-en="Check SSH port accessibility remotely">
+                          بررسی باز بودن پورت SSH از راه دور
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="پورت 22 یا پورت تغییر یافته را تست کنید" data-en="Test port 22 or changed port">پورت 22 یا پورت تغییر یافته را تست کنید</li>
+                          <li data-fa="از netcat برای تست استفاده کنید" data-en="Use netcat for testing">از netcat برای تست استفاده کنید</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>nc -zv server-ip 22</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">3</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-bug"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="اتصال با حالت Debug" data-en="Connection with Debug Mode">اتصال با حالت Debug</h3>
+                        <p class="method-description" data-fa="اتصال SSH با حالت Debug برای عیب‌یابی" data-en="SSH connection with debug mode for troubleshooting">
+                          اتصال SSH با حالت Debug برای عیب‌یابی
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="جزئیات کامل اتصال نمایش داده می‌شود" data-en="Full connection details will be shown">جزئیات کامل اتصال نمایش داده می‌شود</li>
+                          <li data-fa="خطاهای دقیق را شناسایی کنید" data-en="Identify specific errors">خطاهای دقیق را شناسایی کنید</li>
+                        </ul>
+                      </div>
+
+                      <!-- Code Block -->
+                      <div class="code-block">
+                        <div class="code-header">
+                          <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
+                          <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
+                        </div>
+                        <pre><code>ssh -v user@server-ip</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Best Practices -->
+                <section id="best-practices" class="article-section">
+                  <h2 data-en="Best Practices" data-fa="Best Practices در سازمان‌ها">Best Practices در سازمان‌ها</h2>
+                  
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">1</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-key"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="استفاده از کلید ED25519" data-en="Use ED25519 Keys">استفاده از کلید ED25519</h3>
+                        <p class="method-description" data-fa="استفاده از کلیدهای ED25519 به‌جای RSA" data-en="Use ED25519 keys instead of RSA">
+                          استفاده از کلیدهای ED25519 به‌جای RSA
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="ED25519 سریع‌تر و امن‌تر است" data-en="ED25519 is faster and more secure">ED25519 سریع‌تر و امن‌تر است</li>
+                          <li data-fa="حجم کلید کمتر است" data-en="Smaller key size">حجم کلید کمتر است</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">2</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-shield-check"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="الزام استفاده از SSH Key" data-en="Mandatory SSH Key Usage">الزام استفاده از SSH Key</h3>
+                        <p class="method-description" data-fa="الزام کاربران به استفاده از SSH Key و غیرفعال کردن پسورد" data-en="Require users to use SSH Key and disable password">
+                          الزام کاربران به استفاده از SSH Key و غیرفعال کردن پسورد
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="امنیت بالاتر از رمز عبور" data-en="Higher security than password">امنیت بالاتر از رمز عبور</li>
+                          <li data-fa="جلوگیری از حملات Brute Force" data-en="Prevent Brute Force attacks">جلوگیری از حملات Brute Force</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">3</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-shield-lock"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="تغییر پورت پیش‌فرض" data-en="Change Default Port">تغییر پورت پیش‌فرض</h3>
+                        <p class="method-description" data-fa="تغییر پورت پیش‌فرض برای کاهش حملات اسکریپتی" data-en="Change default port to reduce script attacks">
+                          تغییر پورت پیش‌فرض برای کاهش حملات اسکریپتی
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="کاهش حملات خودکار" data-en="Reduce automated attacks">کاهش حملات خودکار</li>
+                          <li data-fa="پورت‌های غیراستاندارد استفاده کنید" data-en="Use non-standard ports">پورت‌های غیراستاندارد استفاده کنید</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">4</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-phone"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="استفاده از MFA/2FA" data-en="Use MFA/2FA">استفاده از MFA/2FA</h3>
+                        <p class="method-description" data-fa="استفاده از احراز هویت چندعاملی برای امنیت بیشتر" data-en="Use multi-factor authentication for enhanced security">
+                          استفاده از احراز هویت چندعاملی برای امنیت بیشتر
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="امنیت اضافی برای دسترسی" data-en="Additional security for access">امنیت اضافی برای دسترسی</li>
+                          <li data-fa="حتی در صورت نفوذ کلید" data-en="Even if key is compromised">حتی در صورت نفوذ کلید</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Method Card Example -->
+                  <div class="method-card">
+                    <div class="method-number-badge">5</div>
+                    <div class="method-header">
+                      <div class="method-icon">
+                        <i class="bi bi-graph-up"></i>
+                      </div>
+                      <div class="method-info">
+                        <h3 class="method-title" data-fa="مانیتورینگ لاگین" data-en="Login Monitoring">مانیتورینگ لاگین</h3>
+                        <p class="method-description" data-fa="مانیتورینگ تلاش‌های لاگین با ابزارهای پیشرفته" data-en="Monitor login attempts with advanced tools">
+                          مانیتورینگ تلاش‌های لاگین با ابزارهای پیشرفته
+                        </p>
+                      </div>
+                    </div>
+                        
+                    <div class="method-content">
+                      <div class="method-tips">
+                        <h4 data-fa="نکات مهم" data-en="Important Tips">نکات مهم</h4>
+                        <ul>
+                          <li data-fa="استفاده از Splunk یا SIEM" data-en="Use Splunk or SIEM">استفاده از Splunk یا SIEM</li>
+                          <li data-fa="تشخیص حملات در زمان واقعی" data-en="Real-time attack detection">تشخیص حملات در زمان واقعی</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion" class="article-section">
+                  <h2 data-en="Conclusion" data-fa="نتیجه‌گیری">نتیجه‌گیری</h2>
+                  <div class="intro-content">
+                    <p
+                      data-en="SSH is the backbone of secure management in Linux. Installation and activation is simple, but security configuration (keys, user restrictions, and Fail2ban) is critical. Root Login should be disabled in most cases except for special conditions. Following Best Practices will increase security and reduce the risk of intrusion."
+                      data-fa="SSH ستون فقرات مدیریت امن در لینوکس است. نصب و فعال‌سازی آن ساده است، اما پیکربندی امنیتی (کلیدها، محدودسازی کاربران و Fail2ban) حیاتی است. Root Login باید در اکثر موارد غیرفعال باشد مگر برای شرایط خاص. رعایت Best Practices باعث افزایش امنیت و کاهش ریسک نفوذ خواهد شد."
+                    >
+                      SSH ستون فقرات مدیریت امن در لینوکس است. نصب و فعال‌سازی آن ساده است، اما پیکربندی امنیتی (کلیدها، محدودسازی کاربران و Fail2ban) حیاتی است. Root Login باید در اکثر موارد غیرفعال باشد مگر برای شرایط خاص. رعایت Best Practices باعث افزایش امنیت و کاهش ریسک نفوذ خواهد شد.
+                    </p>
+                  </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="article-section">
+                  <h2 data-en="Frequently Asked Questions" data-fa="پرسش‌های متداول">پرسش‌های متداول</h2>
+                  <div class="faq-container">
+                    <div class="faq-item">
+                      <div class="faq-question">
+                        <h3 data-en="Does changing SSH port increase security?" data-fa="آیا تغییر پورت SSH امنیت را بالا می‌برد؟">آیا تغییر پورت SSH امنیت را بالا می‌برد؟</h3>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                        <p data-en="Yes, it blocks many automated scans but it's not enough." data-fa="بله، جلوی بسیاری از اسکن‌های خودکار را می‌گیرد اما کافی نیست.">
+                          بله، جلوی بسیاری از اسکن‌های خودکار را می‌گیرد اما کافی نیست.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="faq-item">
+                      <div class="faq-question">
+                        <h3 data-en="What is the best key algorithm to use?" data-fa="بهترین الگوریتم کلید برای استفاده چیست؟">بهترین الگوریتم کلید برای استفاده چیست؟</h3>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                        <p data-en="ED25519 is recommended due to its speed and high security." data-fa="ED25519 به دلیل سرعت و امنیت بالا توصیه می‌شود.">
+                          ED25519 به دلیل سرعت و امنیت بالا توصیه می‌شود.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="faq-item">
+                      <div class="faq-question">
+                        <h3 data-en="What if Root access is needed?" data-fa="اگر دسترسی Root لازم باشد چه کنم؟">اگر دسترسی Root لازم باشد چه کنم؟</h3>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                        <p data-en="You can temporarily enable Root Login or use sudo." data-fa="می‌توانید موقتاً Root Login را فعال کنید یا از sudo استفاده کنید.">
+                          می‌توانید موقتاً Root Login را فعال کنید یا از sudo استفاده کنید.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="faq-item">
+                      <div class="faq-question">
+                        <h3 data-en="How can Brute Force attacks be limited?" data-fa="چگونه می‌توان حملات Brute Force را محدود کرد؟">چگونه می‌توان حملات Brute Force را محدود کرد؟</h3>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                        <p data-en="By installing Fail2ban or setting login restrictions." data-fa="با نصب Fail2ban یا تنظیم محدودیت‌های لاگین.">
+                          با نصب Fail2ban یا تنظیم محدودیت‌های لاگین.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                    <!-- Author Bio -->
+                <section id="author" class="author-bio" role="complementary" aria-label="Author Information">
+                  <div class="author-card">
+                    <div class="author-photo">
+                      <img
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian - Linux & Security Expert"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                                </div>
+                                    <div class="author-details">
+                      <h3 data-en="About the Author" data-fa="درباره نویسنده">درباره نویسنده</h3>
+                      <h4 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">امیرحسین جلالیان</h4>
+                      <span class="expert-badge" data-fa="Linux & Security Expert" data-en="Linux & Security Expert">Linux & Security Expert</span>
+                      <p data-en="Experienced Linux administrator specializing in SSH configuration, server security, and system administration." data-fa="مدیر سیستم لینوکس با تجربه در پیکربندی SSH، امنیت سرور و مدیریت سیستم.">
+                        مدیر سیستم لینوکس با تجربه در پیکربندی SSH، امنیت سرور و مدیریت سیستم.
+                      </p>
+                      <div class="author-social" role="group" aria-label="Social Media Links">
+                        <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                          <i class="bi bi-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                          <i class="bi bi-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">
+                          <i class="bi bi-twitter-x" aria-hidden="true"></i>
+                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                </section>
+              </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- ===============================================
+    ==================== FOOTER SECTION ==================
+    =============================================== -->
+    <footer id="footer" class="footer position-relative light-background">
+      <div class="container">
+        <!-- Copyright -->
+        <div class="copyright text-center">
+          <p>
+            © <span>2025</span>
+            <strong
+              class="px-1"
+              data-en="AmirHossein Jalalian"
+              data-fa="امیرحسین جلالیان"
+              >AmirHossein Jalalian</strong
+            >
+            <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است"
+              >All Rights Reserved</span
+            >
+          </p>
+        </div>
+        <!-- End Copyright -->
+      </div>
+      <!-- End Footer Container -->
+    </footer>
+    <!-- End Footer Section -->
+
+    <!-- Scroll Top -->
+    <a
+      href="#hero"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Scroll to top"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files - Optimized Loading -->
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+      crossorigin="anonymous"
+    ></script>
+    <script 
+      src="../assets/vendor/aos/aos.js" 
+      defer
+      crossorigin="anonymous"
+    ></script>
+    <script 
+      src="../assets/vendor/swiper/swiper-bundle.min.js" 
+      defer
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Main JS Files - Optimized Loading -->
+    <script 
+      src="../assets/js/main.js?v=999" 
+      defer
+      crossorigin="anonymous"
+    ></script>
+    <script 
+      src="../assets/js/i18n.js?v=999" 
+      defer
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ===============================================
+    ==================== JAVASCRIPT FUNCTIONS ============
+    =============================================== -->
+    <script>
+      /**
+       * ENHANCED COPY CODE FUNCTIONALITY
+       * =================================
+       * Optimized clipboard functionality with better error handling
+       * and performance improvements
+       */
+      function copyCode(button) {
+        // Prevent multiple rapid clicks
+        if (button.disabled) return;
+        button.disabled = true;
+        
+        const codeBlock = button.closest(".code-block");
+        if (!codeBlock) {
+          console.error("Code block not found");
+          button.disabled = false;
+          return;
+        }
+
+        const codeElement = codeBlock.querySelector("code");
+        if (!codeElement) {
+          console.error("Code element not found");
+          button.disabled = false;
+          return;
+        }
+
+        const text = codeElement.textContent.trim();
+
+        // Try modern Clipboard API first
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard
+            .writeText(text)
+            .then(function () {
+              showCopySuccess(button);
+              button.disabled = false;
+            })
+            .catch(function (err) {
+              console.error("Clipboard API failed: ", err);
+              fallbackCopy(text, button);
+            });
+        } else {
+          // Fallback for older browsers
+          fallbackCopy(text, button);
+        }
+      }
+
+      function fallbackCopy(text, button) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+          document.execCommand("copy");
+          showCopySuccess(button);
+        } catch (err) {
+          console.error("Fallback copy failed: ", err);
+          showCopyError(button);
+        }
+
+        document.body.removeChild(textArea);
+      }
+
+      function showCopySuccess(button) {
+        button.classList.add("copied");
+        const originalText = button.textContent.trim();
+
+        button.textContent = button.getAttribute("data-fa")
+          ? "کپی شد!"
+          : "Copied!";
+
+        setTimeout(function () {
+          button.classList.remove("copied");
+          button.textContent = originalText;
+        }, 2000);
+      }
+
+      function showCopyError(button) {
+        button.style.background = "rgba(220, 53, 69, 0.9)";
+        button.textContent = button.getAttribute("data-fa") ? "خطا!" : "Error!";
+
+        setTimeout(function () {
+          button.style.background = "";
+          button.textContent = button.getAttribute("data-fa") ? "کپی" : "Copy";
+                    }, 2000);
+      }
+
+      /**
+       * ENHANCED DOM CONTENT LOADED EVENT LISTENER
+       * ==========================================
+       * Optimized initialization with performance improvements
+       * and better error handling
+       */
+      document.addEventListener("DOMContentLoaded", function () {
+        // Performance optimization: Use requestAnimationFrame for smooth scrolling
+        const smoothScrollTo = (target) => {
+          const startPosition = window.pageYOffset;
+          const targetPosition = target.offsetTop - 80; // Account for header
+          const distance = targetPosition - startPosition;
+          const duration = Math.min(Math.abs(distance) / 2, 1000); // Max 1 second
+          let start = null;
+
+          const animation = (currentTime) => {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const progress = Math.min(timeElapsed / duration, 1);
+            
+            // Easing function for smooth animation
+            const ease = progress < 0.5 
+              ? 2 * progress * progress 
+              : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+            
+            window.scrollTo(0, startPosition + distance * ease);
+            
+            if (timeElapsed < duration) {
+              requestAnimationFrame(animation);
+            }
+          };
+          
+          requestAnimationFrame(animation);
+        };
+
+        // Enhanced smooth scrolling for anchor links
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href === "#" || href === "#top") return;
+
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              smoothScrollTo(target);
+              
+              // Update URL without triggering scroll
+              history.pushState(null, null, href);
+            }
+          });
+        });
+
+        // Initialize AOS (Animate On Scroll) with performance optimizations
+        if (typeof AOS !== "undefined") {
+          try {
+            AOS.init({
+              duration: 600,
+              easing: "ease-out-cubic",
+              once: true,
+              offset: 50,
+              disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            });
+          } catch (error) {
+            console.error("AOS initialization failed:", error);
+          }
+        } else {
+          console.warn("AOS library not loaded");
+        }
+
+        // Lazy loading optimization for images
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+              }
+            });
+          });
+
+          document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+          });
+        }
+      });
+    </script>
+</body>
+</html>

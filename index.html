@@ -1,0 +1,3864 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- ===============================================
+    MEET AJ PORTFOLIO - MAIN HTML DOCUMENT
+    ===============================================
+    
+    Professional portfolio website for AmirHossein Jalalian
+    Network Expert, DevOps Engineer & IT Infrastructure Specialist
+    
+    Features:
+    - Progressive Web App (PWA) ready
+    - Multi-language support (English/Persian)
+    - Responsive design
+    - Modern Apple Design System
+    - SEO optimized
+    
+    =============================================== -->
+
+    <!-- ===============================================
+    META TAGS & SEO CONFIGURATION
+    =============================================== -->
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+
+    <!-- Page Title & SEO Meta Tags -->
+    <title>Meet Aj - AmirHossein Jalalian Portfolio</title>
+    <meta
+      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist. Experienced in Cisco, MikroTik, VMware, Linux administration, and system optimization."
+      name="description"
+    />
+    <meta
+      content="Network Expert, DevOps Engineer, IT Infrastructure, Cisco, MikroTik, VMware, Linux, System Administration, Tehran Iran"
+      name="keywords"
+    />
+
+    <!-- ===============================================
+    FAVICONS & APP ICONS
+    =============================================== -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- ===============================================
+    PROGRESSIVE WEB APP (PWA) CONFIGURATION
+    =============================================== -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0050a0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Meet AJ" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- ===============================================
+    GOOGLE FONTS & TYPOGRAPHY
+    =============================================== -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&family=Estedad:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===============================================
+    STYLESHEETS & CSS FRAMEWORKS
+    =============================================== -->
+
+    <!-- Bootstrap CSS Framework -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- GLightbox Gallery Library -->
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper Slider Library -->
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- ===============================================
+    ==================== MAIN CSS ======================
+    =============================================== -->
+    <!-- Main Stylesheet -->
+    <link href="assets/css/main.css?v=999" rel="stylesheet" />
+
+    <!-- RTL Support Stylesheet -->
+    <link
+      id="rtl-style"
+      href="assets/css/rtl.css?v=999"
+      rel="stylesheet"
+      disabled
+    />
+
+    <!-- ===============================================
+    ==================== CRITICAL CSS ==================
+    =============================================== -->
+    <style>
+      /* Critical CSS for initial render */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .header {
+        background: linear-gradient(135deg, #0ea5e9, #1e40af);
+      }
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1e40af;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+        color: #374151;
+      }
+      .btn {
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-primary {
+        background: #0ea5e9;
+        color: white;
+      }
+      .btn-outline-light {
+        border: 2px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <!-- ===============================================
+  ==================== BODY START ====================
+  =============================================== -->
+  <body class="index-page">
+    <!-- ===============================================
+    ==================== HEADER SECTION ================
+    =============================================== -->
+    <header id="header" class="header dark-background d-flex flex-column">
+      <!-- ===============================================
+      ==================== PROFILE IMAGE =================
+      =============================================== -->
+      <div class="profile-img">
+        <img
+          src="assets/img/my-profile-img.jpg"
+          loading="lazy"
+          alt="AmirHossein Jalalian Profile Picture"
+          class="img-fluid rounded-circle"
+        />
+      </div>
+
+      <!-- ===============================================
+      ==================== LOGO SECTION ==================
+      =============================================== -->
+      <div
+        class="logo-section d-flex align-items-center justify-content-between"
+      >
+        <!-- Site Logo & Name -->
+        <a href="#hero" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="Aj-Network" loading="lazy" />
+          <h1 class="sitename">Meet AJ</h1>
+        </a>
+
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+          <button
+            id="lang-toggle"
+            class="lang-toggle-btn"
+            type="button"
+            aria-label="تغییر زبان / Switch language"
+            title="کلیک کنید تا زبان را تغییر دهید / Click to switch language"
+          >
+            <div class="lang-content">
+              <span class="lang-text" data-en="فارسی" data-fa="English"
+                >English</span
+              >
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===============================================
+      ==================== SOCIAL LINKS ===================
+      =============================================== -->
+      <div class="social-links text-center">
+        <!-- Primary Social Links Row -->
+        <div class="social-row social-row-main">
+          <a
+            href="https://linkedin.com/in/amirhussein-jalalian-050702188/"
+            class="linkedin"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/jalalianamirhossein-ui"
+            class="github"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://wa.me/989197276219"
+            class="whatsapp"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            ><i class="bi bi-whatsapp"></i
+          ></a>
+          <a
+            href="https://t.me/Aj_mercury"
+            class="telegram"
+            target="_blank"
+            rel="noopener"
+            aria-label="Telegram"
+            ><i class="bi bi-telegram"></i
+          ></a>
+        </div>
+
+        <!-- ردیف دوم: بقیه -->
+        <div class="social-row social-row-secondary">
+          <a
+            href="https://twitter.com/RealAjMercury"
+            class="twitter"
+            target="_blank"
+            rel="noopener"
+            aria-label="X (Twitter)"
+            ><svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://stackoverflow.com/users/24522280/amir-jalalian"
+            class="stackoverflow"
+            target="_blank"
+            rel="noopener"
+            aria-label="Stack Overflow"
+            ><i class="bi bi-stack-overflow"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/amir.jalalian.37"
+            class="facebook"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a
+            href="https://instagram.com/aj.mercury"
+            class="instagram"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="tel:+989197276219" class="google-plus" aria-label="Phone"
+            ><i class="bi bi-telephone"></i
+          ></a>
+        </div>
+      </div>
+
+      <!-- ===============================================
+      ==================== NAVIGATION MENU ================
+      =============================================== -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <!-- Home Section -->
+          <li>
+            <a href="#hero" class="active"
+              ><i class="bi bi-house navicon"></i
+              ><span data-en="Home" data-fa="صفحه اصلی">Home</span></a
+            >
+          </li>
+
+          <!-- About Section -->
+          <li>
+            <a href="#about"
+              ><i class="bi bi-person navicon"></i
+              ><span data-en="About" data-fa="درباره من">About</span></a
+            >
+          </li>
+
+          <!-- Resume Section -->
+          <li>
+            <a href="#resume"
+              ><i class="bi bi-file-earmark-text navicon"></i
+              ><span data-en="Resume" data-fa="رزومه کاری">Resume</span></a
+            >
+          </li>
+
+          <!-- Articles Section -->
+          <li>
+            <a href="#portfolio"
+              ><i class="bi bi-images navicon"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+
+          <!-- Services Section -->
+          <li>
+            <a href="#services"
+              ><i class="bi bi-hdd-stack navicon"></i
+              ><span data-en="Services" data-fa="خدمات">Services</span></a
+            >
+          </li>
+
+          <!-- Testimonials Section -->
+          <li>
+            <a href="#testimonials"
+              ><i class="bi bi-menu-button navicon"></i
+              ><span data-en="Testimonials" data-fa="نظرات"
+                >Testimonials</span
+              ></a
+            >
+          </li>
+
+          <!-- Contact Section -->
+          <li>
+            <a href="#contact"
+              ><i class="bi bi-envelope navicon"></i
+              ><span data-en="Contact" data-fa="تماس با من">Contact</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===============================================
+    ==================== MOBILE MENU TOGGLE ==============
+    =============================================== -->
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+    >
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- ===============================================
+    ==================== MAIN CONTENT ====================
+    =============================================== -->
+    <main class="main">
+      <!-- ===============================================
+      ==================== HERO SECTION ==================
+      =============================================== -->
+      <section id="hero" class="hero section dark-background">
+        <!-- Hero Background Image -->
+        <link rel="preload" as="image" href="assets/img/hero-bg.jpg" />
+        <img
+          src="assets/img/hero-bg.jpg"
+          alt="Hero Background"
+          data-aos="fade-in"
+          class="hero-bg"
+        />
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="hero-wrapper">
+            <!-- Hero Profile Image -->
+            <div
+              class="hero-profile-section"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <div class="hero-profile-img">
+                <img
+                  src="assets/img/my-profile-img-2.jpg"
+                  loading="lazy"
+                  alt="AmirHossein Jalalian Profile Picture"
+                  class="img-fluid hero-img"
+                />
+                <div class="hero-img-border"></div>
+                <div class="hero-img-shadow"></div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div
+              class="hero-content-section"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <div class="hero-content">
+                <!-- Modern Badge -->
+                <div class="hero-badge" data-aos="fade-up" data-aos-delay="200">
+                  <span
+                    class="badge-text"
+                    data-en="Available for Work"
+                    data-fa="آماده برای همکاری"
+                    >Available for Work</span
+                  >
+                  <div class="badge-dot"></div>
+                </div>
+
+                <!-- Main Title with Modern Typography -->
+                <h1
+                  class="hero-title"
+                  data-en="AmirHossein Jalalian"
+                  data-fa="امیرحسین جلالیان"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <span class="title-line-1">AmirHossein</span>
+                  <span class="title-line-2">Jalalian</span>
+                </h1>
+
+                <!-- Subtitle with Enhanced Typography -->
+                <div
+                  class="hero-subtitle-wrapper"
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
+                  <p class="hero-subtitle">
+                    <span class="subtitle-prefix" data-en="I'm a" data-fa="من"
+                      >I'm a</span
+                    >
+                    <span
+                      class="typed"
+                      data-typed-items="Network Specialist, DevOps Engineer, IT Consultant, Systems Expert, VMware Administrator"
+                      data-typed-items-fa="متخصص شبکه هستم, مهندس DevOps هستم, مشاور فناوری اطلاعات هستم, کارشناس سیستم‌ها هستم, مدیر مجازی‌سازی VMware هستم"
+                      >System Administrator</span
+                    >
+                  </p>
+                </div>
+
+                <!-- Modern Action Buttons -->
+                <div
+                  class="hero-actions"
+                  data-aos="fade-up"
+                  data-aos-delay="1000"
+                >
+                  <a
+                    href="#contact"
+                    class="btn btn-primary btn-modern"
+                    data-en="Get In Touch"
+                    data-fa="ارتباط با من"
+                  >
+                    <span class="btn-text">Get In Touch</span>
+                    <span class="btn-icon">→</span>
+                  </a>
+                  <a
+                    href="#portfolio"
+                    class="btn btn-outline-light btn-modern"
+                    data-en="Articles"
+                    data-fa="مقالات"
+                  >
+                    <span class="btn-text">Articles</span>
+                    <span class="btn-icon">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- ===============================================
+      ==================== ABOUT SECTION ==================
+      =============================================== -->
+      <section id="about" class="about section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2 data-en="Get to Know Me" data-fa="بهتر منو بشناس">
+            Get to Know Me
+          </h2>
+          <p
+            data-en="I am Amirhossein Jalalian, a Network and IT Infrastructure Specialist with extensive experience in designing, managing, and optimizing enterprise systems. My mission is to deliver reliable, secure, and scalable solutions that enhance organizational efficiency while minimizing risks."
+            data-fa="من امیرحسین جلالیان هستم، متخصص شبکه و زیرساخت فناوری اطلاعات با تجربه گسترده در طراحی، مدیریت و بهینه‌سازی سیستم‌های سازمانی. مأموریت من، ایجاد راهکارهای پایدار، امن و مقیاس‌پذیر است که بهره‌وری سازمان‌ها را افزایش داده و ریسک‌ها را کاهش می‌دهد."
+          >
+            I am Amirhossein Jalalian, a Network and IT Infrastructure
+            Specialist with extensive experience in designing, managing, and
+            optimizing enterprise systems. My mission is to deliver reliable,
+            secure, and scalable solutions that enhance organizational
+            efficiency while minimizing risks.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- ===============================================
+        ==================== ABOUT CONTENT ===================
+        =============================================== -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-wrapper">
+            <!-- Content Section -->
+            <div class="content-section">
+              <!-- Header -->
+              <div class="about-header">
+                <h2 class="about-title">
+                  <span
+                    class="title-main"
+                    data-en="Empowering Businesses with Reliable & Secure IT Infrastructures"
+                    data-fa="توانمندسازی کسب‌وکارها با زیرساخت‌های IT مطمئن و امن"
+                  >
+                    Empowering Businesses with Reliable &amp; Secure IT
+                    Infrastructures
+                  </span>
+                  <span class="title-accent">IT Professional</span>
+                </h2>
+                <p
+                  class="about-subtitle"
+                  data-en="Passionate about developing innovative and sustainable network solutions that elevate organizational performance and efficiency."
+                  data-fa="علاقه‌مند به توسعه راهکارهای شبکه پایدار و نوآورانه که عملکرد و بهره‌وری سازمان‌ها را به سطحی بالاتر می‌رساند."
+                >
+                  Passionate about developing innovative and sustainable network
+                  solutions that elevate organizational performance and
+                  efficiency.
+                </p>
+              </div>
+
+              <!-- Info Cards Grid -->
+              <div class="info-grid">
+                <!-- Personal Info Card -->
+                <div class="info-card personal-info">
+                  <div class="card-header">
+                    <i class="bi bi-person-circle"></i>
+                    <h3 data-en="Personal Info" data-fa="اطلاعات شخصی">
+                      Personal Info
+                    </h3>
+                  </div>
+                  <div class="card-content">
+                    <div class="info-item">
+                      <i class="bi bi-calendar-event"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Birthday"
+                          data-fa="تاریخ تولد"
+                          >Birthday</span
+                        >
+                        <span
+                          class="info-value"
+                          data-en="19 July 1999"
+                          data-fa="۲۸ تیر ۱۳۷۸"
+                          >19 July 1999</span
+                        >
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="bi bi-geo-alt"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Location"
+                          data-fa="محل سکونت"
+                          >Location</span
+                        >
+                        <span
+                          class="info-value"
+                          data-en="Tehran, Iran"
+                          data-fa="تهران، ایران"
+                          >Tehran, Iran</span
+                        >
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="bi bi-mortarboard"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Degree"
+                          data-fa="مدرک تحصیلی"
+                          >Degree</span
+                        >
+                        <span
+                          class="info-value"
+                          data-en="Bachelor of IT Engineering"
+                          data-fa="کارشناسی مهندسی فناوری اطلاعات"
+                          >Bachelor of IT Engineering</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Contact Info Card -->
+                <div class="info-card contact-info">
+                  <div class="card-header">
+                    <i class="bi bi-telephone"></i>
+                    <h3 data-en="Contact Info" data-fa="اطلاعات تماس">
+                      Contact Info
+                    </h3>
+                  </div>
+                  <div class="card-content">
+                    <div class="info-item">
+                      <i class="bi bi-phone"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Phone"
+                          data-fa="شماره تماس"
+                          >Phone</span
+                        >
+                        <a
+                          href="tel:+989197276219"
+                          class="info-value contact-link"
+                          data-en="+989197276219"
+                          data-fa="09197276219"
+                          >+989197276219</a
+                        >
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="bi bi-envelope"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Email"
+                          data-fa="پست الکترونیکی"
+                          >Email</span
+                        >
+                        <a
+                          href="mailto:Jalalian.amirhossein@gmail.com"
+                          class="info-value contact-link"
+                          >Jalalian.amirhossein@gmail.com</a
+                        >
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="bi bi-briefcase"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Status"
+                          data-fa="وضعیت کاری"
+                          >Status</span
+                        >
+                        <span
+                          class="info-value status-available"
+                          data-en="Available for Collaboration"
+                          data-fa="آماده همکاری"
+                          >Available for Collaboration</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Description Section -->
+              <div class="description-section">
+                <div class="description-card">
+                  <h3
+                    class="description-title"
+                    data-en="About Me"
+                    data-fa="درباره من"
+                  >
+                    About Me
+                  </h3>
+                  <p
+                    class="description-text"
+                    data-en="I have extensive experience in Windows Server, Cisco and MikroTik technologies, virtualization, and other IT infrastructure solutions. My approach is always results-driven, carrying out each project with accountability, precision, and strong teamwork. I focus on delivering secure, reliable, and optimized solutions that enhance organizational growth and efficiency."
+                    data-fa="من تجربه‌ای گسترده در Windows Server، تجهیزات سیسکو و میکروتیک، مجازی‌سازی و سایر فناوری‌های زیرساختی دارم. رویکرد من در کار، همواره نتیجه‌محور است و هر پروژه را با مسئولیت‌پذیری بالا، دقت فنی و روحیه کار تیمی به سرانجام می‌رسانم. تمرکزم بر ارائه راهکارهای امن، پایدار و بهینه است که به رشد و بهره‌وری سازمان‌ها کمک می‌کند."
+                  >
+                    I have extensive experience in Windows Server, Cisco and
+                    MikroTik technologies, virtualization, and other IT
+                    infrastructure solutions. My approach is always
+                    results-driven, carrying out each project with
+                    accountability, precision, and strong teamwork. I focus on
+                    delivering secure, reliable, and optimized solutions that
+                    enhance organizational growth and efficiency.
+                  </p>
+                </div>
+
+                <div class="philosophy-card">
+                  <h3
+                    class="philosophy-title"
+                    data-en="My Philosophy"
+                    data-fa="فلسفه من"
+                  >
+                    My Philosophy
+                  </h3>
+                  <p
+                    class="philosophy-text"
+                    data-en="I value honesty, discipline, patience, and accountability as core principles. I believe that respect for the profession and adherence to fundamental values form the foundation for achieving long-term and sustainable success in the field of Information Technology."
+                    data-fa="برای من، صداقت، انضباط، صبر و مسئولیت‌پذیری ارزش‌های اساسی هستند. باور دارم که احترام به حرفه و پایبندی به اصول بنیادین، زیربنای دستیابی به موفقیت پایدار و بلندمدت در حوزه فناوری اطلاعات است."
+                  >
+                    I value honesty, discipline, patience, and accountability as
+                    core principles. I believe that respect for the profession
+                    and adherence to fundamental values form the foundation for
+                    achieving long-term and sustainable success in the field of
+                    Information Technology.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Quote Section -->
+              <div class="quote-section">
+                <div class="quote-card">
+                  <i class="bi bi-quote"></i>
+                  <blockquote class="inspirational-quote">
+                    <p
+                      data-en="Success is born of sustained effort, continuous learning, and faith in the journey."
+                      data-fa="موفقیت زاده تلاش مستمر، یادگیری مداوم و ایمان به مسیر است."
+                    >
+                      "Success is born of sustained effort, continuous learning,
+                      and faith in the journey."
+                    </p>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End About Content -->
+      </section>
+      <!-- /About Section -->
+
+      <!-- ===============================================
+      ==================== STATS SECTION ====================
+      =============================================== -->
+      <section id="stats" class="stats section">
+        <!-- Stats Container -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <!-- Happy Clients Stat -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item">
+                <i class="bi bi-emoji-smile"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="49"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>
+                  <span data-en="Satisfied customers" data-fa="مشتریان راضی"
+                    >Satisfied customers</span
+                  >
+                </p>
+              </div>
+            </div>
+            <!-- End Happy Clients Stat -->
+
+            <!-- Projects Stat -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item">
+                <i class="bi bi-journal-richtext"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="31"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>
+                  <span data-en="Successful projects" data-fa="پروژه‌های موفق"
+                    >Successful projects</span
+                  >
+                </p>
+              </div>
+            </div>
+            <!-- End Projects Stat -->
+
+            <!-- Support Hours Stat -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item">
+                <i class="bi bi-headset"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="4160"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>
+                  <span
+                    data-en="Support hours provided"
+                    data-fa="ساعت پشتیبانی ارائه شده"
+                    >Support hours provided</span
+                  >
+                </p>
+              </div>
+            </div>
+            <!-- End Support Hours Stat -->
+
+            <!-- Team Members Stat -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item">
+                <i class="bi bi-people"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="12"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>
+                  <span data-en="Expert team" data-fa="تیم متخصص"
+                    >Expert team</span
+                  >
+                </p>
+              </div>
+            </div>
+            <!-- End Team Members Stat -->
+          </div>
+        </div>
+        <!-- End Stats Container -->
+      </section>
+      <!-- /Stats Section -->
+
+      <!-- ===============================================
+      ==================== SKILLS SECTION ====================
+      =============================================== -->
+      <section id="skills" class="skills section light-background">
+        <!-- ===============================================
+        ==================== SECTION TITLE ==================
+        =============================================== -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2 data-en="Skills" data-fa="مهارت‌ها">Skills</h2>
+          <p
+            data-en="My core technical and professional skills in computer networks and IT infrastructure."
+            data-fa="مهارت‌های اصلی فنی و حرفه‌ای من در شبکه‌های کامپیوتری و زیرساخت فناوری اطلاعات."
+          >
+            My core technical and professional skills in computer networks and
+            IT infrastructure.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- ===============================================
+        ==================== SKILLS CONTENT ==================
+        =============================================== -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row skills-content skills-animation">
+            <!-- ===============================================
+            ==================== LEFT COLUMN ====================
+            =============================================== -->
+            <div class="col-lg-6">
+              <div class="progress">
+                <span class="skill">
+                  <span
+                    data-en="Network Design (Cisco, MikroTik)"
+                    data-fa="طراحی شبکه (سیسکو، میکروتیک)"
+                    >Network Design (Cisco, MikroTik)</span
+                  >
+                  <i class="val">100%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="100"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill">
+                  <span
+                    data-en="Firewall & Security Rules (MikroTik, Cisco)"
+                    data-fa="فایروال و قوانین امنیتی (میکروتیک، سیسکو)"
+                    >Firewall & Security Rules (MikroTik, Cisco)</span
+                  >
+                  <i class="val">92%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="92"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill">
+                  <span
+                    data-en="Linux Administration (Ubuntu, CentOS)"
+                    data-fa="مدیریت لینوکس (اوبونتو، سنت‌اواس)"
+                    >Linux Administration (Ubuntu, CentOS)</span
+                  >
+                  <i class="val">90%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill">
+                  <span
+                    data-en="Microsoft Services (AD, DNS, DFS, WDS, WSUS, NTP)"
+                    data-fa="خدمات مایکروسافت (AD، DNS، DFS، WDS، WSUS، NTP)"
+                    >Microsoft Services (AD, DNS, DFS, WDS, WSUS, NTP)</span
+                  >
+                  <i class="val">88%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="88"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill">
+                  <span
+                    data-en="Virtualization (VMware vSphere, KVM)"
+                    data-fa="مجازی‌سازی (VMware vSphere، KVM)"
+                    >Virtualization (VMware vSphere, KVM)</span
+                  >
+                  <i class="val">77%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="77"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="SQL Server (Clustering, HA, Monitoring)"
+                    data-fa="SQL Server (خوشه‌بندی، HA، نظارت)"
+                    >SQL Server (Clustering, HA, Monitoring)</span
+                  >
+                  <i class="val">66%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="66"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Backup Systems (Veeam Backup & NAS)"
+                    data-fa="سیستم‌های پشتیبان‌گیری (Veeam Backup & NAS)"
+                    >Backup Systems (Veeam Backup & NAS)</span
+                  >
+                  <i class="val">98%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="98"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Monitoring Tools (Zabbix, Cacti, Redgate)"
+                    data-fa="ابزارهای نظارت (Zabbix، Cacti، Redgate)"
+                    >Monitoring Tools (Zabbix, Cacti, Redgate)</span
+                  >
+                  <i class="val">94%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="94"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="VPN & Tunnel Configuration"
+                    data-fa="پیکربندی VPN و تانل"
+                    >VPN & Tunnel Configuration</span
+                  >
+                  <i class="val">96%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="96"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Cloud Platforms (AWS, Azure)"
+                    data-fa="پلتفرم‌های ابری (AWS، Azure)"
+                    >Cloud Platforms (AWS, Azure)</span
+                  >
+                  <i class="val">66%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="66"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <!-- End Left Column -->
+
+            <!-- ===============================================
+            ==================== RIGHT COLUMN ===================
+            =============================================== -->
+            <div class="col-lg-6">
+              <div class="progress">
+                <span class="skill"
+                  ><span data-en="Technical Documentation" data-fa="مستندات فنی"
+                    >Technical Documentation</span
+                  >
+                  <i class="val">88%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="88"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Diagram & Network Mapping"
+                    data-fa="نمودار و نقشه‌برداری شبکه"
+                    >Diagram & Network Mapping</span
+                  >
+                  <i class="val">80%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="80"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="System Analysis & Troubleshooting"
+                    data-fa="تحلیل سیستم و عیب‌یابی"
+                    >System Analysis & Troubleshooting</span
+                  >
+                  <i class="val">95%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="95"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Project Planning & IT Management"
+                    data-fa="برنامه‌ریزی پروژه و مدیریت IT"
+                    >Project Planning & IT Management</span
+                  >
+                  <i class="val">88%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="88"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Team Collaboration & Communication"
+                    data-fa="همکاری تیمی و ارتباطات"
+                    >Team Collaboration & Communication</span
+                  >
+                  <i class="val">85%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="85"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Problem Solving Under Pressure"
+                    data-fa="حل مسئله تحت فشار"
+                    >Problem Solving Under Pressure</span
+                  >
+                  <i class="val">92%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="92"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span data-en="Security Awareness" data-fa="آگاهی امنیتی"
+                    >Security Awareness</span
+                  >
+                  <i class="val">90%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Adaptability & Continuous Learning"
+                    data-fa="انطباق‌پذیری و یادگیری مداوم"
+                    >Adaptability & Continuous Learning</span
+                  >
+                  <i class="val">100%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="100"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Leadership & Mentoring"
+                    data-fa="رهبری و مربیگری"
+                    >Leadership & Mentoring</span
+                  >
+                  <i class="val">75%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="75"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"
+                  ><span
+                    data-en="Client Communication & Reporting"
+                    data-fa="ارتباط با مشتری و گزارش‌دهی"
+                    >Client Communication & Reporting</span
+                  >
+                  <i class="val">80%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="80"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <!-- End Right Column -->
+          </div>
+          <!-- End Skills Row -->
+        </div>
+        <!-- End Skills Container -->
+      </section>
+      <!-- /Skills Section -->
+
+      <!-- ===============================================
+      ==================== RESUME SECTION =================
+      =============================================== -->
+      <section id="resume" class="resume section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2 data-en="Resume" data-fa="رزومه">Resume</h2>
+          <p
+            data-en="My academic background and professional work experience in computer networks and IT infrastructure."
+            data-fa="پیشینه تحصیلی و تجربه کاری حرفه‌ای من در شبکه‌های کامپیوتری و زیرساخت IT."
+          >
+            My academic background and professional work experience in computer
+            networks and IT infrastructure.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- ===============================================
+        ==================== RESUME CONTENT ==================
+        =============================================== -->
+        <div class="container">
+          <div class="row">
+            <!-- ===============================================
+            ==================== EDUCATION COLUMN ================
+            =============================================== -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title" data-en="Education" data-fa="تحصیلات">
+                Education
+              </h3>
+              <div class="resume-item">
+                <h4
+                  data-en="DevOps Engineering Program"
+                  data-fa="برنامه مهندسی DevOps"
+                >
+                  DevOps Engineering Program
+                </h4>
+                <h5>2024</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://sananetco.com/en/home/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Sanat Training Center"
+                      data-fa="مرکز آموزش سانانت"
+                      >Sanat Training Center</a
+                    ></em
+                  >
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4 data-en="LPIC-1" data-fa="LPIC-1">LPIC-2</h4>
+                <h5>2023</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://arjang.ac.ir/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
+                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
+                      >مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی،
+                      ذخیره‌سازی، برنامه‌نویسی، وب)</a
+                    ></em
+                  >
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4 data-en="LPIC-2" data-fa="LPIC-2">LPIC-1</h4>
+                <h5>2023</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://arjang.ac.ir/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
+                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
+                      >مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی،
+                      ذخیره‌سازی، برنامه‌نویسی، وب)</a
+                    ></em
+                  >
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4
+                  data-en="Comprehensive VMware vSphere: Install, Configure, Manage"
+                  data-fa="VMware vSphere جامع: نصب، پیکربندی، مدیریت"
+                >
+                  Comprehensive VMware vSphere: Install, Configure, Manage
+                </h4>
+                <h5>2021</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://arjang.ac.ir/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
+                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
+                      >مؤسسه آموزش عالی ارژنگ</a
+                    ></em
+                  >
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4
+                  data-en="Bachelor's in Computer Networks & Internet"
+                  data-fa="کارشناسی شبکه‌های کامپیوتری و اینترنت"
+                >
+                  Bachelor's in Computer Networks & Internet
+                </h4>
+                <h5>2020 - 2022</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://iii.ac.ir/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="University of Applied Science and Technology (Iran Informatics Branch)"
+                      data-fa="دانشگاه علمی و کاربردی (انفورماتیک ایران)"
+                      >University of Applied Science and Technology (Iran
+                      Informatics Branch)</a
+                    ></em
+                  >
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4 data-en="MCSA & Network Plus" data-fa="MCSA و Network Plus">
+                  MCSA & Network Plus
+                </h4>
+                <h5>2018</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://arjang.ac.ir/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
+                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
+                      >مؤسسه آموزش عالی ارژنگ</a
+                    ></em
+                  >
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4 data-en="CCNA 200-125" data-fa="CCNA 200-125">
+                  CCNA 200-125
+                </h4>
+                <h5>2018</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://arjang.ac.ir/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
+                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
+                      >مؤسسه آموزش عالی ارژنگ</a
+                    ></em
+                  >
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4
+                  data-en="Associate Degree in Software Engineering"
+                  data-fa="کاردانی مهندسی نرم‌افزار"
+                >
+                  Associate Degree in Software Engineering
+                </h4>
+                <h5>2016 - 2018</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://shamsipour.nus.ac.ir/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Shahid Shamsipour Technical and Vocational University"
+                      data-fa="دانشگاه فنی و حرفه‌ای شهید شمس‌پور"
+                      >Shahid Shamsipour Technical and Vocational University</a
+                    ></em
+                  >
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4 data-en="Network Plus" data-fa="Network Plus">
+                  Network Plus
+                </h4>
+                <h5>2013</h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://arjang.ac.ir/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
+                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
+                      >مؤسسه آموزش عالی ارژنگ</a
+                    ></em
+                  >
+                </p>
+              </div>
+            </div>
+            <!-- End Education Column -->
+
+            <!-- ===============================================
+            ==================== EXPERIENCE COLUMN ==============
+            =============================================== -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <h3
+                class="resume-title"
+                data-en="Professional Experience"
+                data-fa="تجربه کاری"
+              >
+                Professional Experience
+              </h3>
+
+              <div class="resume-item">
+                <h4
+                  data-en="DevOps & Network Infrastructure Specialist"
+                  data-fa="متخصص DevOps و زیرساخت شبکه"
+                >
+                  DevOps & Network Infrastructure Specialist
+                </h4>
+                <h5 data-en="Sep 2018 – Present" data-fa="شهریور ۱۳۹۷ – تاکنون">
+                  Sep 2018 – Present
+                </h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://newshadrinks.com"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="Newsha Drinks Co."
+                      data-fa=" شرکت کشت و صنعت نیوشاداریان "
+                      >Newsha Drinks Co.</a
+                    ></em
+                  >
+                </p>
+                <ul>
+                  <li
+                    data-en="Designed and implemented virtualization infrastructure for all enterprise servers"
+                    data-fa="طراحی و پیاده‌سازی زیرساخت مجازی‌سازی برای تمام سرورهای سازمانی"
+                  >
+                    Designed and implemented virtualization infrastructure for
+                    all enterprise servers
+                  </li>
+                  <li
+                    data-en="Deployed SQL Server cluster with High Availability and Redgate monitoring"
+                    data-fa="استقرار خوشه SQL Server با قابلیت دسترسی بالا و نظارت Redgate"
+                  >
+                    Deployed SQL Server cluster with High Availability and
+                    Redgate monitoring
+                  </li>
+                  <li
+                    data-en="Implemented core Windows infrastructure services: Active Directory, DNS, NTP, DFS, WDS, WSUS"
+                    data-fa="پیاده‌سازی سرویس‌های اصلی زیرساخت Windows: Active Directory، DNS، NTP، DFS، WDS، WSUS"
+                  >
+                    Implemented core Windows infrastructure services: Active
+                    Directory, DNS, NTP, DFS, WDS, WSUS
+                  </li>
+                  <li
+                    data-en="Deployed Nginx Proxy Manager for advanced HTTP/HTTPS traffic management and load balancing"
+                    data-fa="استقرار Nginx Proxy Manager برای مدیریت پیشرفته ترافیک HTTP/HTTPS و تعادل بار"
+                  >
+                    Deployed Nginx Proxy Manager for advanced HTTP/HTTPS traffic
+                    management and load balancing
+                  </li>
+                  <li
+                    data-en="Redesigned LAN structure with segmented VLANs and removed direct static IPs"
+                    data-fa="طراحی مجدد ساختار LAN با VLAN های مجزا و حذف IP های استاتیک مستقیم"
+                  >
+                    Redesigned LAN structure with segmented VLANs and removed
+                    direct static IPs
+                  </li>
+                  <li
+                    data-en="Configured advanced Cisco switching (STP, VTP, VLAN, Port-Channel, Port Security)"
+                    data-fa="پیکربندی سوئیچ‌ینگ پیشرفته سیسکو (STP، VTP، VLAN، Port-Channel، Port Security)"
+                  >
+                    Configured advanced Cisco switching (STP, VTP, VLAN,
+                    Port-Channel, Port Security)
+                  </li>
+                  <li
+                    data-en="Implemented secure Site-to-Site VPN tunnels between Tehran offices"
+                    data-fa="پیاده‌سازی تونل‌های VPN امن Site-to-Site بین دفاتر تهران"
+                  >
+                    Implemented secure Site-to-Site VPN tunnels between Tehran
+                    offices
+                  </li>
+                  <li
+                    data-en="Optimized Internet performance with MikroTik firewall and security rules"
+                    data-fa="بهینه‌سازی عملکرد اینترنت با فایروال MikroTik و قوانین امنیتی"
+                  >
+                    Optimized Internet performance with MikroTik firewall and
+                    security rules
+                  </li>
+                  <li
+                    data-en="Installed Kaspersky Endpoint Security with centralized management console"
+                    data-fa="نصب Kaspersky Endpoint Security با کنسول مدیریت متمرکز"
+                  >
+                    Installed Kaspersky Endpoint Security with centralized
+                    management console
+                  </li>
+                  <li
+                    data-en="Upgraded Jira from version 6 to 9 with full documentation"
+                    data-fa="ارتقاء Jira از نسخه 6 به 9 با مستندات کامل"
+                  >
+                    Upgraded Jira from version 6 to 8 with full documentation
+                  </li>
+                  <li
+                    data-en="Upgraded HQ infrastructure with fiber backbone and improved datacenter"
+                    data-fa="ارتقاء زیرساخت مرکز اصلی با ستون فقرات فیبرنوری و بهبود مرکز داده"
+                  >
+                    Upgraded HQ infrastructure with fiber backbone and improved
+                    datacenter
+                  </li>
+                  <li
+                    data-en="Integrated CCTV surveillance system with stable infrastructure"
+                    data-fa="یکپارچه‌سازی سیستم نظارت CCTV با زیرساخت پایدار"
+                  >
+                    Integrated CCTV surveillance system with stable
+                    infrastructure
+                  </li>
+                  <li
+                    data-en="Enhanced VoIP infrastructure for reliable internal telephony"
+                    data-fa="بهبود زیرساخت VoIP برای تلفن داخلی قابل اعتماد"
+                  >
+                    Enhanced VoIP infrastructure for reliable internal telephony
+                  </li>
+                  <li
+                    data-en="Implemented Zabbix with Telegram API alerts"
+                    data-fa="پیاده‌سازی Zabbix با هشدارهای Telegram API"
+                  >
+                    Implemented Zabbix with Telegram API alerts
+                  </li>
+                  <li
+                    data-en="Integrated Zabbix with Grafana for real-time dashboards"
+                    data-fa="یکپارچه‌سازی Zabbix با Grafana برای داشبوردهای زمان واقعی"
+                  >
+                    Integrated Zabbix with Grafana for real-time dashboards
+                  </li>
+                  <li
+                    data-en="Deployed Cacti for graphical network traffic monitoring"
+                    data-fa="استقرار Cacti برای نظارت گرافیکی ترافیک شبکه"
+                  >
+                    Deployed Cacti for graphical network traffic monitoring
+                  </li>
+                  <li
+                    data-en="Implemented NAS and automated backups with Veeam Backup"
+                    data-fa="پیاده‌سازی NAS و پشتیبان‌گیری خودکار با Veeam Backup"
+                  >
+                    Implemented NAS and automated backups with Veeam Backup
+                  </li>
+                  <li
+                    data-en="Created technical diagrams, documentation, and asset inventory"
+                    data-fa="ایجاد نمودارهای فنی، مستندات و فهرست دارایی‌ها"
+                  >
+                    Created technical diagrams, documentation, and asset
+                    inventory
+                  </li>
+                  <li
+                    data-en="Configured CDN for improved website performance and security"
+                    data-fa="پیکربندی CDN برای بهبود عملکرد و امنیت وب‌سایت"
+                  >
+                    Configured CDN for improved website performance and security
+                  </li>
+                  <li
+                    data-en="Configured ArvanCloud with CDN, caching, and access security policies"
+                    data-fa="پیکربندی ArvanCloud با CDN، کش و سیاست‌های امنیت دسترسی"
+                  >
+                    Configured ArvanCloud with CDN, caching, and access security
+                    policies
+                  </li>
+                  <li
+                    data-en="Deployed MongoDB for internal NoSQL services"
+                    data-fa="استقرار MongoDB برای سرویس‌های داخلی NoSQL"
+                  >
+                    Deployed MongoDB for internal NoSQL services
+                  </li>
+                  <li
+                    data-en="Implemented ABS NG for user behavior analytics and reporting"
+                    data-fa="پیاده‌سازی ABS NG برای تحلیل رفتار کاربر و گزارش‌گیری"
+                  >
+                    Implemented ABS NG for user behavior analytics and reporting
+                  </li>
+                  <li
+                    data-en="Configured Xray for traffic control, tunneling, and bypassing restrictions"
+                    data-fa="پیکربندی Xray برای کنترل ترافیک، تونل‌زنی و دور زدن محدودیت‌ها"
+                  >
+                    Configured Xray for traffic control, tunneling, and
+                    bypassing restrictions
+                  </li>
+                  <li
+                    data-en="Deployed Docker for isolated environments and faster service delivery"
+                    data-fa="استقرار Docker برای محیط‌های مجزا و تحویل سریع‌تر سرویس"
+                  >
+                    Deployed Docker for isolated environments and faster service
+                    delivery
+                  </li>
+                  <li
+                    data-en="Configured Apache Maven for Java project build automation"
+                    data-fa="پیکربندی Apache Maven برای اتوماسیون بیلد پروژه‌های Java"
+                  >
+                    Configured Apache Maven for Java project build automation
+                  </li>
+                  <li
+                    data-en="Installed n8n for workflow automation"
+                    data-fa="نصب n8n برای اتوماسیون گردش کار"
+                  >
+                    Installed n8n for workflow automation
+                  </li>
+                  <li
+                    data-en="Developed Bash scripts for automation and server management"
+                    data-fa="توسعه اسکریپت‌های Bash برای اتوماسیون و مدیریت سرور"
+                  >
+                    Developed Bash scripts for automation and server management
+                  </li>
+                  <li
+                    data-en="Migrated Windows web servers to Linux for performance and cost optimization"
+                    data-fa="مهاجرت وب‌سرورهای Windows به Linux برای بهینه‌سازی عملکرد و هزینه"
+                  >
+                    Migrated Windows web servers to Linux for performance and
+                    cost optimization
+                  </li>
+                  <li
+                    data-en="Configured load balancing across 5 Internet connections for stability"
+                    data-fa="پیکربندی تعادل بار بین 5 اتصال اینترنت برای پایداری"
+                  >
+                    Configured load balancing across 5 Internet connections for
+                    stability
+                  </li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4 data-en="Network Administrator" data-fa="ادمین شبکه">
+                  Network Administrator
+                </h4>
+                <h5
+                  data-en="Jul 2017 – Aug 2018"
+                  data-fa="تیر ۱۳۹۶ – مرداد ۱۳۹۷"
+                >
+                  Jul 2017 – Aug 2018
+                </h5>
+                <p>
+                  <em
+                    ><a
+                      href="https://uast48ac.ir/fa/"
+                      target="_blank"
+                      rel="noopener"
+                      data-en="University of Applied Science & Technology – Culture & Arts Unit 48"
+                      data-fa="دانشگاه علمی و کاربردی – واحد فرهنگ و هنر ۴۸"
+                      >University of Applied Science & Technology – Culture &
+                      Arts Unit 48</a
+                    ></em
+                  >
+                </p>
+                <ul>
+                  <li
+                    data-en="Installed, configured, and maintained network equipment (switches, routers, servers)"
+                    data-fa="نصب، پیکربندی و نگهداری تجهیزات شبکه (سوئیچ، روتر، سرور)"
+                  >
+                    Installed, configured, and maintained network equipment
+                    (switches, routers, servers)
+                  </li>
+                  <li
+                    data-en="Performed passive networking tasks including cabling, termination, and rack installation"
+                    data-fa="انجام وظایف شبکه‌سازی غیرفعال شامل کابل‌کشی، ترمینیشن و نصب رک"
+                  >
+                    Performed passive networking tasks including cabling,
+                    termination, and rack installation
+                  </li>
+                  <li
+                    data-en="Troubleshot LAN/WAN/Internet connectivity issues"
+                    data-fa="عیب‌یابی مشکلات اتصال LAN/WAN/اینترنت"
+                  >
+                    Troubleshot LAN/WAN/Internet connectivity issues
+                  </li>
+                  <li
+                    data-en="Installed software and hardware for end-users"
+                    data-fa="نصب نرم‌افزار و سخت‌افزار برای کاربران نهایی"
+                  >
+                    Installed software and hardware for end-users
+                  </li>
+                  <li
+                    data-en="Implemented CCTV surveillance systems"
+                    data-fa="پیاده‌سازی سیستم‌های نظارت CCTV"
+                  >
+                    Implemented CCTV surveillance systems
+                  </li>
+                  <li
+                    data-en="Applied security policies and kept systems updated"
+                    data-fa="اعمال سیاست‌های امنیتی و به‌روزرسانی سیستم‌ها"
+                  >
+                    Applied security policies and kept systems updated
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End Experience Column -->
+          </div>
+          <!-- End Resume Row -->
+        </div>
+        <!-- End Resume Container -->
+      </section>
+      <!-- /Resume Section -->
+
+      <!-- ===============================================
+      ==================== ARTICLES SECTION ===============
+      =============================================== -->
+      <section id="portfolio" class="portfolio section light-background">
+        <!-- ===============================================
+        ==================== SECTION TITLE ==================
+        =============================================== -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2 data-en="Articles" data-fa="مقالات">Articles</h2>
+          <p
+            data-en="A collection of my technical articles and insights on network infrastructure, system administration, and DevOps solutions."
+            data-fa="مجموعه‌ای از مقالات فنی و بینش‌های من در زمینه زیرساخت شبکه، مدیریت سیستم و راهکارهای DevOps."
+          >
+            A collection of my technical articles and insights on network
+            infrastructure, system administration, and DevOps solutions.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- ===============================================
+        ==================== ARTICLES CONTAINER ==============
+        =============================================== -->
+        <div class="container">
+          <div
+            class="isotope-layout"
+            data-default-filter="*"
+            data-layout="masonry"
+            data-sort="original-order"
+          >
+            <!-- ===============================================
+            ==================== FILTER BUTTONS =================
+            =============================================== -->
+            <ul
+              class="portfolio-filters isotope-filters"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <!-- All Articles Filter -->
+              <li
+                data-filter="*"
+                class="filter-active"
+                data-en="All Articles"
+                data-fa="همه مقالات"
+              >
+                All Articles
+              </li>
+
+              <!-- Microsoft Articles Filter -->
+              <li
+                data-filter=".filter-microsoft"
+                data-en="Microsoft"
+                data-fa="مایکروسافت"
+              >
+                Microsoft
+              </li>
+
+              <!-- Linux Articles Filter -->
+              <li
+                data-filter=".filter-linux"
+                data-en="Linux Articles"
+                data-fa="لینوکس"
+              >
+                Linux Articles
+              </li>
+
+              <!-- MikroTik Articles Filter -->
+              <li
+                data-filter=".filter-mikrotik"
+                data-en="MikroTik"
+                data-fa="میکروتیک"
+              >
+                MikroTik
+              </li>
+
+              <!-- VMware Articles Filter -->
+              <li
+                data-filter=".filter-vmware"
+                data-en="Vmware"
+                data-fa="مجازی‌سازی"
+              >
+                Vmware
+              </li>
+
+              <!-- Other Articles Filter -->
+              <li
+                data-filter=".filter-others"
+                data-en="Other Articles"
+                data-fa="سایر مقالات"
+              >
+                Other Articles
+              </li>
+            </ul>
+            <!-- End Filter Buttons -->
+
+            <!-- ===============================================
+            ==================== ARTICLES GRID ==================
+            =============================================== -->
+            <div
+              class="row gy-4 isotope-container"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <!-- ===============================================
+              ==================== ARTICLE 1: NGINX ===============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-linux"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/linux-1.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Nginx Installation & Configuration Ubuntu"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4
+                      data-en="Nginx Installation & Configuration Ubuntu"
+                      data-fa="نصب و پیکربندی Nginx در اوبونتو"
+                    >
+                      نصب و پیکربندی Nginx در اوبونتو
+                    </h4>
+                    <p
+                      data-en="Complete guide to Nginx web server setup"
+                      data-fa="راهنمای کامل راه‌اندازی وب‌سرور Nginx"
+                    >
+                      راهنمای کامل راه‌اندازی وب‌سرور Nginx
+                    </p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/linux-1.png"
+                        title="Nginx Installation & Configuration Ubuntu"
+                        data-gallery="portfolio-gallery-nginx"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="articles/nginx-installation-configuration-ubuntu.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 1 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 2: WINDOWS CMD ==========
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-microsoft"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/windows-1.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Windows CMD Network Commands"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4
+                      data-en="Windows CMD Network Commands"
+                      data-fa="دستورات شبکه Windows CMD"
+                    >
+                      Windows CMD Network Commands
+                    </h4>
+                    <p
+                      data-en="Professional network commands for system administrators"
+                      data-fa="دستورات حرفه‌ای شبکه برای مدیران سیستم"
+                    >
+                      Professional network commands for system administrators
+                    </p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/windows-1.png"
+                        title="Windows CMD Network Commands"
+                        data-gallery="portfolio-gallery-windows"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="articles/windows-cmd-common-network-commands.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 2 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 3: MIKROTIK ============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mikrotik"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/mikrotik-1.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Website Blocking on MikroTik"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4
+                      data-en="Website Blocking on MikroTik"
+                      data-fa="بلاک کردن سایت در میکروتیک"
+                    >
+                      Website Blocking on MikroTik
+                    </h4>
+                    <p
+                      data-en="Complete guide to blocking websites and domains"
+                      data-fa="راهنمای کامل بلاک کردن سایت‌ها و دامنه‌ها"
+                    >
+                      Complete guide to blocking websites and domains
+                    </p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/mikrotik-1.png"
+                        title="Website Blocking on MikroTik"
+                        data-gallery="portfolio-gallery-mikrotik"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="articles/mikrotik-block-website.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 3 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 4: MIKROTIK ============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mikrotik"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/mikrotik-2.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Linux Server Administration"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Linux Server Administration</h4>
+                    <p>Ubuntu and CentOS server management</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/mikrotik-2.png"
+                        title="Linux Server Administration"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 4 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 5: LINUX ===============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-linux"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/linux-2.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="VPN Tunnel Implementation"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>VPN Tunnel Implementation</h4>
+                    <p>Site-to-site secure connections</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/linux-2.png"
+                        title="App 2"
+                        data-gallery="portfolio-gallery-app"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 5 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 6: MICROSOFT ===========
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-microsoft"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/windows-2.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="SQL Server Clustering"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>SQL Server Clustering</h4>
+                    <p>High availability database setup</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/windows-2.png"
+                        title="Product 2"
+                        data-gallery="portfolio-gallery-product"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 6 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 7: MICROSOFT ===========
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-microsoft"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/windows-3.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="microsoft vSphere Deployment"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>VMware vSphere Deployment</h4>
+                    <p>Virtualization infrastructure design</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/windows-3.png"
+                        title="microsoft vSphere Deployment"
+                        data-gallery="portfolio-gallery-microsoft"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 7 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 8: MIKROTIK ============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mikrotik"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/mikrotik-3.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Monitoring with Zabbix"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Monitoring with Zabbix</h4>
+                    <p>Network and system monitoring setup</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/mikrotik-3.png"
+                        title="Monitoring with Zabbix"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 8 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 9: LINUX ===============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-linux"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/linux-3.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Docker Containerization"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Docker Containerization</h4>
+                    <p>Application deployment and management</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/linux-3.png"
+                        title="App 3"
+                        data-gallery="portfolio-gallery-app"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 9 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 10: LINUX ==============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-linux"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/linux-4.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Backup & Recovery System"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Backup & Recovery System</h4>
+                    <p>Veeam backup implementation</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/linux-4.png"
+                        title="Backup & Recovery System"
+                        data-gallery="portfolio-gallery-linux"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 10 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 11: OTHERS =============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-others"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/other-2.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Load Balancing Configuration"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Load Balancing Configuration</h4>
+                    <p>Multi-connection internet optimization</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/other-2.png"
+                        title="Branding 2"
+                        data-gallery="portfolio-gallery-branding"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 11 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 12: VMWARE ==============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-vmware"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/vmware-1.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="VMware vSphere Management"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>VMware vSphere Management</h4>
+                    <p>Virtualization platform administration</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/vmware-1.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 12 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 13: VMWARE ==============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-vmware"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/vmware-2.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Network Monitoring Setup"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Network Monitoring Setup</h4>
+                    <p>Advanced monitoring and alerting system</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/vmware-2.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 13 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 14: LINUX ==============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-linux"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/linux-5.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Database Clustering"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Database Clustering</h4>
+                    <p>High availability database configuration</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/linux-5.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 14 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 15: OTHERS =============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-others"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/other-1.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Cloud Infrastructure"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Cloud Infrastructure</h4>
+                    <p>Multi-cloud deployment and management</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/other-1.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 15 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 16: OPENVPN MIKROTIK =====
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mikrotik"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/mikrotik-4.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="OpenVPN MikroTik Setup"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4
+                      data-en="OpenVPN MikroTik Setup"
+                      data-fa="راه‌اندازی OpenVPN میکروتیک"
+                    >
+                      راه‌اندازی OpenVPN میکروتیک
+                    </h4>
+                    <p
+                      data-en="Complete guide to OpenVPN setup on RouterOS v7"
+                      data-fa="راهنمای کامل راه‌اندازی OpenVPN در RouterOS v7"
+                    >
+                      راهنمای کامل راه‌اندازی OpenVPN در RouterOS v7
+                    </p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/mikrotik-4.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="articles/mikrotik-openvpn-setup-v7.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 16 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 17: MIKROTIK BLOCKING ===
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mikrotik"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/mikrotik-5.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Website Blocking on MikroTik"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4
+                      data-en="Website Blocking on MikroTik"
+                      data-fa="بلاک کردن سایت در میکروتیک"
+                    >
+                      Website Blocking on MikroTik
+                    </h4>
+                    <p
+                      data-en="Complete guide to blocking websites and domains"
+                      data-fa="راهنمای کامل بلاک کردن سایت‌ها و دامنه‌ها"
+                    >
+                      Complete guide to blocking websites and domains
+                    </p>
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/mikrotik-5.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="articles/mikrotik-block-website.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 17 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 18: OTHERS =============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-others"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/other-3.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Automation Solutions"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Automation Solutions</h4>
+                    <p>Workflow automation and scripting</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/other-3.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 17 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 18: MICROSOFT ===========
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-microsoft"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/windows-4.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Windows Server Management"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Windows Server Management</h4>
+                    <p>Active Directory and enterprise services</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/windows-4.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-microsoft"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 18 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 19: MIKROTIK ============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mikrotik"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/mikrotik-5.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Router Configuration"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Router Configuration</h4>
+                    <p>Advanced routing and traffic management</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/mikrotik-5.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-mikrotik"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 19 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 20: VMWARE ==============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-vmware"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/vmware-3.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Virtualization Infrastructure"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Virtualization Infrastructure</h4>
+                    <p>Enterprise virtualization solutions</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/vmware-3.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-vmware"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 20 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 21: LINUX ==============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-linux"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/linux-6.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Linux Administration"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Linux Administration</h4>
+                    <p>Server management and optimization</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/linux-6.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-linux"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 21 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 22: MICROSOFT ===========
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-microsoft"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/windows-5.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Enterprise Services"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Enterprise Services</h4>
+                    <p>DNS, DFS, WSUS and enterprise solutions</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/windows-5.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-microsoft"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 22 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 23: MIKROTIK ============
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mikrotik"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/mikrotik-6.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="Network Optimization"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>Network Optimization</h4>
+                    <p>Performance tuning and traffic shaping</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/mikrotik-6.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-mikrotik"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 23 -->
+
+              <!-- ===============================================
+              ==================== ARTICLE 24: MICROSOFT ===========
+              =============================================== -->
+              <div
+                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-microsoft"
+              >
+                <div class="portfolio-content h-100">
+                  <!-- Article Thumbnail -->
+                  <img
+                    src="assets/img/portfolio/windows-6.png"
+                    loading="lazy"
+                    class="img-fluid"
+                    alt="System Integration"
+                  />
+
+                  <!-- Article Info Overlay -->
+                  <div class="portfolio-info">
+                    <h4>System Integration</h4>
+                    <p>Enterprise system integration and migration</p>
+
+                    <!-- Portfolio Links Container -->
+                    <div class="portfolio-links">
+                      <!-- Preview Link -->
+                      <a
+                        href="assets/img/portfolio/windows-6.png"
+                        title="Portfolio Item"
+                        data-gallery="portfolio-gallery-microsoft"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+
+                      <!-- Details Link -->
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Article 24 -->
+              <!-- End Portfolio Item -->
+            </div>
+            <!-- End Articles Grid -->
+          </div>
+          <!-- End Articles Container -->
+        </div>
+        <!-- End Main Container -->
+      </section>
+      <!-- End Articles Section -->
+
+      <!-- ===============================================
+      ==================== SERVICES SECTION ===============
+      =============================================== -->
+      <section id="services" class="services section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2 data-en="Services" data-fa="خدمات">Services</h2>
+          <p
+            data-en="Professional IT services including network design, system administration, infrastructure management, and technical consulting."
+            data-fa="خدمات حرفه‌ای IT شامل طراحی شبکه، مدیریت سیستم، مدیریت زیرساخت و مشاوره فنی."
+          >
+            Professional IT services including network design, system
+            administration, infrastructure management, and technical consulting.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- ===============================================
+        ==================== SERVICES CONTENT ================
+        =============================================== -->
+        <div class="container">
+          <div class="row gy-4">
+            <!-- Service 1: Network Design -->
+            <div
+              class="col-lg-4 col-md-6 service-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+              <div>
+                <h4 class="title">
+                  <a href="#services" class="stretched-link"
+                    ><span
+                      data-en="Network Design & Implementation"
+                      data-fa="طراحی و پیاده‌سازی شبکه"
+                      >Network Design & Implementation</span
+                    ></a
+                  >
+                </h4>
+                <p
+                  class="description"
+                  data-en="Complete network infrastructure design, implementation, and optimization using Cisco and MikroTik equipment for enterprise environments."
+                  data-fa="طراحی کامل زیرساخت شبکه، پیاده‌سازی و بهینه‌سازی با استفاده از تجهیزات سیسکو و میکروتیک برای محیط‌های سازمانی."
+                >
+                  Complete network infrastructure design, implementation, and
+                  optimization using Cisco and MikroTik equipment for enterprise
+                  environments.
+                </p>
+              </div>
+            </div>
+            <!-- End Service 1 -->
+
+            <!-- Service 2: System Administration -->
+            <div
+              class="col-lg-4 col-md-6 service-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="bi bi-server"></i>
+              </div>
+              <div>
+                <h4 class="title">
+                  <a href="#services" class="stretched-link"
+                    ><span
+                      data-en="System Administration"
+                      data-fa="مدیریت سیستم"
+                      >System Administration</span
+                    ></a
+                  >
+                </h4>
+                <p
+                  class="description"
+                  data-en="Windows Server management, Active Directory, DNS, and Linux server administration for optimal system performance and security."
+                  data-fa="مدیریت Windows Server، Active Directory، DNS و مدیریت سرورهای لینوکس برای عملکرد بهینه و امنیت سیستم."
+                >
+                  Windows Server management, Active Directory, DNS, and Linux
+                  server administration for optimal system performance and
+                  security.
+                </p>
+              </div>
+            </div>
+            <!-- End Service 2 -->
+
+            <!-- Service 3: DevOps & Automation -->
+            <div
+              class="col-lg-4 col-md-6 service-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="bi bi-gear-wide-connected"></i>
+              </div>
+              <div>
+                <h4 class="title">
+                  <a href="#services" class="stretched-link"
+                    ><span
+                      data-en="DevOps & Automation"
+                      data-fa="دواپس و اتوماسیون"
+                      >DevOps & Automation</span
+                    ></a
+                  >
+                </h4>
+                <p
+                  class="description"
+                  data-en="Docker containerization, CI/CD pipeline setup, and automation scripts to streamline deployment and infrastructure management."
+                  data-fa="کانتینریزاسیون Docker، راه‌اندازی خط لوله CI/CD و اسکریپت‌های اتوماسیون برای تسهیل استقرار و مدیریت زیرساخت."
+                >
+                  Docker containerization, CI/CD pipeline setup, and automation
+                  scripts to streamline deployment and infrastructure
+                  management.
+                </p>
+              </div>
+            </div>
+            <!-- End Service 3 -->
+
+            <!-- Service 4: Monitoring & Security -->
+            <div
+              class="col-lg-4 col-md-6 service-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div>
+                <h4 class="title">
+                  <a href="#services" class="stretched-link"
+                    ><span
+                      data-en="Monitoring & Security"
+                      data-fa="مانیتورینگ و امنیت"
+                      >Monitoring & Security</span
+                    ></a
+                  >
+                </h4>
+                <p
+                  class="description"
+                  data-en="Comprehensive monitoring solutions with Zabbix, security implementation, and backup strategies to ensure system reliability."
+                  data-fa="راهکارهای جامع مانیتورینگ با Zabbix، پیاده‌سازی امنیت و استراتژی‌های پشتیبان‌گیری برای اطمینان از قابلیت اطمینان سیستم."
+                >
+                  Comprehensive monitoring solutions with Zabbix, security
+                  implementation, and backup strategies to ensure system
+                  reliability.
+                </p>
+              </div>
+            </div>
+            <!-- End Service 4 -->
+
+            <!-- Service 5: Virtualization Solutions -->
+            <div
+              class="col-lg-4 col-md-6 service-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="bi bi-cloud"></i>
+              </div>
+              <div>
+                <h4 class="title">
+                  <a href="#services" class="stretched-link"
+                    ><span
+                      data-en="Virtualization Solutions"
+                      data-fa="راهکارهای مجازی‌سازی"
+                      >Virtualization Solutions</span
+                    ></a
+                  >
+                </h4>
+                <p
+                  class="description"
+                  data-en="VMware vSphere deployment, KVM virtualization, and cloud migration services for scalable and efficient infrastructure."
+                  data-fa="استقرار VMware vSphere، مجازی‌سازی KVM و خدمات مهاجرت به ابر برای زیرساخت مقیاس‌پذیر و کارآمد."
+                >
+                  VMware vSphere deployment, KVM virtualization, and cloud
+                  migration services for scalable and efficient infrastructure.
+                </p>
+              </div>
+            </div>
+            <!-- End Service 5 -->
+
+            <!-- Service 6: Technical Consulting -->
+            <div
+              class="col-lg-4 col-md-6 service-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="bi bi-person-workspace"></i>
+              </div>
+              <div>
+                <h4 class="title">
+                  <a href="#services" class="stretched-link"
+                    ><span data-en="Technical Consulting" data-fa="مشاوره فنی"
+                      >Technical Consulting</span
+                    ></a
+                  >
+                </h4>
+                <p
+                  class="description"
+                  data-en="Expert consultation on IT infrastructure planning, technology selection, and implementation strategies for business growth."
+                  data-fa="مشاوره تخصصی در برنامه‌ریزی زیرساخت IT، انتخاب فناوری و استراتژی‌های پیاده‌سازی برای رشد کسب‌وکار."
+                >
+                  Expert consultation on IT infrastructure planning, technology
+                  selection, and implementation strategies for business growth.
+                </p>
+              </div>
+            </div>
+            <!-- End Service 6 -->
+          </div>
+          <!-- End Services Row -->
+        </div>
+        <!-- End Services Container -->
+      </section>
+      <!-- /Services Section -->
+
+      <!-- ===============================================
+      ==================== TESTIMONIALS SECTION ============
+      =============================================== -->
+      <section id="testimonials" class="testimonials section light-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2 data-en="Testimonials" data-fa="نظرات">Testimonials</h2>
+          <p
+            data-en="What clients and colleagues say about my work and professional approach."
+            data-fa="نظرات مشتریان و همکاران درباره کار و رویکرد حرفه‌ای من."
+          >
+            What clients and colleagues say about my work and professional
+            approach.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- ===============================================
+        ==================== TESTIMONIALS CONTENT =============
+        =============================================== -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <!-- Swiper Configuration -->
+          <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "breakpoints": {
+                  "320": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 40
+                  },
+                  "1200": {
+                    "slidesPerView": 3,
+                    "spaceBetween": 1
+                  }
+                }
+              }
+            </script>
+
+            <!-- Testimonials Slider -->
+            <div class="swiper-wrapper">
+              <!-- Testimonial 1 -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      data-en="Amir's expertise in network infrastructure and system
+                      administration has been invaluable to our organization.
+                      His attention to detail and problem-solving skills are
+                      exceptional."
+                      data-fa="تخصص امیر در زیرساخت شبکه و مدیریت سیستم برای سازمان ما بسیار ارزشمند بوده است. توجه دقیق او به جزئیات و مهارت‌های حل مسئله فوق‌العاده است."
+                      >Amir's expertise in network infrastructure and system
+                      administration has been invaluable to our organization.
+                      His attention to detail and problem-solving skills are
+                      exceptional.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/testimonials-1.jpg"
+                    loading="lazy"
+                    class="testimonial-img"
+                    alt="IT Director"
+                  />
+                  <h3 data-en="IT Director" data-fa="مدیر فناوری اطلاعات">
+                    IT Director
+                  </h3>
+                  <h4 data-en="Newsha Drinks Co." data-fa="شرکت نوشیدنی نوشا">
+                    Newsha Drinks Co.
+                  </h4>
+                </div>
+              </div>
+              <!-- End Testimonial 1 -->
+
+              <!-- Testimonial 2 -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      data-en="Working with Amir on our virtualization project was a
+                      great experience. His technical knowledge and ability to
+                      explain complex concepts clearly made the implementation
+                      smooth and successful."
+                      data-fa="همکاری با امیر در پروژه مجازی‌سازی تجربه فوق‌العاده‌ای بود. دانش فنی عمیق او و توانایی در توضیح مفاهیم پیچیده، پیاده‌سازی را روان و موفق کرد."
+                      >Working with Amir on our virtualization project was a
+                      great experience. His technical knowledge and ability to
+                      explain complex concepts clearly made the implementation
+                      smooth and successful.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/testimonials-2.jpg"
+                    loading="lazy"
+                    class="testimonial-img"
+                    alt="Project Manager"
+                  />
+                  <h3 data-en="Project Manager" data-fa="مدیر پروژه">
+                    Project Manager
+                  </h3>
+                  <h4 data-en="Technology Solutions" data-fa="راهکارهای فناوری">
+                    Technology Solutions
+                  </h4>
+                </div>
+              </div>
+              <!-- End Testimonial 2 -->
+
+              <!-- Testimonial 3 -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      data-en="Amir's monitoring and security implementations have
+                      significantly improved our system reliability. His
+                      proactive approach to IT infrastructure management is
+                      commendable."
+                      data-fa="پیاده‌سازی سیستم‌های نظارت و امنیت امیر، قابلیت اطمینان سیستم ما را به طور چشمگیری بهبود داده است. رویکرد پیشگیرانه او در مدیریت زیرساخت فناوری اطلاعات بسیار قابل تحسین است."
+                      >Amir's monitoring and security implementations have
+                      significantly improved our system reliability. His
+                      proactive approach to IT infrastructure management is
+                      commendable.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/testimonials-3.jpg"
+                    loading="lazy"
+                    class="testimonial-img"
+                    alt="System Administrator"
+                  />
+                  <h3 data-en="System Administrator" data-fa="مدیر سیستم">
+                    System Administrator
+                  </h3>
+                  <h4 data-en="Enterprise Client" data-fa="مشتری سازمانی">
+                    Enterprise Client
+                  </h4>
+                </div>
+              </div>
+              <!-- End Testimonial 3 -->
+
+              <!-- Testimonial 4 -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      data-en="The network optimization and load balancing solutions
+                      implemented by Amir have greatly enhanced our internet
+                      connectivity and overall system performance."
+                      data-fa="راهکارهای بهینه‌سازی شبکه و تعادل بار پیاده‌سازی شده توسط امیر، اتصال اینترنت و عملکرد کلی سیستم ما را به طور چشمگیری بهبود داده است."
+                      >The network optimization and load balancing solutions
+                      implemented by Amir have greatly enhanced our internet
+                      connectivity and overall system performance.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/testimonials-4.jpg"
+                    loading="lazy"
+                    class="testimonial-img"
+                    alt="Network Engineer"
+                  />
+                  <h3 data-en="Network Engineer" data-fa="مهندس شبکه">
+                    Network Engineer
+                  </h3>
+                  <h4 data-en="Infrastructure Team" data-fa="تیم زیرساخت">
+                    Infrastructure Team
+                  </h4>
+                </div>
+              </div>
+              <!-- End Testimonial 4 -->
+
+              <!-- Testimonial 5 -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      data-en="Amir's expertise in DevOps and automation has streamlined
+                      our deployment processes. His technical documentation and
+                      knowledge transfer are excellent."
+                      data-fa="تخصص امیر در DevOps و اتوماسیون، فرآیندهای استقرار ما را به طور قابل توجهی روان کرده است. مستندات فنی و انتقال دانش او بسیار عالی است."
+                      >Amir's expertise in DevOps and automation has streamlined
+                      our deployment processes. His technical documentation and
+                      knowledge transfer are excellent.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img
+                    src="assets/img/testimonials/testimonials-5.jpg"
+                    loading="lazy"
+                    class="testimonial-img"
+                    alt="DevOps Lead"
+                  />
+                  <h3 data-en="DevOps Lead" data-fa="سرپرست DevOps">
+                    DevOps Lead
+                  </h3>
+                  <h4 data-en="Development Team" data-fa="تیم توسعه">
+                    Development Team
+                  </h4>
+                </div>
+              </div>
+              <!-- End Testimonial 5 -->
+            </div>
+            <!-- End Testimonials Slider -->
+
+            <!-- Swiper Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- End Swiper Container -->
+        </div>
+        <!-- End Testimonials Container -->
+      </section>
+      <!-- /Testimonials Section -->
+
+      <!-- ===============================================
+      ==================== CONTACT SECTION ================
+      =============================================== -->
+      <section id="contact" class="contact section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2 data-en="Contact" data-fa="تماس">Contact</h2>
+          <p
+            data-en="Get in touch for professional IT services, network solutions, or technical consulting."
+            data-fa="برای خدمات حرفه‌ای IT، راهکارهای شبکه یا مشاوره فنی با من تماس بگیرید."
+          >
+            Get in touch for professional IT services, network solutions, or
+            technical consulting.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- ===============================================
+        ==================== CONTACT CONTENT ================
+        =============================================== -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <!-- ===============================================
+            ==================== CONTACT INFO ==================
+            =============================================== -->
+            <div class="col-lg-5">
+              <div class="info-wrap">
+                <!-- Address Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="Address" data-fa="آدرس">Address</h3>
+                    <p data-en="Tehran, Iran" data-fa="تهران، ایران">
+                      Tehran, Iran
+                    </p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <!-- Phone Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="Phone" data-fa="تلفن">Phone</h3>
+                    <p>
+                      <a
+                        href="tel:+989197276219"
+                        data-en="+98 9197276219"
+                        data-fa="09197276219"
+                        >+98 9197276219</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <!-- WhatsApp Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="350"
+                >
+                  <i class="bi bi-whatsapp flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="WhatsApp" data-fa="واتساپ">WhatsApp</h3>
+                    <p>
+                      <a
+                        href="https://wa.me/989197276219"
+                        target="_blank"
+                        rel="noopener"
+                        data-en="+98 9197276219"
+                        data-fa="09197276219"
+                        >+98 9197276219</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <!-- Telegram Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="375"
+                >
+                  <i class="bi bi-telegram flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="Telegram" data-fa="تلگرام">Telegram</h3>
+                    <p>
+                      <a
+                        href="https://t.me/Aj_mercury"
+                        target="_blank"
+                        rel="noopener"
+                        >@Aj_mercury</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <!-- Email Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="Email" data-fa="ایمیل">Email</h3>
+                    <p>
+                      <a href="mailto:jalalian.amirhossein@gmail.com"
+                        >jalalian.amirhossein@gmail.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <!-- Google Maps -->
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1145.5099796149461!2d51.40510627035861!3d35.701826831163324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e010c2bbc0853%3A0xd7ec3a4d591a3242!2sReza%20Computer%20Center!5e0!3m2!1sen!2sde!4v1756209223815!5m2!1sen!2sde"
+                    frameborder="0"
+                    style="border: 0; width: 100%; height: 300px"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="موقعیت مکانی - تهران، ایران"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+            <!-- End Contact Info -->
+
+            <!-- ===============================================
+            ==================== CONTACT FORM ==================
+            =============================================== -->
+            <div class="col-lg-7">
+              <form
+                action="forms/contact.php"
+                method="post"
+                class="php-email-form"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label
+                      for="name-field"
+                      class="pb-2"
+                      data-en="Your Name"
+                      data-fa="نام شما"
+                      >Your Name</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      id="name-field"
+                      class="form-control"
+                      required
+                      minlength="2"
+                      maxlength="50"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label
+                      for="email-field"
+                      class="pb-2"
+                      data-en="Your Email"
+                      data-fa="ایمیل شما"
+                      >Your Email</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email-field"
+                      required
+                      maxlength="100"
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label
+                      for="subject-field"
+                      class="pb-2"
+                      data-en="Subject"
+                      data-fa="موضوع"
+                      >Subject</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      id="subject-field"
+                      required
+                      minlength="5"
+                      maxlength="100"
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label
+                      for="message-field"
+                      class="pb-2"
+                      data-en="Message"
+                      data-fa="پیام"
+                      >Message</label
+                    >
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="10"
+                      id="message-field"
+                      required
+                      minlength="10"
+                      maxlength="1000"
+                    ></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <div
+                      class="loading"
+                      data-en="Loading"
+                      data-fa="در حال ارسال"
+                    >
+                      Loading
+                    </div>
+                    <div class="error-message"></div>
+                    <div
+                      class="sent-message"
+                      data-en="Your message has been sent. Thank you!"
+                      data-fa="پیام شما ارسال شد. متشکرم!"
+                    >
+                      Your message has been sent. Thank you!
+                    </div>
+
+                    <button
+                      type="submit"
+                      data-en="Send Message"
+                      data-fa="ارسال پیام"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End Contact Form -->
+          </div>
+          <!-- End Contact Row -->
+        </div>
+        <!-- End Contact Container -->
+      </section>
+      <!-- /Contact Section -->
+    </main>
+
+    <!-- ===============================================
+    ==================== FOOTER SECTION ==================
+    =============================================== -->
+    <footer id="footer" class="footer position-relative light-background">
+      <div class="container">
+        <!-- Copyright -->
+        <div class="copyright text-center">
+          <p>
+            © <span>2025</span>
+            <strong
+              class="px-1"
+              data-en="AmirHossein Jalalian"
+              data-fa="امیرحسین جلالیان"
+              >AmirHossein Jalalian</strong
+            >
+            <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است"
+              >All Rights Reserved</span
+            >
+          </p>
+        </div>
+        <!-- End Copyright -->
+      </div>
+      <!-- End Footer Container -->
+    </footer>
+    <!-- End Footer Section -->
+
+    <!-- ===============================================
+    ==================== SCROLL TO TOP ===================
+    =============================================== -->
+    <a
+      href="#hero"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Scroll to top"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- ===============================================
+    PAGE PRELOADER
+    =============================================== -->
+    <div id="preloader"></div>
+
+    <!-- ===============================================
+    JAVASCRIPT LIBRARIES & SCRIPTS
+    =============================================== -->
+
+    <!-- Bootstrap JavaScript Bundle -->
+    <script
+      src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+
+    <!-- PHP Email Form Validation -->
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+
+    <!-- AOS Animation Library -->
+    <script src="assets/vendor/aos/aos.js" defer></script>
+
+    <!-- Typed.js Text Animation -->
+    <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+
+    <!-- PureCounter Counter Animation -->
+    <script
+      src="assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+
+    <!-- Waypoints Scroll Triggers -->
+    <script
+      src="assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
+
+    <!-- GLightbox Gallery -->
+    <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+
+    <!-- ImagesLoaded Plugin -->
+    <script
+      src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+
+    <!-- Isotope Layout Plugin -->
+    <script
+      src="assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
+
+    <!-- Swiper Slider -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+
+    <!-- ===============================================
+    CUSTOM JAVASCRIPT MODULES
+    =============================================== -->
+
+    <!-- Main Application JavaScript -->
+    <script src="assets/js/main.js?v=999" defer></script>
+
+    <!-- Internationalization (i18n) Support -->
+    <script src="assets/js/i18n.js?v=999" defer></script>
+
+    <!-- ===============================================
+    SERVICE WORKER REGISTRATION
+    =============================================== -->
+
+    <script>
+      // ===============================================
+      // PERFORMANCE OPTIMIZATION & SERVICE WORKER
+      // ===============================================
+
+      // Preload critical resources for better performance
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(() => {
+          // Preload images that will be needed soon
+          const criticalImages = [
+            "assets/img/my-profile-img.jpg",
+            "assets/img/logo.png",
+          ];
+          criticalImages.forEach((src) => {
+            const link = document.createElement("link");
+            link.rel = "preload";
+            link.as = "image";
+            link.href = src;
+            document.head.appendChild(link);
+          });
+        });
+      }
+
+      // Optimize scroll performance
+      let ticking = false;
+      function updateScroll() {
+        // Scroll-based animations
+        ticking = false;
+      }
+
+      function requestTick() {
+        if (!ticking) {
+          requestAnimationFrame(updateScroll);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener("scroll", requestTick, { passive: true });
+    </script>
+
+    <script>
+      // ===============================================
+      // SERVICE WORKER REGISTRATION FOR PWA
+      // ===============================================
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("sw.js")
+            .then(function (registration) {
+              // Service Worker registered successfully
+              console.log("PWA Service Worker registered");
+            })
+            .catch(function (error) {
+              // Service Worker registration failed silently
+              console.warn("PWA Service Worker registration failed:", error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<!-- ===============================================
+END OF MEET AJ PORTFOLIO HTML DOCUMENT
+=============================================== -->

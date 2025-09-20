@@ -1,0 +1,18 @@
+===============================================
+BOOTSTRAP CSS FILES - README
+===============================================
+
+This directory contains Bootstrap CSS framework files.
+
+Files included:
+- bootstrap.css: Main Bootstrap stylesheet
+- bootstrap.min.css: Minified version
+- bootstrap.rtl.css: RTL (Right-to-Left) support
+- bootstrap-grid.css: Grid system only
+- bootstrap-utilities.css: Utility classes
+- bootstrap-reboot.css: CSS reset
+
+Note: These are vendor files from Bootstrap 5.3.3
+Do not modify directly - use custom CSS for overrides.
+
+===============================================

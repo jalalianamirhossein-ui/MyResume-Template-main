@@ -1,0 +1,761 @@
+/**
+ * ===============================================
+ * MEET AJ PORTFOLIO - RTL SUPPORT
+ * ===============================================
+ * 
+ * Right-to-Left (RTL) styles for Persian/Farsi language support
+ * Overrides main styles to provide proper RTL layout and typography
+ * 
+ * Features:
+ * - Persian font family integration
+ * - RTL text alignment
+ * - Proper icon positioning
+ * - Mobile-responsive RTL layout
+ * - Form and navigation RTL support
+ * 
+ * ===============================================
+ */
+
+/* Persian Fonts for RTL */
+html[dir="rtl"] {
+  font-family: var(--persian-font) !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* General RTL text alignment */
+html[dir="rtl"] body,
+html[dir="rtl"] p,
+html[dir="rtl"] div,
+html[dir="rtl"] span,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* RTL for main content */
+html[dir="rtl"] .main {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .main p,
+html[dir="rtl"] .main div,
+html[dir="rtl"] .main span {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* RTL for Blocking Article */
+html[dir="rtl"] .article-blocking .intro-content,
+html[dir="rtl"] .article-blocking .methods-overview,
+html[dir="rtl"] .article-blocking .implementation-intro,
+html[dir="rtl"] .article-blocking .prerequisites-box,
+html[dir="rtl"] .article-blocking .method-card,
+html[dir="rtl"] .article-blocking .method-tips,
+html[dir="rtl"] .article-blocking .method-pros-cons,
+html[dir="rtl"] .article-blocking .comparison-table {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .article-blocking .method-row {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .article-blocking .intro-highlight,
+html[dir="rtl"] .article-blocking .prerequisites-box {
+  border-left: none !important;
+  border-right: 6px solid #d04338 !important;
+}
+
+html[dir="rtl"] .article-blocking .implementation-intro p {
+  border-left: none !important;
+  border-right: 4px solid #3388a5 !important;
+}
+
+html[dir="rtl"] .article-blocking .pros {
+  border-left: none !important;
+  border-right: 4px solid #3388a5 !important;
+}
+
+html[dir="rtl"] .article-blocking .cons {
+  border-left: none !important;
+  border-right: 4px solid #d04338 !important;
+}
+
+html[dir="rtl"] .article-blocking .author-bio .author-card {
+  border-left: none !important;
+  border-right: 6px solid #d04338 !important;
+}
+
+html[dir="rtl"] .article-blocking .code-block {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+html[dir="rtl"] .article-blocking .code-block pre,
+html[dir="rtl"] .article-blocking .code-block code {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* RTL Support for OpenVPN Article */
+html[dir="rtl"] .article-openvpn .intro-content,
+html[dir="rtl"] .article-openvpn .methods-overview,
+html[dir="rtl"] .article-openvpn .implementation-intro,
+html[dir="rtl"] .article-openvpn .prerequisites-box,
+html[dir="rtl"] .article-openvpn .method-card,
+html[dir="rtl"] .article-openvpn .method-tips,
+html[dir="rtl"] .article-openvpn .method-pros-cons,
+html[dir="rtl"] .article-openvpn .comparison-table {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .article-openvpn .intro-highlight,
+html[dir="rtl"] .article-openvpn .prerequisites-box {
+  border-left: none !important;
+  border-right: 6px solid #ff8d19 !important;
+}
+
+html[dir="rtl"] .article-openvpn .implementation-intro p {
+  border-left: none !important;
+  border-right: 4px solid #0c3a53 !important;
+}
+
+html[dir="rtl"] .article-openvpn .pros {
+  border-left: none !important;
+  border-right: 4px solid #0c3a53 !important;
+}
+
+html[dir="rtl"] .article-openvpn .cons {
+  border-left: none !important;
+  border-right: 4px solid #ff8d19 !important;
+}
+
+html[dir="rtl"] .article-openvpn .author-bio .author-card {
+  border-left: none !important;
+  border-right: 6px solid #ff8d19 !important;
+}
+
+html[dir="rtl"] .article-openvpn .code-block {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+html[dir="rtl"] .article-openvpn .code-block pre,
+html[dir="rtl"] .article-openvpn .code-block code {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* RTL for Copy Button */
+html[dir="rtl"] .copy-btn {
+  right: auto !important;
+  left: 12px !important;
+}
+
+/* RTL for Article Section Hover */
+html[dir="rtl"] .article-section h2:hover {
+  transform: translateX(-10px) !important; /* Move left instead of right */
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .navmenu a {
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .hero h2 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 700;
+}
+
+html[dir="rtl"] .section-title h2 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+  text-align: right;
+}
+
+html[dir="rtl"] .about .content h2 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .resume .resume-title {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .services .service-item h4 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .testimonials .testimonial-item h3,
+html[dir="rtl"] .testimonials .testimonial-item h4 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+  text-align: center;
+}
+
+html[dir="rtl"] .contact .info-item h3 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .contact .info-item i {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+html[dir="rtl"] .services .service-item .icon {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .services .service-item .title {
+  font-family: var(--persian-heading-font) !important;
+  text-align: right;
+}
+
+html[dir="rtl"] .services .service-item .description {
+  font-family: var(--persian-font) !important;
+  text-align: right;
+}
+
+html[dir="rtl"] .contact .info-wrap {
+  text-align: right;
+}
+
+html[dir="rtl"] .contact .info-item h3 {
+  text-align: right;
+}
+
+html[dir="rtl"] .contact .info-item p {
+  text-align: right;
+}
+
+html[dir="rtl"] .contact .php-email-form input,
+html[dir="rtl"] .contact .php-email-form textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] .contact .php-email-form button {
+  font-family: var(--persian-font) !important;
+  font-weight: 500;
+}
+
+html[dir="rtl"] .footer .copyright {
+  font-family: var(--persian-font) !important;
+  text-align: center !important; /* Center align footer copyright in RTL */
+}
+
+/* RTL Footer Center Alignment */
+html[dir="rtl"] .footer {
+  text-align: center !important; /* Center align entire footer in RTL */
+}
+
+html[dir="rtl"] .footer .copyright p {
+  text-align: center !important; /* Center align copyright text in RTL */
+}
+
+html[dir="rtl"] .footer .credits {
+  text-align: center !important; /* Center align credits in RTL */
+}
+
+/* General RTL improvements */
+html[dir="rtl"] .section-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .section-title p {
+  font-family: var(--persian-font) !important;
+  text-align: right;
+  line-height: 1.8;
+}
+
+html[dir="rtl"] .about .content p {
+  font-family: var(--persian-font) !important;
+  text-align: right;
+  line-height: 1.8;
+}
+
+html[dir="rtl"] .services .service-item .description {
+  font-family: var(--persian-font) !important;
+  text-align: right;
+  line-height: 1.8;
+}
+
+html[dir="rtl"] .testimonials .testimonial-item p {
+  font-family: var(--persian-font) !important;
+  text-align: center;
+  direction: rtl;
+  line-height: 1.8;
+}
+
+html[dir="rtl"] .stats .stats-item strong {
+  font-family: var(--persian-font) !important;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .portfolio .portfolio-filters li {
+  font-family: var(--persian-font) !important;
+  font-weight: 500;
+}
+
+html[dir="rtl"] .portfolio .portfolio-info h4 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+  text-align: center !important;
+}
+
+html[dir="rtl"] .portfolio .portfolio-info p {
+  text-align: center !important;
+  direction: rtl !important;
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .portfolio .portfolio-info {
+  text-align: center !important;
+}
+
+html[dir="rtl"] .skills .progress .skill span {
+  font-family: var(--persian-font) !important;
+  font-weight: 500;
+}
+
+html[dir="rtl"] .about .content ul strong {
+  font-family: var(--persian-font) !important;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .about .content ul span {
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .about .content .bio-quote em {
+  font-family: var(--persian-font) !important;
+  font-style: italic;
+  font-weight: 500;
+}
+
+html[dir="rtl"] .resume .resume-item h4 {
+  font-family: var(--persian-heading-font) !important;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .resume .resume-item h5 {
+  font-family: var(--persian-font) !important;
+  font-weight: 500;
+}
+
+html[dir="rtl"] .resume .resume-item p {
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .resume .resume-item ul li {
+  font-family: var(--persian-font) !important;
+  line-height: 1.7;
+}
+
+/* RTL testimonials swiper direction */
+html[dir="rtl"] .testimonials .swiper {
+  direction: rtl;
+}
+
+html[dir="rtl"] .testimonials .swiper-wrapper {
+  direction: rtl;
+}
+
+html[dir="rtl"] .testimonials .swiper-slide {
+  direction: rtl;
+}
+
+html[dir="rtl"] .services .service-item p {
+  font-family: var(--persian-font) !important;
+  line-height: 1.7;
+}
+
+html[dir="rtl"] .contact .php-email-form input,
+html[dir="rtl"] .contact .php-email-form textarea {
+  font-family: var(--persian-font) !important;
+  text-align: right;
+}
+
+html[dir="rtl"] .contact .php-email-form input::placeholder,
+html[dir="rtl"] .contact .php-email-form textarea::placeholder {
+  text-align: right;
+}
+
+html[dir="rtl"] .contact .php-email-form .loading,
+html[dir="rtl"] .contact .php-email-form .sent-message {
+  font-family: var(--persian-font) !important;
+}
+
+/* Force header to the right on RTL */
+html[dir="rtl"] .header {
+  left: auto !important;
+  right: 0 !important;
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+  border-inline-start: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
+  border-inline-end: none;
+}
+
+/* Mobile off-canvas */
+@media (max-width: 1199px) {
+  html[dir="rtl"] .header {
+    right: -100% !important;
+    left: auto !important;
+  }
+  html[dir="rtl"] .header.header-show {
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+/* Adjust main/footer margins when header visible */
+@media (min-width: 1200px) {
+  html[dir="rtl"] .header ~ main,
+  html[dir="rtl"] .header ~ #footer {
+    margin-right: 300px !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* Details */
+html[dir="rtl"] .navmenu ul {
+  text-align: right;
+}
+html[dir="rtl"] .header .logo img {
+  margin-inline-start: 8px;
+  margin-inline-end: 0;
+}
+html[dir="rtl"] .header .header-toggle {
+  inset-inline-start: auto;
+  inset-inline-end: 15px;
+}
+
+html[dir="rtl"] .menu-toggle {
+  left: auto !important;
+  right: 20px !important;
+}
+
+/* i18n-rtl-navicon-spacing */
+html[dir="rtl"] #navmenu a .navicon {
+  margin-left: 10px;
+}
+html[dir="rtl"] .about .content ul strong {
+  margin-left: 10px;
+}
+
+/* Mobile-specific RTL fixes */
+@media (max-width: 768px) {
+  /* RTL mobile menu toggle positioning - در سمت چپ */
+  html[dir="rtl"] .menu-toggle {
+    left: 20px !important;
+    right: auto !important;
+  }
+
+  /* RTL mobile language toggle positioning - در سمت راست */
+  html[dir="rtl"] #lang-toggle {
+    left: auto !important;
+    right: 20px !important;
+  }
+
+  /* RTL mobile header positioning */
+  html[dir="rtl"] .header {
+    border-right: 1px solid rgba(15, 23, 42, 0.06);
+    border-left: none;
+  }
+
+  /* RTL mobile overlay positioning */
+  html[dir="rtl"] #menu-overlay {
+    right: 0;
+    left: auto;
+  }
+
+  /* RTL mobile navigation text alignment */
+  html[dir="rtl"] .navmenu a {
+    text-align: right;
+    padding: 15px 10px 15px 20px;
+  }
+
+  /* RTL mobile social links */
+  html[dir="rtl"] .header .social-links {
+    text-align: center;
+  }
+
+  /* RTL mobile hero section */
+  html[dir="rtl"] .hero .container {
+    text-align: center;
+  }
+
+  /* RTL mobile section titles */
+  html[dir="rtl"] .section-title h2:after {
+    right: 0;
+    left: auto;
+  }
+
+  /* RTL mobile contact form */
+  html[dir="rtl"] .contact .php-email-form {
+    text-align: right;
+  }
+
+  /* RTL mobile portfolio filters */
+  html[dir="rtl"] .portfolio .portfolio-filters {
+    text-align: center;
+  }
+
+  /* RTL mobile testimonials */
+  html[dir="rtl"] .testimonials .testimonial-item {
+    text-align: center;
+  }
+
+  /* RTL mobile services */
+  html[dir="rtl"] .services .service-item {
+    text-align: right;
+  }
+
+  /* RTL mobile skills */
+  html[dir="rtl"] .skills .progress .skill .val {
+    float: left;
+  }
+
+  /* RTL mobile resume */
+  html[dir="rtl"] .resume .resume-item {
+    padding: 0 25px 25px 0;
+    border-right: 3px solid var(--primary);
+    border-left: none;
+    border-radius: 8px 0 0 8px;
+  }
+
+  html[dir="rtl"] .resume .resume-item::before {
+    right: -10px;
+    left: auto;
+  }
+
+  /* RTL mobile stats */
+  html[dir="rtl"] .stats .stats-item {
+    text-align: center;
+  }
+
+  /* RTL mobile about section */
+  html[dir="rtl"] .about .content ul li {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .about .content ul i {
+    margin-left: 5px;
+    margin-right: 0;
+  }
+
+  /* RTL mobile footer - Center alignment */
+  html[dir="rtl"] .footer {
+    text-align: center !important;
+  }
+
+  html[dir="rtl"] .footer .copyright p {
+    text-align: center !important;
+  }
+
+  html[dir="rtl"] .footer .credits {
+    text-align: center !important;
+  }
+}
+
+/* Hero Section RTL - Modern Design */
+html[dir="rtl"] .hero-wrapper {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+/* RTL Badge */
+html[dir="rtl"] .hero-badge {
+  text-align: right;
+}
+
+html[dir="rtl"] .badge-text {
+  font-family: var(--persian-font) !important;
+}
+
+/* RTL Title */
+html[dir="rtl"] .hero-title {
+  font-family: var(--persian-heading-font) !important;
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] .title-line-1,
+html[dir="rtl"] .title-line-2 {
+  text-align: right;
+  direction: rtl;
+}
+
+/* RTL Subtitle */
+html[dir="rtl"] .hero-subtitle-wrapper {
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-subtitle {
+  font-family: var(--persian-font) !important;
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] .subtitle-prefix {
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .hero-subtitle .typed {
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .hero-subtitle .typed::after {
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+/* RTL Actions */
+html[dir="rtl"] .hero-actions {
+  margin-top: 2.5rem;
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .hero-actions .btn-modern {
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .btn-text {
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .btn-icon {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .hero-actions .btn-modern:hover .btn-icon {
+  transform: scaleX(-1) translateX(-4px);
+}
+
+html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
+  transform: translateX(2px);
+}
+
+/* Hero Responsive RTL */
+@media (max-width: 991px) {
+  html[dir="rtl"] .hero-wrapper {
+    flex-direction: column;
+  }
+
+  html[dir="rtl"] .hero-content {
+    text-align: center;
+    order: 2;
+  }
+
+  html[dir="rtl"] .hero-profile-section {
+    order: 1;
+  }
+
+  html[dir="rtl"] .hero-badge {
+    text-align: center;
+  }
+
+  html[dir="rtl"] .hero-title {
+    text-align: center;
+    direction: rtl;
+  }
+
+  html[dir="rtl"] .title-line-1,
+  html[dir="rtl"] .title-line-2 {
+    text-align: center;
+    direction: rtl;
+  }
+
+  html[dir="rtl"] .hero-subtitle-wrapper {
+    text-align: center;
+  }
+
+  html[dir="rtl"] .hero-subtitle {
+    text-align: center;
+    direction: rtl;
+  }
+
+  html[dir="rtl"] .hero-actions {
+    justify-content: center;
+  }
+}
+
+html[dir="rtl"] .resume .resume-item a::after {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .about .content ul li a::after {
+  left: auto;
+  right: 0;
+}
+
+/* Quote Section RTL - Center alignment for Persian */
+html[dir="rtl"] .quote-section {
+  text-align: center;
+}
+
+html[dir="rtl"] .quote-card {
+  text-align: center;
+}
+
+html[dir="rtl"] .quote-card i {
+  text-align: center;
+  display: block;
+}
+
+html[dir="rtl"] .inspirational-quote {
+  text-align: center;
+}
+
+html[dir="rtl"] .inspirational-quote p {
+  font-family: var(--persian-font) !important;
+  text-align: center !important;
+  direction: rtl !important;
+  line-height: 1.8;
+}
+
+/* Testimonials Section RTL - Center alignment for Persian */
+html[dir="rtl"] .testimonials .testimonial-item {
+  text-align: center !important;
+}
+
+html[dir="rtl"] .testimonials .testimonial-item p {
+  text-align: center !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .testimonials .testimonial-item h3,
+html[dir="rtl"] .testimonials .testimonial-item h4 {
+  text-align: center !important;
+}
+
+html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
+  margin: 0 auto 20px auto !important;
+}
