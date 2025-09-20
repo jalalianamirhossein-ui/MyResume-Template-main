@@ -5020,163 +5020,9 @@ html[dir="rtl"] .language-switcher {
   white-space: normal;
 }
 
-.article-openvpn .hero .article-meta .meta-date {
-  color: rgba(231, 227, 204, 0.8); /* Light cream with transparency */
-}
+/* Article styles moved to articles.css */
 
-.article-openvpn .hero .article-meta .meta-date time {
-  color: rgba(231, 227, 204, 0.9); /* Light cream with transparency */
-}
-
-/* OpenVPN Article Text Colors */
-.article-openvpn .article-category {
-  color: white;
-}
-
-.article-openvpn .stat-item .stat-number {
-  color: white;
-}
-
-.article-openvpn .stat-item .stat-label {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.article-openvpn .action-btn .btn-content {
-  color: white;
-}
-
-.article-openvpn .action-btn .btn-arrow {
-  color: white;
-}
-
-/* Additional article themes for future articles */
-.article-linux {
-  --article-primary: #f56565; /* Red for Linux articles */
-  --article-primary-hover: #e53e3e;
-  --article-accent: #f56565;
-  --article-shadow: rgba(245, 101, 101, 0.1);
-  --article-gradient: linear-gradient(135deg, #f56565, #e53e3e);
-}
-
-.article-windows {
-  --article-primary: #4299e1; /* Light Blue for Windows articles */
-  --article-primary-hover: #3182ce;
-  --article-accent: #4299e1;
-  --article-shadow: rgba(66, 153, 225, 0.1);
-  --article-gradient: linear-gradient(135deg, #4299e1, #3182ce);
-}
-
-.article-security {
-  --article-primary: #9f7aea; /* Purple for Security articles */
-  --article-primary-hover: #805ad5;
-  --article-accent: #9f7aea;
-  --article-shadow: rgba(159, 122, 234, 0.1);
-  --article-gradient: linear-gradient(135deg, #9f7aea, #805ad5);
-}
-
-.article-networking {
-  --article-primary: #38b2ac; /* Teal for Networking articles */
-  --article-primary-hover: #319795;
-  --article-accent: #38b2ac;
-  --article-shadow: rgba(56, 178, 172, 0.1);
-  --article-gradient: linear-gradient(135deg, #38b2ac, #319795);
-}
-
-/* Apply theme styles to all article types */
-.article-linux .article-banner .banner-card,
-.article-windows .article-banner .banner-card,
-.article-security .article-banner .banner-card,
-.article-networking .article-banner .banner-card {
-  background: var(--article-gradient);
-  box-shadow: 0 8px 32px var(--article-shadow);
-}
-
-.article-linux .article-banner .banner-icon,
-.article-windows .article-banner .banner-icon,
-.article-security .article-banner .banner-icon,
-.article-networking .article-banner .banner-icon {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.article-linux .btn-primary,
-.article-windows .btn-primary,
-.article-security .btn-primary,
-.article-networking .btn-primary {
-  background: var(--article-primary);
-  border-color: var(--article-primary);
-}
-
-.article-linux .btn-primary:hover,
-.article-windows .btn-primary:hover,
-.article-security .btn-primary:hover,
-.article-networking .btn-primary:hover {
-  background: var(--article-primary-hover);
-  border-color: var(--article-primary-hover);
-}
-
-.article-linux .article-category,
-.article-windows .article-category,
-.article-security .article-category,
-.article-networking .article-category {
-  background: var(--article-primary);
-}
-
-.article-linux .stat-item .stat-icon,
-.article-windows .stat-item .stat-icon,
-.article-security .stat-item .stat-icon,
-.article-networking .stat-item .stat-icon {
-  background: var(--article-primary);
-}
-
-.banner-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 25px 30px;
-  max-width: 500px;
-  margin: 0 auto;
-  transition: all 0.3s ease;
-}
-
-.banner-card:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-.banner-icon {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: var(--surface);
-}
-
-.banner-content {
-  flex: 1;
-}
-
-.banner-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--surface);
-  margin: 0 0 5px 0;
-}
-
-.banner-subtitle {
-  font-size: 14px;
-  opacity: 0.8;
-  color: var(--surface);
-  margin: 0;
-}
+/* Article styles moved to articles.css */
 
 /* Article styles moved to articles.css */
 
@@ -5234,19 +5080,7 @@ html[dir="rtl"] .language-switcher {
   }
 }
 
-.article-category {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 6px 12px;
-  border-radius: 20px;
-  margin-right: 15px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.article-date {
-  opacity: 0.8;
-}
+/* Article styles moved to articles.css */
 
 /* Article styles moved to articles.css */
 
@@ -5278,92 +5112,7 @@ html[dir="rtl"] .language-switcher {
   opacity: 0.8;
 }
 
-.article-content {
-  padding: 80px 0;
-  background: linear-gradient(
-    135deg,
-    var(--background) 0%,
-    var(--surface-muted) 100%
-  );
-  overflow: visible; /* Allow step badges to extend outside */
-}
-
-.article-body {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
-  color: var(--default-color);
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 60px 40px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--divider-border);
-  overflow: visible; /* Allow step badges to extend outside */
-  animation: fadeInUp 0.8s ease-out;
-  transition: all 0.3s ease;
-}
-
-.article-body:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.article-section {
-  margin-bottom: 60px;
-  animation: slideInLeft 0.6s ease-out;
-  transition: all 0.3s ease;
-}
-
-.article-section:nth-child(even) {
-  animation: slideInRight 0.6s ease-out;
-}
-
-.article-section h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--heading-color);
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 3px solid var(--accent-color);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.article-section h2:hover {
-  color: var(--primary);
-  transform: translateX(10px);
-}
-
-.article-section h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--heading-color);
-  margin: 40px 0 20px 0;
-}
-
-.article-section h4 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--heading-color);
-  margin: 30px 0 15px 0;
-}
-
-.article-section p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  color: var(--default-color);
-}
-
-.article-section ul,
-.article-section ol {
-  margin: 20px 0;
-  padding-left: 30px;
-}
-
-.article-section li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
+/* Article styles moved to articles.css */
 
 .toc {
   background: var(--surface-color);
@@ -5425,21 +5174,7 @@ html[dir="rtl"] .language-switcher {
   margin-bottom: 8px;
 }
 
-.code-block {
-  background: #1e1e1e;
-  border-radius: 12px;
-  padding: 25px;
-  margin: 30px 0;
-  overflow-x: auto;
-  direction: ltr !important; /* Force left-to-right for code blocks */
-  text-align: left !important; /* Force left alignment for code blocks */
-}
-
-.code-block h4 {
-  color: var(--pure-white);
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
+/* Article styles moved to articles.css */
 
 .info-box {
   background: linear-gradient(135deg, var(--surface), var(--surface-muted));
@@ -6010,40 +5745,7 @@ html[dir="rtl"] .language-switcher {
   color: var(--text-primary);
 }
 
-/* RTL Support for Article Page */
-html[dir="rtl"] .article-header {
-  text-align: right;
-}
-
-html[dir="rtl"] .article-author {
-  flex-direction: row-reverse;
-}
-
-html[dir="rtl"] .author-info {
-  text-align: right;
-}
-
-html[dir="rtl"] .article-section h2 {
-  text-align: right;
-}
-
-html[dir="rtl"] .article-section h3 {
-  text-align: right;
-}
-
-html[dir="rtl"] .article-section h4 {
-  text-align: right;
-}
-
-html[dir="rtl"] .article-section p {
-  text-align: right;
-}
-
-html[dir="rtl"] .article-section ul,
-html[dir="rtl"] .article-section ol {
-  padding-right: 30px;
-  padding-left: 0;
-}
+/* Article styles moved to articles.css */
 
 html[dir="rtl"] .toc {
   text-align: right;
@@ -6065,225 +5767,88 @@ html[dir="rtl"] .related-content {
   text-align: right;
 }
 
-/* Mobile Responsive for Article Page */
-@media (max-width: 768px) {
-  .article-header {
-    padding: 100px 0 60px 0;
-    min-height: 80vh;
-  }
+/* Article styles moved to articles.css */
 
-  /* Article styles moved to articles.css */
-
-  .stats-container {
-    gap: 20px;
-    padding: 25px 30px;
-  }
-
-  .stat-item {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .stat-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .stat-number {
-    font-size: 1.5rem;
-  }
-
-  .banner-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .banner-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
-
-  .article-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .action-btn {
-    width: 100%;
-    max-width: 300px;
-    min-width: auto;
-  }
-
-  .article-body {
-    padding: 40px 20px;
-    margin: 0 15px;
-  }
-
-  .article-section h2 {
-    font-size: 2rem;
-  }
-
-  .article-section h3 {
-    font-size: 1.5rem;
-  }
-
-  .article-section h4 {
-    font-size: 1.2rem;
-  }
-
-  .article-section p {
-    font-size: 1rem;
-  }
-
-  .tools-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .author-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    padding: 2.5rem;
-  }
-
-  .author-photo {
-    width: 120px;
-    height: 120px;
-  }
-
-  .author-details h3 {
-    font-size: 1.5rem;
-  }
-
-  .author-details h4 {
-    font-size: 1.4rem;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .expert-badge {
-    font-size: 0.7rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .author-details p {
-    font-size: 1rem;
-  }
-
-  .author-social {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .author-social a {
-    width: 48px;
-    height: 48px;
-  }
-
-  .author-social a i {
-    font-size: 20px;
-  }
-
-  .related-articles h2 {
-    font-size: 2rem;
-  }
-
-  .related-content h3 {
-    font-size: 1.2rem;
-  }
+.tools-grid {
+  grid-template-columns: 1fr;
 }
 
-@media (max-width: 575px) {
-  .article-header {
-    padding: 80px 0 40px 0;
-    min-height: 70vh;
-  }
+.metrics-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
 
-  /* Article styles moved to articles.css */
+.author-card {
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+  padding: 2.5rem;
+}
 
-  .stats-container {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
+.author-photo {
+  width: 120px;
+  height: 120px;
+}
 
-  .stat-item {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
+.author-details h3 {
+  font-size: 1.5rem;
+}
 
-  .stat-number {
-    font-size: 1.5rem;
-  }
+.author-details h4 {
+  font-size: 1.4rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-  .meta-badge {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
+.expert-badge {
+  font-size: 0.7rem;
+  padding: 0.4rem 0.8rem;
+}
 
-  .banner-card {
-    padding: 15px;
-  }
+.author-details p {
+  font-size: 1rem;
+}
 
-  .banner-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
+.author-social {
+  justify-content: center;
+  gap: 1rem;
+}
 
-  .action-btn {
-    padding: 15px 25px;
-    font-size: 14px;
-  }
+.author-social a {
+  width: 48px;
+  height: 48px;
+}
 
-  .bg-shape {
-    display: none;
-  }
+.author-social a i {
+  font-size: 20px;
+}
 
-  .article-content {
-    padding: 40px 0;
-  }
+.related-articles h2 {
+  font-size: 2rem;
+}
 
-  .article-body {
-    padding: 30px 15px;
-    margin: 0 10px;
-    border-radius: 12px;
-    overflow: visible; /* Allow step badges to extend outside */
-  }
+.related-content h3 {
+  font-size: 1.2rem;
+}
 
-  .article-section h2 {
-    font-size: 1.8rem;
-  }
+/* Article styles moved to articles.css */
 
-  .article-section h3 {
-    font-size: 1.4rem;
-  }
+.highlight-box,
+.info-box {
+  padding: 20px;
+  margin: 20px 0;
+}
 
-  .highlight-box,
-  .info-box {
-    padding: 20px;
-    margin: 20px 0;
-  }
+.metrics-grid {
+  grid-template-columns: 1fr;
+}
 
-  .metrics-grid {
-    grid-template-columns: 1fr;
-  }
+.related-articles {
+  padding: 40px 0;
+}
 
-  .related-articles {
-    padding: 40px 0;
-  }
-
-  .related-articles h2 {
-    font-size: 1.8rem;
-  }
+.related-articles h2 {
+  font-size: 1.8rem;
 }
 
 /*--------------------------------------------------------------
