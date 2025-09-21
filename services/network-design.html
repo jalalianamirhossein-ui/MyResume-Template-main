@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Design & Implementation - Professional Service</title>
+    <meta name="description" content="Professional Network Design & Implementation service. Complete network infrastructure design, implementation, and optimization using Cisco and MikroTik equipment. Starting from AED 4,900.">
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #f6f7f9;
+            --card: #fff;
+            --primary: #0d6efd;
+            --success: #198754;
+            --text: #222;
+            --muted: #667085;
+            --radius: 12px;
+            --shadow: 0 10px 30px rgba(16, 24, 40, .08);
+            --space: clamp(16px, 3vw, 24px);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.75 "Segoe UI", Tahoma, system-ui, sans-serif;
+        }
+        
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: calc(var(--space) * 2) var(--space);
+        }
+        
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: calc(var(--space) * 1.5);
+            margin-bottom: var(--space);
+        }
+        
+        .h1, .h2, .h3, h1, h2, h3 {
+            margin: 0 0 .6em;
+        }
+        
+        h1 {
+            font-size: clamp(24px, 3.2vw, 32px);
+        }
+        
+        h2 {
+            font-size: clamp(20px, 2.8vw, 28px);
+        }
+        
+        h3 {
+            font-size: clamp(18px, 2.4vw, 24px);
+        }
+        
+        p {
+            margin: .6em 0;
+            color: #444;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .75rem 1.1rem;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+        
+        .btn-outline {
+            background: #fff;
+            border-color: #d0d5dd;
+            color: #344054;
+        }
+        
+        .btn:hover {
+            filter: brightness(.98);
+            transform: translateY(-2px);
+        }
+        
+        .btn:focus-visible {
+            outline: 3px solid rgba(13, 110, 253, .35);
+            outline-offset: 2px;
+        }
+        
+        .grid {
+            display: grid;
+            gap: var(--space);
+        }
+        
+        @media (min-width: 720px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(13, 110, 253, .08);
+            color: var(--primary);
+            padding: .25rem .6rem;
+            border-radius: 999px;
+            font-size: .85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .list {
+            margin: .8rem 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .list li {
+            position: relative;
+            padding-left: 1.6rem;
+            margin-bottom: .5rem;
+        }
+        
+        .list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: .1rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+        
+        .price {
+            display: flex;
+            align-items: flex-end;
+            gap: .5rem;
+            margin: 1rem 0;
+        }
+        
+        .price .amount {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            letter-spacing: .2px;
+            color: var(--primary);
+        }
+        
+        .price .unit {
+            color: var(--muted);
+            font-size: 16px;
+        }
+        
+        .muted {
+            color: var(--muted);
+            font-size: .95rem;
+        }
+        
+        .rtl .list li {
+            padding-right: 1.6rem;
+            padding-left: 0;
+        }
+        
+        .rtl .list li:before {
+            left: auto;
+            right: 0;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .service-icon {
+            font-size: 64px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: clamp(24px, 3.2vw, 32px);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        
+        .service-subtitle {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 32px;
+        }
+        
+        .section-title {
+            font-size: clamp(20px, 2.8vw, 28px);
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-title i {
+            color: var(--primary);
+        }
+        
+        .timeline {
+            position: relative;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .rtl .timeline-item {
+            border-left: none;
+            border-right: 4px solid var(--primary);
+        }
+        
+        .timeline-phase {
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 120px;
+        }
+        
+        .timeline-duration {
+            color: var(--muted);
+            font-size: 14px;
+            margin-left: 16px;
+        }
+        
+        .rtl .timeline-duration {
+            margin-left: 0;
+            margin-right: 16px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #f8f9fa;
+            padding: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 16px;
+            display: none;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        .contact-form {
+            display: none;
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .contact-form.show {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+        }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1001;
+            display: none;
+        }
+        
+        .toast.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .rtl .back-button {
+            left: auto;
+            right: 20px;
+        }
+        
+        .rtl .language-toggle {
+            left: 20px;
+            right: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                gap: 4px;
+            }
+            
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .back-button {
+                top: 10px;
+                left: 10px;
+            }
+            
+            .rtl .back-button {
+                left: auto;
+                right: 10px;
+            }
+            
+            .rtl .language-toggle {
+                left: 10px;
+                right: auto;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .timeline-duration {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .language-toggle,
+            .btn,
+            .contact-form,
+            .back-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('fa')">فا</button>
+    </div>
+
+    <!-- Back Button -->
+    <a href="/index.html#services" class="btn btn-outline back-button" aria-label="Back to Services"
+       data-en="Back to Services" data-fa="بازگشت به خدمات">
+        <i class="bi bi-arrow-left"></i>
+        <span data-en="Back to Services" data-fa="بازگشت به خدمات">Back to Services</span>
+    </a>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero" data-aos="fade-up">
+            <i class="bi bi-diagram-3 service-icon"></i>
+            <h1 class="service-title" data-en="Network Design & Implementation" data-fa="طراحی و پیاده‌سازی شبکه">
+                Network Design & Implementation
+            </h1>
+            <p class="service-subtitle" data-en="Complete network infrastructure design, implementation, and optimization" data-fa="طراحی کامل زیرساخت شبکه، پیاده‌سازی و بهینه‌سازی">
+                Complete network infrastructure design, implementation, and optimization
+            </p>
+        </div>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="card grid grid-2">
+                <div>
+                    <span class="badge" data-en="Fixed Price" data-fa="قیمت ثابت">Fixed Price</span>
+                    <h2 data-en="Pricing" data-fa="قیمت‌گذاری">Pricing</h2>
+                    <div class="price" aria-label="Price">
+                        <div class="amount" data-en="AED 4,900" data-fa="۴,۹۰۰ درهم">AED 4,900</div>
+                        <div class="unit" data-en="one-time" data-fa="پرداخت یک‌باره">one-time</div>
+                    </div>
+                    <p class="muted" data-en="* IRR shown on invoice at CB rate."
+                       data-fa="* معادل ریالی در فاکتور با نرخ رسمی محاسبه می‌شود.">
+                        * IRR shown on invoice at CB rate.
+                    </p>
+                    <ul class="list">
+                        <li data-en="HLD/LLD documentation and topology diagrams"
+                            data-fa="مستندات HLD/LLD و دیاگرام‌های توپولوژی">HLD/LLD documentation and topology diagrams</li>
+                        <li data-en="IP plan, VLANs, routing/switching (Cisco/MikroTik)"
+                            data-fa="IP Plan، VLAN، و مسیریابی/سوئیچینگ (Cisco/MikroTik)">IP plan, VLANs, routing/switching (Cisco/MikroTik)</li>
+                        <li data-en="Firewall/NAT policies and HA plan"
+                            data-fa="قواعد فایروال/NAT و طرح افزونگی">Firewall/NAT policies and HA plan</li>
+                        <li data-en="Configs + test report (PDF)"
+                            data-fa="کانفیگ‌ها + گزارش تست (PDF)">Configs + test report (PDF)</li>
+                        <li data-en="30-day defect warranty"
+                            data-fa="۳۰ روز وارانتی رفع اشکال">30-day defect warranty</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="h3" data-en="Exclusions & Assumptions" data-fa="فرضیات و خارج از شمول">Exclusions & Assumptions</h3>
+                    <ul class="list">
+                        <li data-en="Hardware, licenses, on-site travel are excluded"
+                            data-fa="تأمین سخت‌افزار، لایسنس‌ها و سفر حضوری خارج از شمول است">Hardware, licenses, on-site travel are excluded</li>
+                        <li data-en="Change requests billed separately"
+                            data-fa="درخواست‌های تغییر، جداگانه محاسبه می‌شود">Change requests billed separately</li>
+                        <li data-en="Access and prerequisites provided by client"
+                            data-fa="پیش‌نیازها و دسترسی‌ها توسط کارفرما فراهم شود">Access and prerequisites provided by client</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="section-title">
+                <i class="bi bi-check-circle"></i>
+                <span data-en="What You Get" data-fa="آنچه دریافت می‌کنید">What You Get</span>
+            </h2>
+            <ul class="list">
+                <li data-en="Network assessment & High-Level Design (HLD)" data-fa="ارزیابی شبکه و طراحی سطح بالا (HLD)">Network assessment & High-Level Design (HLD)</li>
+                <li data-en="Detailed Low-Level Design (LLD) documentation" data-fa="مستندات طراحی سطح پایین (LLD)">Detailed Low-Level Design (LLD) documentation</li>
+                <li data-en="IP addressing plan & VLAN configuration" data-fa="برنامه آدرس‌دهی IP و پیکربندی VLAN">IP addressing plan & VLAN configuration</li>
+                <li data-en="Routing & Switching design (Cisco/MikroTik)" data-fa="طراحی Routing و Switching (سیسکو/میکروتیک)">Routing & Switching design (Cisco/MikroTik)</li>
+                <li data-en="Firewall policies & NAT configuration" data-fa="سیاست‌های فایروال و پیکربندی NAT">Firewall policies & NAT configuration</li>
+                <li data-en="High Availability & Redundancy planning" data-fa="برنامه‌ریزی High Availability و Redundancy">High Availability & Redundancy planning</li>
+                <li data-en="Complete documentation (PDF) + topology diagrams" data-fa="مستندات کامل (PDF) + نمودارهای توپولوژی">Complete documentation (PDF) + topology diagrams</li>
+            </ul>
+        </div>
+
+        <!-- Deliverables -->
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="section-title">
+                <i class="bi bi-file-earmark-text"></i>
+                <span data-en="Deliverables" data-fa="تحویلی‌ها">Deliverables</span>
+            </h2>
+            <ul class="list">
+                <li data-en="High-Level Design (HLD) document" data-fa="سند طراحی سطح بالا (HLD)">High-Level Design (HLD) document</li>
+                <li data-en="Low-Level Design (LLD) document" data-fa="سند طراحی سطح پایین (LLD)">Low-Level Design (LLD) document</li>
+                <li data-en="Network device configurations" data-fa="پیکربندی‌های تجهیزات شبکه">Network device configurations</li>
+                <li data-en="Network topology diagrams (Visio/PDF)" data-fa="نمودارهای توپولوژی شبکه (Visio/PDF)">Network topology diagrams (Visio/PDF)</li>
+                <li data-en="IP addressing spreadsheet" data-fa="جدول آدرس‌دهی IP">IP addressing spreadsheet</li>
+                <li data-en="Test plan & validation report" data-fa="برنامه تست و گزارش اعتبارسنجی">Test plan & validation report</li>
+                <li data-en="Implementation guide & best practices" data-fa="راهنمای پیاده‌سازی و بهترین روش‌ها">Implementation guide & best practices</li>
+            </ul>
+        </div>
+
+        <!-- Timeline -->
+        <div class="card" data-aos="fade-up" data-aos-delay="400">
+            <h2 class="section-title">
+                <i class="bi bi-clock"></i>
+                <span data-en="Project Timeline" data-fa="زمان‌بندی پروژه">Project Timeline</span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-phase" data-en="Discovery" data-fa="کشف">Discovery</div>
+                    <div class="timeline-duration" data-en="3-5 days" data-fa="3-5 روز">3-5 days</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-phase" data-en="Design" data-fa="طراحی">Design</div>
+                    <div class="timeline-duration" data-en="5-7 days" data-fa="5-7 روز">5-7 days</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-phase" data-en="Build" data-fa="ساخت">Build</div>
+                    <div class="timeline-duration" data-en="3-5 days" data-fa="3-5 روز">3-5 days</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-phase" data-en="Test" data-fa="تست">Test</div>
+                    <div class="timeline-duration" data-en="2-3 days" data-fa="2-3 روز">2-3 days</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-phase" data-en="Handover" data-fa="تحویل">Handover</div>
+                    <div class="timeline-duration" data-en="1-2 days" data-fa="1-2 روز">1-2 days</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLA & Warranty -->
+        <div class="card" data-aos="fade-up" data-aos-delay="500">
+            <h2 class="section-title">
+                <i class="bi bi-shield-check"></i>
+                <span data-en="SLA & Warranty" data-fa="SLA و ضمانت">SLA & Warranty</span>
+            </h2>
+            <ul class="list">
+                <li data-en="24/7 response time: 4 hours" data-fa="زمان پاسخ 24/7: 4 ساعت">24/7 response time: 4 hours</li>
+                <li data-en="Bug fixes: 30 days warranty period" data-fa="رفع باگ: دوره ضمانت 30 روزه">Bug fixes: 30 days warranty period</li>
+                <li data-en="Design revisions: 2 rounds included" data-fa="بازنگری طراحی: 2 دور شامل">Design revisions: 2 rounds included</li>
+                <li data-en="Remote support: 3 months included" data-fa="پشتیبانی از راه دور: 3 ماه شامل">Remote support: 3 months included</li>
+            </ul>
+        </div>
+
+        <!-- Optional Add-ons -->
+        <div class="card" data-aos="fade-up" data-aos-delay="600">
+            <h2 class="section-title">
+                <i class="bi bi-plus-circle"></i>
+                <span data-en="Optional Add-ons" data-fa="افزونه‌های اختیاری">Optional Add-ons</span>
+            </h2>
+            <ul class="list">
+                <li data-en="Network monitoring setup (Zabbix/Grafana) - AED 1,200" data-fa="راه‌اندازی نظارت شبکه (Zabbix/Grafana) - 1,200 درهم">Network monitoring setup (Zabbix/Grafana) - AED 1,200</li>
+                <li data-en="VPN/IPsec tunnel configuration - AED 800" data-fa="پیکربندی تونل VPN/IPsec - 800 درهم">VPN/IPsec tunnel configuration - AED 800</li>
+                <li data-en="Zero Trust network architecture - AED 2,500" data-fa="معماری شبکه Zero Trust - 2,500 درهم">Zero Trust network architecture - AED 2,500</li>
+                <li data-en="Network security training (8 hours) - AED 1,500" data-fa="آموزش امنیت شبکه (8 ساعت) - 1,500 درهم">Network security training (8 hours) - AED 1,500</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="card" data-aos="fade-up" data-aos-delay="700">
+            <h2 class="section-title">
+                <i class="bi bi-question-circle"></i>
+                <span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span>
+            </h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span data-en="What is included in the network design?" data-fa="طراحی شبکه شامل چه چیزهایی است؟">What is included in the network design?</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-en="The design includes complete network architecture, IP planning, VLAN configuration, routing/switching design, firewall policies, and comprehensive documentation with topology diagrams." data-fa="طراحی شامل معماری کامل شبکه، برنامه‌ریزی IP، پیکربندی VLAN، طراحی routing/switching، سیاست‌های فایروال و مستندات جامع با نمودارهای توپولوژی است.">
+                        The design includes complete network architecture, IP planning, VLAN configuration, routing/switching design, firewall policies, and comprehensive documentation with topology diagrams.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span data-en="How long does the project take?" data-fa="پروژه چقدر طول می‌کشد؟">How long does the project take?</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-en="The complete project typically takes 14-22 days, including discovery, design, build, testing, and handover phases." data-fa="پروژه کامل معمولاً 14-22 روز طول می‌کشد، شامل مراحل کشف، طراحی، ساخت، تست و تحویل.">
+                        The complete project typically takes 14-22 days, including discovery, design, build, testing, and handover phases.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span data-en="Do you provide ongoing support?" data-fa="آیا پشتیبانی مداوم ارائه می‌دهید؟">Do you provide ongoing support?</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-en="Yes, we include 3 months of remote support and 30 days warranty for bug fixes. Extended support packages are available." data-fa="بله، 3 ماه پشتیبانی از راه دور و 30 روز ضمانت برای رفع باگ شامل می‌شود. بسته‌های پشتیبانی گسترده در دسترس است.">
+                        Yes, we include 3 months of remote support and 30 days warranty for bug fixes. Extended support packages are available.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span data-en="What equipment brands do you support?" data-fa="از چه برندهای تجهیزاتی پشتیبانی می‌کنید؟">What equipment brands do you support?</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-en="We specialize in Cisco and MikroTik equipment, but can work with other brands including Juniper, Fortinet, and HP/Aruba." data-fa="ما در تجهیزات سیسکو و میکروتیک تخصص داریم، اما می‌توانیم با برندهای دیگر از جمله Juniper، Fortinet و HP/Aruba کار کنیم.">
+                        We specialize in Cisco and MikroTik equipment, but can work with other brands including Juniper, Fortinet, and HP/Aruba.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span data-en="Is the price fixed or can it change?" data-fa="قیمت ثابت است یا می‌تواند تغییر کند؟">Is the price fixed or can it change?</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-en="The base price is fixed for standard network designs. Complex requirements or additional features may require custom pricing." data-fa="قیمت پایه برای طراحی‌های شبکه استاندارد ثابت است. نیازهای پیچیده یا ویژگی‌های اضافی ممکن است نیاز به قیمت‌گذاری سفارشی داشته باشد.">
+                        The base price is fixed for standard network designs. Complex requirements or additional features may require custom pricing.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="card" data-aos="fade-up" data-aos-delay="800">
+            <h2 class="section-title">
+                <i class="bi bi-envelope"></i>
+                <span data-en="Request a Quote" data-fa="درخواست پیش‌فاکتور">Request a Quote</span>
+            </h2>
+            <p data-en="Ready to get started? Contact us for a detailed proposal tailored to your network requirements." data-fa="آماده شروع هستید؟ برای دریافت پیشنهاد تفصیلی متناسب با نیازهای شبکه خود با ما تماس بگیرید.">
+                Ready to get started? Contact us for a detailed proposal tailored to your network requirements.
+            </p>
+            <button class="btn btn-primary" onclick="showContactForm()" data-en="Request Quote" data-fa="درخواست پیش‌فاکتور">
+                Request Quote
+            </button>
+            
+            <div class="contact-form" id="contactForm">
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label data-en="Full Name" data-fa="نام کامل">Full Name</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Email Address" data-fa="آدرس ایمیل">Email Address</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Phone Number" data-fa="شماره تلفن">Phone Number</label>
+                        <input type="tel" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Project Details" data-fa="جزئیات پروژه">Project Details</label>
+                        <textarea name="message" rows="4" placeholder="Describe your network requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success" data-en="Submit Request" data-fa="ارسال درخواست">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span data-en="Request submitted successfully! We'll contact you soon." data-fa="درخواست با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت.">
+            Request submitted successfully! We'll contact you soon.
+        </span>
+    </div>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Network Design & Implementation",
+        "description": "Complete network infrastructure design, implementation, and optimization using Cisco and MikroTik equipment",
+        "provider": {
+            "@type": "Person",
+            "name": "AmirHossein Jalalian"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "4900",
+            "priceCurrency": "AED",
+            "availability": "https://schema.org/InStock"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "UAE"
+        },
+        "serviceType": "Network Design",
+        "category": "IT Services"
+    }
+    </script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Language switching function
+        function setLang(lang) {
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+            
+            // Update text content
+            document.querySelectorAll('[data-en][data-fa]').forEach(element => {
+                if (lang === 'fa') {
+                    element.textContent = element.getAttribute('data-fa');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update page direction
+            if (lang === 'fa') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
+            
+            // Store language preference
+            localStorage.setItem('preferredLang', lang);
+        }
+        
+        // FAQ toggle function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer.show').forEach(item => {
+                    item.classList.remove('show');
+                });
+                document.querySelectorAll('.faq-question i').forEach(item => {
+                    item.style.transform = 'rotate(0deg)';
+                });
+                
+                // Open current FAQ
+                answer.classList.add('show');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        // Contact form functions
+        function showContactForm() {
+            const form = document.getElementById('contactForm');
+            form.classList.add('show');
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Show success toast
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            
+            // Hide form
+            document.getElementById('contactForm').classList.remove('show');
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang') || 'en';
+            setLang(savedLang);
+        });
+    </script>
+</body>
+</html>

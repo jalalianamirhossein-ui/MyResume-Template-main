@@ -949,6 +949,16 @@ html[dir="rtl"] .article-section ol {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all var(--transition-speed) ease;
   margin: 1rem 0;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* RTL Support for CMD Blocks */
+html[dir="rtl"] .article-cmd .cmd-block {
+  border-left: none;
+  border-right: 4px solid var(--cmd-border);
+  direction: ltr !important;
+  text-align: left !important;
 }
 
 .article-cmd .cmd-block:hover {
@@ -1006,6 +1016,8 @@ html[dir="rtl"] .article-section ol {
   font-family: "Courier New", "Consolas", monospace;
   font-size: 0.9rem;
   line-height: 1.5;
+  direction: ltr !important;
+  text-align: left !important;
 }
 
 .article-cmd .cmd-block code {
@@ -1013,6 +1025,15 @@ html[dir="rtl"] .article-section ol {
   color: var(--cmd-text);
   padding: 0;
   font-family: "Courier New", "Consolas", monospace;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* RTL Support for CMD Block Content */
+html[dir="rtl"] .article-cmd .cmd-block pre,
+html[dir="rtl"] .article-cmd .cmd-block code {
+  direction: ltr !important;
+  text-align: left !important;
 }
 
 /* Troubleshooting scenarios */
@@ -1064,6 +1085,13 @@ html[dir="rtl"] .article-section ol {
   .article-cmd .cmd-block pre {
     padding: 15px;
     font-size: 0.8rem;
+    direction: ltr !important;
+    text-align: left !important;
+  }
+
+  html[dir="rtl"] .article-cmd .cmd-block pre {
+    direction: ltr !important;
+    text-align: left !important;
   }
 }
 
@@ -1095,6 +1123,13 @@ html[dir="rtl"] .article-section ol {
   .article-cmd .cmd-block pre {
     padding: 10px;
     font-size: 0.75rem;
+    direction: ltr !important;
+    text-align: left !important;
+  }
+
+  html[dir="rtl"] .article-cmd .cmd-block pre {
+    direction: ltr !important;
+    text-align: left !important;
   }
 }
 
@@ -1913,6 +1948,17 @@ html[dir="rtl"] .article-section ol {
   text-align: left !important;
 }
 
+/* RTL Code Block Override - Ensure LTR for all code blocks */
+html[dir="rtl"] .code-block,
+html[dir="rtl"] .code-block pre,
+html[dir="rtl"] .code-block code,
+html[dir="rtl"] .step-content .code-block,
+html[dir="rtl"] .step-content .code-block pre,
+html[dir="rtl"] .step-content .code-block code {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
 /* Professional Code Bar */
 .code-block-header,
 .code-header {
@@ -1944,6 +1990,40 @@ html[dir="rtl"] .article-section ol {
   text-transform: uppercase;
   user-select: none;
   margin: 0;
+}
+
+/* RTL Support for Copy Button */
+html[dir="rtl"] .copy-btn {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .code-header {
+  flex-direction: row-reverse;
+}
+
+/* Output Block Styling */
+.output-block {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+.output-block .code-header {
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.output-block .code-lang {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.output-block pre code {
+  color: #e5e7eb;
+  font-family: "Courier New", "Consolas", monospace;
+  line-height: 1.6;
 }
 
 /* Professional Copy Button - Floating */
@@ -2146,6 +2226,16 @@ html[dir="rtl"] .article-section ol {
 
   html[dir="rtl"] .code-block pre code {
     padding: 12px;
+    padding-right: 50px;
+    padding-left: 12px;
+  }
+
+  html[dir="rtl"] .code-block pre code::before {
+    left: auto;
+    right: -50px;
+    width: 40px;
+    font-size: 11px;
+    content: "1\A2\A3\A4\A5\A6\A7\A8\A9\A10\A11\A12\A13\A14\A15\A16\A17\A18\A19\A20";
   }
 }
 

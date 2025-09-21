@@ -787,10 +787,204 @@ h6 {
   z-index: 9997;
 }
 
-.navmenu ul {
+/* LTR Navigation Menu Spacing - English Version */
+html[dir="ltr"] .navmenu ul {
   list-style: none;
   padding: 0 0 20px 0;
   margin: 0;
+}
+
+html[dir="ltr"] .navmenu a,
+html[dir="ltr"] .navmenu a:focus {
+  padding: 12px 10px;
+  margin-bottom: 4px;
+}
+
+html[dir="ltr"] .navmenu a .navicon,
+html[dir="ltr"] .navmenu a:focus .navicon {
+  margin-right: 10px;
+}
+
+/* RTL Navigation Menu Spacing - Persian Version */
+html[dir="rtl"] .navmenu ul {
+  list-style: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+html[dir="rtl"] .navmenu a,
+html[dir="rtl"] .navmenu a:focus {
+  padding: 12px 10px;
+  margin-bottom: 4px;
+}
+
+html[dir="rtl"] .navmenu a .navicon,
+html[dir="rtl"] .navmenu a:focus .navicon {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* LTR Hover and Active States */
+html[dir="ltr"] .navmenu a:hover,
+html[dir="ltr"] .navmenu .active,
+html[dir="ltr"] .navmenu .active:focus {
+  transform: translateX(6px) scale(1.02);
+}
+
+/* RTL Hover and Active States */
+html[dir="rtl"] .navmenu a:hover,
+html[dir="rtl"] .navmenu .active,
+html[dir="rtl"] .navmenu .active:focus {
+  transform: translateX(-6px) scale(1.02);
+}
+
+/* LTR Typography and Sizing - English Version */
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3,
+html[dir="ltr"] h4,
+html[dir="ltr"] h5,
+html[dir="ltr"] h6 {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .hero h2 {
+  font-weight: 700;
+}
+
+html[dir="ltr"] .section-title h2 {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .about .content h2 {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .resume .resume-title {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .services .service-item h4 {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .testimonials .testimonial-item h3,
+html[dir="ltr"] .testimonials .testimonial-item h4 {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .contact .info-item h3 {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .contact .php-email-form button {
+  font-weight: 500;
+}
+
+html[dir="ltr"] .section-title p {
+  line-height: 1.8;
+}
+
+html[dir="ltr"] .about .content p {
+  line-height: 1.8;
+}
+
+html[dir="ltr"] .services .service-item .description {
+  line-height: 1.8;
+}
+
+html[dir="ltr"] .testimonials .testimonial-item p {
+  line-height: 1.8;
+}
+
+html[dir="ltr"] .stats .stats-item strong {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .portfolio .portfolio-filters li {
+  font-weight: 500;
+}
+
+html[dir="ltr"] .portfolio .portfolio-info h4 {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .skills .progress .skill span {
+  font-weight: 500;
+}
+
+html[dir="ltr"] .about .content ul strong {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .about .content .bio-quote em {
+  font-weight: 500;
+}
+
+html[dir="ltr"] .resume .resume-item h4 {
+  font-weight: 600;
+}
+
+html[dir="ltr"] .resume .resume-item h5 {
+  font-weight: 500;
+}
+
+html[dir="ltr"] .resume .resume-item ul li {
+  line-height: 1.7;
+}
+
+html[dir="ltr"] .services .service-item p {
+  line-height: 1.7;
+}
+
+html[dir="ltr"] .hero-actions {
+  margin-top: 2.5rem;
+}
+
+html[dir="ltr"] .hero-subtitle .typed::after {
+  margin-left: 2px;
+  margin-right: 0;
+}
+
+html[dir="ltr"] .inspirational-quote p {
+  line-height: 1.8;
+}
+
+html[dir="ltr"] .testimonials .testimonial-item .testimonial-img {
+  margin: 0 auto 20px auto;
+}
+
+/* LTR Layout and Spacing */
+html[dir="ltr"] .contact .info-item i {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+html[dir="ltr"] .services .service-item .icon {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+html[dir="ltr"] .header .logo img {
+  margin-inline-start: 0;
+  margin-inline-end: 8px;
+}
+
+html[dir="ltr"] #navmenu a .navicon {
+  margin-right: 10px;
+}
+
+html[dir="ltr"] .about .content ul strong {
+  margin-right: 10px;
+}
+
+/* LTR Desktop Layout */
+@media (min-width: 1200px) {
+  html[dir="ltr"] .header ~ main,
+  html[dir="ltr"] .header ~ #footer {
+    margin-left: 300px !important;
+    margin-right: 0 !important;
+  }
 }
 
 .navmenu a,
@@ -1106,7 +1300,6 @@ html[dir="rtl"] .footer .credits {
   font-size: 24px;
   font-weight: 700;
 }
-
 
 /*--------------------------------------------------------------
 # Global Sections
@@ -1500,6 +1693,55 @@ html[dir="rtl"] .section-title p {
     padding: 0 10px;
   }
 
+  /* Mobile LTR Navigation Spacing */
+  html[dir="ltr"] .navmenu a,
+  html[dir="ltr"] .navmenu a:focus {
+    padding: 10px 8px;
+    margin-bottom: 3px;
+  }
+
+  html[dir="ltr"] .navmenu a .navicon,
+  html[dir="ltr"] .navmenu a:focus .navicon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  /* Mobile RTL Navigation Spacing */
+  html[dir="rtl"] .navmenu a,
+  html[dir="rtl"] .navmenu a:focus {
+    padding: 10px 8px;
+    margin-bottom: 3px;
+  }
+
+  html[dir="rtl"] .navmenu a .navicon,
+  html[dir="rtl"] .navmenu a:focus .navicon {
+    margin-left: 8px;
+    margin-right: 0;
+    font-size: 16px;
+  }
+
+  /* Mobile LTR Typography */
+  html[dir="ltr"] .navmenu a {
+    padding: 15px 10px 15px 20px;
+  }
+
+  html[dir="ltr"] .resume .resume-item {
+    padding: 0 0 25px 25px;
+    border-left: 3px solid var(--primary);
+    border-right: none;
+    border-radius: 0 8px 8px 0;
+  }
+
+  html[dir="ltr"] .resume .resume-item::before {
+    left: -10px;
+    right: auto;
+  }
+
+  html[dir="ltr"] .about .content ul i {
+    margin-right: 5px;
+    margin-left: 0;
+  }
+
   .header .profile-img {
     width: 80px;
     margin: 10px auto;
@@ -1745,6 +1987,55 @@ html[dir="rtl"] .section-title p {
   .about .content ul li {
     font-size: 14px;
     margin-bottom: 15px;
+  }
+
+  /* Small Mobile LTR Navigation Spacing */
+  html[dir="ltr"] .navmenu a,
+  html[dir="ltr"] .navmenu a:focus {
+    padding: 8px 6px;
+    margin-bottom: 2px;
+  }
+
+  html[dir="ltr"] .navmenu a .navicon,
+  html[dir="ltr"] .navmenu a:focus .navicon {
+    margin-right: 6px;
+    font-size: 14px;
+  }
+
+  /* Small Mobile RTL Navigation Spacing */
+  html[dir="rtl"] .navmenu a,
+  html[dir="rtl"] .navmenu a:focus {
+    padding: 8px 6px;
+    margin-bottom: 2px;
+  }
+
+  html[dir="rtl"] .navmenu a .navicon,
+  html[dir="rtl"] .navmenu a:focus .navicon {
+    margin-left: 6px;
+    margin-right: 0;
+    font-size: 14px;
+  }
+
+  /* Small Mobile LTR Typography */
+  html[dir="ltr"] .navmenu a {
+    padding: 15px 10px 15px 20px;
+  }
+
+  html[dir="ltr"] .resume .resume-item {
+    padding: 0 0 25px 25px;
+    border-left: 3px solid var(--primary);
+    border-right: none;
+    border-radius: 0 8px 8px 0;
+  }
+
+  html[dir="ltr"] .resume .resume-item::before {
+    left: -10px;
+    right: auto;
+  }
+
+  html[dir="ltr"] .about .content ul i {
+    margin-right: 5px;
+    margin-left: 0;
   }
 
   .about .content ul i {
@@ -6019,7 +6310,12 @@ html[dir="rtl"] .related-content {
   right: 10%;
   width: 100px;
   height: 100px;
-  background: linear-gradient(45deg, var(--primary), var(--devops-accent), var(--secondary-accent));
+  background: linear-gradient(
+    45deg,
+    var(--primary),
+    var(--devops-accent),
+    var(--secondary-accent)
+  );
   border-radius: 50%;
   opacity: 0.1;
   animation: float 6s ease-in-out infinite;
@@ -6604,7 +6900,6 @@ html[dir="rtl"] .related-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 70vh;
   }
 
   /* دکمه‌های کوچک‌تر و کنار هم در موبایل */

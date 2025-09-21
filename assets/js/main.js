@@ -575,7 +575,17 @@
                   initSwiperWithCustomPagination(swiperElement, config);
                 }
               } else {
-                new Swiper(swiperElement, config);
+                const swiper = new Swiper(swiperElement, config);
+                
+                // Add immediate resume functionality for testimonials
+                if (swiperElement.closest('#testimonials')) {
+                  swiperElement.addEventListener('mouseleave', function() {
+                    if (swiper.autoplay && !swiper.autoplay.running) {
+                      // Immediately resume autoplay when mouse leaves
+                      swiper.autoplay.resume();
+                    }
+                  });
+                }
               }
             } catch (e) {
               console.warn("Invalid Swiper config:", e);
