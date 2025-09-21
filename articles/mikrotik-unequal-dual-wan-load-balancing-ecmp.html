@@ -38,7 +38,7 @@
     Essential meta tags for search engine optimization,
     social media sharing, and browser compatibility
     =============================================== -->
-    <title>پیکربندی حرفه‌ای Load Balancing نامتقارن با Failover در میکروتیک به روش ECMP | راهنمای کامل</title>
+    <title>Professional Asymmetric Load Balancing with Failover in MikroTik using ECMP Method | Complete Guide</title>
     <meta
       content="آموزش کامل پیکربندی Load Balancing نامتقارن با Failover خودکار در میکروتیک به روش ECMP. شامل دستورات MikroTik، تست عملی، مانیتورینگ و بهترین روش‌های امنیتی برای سازمان‌ها."
       name="description"
@@ -630,24 +630,6 @@
     </header>
     <!-- Main Content -->
     <main id="main-content" class="main" role="main">
-      <!-- ===============================================
-      ==================== BREADCRUMBS ===================
-      =============================================== -->
-      <nav class="breadcrumbs" role="region" aria-label="Breadcrumb">
-        <ol>
-          <li>
-            <a href="../index.html">صفحه اصلی</a>
-          </li>
-          <li class="separator" aria-hidden="true"></li>
-          <li>
-            <a href="../index.html#articles">مقالات</a>
-          </li>
-          <li class="separator" aria-hidden="true"></li>
-          <li>
-            <span aria-current="page">پیکربندی ECMP میکروتیک</span>
-          </li>
-        </ol>
-      </nav>
         
       <!-- ===============================================
       ==================== ARTICLE HEADER ================
@@ -813,11 +795,6 @@
           </div>
         </div>
 
-        <!-- Hero Background -->
-        <div class="hero-background">
-          <h1>راهنمای کامل تعادل بار دوگانه WAN در MikroTik</h1>
-          <p>آموزش جامع پیکربندی ECMP و Load Balancing برای دو اتصال WAN نابرابر در MikroTik RouterOS</p>
-        </div>
       </section>
         
       <!-- ===============================================
@@ -944,7 +921,7 @@
                           <span class="code-lang" data-fa="MikroTik" data-en="MikroTik">MikroTik</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>/interface set [find default-name=ether1] name=WAN1
+                        <pre><code class="language-bash">/interface set [find default-name=ether1] name=WAN1
 /interface set [find default-name=ether2] name=WAN2
 /interface set [find default-name=ether3] name=LAN</code></pre>
                       </div>
@@ -972,7 +949,7 @@
                           <span class="code-lang" data-fa="MikroTik" data-en="MikroTik">MikroTik</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>/ip address
+                        <pre><code class="language-bash">/ip address
 add address=192.168.30.2/30 interface=WAN1
 add address=172.30.30.2/30 interface=WAN2
 add address=10.10.10.1/24 interface=LAN</code></pre>
@@ -1001,7 +978,7 @@ add address=10.10.10.1/24 interface=LAN</code></pre>
                           <span class="code-lang" data-fa="MikroTik" data-en="MikroTik">MikroTik</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>/ip dns set servers=8.8.8.8,1.1.1.1 allow-remote-requests=yes</code></pre>
+                        <pre><code class="language-bash">/ip dns set servers=8.8.8.8,1.1.1.1 allow-remote-requests=yes</code></pre>
                       </div>
                     </div>
                   </div>
@@ -1027,7 +1004,7 @@ add address=10.10.10.1/24 interface=LAN</code></pre>
                           <span class="code-lang" data-fa="MikroTik" data-en="MikroTik">MikroTik</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>/ip firewall nat
+                        <pre><code class="language-bash">/ip firewall nat
 add chain=srcnat out-interface=WAN1 action=masquerade
 add chain=srcnat out-interface=WAN2 action=masquerade</code></pre>
                       </div>
@@ -1065,7 +1042,7 @@ add dst-address=0.0.0.0/0 gateway=192.168.30.1,192.168.30.1,172.30.30.1 check-ga
                           <div class="code-header">
                             <span class="code-lang" data-fa="خروجی" data-en="Output">خروجی</span>
                           </div>
-                          <pre><code>[admin@MikroTik] > /ip route print
+                          <pre><code class="language-bash">[admin@MikroTik] > /ip route print
 Flags: D - dynamic; A - active; C - connect; S - static; r - rip; o - ospf; b - bgp 
  #      DST-ADDRESS        GATEWAY          DISTANCE
  0  AS  0.0.0.0/0          192.168.30.1     1
@@ -1097,7 +1074,7 @@ Flags: D - dynamic; A - active; C - connect; S - static; r - rip; o - ospf; b - 
                           <span class="code-lang" data-fa="MikroTik" data-en="MikroTik">MikroTik</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>/ip firewall mangle
+                        <pre><code class="language-bash">/ip firewall mangle
 add chain=input in-interface=WAN1 action=mark-connection new-connection-mark=WAN1_CONN passthrough=no
 add chain=input in-interface=WAN2 action=mark-connection new-connection-mark=WAN2_CONN passthrough=no
 add chain=output connection-mark=WAN1_CONN action=mark-routing new-routing-mark=to_WAN1 passthrough=no
@@ -1148,7 +1125,7 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                             <span class="code-lang" data-fa="MikroTik" data-en="MikroTik">MikroTik</span>
                             <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                           </div>
-                          <pre><code>/tool torch interface=WAN1
+                          <pre><code class="language-bash">/tool torch interface=WAN1
 /tool torch interface=WAN2</code></pre>
                         </div>
                       </div>
@@ -1173,7 +1150,7 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                             <span class="code-lang" data-fa="MikroTik" data-en="MikroTik">MikroTik</span>
                             <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                           </div>
-                          <pre><code>/ip route print
+                          <pre><code class="language-bash">/ip route print
 /tool traceroute 8.8.8.8</code></pre>
                         </div>
                         

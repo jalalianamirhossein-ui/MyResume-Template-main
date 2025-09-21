@@ -40,7 +40,7 @@
     Essential meta tags for search engine optimization,
     social media sharing, and browser compatibility
     =============================================== -->
-    <title>آموزش جامع نصب و پیکربندی Nginx در اوبونتو Ubuntu - Meet AJ</title>
+    <title>Complete Guide to Nginx Installation and Configuration on Ubuntu - Meet AJ</title>
     <meta
       content="راهنمای کامل نصب و پیکربندی وب‌سرور Nginx در اوبونتو شامل Virtual Host، SSL، HTTP/2، فایروال و بهینه‌سازی عملکرد. آموزش گام به گام نصب Nginx، تنظیم SSL رایگان، پیکربندی HTTP/2 و بهینه‌سازی سرعت."
       name="description"
@@ -579,24 +579,6 @@
 
     <!-- Main Content -->
     <main id="main-content" class="main" role="main">
-      <!-- ===============================================
-      ==================== BREADCRUMBS ===================
-      =============================================== -->
-      <nav class="breadcrumbs" role="region" aria-label="Breadcrumb">
-        <ol>
-          <li>
-            <a href="../index.html">صفحه اصلی</a>
-          </li>
-          <li class="separator" aria-hidden="true"></li>
-          <li>
-            <a href="../index.html#articles">مقالات</a>
-          </li>
-          <li class="separator" aria-hidden="true"></li>
-          <li>
-            <span aria-current="page">نصب و پیکربندی Nginx در Ubuntu</span>
-          </li>
-        </ol>
-      </nav>
         
       <!-- ===============================================
       ==================== ARTICLE HEADER ================
@@ -995,7 +977,7 @@
                         Copy
                       </button>
                     </div>
-                    <pre><code>sudo apt update
+                    <pre><code class="language-bash">sudo apt update
 sudo apt upgrade -y</code></pre>
                   </div>
 
@@ -1018,7 +1000,7 @@ sudo apt upgrade -y</code></pre>
                         Copy
                       </button>
                     </div>
-                    <pre><code>sudo apt install nginx -y</code></pre>
+                    <pre><code class="language-bash">sudo apt install nginx -y</code></pre>
                   </div>
                 </section>
 
@@ -1060,7 +1042,7 @@ sudo apt upgrade -y</code></pre>
                         Copy
                       </button>
                     </div>
-                    <pre><code>systemctl status nginx</code></pre>
+                    <pre><code class="language-bash">systemctl status nginx</code></pre>
                   </div>
 
                   <p
@@ -1081,7 +1063,7 @@ sudo apt upgrade -y</code></pre>
                         Copy
                       </button>
                     </div>
-                    <pre><code>sudo systemctl enable nginx</code></pre>
+                    <pre><code class="language-bash">sudo systemctl enable nginx</code></pre>
                   </div>
 
                   <p
@@ -1102,7 +1084,7 @@ sudo apt upgrade -y</code></pre>
                         Copy
                       </button>
                     </div>
-                    <pre><code>sudo systemctl restart nginx
+                    <pre><code class="language-bash">sudo systemctl restart nginx
 sudo systemctl stop nginx</code></pre>
                   </div>
                 </section>
@@ -1134,7 +1116,7 @@ sudo systemctl stop nginx</code></pre>
                         Copy
                       </button>
                     </div>
-                    <pre><code>sudo mkdir -p /var/www/example.com/html
+                    <pre><code class="language-bash">sudo mkdir -p /var/www/example.com/html
 sudo chown -R $USER:$USER /var/www/example.com/html</code></pre>
                   </div>
 
@@ -1153,7 +1135,7 @@ sudo chown -R $USER:$USER /var/www/example.com/html</code></pre>
                         Copy
                       </button>
                     </div>
-                    <pre><code>echo "&lt;h1&gt;Hello from Nginx on Ubuntu!&lt;/h1&gt;" &gt; /var/www/example.com/html/index.html</code></pre>
+                    <pre><code class="language-bash">echo "&lt;h1&gt;Hello from Nginx on Ubuntu!&lt;/h1&gt;" &gt; /var/www/example.com/html/index.html</code></pre>
                   </div>
 
                   <p
@@ -1174,7 +1156,7 @@ sudo chown -R $USER:$USER /var/www/example.com/html</code></pre>
                         Copy
                       </button>
                     </div>
-                    <pre><code>sudo nano /etc/nginx/sites-available/example.com</code></pre>
+                    <pre><code class="language-bash">sudo nano /etc/nginx/sites-available/example.com</code></pre>
                   </div>
 
                   <p data-en="Content:" data-fa="محتوا:">محتوا:</p>

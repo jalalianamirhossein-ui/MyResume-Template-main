@@ -41,7 +41,7 @@
     Comprehensive meta tags for search engine optimization,
     social media sharing, and browser compatibility
     =============================================== -->
-    <title>Windows CMD – دستورات حرفه‌ای شبکه برای مدیران سیستم | Professional Network Commands - Meet AJ</title>
+    <title>Windows CMD - Professional Network Commands for System Administrators | Complete Guide - Meet AJ</title>
     
     <!-- Primary Description (Persian) -->
     <meta
@@ -188,522 +188,6 @@
     />
 
     <!-- Microsoft-inspired Custom CSS moved to articles.css -->
-      
-      /* Hero section styling */
-      .hero {
-        background: var(--ms-gradient);
-        padding: 4rem 0;
-        position: relative;
-        overflow: hidden;
-        color: var(--ms-white);
-      }
-      
-      .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        opacity: 0.3;
-      }
-      
-      .hero h1 {
-        color: var(--ms-white);
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-      }
-      
-      .hero-subtitle {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        line-height: 1.6;
-      }
-      
-      /* Article stats styling */
-      .article-stats {
-        margin: 2rem 0;
-      }
-      
-      .stats-container {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      
-      .stat-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 1rem 1.5rem;
-        border-radius: var(--border-radius);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      
-      .stat-icon {
-        font-size: 1.5rem;
-        color: var(--ms-white);
-      }
-      
-      .stat-number {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--ms-white);
-      }
-      
-      .stat-label {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      
-      /* Banner card styling */
-      .article-banner {
-        margin: 2rem 0;
-      }
-      
-      .banner-card {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 1.5rem;
-        border-radius: var(--border-radius);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-      
-      .banner-icon {
-        font-size: 2rem;
-        color: var(--ms-white);
-      }
-      
-      .banner-title {
-        color: var(--ms-white);
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin: 0;
-      }
-      
-      .banner-subtitle {
-        color: rgba(255, 255, 255, 0.8);
-        margin: 0;
-        font-size: 0.9rem;
-      }
-      
-      /* Action buttons styling */
-      .article-actions {
-        margin-top: 2rem;
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      
-      .action-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem 2rem;
-        border-radius: var(--border-radius);
-        text-decoration: none;
-        transition: all var(--transition-speed) ease;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .action-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      }
-      
-      .btn-primary {
-        background: var(--ms-white);
-        color: var(--ms-blue);
-        border: 2px solid var(--ms-white);
-      }
-      
-      .btn-primary:hover {
-        background: transparent;
-        color: var(--ms-white);
-        border-color: var(--ms-white);
-      }
-      
-      .btn-outline-secondary {
-        background: transparent;
-        color: var(--ms-white);
-        border: 2px solid rgba(255, 255, 255, 0.5);
-      }
-      
-      .btn-outline-secondary:hover {
-        background: var(--ms-white);
-        color: var(--ms-blue);
-        border-color: var(--ms-white);
-      }
-      
-      /* Background shapes */
-      .hero-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        z-index: -1;
-      }
-      
-      .bg-shape {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.1;
-        animation: float 6s ease-in-out infinite;
-      }
-      
-      .bg-shape-1 {
-        width: 200px;
-        height: 200px;
-        background: var(--ms-white);
-        top: 10%;
-        left: 10%;
-        animation-delay: 0s;
-      }
-      
-      .bg-shape-2 {
-        width: 150px;
-        height: 150px;
-        background: var(--ms-white);
-        top: 60%;
-        right: 10%;
-        animation-delay: 2s;
-      }
-      
-      .bg-shape-3 {
-        width: 100px;
-        height: 100px;
-        background: var(--ms-white);
-        bottom: 20%;
-        left: 50%;
-        animation-delay: 4s;
-      }
-      
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-      }
-      
-      /* Article content styling */
-      .article-content {
-        background: #f8f9fa;
-        padding: 4rem 0;
-      }
-      
-      .article-section {
-        background: var(--ms-white);
-        margin-bottom: 2rem;
-        padding: 2rem;
-        border-radius: var(--border-radius);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        border-left: 4px solid var(--ms-blue);
-        transition: all var(--transition-speed) ease;
-      }
-      
-      .article-section:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      }
-      
-      .article-section h2 {
-        color: var(--ms-dark);
-        border-bottom: 2px solid var(--ms-blue);
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-        font-weight: 600;
-      }
-      
-      .article-section h3 {
-        color: var(--ms-blue);
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-      }
-      
-      /* Command blocks styling */
-      .cmd-block {
-        background: var(--cmd-bg);
-        color: var(--cmd-text);
-        border-left: 4px solid var(--cmd-border);
-        font-family: 'Courier New', 'Consolas', monospace;
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transition: all var(--transition-speed) ease;
-        margin: 1rem 0;
-      }
-      
-      .cmd-block:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      }
-      
-      /* Code block styling */
-      .code-header {
-        background: var(--ms-blue);
-        color: var(--ms-white);
-        padding: 12px 20px;
-        border-radius: var(--border-radius) var(--border-radius) 0 0;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        font-size: 0.875rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .copy-btn {
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: var(--ms-white);
-        padding: 6px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all var(--transition-speed) ease;
-        font-size: 0.8rem;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-      }
-
-      .copy-btn:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.6);
-        transform: translateY(-1px);
-      }
-
-      .copy-btn.copied {
-        background: #28a745;
-        border-color: #28a745;
-        transform: scale(1.05);
-      }
-
-      .cmd-block pre {
-        background: var(--cmd-bg);
-        color: var(--cmd-text);
-        margin: 0;
-        padding: 20px;
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
-        border-left: 4px solid var(--ms-blue);
-        font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
-        font-size: 0.9rem;
-        line-height: 1.6;
-        overflow-x: auto;
-        position: relative;
-      }
-
-      .cmd-block pre code {
-        display: block;
-        white-space: pre;
-        color: inherit;
-      }
-
-
-      /* Table styling */
-      .table-responsive {
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .table-dark {
-        background: var(--ms-dark);
-        color: var(--ms-white);
-        margin: 0;
-      }
-
-      .table-dark th {
-        background: var(--ms-blue);
-        border-color: var(--ms-blue);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        font-size: 0.9rem;
-      }
-
-      .table-dark td {
-        border-color: rgba(255, 255, 255, 0.1);
-        padding: 1rem;
-        vertical-align: middle;
-      }
-
-      .table-dark td code {
-        background: rgba(63, 149, 188, 0.2);
-        color: var(--ms-white);
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-family: 'Courier New', monospace;
-        font-size: 0.85rem;
-      }
-
-      /* Troubleshooting scenarios */
-      .troubleshooting-scenario {
-        margin-bottom: 2rem;
-        padding: 1.5rem;
-        background: var(--ms-light-blue);
-        border-radius: var(--border-radius);
-        border-left: 4px solid var(--ms-blue);
-        transition: all var(--transition-speed) ease;
-      }
-
-      .troubleshooting-scenario:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(63, 149, 188, 0.2);
-      }
-
-      .troubleshooting-scenario h4 {
-        color: var(--ms-dark);
-        margin-bottom: 1rem;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .troubleshooting-scenario h4::before {
-        content: "🔧";
-        font-size: 1.2rem;
-      }
-
-      /* FAQ styling */
-      .faq-item {
-        margin-bottom: 2rem;
-        padding: 1.5rem;
-        background: var(--ms-light-blue);
-        border-radius: var(--border-radius);
-        border-left: 4px solid var(--ms-blue);
-        transition: all var(--transition-speed) ease;
-      }
-
-      .faq-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(63, 149, 188, 0.2);
-      }
-
-      .faq-item h4 {
-        color: var(--ms-dark);
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .faq-item h4::before {
-        content: "❓";
-        font-size: 1.1rem;
-      }
-
-      .faq-item p {
-        color: var(--ms-dark);
-        margin: 0;
-        line-height: 1.6;
-      }
-
-      /* Professional tips */
-      .professional-tips-list {
-        background: var(--ms-light-blue);
-        padding: 1.5rem;
-        border-radius: var(--border-radius);
-        border-left: 4px solid var(--ms-blue);
-        transition: all var(--transition-speed) ease;
-      }
-
-      .professional-tips-list:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(63, 149, 188, 0.2);
-      }
-
-      .professional-tips-list li {
-        margin-bottom: 1rem;
-        color: var(--ms-dark);
-        line-height: 1.6;
-        position: relative;
-        padding-right: 1.5rem;
-      }
-
-      .professional-tips-list li::before {
-        content: "💡";
-        position: absolute;
-        right: 0;
-        top: 0;
-        font-size: 1.1rem;
-      }
-
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .hero {
-          padding: 2rem 0;
-        }
-        
-        .article-section {
-          padding: 1.5rem;
-          margin-bottom: 1.5rem;
-        }
-        
-        .cmd-block pre {
-          padding: 15px;
-          font-size: 0.8rem;
-        }
-        
-        .code-header {
-          padding: 10px 15px;
-          font-size: 0.8rem;
-        }
-        
-        .copy-btn {
-          padding: 4px 8px;
-          font-size: 0.7rem;
-        }
-        
-        .stats-container {
-          gap: 1rem;
-        }
-        
-        .stat-item {
-          padding: 0.8rem 1rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .hero h1 {
-          font-size: 1.8rem;
-        }
-        
-        .article-section h2 {
-          font-size: 1.4rem;
-        }
-        
-        .article-section h3 {
-          font-size: 1.2rem;
-        }
-        
-        .cmd-block pre {
-          padding: 12px;
-          font-size: 0.75rem;
-          line-height: 1.4;
-        }
-        
-        .cmd-block pre code::before {
-          margin-right: 8px;
-          font-size: 0.8rem;
-        }
-      }
-    </style>
 
 
     <!-- Preload critical resources for better performance -->
@@ -1047,29 +531,11 @@
     </header>
 
     <main class="main" id="main-content">
-      <!-- ===============================================
-      ==================== BREADCRUMBS ===================
-      =============================================== -->
-      <nav class="breadcrumbs" role="region" aria-label="Breadcrumb">
-        <ol>
-          <li>
-            <a href="../index.html">صفحه اصلی</a>
-          </li>
-          <li class="separator" aria-hidden="true"></li>
-          <li>
-            <a href="../index.html#articles">مقالات</a>
-          </li>
-          <li class="separator" aria-hidden="true"></li>
-          <li>
-            <span aria-current="page">دستورات شبکه Windows CMD</span>
-          </li>
-        </ol>
-      </nav>
         
       <!-- ===============================================
       ==================== ARTICLE HEADER ==================
       =============================================== -->
-      <section class="article-header hero" role="banner">
+      <section class="hero" role="banner">
         <div class="container">
           <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -1231,8 +697,9 @@
 
         <!-- Hero Background -->
         <div class="hero-background">
-          <h1>راهنمای جامع دستورات شبکه Windows CMD</h1>
-          <p>آموزش کامل دستورات مفید و کاربردی شبکه در Windows Command Prompt برای مدیریت و عیب‌یابی شبکه</p>
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
         </div>
       </section>
 
@@ -1369,7 +836,7 @@
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>ipconfig /all
+                    <pre><code class="language-bash">ipconfig /all
 ipconfig /release
 ipconfig /renew
 ipconfig /flushdns</code></pre>
@@ -1393,7 +860,7 @@ ipconfig /flushdns</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>ping google.com -t</code></pre>
+                    <pre><code class="language-bash">ping google.com -t</code></pre>
                   </div>
 
                   <h3
@@ -1414,7 +881,7 @@ ipconfig /flushdns</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>tracert 8.8.8.8</code></pre>
+                    <pre><code class="language-bash">tracert 8.8.8.8</code></pre>
                   </div>
 
                   <h3
@@ -1435,7 +902,7 @@ ipconfig /flushdns</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>nslookup example.com</code></pre>
+                    <pre><code class="language-bash">nslookup example.com</code></pre>
                   </div>
                 </section>
 
@@ -1466,7 +933,7 @@ ipconfig /flushdns</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>netstat -ano
+                    <pre><code class="language-bash">netstat -ano
 netstat -r</code></pre>
                   </div>
 
@@ -1488,7 +955,7 @@ netstat -r</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>arp -a</code></pre>
+                    <pre><code class="language-bash">arp -a</code></pre>
                   </div>
 
                   <h3
@@ -1509,7 +976,7 @@ netstat -r</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>route print
+                    <pre><code class="language-bash">route print
 route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                   </div>
 
@@ -1531,7 +998,7 @@ route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>pathping google.com</code></pre>
+                    <pre><code class="language-bash">pathping google.com</code></pre>
                   </div>
 
                   <h3
@@ -1552,7 +1019,7 @@ route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>getmac /v /fo list</code></pre>
+                    <pre><code class="language-bash">getmac /v /fo list</code></pre>
                   </div>
 
                   <h3
@@ -1573,7 +1040,7 @@ route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>net use Z: \\192.168.1.10\share /user:DOMAIN\user</code></pre>
+                    <pre><code class="language-bash">net use Z: \\192.168.1.10\share /user:DOMAIN\user</code></pre>
                   </div>
 
                   <h3
@@ -1594,7 +1061,7 @@ route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
-                    <pre><code>netsh wlan show profiles
+                    <pre><code class="language-bash">netsh wlan show profiles
 netsh wlan export profile name="Wi-Fi" folder=C:\ key=clear
 netsh int ip reset</code></pre>
                   </div>
@@ -1701,7 +1168,7 @@ netsh int ip reset</code></pre>
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
-                      <pre><code>ipconfig /flushdns
+                      <pre><code class="language-bash">ipconfig /flushdns
 nslookup google.com</code></pre>
                     </div>
                   </div>
@@ -1725,7 +1192,7 @@ nslookup google.com</code></pre>
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
-                      <pre><code>tracert 8.8.8.8
+                      <pre><code class="language-bash">tracert 8.8.8.8
 pathping 8.8.8.8</code></pre>
                     </div>
                   </div>
@@ -1749,7 +1216,7 @@ pathping 8.8.8.8</code></pre>
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
-                      <pre><code>netstat -ano
+                      <pre><code class="language-bash">netstat -ano
 tasklist /fi "pid eq <PID>"</code></pre>
                     </div>
                   </div>
@@ -1773,7 +1240,7 @@ tasklist /fi "pid eq <PID>"</code></pre>
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
-                      <pre><code>net use Z: \\192.168.1.10\share /user:DOMAIN\user</code></pre>
+                      <pre><code class="language-bash">net use Z: \\192.168.1.10\share /user:DOMAIN\user</code></pre>
                     </div>
                   </div>
                 </section>
@@ -1804,7 +1271,7 @@ tasklist /fi "pid eq <PID>"</code></pre>
                             <i class="bi bi-clipboard"></i>
                           </button>
                         </div>
-                        <pre><code>ipconfig /all > C:\logs\netinfo.txt</code></pre>
+                        <pre><code class="language-bash">ipconfig /all > C:\logs\netinfo.txt</code></pre>
                       </div>
                     </li>
                     <li
@@ -2139,10 +1606,10 @@ tasklist /fi "pid eq <PID>"</code></pre>
     </main>
 
     <!-- Scripts -->
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/aos/aos.js"></script>
-    <script src="../assets/js/main.js?v=999"></script>
-    <script src="../assets/js/i18n.js?v=999"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../assets/vendor/aos/aos.js" defer></script>
+    <script src="../assets/js/main.js?v=999" defer></script>
+    <script src="../assets/js/i18n.js?v=999" defer></script>
 
     <!-- Custom JavaScript for CMD Article -->
     <script>

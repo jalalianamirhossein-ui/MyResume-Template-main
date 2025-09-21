@@ -36,7 +36,7 @@
     Essential meta tags for search engine optimization,
     social media sharing, and browser compatibility
     =============================================== -->
-    <title>راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس | آموزش کامل امنیت سرور</title>
+    <title>Complete Guide to Enabling and Configuring SSH in Linux | Server Security Tutorial</title>
     <meta
       content="آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس. شامل احراز هویت با کلید، تنظیمات امنیتی، Fail2ban، مدیریت Root Login و Best Practices برای سازمان‌ها."
       name="description"
@@ -629,24 +629,6 @@
     </header>
     <!-- Main Content -->
     <main id="main-content" class="main" role="main">
-      <!-- ===============================================
-      ==================== BREADCRUMBS ===================
-      =============================================== -->
-      <nav class="breadcrumbs" role="region" aria-label="Breadcrumb">
-        <ol>
-          <li>
-            <a href="../index.html">صفحه اصلی</a>
-          </li>
-          <li class="separator" aria-hidden="true"></li>
-          <li>
-            <a href="../index.html#articles">مقالات</a>
-          </li>
-          <li class="separator" aria-hidden="true"></li>
-          <li>
-            <span aria-current="page">پیکربندی SSH لینوکس</span>
-          </li>
-        </ol>
-      </nav>
         
       <!-- ===============================================
       ==================== ARTICLE HEADER ================
@@ -812,11 +794,6 @@
           </div>
         </div>
 
-        <!-- Hero Background -->
-        <div class="hero-background">
-          <h1>راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس</h1>
-          <p>آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس با بهترین روش‌های امنیتی</p>
-        </div>
       </section>
         
       <!-- ===============================================
@@ -874,7 +851,7 @@
                                 <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
                                 <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                             </div>
-                            <pre><code>sudo apt update
+                            <pre><code class="language-bash">sudo apt update
 sudo apt install openssh-server -y</code></pre>
                         </div>
                     </div>
@@ -915,7 +892,7 @@ sudo apt install openssh-server -y</code></pre>
                           <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>systemctl status ssh</code></pre>
+                        <pre><code class="language-bash">systemctl status ssh</code></pre>
                       </div>
                     </div>
                   </div>
@@ -950,7 +927,7 @@ sudo apt install openssh-server -y</code></pre>
                           <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>sudo systemctl restart ssh</code></pre>
+                        <pre><code class="language-bash">sudo systemctl restart ssh</code></pre>
                       </div>
                     </div>
                   </div>
@@ -985,7 +962,7 @@ sudo apt install openssh-server -y</code></pre>
                           <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>sudo systemctl enable ssh</code></pre>
+                        <pre><code class="language-bash">sudo systemctl enable ssh</code></pre>
                       </div>
                     </div>
                   </div>
@@ -1025,7 +1002,7 @@ sudo apt install openssh-server -y</code></pre>
                           <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>ssh user@192.168.1.100</code></pre>
+                        <pre><code class="language-bash">ssh user@192.168.1.100</code></pre>
                       </div>
                     </div>
                   </div>
@@ -1060,7 +1037,7 @@ sudo apt install openssh-server -y</code></pre>
                           <span class="code-lang" data-fa="PowerShell" data-en="PowerShell">PowerShell</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>ssh user@server-ip</code></pre>
+                        <pre><code class="language-bash">ssh user@server-ip</code></pre>
                       </div>
                     </div>
                   </div>
@@ -1100,7 +1077,7 @@ sudo apt install openssh-server -y</code></pre>
                           <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>ssh-keygen -t rsa -b 4096</code></pre>
+                        <pre><code class="language-bash">ssh-keygen -t rsa -b 4096</code></pre>
                       </div>
                     </div>
                   </div>
@@ -1135,7 +1112,7 @@ sudo apt install openssh-server -y</code></pre>
                           <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>ssh-keygen -t ed25519</code></pre>
+                        <pre><code class="language-bash">ssh-keygen -t ed25519</code></pre>
                       </div>
                     </div>
                   </div>
@@ -1170,7 +1147,7 @@ sudo apt install openssh-server -y</code></pre>
                           <span class="code-lang" data-fa="Terminal" data-en="Terminal">Terminal</span>
                           <button class="copy-btn" onclick="copyCode(this)" data-fa="کپی" data-en="Copy">کپی</button>
                         </div>
-                        <pre><code>ssh-copy-id user@server-ip</code></pre>
+                        <pre><code class="language-bash">ssh-copy-id user@server-ip</code></pre>
                       </div>
                     </div>
                   </div>
