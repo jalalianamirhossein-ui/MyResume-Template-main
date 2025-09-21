@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Our Services — Professional IT Solutions" data-fa="خدمات ما — راهکارهای حرفه‌ای IT">Our Services — Professional IT Solutions</title>
+    <meta name="description" content="Professional IT services including network design, system administration, DevOps automation, monitoring, virtualization, and technical consulting.">
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #f6f7f9;
+            --card: #fff;
+            --primary: #0d6efd;
+            --success: #198754;
+            --text: #222;
+            --muted: #667085;
+            --radius: 12px;
+            --shadow: 0 10px 30px rgba(16, 24, 40, .08);
+            --space: clamp(16px, 3vw, 24px);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.75 "Segoe UI", Tahoma, system-ui, sans-serif;
+        }
+        
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: calc(var(--space) * 2) var(--space);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(16, 24, 40, .15);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .service-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        .service-description {
+            color: var(--muted);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .service-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        
+        .service-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .service-button:hover {
+            background: #0b5ed7;
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            padding: 8px 16px;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .rtl .back-button {
+            left: auto;
+            right: 20px;
+        }
+        
+        .rtl .language-toggle {
+            left: 20px;
+            right: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            
+            .hero {
+                padding: 40px 0 30px;
+                margin-bottom: 30px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                gap: 4px;
+            }
+            
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .back-button {
+                top: 10px;
+                left: 10px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .rtl .back-button {
+                left: auto;
+                right: 10px;
+            }
+            
+            .rtl .language-toggle {
+                left: 10px;
+                right: auto;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('fa')">فا</button>
+    </div>
+
+    <!-- Back Button -->
+    <a href="/index.html" class="back-button" aria-label="Back to Home"
+       data-en="Back to Home" data-fa="بازگشت به خانه">
+        <i class="bi bi-arrow-left"></i>
+        <span data-en="Back to Home" data-fa="بازگشت به خانه">Back to Home</span>
+    </a>
+
+    <!-- Hero Section -->
+    <div class="hero" data-aos="fade-up">
+        <div class="container">
+            <h1 data-en="Our Services" data-fa="خدمات ما">Our Services</h1>
+            <p data-en="Professional IT solutions tailored to your business needs. From network design to technical consulting, we provide comprehensive services to help your organization thrive." data-fa="راهکارهای حرفه‌ای IT متناسب با نیازهای کسب‌وکار شما. از طراحی شبکه تا مشاوره فنی، خدمات جامعی ارائه می‌دهیم تا سازمان شما رشد کند.">
+                Professional IT solutions tailored to your business needs. From network design to technical consulting, we provide comprehensive services to help your organization thrive.
+            </p>
+        </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="container">
+        <div class="services-grid">
+            <!-- Service 1: Network Design -->
+            <a href="services/network-design.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="bi bi-diagram-3 service-icon"></i>
+                <h3 class="service-title" data-en="Network Design & Implementation" data-fa="طراحی و پیاده‌سازی شبکه">
+                    Network Design & Implementation
+                </h3>
+                <p class="service-description" data-en="Complete network infrastructure design, implementation, and optimization using Cisco and MikroTik equipment for enterprise environments." data-fa="طراحی کامل زیرساخت شبکه، پیاده‌سازی و بهینه‌سازی با استفاده از تجهیزات سیسکو و میکروتیک برای محیط‌های سازمانی.">
+                    Complete network infrastructure design, implementation, and optimization using Cisco and MikroTik equipment for enterprise environments.
+                </p>
+                <div class="service-price" data-en="AED 4,900" data-fa="۴,۹۰۰ درهم">AED 4,900</div>
+                <div class="service-button">
+                    <span data-en="Learn More" data-fa="اطلاعات بیشتر">Learn More</span>
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Service 2: System Administration -->
+            <a href="services/system-administration.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-hdd-network service-icon"></i>
+                <h3 class="service-title" data-en="System Administration" data-fa="مدیریت سیستم">
+                    System Administration
+                </h3>
+                <p class="service-description" data-en="Windows Server management, Active Directory, DNS, and Linux server administration for optimal system performance and security." data-fa="مدیریت Windows Server، Active Directory، DNS و مدیریت سرورهای لینوکس برای عملکرد بهینه و امنیت سیستم.">
+                    Windows Server management, Active Directory, DNS, and Linux server administration for optimal system performance and security.
+                </p>
+                <div class="service-price" data-en="AED 3,900" data-fa="۳,۹۰۰ درهم">AED 3,900</div>
+                <div class="service-button">
+                    <span data-en="Learn More" data-fa="اطلاعات بیشتر">Learn More</span>
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Service 3: DevOps & Automation -->
+            <a href="services/devops-automation.html" class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-gear-wide-connected service-icon"></i>
+                <h3 class="service-title" data-en="DevOps & Automation" data-fa="دواپس و خودکارسازی">
+                    DevOps & Automation
+                </h3>
+                <p class="service-description" data-en="Docker containerization, CI/CD pipeline setup, and automation scripts to streamline deployment and infrastructure management." data-fa="کانتینری‌سازی Docker، راه‌اندازی خط لوله CI/CD و اسکریپت‌های خودکارسازی برای تسهیل استقرار و مدیریت زیرساخت.">
+                    Docker containerization, CI/CD pipeline setup, and automation scripts to streamline deployment and infrastructure management.
+                </p>
+                <div class="service-price" data-en="AED 6,900" data-fa="۶,۹۰۰ درهم">AED 6,900</div>
+                <div class="service-button">
+                    <span data-en="Learn More" data-fa="اطلاعات بیشتر">Learn More</span>
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Service 4: Monitoring & Security -->
+            <a href="services/monitoring-security.html" class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-shield-check service-icon"></i>
+                <h3 class="service-title" data-en="Monitoring & Security" data-fa="مانیتورینگ و امنیت">
+                    Monitoring & Security
+                </h3>
+                <p class="service-description" data-en="Comprehensive monitoring solutions with Zabbix, security implementation, and backup strategies to ensure system reliability." data-fa="راهکارهای جامع مانیتورینگ با Zabbix، پیاده‌سازی امنیت و استراتژی‌های پشتیبان‌گیری برای اطمینان از قابلیت اطمینان سیستم.">
+                    Comprehensive monitoring solutions with Zabbix, security implementation, and backup strategies to ensure system reliability.
+                </p>
+                <div class="service-price" data-en="AED 4,200" data-fa="۴,۲۰۰ درهم">AED 4,200</div>
+                <div class="service-button">
+                    <span data-en="Learn More" data-fa="اطلاعات بیشتر">Learn More</span>
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Service 5: Virtualization Solutions -->
+            <a href="services/virtualization-solutions.html" class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="bi bi-boxes service-icon"></i>
+                <h3 class="service-title" data-en="Virtualization Solutions" data-fa="راهکارهای مجازی‌سازی">
+                    Virtualization Solutions
+                </h3>
+                <p class="service-description" data-en="VMware vSphere deployment, KVM virtualization, and cloud migration services for scalable and efficient infrastructure." data-fa="استقرار VMware vSphere، مجازی‌سازی KVM و خدمات مهاجرت به ابر برای زیرساخت مقیاس‌پذیر و کارآمد.">
+                    VMware vSphere deployment, KVM virtualization, and cloud migration services for scalable and efficient infrastructure.
+                </p>
+                <div class="service-price" data-en="AED 5,900" data-fa="۵,۹۰۰ درهم">AED 5,900</div>
+                <div class="service-button">
+                    <span data-en="Learn More" data-fa="اطلاعات بیشتر">Learn More</span>
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Service 6: Technical Consulting -->
+            <a href="services/technical-consulting.html" class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <i class="bi bi-briefcase service-icon"></i>
+                <h3 class="service-title" data-en="Technical Consulting" data-fa="مشاوره فنی">
+                    Technical Consulting
+                </h3>
+                <p class="service-description" data-en="Expert consultation on IT infrastructure planning, technology selection, and implementation strategies for business growth." data-fa="مشاوره تخصصی در برنامه‌ریزی زیرساخت IT، انتخاب فناوری و استراتژی‌های پیاده‌سازی برای رشد کسب‌وکار.">
+                    Expert consultation on IT infrastructure planning, technology selection, and implementation strategies for business growth.
+                </p>
+                <div class="service-price" data-en="AED 2,500" data-fa="۲,۵۰۰ درهم">AED 2,500</div>
+                <div class="service-button">
+                    <span data-en="Learn More" data-fa="اطلاعات بیشتر">Learn More</span>
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Our Services — Professional IT Solutions",
+        "description": "Professional IT services including network design, system administration, DevOps automation, monitoring, virtualization, and technical consulting.",
+        "provider": {
+            "@type": "Person",
+            "name": "AmirHossein Jalalian"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "UAE"
+        },
+        "serviceType": "IT Services",
+        "category": "Technology Services"
+    }
+    </script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Language switching function
+        function setLang(lang) {
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+            
+            // Update text content
+            document.querySelectorAll('[data-en][data-fa]').forEach(element => {
+                if (lang === 'fa') {
+                    element.textContent = element.getAttribute('data-fa');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update page direction
+            if (lang === 'fa') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
+            
+            // Store language preference
+            localStorage.setItem('preferredLang', lang);
+        }
+        
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang') || 'en';
+            setLang(savedLang);
+        });
+    </script>
+</body>
+</html>
