@@ -23,6 +23,7 @@
 /*--------------------------------------------------------------
 # CSS VARIABLES & DESIGN SYSTEM
 --------------------------------------------------------------*/
+
 /**
  * Apple Design System Color Palette
  * Modern color scheme inspired by Apple's design language
@@ -1777,15 +1778,6 @@ html[dir="rtl"] .section-title p {
     font-size: 13px;
   }
 
-  .language-switcher {
-    top: 15px;
-    right: 15px;
-  }
-
-  html[dir="rtl"] .language-switcher {
-    right: 20px;
-    left: auto;
-  }
 
   /* Mobile sections padding */
   section,
@@ -4744,190 +4736,7 @@ html[dir="rtl"] .colon::before {
   padding: 0 10px;
 }
 
-/*--------------------------------------------------------------
-# Language Switcher Button - Clean and Simple
---------------------------------------------------------------*/
-.language-switcher {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-}
 
-html[dir="rtl"] .language-switcher {
-  right: auto;
-  left: 20px;
-}
-
-.lang-toggle-btn {
-  background: linear-gradient(
-    135deg,
-    var(--apple-white) 0%,
-    var(--surface-muted) 25%,
-    #e9ecef 50%,
-    #dee2e6 75%,
-    var(--text-secondary) 100%
-  );
-  color: var(--pure-black);
-  border: none;
-  border-radius: 50px !important;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  min-width: 60px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.lang-toggle-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  border-radius: 50px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.lang-toggle-btn:hover::before {
-  opacity: 1;
-}
-
-/* Apple-style Design - Clean and Minimal */
-
-.lang-toggle-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.lang-toggle-btn:active {
-  transform: translateY(-1px) scale(1.02);
-  transition: all 0.1s ease;
-}
-
-.lang-content {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--pure-black);
-  font-weight: 600;
-  font-size: 14px;
-  position: relative;
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-
-/* Social media style - simple and clean */
-
-.lang-toggle-btn:hover .lang-text {
-  color: #1a365d;
-}
-
-.lang-text {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--pure-black);
-  font-weight: 600;
-  font-size: 14px;
-  transition: all 0.2s ease;
-  display: inline-block;
-  visibility: visible;
-  opacity: 1;
-}
-
-.lang-flag {
-  font-size: 16px;
-  transition: transform 0.3s ease;
-  display: inline-block;
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Apple-style animations removed for clean design */
-
-/* Simple transition animation */
-.lang-content.transitioning {
-  opacity: 0.7;
-}
-
-.lang-content.transitioning-out {
-  opacity: 0.5;
-}
-
-.lang-content.transitioning-in {
-  opacity: 1;
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-  .logo-section {
-    margin-bottom: 15px;
-    padding: 0 5px;
-  }
-
-  .lang-toggle-btn {
-    padding: 4px 8px;
-    min-width: 38px;
-    height: 24px;
-    border-radius: 50px !important;
-  }
-
-  .lang-content {
-    gap: 4px;
-    font-size: 11px;
-  }
-
-  .lang-flag {
-    font-size: 14px;
-  }
-}
-
-/* Dark mode compatibility */
-/* Dark background override removed for Apple-style design */
-
-/* Focus states for accessibility */
-.lang-toggle-btn:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-.lang-toggle-btn:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* Language switcher transition animations */
-.lang-content {
-  transition: all 0.3s ease;
-}
-
-.lang-content.transitioning-out {
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-.lang-content.transitioning-in {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Ensure content is visible by default */
-.lang-content {
-  opacity: 1 !important;
-  transform: scale(1) !important;
-}
 
 /* Article page styles moved to articles.css */
 

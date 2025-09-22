@@ -259,6 +259,10 @@ html[dir="rtl"] .contact .php-email-form textarea {
 html[dir="rtl"] .contact .php-email-form button {
   font-family: var(--persian-font) !important;
   font-weight: 500;
+  text-align: center !important;
+  display: block !important;
+  margin: 0 auto !important;
+  width: auto !important;
 }
 
 html[dir="rtl"] .footer .copyright {
@@ -474,11 +478,6 @@ html[dir="rtl"] .about .content ul strong {
     right: auto !important;
   }
 
-  /* RTL mobile language toggle positioning - در سمت راست */
-  html[dir="rtl"] #lang-toggle {
-    left: auto !important;
-    right: 20px !important;
-  }
 
   /* RTL mobile header positioning */
   html[dir="rtl"] .header {
@@ -517,6 +516,14 @@ html[dir="rtl"] .about .content ul strong {
   /* RTL mobile contact form */
   html[dir="rtl"] .contact .php-email-form {
     text-align: right;
+  }
+
+  /* RTL mobile contact form button */
+  html[dir="rtl"] .contact .php-email-form button {
+    text-align: center !important;
+    display: block !important;
+    margin: 0 auto !important;
+    width: auto !important;
   }
 
   /* RTL mobile portfolio filters */

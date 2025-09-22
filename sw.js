@@ -25,6 +25,7 @@ const urlsToCache = [
   "./index.html",
   "./assets/css/main.css",
   "./assets/css/rtl.css",
+  "./assets/css/lang-toggle.css",
   "./assets/js/main.js",
   "./assets/js/i18n.js",
   "./assets/img/favicon.png",
