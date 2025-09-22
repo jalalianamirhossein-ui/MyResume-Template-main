@@ -3163,24 +3163,48 @@
                 "loop": true,
                 "speed": 600,
                 "autoplay": {
-                  "delay": 3000,
+                  "delay": 4000,
                   "pauseOnMouseEnter": true,
                   "disableOnInteraction": false
                 },
-                "slidesPerView": "auto",
+                "slidesPerView": 1,
+                "spaceBetween": 20,
+                "centeredSlides": true,
                 "pagination": {
                   "el": ".swiper-pagination",
                   "type": "bullets",
-                  "clickable": true
+                  "clickable": true,
+                  "dynamicBullets": true
+                },
+                "navigation": {
+                  "nextEl": ".swiper-button-next",
+                  "prevEl": ".swiper-button-prev"
                 },
                 "breakpoints": {
                   "320": {
                     "slidesPerView": 1,
-                    "spaceBetween": 40
+                    "spaceBetween": 15,
+                    "centeredSlides": true
+                  },
+                  "480": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 20,
+                    "centeredSlides": true
+                  },
+                  "768": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 25,
+                    "centeredSlides": false
+                  },
+                  "992": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 30,
+                    "centeredSlides": false
                   },
                   "1200": {
                     "slidesPerView": 3,
-                    "spaceBetween": 1
+                    "spaceBetween": 30,
+                    "centeredSlides": false
                   }
                 }
               }
@@ -3356,6 +3380,10 @@
             </div>
             <!-- End Testimonials Slider -->
 
+            <!-- Swiper Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            
             <!-- Swiper Pagination -->
             <div class="swiper-pagination"></div>
           </div>
