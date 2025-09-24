@@ -1778,7 +1778,6 @@ html[dir="rtl"] .section-title p {
     font-size: 13px;
   }
 
-
   /* Mobile sections padding */
   section,
   .section {
@@ -3893,29 +3892,29 @@ html[dir="rtl"] .resume .resume-item::before {
   .testimonials {
     padding: 40px 0;
   }
-  
+
   .testimonials .testimonial-item {
     min-height: 300px;
     padding: 20px 15px;
     margin: 0 5px;
   }
-  
+
   .testimonials .testimonial-item .testimonial-img {
     width: 70px;
     height: 70px;
     margin-bottom: 15px;
   }
-  
+
   .testimonials .testimonial-item h3 {
     font-size: 16px;
     margin: 12px 0 6px 0;
   }
-  
+
   .testimonials .testimonial-item h4 {
     font-size: 13px;
     margin-bottom: 15px;
   }
-  
+
   .testimonials .testimonial-item p {
     font-size: 14px;
     line-height: 1.5;
@@ -3927,38 +3926,38 @@ html[dir="rtl"] .resume .resume-item::before {
   .testimonials {
     padding: 30px 0;
   }
-  
+
   .testimonials .testimonial-item {
     min-height: 280px;
     padding: 15px 12px;
     margin: 0 2px;
   }
-  
+
   .testimonials .testimonial-item .testimonial-img {
     width: 60px;
     height: 60px;
     margin-bottom: 12px;
   }
-  
+
   .testimonials .testimonial-item h3 {
     font-size: 15px;
     margin: 10px 0 5px 0;
   }
-  
+
   .testimonials .testimonial-item h4 {
     font-size: 12px;
     margin-bottom: 12px;
   }
-  
+
   .testimonials .testimonial-item p {
     font-size: 13px;
     line-height: 1.4;
   }
-  
+
   .testimonials .swiper-pagination {
     margin-top: 20px;
   }
-  
+
   /* Improve touch scrolling */
   .testimonials .swiper {
     touch-action: pan-y;
@@ -4883,8 +4882,6 @@ html[dir="rtl"] .colon::before {
   margin-bottom: 20px;
   padding: 0 10px;
 }
-
-
 
 /* Article page styles moved to articles.css */
 
