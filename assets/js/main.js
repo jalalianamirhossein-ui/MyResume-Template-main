@@ -2,16 +2,16 @@
  * ===============================================
  * MEET AJ PORTFOLIO - MAIN JAVASCRIPT
  * ===============================================
- * 
+ *
  * Main JavaScript functionality for the portfolio website
  * Handles navigation, mobile menu, and UI interactions
- * 
+ *
  * Features:
  * - Mobile navigation toggle
  * - Smooth scrolling
  * - Menu overlay management
  * - Accessibility improvements
- * 
+ *
  * ===============================================
  */
 (function () {
@@ -204,7 +204,6 @@
     }
   }
   window.addEventListener("load", aosInit);
-
 
   if (window.PureCounter) {
     // Improve mobile settings for PureCounter
@@ -572,7 +571,7 @@
                 }
               } else {
                 const swiper = new Swiper(swiperElement, config);
-                
+
                 // Keep autoplay running continuously for testimonials
                 // No pause/resume functionality - autoplay continues during hover
               }

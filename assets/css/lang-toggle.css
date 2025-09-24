@@ -13,9 +13,10 @@
   --i18n-bg: linear-gradient(135deg, #f7f8fa, #e4e6ea);
   --i18n-bg-hover: linear-gradient(135deg, #e4e6ea, #dadde1);
   --i18n-border: #1877f2;
-  --i18n-shadow: 0 2px 8px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.05);
-  --i18n-shadow-hover: 0 4px 12px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.1);
-  --i18n-glow: 0 0 8px rgba(24,119,242,0.2);
+  --i18n-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+  --i18n-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  --i18n-glow: 0 0 8px rgba(24, 119, 242, 0.2);
   --i18n-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --i18n-scale: 1;
   --i18n-scale-hover: 1.05;
@@ -27,9 +28,10 @@
     --i18n-bg: linear-gradient(135deg, #242526, #18191a);
     --i18n-bg-hover: linear-gradient(135deg, #2f3031, #242526);
     --i18n-border: #1877f2;
-    --i18n-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
-    --i18n-shadow-hover: 0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
-    --i18n-glow: 0 0 8px rgba(24,119,242,0.3);
+    --i18n-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+    --i18n-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+    --i18n-glow: 0 0 8px rgba(24, 119, 242, 0.3);
     --i18n-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --i18n-scale: 1;
     --i18n-scale-hover: 1.05;
@@ -111,13 +113,13 @@ html[dir="rtl"] .i18n-link {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #1877f2;
   transform: scale(1);
-  text-shadow: 0 1px 2px rgba(24,119,242,0.1);
+  text-shadow: 0 1px 2px rgba(24, 119, 242, 0.1);
 }
 
 .i18n-link:hover .i18n-cur {
   color: #166fe5;
   transform: scale(1.05) rotate(1deg);
-  text-shadow: 0 2px 4px rgba(24,119,242,0.2);
+  text-shadow: 0 2px 4px rgba(24, 119, 242, 0.2);
 }
 
 .i18n-link .i18n-alt {
@@ -169,22 +171,24 @@ html[dir="rtl"] .i18n-link .i18n-cur::after {
   .i18n-link {
     color: #1877f2;
   }
-  
+
   .i18n-link:hover {
     color: #42a5f5;
   }
-  
+
   .i18n-link .i18n-cur::after {
     background: linear-gradient(90deg, #1877f2, #42a5f5, #60a5fa);
-    box-shadow: 0 0 6px rgba(24, 119, 242, 0.5), 0 0 12px rgba(24, 119, 242, 0.3);
+    box-shadow: 0 0 6px rgba(24, 119, 242, 0.5),
+      0 0 12px rgba(24, 119, 242, 0.3);
   }
-  
+
   html[dir="rtl"] .i18n-link .i18n-cur::after {
     background: linear-gradient(270deg, #1877f2, #42a5f5, #60a5fa);
   }
-  
+
   .i18n-link:hover .i18n-cur::after {
-    box-shadow: 0 0 8px rgba(24, 119, 242, 0.7), 0 0 16px rgba(24, 119, 242, 0.4);
+    box-shadow: 0 0 8px rgba(24, 119, 242, 0.7),
+      0 0 16px rgba(24, 119, 242, 0.4);
   }
 }
 
@@ -194,7 +198,8 @@ html[dir="rtl"] .i18n-link .i18n-cur::after {
 .i18n-link:focus-visible {
   outline: 3px solid #1877f2;
   outline-offset: 4px;
-  box-shadow: var(--i18n-shadow-hover), var(--i18n-glow), 0 0 0 4px rgba(24, 119, 242, 0.15);
+  box-shadow: var(--i18n-shadow-hover), var(--i18n-glow),
+    0 0 0 4px rgba(24, 119, 242, 0.15);
   transform: scale(var(--i18n-scale-hover)) rotate(0.5deg);
   --i18n-rotate: 0.5deg;
 }
@@ -208,11 +213,11 @@ html[dir="rtl"] .i18n-link .i18n-cur::after {
     border: 2px solid currentColor;
     background: transparent;
   }
-  
+
   .i18n-link:focus-visible {
     outline-width: 3px;
   }
-  
+
   .i18n-link .i18n-cur::after {
     background: currentColor;
   }
@@ -225,15 +230,15 @@ html[dir="rtl"] .i18n-link .i18n-cur::after {
   .i18n-link {
     transition: none;
   }
-  
+
   .i18n-link:hover {
     transform: none;
   }
-  
+
   .i18n-link .i18n-cur::after {
     transition: none;
   }
-  
+
   .i18n-link:hover .i18n-cur::after {
     transform: scaleX(0);
   }
