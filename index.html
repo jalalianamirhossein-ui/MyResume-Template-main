@@ -21,21 +21,71 @@
     META TAGS & SEO CONFIGURATION
     =============================================== -->
     <meta charset="utf-8" />
-    <meta
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-      name="viewport"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Page Title & SEO Meta Tags -->
-    <title>Meet Aj - AmirHossein Jalalian Portfolio</title>
+    <title
+      data-en="Meet AJ - AmirHossein Jalalian Portfolio"
+      data-fa="ملاقات با ای جی - پورتفولیو امیرحسین جلالیان"
+    >
+      Meet AJ - AmirHossein Jalalian Portfolio
+    </title>
     <meta
-      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist. Experienced in Cisco, MikroTik, VMware, Linux administration, and system optimization."
       name="description"
+      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist. Experienced in Cisco, MikroTik, VMware, Linux administration, and system optimization."
+      data-en="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist. Experienced in Cisco, MikroTik, VMware, Linux administration, and system optimization."
+      data-fa="پورتفولیو حرفه‌ای امیرحسین جلالیان - متخصص شبکه، مهندس DevOps و متخصص زیرساخت IT. تجربه در Cisco، MikroTik، VMware، مدیریت Linux و بهینه‌سازی سیستم."
     />
     <meta
-      content="Network Expert, DevOps Engineer, IT Infrastructure, Cisco, MikroTik, VMware, Linux, System Administration, Tehran Iran"
       name="keywords"
+      content="Network Expert, DevOps Engineer, IT Infrastructure, Cisco, MikroTik, VMware, Linux, System Administration, Tehran Iran"
     />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://meetaj.ir/" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Meet AJ - AmirHossein Jalalian Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist."
+    />
+    <meta property="og:url" content="https://meetaj.ir/" />
+    <meta property="og:site_name" content="Meet AJ Portfolio" />
+    <meta
+      property="og:image"
+      content="https://meetaj.ir/assets/img/my-profile-img.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="fa_IR" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Meet AJ - AmirHossein Jalalian Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist."
+    />
+    <meta
+      name="twitter:image"
+      content="https://meetaj.ir/assets/img/my-profile-img.jpg"
+    />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="AmirHossein Jalalian" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
 
     <!-- ===============================================
     FAVICONS & APP ICONS
@@ -56,48 +106,360 @@
     <meta name="msapplication-tap-highlight" content="no" />
 
     <!-- ===============================================
-    GOOGLE FONTS & TYPOGRAPHY
+    JSON-LD STRUCTURED DATA
     =============================================== -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "AmirHossein Jalalian",
+        "alternateName": "Meet AJ",
+        "url": "https://meetaj.ir",
+        "image": "https://meetaj.ir/assets/img/my-profile-img.jpg",
+        "description": "Network Expert, DevOps Engineer & IT Infrastructure Specialist",
+        "jobTitle": "Network Expert, DevOps Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tehran",
+          "addressCountry": "IR"
+        },
+        "email": "jalalian.amirhossein@gmail.com",
+        "telephone": "+98-912-345-6789",
+        "sameAs": [
+          "https://github.com/amirhosseinjalalian",
+          "https://linkedin.com/in/amirhosseinjalalian"
+        ],
+        "knowsAbout": [
+          "Network Administration",
+          "DevOps Engineering",
+          "IT Infrastructure",
+          "Cisco",
+          "MikroTik",
+          "VMware",
+          "Linux Administration",
+          "System Optimization"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Network Expert",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Tehran"
+          }
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Meet AJ Portfolio",
+        "url": "https://meetaj.ir",
+        "description": "Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist",
+        "author": {
+          "@type": "Person",
+          "name": "AmirHossein Jalalian"
+        },
+        "inLanguage": ["en", "fa"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://meetaj.ir/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- Enhanced Performance Optimization -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/hero-bg.jpg"
+      type="image/jpeg"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/my-profile-img.jpg"
+      type="image/jpeg"
+    />
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+    <!-- Google Fonts with optimized loading -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&family=Estedad:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <!-- ===============================================
-    STYLESHEETS & CSS FRAMEWORKS
+    CRITICAL CSS INLINE FOR LCP OPTIMIZATION
+    LIGHT MODE ONLY - Dark mode functionality removed
     =============================================== -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      * {
+        box-sizing: border-box;
+      }
 
-    <!-- Bootstrap CSS Framework -->
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
 
-    <!-- Bootstrap Icons -->
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+      body {
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+        line-height: 1.5;
+        color: #1d1d1f;
+        background-color: #fbfbfd;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    <!-- AOS Animation Library -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+      [dir="rtl"] body {
+        font-family: "Vazirmatn", "Estedad", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, sans-serif;
+      }
 
-    <!-- GLightbox Gallery Library -->
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
+      /* Critical hero section styles */
+      .hero {
+        background: linear-gradient(135deg, #007aff, #007aff);
+        color: #ffffff;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
 
-    <!-- Swiper Slider Library -->
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #007aff, #007aff);
+        opacity: 0.9;
+        z-index: 1;
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      /* Critical navigation styles */
+      .mobile-nav-toggle {
+        display: block;
+        width: 48px;
+        height: 48px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+      }
+
+      .mobile-nav-toggle i {
+        font-size: 1.5rem;
+        color: #1d1d1f;
+      }
+
+      /* Critical typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0 0 1rem 0;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      h1 {
+        font-size: clamp(1.875rem, 1.6rem + 1.375vw, 2.5rem);
+      }
+      h2 {
+        font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+      }
+      h3 {
+        font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+      }
+
+      /* Critical button styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-height: 48px;
+      }
+
+      .btn-primary {
+        background-color: #007aff;
+        color: #ffffff;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056cc;
+      }
+
+      /* Critical layout utilities */
+      .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+      .d-flex {
+        display: flex;
+      }
+      .align-items-center {
+        align-items: center;
+      }
+      .justify-content-center {
+        justify-content: center;
+      }
+
+      /* Critical responsive breakpoints */
+      @media (min-width: 414px) {
+        .container {
+          max-width: 414px;
+          padding: 0 1.5rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          max-width: 768px;
+          padding: 0 2rem;
+        }
+        .mobile-nav-toggle {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
+          max-width: 1024px;
+          padding: 0 2.5rem;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .container {
+          max-width: 1280px;
+          padding: 0 3rem;
+        }
+      }
+    </style>
 
     <!-- ===============================================
-    ==================== MAIN CSS ======================
+    NON-CRITICAL CSS - LOADED ASYNC
     =============================================== -->
-    <!-- Main Stylesheet -->
-    <link href="assets/css/main.css?v=999" rel="stylesheet" />
+
+    <!-- Bootstrap CSS Framework - Load async -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        href="assets/vendor/bootstrap/css/bootstrap.min.css"
+        rel="stylesheet"
+    /></noscript>
+
+    <!-- Bootstrap Icons - Load async -->
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+        rel="stylesheet"
+    /></noscript>
+
+    <!-- AOS Animation Library - Load async -->
+    <link
+      href="assets/vendor/aos/aos.css"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link href="assets/vendor/aos/aos.css" rel="stylesheet"
+    /></noscript>
+
+    <!-- GLightbox Gallery Library - Load async -->
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        href="assets/vendor/glightbox/css/glightbox.min.css"
+        rel="stylesheet"
+    /></noscript>
+
+    <!-- Swiper Slider Library - Load async -->
+    <link
+      href="assets/vendor/swiper/swiper-bundle.min.css"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"
+    /></noscript>
+
+    <!-- Main Stylesheet - Load async -->
+    <link
+      href="assets/css/main.css?v=999"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link href="assets/css/main.css?v=999" rel="stylesheet"
+    /></noscript>
 
     <!-- Language Toggle Stylesheet -->
     <link href="assets/css/lang-toggle.css?v=999" rel="stylesheet" />
@@ -182,7 +544,14 @@
       >
         <!-- Site Logo & Name -->
         <a href="#hero" class="logo d-flex align-items-center">
-          <img src="assets/img/logo.png" alt="Aj-Network" loading="lazy" />
+          <img
+            src="assets/img/logo.png"
+            alt="Aj-Network"
+            loading="lazy"
+            width="40"
+            height="40"
+            style="aspect-ratio: 1/1"
+          />
           <h1 class="sitename">Meet AJ</h1>
         </a>
       </div>
@@ -279,52 +648,57 @@
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav
+        id="navmenu"
+        class="navmenu"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <ul role="menubar">
           <!-- Home Section -->
-          <li>
-            <a href="#hero" class="active"
-              ><i class="bi bi-house navicon"></i
+          <li role="none">
+            <a href="#hero" class="active" role="menuitem" aria-current="page"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
               ><span data-en="Home" data-fa="صفحه اصلی">Home</span></a
             >
           </li>
 
           <!-- About Section -->
-          <li>
-            <a href="#about"
-              ><i class="bi bi-person navicon"></i
+          <li role="none">
+            <a href="#about" role="menuitem"
+              ><i class="bi bi-person navicon" aria-hidden="true"></i
               ><span data-en="About" data-fa="درباره من">About</span></a
             >
           </li>
 
           <!-- Resume Section -->
-          <li>
-            <a href="#resume"
-              ><i class="bi bi-file-earmark-text navicon"></i
+          <li role="none">
+            <a href="#resume" role="menuitem"
+              ><i class="bi bi-file-earmark-text navicon" aria-hidden="true"></i
               ><span data-en="Resume" data-fa="رزومه کاری">Resume</span></a
             >
           </li>
 
           <!-- Services Section -->
-          <li>
-            <a href="#services"
-              ><i class="bi bi-hdd-stack navicon"></i
+          <li role="none">
+            <a href="#services" role="menuitem"
+              ><i class="bi bi-hdd-stack navicon" aria-hidden="true"></i
               ><span data-en="Services" data-fa="خدمات">Services</span></a
             >
           </li>
 
           <!-- Articles Section -->
-          <li>
-            <a href="#portfolio"
-              ><i class="bi bi-images navicon"></i
+          <li role="none">
+            <a href="#portfolio" role="menuitem"
+              ><i class="bi bi-images navicon" aria-hidden="true"></i
               ><span data-en="Articles" data-fa="مقالات">Articles</span></a
             >
           </li>
 
           <!-- Testimonials Section -->
-          <li>
-            <a href="#testimonials"
-              ><i class="bi bi-menu-button navicon"></i
+          <li role="none">
+            <a href="#testimonials" role="menuitem"
+              ><i class="bi bi-menu-button navicon" aria-hidden="true"></i
               ><span data-en="Testimonials" data-fa="نظرات"
                 >Testimonials</span
               ></a
@@ -332,9 +706,9 @@
           </li>
 
           <!-- Contact Section -->
-          <li>
-            <a href="#contact"
-              ><i class="bi bi-envelope navicon"></i
+          <li role="none">
+            <a href="#contact" role="menuitem"
+              ><i class="bi bi-envelope navicon" aria-hidden="true"></i
               ><span data-en="Contact" data-fa="تماس با من">Contact</span></a
             >
           </li>
@@ -347,12 +721,13 @@
     =============================================== -->
     <button
       id="menu-toggle"
-      class="menu-toggle d-xl-none"
-      aria-label="Toggle navigation menu"
+      class="mobile-nav-toggle"
+      type="button"
+      aria-label="Toggle mobile menu"
       aria-expanded="false"
-      aria-controls="header"
+      aria-controls="navmenu"
     >
-      <i class="bi bi-list"></i>
+      <i class="bi bi-list" aria-hidden="true"></i>
     </button>
 
     <!-- ===============================================
@@ -363,13 +738,16 @@
       ==================== HERO SECTION ==================
       =============================================== -->
       <section id="hero" class="hero section dark-background">
-        <!-- Hero Background Image -->
+        <!-- Hero Background Image with explicit dimensions for CLS -->
         <link rel="preload" as="image" href="assets/img/hero-bg.jpg" />
         <img
           src="assets/img/hero-bg.jpg"
           alt="Hero Background"
           data-aos="fade-in"
           class="hero-bg"
+          width="1920"
+          height="1080"
+          style="aspect-ratio: 16/9"
         />
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -386,6 +764,9 @@
                   loading="lazy"
                   alt="AmirHossein Jalalian Profile Picture"
                   class="img-fluid hero-img"
+                  width="400"
+                  height="400"
+                  style="aspect-ratio: 1/1"
                 />
                 <div class="hero-img-border"></div>
                 <div class="hero-img-shadow"></div>
@@ -3248,12 +3629,14 @@
                 <div class="testimonial-item">
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-    <span
-      data-en="Amir's technical expertise and proactive approach have been game-changing for our IT infrastructure. His solutions are always reliable and well-thought-out."
-      data-fa="تخصص فنی امیر و رویکرد پیشگیرانه‌اش برای زیرساخت IT ما تحول‌آفرین بوده. راهکارهایش همیشه قابل اعتماد و سنجیده است."
-    >
-      Amir's technical expertise and proactive approach have been game-changing for our IT infrastructure. His solutions are always reliable and well-thought-out.
-    </span>
+                    <span
+                      data-en="Amir's technical expertise and proactive approach have been game-changing for our IT infrastructure. His solutions are always reliable and well-thought-out."
+                      data-fa="تخصص فنی امیر و رویکرد پیشگیرانه‌اش برای زیرساخت IT ما تحول‌آفرین بوده. راهکارهایش همیشه قابل اعتماد و سنجیده است."
+                    >
+                      Amir's technical expertise and proactive approach have
+                      been game-changing for our IT infrastructure. His
+                      solutions are always reliable and well-thought-out.
+                    </span>
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                   <img
@@ -3262,12 +3645,12 @@
                     class="testimonial-img"
                     alt="IT Director"
                   />
-  <h3 data-en="IT Director" data-fa="مدیر فناوری اطلاعات">
-    IT Director
-  </h3>
-  <h4 data-en="NewshaDrinks Co." data-fa="شرکت نیوشاداریان ">
-    NewshaDrinks Co.
-  </h4>
+                  <h3 data-en="IT Director" data-fa="مدیر فناوری اطلاعات">
+                    IT Director
+                  </h3>
+                  <h4 data-en="NewshaDrinks Co." data-fa="شرکت نیوشاداریان ">
+                    NewshaDrinks Co.
+                  </h4>
                 </div>
               </div>
               <!-- End Testimonial 1 -->
@@ -3281,7 +3664,9 @@
                       data-en="Amir made our virtualization project seamless. His clear explanations and QNAP storage expertise saved us weeks of work. Highly recommended!"
                       data-fa="امیر پروژه مجازی‌سازی ما را بی‌نقص کرد. توضیحات واضحش و تخصصش در ذخیره‌سازی QNAP هفته‌ها کار ما را صرفه‌جویی کرد. به شدت توصیه می‌کنم!"
                     >
-                      Amir made our virtualization project seamless. His clear explanations and QNAP storage expertise saved us weeks of work. Highly recommended!
+                      Amir made our virtualization project seamless. His clear
+                      explanations and QNAP storage expertise saved us weeks of
+                      work. Highly recommended!
                     </span>
 
                     <i class="bi bi-quote quote-icon-right"></i>
@@ -3314,15 +3699,14 @@
                 <div class="testimonial-item">
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-<span
-        data-en="Amir transformed our network infrastructure and camera systems. His attention to detail and leadership made the complex project look effortless. Exceptional work!"
-        data-fa="امیر زیرساخت شبکه و سیستم دوربین‌های ما را متحول کرد. دقت و رهبری‌اش پروژه پیچیده را آسان نشان داد. کار فوق‌العاده!"
-      >
-        Amir transformed our network infrastructure and camera systems. His attention to detail and leadership made the complex project look effortless. Exceptional work!
-      </span>
-
-
-
+                    <span
+                      data-en="Amir transformed our network infrastructure and camera systems. His attention to detail and leadership made the complex project look effortless. Exceptional work!"
+                      data-fa="امیر زیرساخت شبکه و سیستم دوربین‌های ما را متحول کرد. دقت و رهبری‌اش پروژه پیچیده را آسان نشان داد. کار فوق‌العاده!"
+                    >
+                      Amir transformed our network infrastructure and camera
+                      systems. His attention to detail and leadership made the
+                      complex project look effortless. Exceptional work!
+                    </span>
 
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
@@ -3332,12 +3716,12 @@
                     class="testimonial-img"
                     alt="System Administrator"
                   />
-    <h3 data-en="Founder & Director" data-fa="موسس و مدیر ">
-      Founder & Director of Faculty of Arts and Culture University
-    </h3>
-    <h4 data-en="UAST48" data-fa="دانشگاه فرهنگ و هنر واحد 48">
-      Faculty of Arts and Culture University
-    </h4>
+                  <h3 data-en="Founder & Director" data-fa="موسس و مدیر ">
+                    Founder & Director of Faculty of Arts and Culture University
+                  </h3>
+                  <h4 data-en="UAST48" data-fa="دانشگاه فرهنگ و هنر واحد 48">
+                    Faculty of Arts and Culture University
+                  </h4>
                 </div>
               </div>
               <!-- End Testimonial 3 -->
@@ -3347,12 +3731,15 @@
                 <div class="testimonial-item">
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-    <span
-      data-en="Amir's SQL Server HA setup was flawless. Our database uptime improved dramatically, and his scalable architecture design exceeded our expectations. A true professional!"
-      data-fa="راه‌اندازی HA سرور SQL امیر بی‌نقص بود. زمان فعالیت پایگاه داده‌مان به شدت بهبود یافت و طراحی معماری مقیاس‌پذیرش فراتر از انتظارات ما بود. حرفه‌ای واقعی!"
-    >
-      Amir's SQL Server HA setup was flawless. Our database uptime improved dramatically, and his scalable architecture design exceeded our expectations. A true professional!
-    </span>
+                    <span
+                      data-en="Amir's SQL Server HA setup was flawless. Our database uptime improved dramatically, and his scalable architecture design exceeded our expectations. A true professional!"
+                      data-fa="راه‌اندازی HA سرور SQL امیر بی‌نقص بود. زمان فعالیت پایگاه داده‌مان به شدت بهبود یافت و طراحی معماری مقیاس‌پذیرش فراتر از انتظارات ما بود. حرفه‌ای واقعی!"
+                    >
+                      Amir's SQL Server HA setup was flawless. Our database
+                      uptime improved dramatically, and his scalable
+                      architecture design exceeded our expectations. A true
+                      professional!
+                    </span>
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                   <img
@@ -3361,12 +3748,15 @@
                     class="testimonial-img"
                     alt="Network Engineer"
                   />
-  <h3 data-en="Database Administrator" data-fa="مدیر پایگاه داده">
-    Database Administrator
-  </h3>
-  <h4 data-en="Private Organization" data-fa="سازمان خصوصی">
-    Private Organization
-  </h4>
+                  <h3
+                    data-en="Database Administrator"
+                    data-fa="مدیر پایگاه داده"
+                  >
+                    Database Administrator
+                  </h3>
+                  <h4 data-en="Private Organization" data-fa="سازمان خصوصی">
+                    Private Organization
+                  </h4>
                 </div>
               </div>
               <!-- End Testimonial 4 -->
@@ -3376,12 +3766,15 @@
                 <div class="testimonial-item">
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-    <span
-      data-en="Amir was an exceptional student with natural talent for IT. His problem-solving skills and genuine passion for technology made him stand out. He's destined for great success!"
-      data-fa="امیر دانش‌آموزی استثنایی با استعداد طبیعی در IT بود. مهارت‌های حل مسئله‌اش و علاقه واقعی‌اش به فناوری او را متمایز می‌کرد. او برای موفقیت‌های بزرگ مقدر شده!"
-    >
-      Amir was an exceptional student with natural talent for IT. His problem-solving skills and genuine passion for technology made him stand out. He's destined for great success!
-    </span>
+                    <span
+                      data-en="Amir was an exceptional student with natural talent for IT. His problem-solving skills and genuine passion for technology made him stand out. He's destined for great success!"
+                      data-fa="امیر دانش‌آموزی استثنایی با استعداد طبیعی در IT بود. مهارت‌های حل مسئله‌اش و علاقه واقعی‌اش به فناوری او را متمایز می‌کرد. او برای موفقیت‌های بزرگ مقدر شده!"
+                    >
+                      Amir was an exceptional student with natural talent for
+                      IT. His problem-solving skills and genuine passion for
+                      technology made him stand out. He's destined for great
+                      success!
+                    </span>
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                   <img
@@ -3390,12 +3783,15 @@
                     class="testimonial-img"
                     alt="DevOps Lead"
                   />
-  <h3 data-en="Instructor of Microsoft & Cisco, Arzhang Institute" data-fa="مدرس مایکروسافت ، سیسکو">
-    Instructor of Microsoft & Cisco, Arzhang Institute
-  </h3>
-  <h4 data-en="Arzhang Institute" data-fa="مؤسسه ارژنگ">
-    Arzhang Institute
-  </h4>
+                  <h3
+                    data-en="Instructor of Microsoft & Cisco, Arzhang Institute"
+                    data-fa="مدرس مایکروسافت ، سیسکو"
+                  >
+                    Instructor of Microsoft & Cisco, Arzhang Institute
+                  </h3>
+                  <h4 data-en="Arzhang Institute" data-fa="مؤسسه ارژنگ">
+                    Arzhang Institute
+                  </h4>
                 </div>
               </div>
               <!-- End Testimonial 5 -->
@@ -3409,7 +3805,9 @@
                       data-en="Amir's cloud migration strategy saved us thousands in costs while improving performance. His expertise in AWS and Azure is unmatched. Simply brilliant!"
                       data-fa="استراتژی مهاجرت ابری امیر هزاران دلار هزینه ما را صرفه‌جویی کرد و عملکرد را بهبود بخشید. تخصصش در AWS و Azure بی‌نظیر است. به سادگی درخشان!"
                     >
-                      Amir's cloud migration strategy saved us thousands in costs while improving performance. His expertise in AWS and Azure is unmatched. Simply brilliant!
+                      Amir's cloud migration strategy saved us thousands in
+                      costs while improving performance. His expertise in AWS
+                      and Azure is unmatched. Simply brilliant!
                     </span>
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
@@ -3419,10 +3817,16 @@
                     class="testimonial-img"
                     alt="Cloud Solutions Architect"
                   />
-                  <h3 data-en="Cloud Solutions Architect" data-fa="معمار راهکارهای ابری">
+                  <h3
+                    data-en="Cloud Solutions Architect"
+                    data-fa="معمار راهکارهای ابری"
+                  >
                     Cloud Solutions Architect
                   </h3>
-                  <h4 data-en="Tech Innovations Ltd." data-fa="شرکت نوآوری‌های فناوری">
+                  <h4
+                    data-en="Tech Innovations Ltd."
+                    data-fa="شرکت نوآوری‌های فناوری"
+                  >
                     Tech Innovations Ltd.
                   </h4>
                 </div>
@@ -3715,24 +4119,22 @@
     =============================================== -->
     <footer id="footer" class="footer position-relative light-background">
       <div class="container">
-        <!-- Copyright -->
         <div class="copyright text-center">
           <p>
             © <span>2025</span>
             <strong
               class="px-1"
-              data-en="AmirHossein Jalalian"
+              data-en="Amir Hossein Jalalian"
               data-fa="امیرحسین جلالیان"
-              >AmirHossein Jalalian</strong
+              >Amir Hossein Jalalian</strong
             >
-            <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است"
-              >All Rights Reserved</span
-            >
+            ❤️
+            <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">
+              All Rights Reserved
+            </span>
           </p>
         </div>
-        <!-- End Copyright -->
       </div>
-      <!-- End Footer Container -->
     </footer>
     <!-- End Footer Section -->
 
@@ -3753,64 +4155,162 @@
     <div id="preloader"></div>
 
     <!-- ===============================================
-    JAVASCRIPT LIBRARIES & SCRIPTS
+    CRITICAL JAVASCRIPT - LOADED IMMEDIATELY
     =============================================== -->
 
-    <!-- Bootstrap JavaScript Bundle -->
-    <script
-      src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
+    <!-- Critical mobile navigation functionality -->
+    <script>
+      // Critical mobile navigation functionality for better FID/INP
+      (function () {
+        "use strict";
 
-    <!-- PHP Email Form Validation -->
-    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+        const headerToggleBtn = document.querySelector("#menu-toggle");
+        const header = document.querySelector("#header");
+        let overlay = document.getElementById("menu-overlay");
 
-    <!-- AOS Animation Library -->
-    <script src="assets/vendor/aos/aos.js" defer></script>
+        if (!overlay) {
+          overlay = document.createElement("div");
+          overlay.id = "menu-overlay";
+          overlay.className = "mobile-menu-overlay";
+          document.body.appendChild(overlay);
+        }
 
-    <!-- Typed.js Text Animation -->
-    <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+        function openMenu() {
+          if (header) {
+            header.classList.add("header-show");
+            overlay.classList.add("active");
+            if (headerToggleBtn) {
+              headerToggleBtn.setAttribute("aria-expanded", "true");
+              const icon = headerToggleBtn.querySelector("i");
+              if (icon) {
+                icon.classList.remove("bi-list");
+                icon.classList.add("bi-x");
+              }
+            }
+            document.body.style.overflow = "hidden";
+          }
+        }
 
-    <!-- PureCounter Counter Animation -->
-    <script
-      src="assets/vendor/purecounter/purecounter_vanilla.js"
-      defer
-    ></script>
+        function closeMenu() {
+          if (header) {
+            header.classList.remove("header-show");
+            overlay.classList.remove("active");
+            if (headerToggleBtn) {
+              headerToggleBtn.setAttribute("aria-expanded", "false");
+              const icon = headerToggleBtn.querySelector("i");
+              if (icon) {
+                icon.classList.add("bi-list");
+                icon.classList.remove("bi-x");
+              }
+            }
+            document.body.style.overflow = "";
+          }
+        }
 
-    <!-- Waypoints Scroll Triggers -->
-    <script
-      src="assets/vendor/waypoints/noframework.waypoints.js"
-      defer
-    ></script>
+        function headerToggle() {
+          if (header && header.classList.contains("header-show")) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        }
 
-    <!-- GLightbox Gallery -->
-    <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+        // Event listeners
+        if (headerToggleBtn) {
+          headerToggleBtn.addEventListener("click", headerToggle);
+        }
 
-    <!-- ImagesLoaded Plugin -->
-    <script
-      src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
-      defer
-    ></script>
+        if (overlay) {
+          overlay.addEventListener("click", closeMenu);
+        }
 
-    <!-- Isotope Layout Plugin -->
-    <script
-      src="assets/vendor/isotope-layout/isotope.pkgd.min.js"
-      defer
-    ></script>
-
-    <!-- Swiper Slider -->
-    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+        // Close menu after clicking menu links on mobile
+        document.querySelectorAll("#navmenu a").forEach((navmenu) => {
+          navmenu.addEventListener("click", (e) => {
+            if (
+              window.innerWidth < 1200 &&
+              header &&
+              header.classList.contains("header-show")
+            ) {
+              closeMenu();
+            }
+          });
+        });
+      })();
+    </script>
 
     <!-- ===============================================
-    CUSTOM JAVASCRIPT MODULES
+    NON-CRITICAL JAVASCRIPT - LOADED DEFERRED
     =============================================== -->
 
-    <!-- Main Application JavaScript -->
-    <script src="assets/js/main.js?v=999" defer></script>
+    <!-- Load non-critical JavaScript after page load for better FID/INP -->
+    <script>
+      // Defer non-critical JavaScript loading
+      function loadScript(src, callback) {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        if (callback) script.onload = callback;
+        document.head.appendChild(script);
+      }
 
-    <!-- Internationalization (i18n) Support -->
-    <!-- Language Toggle JavaScript -->
-    <script src="assets/js/i18n.js?v=999" defer></script>
+      // Load scripts after DOM is ready
+      document.addEventListener("DOMContentLoaded", function () {
+        // Load Bootstrap JS Bundle
+        loadScript("assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
+
+        // Load AOS Animation Library
+        loadScript("assets/vendor/aos/aos.js", function () {
+          if (typeof AOS !== "undefined") {
+            AOS.init({
+              duration: 800,
+              easing: "ease-in-out",
+              once: true,
+              mirror: false,
+            });
+          }
+        });
+
+        // Load GLightbox Gallery Library
+        loadScript("assets/vendor/glightbox/js/glightbox.min.js", function () {
+          if (typeof GLightbox !== "undefined") {
+            GLightbox({
+              selector: ".glightbox",
+              touchNavigation: true,
+              loop: true,
+              autoplayVideos: false,
+            });
+          }
+        });
+
+        // Load Swiper Slider Library
+        loadScript("assets/vendor/swiper/swiper-bundle.min.js");
+
+        // Load Typed.js Animation Library
+        loadScript("assets/vendor/typed.js/typed.umd.js");
+
+        // Load PureCounter Animation Library
+        loadScript("assets/vendor/purecounter/purecounter_vanilla.js");
+
+        // Load Waypoints Scroll Library
+        loadScript("assets/vendor/waypoints/noframework.waypoints.js");
+
+        // Load ImagesLoaded Library
+        loadScript("assets/vendor/imagesloaded/imagesloaded.pkgd.min.js");
+
+        // Load Isotope Layout Library
+        loadScript("assets/vendor/isotope-layout/isotope.pkgd.min.js");
+
+        // Load PHP Email Form Validation
+        loadScript("assets/vendor/php-email-form/validate.js");
+
+        // Load main JavaScript
+        loadScript("assets/js/main.js?v=999");
+
+        // Load internationalization JavaScript
+        loadScript("assets/js/i18n.js?v=999");
+      });
+    </script>
 
     <!-- ===============================================
     SERVICE WORKER REGISTRATION

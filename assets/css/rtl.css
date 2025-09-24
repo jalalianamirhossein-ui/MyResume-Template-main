@@ -20,7 +20,7 @@
 html[dir="rtl"] {
   font-family: var(--persian-font) !important;
   direction: rtl !important;
-  text-align: right !important;
+  text-align: start !important;
 }
 
 /* General RTL text alignment */
@@ -34,19 +34,19 @@ html[dir="rtl"] h3,
 html[dir="rtl"] h4,
 html[dir="rtl"] h5,
 html[dir="rtl"] h6 {
-  text-align: right !important;
+  text-align: start !important;
   direction: rtl !important;
 }
 
 /* RTL for main content */
 html[dir="rtl"] .main {
-  text-align: right !important;
+  text-align: start !important;
 }
 
 html[dir="rtl"] .main p,
 html[dir="rtl"] .main div,
 html[dir="rtl"] .main span {
-  text-align: right !important;
+  text-align: start !important;
   direction: rtl !important;
 }
 
@@ -188,7 +188,7 @@ html[dir="rtl"] .hero h2 {
 html[dir="rtl"] .section-title h2 {
   font-family: var(--persian-heading-font) !important;
   font-weight: 600;
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .about .content h2 {
@@ -210,7 +210,7 @@ html[dir="rtl"] .testimonials .testimonial-item h3,
 html[dir="rtl"] .testimonials .testimonial-item h4 {
   font-family: var(--persian-heading-font) !important;
   font-weight: 600;
-  text-align: center;
+  text-align: start !important;
 }
 
 html[dir="rtl"] .contact .info-item h3 {
@@ -219,40 +219,39 @@ html[dir="rtl"] .contact .info-item h3 {
 }
 
 html[dir="rtl"] .contact .info-item i {
-  margin-right: 0;
-  margin-left: 15px;
+  margin-inline-end: 0;
+  margin-inline-start: 15px;
 }
 
 html[dir="rtl"] .services .service-item .icon {
-  margin-right: 0;
-  margin-left: 0;
+  margin-inline: 0;
 }
 
 html[dir="rtl"] .services .service-item .title {
   font-family: var(--persian-heading-font) !important;
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .services .service-item .description {
   font-family: var(--persian-font) !important;
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .contact .info-wrap {
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .contact .info-item h3 {
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .contact .info-item p {
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .contact .php-email-form input,
 html[dir="rtl"] .contact .php-email-form textarea {
-  text-align: right;
+  text-align: start;
   direction: rtl;
 }
 
@@ -285,31 +284,31 @@ html[dir="rtl"] .footer .credits {
 
 /* General RTL improvements */
 html[dir="rtl"] .section-title {
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .section-title p {
   font-family: var(--persian-font) !important;
-  text-align: right;
+  text-align: start;
   line-height: 1.8;
 }
 
 html[dir="rtl"] .about .content p {
   font-family: var(--persian-font) !important;
-  text-align: right;
+  text-align: start;
   line-height: 1.8;
 }
 
 html[dir="rtl"] .services .service-item .description {
   font-family: var(--persian-font) !important;
-  text-align: right;
+  text-align: start;
   line-height: 1.8;
 }
 
 html[dir="rtl"] .testimonials .testimonial-item p {
   font-family: var(--persian-font) !important;
-  text-align: center;
-  direction: rtl;
+  text-align: start !important;
+  direction: rtl !important;
   line-height: 1.8;
 }
 
@@ -399,12 +398,12 @@ html[dir="rtl"] .services .service-item p {
 html[dir="rtl"] .contact .php-email-form input,
 html[dir="rtl"] .contact .php-email-form textarea {
   font-family: var(--persian-font) !important;
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .contact .php-email-form input::placeholder,
 html[dir="rtl"] .contact .php-email-form textarea::placeholder {
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .contact .php-email-form .loading,
@@ -439,14 +438,14 @@ html[dir="rtl"] .header {
 @media (min-width: 1200px) {
   html[dir="rtl"] .header ~ main,
   html[dir="rtl"] .header ~ #footer {
-    margin-right: 300px !important;
-    margin-left: 0 !important;
+    margin-inline-end: 300px !important;
+    margin-inline-start: 0 !important;
   }
 }
 
 /* Details */
 html[dir="rtl"] .navmenu ul {
-  text-align: right;
+  text-align: start;
 }
 html[dir="rtl"] .header .logo img {
   margin-inline-start: 8px;
@@ -464,10 +463,10 @@ html[dir="rtl"] .menu-toggle {
 
 /* i18n-rtl-navicon-spacing */
 html[dir="rtl"] #navmenu a .navicon {
-  margin-left: 10px;
+  margin-inline-start: 10px;
 }
 html[dir="rtl"] .about .content ul strong {
-  margin-left: 10px;
+  margin-inline-start: 10px;
 }
 
 /* Mobile-specific RTL fixes */
@@ -492,7 +491,7 @@ html[dir="rtl"] .about .content ul strong {
 
   /* RTL mobile navigation text alignment */
   html[dir="rtl"] .navmenu a {
-    text-align: right;
+    text-align: start;
     padding: 15px 10px 15px 20px;
   }
 
@@ -514,7 +513,7 @@ html[dir="rtl"] .about .content ul strong {
 
   /* RTL mobile contact form */
   html[dir="rtl"] .contact .php-email-form {
-    text-align: right;
+    text-align: start;
   }
 
   /* RTL mobile contact form button */
@@ -532,17 +531,17 @@ html[dir="rtl"] .about .content ul strong {
 
   /* RTL mobile testimonials */
   html[dir="rtl"] .testimonials .testimonial-item {
-    text-align: center;
+    text-align: start !important;
   }
 
   /* RTL mobile services */
   html[dir="rtl"] .services .service-item {
-    text-align: right;
+    text-align: start;
   }
 
   /* RTL mobile skills */
   html[dir="rtl"] .skills .progress .skill .val {
-    float: left;
+    float: inline-start;
   }
 
   /* RTL mobile resume */
@@ -565,12 +564,12 @@ html[dir="rtl"] .about .content ul strong {
 
   /* RTL mobile about section */
   html[dir="rtl"] .about .content ul li {
-    text-align: right;
+    text-align: start;
   }
 
   html[dir="rtl"] .about .content ul i {
-    margin-left: 5px;
-    margin-right: 0;
+    margin-inline-start: 5px;
+    margin-inline-end: 0;
   }
 
   /* RTL mobile footer - Center alignment */
@@ -593,12 +592,12 @@ html[dir="rtl"] .hero-wrapper {
 }
 
 html[dir="rtl"] .hero-content {
-  text-align: right;
+  text-align: start;
 }
 
 /* RTL Badge */
 html[dir="rtl"] .hero-badge {
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .badge-text {
@@ -608,24 +607,24 @@ html[dir="rtl"] .badge-text {
 /* RTL Title */
 html[dir="rtl"] .hero-title {
   font-family: var(--persian-heading-font) !important;
-  text-align: right;
+  text-align: start;
   direction: rtl;
 }
 
 html[dir="rtl"] .title-line-1,
 html[dir="rtl"] .title-line-2 {
-  text-align: right;
+  text-align: start;
   direction: rtl;
 }
 
 /* RTL Subtitle */
 html[dir="rtl"] .hero-subtitle-wrapper {
-  text-align: right;
+  text-align: start;
 }
 
 html[dir="rtl"] .hero-subtitle {
   font-family: var(--persian-font) !important;
-  text-align: right;
+  text-align: start;
   direction: rtl;
 }
 
@@ -747,19 +746,19 @@ html[dir="rtl"] .inspirational-quote p {
   line-height: 1.8;
 }
 
-/* Testimonials Section RTL - Center alignment for Persian */
+/* Testimonials Section RTL - Right alignment for Persian */
 html[dir="rtl"] .testimonials .testimonial-item {
-  text-align: center !important;
+  text-align: right !important;
 }
 
 html[dir="rtl"] .testimonials .testimonial-item p {
-  text-align: center !important;
+  text-align: right !important;
   direction: rtl !important;
 }
 
 html[dir="rtl"] .testimonials .testimonial-item h3,
 html[dir="rtl"] .testimonials .testimonial-item h4 {
-  text-align: center !important;
+  text-align: right !important;
 }
 
 html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
@@ -803,33 +802,33 @@ html[dir="rtl"] .testimonials .testimonial-item .quote-icon-right {
 /* RTL Testimonials Responsive */
 @media (max-width: 768px) {
   html[dir="rtl"] .testimonials .testimonial-item {
-    text-align: center !important;
+    text-align: right !important;
     padding: 20px 15px;
   }
-  
+
   html[dir="rtl"] .testimonials .testimonial-item p {
     font-size: 14px;
     line-height: 1.6;
-    text-align: center !important;
+    text-align: right !important;
     direction: rtl !important;
   }
-  
+
   html[dir="rtl"] .testimonials .testimonial-item h3 {
     font-size: 16px;
-    text-align: center !important;
+    text-align: right !important;
   }
-  
+
   html[dir="rtl"] .testimonials .testimonial-item h4 {
     font-size: 13px;
-    text-align: center !important;
+    text-align: right !important;
   }
-  
+
   html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
     width: 70px;
     height: 70px;
     margin: 0 auto 15px auto !important;
   }
-  
+
   /* Hide navigation buttons on mobile RTL */
   html[dir="rtl"] .testimonials .swiper-button-next,
   html[dir="rtl"] .testimonials .swiper-button-prev {
@@ -842,26 +841,26 @@ html[dir="rtl"] .testimonials .testimonial-item .quote-icon-right {
     padding: 15px 12px;
     min-height: 280px;
   }
-  
+
   html[dir="rtl"] .testimonials .testimonial-item p {
     font-size: 13px;
     line-height: 1.5;
   }
-  
+
   html[dir="rtl"] .testimonials .testimonial-item h3 {
     font-size: 15px;
   }
-  
+
   html[dir="rtl"] .testimonials .testimonial-item h4 {
     font-size: 12px;
   }
-  
+
   html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
     width: 60px;
     height: 60px;
     margin: 0 auto 12px auto !important;
   }
-  
+
   html[dir="rtl"] .testimonials .swiper-pagination {
     margin-top: 20px;
   }
@@ -876,12 +875,12 @@ html[dir="rtl"] .testimonials .testimonial-item:hover .quote-icon-right {
 
 /* RTL Testimonials Section Title */
 html[dir="rtl"] .testimonials .section-title h2 {
-  text-align: center !important;
+  text-align: right !important;
   font-family: var(--persian-heading-font) !important;
 }
 
 html[dir="rtl"] .testimonials .section-title p {
-  text-align: center !important;
+  text-align: right !important;
   direction: rtl !important;
   font-family: var(--persian-font) !important;
   line-height: 1.8;
@@ -920,16 +919,19 @@ html[dir="rtl"] .testimonials .testimonial-item {
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  text-align: center !important;
+  text-align: right !important;
+}
+
+/* Additional RTL Testimonials Override */
+html[dir="rtl"] .testimonials .testimonial-item {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .testimonials .testimonial-item * {
+  text-align: right !important;
 }
 
 html[dir="rtl"] .testimonials .testimonial-item p {
-  flex-grow: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
+  text-align: right !important;
   direction: rtl !important;
-  font-family: var(--persian-font) !important;
-  line-height: 1.8;
 }

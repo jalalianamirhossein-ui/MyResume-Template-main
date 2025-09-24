@@ -64,7 +64,7 @@ KEY FEATURES
 🎨 MODERN UI/UX
 - Clean, minimalist design
 - Smooth animations and transitions
-- Dark/Light theme support
+- Light theme only (dark mode removed)
 - Accessibility compliant (WCAG 2.1 AA)
 - Performance optimized
 
