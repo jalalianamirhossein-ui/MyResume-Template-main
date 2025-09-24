@@ -259,6 +259,10 @@ html[dir="rtl"] .contact .php-email-form textarea {
 html[dir="rtl"] .contact .php-email-form button {
   font-family: var(--persian-font) !important;
   font-weight: 500;
+  text-align: center !important;
+  display: block !important;
+  margin: 0 auto !important;
+  width: auto !important;
 }
 
 html[dir="rtl"] .footer .copyright {
@@ -474,12 +478,6 @@ html[dir="rtl"] .about .content ul strong {
     right: auto !important;
   }
 
-  /* RTL mobile language toggle positioning - در سمت راست */
-  html[dir="rtl"] #lang-toggle {
-    left: auto !important;
-    right: 20px !important;
-  }
-
   /* RTL mobile header positioning */
   html[dir="rtl"] .header {
     border-right: 1px solid rgba(15, 23, 42, 0.06);
@@ -517,6 +515,14 @@ html[dir="rtl"] .about .content ul strong {
   /* RTL mobile contact form */
   html[dir="rtl"] .contact .php-email-form {
     text-align: right;
+  }
+
+  /* RTL mobile contact form button */
+  html[dir="rtl"] .contact .php-email-form button {
+    text-align: center !important;
+    display: block !important;
+    margin: 0 auto !important;
+    width: auto !important;
   }
 
   /* RTL mobile portfolio filters */
@@ -758,4 +764,172 @@ html[dir="rtl"] .testimonials .testimonial-item h4 {
 
 html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
   margin: 0 auto 20px auto !important;
+}
+
+/* RTL Swiper Navigation Buttons */
+html[dir="rtl"] .testimonials .swiper-button-next {
+  right: auto !important;
+  left: 10px !important;
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .testimonials .swiper-button-prev {
+  left: auto !important;
+  right: 10px !important;
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .testimonials .swiper-button-next:after {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .testimonials .swiper-button-prev:after {
+  transform: scaleX(-1);
+}
+
+/* RTL Quote Icons Positioning */
+html[dir="rtl"] .testimonials .testimonial-item .quote-icon-left {
+  right: -4px !important;
+  left: auto !important;
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .testimonials .testimonial-item .quote-icon-right {
+  left: -4px !important;
+  right: auto !important;
+  transform: scaleX(-1) scale(-1, -1);
+}
+
+/* RTL Testimonials Responsive */
+@media (max-width: 768px) {
+  html[dir="rtl"] .testimonials .testimonial-item {
+    text-align: center !important;
+    padding: 20px 15px;
+  }
+  
+  html[dir="rtl"] .testimonials .testimonial-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center !important;
+    direction: rtl !important;
+  }
+  
+  html[dir="rtl"] .testimonials .testimonial-item h3 {
+    font-size: 16px;
+    text-align: center !important;
+  }
+  
+  html[dir="rtl"] .testimonials .testimonial-item h4 {
+    font-size: 13px;
+    text-align: center !important;
+  }
+  
+  html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px auto !important;
+  }
+  
+  /* Hide navigation buttons on mobile RTL */
+  html[dir="rtl"] .testimonials .swiper-button-next,
+  html[dir="rtl"] .testimonials .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html[dir="rtl"] .testimonials .testimonial-item {
+    padding: 15px 12px;
+    min-height: 280px;
+  }
+  
+  html[dir="rtl"] .testimonials .testimonial-item p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  html[dir="rtl"] .testimonials .testimonial-item h3 {
+    font-size: 15px;
+  }
+  
+  html[dir="rtl"] .testimonials .testimonial-item h4 {
+    font-size: 12px;
+  }
+  
+  html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px auto !important;
+  }
+  
+  html[dir="rtl"] .testimonials .swiper-pagination {
+    margin-top: 20px;
+  }
+}
+
+/* RTL Testimonials Hover Effects */
+html[dir="rtl"] .testimonials .testimonial-item:hover .quote-icon-left,
+html[dir="rtl"] .testimonials .testimonial-item:hover .quote-icon-right {
+  color: var(--accent) !important;
+  opacity: 1 !important;
+}
+
+/* RTL Testimonials Section Title */
+html[dir="rtl"] .testimonials .section-title h2 {
+  text-align: center !important;
+  font-family: var(--persian-heading-font) !important;
+}
+
+html[dir="rtl"] .testimonials .section-title p {
+  text-align: center !important;
+  direction: rtl !important;
+  font-family: var(--persian-font) !important;
+  line-height: 1.8;
+}
+
+/* RTL Testimonials Swiper Container */
+html[dir="rtl"] .testimonials .swiper {
+  direction: rtl;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+html[dir="rtl"] .testimonials .swiper-wrapper {
+  direction: rtl;
+  align-items: stretch;
+}
+
+html[dir="rtl"] .testimonials .swiper-slide {
+  direction: rtl;
+  height: auto;
+  display: flex;
+}
+
+/* RTL Testimonials Pagination */
+html[dir="rtl"] .testimonials .swiper-pagination {
+  direction: ltr;
+  text-align: center;
+}
+
+html[dir="rtl"] .testimonials .swiper-pagination .swiper-pagination-bullet {
+  margin: 0 4px;
+}
+
+/* RTL Testimonials Flexbox Layout */
+html[dir="rtl"] .testimonials .testimonial-item {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  text-align: center !important;
+}
+
+html[dir="rtl"] .testimonials .testimonial-item p {
+  flex-grow: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  direction: rtl !important;
+  font-family: var(--persian-font) !important;
+  line-height: 1.8;
 }

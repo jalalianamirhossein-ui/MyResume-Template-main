@@ -1,828 +1,610 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-en="Monitoring & Security — Pricing & Scope" data-fa="مانیتورینگ و امنیت — قیمت‌گذاری و محدوده">Monitoring & Security — Pricing & Scope</title>
-    <meta name="description" content="Zabbix stack, alerting, backup strategy, security hardening services. Fixed price AED 4,200.">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title
+      data-en="Monitoring & Security — Pricing & Scope"
+      data-fa="مانیتورینگ و امنیت — قیمت‌گذاری و محدوده"
+    >
+      Monitoring & Security — Pricing & Scope
+    </title>
+    <meta
+      name="description"
+      content="Zabbix stack, alerting, backup strategy, security hardening services. Fixed price AED 4,200."
+    />
+
+    <!-- Modern Service Pages CSS -->
+    <link rel="stylesheet" href="../assets/css/services.css" />
+
+    <!-- Language Toggle Stylesheet -->
+    <link href="../assets/css/lang-toggle.css?v=999" rel="stylesheet" />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=999"
+      rel="stylesheet"
+      disabled
+    />
+
     <!-- Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
     <!-- AOS Animation CDN -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #f6f7f9;
-            --card: #fff;
-            --primary: #0d6efd;
-            --success: #198754;
-            --text: #222;
-            --muted: #667085;
-            --radius: 12px;
-            --shadow: 0 10px 30px rgba(16, 24, 40, .08);
-            --space: clamp(16px, 3vw, 24px);
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        html, body {
-            height: 100%;
-        }
-        
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font: 16px/1.75 "Segoe UI", Tahoma, system-ui, sans-serif;
-        }
-        
-        body.rtl {
-            direction: rtl;
-            text-align: right;
-        }
-        
-        .container {
-            max-width: 960px;
-            margin: auto;
-            padding: calc(var(--space) * 2) var(--space);
-        }
-        
-        .card {
-            background: var(--card);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: calc(var(--space) * 1.5);
-            margin-bottom: var(--space);
-        }
-        
-        .h1, .h2, .h3, h1, h2, h3 {
-            margin: 0 0 .6em;
-        }
-        
-        h1 {
-            font-size: clamp(24px, 3.2vw, 32px);
-        }
-        
-        h2 {
-            font-size: clamp(20px, 2.8vw, 28px);
-        }
-        
-        h3 {
-            font-size: clamp(18px, 2.4vw, 24px);
-        }
-        
-        p {
-            margin: .6em 0;
-            color: #444;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            padding: .75rem 1.1rem;
-            border-radius: 10px;
-            border: 1px solid transparent;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-        
-        .btn-outline {
-            background: #fff;
-            border-color: #d0d5dd;
-            color: #344054;
-        }
-        
-        .btn:hover {
-            filter: brightness(.98);
-            transform: translateY(-2px);
-        }
-        
-        .btn:focus-visible {
-            outline: 3px solid rgba(13, 110, 253, .35);
-            outline-offset: 2px;
-        }
-        
-        .grid {
-            display: grid;
-            gap: var(--space);
-        }
-        
-        @media (min-width: 720px) {
-            .grid-2 {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .badge {
-            display: inline-block;
-            background: rgba(13, 110, 253, .08);
-            color: var(--primary);
-            padding: .25rem .6rem;
-            border-radius: 999px;
-            font-size: .85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .list {
-            margin: .8rem 0;
-            padding: 0;
-            list-style: none;
-        }
-        
-        .list li {
-            position: relative;
-            padding-left: 1.6rem;
-            margin-bottom: .5rem;
-        }
-        
-        .list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: .1rem;
-            font-weight: 700;
-            color: var(--success);
-        }
-        
-        .price {
-            display: flex;
-            align-items: flex-end;
-            gap: .5rem;
-            margin: 1rem 0;
-        }
-        
-        .price .amount {
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: 800;
-            letter-spacing: .2px;
-            color: var(--primary);
-        }
-        
-        .price .unit {
-            color: var(--muted);
-            font-size: 16px;
-        }
-        
-        .muted {
-            color: var(--muted);
-            font-size: .95rem;
-        }
-        
-        .rtl .list li {
-            padding-right: 1.6rem;
-            padding-left: 0;
-        }
-        
-        .rtl .list li:before {
-            left: auto;
-            right: 0;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 40px 0;
-        }
-        
-        .service-icon {
-            font-size: 64px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .service-title {
-            font-size: clamp(24px, 3.2vw, 32px);
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 16px;
-        }
-        
-        .service-subtitle {
-            font-size: 18px;
-            color: var(--muted);
-            margin-bottom: 32px;
-        }
-        
-        .section-title {
-            font-size: clamp(20px, 2.8vw, 28px);
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .section-title i {
-            color: var(--primary);
-        }
-        
-        .timeline {
-            position: relative;
-        }
-        
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 16px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-        }
-        
-        .rtl .timeline-item {
-            border-left: none;
-            border-right: 4px solid var(--primary);
-        }
-        
-        .timeline-phase {
-            font-weight: 600;
-            color: var(--primary);
-            min-width: 120px;
-        }
-        
-        .timeline-duration {
-            color: var(--muted);
-            font-size: 14px;
-            margin-left: 16px;
-        }
-        
-        .rtl .timeline-duration {
-            margin-left: 0;
-            margin-right: 16px;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            background: #f8f9fa;
-            padding: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-answer {
-            padding: 16px;
-            display: none;
-        }
-        
-        .faq-answer.show {
-            display: block;
-        }
-        
-        .contact-form {
-            display: none;
-            background: #f8f9fa;
-            padding: 24px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        
-        .contact-form.show {
-            display: block;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
-        }
-        
-        .toast {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--success);
-            color: white;
-            padding: 16px 24px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 1001;
-            display: none;
-        }
-        
-        .toast.show {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
-        }
-        
-        .language-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 8px;
-            z-index: 1000;
-        }
-        
-        .lang-btn {
-            padding: 8px 16px;
-            border: 2px solid var(--primary);
-            background: white;
-            color: var(--primary);
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .lang-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-        
-        .rtl .back-button {
-            left: auto;
-            right: 20px;
-        }
-        
-        .rtl .language-toggle {
-            left: 20px;
-            right: auto;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 16px;
-            }
-            
-            .card {
-                padding: 20px;
-            }
-            
-            .language-toggle {
-                top: 10px;
-                right: 10px;
-                gap: 4px;
-            }
-            
-            .lang-btn {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-            
-            .back-button {
-                top: 10px;
-                left: 10px;
-            }
-            
-            .rtl .back-button {
-                left: auto;
-                right: 10px;
-            }
-            
-            .rtl .language-toggle {
-                left: 10px;
-                right: auto;
-            }
-            
-            .timeline-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .timeline-duration {
-                margin-left: 0;
-                margin-top: 8px;
-            }
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-        
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-                color: black;
-            }
-            
-            .card {
-                box-shadow: none;
-                border: 1px solid #ddd;
-            }
-            
-            .language-toggle,
-            .btn,
-            .contact-form,
-            .back-button {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
     <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button class="lang-btn active" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('fa')">فا</button>
-    </div>
+    <!-- Auto-injected by i18n-switch.js -->
 
     <!-- Back Button -->
-    <a href="/index.html#services" class="btn btn-outline back-button" aria-label="Back to Services"
-       data-en="Back to Services" data-fa="بازگشت به خدمات">
-        <i class="bi bi-arrow-left"></i>
-        <span data-en="Back to Services" data-fa="بازگشت به خدمات">Back to Services</span>
+    <a
+      href="/index.html#services"
+      class="btn btn-outline back-button"
+      aria-label="Back to Services"
+      data-en="Back to Services"
+      data-fa="بازگشت به خدمات"
+    >
+      <i class="bi bi-arrow-left"></i>
+      <span data-en="Back to Services" data-fa="بازگشت به خدمات"
+        >Back to Services</span
+      >
     </a>
 
     <div class="container">
-        <!-- Hero Section -->
-        <div class="hero" data-aos="fade-up">
-            <i class="bi bi-shield-check service-icon"></i>
-            <h1 class="service-title" data-en="Monitoring & Security" data-fa="مانیتورینگ و امنیت">
-                Monitoring & Security
-            </h1>
-            <p class="service-subtitle" data-en="Zabbix stack, alerting, backup strategy, security hardening, and incident response." data-fa="Zabbix، آلارمینگ، راهبرد پشتیبان‌گیری، سخت‌سازی امنیتی و پاسخ به حوادث.">
-                Zabbix stack, alerting, backup strategy, security hardening, and incident response.
+      <!-- Hero Section -->
+      <div class="hero" data-aos="fade-up">
+        <i class="bi bi-shield-check service-icon"></i>
+        <h1
+          class="service-title"
+          data-en="Monitoring & Security"
+          data-fa="مانیتورینگ و امنیت"
+        >
+          Monitoring & Security
+        </h1>
+        <p
+          class="service-subtitle"
+          data-en="Zabbix stack, alerting, backup strategy, security hardening, and incident response."
+          data-fa="Zabbix، آلارمینگ، راهبرد پشتیبان‌گیری، سخت‌سازی امنیتی و پاسخ به حوادث."
+        >
+          Zabbix stack, alerting, backup strategy, security hardening, and
+          incident response.
+        </p>
+      </div>
+
+      <!-- Pricing Section -->
+      <section
+        id="pricing"
+        class="container"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="card grid grid-2">
+          <div>
+            <span
+              class="badge badge-primary"
+              data-en="Fixed Price"
+              data-fa="قیمت ثابت"
+              >Fixed Price</span
+            >
+            <h2 data-en="Pricing" data-fa="قیمت‌گذاری">Pricing</h2>
+            <div class="price" aria-label="Price">
+              <div class="amount" data-en="AED 4,200" data-fa="۴,۲۰۰ درهم">
+                AED 4,200
+              </div>
+              <div class="unit" data-en="one-time" data-fa="پرداخت یک‌باره">
+                one-time
+              </div>
+            </div>
+            <p
+              class="muted"
+              data-en="* IRR will appear on invoice at Central Bank rate."
+              data-fa="‌* معادل ریالی در فاکتور با نرخ بانک مرکزی درج می‌شود."
+            >
+              * IRR will appear on invoice at Central Bank rate.
             </p>
-        </div>
-
-        <!-- Pricing Section -->
-        <section id="pricing" class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="card grid grid-2">
-                <div>
-                    <span class="badge" data-en="Fixed Price" data-fa="قیمت ثابت">Fixed Price</span>
-                    <h2 data-en="Pricing" data-fa="قیمت‌گذاری">Pricing</h2>
-                    <div class="price" aria-label="Price">
-                        <div class="amount" data-en="AED 4,200" data-fa="۴,۲۰۰ درهم">AED 4,200</div>
-                        <div class="unit" data-en="one-time" data-fa="پرداخت یک‌باره">one-time</div>
-                    </div>
-                    <p class="muted" data-en="* IRR will appear on invoice at Central Bank rate."
-                       data-fa="‌* معادل ریالی در فاکتور با نرخ بانک مرکزی درج می‌شود.">
-                        * IRR will appear on invoice at Central Bank rate.
-                    </p>
-                    <ul class="list">
-                        <li data-en="Zabbix/Grafana monitoring stack setup"
-                            data-fa="راه‌اندازی پشته نظارت Zabbix/Grafana">Zabbix/Grafana monitoring stack setup</li>
-                        <li data-en="Custom alert rules and notification channels"
-                            data-fa="قواعد هشدار سفارشی و کانال‌های اطلاع‌رسانی">Custom alert rules and notification channels</li>
-                        <li data-en="Log shipping and centralized logging"
-                            data-fa="ارسال لاگ و ثبت متمرکز">Log shipping and centralized logging</li>
-                        <li data-en="Backup and disaster recovery planning"
-                            data-fa="برنامه‌ریزی پشتیبان‌گیری و بازیابی فاجعه">Backup and disaster recovery planning</li>
-                        <li data-en="Security hardening (SSH/Firewall)"
-                            data-fa="سخت‌سازی امنیتی (SSH/فایروال)">Security hardening (SSH/Firewall)</li>
-                        <li data-en="Incident response playbooks and procedures"
-                            data-fa="ران‌بوک‌ها و روش‌های پاسخ به حوادث">Incident response playbooks and procedures</li>
-                        <li data-en="Security reports and compliance documentation"
-                            data-fa="گزارش‌های امنیتی و مستندات انطباق">Security reports and compliance documentation</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="h3" data-en="Exclusions & Assumptions" data-fa="فرضیات و خارج از شمول">Exclusions & Assumptions</h3>
-                    <ul class="list">
-                        <li data-en="Hardware for monitoring servers and storage"
-                            data-fa="سخت‌افزار برای سرورهای نظارت و ذخیره‌سازی">Hardware for monitoring servers and storage</li>
-                        <li data-en="Third-party security tool licenses"
-                            data-fa="لایسنس‌های ابزارهای امنیتی شخص ثالث">Third-party security tool licenses</li>
-                        <li data-en="Client provides network access and credentials"
-                            data-fa="دسترسی شبکه و اعتبارنامه‌ها توسط کارفرما تأمین می‌شود">Client provides network access and credentials</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Deliverables -->
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="section-title">
-                <i class="bi bi-file-earmark-text"></i>
-                <span data-en="Deliverables" data-fa="اقلام قابل تحویل">Deliverables</span>
-            </h2>
             <ul class="list">
-                <li data-en="Monitoring configuration files and dashboards" data-fa="فایل‌های پیکربندی نظارت و داشبوردها">Monitoring configuration files and dashboards</li>
-                <li data-en="Alert rules and notification templates" data-fa="قواعد هشدار و قالب‌های اطلاع‌رسانی">Alert rules and notification templates</li>
-                <li data-en="Security hardening checklist and scripts" data-fa="چک‌لیست و اسکریپت‌های سخت‌سازی امنیتی">Security hardening checklist and scripts</li>
-                <li data-en="Backup and recovery procedures" data-fa="روش‌های پشتیبان‌گیری و بازیابی">Backup and recovery procedures</li>
-                <li data-en="Incident response playbooks" data-fa="ران‌بوک‌های پاسخ به حوادث">Incident response playbooks</li>
+              <li
+                data-en="Zabbix/Grafana monitoring stack setup"
+                data-fa="راه‌اندازی پشته مانیتورینگ Zabbix/Grafana"
+              >
+                Zabbix/Grafana monitoring stack setup
+              </li>
+              <li
+                data-en="Custom alert rules and notification channels"
+                data-fa="قوانین آلارم سفارشی و کانال‌های اعلان"
+              >
+                Custom alert rules and notification channels
+              </li>
+              <li
+                data-en="Log shipping and centralized logging"
+                data-fa="ارسال لاگ و ثبت مرکزی"
+              >
+                Log shipping and centralized logging
+              </li>
+              <li
+                data-en="Backup and disaster recovery planning"
+                data-fa="برنامه‌ریزی پشتیبان‌گیری و بازیابی فاجعه"
+              >
+                Backup and disaster recovery planning
+              </li>
+              <li
+                data-en="Security hardening (SSH/Firewall)"
+                data-fa="سخت‌سازی امنیتی (SSH/Firewall)"
+              >
+                Security hardening (SSH/Firewall)
+              </li>
+              <li
+                data-en="Incident response playbooks"
+                data-fa="ران‌بوک‌های پاسخ به حوادث"
+              >
+                Incident response playbooks
+              </li>
+              <li
+                data-en="Security reports and compliance documentation"
+                data-fa="گزارش‌های امنیتی و مستندات انطباق"
+              >
+                Security reports and compliance documentation
+              </li>
             </ul>
-        </div>
-
-        <!-- Timeline -->
-        <div class="card" data-aos="fade-up" data-aos-delay="300">
-            <h2 class="section-title">
-                <i class="bi bi-clock"></i>
-                <span data-en="Timeline" data-fa="زمان‌بندی">Timeline</span>
-            </h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-phase" data-en="Assessment" data-fa="ارزیابی">Assessment</div>
-                    <div class="timeline-duration" data-en="1–2 days" data-fa="۱–۲ روز">1–2 days</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase" data-en="Monitoring Setup" data-fa="راه‌اندازی نظارت">Monitoring Setup</div>
-                    <div class="timeline-duration" data-en="2–3 days" data-fa="۲–۳ روز">2–3 days</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase" data-en="Security Hardening" data-fa="سخت‌سازی امنیتی">Security Hardening</div>
-                    <div class="timeline-duration" data-en="2–3 days" data-fa="۲–۳ روز">2–3 days</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase" data-en="Testing & Handover" data-fa="آزمون و تحویل">Testing & Handover</div>
-                    <div class="timeline-duration" data-en="1–2 days" data-fa="۱–۲ روز">1–2 days</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLA & Warranty -->
-        <div class="card" data-aos="fade-up" data-aos-delay="400">
-            <h2 class="section-title">
-                <i class="bi bi-shield-check"></i>
-                <span data-en="SLA & Warranty" data-fa="SLA و وارانتی">SLA & Warranty</span>
-            </h2>
+          </div>
+          <div>
+            <h3
+              class="h3"
+              data-en="Exclusions & Assumptions"
+              data-fa="فرضیات و خارج از شمول"
+            >
+              Exclusions & Assumptions
+            </h3>
             <ul class="list">
-                <li data-en="Response within 4 business hours for critical issues" data-fa="پاسخ‌گویی حداکثر ۴ ساعت کاری برای موارد بحرانی">Response within 4 business hours for critical issues</li>
-                <li data-en="30-day defect warranty post-handover" data-fa="وارانتی ۳۰ روزه رفع اشکال پس از تحویل">30-day defect warranty post-handover</li>
-                <li data-en="Change requests via written approval" data-fa="درخواست‌های تغییر با تأیید کتبی انجام می‌شود">Change requests via written approval</li>
+              <li
+                data-en="Hardware procurement and third-party licenses"
+                data-fa="خرید سخت‌افزار و لایسنس‌های شخص ثالث"
+              >
+                Hardware procurement and third-party licenses
+              </li>
+              <li
+                data-en="Security audits and penetration testing"
+                data-fa="ممیزی امنیتی و تست نفوذ"
+              >
+                Security audits and penetration testing
+              </li>
+              <li
+                data-en="Client provides access to infrastructure"
+                data-fa="دسترسی به زیرساخت توسط کارفرما تأمین می‌شود"
+              >
+                Client provides access to infrastructure
+              </li>
             </ul>
+          </div>
         </div>
+      </section>
 
-        <!-- Optional Add-ons -->
-        <div class="card" data-aos="fade-up" data-aos-delay="500">
-            <h2 class="section-title">
-                <i class="bi bi-plus-circle"></i>
-                <span data-en="Optional Add-ons" data-fa="افزونه‌های اختیاری">Optional Add-ons</span>
-            </h2>
-            <ul class="list">
-                <li data-en="Advanced threat detection and SIEM integration" data-fa="تشخیص تهدید پیشرفته و یکپارچه‌سازی SIEM">Advanced threat detection and SIEM integration</li>
-                <li data-en="Penetration testing and vulnerability assessment" data-fa="تست نفوذ و ارزیابی آسیب‌پذیری">Penetration testing and vulnerability assessment</li>
-                <li data-en="Security awareness training program" data-fa="برنامه آموزش آگاهی امنیتی">Security awareness training program</li>
-                <li data-en="24/7 security monitoring and SOC services" data-fa="نظارت امنیتی 24/7 و خدمات SOC">24/7 security monitoring and SOC services</li>
-            </ul>
+      <!-- Deliverables -->
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="section-title">
+          <i class="bi bi-file-earmark-text"></i>
+          <span data-en="Deliverables" data-fa="اقلام قابل تحویل"
+            >Deliverables</span
+          >
+        </h2>
+        <ul class="list">
+          <li
+            data-en="Monitoring configuration files and dashboards"
+            data-fa="فایل‌های پیکربندی مانیتورینگ و داشبوردها"
+          >
+            Monitoring configuration files and dashboards
+          </li>
+          <li
+            data-en="Alert rules and notification templates"
+            data-fa="قوانین آلارم و قالب‌های اعلان"
+          >
+            Alert rules and notification templates
+          </li>
+          <li
+            data-en="Backup and recovery procedures"
+            data-fa="روش‌های پشتیبان‌گیری و بازیابی"
+          >
+            Backup and recovery procedures
+          </li>
+          <li
+            data-en="Security hardening checklist and reports"
+            data-fa="چک‌لیست سخت‌سازی امنیتی و گزارش‌ها"
+          >
+            Security hardening checklist and reports
+          </li>
+          <li
+            data-en="Incident response playbooks and runbooks"
+            data-fa="ران‌بوک‌های پاسخ به حوادث و عملیاتی"
+          >
+            Incident response playbooks and runbooks
+          </li>
+        </ul>
+      </div>
+
+      <!-- Timeline -->
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="section-title">
+          <i class="bi bi-clock"></i>
+          <span data-en="Timeline" data-fa="زمان‌بندی">Timeline</span>
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-phase" data-en="Assessment" data-fa="ارزیابی">
+              Assessment
+            </div>
+            <div class="timeline-duration" data-en="1–2 days" data-fa="۱–۲ روز">
+              1–2 days
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-phase"
+              data-en="Monitoring Setup"
+              data-fa="راه‌اندازی مانیتورینگ"
+            >
+              Monitoring Setup
+            </div>
+            <div class="timeline-duration" data-en="2–3 days" data-fa="۲–۳ روز">
+              2–3 days
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-phase"
+              data-en="Security Hardening"
+              data-fa="سخت‌سازی امنیتی"
+            >
+              Security Hardening
+            </div>
+            <div class="timeline-duration" data-en="2–3 days" data-fa="۲–۳ روز">
+              2–3 days
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-phase"
+              data-en="Testing & Handover"
+              data-fa="آزمون و تحویل"
+            >
+              Testing & Handover
+            </div>
+            <div class="timeline-duration" data-en="1–2 days" data-fa="۱–۲ روز">
+              1–2 days
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- FAQ -->
-        <div class="card" data-aos="fade-up" data-aos-delay="600">
-            <h2 class="section-title">
-                <i class="bi bi-question-circle"></i>
-                <span data-en="FAQ" data-fa="پرسش‌های پرتکرار">FAQ</span>
-            </h2>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span data-en="Which monitoring tools do you support?" data-fa="از چه ابزارهای نظارتی پشتیبانی می‌کنید؟">Which monitoring tools do you support?</span>
-                    <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p data-en="We specialize in Zabbix and Grafana, but also work with Nagios, Prometheus, and ELK stack." data-fa="ما در Zabbix و Grafana تخصص داریم، اما با Nagios، Prometheus و پشته ELK نیز کار می‌کنیم.">
-                        We specialize in Zabbix and Grafana, but also work with Nagios, Prometheus, and ELK stack.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span data-en="Do you provide 24/7 monitoring support?" data-fa="آیا پشتیبانی نظارت 24/7 ارائه می‌دهید؟">Do you provide 24/7 monitoring support?</span>
-                    <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p data-en="Yes, we offer 24/7 monitoring and incident response services as an add-on option." data-fa="بله، ما خدمات نظارت و پاسخ به حوادث 24/7 را به عنوان گزینه افزونه ارائه می‌دهیم.">
-                        Yes, we offer 24/7 monitoring and incident response services as an add-on option.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span data-en="What security standards do you follow?" data-fa="از چه استانداردهای امنیتی پیروی می‌کنید؟">What security standards do you follow?</span>
-                    <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p data-en="We follow CIS benchmarks, NIST guidelines, ISO 27001, and industry best practices for security hardening." data-fa="ما از معیارهای CIS، راهنماهای NIST، ISO 27001 و بهترین روش‌های صنعت برای سخت‌سازی امنیتی پیروی می‌کنیم.">
-                        We follow CIS benchmarks, NIST guidelines, ISO 27001, and industry best practices for security hardening.
-                    </p>
-                </div>
-            </div>
-        </div>
+      <!-- SLA & Warranty -->
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <h2 class="section-title">
+          <i class="bi bi-shield-check"></i>
+          <span data-en="SLA & Warranty" data-fa="SLA و وارانتی"
+            >SLA & Warranty</span
+          >
+        </h2>
+        <ul class="list">
+          <li
+            data-en="Response within 4 business hours for critical issues"
+            data-fa="پاسخ‌گویی حداکثر ۴ ساعت کاری برای موارد بحرانی"
+          >
+            Response within 4 business hours for critical issues
+          </li>
+          <li
+            data-en="30-day defect warranty post-handover"
+            data-fa="وارانتی ۳۰ روزه رفع اشکال پس از تحویل"
+          >
+            30-day defect warranty post-handover
+          </li>
+          <li
+            data-en="Change requests via written approval"
+            data-fa="درخواست‌های تغییر با تأیید کتبی انجام می‌شود"
+          >
+            Change requests via written approval
+          </li>
+        </ul>
+      </div>
 
-        <!-- CTA Section -->
-        <div class="card" data-aos="fade-up" data-aos-delay="700">
-            <h2 class="section-title">
-                <i class="bi bi-envelope"></i>
-                <span data-en="Request Quote" data-fa="درخواست پیش‌فاکتور">Request Quote</span>
-            </h2>
-            <p data-en="Ready to get started? Contact us for a detailed proposal tailored to your monitoring and security requirements." data-fa="آماده شروع هستید؟ برای دریافت پیشنهاد تفصیلی متناسب با نیازهای نظارت و امنیت خود با ما تماس بگیرید.">
-                Ready to get started? Contact us for a detailed proposal tailored to your monitoring and security requirements.
+      <!-- Optional Add-ons -->
+      <div class="card" data-aos="fade-up" data-aos-delay="500">
+        <h2 class="section-title">
+          <i class="bi bi-plus-circle"></i>
+          <span data-en="Optional Add-ons" data-fa="افزونه‌های اختیاری"
+            >Optional Add-ons</span
+          >
+        </h2>
+        <ul class="list">
+          <li
+            data-en="Advanced SIEM setup and log analysis"
+            data-fa="راه‌اندازی SIEM پیشرفته و تحلیل لاگ"
+          >
+            Advanced SIEM setup and log analysis
+          </li>
+          <li
+            data-en="Penetration testing and vulnerability assessment"
+            data-fa="تست نفوذ و ارزیابی آسیب‌پذیری"
+          >
+            Penetration testing and vulnerability assessment
+          </li>
+          <li
+            data-en="Compliance framework implementation (ISO 27001)"
+            data-fa="پیاده‌سازی چارچوب انطباق (ISO 27001)"
+          >
+            Compliance framework implementation (ISO 27001)
+          </li>
+          <li
+            data-en="Security awareness training for staff"
+            data-fa="آموزش آگاهی امنیتی برای کارکنان"
+          >
+            Security awareness training for staff
+          </li>
+        </ul>
+      </div>
+
+      <!-- FAQ -->
+      <div class="card" data-aos="fade-up" data-aos-delay="600">
+        <h2 class="section-title">
+          <i class="bi bi-question-circle"></i>
+          <span data-en="FAQ" data-fa="پرسش‌های پرتکرار">FAQ</span>
+        </h2>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span
+              data-en="What monitoring tools do you support?"
+              data-fa="از چه ابزارهای مانیتورینگ پشتیبانی می‌کنید؟"
+              >What monitoring tools do you support?</span
+            >
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p
+              data-en="We specialize in Zabbix, Grafana, Prometheus, ELK Stack, and other enterprise monitoring solutions."
+              data-fa="ما در Zabbix، Grafana، Prometheus، ELK Stack و سایر راهکارهای مانیتورینگ سازمانی تخصص داریم."
+            >
+              We specialize in Zabbix, Grafana, Prometheus, ELK Stack, and other
+              enterprise monitoring solutions.
             </p>
-            <button class="btn btn-primary" onclick="showContactForm()" data-en="Request Quote" data-fa="درخواست پیش‌فاکتور">
-                Request Quote
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span
+              data-en="Do you provide 24/7 monitoring support?"
+              data-fa="آیا پشتیبانی مانیتورینگ ۲۴/۷ ارائه می‌دهید؟"
+              >Do you provide 24/7 monitoring support?</span
+            >
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p
+              data-en="We set up monitoring systems and provide initial training. 24/7 support can be arranged as an add-on service."
+              data-fa="ما سیستم‌های مانیتورینگ را راه‌اندازی می‌کنیم و آموزش اولیه ارائه می‌دهیم. پشتیبانی ۲۴/۷ می‌تواند به‌عنوان سرویس افزونه ترتیب داده شود."
+            >
+              We set up monitoring systems and provide initial training. 24/7
+              support can be arranged as an add-on service.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span
+              data-en="Can you help with compliance requirements?"
+              data-fa="آیا می‌توانید در الزامات انطباق کمک کنید؟"
+              >Can you help with compliance requirements?</span
+            >
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p
+              data-en="Yes, we provide documentation and configurations to meet various compliance standards like ISO 27001, SOC 2, and GDPR."
+              data-fa="بله، ما مستندات و پیکربندی‌هایی برای برآورده کردن استانداردهای مختلف انطباق مانند ISO 27001، SOC 2 و GDPR ارائه می‌دهیم."
+            >
+              Yes, we provide documentation and configurations to meet various
+              compliance standards like ISO 27001, SOC 2, and GDPR.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="card" data-aos="fade-up" data-aos-delay="700">
+        <h2 class="section-title">
+          <i class="bi bi-envelope"></i>
+          <span data-en="Request Quote" data-fa="درخواست پیش‌فاکتور"
+            >Request Quote</span
+          >
+        </h2>
+        <p
+          data-en="Ready to secure and monitor your infrastructure? Contact us for a comprehensive monitoring and security proposal."
+          data-fa="آماده امن‌سازی و مانیتورینگ زیرساخت خود هستید؟ برای دریافت پیشنهاد جامع مانیتورینگ و امنیت با ما تماس بگیرید."
+        >
+          Ready to secure and monitor your infrastructure? Contact us for a
+          comprehensive monitoring and security proposal.
+        </p>
+        <button
+          class="btn btn-primary"
+          onclick="showContactForm()"
+          data-en="Request Quote"
+          data-fa="درخواست پیش‌فاکتور"
+        >
+          Request Quote
+        </button>
+
+        <div class="contact-form" id="contactForm">
+          <form onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label data-en="Full Name" data-fa="نام کامل">Full Name</label>
+              <input type="text" name="name" required />
+            </div>
+            <div class="form-group">
+              <label data-en="Email Address" data-fa="آدرس ایمیل"
+                >Email Address</label
+              >
+              <input type="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label data-en="Phone Number" data-fa="شماره تلفن"
+                >Phone Number</label
+              >
+              <input type="tel" name="phone" />
+            </div>
+            <div class="form-group">
+              <label data-en="Project Details" data-fa="جزئیات پروژه"
+                >Project Details</label
+              >
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Describe your monitoring and security requirements..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success"
+              data-en="Submit Request"
+              data-fa="ارسال درخواست"
+            >
+              Submit Request
             </button>
-            
-            <div class="contact-form" id="contactForm">
-                <form onsubmit="submitForm(event)">
-                    <div class="form-group">
-                        <label data-en="Full Name" data-fa="نام کامل">Full Name</label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label data-en="Email Address" data-fa="آدرس ایمیل">Email Address</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label data-en="Phone Number" data-fa="شماره تلفن">Phone Number</label>
-                        <input type="tel" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label data-en="Project Details" data-fa="جزئیات پروژه">Project Details</label>
-                        <textarea name="message" rows="4" placeholder="Describe your monitoring and security requirements..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success" data-en="Submit Request" data-fa="ارسال درخواست">
-                        Submit Request
-                    </button>
-                </form>
-            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- Toast -->
     <div class="toast" id="toast">
-        <span data-en="Request submitted successfully! We'll contact you soon." data-fa="درخواست با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت.">
-            Request submitted successfully! We'll contact you soon.
-        </span>
+      <span
+        data-en="Request submitted successfully! We'll contact you soon."
+        data-fa="درخواست با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت."
+      >
+        Request submitted successfully! We'll contact you soon.
+      </span>
     </div>
 
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Monitoring & Security — Pricing & Scope",
         "description": "Zabbix stack, alerting, backup strategy, security hardening services. Fixed price AED 4,200.",
         "provider": {
-            "@type": "Person",
-            "name": "AmirHossein Jalalian"
+          "@type": "Person",
+          "name": "AmirHossein Jalalian"
         },
         "offers": {
-            "@type": "Offer",
-            "price": "4200",
-            "priceCurrency": "AED",
-            "availability": "https://schema.org/InStock"
+          "@type": "Offer",
+          "price": "4200",
+          "priceCurrency": "AED",
+          "availability": "https://schema.org/InStock"
         },
         "areaServed": {
-            "@type": "Country",
-            "name": "UAE"
+          "@type": "Country",
+          "name": "UAE"
         },
         "serviceType": "Monitoring & Security",
         "category": "IT Services"
-    }
+      }
     </script>
 
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        
-        // Language switching function
-        function setLang(lang) {
-            // Update button states
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-            
-            // Update text content
-            document.querySelectorAll('[data-en][data-fa]').forEach(element => {
-                if (lang === 'fa') {
-                    element.textContent = element.getAttribute('data-fa');
-                } else {
-                    element.textContent = element.getAttribute('data-en');
-                }
-            });
-            
-            // Update page direction
-            if (lang === 'fa') {
-                document.body.classList.add('rtl');
-            } else {
-                document.body.classList.remove('rtl');
-            }
-            
-            // Store language preference
-            localStorage.setItem('preferredLang', lang);
-        }
-        
-        // FAQ toggle function
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('i');
-            
-            if (answer.classList.contains('show')) {
-                answer.classList.remove('show');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                // Close all other FAQs
-                document.querySelectorAll('.faq-answer.show').forEach(item => {
-                    item.classList.remove('show');
-                });
-                document.querySelectorAll('.faq-question i').forEach(item => {
-                    item.style.transform = 'rotate(0deg)';
-                });
-                
-                // Open current FAQ
-                answer.classList.add('show');
-                icon.style.transform = 'rotate(180deg)';
-            }
-        }
-        
-        // Contact form functions
-        function showContactForm() {
-            const form = document.getElementById('contactForm');
-            form.classList.add('show');
-            form.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function submitForm(event) {
-            event.preventDefault();
-            
-            // Show success toast
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            
-            // Hide form
-            document.getElementById('contactForm').classList.remove('show');
-            
-            // Hide toast after 3 seconds
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-        
-        // Load saved language preference on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('preferredLang') || 'en';
-            setLang(savedLang);
-        });
+          // Initialize AOS
+          AOS.init({
+              duration: 800,
+              easing: 'ease-in-out',
+              once: true
+          });
+
+          // Language switching function
+          function setLang(lang) {
+              // Update button states
+              document.querySelectorAll('.lang-btn').forEach(btn => {
+                  btn.classList.remove('active');
+              });
+              document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+              // Update text content
+              document.querySelectorAll('[data-en][data-fa]').forEach(element => {
+                  if (lang === 'fa') {
+                      element.textContent = element.getAttribute('data-fa');
+                  } else {
+                      element.textContent = element.getAttribute('data-en');
+                  }
+              });
+
+              // Update page direction
+              if (lang === 'fa') {
+                  document.body.classList.add('rtl');
+              } else {
+                  document.body.classList.remove('rtl');
+              }
+
+              // Store language preference
+              localStorage.setItem('preferredLang', lang);
+          }
+
+          // FAQ toggle function
+          function toggleFAQ(element) {
+              const answer = element.nextElementSibling;
+              const icon = element.querySelector('i');
+
+              if (answer.classList.contains('show')) {
+                  answer.classList.remove('show');
+                  icon.style.transform = 'rotate(0deg)';
+              } else {
+                  // Close all other FAQs
+                  document.querySelectorAll('.faq-answer.show').forEach(item => {
+                      item.classList.remove('show');
+                  });
+                  document.querySelectorAll('.faq-question i').forEach(item => {
+                      item.style.transform = 'rotate(0deg)';
+                  });
+
+                  // Open current FAQ
+                  answer.classList.add('show');
+                  icon.style.transform = 'rotate(180deg)';
+              }
+          }
+
+          // Contact form functions
+          function showContactForm() {
+              const form = document.getElementById('contactForm');
+              form.classList.add('show');
+              form.scrollIntoView({ behavior: 'smooth' });
+          }
+
+          function submitForm(event) {
+              event.preventDefault();
+
+              // Show success toast
+              const toast = document.getElementById('toast');
+              toast.classList.add('show');
+
+              // Hide form
+              document.getElementById('contactForm').classList.remove('show');
+
+              // Hide toast after 3 seconds
+              setTimeout(() => {
+                  toast.classList.remove('show');
+              }, 3000);
+          }
+
+          // Load saved language preference on page load
+          document.addEventListener('DOMContentLoaded', function() {
+              const savedLang = localStorage.getItem('preferredLang') || 'en';
+              setLang(savedLang);
+          });
+      <!-- Language Toggle JavaScript -->
+      <script src="../assets/js/i18n.js?v=999" defer>
     </script>
-</body>
+  </body>
 </html>

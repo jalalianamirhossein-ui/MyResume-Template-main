@@ -2,19 +2,16 @@
  * ===============================================
  * MEET AJ PORTFOLIO - MAIN JAVASCRIPT
  * ===============================================
- * 
+ *
  * Main JavaScript functionality for the portfolio website
  * Handles navigation, mobile menu, and UI interactions
- * 
+ *
  * Features:
  * - Mobile navigation toggle
  * - Smooth scrolling
  * - Menu overlay management
  * - Accessibility improvements
- * 
- * Note: Typed.js initialization moved to i18n.js
- * to avoid conflicts with language switching
- * 
+ *
  * ===============================================
  */
 (function () {
@@ -207,8 +204,6 @@
     }
   }
   window.addEventListener("load", aosInit);
-
-  // NOTE: Typed.js init is handled in i18n.js (reinitTyped).
 
   if (window.PureCounter) {
     // Improve mobile settings for PureCounter
@@ -562,7 +557,7 @@
 
               // Improve mobile settings for Swiper
               if (window.innerWidth <= 768) {
-                config.slidesPerView = 1;
+                config.slidesPerView = 3;
                 config.spaceBetween = 20;
                 config.autoplay = {
                   delay: 4000,
@@ -576,16 +571,9 @@
                 }
               } else {
                 const swiper = new Swiper(swiperElement, config);
-                
-                // Add immediate resume functionality for testimonials
-                if (swiperElement.closest('#testimonials')) {
-                  swiperElement.addEventListener('mouseleave', function() {
-                    if (swiper.autoplay && !swiper.autoplay.running) {
-                      // Immediately resume autoplay when mouse leaves
-                      swiper.autoplay.resume();
-                    }
-                  });
-                }
+
+                // Keep autoplay running continuously for testimonials
+                // No pause/resume functionality - autoplay continues during hover
               }
             } catch (e) {
               console.warn("Invalid Swiper config:", e);

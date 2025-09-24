@@ -1,828 +1,626 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-en="Technical Consulting — Pricing & Scope" data-fa="مشاوره فنی — قیمت‌گذاری و محدوده">Technical Consulting — Pricing & Scope</title>
-    <meta name="description" content="Infrastructure planning, technology selection, delivery strategy consulting. Fixed price AED 2,500.">
+  <head>
+    <!-- ===============================================
+    MEET AJ PORTFOLIO - TECHNICAL CONSULTING SERVICE PAGE
+    ===============================================
     
+    Detailed technical consulting service page featuring
+    infrastructure planning, technology selection, and
+    delivery strategy consulting services
+    
+    Features:
+    - Multi-language support (English/Persian)
+    - Service pricing and scope details
+    - Responsive design
+    - i18n: Uses data-en/data-fa attributes for language switching
+    
+    =============================================== -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- i18n: Title switches between EN/FA using data attributes -->
+    <title
+      data-en="Technical Consulting — Pricing & Scope"
+      data-fa="مشاوره فنی — قیمت‌گذاری و محدوده"
+    >
+      Technical Consulting — Pricing & Scope
+    </title>
+    <meta
+      name="description"
+      content="Infrastructure planning, technology selection, delivery strategy consulting. Fixed price AED 2,500."
+    />
+
+    <!-- Modern Service Pages CSS -->
+    <link rel="stylesheet" href="../assets/css/services.css" />
+
+    <!-- Language Toggle Stylesheet -->
+    <link href="../assets/css/lang-toggle.css?v=999" rel="stylesheet" />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=999"
+      rel="stylesheet"
+      disabled
+    />
+
     <!-- Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
     <!-- AOS Animation CDN -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #f6f7f9;
-            --card: #fff;
-            --primary: #0d6efd;
-            --success: #198754;
-            --text: #222;
-            --muted: #667085;
-            --radius: 12px;
-            --shadow: 0 10px 30px rgba(16, 24, 40, .08);
-            --space: clamp(16px, 3vw, 24px);
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        html, body {
-            height: 100%;
-        }
-        
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font: 16px/1.75 "Segoe UI", Tahoma, system-ui, sans-serif;
-        }
-        
-        body.rtl {
-            direction: rtl;
-            text-align: right;
-        }
-        
-        .container {
-            max-width: 960px;
-            margin: auto;
-            padding: calc(var(--space) * 2) var(--space);
-        }
-        
-        .card {
-            background: var(--card);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: calc(var(--space) * 1.5);
-            margin-bottom: var(--space);
-        }
-        
-        .h1, .h2, .h3, h1, h2, h3 {
-            margin: 0 0 .6em;
-        }
-        
-        h1 {
-            font-size: clamp(24px, 3.2vw, 32px);
-        }
-        
-        h2 {
-            font-size: clamp(20px, 2.8vw, 28px);
-        }
-        
-        h3 {
-            font-size: clamp(18px, 2.4vw, 24px);
-        }
-        
-        p {
-            margin: .6em 0;
-            color: #444;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            padding: .75rem 1.1rem;
-            border-radius: 10px;
-            border: 1px solid transparent;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-        
-        .btn-outline {
-            background: #fff;
-            border-color: #d0d5dd;
-            color: #344054;
-        }
-        
-        .btn:hover {
-            filter: brightness(.98);
-            transform: translateY(-2px);
-        }
-        
-        .btn:focus-visible {
-            outline: 3px solid rgba(13, 110, 253, .35);
-            outline-offset: 2px;
-        }
-        
-        .grid {
-            display: grid;
-            gap: var(--space);
-        }
-        
-        @media (min-width: 720px) {
-            .grid-2 {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .badge {
-            display: inline-block;
-            background: rgba(13, 110, 253, .08);
-            color: var(--primary);
-            padding: .25rem .6rem;
-            border-radius: 999px;
-            font-size: .85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .list {
-            margin: .8rem 0;
-            padding: 0;
-            list-style: none;
-        }
-        
-        .list li {
-            position: relative;
-            padding-left: 1.6rem;
-            margin-bottom: .5rem;
-        }
-        
-        .list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: .1rem;
-            font-weight: 700;
-            color: var(--success);
-        }
-        
-        .price {
-            display: flex;
-            align-items: flex-end;
-            gap: .5rem;
-            margin: 1rem 0;
-        }
-        
-        .price .amount {
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: 800;
-            letter-spacing: .2px;
-            color: var(--primary);
-        }
-        
-        .price .unit {
-            color: var(--muted);
-            font-size: 16px;
-        }
-        
-        .muted {
-            color: var(--muted);
-            font-size: .95rem;
-        }
-        
-        .rtl .list li {
-            padding-right: 1.6rem;
-            padding-left: 0;
-        }
-        
-        .rtl .list li:before {
-            left: auto;
-            right: 0;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 40px 0;
-        }
-        
-        .service-icon {
-            font-size: 64px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .service-title {
-            font-size: clamp(24px, 3.2vw, 32px);
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 16px;
-        }
-        
-        .service-subtitle {
-            font-size: 18px;
-            color: var(--muted);
-            margin-bottom: 32px;
-        }
-        
-        .section-title {
-            font-size: clamp(20px, 2.8vw, 28px);
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .section-title i {
-            color: var(--primary);
-        }
-        
-        .timeline {
-            position: relative;
-        }
-        
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 16px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-        }
-        
-        .rtl .timeline-item {
-            border-left: none;
-            border-right: 4px solid var(--primary);
-        }
-        
-        .timeline-phase {
-            font-weight: 600;
-            color: var(--primary);
-            min-width: 120px;
-        }
-        
-        .timeline-duration {
-            color: var(--muted);
-            font-size: 14px;
-            margin-left: 16px;
-        }
-        
-        .rtl .timeline-duration {
-            margin-left: 0;
-            margin-right: 16px;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            background: #f8f9fa;
-            padding: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-answer {
-            padding: 16px;
-            display: none;
-        }
-        
-        .faq-answer.show {
-            display: block;
-        }
-        
-        .contact-form {
-            display: none;
-            background: #f8f9fa;
-            padding: 24px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        
-        .contact-form.show {
-            display: block;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
-        }
-        
-        .toast {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--success);
-            color: white;
-            padding: 16px 24px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 1001;
-            display: none;
-        }
-        
-        .toast.show {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
-        }
-        
-        .language-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 8px;
-            z-index: 1000;
-        }
-        
-        .lang-btn {
-            padding: 8px 16px;
-            border: 2px solid var(--primary);
-            background: white;
-            color: var(--primary);
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .lang-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-        
-        .rtl .back-button {
-            left: auto;
-            right: 20px;
-        }
-        
-        .rtl .language-toggle {
-            left: 20px;
-            right: auto;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 16px;
-            }
-            
-            .card {
-                padding: 20px;
-            }
-            
-            .language-toggle {
-                top: 10px;
-                right: 10px;
-                gap: 4px;
-            }
-            
-            .lang-btn {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-            
-            .back-button {
-                top: 10px;
-                left: 10px;
-            }
-            
-            .rtl .back-button {
-                left: auto;
-                right: 10px;
-            }
-            
-            .rtl .language-toggle {
-                left: 10px;
-                right: auto;
-            }
-            
-            .timeline-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .timeline-duration {
-                margin-left: 0;
-                margin-top: 8px;
-            }
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-        
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-                color: black;
-            }
-            
-            .card {
-                box-shadow: none;
-                border: 1px solid #ddd;
-            }
-            
-            .language-toggle,
-            .btn,
-            .contact-form,
-            .back-button {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
     <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button class="lang-btn active" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('fa')">فا</button>
-    </div>
+    <!-- Auto-injected by i18n-switch.js -->
 
     <!-- Back Button -->
-    <a href="/index.html#services" class="btn btn-outline back-button" aria-label="Back to Services"
-       data-en="Back to Services" data-fa="بازگشت به خدمات">
-        <i class="bi bi-arrow-left"></i>
-        <span data-en="Back to Services" data-fa="بازگشت به خدمات">Back to Services</span>
+    <a
+      href="/index.html#services"
+      class="btn btn-outline back-button"
+      aria-label="Back to Services"
+      data-en="Back to Services"
+      data-fa="بازگشت به خدمات"
+    >
+      <i class="bi bi-arrow-left"></i>
+      <span data-en="Back to Services" data-fa="بازگشت به خدمات"
+        >Back to Services</span
+      >
     </a>
 
     <div class="container">
-        <!-- Hero Section -->
-        <div class="hero" data-aos="fade-up">
-            <i class="bi bi-briefcase service-icon"></i>
-            <h1 class="service-title" data-en="Technical Consulting" data-fa="مشاوره فنی">
-                Technical Consulting
-            </h1>
-            <p class="service-subtitle" data-en="Infrastructure planning, technology selection, delivery strategy, and executive guidance." data-fa="برنامه‌ریزی زیرساخت، انتخاب فناوری، راهبرد تحویل و راهنمایی اجرایی.">
-                Infrastructure planning, technology selection, delivery strategy, and executive guidance.
+      <!-- Hero Section -->
+      <div class="hero" data-aos="fade-up">
+        <i class="bi bi-briefcase service-icon"></i>
+        <h1
+          class="service-title"
+          data-en="Technical Consulting"
+          data-fa="مشاوره فنی"
+        >
+          Technical Consulting
+        </h1>
+        <p
+          class="service-subtitle"
+          data-en="Infrastructure planning, technology selection, delivery strategy, and executive guidance."
+          data-fa="برنامه‌ریزی زیرساخت، انتخاب فناوری، استراتژی تحویل و راهنمایی اجرایی."
+        >
+          Infrastructure planning, technology selection, delivery strategy, and
+          executive guidance.
+        </p>
+      </div>
+
+      <!-- Pricing Section -->
+      <section
+        id="pricing"
+        class="container"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="card grid grid-2">
+          <div>
+            <span
+              class="badge badge-primary"
+              data-en="Fixed Price"
+              data-fa="قیمت ثابت"
+              >Fixed Price</span
+            >
+            <h2 data-en="Pricing" data-fa="قیمت‌گذاری">Pricing</h2>
+            <div class="price" aria-label="Price">
+              <div class="amount" data-en="AED 2,500" data-fa="۲,۵۰۰ درهم">
+                AED 2,500
+              </div>
+              <div class="unit" data-en="one-time" data-fa="پرداخت یک‌باره">
+                one-time
+              </div>
+            </div>
+            <p
+              class="muted"
+              data-en="* IRR will appear on invoice at Central Bank rate."
+              data-fa="‌* معادل ریالی در فاکتور با نرخ بانک مرکزی درج می‌شود."
+            >
+              * IRR will appear on invoice at Central Bank rate.
             </p>
-        </div>
-
-        <!-- Pricing Section -->
-        <section id="pricing" class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="card grid grid-2">
-                <div>
-                    <span class="badge" data-en="Fixed Price" data-fa="قیمت ثابت">Fixed Price</span>
-                    <h2 data-en="Pricing" data-fa="قیمت‌گذاری">Pricing</h2>
-                    <div class="price" aria-label="Price">
-                        <div class="amount" data-en="AED 2,500" data-fa="۲,۵۰۰ درهم">AED 2,500</div>
-                        <div class="unit" data-en="one-time" data-fa="پرداخت یک‌باره">one-time</div>
-                    </div>
-                    <p class="muted" data-en="* IRR will appear on invoice at Central Bank rate."
-                       data-fa="‌* معادل ریالی در فاکتور با نرخ بانک مرکزی درج می‌شود.">
-                        * IRR will appear on invoice at Central Bank rate.
-                    </p>
-                    <ul class="list">
-                        <li data-en="Infrastructure assessment and gap analysis"
-                            data-fa="ارزیابی زیرساخت و تحلیل شکاف">Infrastructure assessment and gap analysis</li>
-                        <li data-en="Technology roadmap and strategic planning"
-                            data-fa="نقشه راه فناوری و برنامه‌ریزی استراتژیک">Technology roadmap and strategic planning</li>
-                        <li data-en="Cost and performance modeling"
-                            data-fa="مدل‌سازی هزینه و عملکرد">Cost and performance modeling</li>
-                        <li data-en="RFP/RFQ support and vendor evaluation"
-                            data-fa="پشتیبانی RFP/RFQ و ارزیابی فروشنده">RFP/RFQ support and vendor evaluation</li>
-                        <li data-en="Security and compliance guidance"
-                            data-fa="راهنمایی امنیت و انطباق">Security and compliance guidance</li>
-                        <li data-en="Executive summary and recommendations"
-                            data-fa="خلاصه اجرایی و توصیه‌ها">Executive summary and recommendations</li>
-                        <li data-en="Implementation strategy and timeline"
-                            data-fa="راهبرد پیاده‌سازی و زمان‌بندی">Implementation strategy and timeline</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="h3" data-en="Exclusions & Assumptions" data-fa="فرضیات و خارج از شمول">Exclusions & Assumptions</h3>
-                    <ul class="list">
-                        <li data-en="Actual implementation and hands-on work"
-                            data-fa="پیاده‌سازی واقعی و کار عملی">Actual implementation and hands-on work</li>
-                        <li data-en="Third-party tool licenses and subscriptions"
-                            data-fa="لایسنس‌های ابزارهای شخص ثالث و اشتراک‌ها">Third-party tool licenses and subscriptions</li>
-                        <li data-en="Client provides access to systems and stakeholders"
-                            data-fa="دسترسی به سیستم‌ها و ذینفعان توسط کارفرما تأمین می‌شود">Client provides access to systems and stakeholders</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Deliverables -->
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="section-title">
-                <i class="bi bi-file-earmark-text"></i>
-                <span data-en="Deliverables" data-fa="اقلام قابل تحویل">Deliverables</span>
-            </h2>
             <ul class="list">
-                <li data-en="Comprehensive infrastructure assessment report" data-fa="گزارش جامع ارزیابی زیرساخت">Comprehensive infrastructure assessment report</li>
-                <li data-en="Technology roadmap and implementation plan" data-fa="نقشه راه فناوری و طرح پیاده‌سازی">Technology roadmap and implementation plan</li>
-                <li data-en="Cost-benefit analysis and ROI projections" data-fa="تحلیل هزینه-فایده و پیش‌بینی ROI">Cost-benefit analysis and ROI projections</li>
-                <li data-en="Vendor evaluation matrix and recommendations" data-fa="ماتریس ارزیابی فروشنده و توصیه‌ها">Vendor evaluation matrix and recommendations</li>
-                <li data-en="Executive summary and presentation materials" data-fa="خلاصه اجرایی و مواد ارائه">Executive summary and presentation materials</li>
+              <li
+                data-en="Infrastructure assessment and gap analysis"
+                data-fa="ارزیابی زیرساخت و تحلیل شکاف"
+              >
+                Infrastructure assessment and gap analysis
+              </li>
+              <li
+                data-en="Technology roadmap and strategic planning"
+                data-fa="نقشه راه فناوری و برنامه‌ریزی استراتژیک"
+              >
+                Technology roadmap and strategic planning
+              </li>
+              <li
+                data-en="Cost and performance modeling"
+                data-fa="مدل‌سازی هزینه و عملکرد"
+              >
+                Cost and performance modeling
+              </li>
+              <li
+                data-en="RFP/RFQ support and vendor evaluation"
+                data-fa="پشتیبانی RFP/RFQ و ارزیابی فروشنده"
+              >
+                RFP/RFQ support and vendor evaluation
+              </li>
+              <li
+                data-en="Security and compliance guidance"
+                data-fa="راهنمایی امنیت و انطباق"
+              >
+                Security and compliance guidance
+              </li>
+              <li
+                data-en="Executive summary and recommendations"
+                data-fa="خلاصه اجرایی و توصیه‌ها"
+              >
+                Executive summary and recommendations
+              </li>
             </ul>
-        </div>
-
-        <!-- Timeline -->
-        <div class="card" data-aos="fade-up" data-aos-delay="300">
-            <h2 class="section-title">
-                <i class="bi bi-clock"></i>
-                <span data-en="Timeline" data-fa="زمان‌بندی">Timeline</span>
-            </h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-phase" data-en="Discovery" data-fa="کشف">Discovery</div>
-                    <div class="timeline-duration" data-en="1–2 days" data-fa="۱–۲ روز">1–2 days</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase" data-en="Analysis" data-fa="تحلیل">Analysis</div>
-                    <div class="timeline-duration" data-en="2–3 days" data-fa="۲–۳ روز">2–3 days</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase" data-en="Planning" data-fa="برنامه‌ریزی">Planning</div>
-                    <div class="timeline-duration" data-en="2–3 days" data-fa="۲–۳ روز">2–3 days</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase" data-en="Documentation" data-fa="مستندسازی">Documentation</div>
-                    <div class="timeline-duration" data-en="1–2 days" data-fa="۱–۲ روز">1–2 days</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLA & Warranty -->
-        <div class="card" data-aos="fade-up" data-aos-delay="400">
-            <h2 class="section-title">
-                <i class="bi bi-shield-check"></i>
-                <span data-en="SLA & Warranty" data-fa="SLA و وارانتی">SLA & Warranty</span>
-            </h2>
+          </div>
+          <div>
+            <h3
+              class="h3"
+              data-en="Exclusions & Assumptions"
+              data-fa="فرضیات و خارج از شمول"
+            >
+              Exclusions & Assumptions
+            </h3>
             <ul class="list">
-                <li data-en="Response within 4 business hours for critical issues" data-fa="پاسخ‌گویی حداکثر ۴ ساعت کاری برای موارد بحرانی">Response within 4 business hours for critical issues</li>
-                <li data-en="30-day defect warranty post-handover" data-fa="وارانتی ۳۰ روزه رفع اشکال پس از تحویل">30-day defect warranty post-handover</li>
-                <li data-en="Change requests via written approval" data-fa="درخواست‌های تغییر با تأیید کتبی انجام می‌شود">Change requests via written approval</li>
+              <li
+                data-en="Implementation and hands-on configuration"
+                data-fa="پیاده‌سازی و پیکربندی عملی"
+              >
+                Implementation and hands-on configuration
+              </li>
+              <li
+                data-en="Ongoing support and maintenance"
+                data-fa="پشتیبانی و نگهداری مداوم"
+              >
+                Ongoing support and maintenance
+              </li>
+              <li
+                data-en="Client provides access to current systems"
+                data-fa="دسترسی به سیستم‌های فعلی توسط کارفرما تأمین می‌شود"
+              >
+                Client provides access to current systems
+              </li>
             </ul>
+          </div>
         </div>
+      </section>
 
-        <!-- Optional Add-ons -->
-        <div class="card" data-aos="fade-up" data-aos-delay="500">
-            <h2 class="section-title">
-                <i class="bi bi-plus-circle"></i>
-                <span data-en="Optional Add-ons" data-fa="افزونه‌های اختیاری">Optional Add-ons</span>
-            </h2>
-            <ul class="list">
-                <li data-en="Follow-up implementation support and guidance" data-fa="پشتیبانی و راهنمایی پیاده‌سازی پیگیری">Follow-up implementation support and guidance</li>
-                <li data-en="Executive presentation and stakeholder meetings" data-fa="ارائه اجرایی و جلسات ذینفعان">Executive presentation and stakeholder meetings</li>
-                <li data-en="Detailed technical specifications and architecture" data-fa="مشخصات فنی تفصیلی و معماری">Detailed technical specifications and architecture</li>
-                <li data-en="Ongoing advisory and strategic guidance" data-fa="مشاوره مداوم و راهنمایی استراتژیک">Ongoing advisory and strategic guidance</li>
-            </ul>
+      <!-- Deliverables -->
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="section-title">
+          <i class="bi bi-file-earmark-text"></i>
+          <span data-en="Deliverables" data-fa="اقلام قابل تحویل"
+            >Deliverables</span
+          >
+        </h2>
+        <ul class="list">
+          <li
+            data-en="Comprehensive infrastructure assessment report"
+            data-fa="گزارش جامع ارزیابی زیرساخت"
+          >
+            Comprehensive infrastructure assessment report
+          </li>
+          <li
+            data-en="Technology roadmap and implementation timeline"
+            data-fa="نقشه راه فناوری و جدول زمانی پیاده‌سازی"
+          >
+            Technology roadmap and implementation timeline
+          </li>
+          <li
+            data-en="Cost-benefit analysis and ROI projections"
+            data-fa="تحلیل هزینه-فایده و پیش‌بینی ROI"
+          >
+            Cost-benefit analysis and ROI projections
+          </li>
+          <li
+            data-en="Vendor evaluation matrix and recommendations"
+            data-fa="ماتریس ارزیابی فروشنده و توصیه‌ها"
+          >
+            Vendor evaluation matrix and recommendations
+          </li>
+          <li
+            data-en="Executive summary and strategic recommendations"
+            data-fa="خلاصه اجرایی و توصیه‌های استراتژیک"
+          >
+            Executive summary and strategic recommendations
+          </li>
+        </ul>
+      </div>
+
+      <!-- Timeline -->
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="section-title">
+          <i class="bi bi-clock"></i>
+          <span data-en="Timeline" data-fa="زمان‌بندی">Timeline</span>
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-phase" data-en="Discovery" data-fa="کشف">
+              Discovery
+            </div>
+            <div class="timeline-duration" data-en="1–2 days" data-fa="۱–۲ روز">
+              1–2 days
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-phase" data-en="Analysis" data-fa="تحلیل">
+              Analysis
+            </div>
+            <div class="timeline-duration" data-en="2–3 days" data-fa="۲–۳ روز">
+              2–3 days
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-phase"
+              data-en="Planning"
+              data-fa="برنامه‌ریزی"
+            >
+              Planning
+            </div>
+            <div class="timeline-duration" data-en="2–3 days" data-fa="۲–۳ روز">
+              2–3 days
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-phase"
+              data-en="Documentation"
+              data-fa="مستندسازی"
+            >
+              Documentation
+            </div>
+            <div class="timeline-duration" data-en="1–2 days" data-fa="۱–۲ روز">
+              1–2 days
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-phase" data-en="Presentation" data-fa="ارائه">
+              Presentation
+            </div>
+            <div class="timeline-duration" data-en="1 day" data-fa="۱ روز">
+              1 day
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- FAQ -->
-        <div class="card" data-aos="fade-up" data-aos-delay="600">
-            <h2 class="section-title">
-                <i class="bi bi-question-circle"></i>
-                <span data-en="FAQ" data-fa="پرسش‌های پرتکرار">FAQ</span>
-            </h2>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span data-en="What types of assessments do you provide?" data-fa="چه نوع ارزیابی‌هایی ارائه می‌دهید؟">What types of assessments do you provide?</span>
-                    <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p data-en="We provide infrastructure assessments, security audits, performance analysis, and technology gap analysis." data-fa="ما ارزیابی زیرساخت، ممیزی امنیت، تحلیل عملکرد و تحلیل شکاف فناوری ارائه می‌دهیم.">
-                        We provide infrastructure assessments, security audits, performance analysis, and technology gap analysis.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span data-en="Do you help with vendor selection?" data-fa="آیا در انتخاب فروشنده کمک می‌کنید؟">Do you help with vendor selection?</span>
-                    <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p data-en="Yes, we provide RFP/RFQ support, vendor evaluation matrices, and technology selection guidance." data-fa="بله، ما پشتیبانی RFP/RFQ، ماتریس‌های ارزیابی فروشنده و راهنمایی انتخاب فناوری ارائه می‌دهیم.">
-                        Yes, we provide RFP/RFQ support, vendor evaluation matrices, and technology selection guidance.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span data-en="Can you help with compliance requirements?" data-fa="آیا می‌توانید در الزامات انطباق کمک کنید؟">Can you help with compliance requirements?</span>
-                    <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p data-en="Yes, we provide guidance on security compliance, regulatory requirements, and industry standards." data-fa="بله، ما راهنمایی در مورد انطباق امنیت، الزامات نظارتی و استانداردهای صنعت ارائه می‌دهیم.">
-                        Yes, we provide guidance on security compliance, regulatory requirements, and industry standards.
-                    </p>
-                </div>
-            </div>
-        </div>
+      <!-- SLA & Warranty -->
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <h2 class="section-title">
+          <i class="bi bi-shield-check"></i>
+          <span data-en="SLA & Warranty" data-fa="SLA و وارانتی"
+            >SLA & Warranty</span
+          >
+        </h2>
+        <ul class="list">
+          <li
+            data-en="Response within 2 business hours for clarifications"
+            data-fa="پاسخ‌گویی حداکثر ۲ ساعت کاری برای توضیحات"
+          >
+            Response within 2 business hours for clarifications
+          </li>
+          <li
+            data-en="30-day follow-up support for implementation questions"
+            data-fa="پشتیبانی پیگیری ۳۰ روزه برای سوالات پیاده‌سازی"
+          >
+            30-day follow-up support for implementation questions
+          </li>
+          <li
+            data-en="Revision requests via written approval"
+            data-fa="درخواست‌های بازنگری با تأیید کتبی انجام می‌شود"
+          >
+            Revision requests via written approval
+          </li>
+        </ul>
+      </div>
 
-        <!-- CTA Section -->
-        <div class="card" data-aos="fade-up" data-aos-delay="700">
-            <h2 class="section-title">
-                <i class="bi bi-envelope"></i>
-                <span data-en="Request Quote" data-fa="درخواست پیش‌فاکتور">Request Quote</span>
-            </h2>
-            <p data-en="Ready to get started? Contact us for a detailed proposal tailored to your consulting requirements." data-fa="آماده شروع هستید؟ برای دریافت پیشنهاد تفصیلی متناسب با نیازهای مشاوره خود با ما تماس بگیرید.">
-                Ready to get started? Contact us for a detailed proposal tailored to your consulting requirements.
+      <!-- Optional Add-ons -->
+      <div class="card" data-aos="fade-up" data-aos-delay="500">
+        <h2 class="section-title">
+          <i class="bi bi-plus-circle"></i>
+          <span data-en="Optional Add-ons" data-fa="افزونه‌های اختیاری"
+            >Optional Add-ons</span
+          >
+        </h2>
+        <ul class="list">
+          <li
+            data-en="Detailed implementation planning and project management"
+            data-fa="برنامه‌ریزی تفصیلی پیاده‌سازی و مدیریت پروژه"
+          >
+            Detailed implementation planning and project management
+          </li>
+          <li
+            data-en="Technology training and knowledge transfer sessions"
+            data-fa="جلسات آموزش فناوری و انتقال دانش"
+          >
+            Technology training and knowledge transfer sessions
+          </li>
+          <li
+            data-en="Ongoing advisory and strategic guidance"
+            data-fa="مشاوره مداوم و راهنمایی استراتژیک"
+          >
+            Ongoing advisory and strategic guidance
+          </li>
+          <li
+            data-en="Compliance audit and security assessment"
+            data-fa="ممیزی انطباق و ارزیابی امنیت"
+          >
+            Compliance audit and security assessment
+          </li>
+        </ul>
+      </div>
+
+      <!-- FAQ -->
+      <div class="card" data-aos="fade-up" data-aos-delay="600">
+        <h2 class="section-title">
+          <i class="bi bi-question-circle"></i>
+          <span data-en="FAQ" data-fa="پرسش‌های پرتکرار">FAQ</span>
+        </h2>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span
+              data-en="What industries do you provide consulting for?"
+              data-fa="برای چه صنایعی مشاوره ارائه می‌دهید؟"
+              >What industries do you provide consulting for?</span
+            >
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p
+              data-en="We provide consulting for various industries including healthcare, finance, manufacturing, education, and government sectors."
+              data-fa="ما مشاوره برای صنایع مختلف از جمله بهداشت، مالی، تولید، آموزش و بخش‌های دولتی ارائه می‌دهیم."
+            >
+              We provide consulting for various industries including healthcare,
+              finance, manufacturing, education, and government sectors.
             </p>
-            <button class="btn btn-primary" onclick="showContactForm()" data-en="Request Quote" data-fa="درخواست پیش‌فاکتور">
-                Request Quote
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span
+              data-en="Do you provide ongoing support after the consulting engagement?"
+              data-fa="آیا پس از مشاوره پشتیبانی مداوم ارائه می‌دهید؟"
+              >Do you provide ongoing support after the consulting
+              engagement?</span
+            >
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p
+              data-en="Yes, we offer follow-up support and can provide ongoing advisory services as an add-on."
+              data-fa="بله، ما پشتیبانی پیگیری ارائه می‌دهیم و می‌توانیم خدمات مشاوره مداوم را به‌عنوان افزونه ارائه دهیم."
+            >
+              Yes, we offer follow-up support and can provide ongoing advisory
+              services as an add-on.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span
+              data-en="Can you help with technology vendor selection?"
+              data-fa="آیا می‌توانید در انتخاب فروشنده فناوری کمک کنید؟"
+              >Can you help with technology vendor selection?</span
+            >
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p
+              data-en="Yes, we provide comprehensive vendor evaluation, RFP support, and technology selection guidance."
+              data-fa="بله، ما ارزیابی جامع فروشنده، پشتیبانی RFP و راهنمایی انتخاب فناوری ارائه می‌دهیم."
+            >
+              Yes, we provide comprehensive vendor evaluation, RFP support, and
+              technology selection guidance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="card" data-aos="fade-up" data-aos-delay="700">
+        <h2 class="section-title">
+          <i class="bi bi-envelope"></i>
+          <span data-en="Request Quote" data-fa="درخواست پیش‌فاکتور"
+            >Request Quote</span
+          >
+        </h2>
+        <p
+          data-en="Need expert guidance for your technology decisions? Contact us for a comprehensive technical consulting proposal."
+          data-fa="نیاز به راهنمایی متخصص برای تصمیمات فناوری خود دارید؟ برای دریافت پیشنهاد جامع مشاوره فنی با ما تماس بگیرید."
+        >
+          Need expert guidance for your technology decisions? Contact us for a
+          comprehensive technical consulting proposal.
+        </p>
+        <button
+          class="btn btn-primary"
+          onclick="showContactForm()"
+          data-en="Request Quote"
+          data-fa="درخواست پیش‌فاکتور"
+        >
+          Request Quote
+        </button>
+
+        <div class="contact-form" id="contactForm">
+          <form onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label data-en="Full Name" data-fa="نام کامل">Full Name</label>
+              <input type="text" name="name" required />
+            </div>
+            <div class="form-group">
+              <label data-en="Email Address" data-fa="آدرس ایمیل"
+                >Email Address</label
+              >
+              <input type="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label data-en="Phone Number" data-fa="شماره تلفن"
+                >Phone Number</label
+              >
+              <input type="tel" name="phone" />
+            </div>
+            <div class="form-group">
+              <label data-en="Project Details" data-fa="جزئیات پروژه"
+                >Project Details</label
+              >
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Describe your consulting requirements..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success"
+              data-en="Submit Request"
+              data-fa="ارسال درخواست"
+            >
+              Submit Request
             </button>
-            
-            <div class="contact-form" id="contactForm">
-                <form onsubmit="submitForm(event)">
-                    <div class="form-group">
-                        <label data-en="Full Name" data-fa="نام کامل">Full Name</label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label data-en="Email Address" data-fa="آدرس ایمیل">Email Address</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label data-en="Phone Number" data-fa="شماره تلفن">Phone Number</label>
-                        <input type="tel" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label data-en="Project Details" data-fa="جزئیات پروژه">Project Details</label>
-                        <textarea name="message" rows="4" placeholder="Describe your consulting requirements..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success" data-en="Submit Request" data-fa="ارسال درخواست">
-                        Submit Request
-                    </button>
-                </form>
-            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- Toast -->
     <div class="toast" id="toast">
-        <span data-en="Request submitted successfully! We'll contact you soon." data-fa="درخواست با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت.">
-            Request submitted successfully! We'll contact you soon.
-        </span>
+      <span
+        data-en="Request submitted successfully! We'll contact you soon."
+        data-fa="درخواست با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت."
+      >
+        Request submitted successfully! We'll contact you soon.
+      </span>
     </div>
 
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Technical Consulting — Pricing & Scope",
         "description": "Infrastructure planning, technology selection, delivery strategy consulting. Fixed price AED 2,500.",
         "provider": {
-            "@type": "Person",
-            "name": "AmirHossein Jalalian"
+          "@type": "Person",
+          "name": "AmirHossein Jalalian"
         },
         "offers": {
-            "@type": "Offer",
-            "price": "2500",
-            "priceCurrency": "AED",
-            "availability": "https://schema.org/InStock"
+          "@type": "Offer",
+          "price": "2500",
+          "priceCurrency": "AED",
+          "availability": "https://schema.org/InStock"
         },
         "areaServed": {
-            "@type": "Country",
-            "name": "UAE"
+          "@type": "Country",
+          "name": "UAE"
         },
         "serviceType": "Technical Consulting",
         "category": "IT Services"
-    }
+      }
     </script>
 
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        
-        // Language switching function
-        function setLang(lang) {
-            // Update button states
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-            
-            // Update text content
-            document.querySelectorAll('[data-en][data-fa]').forEach(element => {
-                if (lang === 'fa') {
-                    element.textContent = element.getAttribute('data-fa');
-                } else {
-                    element.textContent = element.getAttribute('data-en');
-                }
-            });
-            
-            // Update page direction
-            if (lang === 'fa') {
-                document.body.classList.add('rtl');
-            } else {
-                document.body.classList.remove('rtl');
-            }
-            
-            // Store language preference
-            localStorage.setItem('preferredLang', lang);
-        }
-        
-        // FAQ toggle function
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('i');
-            
-            if (answer.classList.contains('show')) {
-                answer.classList.remove('show');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                // Close all other FAQs
-                document.querySelectorAll('.faq-answer.show').forEach(item => {
-                    item.classList.remove('show');
-                });
-                document.querySelectorAll('.faq-question i').forEach(item => {
-                    item.style.transform = 'rotate(0deg)';
-                });
-                
-                // Open current FAQ
-                answer.classList.add('show');
-                icon.style.transform = 'rotate(180deg)';
-            }
-        }
-        
-        // Contact form functions
-        function showContactForm() {
-            const form = document.getElementById('contactForm');
-            form.classList.add('show');
-            form.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function submitForm(event) {
-            event.preventDefault();
-            
-            // Show success toast
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            
-            // Hide form
-            document.getElementById('contactForm').classList.remove('show');
-            
-            // Hide toast after 3 seconds
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-        
-        // Load saved language preference on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('preferredLang') || 'en';
-            setLang(savedLang);
-        });
+          // Initialize AOS
+          AOS.init({
+              duration: 800,
+              easing: 'ease-in-out',
+              once: true
+          });
+
+          // Language switching function
+          function setLang(lang) {
+              // Update button states
+              document.querySelectorAll('.lang-btn').forEach(btn => {
+                  btn.classList.remove('active');
+              });
+              document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+              // Update text content
+              document.querySelectorAll('[data-en][data-fa]').forEach(element => {
+                  if (lang === 'fa') {
+                      element.textContent = element.getAttribute('data-fa');
+                  } else {
+                      element.textContent = element.getAttribute('data-en');
+                  }
+              });
+
+              // Update page direction
+              if (lang === 'fa') {
+                  document.body.classList.add('rtl');
+              } else {
+                  document.body.classList.remove('rtl');
+              }
+
+              // Store language preference
+              localStorage.setItem('preferredLang', lang);
+          }
+
+          // FAQ toggle function
+          function toggleFAQ(element) {
+              const answer = element.nextElementSibling;
+              const icon = element.querySelector('i');
+
+              if (answer.classList.contains('show')) {
+                  answer.classList.remove('show');
+                  icon.style.transform = 'rotate(0deg)';
+              } else {
+                  // Close all other FAQs
+                  document.querySelectorAll('.faq-answer.show').forEach(item => {
+                      item.classList.remove('show');
+                  });
+                  document.querySelectorAll('.faq-question i').forEach(item => {
+                      item.style.transform = 'rotate(0deg)';
+                  });
+
+                  // Open current FAQ
+                  answer.classList.add('show');
+                  icon.style.transform = 'rotate(180deg)';
+              }
+          }
+
+          // Contact form functions
+          function showContactForm() {
+              const form = document.getElementById('contactForm');
+              form.classList.add('show');
+              form.scrollIntoView({ behavior: 'smooth' });
+          }
+
+          function submitForm(event) {
+              event.preventDefault();
+
+              // Show success toast
+              const toast = document.getElementById('toast');
+              toast.classList.add('show');
+
+              // Hide form
+              document.getElementById('contactForm').classList.remove('show');
+
+              // Hide toast after 3 seconds
+              setTimeout(() => {
+                  toast.classList.remove('show');
+              }, 3000);
+          }
+
+          // Load saved language preference on page load
+          document.addEventListener('DOMContentLoaded', function() {
+              const savedLang = localStorage.getItem('preferredLang') || 'en';
+              setLang(savedLang);
+          });
+      <!-- Language Toggle JavaScript -->
+      <script src="../assets/js/i18n.js?v=999" defer>
     </script>
-</body>
+  </body>
 </html>

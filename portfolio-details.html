@@ -52,6 +52,9 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css?v=999" rel="stylesheet" />
+
+    <!-- Language Toggle Stylesheet -->
+    <link href="assets/css/lang-toggle.css?v=999" rel="stylesheet" />
     <link
       id="rtl-style"
       href="assets/css/rtl.css?v=999"
@@ -109,23 +112,6 @@
           <img src="assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <h1 class="sitename">Meet AJ</h1>
         </a>
-
-        <!-- Language Switcher -->
-        <div class="language-switcher">
-          <button
-            id="lang-toggle"
-            class="lang-toggle-btn"
-            type="button"
-            aria-label="تغییر زبان / Switch language"
-            title="کلیک کنید تا زبان را تغییر دهید / Click to switch language"
-          >
-            <div class="lang-content">
-              <span class="lang-text" data-en="فارسی" data-fa="English"
-                >English</span
-              >
-            </div>
-          </button>
-        </div>
       </div>
 
       <!-- ===============================================
@@ -328,7 +314,7 @@
 
               <h1
                 class="article-title hero-title"
-                data-aos="fade-up" 
+                data-aos="fade-up"
                 data-aos-delay="200"
                 data-en="Advanced DevOps Solutions and Network Infrastructure Best Practices"
                 data-fa="راهکارهای پیشرفته DevOps و بهترین روش‌های زیرساخت شبکه"
@@ -339,7 +325,7 @@
 
               <p
                 class="article-excerpt hero-subtitle"
-                data-aos="fade-up" 
+                data-aos="fade-up"
                 data-aos-delay="300"
                 data-en="A comprehensive guide to implementing modern DevOps practices, containerization strategies, and network infrastructure optimization for enterprise environments."
                 data-fa="راهنمای جامع پیاده‌سازی روش‌های مدرن DevOps، استراتژی‌های کانتینری‌سازی و بهینه‌سازی زیرساخت شبکه برای محیط‌های سازمانی"
@@ -349,7 +335,11 @@
                 optimization for enterprise environments.
               </p>
 
-              <div class="article-author" data-aos="fade-up" data-aos-delay="400">
+              <div
+                class="article-author"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <img
                   src="assets/img/my-profile-img.jpg"
                   alt="Author"
@@ -1063,6 +1053,8 @@ CMD ["npm", "start"]</code></pre>
 
     <!-- Main JS Files -->
     <script src="assets/js/main.js?v=999" defer></script>
+
+    <!-- Internationalization (i18n) Support -->
     <script src="assets/js/i18n.js?v=999" defer></script>
 
     <!-- Article Page Specific JavaScript -->
