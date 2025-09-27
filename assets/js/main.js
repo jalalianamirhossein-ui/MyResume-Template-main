@@ -268,6 +268,84 @@
     const glightbox = GLightbox(config);
   }
 
+  // Initialize Typed.js Animation
+  function initTyped() {
+    if (window.Typed) {
+      const typedElements = document.querySelectorAll(".typed");
+
+      typedElements.forEach((element) => {
+        // Destroy existing Typed instance if it exists
+        if (element.typedInstance) {
+          element.typedInstance.destroy();
+        }
+
+        // Get current language
+        const currentLang = document.documentElement.lang || "en";
+        const isPersian = currentLang === "fa";
+
+        // Get strings based on current language
+        let strings;
+        if (isPersian) {
+          const faStrings = element.getAttribute("data-typed-items-fa");
+          strings = faStrings ? faStrings.split(", ") : ["متخصص شبکه هستم"];
+        } else {
+          const enStrings = element.getAttribute("data-typed-items");
+          strings = enStrings ? enStrings.split(", ") : ["Network Specialist"];
+        }
+
+        // Typed.js configuration
+        const typedConfig = {
+          strings: strings,
+          typeSpeed: 50,
+          backSpeed: 30,
+          backDelay: 2000,
+          startDelay: 1000,
+          loop: true,
+          showCursor: true,
+          cursorChar: "|",
+          smartBackspace: true,
+        };
+
+        // Improve mobile settings for Typed.js
+        if (window.innerWidth <= 768) {
+          typedConfig.typeSpeed = 40;
+          typedConfig.backSpeed = 25;
+          typedConfig.backDelay = 1500;
+        }
+
+        // Initialize Typed.js and store instance
+        element.typedInstance = new Typed(element, typedConfig);
+      });
+    }
+  }
+
+  // Initialize Typed.js after DOM is ready
+  window.addEventListener("load", initTyped);
+
+  // Re-initialize Typed.js when language changes
+  function reinitTypedOnLanguageChange() {
+    // Listen for language changes
+    const observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "lang"
+        ) {
+          // Small delay to ensure language change is complete
+          setTimeout(initTyped, 100);
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["lang"],
+    });
+  }
+
+  // Start observing language changes
+  window.addEventListener("load", reinitTypedOnLanguageChange);
+
   function initPortfolio() {
     document
       .querySelectorAll(".isotope-layout")

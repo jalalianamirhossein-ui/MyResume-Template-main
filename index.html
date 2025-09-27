@@ -493,11 +493,11 @@
       .hero-title {
         font-size: 3rem;
         font-weight: 700;
-        color: #1e40af;
+        color: #ffffff;
       }
       .hero-subtitle {
         font-size: 1.2rem;
-        color: #374151;
+        color: rgba(255, 255, 255, 0.95);
       }
       .btn {
         padding: 12px 24px;
@@ -815,10 +815,9 @@
                     >
                     <span
                       class="typed"
-                      data-typed-items="Network Specialist, DevOps Engineer, IT Consultant, Systems Expert, VMware Administrator"
-                      data-typed-items-fa="متخصص شبکه هستم, مهندس DevOps هستم, مشاور فناوری اطلاعات هستم, کارشناس سیستم‌ها هستم, مدیر مجازی‌سازی VMware هستم"
-                      >System Administrator</span
-                    >
+                      data-typed-items="Enterprise Network & SD-WAN Architect, Cybersecurity & Zero Trust Strategy Architect, Containerization & VDI Platform Architect, CI/CD & Automation Methodology Architect, Cloud Reliability and Performance Architect"
+                      data-typed-items-fa="معمار شبکه‌های Enterprise و SD-WAN هستم, معمار امنیت سایبری و استراتژی‌های Zero Trust هستم, معمار پلتفرم‌های Containerization و VDI هستم, معمار متدولوژی‌های CI/CD و اتوماسیون هستم, معمار پایداری و عملکرد Cloud Platform هستم"
+                    ></span>
                   </p>
                 </div>
 
@@ -894,7 +893,7 @@
                     Empowering Businesses with Reliable &amp; Secure IT
                     Infrastructures
                   </span>
-                  <span class="title-accent">IT Professional</span>
+                  <span class="title-accent" data-en="IT Professional" data-fa="متخصص فناوری اطلاعات">IT Professional</span>
                 </h2>
                 <p
                   class="about-subtitle"
@@ -910,7 +909,11 @@
               <!-- Info Cards Grid -->
               <div class="info-grid">
                 <!-- Personal Info Card -->
-                <div class="info-card personal-info">
+                <div
+                  class="info-card personal-info"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
                   <div class="card-header">
                     <i class="bi bi-person-circle"></i>
                     <h3 data-en="Personal Info" data-fa="اطلاعات شخصی">
@@ -919,7 +922,9 @@
                   </div>
                   <div class="card-content">
                     <div class="info-item">
-                      <i class="bi bi-calendar-event"></i>
+                      <div class="info-icon-wrapper">
+                        <i class="bi bi-gift"></i>
+                      </div>
                       <div class="info-details">
                         <span
                           class="info-label"
@@ -936,7 +941,9 @@
                       </div>
                     </div>
                     <div class="info-item">
-                      <i class="bi bi-geo-alt"></i>
+                      <div class="info-icon-wrapper">
+                        <i class="bi bi-geo-alt-fill"></i>
+                      </div>
                       <div class="info-details">
                         <span
                           class="info-label"
@@ -953,7 +960,9 @@
                       </div>
                     </div>
                     <div class="info-item">
-                      <i class="bi bi-mortarboard"></i>
+                      <div class="info-icon-wrapper">
+                        <i class="bi bi-mortarboard-fill"></i>
+                      </div>
                       <div class="info-details">
                         <span
                           class="info-label"
@@ -973,7 +982,11 @@
                 </div>
 
                 <!-- Contact Info Card -->
-                <div class="info-card contact-info">
+                <div
+                  class="info-card contact-info"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   <div class="card-header">
                     <i class="bi bi-telephone"></i>
                     <h3 data-en="Contact Info" data-fa="اطلاعات تماس">
@@ -982,7 +995,9 @@
                   </div>
                   <div class="card-content">
                     <div class="info-item">
-                      <i class="bi bi-phone"></i>
+                      <div class="info-icon-wrapper">
+                        <i class="bi bi-telephone-fill"></i>
+                      </div>
                       <div class="info-details">
                         <span
                           class="info-label"
@@ -1000,7 +1015,9 @@
                       </div>
                     </div>
                     <div class="info-item">
-                      <i class="bi bi-envelope"></i>
+                      <div class="info-icon-wrapper">
+                        <i class="bi bi-envelope-fill"></i>
+                      </div>
                       <div class="info-details">
                         <span
                           class="info-label"
@@ -1016,7 +1033,9 @@
                       </div>
                     </div>
                     <div class="info-item">
-                      <i class="bi bi-briefcase"></i>
+                      <div class="info-icon-wrapper">
+                        <i class="bi bi-check-circle-fill"></i>
+                      </div>
                       <div class="info-details">
                         <span
                           class="info-label"
@@ -1038,7 +1057,11 @@
 
               <!-- Description Section -->
               <div class="description-section">
-                <div class="description-card">
+                <div
+                  class="description-card"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
                   <h3
                     class="description-title"
                     data-en="About Me"
@@ -1061,7 +1084,11 @@
                   </p>
                 </div>
 
-                <div class="philosophy-card">
+                <div
+                  class="philosophy-card"
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
                   <h3
                     class="philosophy-title"
                     data-en="My Philosophy"
@@ -1085,7 +1112,7 @@
 
               <!-- Quote Section -->
               <div class="quote-section">
-                <div class="quote-card">
+                <div class="quote-card" data-aos="fade-up" data-aos-delay="600">
                   <i class="bi bi-quote"></i>
                   <blockquote class="inspirational-quote">
                     <p
@@ -1627,7 +1654,7 @@
               </div>
 
               <div class="resume-item">
-                <h4 data-en="LPIC-1" data-fa="LPIC-1">LPIC-2</h4>
+                <h4 data-en="LPIC-2" data-fa="LPIC-2">LPIC-2</h4>
                 <h5>2023</h5>
                 <p>
                   <em
@@ -1645,7 +1672,7 @@
               </div>
 
               <div class="resume-item">
-                <h4 data-en="LPIC-2" data-fa="LPIC-2">LPIC-1</h4>
+                <h4 data-en="LPIC-1" data-fa="LPIC-1">LPIC-1</h4>
                 <h5>2023</h5>
                 <p>
                   <em

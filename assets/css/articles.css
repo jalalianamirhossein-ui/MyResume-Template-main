@@ -1,22 +1,39 @@
 /**
  * ===============================================
- * MEET AJ PORTFOLIO - ARTICLES CSS (OPTIMIZED)
+ * MEET AJ PORTFOLIO - ARTICLES CSS
  * ===============================================
  * 
- * Optimized CSS file for article pages with PWA support
+ * Modern Professional Articles Page CSS
+ * Optimized for article pages with PWA support
  * 
  * Features:
- * - CSS Custom Properties for better maintainability
- * - Optimized responsive design with modern CSS Grid/Flexbox
+ * - Modern CSS Custom Properties for maintainability
+ * - Optimized responsive design with CSS Grid/Flexbox
  * - Enhanced accessibility and RTL support
  * - Reduced code duplication and improved performance
  * - Modern CSS features for better PWA experience
+ * - Professional typography and spacing
  * 
- * Version: 2.0
- * Last Updated: 2024
+ * Version: 3.0.0
+ * Last Updated: December 2024
  * 
  * ===============================================
  */
+
+/* Prevent horizontal scroll */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Ensure all containers respect viewport width */
+.container,
+.article-container,
+.article-body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 
 /* CSS Custom Properties - Global Theme Variables */
 :root {

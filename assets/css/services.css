@@ -3,49 +3,78 @@
  * MEET AJ PORTFOLIO - SERVICES PAGE STYLES
  * ===============================================
  * 
- * Clean & Simple Service Pages CSS
- * Professional IT Services showcase styling
+ * Modern Professional Services Page CSS
+ * IT Services showcase with modern design
  * 
  * Features:
- * - Modern card-based layout
- * - Responsive design
- * - Clean typography
- * - Service pricing display
- * - Multi-language support
+ * - Modern card-based layout with glassmorphism
+ * - Responsive design with mobile-first approach
+ * - Professional typography and spacing
+ * - Service pricing display with modern styling
+ * - Multi-language support (RTL/LTR)
+ * - Consistent color palette with main site
  * 
  * Author: AmirHossein Jalalian
- * Updated: December 2024
+ * Version: 3.0.0
+ * Last Updated: December 2024
  * 
  * ===============================================
  */
+
+/* Prevent horizontal scroll */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Ensure all containers respect viewport width */
+.container,
+.card,
+.service-card {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 
 /*--------------------------------------------------------------
 # CSS VARIABLES & DESIGN SYSTEM
 --------------------------------------------------------------*/
 
 /**
- * Simple Color Palette
- * Clean, professional color scheme for service pages
+ * Modern Professional Color Palette
+ * Consistent with main site design system
  */
 :root {
-  /* Simple Color Palette */
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --secondary: #64748b;
-  --success: #059669;
-  --warning: #d97706;
-  --error: #dc2626;
+  /* Modern Professional Color Palette - Consistent with main site */
+  --primary: #007aff; /* Modern Blue - Primary brand color */
+  --primary-hover: #0056cc; /* Primary hover state */
+  --secondary-accent: #af52de; /* Purple - Secondary accent */
+  --neon-cyan: #64ffda; /* Neon Cyan - Highlights and animations */
+  --info: #007aff; /* Blue - Information color */
+  --success: #34c759; /* System Green - Success states */
+  --warning: #ff9500; /* System Orange - Warning states */
+  --danger: #ff3b30; /* System Red - Error states */
 
-  --bg: #ffffff;
-  --bg-light: #f8fafc;
-  --bg-gray: #f1f5f9;
+  /* Neutral Colors - Modern Professional Palette */
+  --background: #fbfbfd; /* Main background color */
+  --surface: #ffffff; /* Card and surface backgrounds */
+  --surface-muted: #f5f5f7; /* Muted surface backgrounds */
+  --divider-border: #e5e5ea; /* Borders and dividers */
+  --text-primary: #1d1d1f; /* Primary text color */
+  --text-secondary: #6e6e73; /* Secondary text color */
+  --disabled-quaternary: #8e8e93; /* Disabled elements */
 
-  --text: #1e293b;
-  --text-light: #64748b;
-  --text-muted: #94a3b8;
-
-  --border: #e2e8f0;
-  --border-light: #f1f5f9;
+  /* Legacy Variables for Compatibility */
+  --primary-dark: var(--primary-hover);
+  --secondary: var(--text-secondary);
+  --bg: var(--surface);
+  --bg-light: var(--surface-muted);
+  --bg-gray: var(--surface-muted);
+  --text: var(--text-primary);
+  --text-light: var(--text-secondary);
+  --text-muted: var(--disabled-quaternary);
+  --border: var(--divider-border);
+  --border-light: var(--surface-muted);
 
   /* Simple Spacing */
   --space-1: 0.25rem;
@@ -157,23 +186,48 @@ p {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   border: none;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: var(--surface);
+  box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+  color: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4);
 }
 
 .btn-outline {
@@ -184,17 +238,22 @@ p {
 
 .btn-outline:hover {
   background: var(--primary);
-  color: white;
+  color: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
 }
 
 .btn-success {
-  background: var(--success);
-  color: white;
+  background: linear-gradient(135deg, var(--success), #059669);
+  color: var(--surface);
+  box-shadow: 0 4px 15px rgba(52, 199, 89, 0.3);
 }
 
 .btn-success:hover {
-  background: #047857;
-  color: white;
+  background: linear-gradient(135deg, #059669, var(--success));
+  color: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(52, 199, 89, 0.4);
 }
 
 /* Grid */
@@ -463,28 +522,68 @@ p {
   display: flex;
   gap: var(--space-2);
   z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 122, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.language-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(100, 255, 218, 0.15);
+  border-color: rgba(100, 255, 218, 0.3);
 }
 
 .lang-btn {
   padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text-light);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
   border-radius: var(--radius);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.lang-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 122, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.lang-btn:hover::before {
+  left: 100%;
 }
 
 .lang-btn.active {
-  background: var(--primary);
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: var(--surface);
   border-color: var(--primary);
+  box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+  transform: scale(1.05);
 }
 
 .lang-btn:hover {
-  background: var(--bg-light);
+  background: rgba(0, 122, 255, 0.1);
+  color: var(--primary);
+  border-color: rgba(0, 122, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 .back-button {
@@ -493,21 +592,26 @@ p {
   left: var(--space-6);
   z-index: 1000;
   padding: var(--space-2) var(--space-4);
-  background: var(--bg);
-  color: var(--text-light);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-secondary);
+  border: 1px solid rgba(0, 122, 255, 0.15);
+  border-radius: var(--radius-lg);
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 .back-button:hover {
-  background: var(--bg-light);
-  color: var(--text);
+  background: rgba(0, 122, 255, 0.1);
+  color: var(--primary);
+  border-color: rgba(0, 122, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(100, 255, 218, 0.15);
   text-decoration: none;
 }
 
