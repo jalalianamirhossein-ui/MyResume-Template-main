@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl" data-theme="light">
   <head>
     <!-- ===============================================
     MEET AJ PORTFOLIO - MAIN HTML DOCUMENT
@@ -97,7 +97,7 @@
     PROGRESSIVE WEB APP (PWA) CONFIGURATION
     =============================================== -->
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#0050a0" />
+    <meta name="theme-color" content="var(--primary)" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -199,191 +199,9 @@
     />
 
     <!-- ===============================================
-    CRITICAL CSS INLINE FOR LCP OPTIMIZATION
-    LIGHT MODE ONLY - Dark mode functionality removed
+    CRITICAL CSS - LOADED FROM EXTERNAL FILE
     =============================================== -->
-    <style>
-      /* Critical CSS for above-the-fold content */
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        font-size: 16px;
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-      }
-
-      body {
-        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, sans-serif;
-        font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-        line-height: 1.5;
-        color: #1d1d1f;
-        background-color: #fbfbfd;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      [dir="rtl"] body {
-        font-family: "Vazirmatn", "Estedad", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", Roboto, sans-serif;
-      }
-
-      /* Critical hero section styles */
-      .hero {
-        background: linear-gradient(135deg, #007aff, #007aff);
-        color: #ffffff;
-        position: relative;
-        overflow: hidden;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, #007aff, #007aff);
-        opacity: 0.9;
-        z-index: 1;
-      }
-
-      .hero .container {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      /* Critical navigation styles */
-      .mobile-nav-toggle {
-        display: block;
-        width: 48px;
-        height: 48px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        z-index: 1001;
-      }
-
-      .mobile-nav-toggle i {
-        font-size: 1.5rem;
-        color: #1d1d1f;
-      }
-
-      /* Critical typography */
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        margin: 0 0 1rem 0;
-        font-weight: 600;
-        line-height: 1.25;
-      }
-
-      h1 {
-        font-size: clamp(1.875rem, 1.6rem + 1.375vw, 2.5rem);
-      }
-      h2 {
-        font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-      }
-      h3 {
-        font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-      }
-
-      /* Critical button styles */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        font-weight: 500;
-        text-decoration: none;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        min-height: 48px;
-      }
-
-      .btn-primary {
-        background-color: #007aff;
-        color: #ffffff;
-      }
-
-      .btn-primary:hover {
-        background-color: #0056cc;
-      }
-
-      /* Critical layout utilities */
-      .container {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      .text-center {
-        text-align: center;
-      }
-      .d-flex {
-        display: flex;
-      }
-      .align-items-center {
-        align-items: center;
-      }
-      .justify-content-center {
-        justify-content: center;
-      }
-
-      /* Critical responsive breakpoints */
-      @media (min-width: 414px) {
-        .container {
-          max-width: 414px;
-          padding: 0 1.5rem;
-        }
-      }
-
-      @media (min-width: 768px) {
-        .container {
-          max-width: 768px;
-          padding: 0 2rem;
-        }
-        .mobile-nav-toggle {
-          display: none;
-        }
-      }
-
-      @media (min-width: 1024px) {
-        .container {
-          max-width: 1024px;
-          padding: 0 2.5rem;
-        }
-      }
-
-      @media (min-width: 1280px) {
-        .container {
-          max-width: 1280px;
-          padding: 0 3rem;
-        }
-      }
-    </style>
+    <link href="assets/css/critical.css" rel="stylesheet" />
 
     <!-- ===============================================
     NON-CRITICAL CSS - LOADED ASYNC
@@ -471,49 +289,6 @@
       rel="stylesheet"
       disabled
     />
-
-    <!-- ===============================================
-    ==================== CRITICAL CSS ==================
-    =============================================== -->
-    <style>
-      /* Critical CSS for initial render */
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins", sans-serif;
-      }
-      .header {
-        background: linear-gradient(135deg, #0ea5e9, #1e40af);
-      }
-      .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      }
-      .hero-title {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #ffffff;
-      }
-      .hero-subtitle {
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.95);
-      }
-      .btn {
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        display: inline-block;
-      }
-      .btn-primary {
-        background: #0ea5e9;
-        color: white;
-      }
-      .btn-outline-light {
-        border: 2px solid white;
-        color: white;
-      }
-    </style>
   </head>
 
   <!-- ===============================================
@@ -530,7 +305,6 @@
       <div class="profile-img">
         <img
           src="assets/img/my-profile-img.jpg"
-          loading="lazy"
           alt="AmirHossein Jalalian Profile Picture"
           class="img-fluid rounded-circle"
         />
@@ -547,7 +321,6 @@
           <img
             src="assets/img/logo.png"
             alt="Aj-Network"
-            loading="lazy"
             width="40"
             height="40"
             style="aspect-ratio: 1/1"
@@ -671,6 +444,14 @@
             >
           </li>
 
+          <!-- Skills Section -->
+          <li role="none">
+            <a href="#skills" role="menuitem"
+              ><i class="bi bi-gear navicon" aria-hidden="true"></i
+              ><span data-en="Skills" data-fa="مهارت‌ها">Skills</span></a
+            >
+          </li>
+
           <!-- Resume Section -->
           <li role="none">
             <a href="#resume" role="menuitem"
@@ -752,26 +533,6 @@
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="hero-wrapper">
-            <!-- Hero Profile Image -->
-            <div
-              class="hero-profile-section"
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
-              <div class="hero-profile-img">
-                <img
-                  src="assets/img/my-profile-img-2.jpg"
-                  loading="lazy"
-                  alt="AmirHossein Jalalian Profile Picture"
-                  class="img-fluid hero-img"
-                  width="400"
-                  height="400"
-                  style="aspect-ratio: 1/1"
-                />
-                <div class="hero-img-border"></div>
-                <div class="hero-img-shadow"></div>
-              </div>
-            </div>
 
             <!-- Content -->
             <div
@@ -810,7 +571,7 @@
                   data-aos-delay="600"
                 >
                   <p class="hero-subtitle">
-                    <span class="subtitle-prefix" data-en="I'm a" data-fa="من"
+                    <span class="subtitle-prefix" data-en="I'm a" data-fa="من یک"
                       >I'm a</span
                     >
                     <span
@@ -3613,7 +3374,6 @@
                 "slidesPerView": 1,
                 "spaceBetween": 20,
                 "centeredSlides": true,
-                "loop": true,
                 "pagination": {
                   "el": ".swiper-pagination",
                   "type": "bullets",
@@ -3748,10 +3508,10 @@
                     class="testimonial-img"
                     alt="System Administrator"
                   />
-                  <h3 data-en="Founder & Director" data-fa="موسس و مدیر ">
-                    Founder & Director of Faculty of Arts and Culture University
+                  <h3 data-en="Founder & Director" data-fa="موسس و مدیر">
+                    Founder & Director
                   </h3>
-                  <h4 data-en="UAST48" data-fa="دانشگاه فرهنگ و هنر واحد 48">
+                  <h4 data-en="Faculty of Arts and Culture University" data-fa="دانشگاه فرهنگ و هنر واحد 48">
                     Faculty of Arts and Culture University
                   </h4>
                 </div>
@@ -4184,7 +3944,17 @@
     <!-- ===============================================
     PAGE PRELOADER
     =============================================== -->
-    <div id="preloader"></div>
+    <div id="preloader">
+      <div class="logo-container">
+        <img src="assets/img/logo.png" alt="AJ Network" />
+      </div>
+      <div class="network-nodes"></div>
+      <div class="loading-text">Initializing Secure Network</div>
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="status-text">Establishing encrypted connection...</div>
+    </div>
 
     <!-- ===============================================
     CRITICAL JAVASCRIPT - LOADED IMMEDIATELY
@@ -4353,14 +4123,11 @@
       // PERFORMANCE OPTIMIZATION & SERVICE WORKER
       // ===============================================
 
-      // Preload critical resources for better performance
+      // Preload other critical resources for better performance
       if ("requestIdleCallback" in window) {
         requestIdleCallback(() => {
-          // Preload images that will be needed soon
-          const criticalImages = [
-            "assets/img/my-profile-img.jpg",
-            "assets/img/logo.png",
-          ];
+          // Preload images that will be needed soon (excluding already preloaded ones)
+          const criticalImages = ["assets/img/hero-bg.jpg"];
           criticalImages.forEach((src) => {
             const link = document.createElement("link");
             link.rel = "preload";

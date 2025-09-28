@@ -25,13 +25,13 @@
 # CSS CUSTOM PROPERTIES
 --------------------------------------------------------------*/
 :root {
-  --i18n-bg: linear-gradient(135deg, #f7f8fa, #e4e6ea);
-  --i18n-bg-hover: linear-gradient(135deg, #e4e6ea, #dadde1);
-  --i18n-border: #1877f2;
+  --i18n-bg: linear-gradient(135deg, #007aff, #34c759);
+  --i18n-bg-hover: linear-gradient(135deg, #34c759, #007aff);
+  --i18n-border: #007aff;
   --i18n-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
   --i18n-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15),
     0 2px 4px rgba(0, 0, 0, 0.1);
-  --i18n-glow: 0 0 8px rgba(24, 119, 242, 0.2);
+  --i18n-glow: 0 0 8px rgba(0, 122, 255, 0.2);
   --i18n-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --i18n-scale: 1;
   --i18n-scale-hover: 1.05;
@@ -40,13 +40,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --i18n-bg: linear-gradient(135deg, #242526, #18191a);
-    --i18n-bg-hover: linear-gradient(135deg, #2f3031, #242526);
-    --i18n-border: #1877f2;
+    --i18n-bg: linear-gradient(135deg, #007aff, #34c759);
+    --i18n-bg-hover: linear-gradient(135deg, #34c759, #007aff);
+    --i18n-border: #007aff;
     --i18n-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
     --i18n-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4),
       0 2px 4px rgba(0, 0, 0, 0.3);
-    --i18n-glow: 0 0 8px rgba(24, 119, 242, 0.3);
+    --i18n-glow: 0 0 8px rgba(0, 122, 255, 0.3);
     --i18n-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --i18n-scale: 1;
     --i18n-scale-hover: 1.05;
@@ -68,7 +68,7 @@
   border-radius: 10px;
   cursor: pointer;
   font: 600 12px/1.2 ui-sans-serif, system-ui;
-  color: #1877f2;
+  color: var(--surface);
   position: absolute;
   top: 10px;
   inset-inline-end: 14px;
@@ -93,7 +93,7 @@ html[dir="rtl"] .i18n-link {
   background: var(--i18n-bg-hover);
   box-shadow: var(--i18n-shadow-hover), var(--i18n-glow);
   transform: scale(var(--i18n-scale-hover)) translateY(-2px) rotate(1deg);
-  color: #166fe5;
+  color: var(--surface);
   --i18n-rotate: 1deg;
 }
 
@@ -111,13 +111,13 @@ html[dir="rtl"] .i18n-link {
   font-weight: 300;
   font-size: 0.85em;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   transform: scale(1);
 }
 
 .i18n-link:hover .i18n-sep {
   opacity: 0.8;
-  color: #475569;
+  color: rgba(255, 255, 255, 0.9);
   transform: scale(1.1) rotate(-2deg);
 }
 
@@ -126,28 +126,28 @@ html[dir="rtl"] .i18n-link {
   font-weight: 700;
   font-size: 1em;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #1877f2;
+  color: var(--surface);
   transform: scale(1);
-  text-shadow: 0 1px 2px rgba(24, 119, 242, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .i18n-link:hover .i18n-cur {
-  color: #166fe5;
+  color: var(--surface);
   transform: scale(1.05) rotate(1deg);
-  text-shadow: 0 2px 4px rgba(24, 119, 242, 0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .i18n-link .i18n-alt {
   opacity: 0.5;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   transform: scale(1);
 }
 
 .i18n-link:hover .i18n-alt {
   opacity: 0.8;
-  color: #475569;
+  color: rgba(255, 255, 255, 0.9);
   transform: scale(1.08) rotate(-1deg);
 }
 
@@ -162,21 +162,21 @@ html[dir="rtl"] .i18n-link {
   height: 3px;
   transform: scaleX(0) rotate(-1deg);
   transform-origin: inline-start;
-  background: linear-gradient(90deg, #1877f2, #42a5f5, #60a5fa);
+  background: linear-gradient(90deg, #007aff, #5ac8fa, #64b5f6);
   border-radius: 2px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 6px rgba(24, 119, 242, 0.4), 0 0 12px rgba(24, 119, 242, 0.2);
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4), 0 0 12px rgba(59, 130, 246, 0.2);
 }
 
 .i18n-link:hover .i18n-cur::after {
   transform: scaleX(1) rotate(0deg);
-  box-shadow: 0 0 8px rgba(24, 119, 242, 0.6), 0 0 16px rgba(24, 119, 242, 0.3);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6), 0 0 16px rgba(59, 130, 246, 0.3);
 }
 
 /* RTL Underline Animation */
 html[dir="rtl"] .i18n-link .i18n-cur::after {
   transform-origin: inline-end;
-  background: linear-gradient(270deg, #1877f2, #42a5f5, #60a5fa);
+  background: linear-gradient(270deg, #007aff, #5ac8fa, #64b5f6);
 }
 
 /*--------------------------------------------------------------
@@ -184,26 +184,26 @@ html[dir="rtl"] .i18n-link .i18n-cur::after {
 --------------------------------------------------------------*/
 @media (prefers-color-scheme: dark) {
   .i18n-link {
-    color: #1877f2;
+    color: var(--surface);
   }
 
   .i18n-link:hover {
-    color: #42a5f5;
+    color: var(--surface);
   }
 
   .i18n-link .i18n-cur::after {
-    background: linear-gradient(90deg, #1877f2, #42a5f5, #60a5fa);
-    box-shadow: 0 0 6px rgba(24, 119, 242, 0.5),
-      0 0 12px rgba(24, 119, 242, 0.3);
+    background: linear-gradient(90deg, #3b82f6, #06b6d4, #8b5cf6);
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.5),
+      0 0 12px rgba(59, 130, 246, 0.3);
   }
 
   html[dir="rtl"] .i18n-link .i18n-cur::after {
-    background: linear-gradient(270deg, #1877f2, #42a5f5, #60a5fa);
+    background: linear-gradient(270deg, #3b82f6, #06b6d4, #8b5cf6);
   }
 
   .i18n-link:hover .i18n-cur::after {
-    box-shadow: 0 0 8px rgba(24, 119, 242, 0.7),
-      0 0 16px rgba(24, 119, 242, 0.4);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.7),
+      0 0 16px rgba(59, 130, 246, 0.4);
   }
 }
 
@@ -211,10 +211,10 @@ html[dir="rtl"] .i18n-link .i18n-cur::after {
 # PREMIUM FOCUS STATES
 --------------------------------------------------------------*/
 .i18n-link:focus-visible {
-  outline: 3px solid #1877f2;
+  outline: 3px solid #3b82f6;
   outline-offset: 4px;
   box-shadow: var(--i18n-shadow-hover), var(--i18n-glow),
-    0 0 0 4px rgba(24, 119, 242, 0.15);
+    0 0 0 4px rgba(59, 130, 246, 0.15);
   transform: scale(var(--i18n-scale-hover)) rotate(0.5deg);
   --i18n-rotate: 0.5deg;
 }

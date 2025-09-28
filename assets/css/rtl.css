@@ -13,6 +13,7 @@
  * - Mobile-responsive RTL layout
  * - Form and navigation RTL support
  * - About section RTL-specific styling
+ * - Apple Design System color palette integration
  * 
  * Version: 3.0.0
  * Last Updated: December 2024
@@ -42,19 +43,13 @@ html[dir="rtl"] {
   text-align: right !important;
 }
 
-/* General RTL text alignment */
-html[dir="rtl"] body,
+/* General RTL text alignment - Only for text content */
 html[dir="rtl"] p,
 html[dir="rtl"] div,
-html[dir="rtl"] span,
-html[dir="rtl"] h1,
-html[dir="rtl"] h2,
-html[dir="rtl"] h3,
-html[dir="rtl"] h4,
-html[dir="rtl"] h5,
-html[dir="rtl"] h6 {
-  text-align: right !important;
-  direction: rtl !important;
+html[dir="rtl"] span {
+  font-family: var(--persian-font) !important;
+  line-height: var(--persian-line-height) !important;
+  letter-spacing: var(--persian-letter-spacing) !important;
 }
 
 /* RTL for main content */
@@ -90,27 +85,27 @@ html[dir="rtl"] .article-blocking .method-row {
 html[dir="rtl"] .article-blocking .intro-highlight,
 html[dir="rtl"] .article-blocking .prerequisites-box {
   border-left: none !important;
-  border-right: 6px solid #d04338 !important;
+  border-right: 6px solid var(--danger) !important;
 }
 
 html[dir="rtl"] .article-blocking .implementation-intro p {
   border-left: none !important;
-  border-right: 4px solid #3388a5 !important;
+  border-right: 4px solid var(--accent-cyan) !important;
 }
 
 html[dir="rtl"] .article-blocking .pros {
   border-left: none !important;
-  border-right: 4px solid #3388a5 !important;
+  border-right: 4px solid var(--accent-cyan) !important;
 }
 
 html[dir="rtl"] .article-blocking .cons {
   border-left: none !important;
-  border-right: 4px solid #d04338 !important;
+  border-right: 4px solid var(--danger) !important;
 }
 
 html[dir="rtl"] .article-blocking .author-bio .author-card {
   border-left: none !important;
-  border-right: 6px solid #d04338 !important;
+  border-right: 6px solid var(--danger) !important;
 }
 
 html[dir="rtl"] .article-blocking .code-block {
@@ -140,27 +135,27 @@ html[dir="rtl"] .article-openvpn .comparison-table {
 html[dir="rtl"] .article-openvpn .intro-highlight,
 html[dir="rtl"] .article-openvpn .prerequisites-box {
   border-left: none !important;
-  border-right: 6px solid #ff8d19 !important;
+  border-right: 6px solid var(--warning) !important;
 }
 
 html[dir="rtl"] .article-openvpn .implementation-intro p {
   border-left: none !important;
-  border-right: 4px solid #0c3a53 !important;
+  border-right: 4px solid var(--primary) !important;
 }
 
 html[dir="rtl"] .article-openvpn .pros {
   border-left: none !important;
-  border-right: 4px solid #0c3a53 !important;
+  border-right: 4px solid var(--primary) !important;
 }
 
 html[dir="rtl"] .article-openvpn .cons {
   border-left: none !important;
-  border-right: 4px solid #ff8d19 !important;
+  border-right: 4px solid var(--warning) !important;
 }
 
 html[dir="rtl"] .article-openvpn .author-bio .author-card {
   border-left: none !important;
-  border-right: 6px solid #ff8d19 !important;
+  border-right: 6px solid var(--warning) !important;
 }
 
 html[dir="rtl"] .article-openvpn .code-block {
@@ -185,6 +180,7 @@ html[dir="rtl"] .article-section h2:hover {
   transform: translateX(-10px) !important; /* Move left instead of right */
 }
 
+/* Typography RTL - Persian Fonts */
 html[dir="rtl"] h1,
 html[dir="rtl"] h2,
 html[dir="rtl"] h3,
@@ -197,6 +193,8 @@ html[dir="rtl"] h6 {
 
 html[dir="rtl"] .navmenu a {
   font-family: var(--persian-font) !important;
+  text-align: right;
+  direction: rtl;
 }
 
 html[dir="rtl"] .hero h2 {
@@ -237,6 +235,7 @@ html[dir="rtl"] .contact .info-item h3 {
   font-weight: 600;
 }
 
+/* Icon positioning RTL */
 html[dir="rtl"] .contact .info-item i {
   margin-right: 0;
   margin-left: 15px;
@@ -269,10 +268,17 @@ html[dir="rtl"] .contact .info-item p {
   text-align: right;
 }
 
+/* Form RTL - Keep LTR for technical inputs */
 html[dir="rtl"] .contact .php-email-form input,
 html[dir="rtl"] .contact .php-email-form textarea {
   text-align: right;
   direction: rtl;
+  font-family: var(--persian-font) !important;
+}
+
+html[dir="rtl"] .contact .php-email-form input::placeholder,
+html[dir="rtl"] .contact .php-email-form textarea::placeholder {
+  text-align: right;
 }
 
 html[dir="rtl"] .contact .php-email-form button {
@@ -284,22 +290,27 @@ html[dir="rtl"] .contact .php-email-form button {
   width: auto !important;
 }
 
-html[dir="rtl"] .footer .copyright {
+html[dir="rtl"] .contact .php-email-form .loading,
+html[dir="rtl"] .contact .php-email-form .sent-message {
   font-family: var(--persian-font) !important;
-  text-align: center !important; /* Center align footer copyright in RTL */
 }
 
-/* RTL Footer Center Alignment */
+/* Footer RTL - Center alignment */
+html[dir="rtl"] .footer .copyright {
+  font-family: var(--persian-font) !important;
+  text-align: center !important;
+}
+
 html[dir="rtl"] .footer {
-  text-align: center !important; /* Center align entire footer in RTL */
+  text-align: center !important;
 }
 
 html[dir="rtl"] .footer .copyright p {
-  text-align: center !important; /* Center align copyright text in RTL */
+  text-align: center !important;
 }
 
 html[dir="rtl"] .footer .credits {
-  text-align: center !important; /* Center align credits in RTL */
+  text-align: center !important;
 }
 
 /* General RTL improvements */
@@ -415,22 +426,6 @@ html[dir="rtl"] .services .service-item p {
   line-height: 1.7;
 }
 
-html[dir="rtl"] .contact .php-email-form input,
-html[dir="rtl"] .contact .php-email-form textarea {
-  font-family: var(--persian-font) !important;
-  text-align: right;
-}
-
-html[dir="rtl"] .contact .php-email-form input::placeholder,
-html[dir="rtl"] .contact .php-email-form textarea::placeholder {
-  text-align: right;
-}
-
-html[dir="rtl"] .contact .php-email-form .loading,
-html[dir="rtl"] .contact .php-email-form .sent-message {
-  font-family: var(--persian-font) !important;
-}
-
 /* Force header to the right on RTL */
 html[dir="rtl"] .header {
   left: auto !important;
@@ -463,19 +458,23 @@ html[dir="rtl"] .header {
   }
 }
 
-/* Details */
+/* Navigation RTL - Keep LTR for technical elements */
 html[dir="rtl"] .navmenu ul {
   text-align: right;
+  direction: rtl;
 }
+
 html[dir="rtl"] .header .logo img {
   margin-inline-start: 8px;
   margin-inline-end: 0;
 }
+
 html[dir="rtl"] .header .header-toggle {
   inset-inline-start: auto;
   inset-inline-end: 15px;
 }
 
+/* Menu toggle RTL - Keep LTR positioning */
 html[dir="rtl"] .menu-toggle {
   left: auto !important;
   right: 20px !important;
@@ -485,6 +484,7 @@ html[dir="rtl"] .menu-toggle {
 html[dir="rtl"] #navmenu a .navicon {
   margin-left: 10px;
 }
+
 html[dir="rtl"] .about .content ul strong {
   margin-left: 10px;
 }
@@ -731,6 +731,7 @@ html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
   }
 }
 
+/* Resume RTL */
 html[dir="rtl"] .resume .resume-item a::after {
   left: auto;
   right: 0;
@@ -962,7 +963,7 @@ html[dir="rtl"] .testimonials .testimonial-item p {
     visibility: visible !important;
     opacity: 1 !important;
   }
-  
+
   html[dir="rtl"] .mobile-nav-toggle {
     left: 20px !important;
     right: auto !important;
@@ -978,18 +979,18 @@ html[dir="rtl"] .testimonials .testimonial-item p {
     font-size: 18px !important;
     text-align: right !important;
   }
-  
+
   html[dir="rtl"] .header .logo img {
     max-height: 28px !important;
     margin-left: 6px !important;
     margin-right: 0 !important;
   }
-  
+
   html[dir="rtl"] .header .profile-img {
     width: 80px !important;
     margin: 15px auto !important;
   }
-  
+
   html[dir="rtl"] .header .profile-img img {
     width: 80px !important;
     border-width: 4px !important;
@@ -1000,17 +1001,18 @@ html[dir="rtl"] .testimonials .testimonial-item p {
   html[dir="rtl"] .header .logo h1 {
     font-size: 16px !important;
   }
-  
+
   html[dir="rtl"] .header .logo img {
     max-height: 24px !important;
     margin-left: 4px !important;
   }
-  
+
   html[dir="rtl"] .header .profile-img {
     width: 70px !important;
     margin: 10px auto !important;
   }
-  
+}
+
 /*--------------------------------------------------------------
 # About Section RTL Styles
 --------------------------------------------------------------*/
