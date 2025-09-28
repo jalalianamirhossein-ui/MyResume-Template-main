@@ -571,13 +571,13 @@ h6 {
     background: none;
     -webkit-text-fill-color: initial;
   }
-  
+
   .hero-title {
     color: #ffffff;
     background: none;
     -webkit-text-fill-color: initial;
   }
-  
+
   .resume .resume-item h5 {
     color: #000000 !important;
     background: rgba(0, 122, 255, 0.1) !important;
@@ -1683,8 +1683,13 @@ html[dir="rtl"] .section-title p {
 }
 
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .about::before {
@@ -1694,17 +1699,32 @@ html[dir="rtl"] .section-title p {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(175, 82, 222, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(100, 255, 218, 0.08) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 122, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(175, 82, 222, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 60%,
+      rgba(100, 255, 218, 0.08) 0%,
+      transparent 50%
+    );
   animation: rotate 30s linear infinite;
   pointer-events: none;
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Section Title Enhancement */
@@ -1716,7 +1736,7 @@ html[dir="rtl"] .section-title p {
 }
 
 .about .section-title h2 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--primary); /* Fallback color */
   background: linear-gradient(
@@ -1732,7 +1752,7 @@ html[dir="rtl"] .section-title p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: textShimmer 3s ease-in-out infinite;
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 
@@ -1759,7 +1779,7 @@ html[dir="rtl"] .section-title p {
   font-size: 1.1rem;
   color: var(--text-secondary);
   max-width: 100%;
-    margin: 0;
+  margin: 0;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -1775,7 +1795,7 @@ html[dir="rtl"] .section-title p {
 
 /* Content Section */
 .content-section {
-    display: flex;
+  display: flex;
   flex-direction: column;
   gap: 4rem;
 }
@@ -1783,7 +1803,7 @@ html[dir="rtl"] .section-title p {
 /* About Header */
 .about-header {
   text-align: left;
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
   position: relative;
 }
 
@@ -1810,8 +1830,13 @@ html[dir="rtl"] .section-title p {
 }
 
 @keyframes textGradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .title-main {
@@ -1835,7 +1860,7 @@ html[dir="rtl"] .section-title p {
 /* Fallback for title-main */
 @supports not (-webkit-background-clip: text) {
   .title-main {
-  color: var(--primary);
+    color: var(--primary);
     background: none;
     -webkit-text-fill-color: initial;
   }
@@ -1875,7 +1900,12 @@ html[dir="rtl"] .section-title p {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -1896,46 +1926,46 @@ html[dir="rtl"] .section-title p {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(255, 255, 255, 0.4) 30%, 
-    rgba(255, 255, 255, 0.6) 50%, 
-    rgba(255, 255, 255, 0.4) 70%, 
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 30%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.4) 70%,
     transparent 100%
   );
   animation: shimmer 4s ease infinite;
 }
 
 @keyframes accentGlow {
-  0%, 100% { 
+  0%,
+  100% {
     background-position: 0% 50%;
-    box-shadow: 
-      0 15px 35px rgba(0, 122, 255, 0.4),
-      0 8px 20px rgba(175, 82, 222, 0.3),
-      0 4px 12px rgba(100, 255, 218, 0.2),
+    box-shadow: 0 15px 35px rgba(0, 122, 255, 0.4),
+      0 8px 20px rgba(175, 82, 222, 0.3), 0 4px 12px rgba(100, 255, 218, 0.2),
       inset 0 2px 0 rgba(255, 255, 255, 0.3);
   }
-  50% { 
+  50% {
     background-position: 100% 50%;
-    box-shadow: 
-      0 20px 45px rgba(0, 122, 255, 0.5),
-      0 12px 30px rgba(175, 82, 222, 0.4),
-      0 6px 18px rgba(100, 255, 218, 0.3),
+    box-shadow: 0 20px 45px rgba(0, 122, 255, 0.5),
+      0 12px 30px rgba(175, 82, 222, 0.4), 0 6px 18px rgba(100, 255, 218, 0.3),
       inset 0 2px 0 rgba(255, 255, 255, 0.4);
   }
 }
 
 @keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .title-accent:hover {
   transform: translateY(-5px) scale(1.08);
-  box-shadow: 
-    0 25px 50px rgba(0, 122, 255, 0.5),
-    0 15px 35px rgba(175, 82, 222, 0.4),
-    0 8px 25px rgba(100, 255, 218, 0.3),
+  box-shadow: 0 25px 50px rgba(0, 122, 255, 0.5),
+    0 15px 35px rgba(175, 82, 222, 0.4), 0 8px 25px rgba(100, 255, 218, 0.3),
     inset 0 2px 0 rgba(255, 255, 255, 0.4);
 }
 
@@ -1946,42 +1976,42 @@ html[dir="rtl"] .section-title p {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(255, 255, 255, 0.3) 50%, 
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
     transparent 100%
   );
   animation: shimmer 3s ease infinite;
 }
 
 @keyframes accentGlow {
-  0%, 100% { 
+  0%,
+  100% {
     background-position: 0% 50%;
-    box-shadow: 
-      0 8px 25px rgba(0, 122, 255, 0.3),
-      0 4px 12px rgba(175, 82, 222, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3),
+      0 4px 12px rgba(175, 82, 222, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
-  50% { 
+  50% {
     background-position: 100% 50%;
-    box-shadow: 
-      0 12px 35px rgba(0, 122, 255, 0.4),
-      0 6px 18px rgba(175, 82, 222, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 35px rgba(0, 122, 255, 0.4),
+      0 6px 18px rgba(175, 82, 222, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 }
 
 @keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .title-accent:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 
-    0 15px 40px rgba(0, 122, 255, 0.4),
-    0 8px 25px rgba(175, 82, 222, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 122, 255, 0.4),
+    0 8px 25px rgba(175, 82, 222, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 @keyframes accentPulse {
@@ -2067,11 +2097,12 @@ html[dir="rtl"] .section-title p {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, 
-    #007aff 0%, 
-    #5856d6 25%, 
-    #af52de 50%, 
-    #64ffda 75%, 
+  background: linear-gradient(
+    90deg,
+    #007aff 0%,
+    #5856d6 25%,
+    #af52de 50%,
+    #64ffda 75%,
     #007aff 100%
   );
   background-size: 300% 100%;
@@ -2079,15 +2110,18 @@ html[dir="rtl"] .section-title p {
 }
 
 @keyframes borderFlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .info-card:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 
-    0 35px 70px rgba(0, 0, 0, 0.18),
-    0 18px 36px rgba(0, 0, 0, 0.12),
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.18), 0 18px 36px rgba(0, 0, 0, 0.12),
     inset 0 2px 0 rgba(255, 255, 255, 0.95);
 }
 
@@ -2277,14 +2311,13 @@ html[dir="rtl"] .section-title p {
 }
 
 @keyframes statusPulse {
-  0%, 100% { 
-    box-shadow: 
-      0 4px 12px rgba(5, 150, 105, 0.2),
+  0%,
+  100% {
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
-  50% { 
-    box-shadow: 
-      0 8px 20px rgba(5, 150, 105, 0.3),
+  50% {
+    box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.7);
   }
 }
@@ -2385,7 +2418,8 @@ html[dir="rtl"] .section-title p {
 }
 
 @keyframes rocketBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0px);
     color: #007aff;
   }
@@ -2396,7 +2430,8 @@ html[dir="rtl"] .section-title p {
 }
 
 @keyframes lightFlicker {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
     color: #af52de;
@@ -2438,7 +2473,8 @@ html[dir="rtl"] .section-title p {
 }
 
 @keyframes rocketBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0px);
     color: var(--primary);
   }
@@ -2458,7 +2494,8 @@ html[dir="rtl"] .section-title p {
 }
 
 @keyframes lightFlicker {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
     color: var(--secondary-accent);
@@ -2466,7 +2503,7 @@ html[dir="rtl"] .section-title p {
   50% {
     opacity: 0.6;
     transform: scale(1.1);
-  color: var(--primary);
+    color: var(--primary);
   }
 }
 
@@ -2503,13 +2540,21 @@ html[dir="rtl"] .section-title p {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
   animation: rotate 20s linear infinite;
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .quote-card i {
@@ -2535,27 +2580,27 @@ html[dir="rtl"] .section-title p {
   .about {
     padding: 40px 0;
   }
-  
+
   .about-title {
     font-size: 1.8rem;
   }
-  
+
   .info-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .description-section {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .info-card,
   .description-card,
   .philosophy-card {
     padding: 1.25rem;
   }
-  
+
   .quote-card {
     padding: 1.5rem;
   }
@@ -2565,22 +2610,22 @@ html[dir="rtl"] .section-title p {
   .about {
     padding: 30px 0;
   }
-  
+
   .about-title {
     font-size: 1.5rem;
   }
-  
+
   .info-card,
   .description-card,
   .philosophy-card,
   .quote-card {
     padding: 1rem;
   }
-  
+
   .quote-card i {
     font-size: 2rem;
   }
-  
+
   .inspirational-quote p {
     font-size: 1rem;
   }
@@ -2620,7 +2665,7 @@ html[dir="rtl"] .section-title p {
       circle at 70% 70%,
       rgba(175, 82, 222, 0.1) 0%,
       transparent 50%
-  );
+    );
   pointer-events: none;
   border-radius: 24px;
 }
@@ -4002,29 +4047,29 @@ html[dir="rtl"] .resume .resume-item::before {
   .testimonials {
     padding: 40px 0;
   }
-  
+
   .testimonials .testimonial-item {
     min-height: 300px;
     padding: 20px 15px;
     margin: 0 5px;
   }
-  
+
   .testimonials .testimonial-item .testimonial-img {
     width: 70px;
     height: 70px;
     margin-bottom: 15px;
   }
-  
+
   .testimonials .testimonial-item h3 {
     font-size: 16px;
     margin: 12px 0 6px 0;
   }
-  
+
   .testimonials .testimonial-item h4 {
     font-size: 13px;
     margin-bottom: 15px;
   }
-  
+
   .testimonials .testimonial-item p {
     font-size: 14px;
     line-height: 1.5;
@@ -4036,38 +4081,38 @@ html[dir="rtl"] .resume .resume-item::before {
   .testimonials {
     padding: 30px 0;
   }
-  
+
   .testimonials .testimonial-item {
     min-height: 280px;
     padding: 15px 12px;
     margin: 0 2px;
   }
-  
+
   .testimonials .testimonial-item .testimonial-img {
     width: 60px;
     height: 60px;
     margin-bottom: 12px;
   }
-  
+
   .testimonials .testimonial-item h3 {
     font-size: 15px;
     margin: 10px 0 5px 0;
   }
-  
+
   .testimonials .testimonial-item h4 {
     font-size: 12px;
     margin-bottom: 12px;
   }
-  
+
   .testimonials .testimonial-item p {
     font-size: 13px;
     line-height: 1.4;
   }
-  
+
   .testimonials .swiper-pagination {
     margin-top: 20px;
   }
-  
+
   /* Improve touch scrolling */
   .testimonials .swiper {
     touch-action: pan-y;
