@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" data-theme="light">
+<html lang="en" dir="ltr">
   <head>
     <!-- ===============================================
     MEET AJ PORTFOLIO - MAIN HTML DOCUMENT
@@ -21,71 +21,21 @@
     META TAGS & SEO CONFIGURATION
     =============================================== -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
 
     <!-- Page Title & SEO Meta Tags -->
-    <title
-      data-en="Meet AJ - AmirHossein Jalalian Portfolio"
-      data-fa="ملاقات با ای جی - پورتفولیو امیرحسین جلالیان"
-    >
-      Meet AJ - AmirHossein Jalalian Portfolio
-    </title>
+    <title>Meet Aj - AmirHossein Jalalian Portfolio</title>
     <meta
-      name="description"
       content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist. Experienced in Cisco, MikroTik, VMware, Linux administration, and system optimization."
-      data-en="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist. Experienced in Cisco, MikroTik, VMware, Linux administration, and system optimization."
-      data-fa="پورتفولیو حرفه‌ای امیرحسین جلالیان - متخصص شبکه، مهندس DevOps و متخصص زیرساخت IT. تجربه در Cisco، MikroTik، VMware، مدیریت Linux و بهینه‌سازی سیستم."
+      name="description"
     />
     <meta
-      name="keywords"
       content="Network Expert, DevOps Engineer, IT Infrastructure, Cisco, MikroTik, VMware, Linux, System Administration, Tehran Iran"
+      name="keywords"
     />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://meetaj.ir/" />
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Meet AJ - AmirHossein Jalalian Portfolio"
-    />
-    <meta
-      property="og:description"
-      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist."
-    />
-    <meta property="og:url" content="https://meetaj.ir/" />
-    <meta property="og:site_name" content="Meet AJ Portfolio" />
-    <meta
-      property="og:image"
-      content="https://meetaj.ir/assets/img/my-profile-img.jpg"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="fa_IR" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Meet AJ - AmirHossein Jalalian Portfolio"
-    />
-    <meta
-      name="twitter:description"
-      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist."
-    />
-    <meta
-      name="twitter:image"
-      content="https://meetaj.ir/assets/img/my-profile-img.jpg"
-    />
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="author" content="AmirHossein Jalalian" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
 
     <!-- ===============================================
     FAVICONS & APP ICONS
@@ -97,7 +47,7 @@
     PROGRESSIVE WEB APP (PWA) CONFIGURATION
     =============================================== -->
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="var(--primary)" />
+    <meta name="theme-color" content="#0050a0" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -106,178 +56,48 @@
     <meta name="msapplication-tap-highlight" content="no" />
 
     <!-- ===============================================
-    JSON-LD STRUCTURED DATA
+    GOOGLE FONTS & TYPOGRAPHY
     =============================================== -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "AmirHossein Jalalian",
-        "alternateName": "Meet AJ",
-        "url": "https://meetaj.ir",
-        "image": "https://meetaj.ir/assets/img/my-profile-img.jpg",
-        "description": "Network Expert, DevOps Engineer & IT Infrastructure Specialist",
-        "jobTitle": "Network Expert, DevOps Engineer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Freelance"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tehran",
-          "addressCountry": "IR"
-        },
-        "email": "jalalian.amirhossein@gmail.com",
-        "telephone": "+98-912-345-6789",
-        "sameAs": [
-          "https://github.com/amirhosseinjalalian",
-          "https://linkedin.com/in/amirhosseinjalalian"
-        ],
-        "knowsAbout": [
-          "Network Administration",
-          "DevOps Engineering",
-          "IT Infrastructure",
-          "Cisco",
-          "MikroTik",
-          "VMware",
-          "Linux Administration",
-          "System Optimization"
-        ],
-        "hasOccupation": {
-          "@type": "Occupation",
-          "name": "Network Expert",
-          "occupationLocation": {
-            "@type": "City",
-            "name": "Tehran"
-          }
-        }
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Meet AJ Portfolio",
-        "url": "https://meetaj.ir",
-        "description": "Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist",
-        "author": {
-          "@type": "Person",
-          "name": "AmirHossein Jalalian"
-        },
-        "inLanguage": ["en", "fa"],
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://meetaj.ir/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
-
-    <!-- Enhanced Performance Optimization -->
-    <link
-      rel="preload"
-      as="image"
-      href="assets/img/hero-bg.jpg"
-      type="image/jpeg"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="assets/img/my-profile-img.jpg"
-      type="image/jpeg"
-    />
-
-    <!-- DNS Prefetch for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-
-    <!-- Google Fonts with optimized loading -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&family=Estedad:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <!-- ===============================================
-    CRITICAL CSS - LOADED FROM EXTERNAL FILE
-    =============================================== -->
-    <link href="assets/css/critical.css" rel="stylesheet" />
-
-    <!-- ===============================================
-    NON-CRITICAL CSS - LOADED ASYNC
+    STYLESHEETS & CSS FRAMEWORKS
     =============================================== -->
 
-    <!-- Bootstrap CSS Framework - Load async -->
+    <!-- Bootstrap CSS Framework -->
     <link
       href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      rel="stylesheet"
     />
-    <noscript
-      ><link
-        href="assets/vendor/bootstrap/css/bootstrap.min.css"
-        rel="stylesheet"
-    /></noscript>
 
-    <!-- Bootstrap Icons - Load async -->
+    <!-- Bootstrap Icons -->
     <link
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      rel="stylesheet"
     />
-    <noscript
-      ><link
-        href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-        rel="stylesheet"
-    /></noscript>
 
-    <!-- AOS Animation Library - Load async -->
-    <link
-      href="assets/vendor/aos/aos.css"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link href="assets/vendor/aos/aos.css" rel="stylesheet"
-    /></noscript>
+    <!-- AOS Animation Library -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 
-    <!-- GLightbox Gallery Library - Load async -->
+    <!-- GLightbox Gallery Library -->
     <link
       href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      rel="stylesheet"
     />
-    <noscript
-      ><link
-        href="assets/vendor/glightbox/css/glightbox.min.css"
-        rel="stylesheet"
-    /></noscript>
 
-    <!-- Swiper Slider Library - Load async -->
-    <link
-      href="assets/vendor/swiper/swiper-bundle.min.css"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"
-    /></noscript>
+    <!-- Swiper Slider Library -->
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-    <!-- Main Stylesheet - Load async -->
-    <link
-      href="assets/css/main.css?v=999"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link href="assets/css/main.css?v=999" rel="stylesheet"
-    /></noscript>
+    <!-- ===============================================
+    ==================== MAIN CSS ======================
+    =============================================== -->
+    <!-- Main Stylesheet -->
+    <link href="assets/css/main.css?v=999" rel="stylesheet" />
 
     <!-- Language Toggle Stylesheet -->
     <link href="assets/css/lang-toggle.css?v=999" rel="stylesheet" />
@@ -289,6 +109,49 @@
       rel="stylesheet"
       disabled
     />
+
+    <!-- ===============================================
+    ==================== CRITICAL CSS ==================
+    =============================================== -->
+    <style>
+      /* Critical CSS for initial render */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .header {
+        background: linear-gradient(135deg, #0ea5e9, #1e40af);
+      }
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1e40af;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+        color: #374151;
+      }
+      .btn {
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-primary {
+        background: #0ea5e9;
+        color: white;
+      }
+      .btn-outline-light {
+        border: 2px solid white;
+        color: white;
+      }
+    </style>
   </head>
 
   <!-- ===============================================
@@ -307,6 +170,8 @@
           src="assets/img/my-profile-img.jpg"
           alt="AmirHossein Jalalian Profile Picture"
           class="img-fluid rounded-circle"
+          width="200"
+          height="200"
         />
       </div>
 
@@ -323,7 +188,6 @@
             alt="Aj-Network"
             width="40"
             height="40"
-            style="aspect-ratio: 1/1"
           />
           <h1 class="sitename">Meet AJ</h1>
         </a>
@@ -421,65 +285,52 @@
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav
-        id="navmenu"
-        class="navmenu"
-        role="navigation"
-        aria-label="Main navigation"
-      >
-        <ul role="menubar">
+      <nav id="navmenu" class="navmenu">
+        <ul>
           <!-- Home Section -->
-          <li role="none">
-            <a href="#hero" class="active" role="menuitem" aria-current="page"
-              ><i class="bi bi-house navicon" aria-hidden="true"></i
+          <li>
+            <a href="#hero" class="active"
+              ><i class="bi bi-house navicon"></i
               ><span data-en="Home" data-fa="صفحه اصلی">Home</span></a
             >
           </li>
 
           <!-- About Section -->
-          <li role="none">
-            <a href="#about" role="menuitem"
-              ><i class="bi bi-person navicon" aria-hidden="true"></i
+          <li>
+            <a href="#about"
+              ><i class="bi bi-person navicon"></i
               ><span data-en="About" data-fa="درباره من">About</span></a
             >
           </li>
 
-          <!-- Skills Section -->
-          <li role="none">
-            <a href="#skills" role="menuitem"
-              ><i class="bi bi-gear navicon" aria-hidden="true"></i
-              ><span data-en="Skills" data-fa="مهارت‌ها">Skills</span></a
-            >
-          </li>
-
           <!-- Resume Section -->
-          <li role="none">
-            <a href="#resume" role="menuitem"
-              ><i class="bi bi-file-earmark-text navicon" aria-hidden="true"></i
+          <li>
+            <a href="#resume"
+              ><i class="bi bi-file-earmark-text navicon"></i
               ><span data-en="Resume" data-fa="رزومه کاری">Resume</span></a
             >
           </li>
 
           <!-- Services Section -->
-          <li role="none">
-            <a href="#services" role="menuitem"
-              ><i class="bi bi-hdd-stack navicon" aria-hidden="true"></i
+          <li>
+            <a href="#services"
+              ><i class="bi bi-hdd-stack navicon"></i
               ><span data-en="Services" data-fa="خدمات">Services</span></a
             >
           </li>
 
           <!-- Articles Section -->
-          <li role="none">
-            <a href="#portfolio" role="menuitem"
-              ><i class="bi bi-images navicon" aria-hidden="true"></i
+          <li>
+            <a href="#portfolio"
+              ><i class="bi bi-images navicon"></i
               ><span data-en="Articles" data-fa="مقالات">Articles</span></a
             >
           </li>
 
           <!-- Testimonials Section -->
-          <li role="none">
-            <a href="#testimonials" role="menuitem"
-              ><i class="bi bi-menu-button navicon" aria-hidden="true"></i
+          <li>
+            <a href="#testimonials"
+              ><i class="bi bi-menu-button navicon"></i
               ><span data-en="Testimonials" data-fa="نظرات"
                 >Testimonials</span
               ></a
@@ -487,9 +338,9 @@
           </li>
 
           <!-- Contact Section -->
-          <li role="none">
-            <a href="#contact" role="menuitem"
-              ><i class="bi bi-envelope navicon" aria-hidden="true"></i
+          <li>
+            <a href="#contact"
+              ><i class="bi bi-envelope navicon"></i
               ><span data-en="Contact" data-fa="تماس با من">Contact</span></a
             >
           </li>
@@ -502,13 +353,12 @@
     =============================================== -->
     <button
       id="menu-toggle"
-      class="mobile-nav-toggle"
-      type="button"
-      aria-label="Toggle mobile menu"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
       aria-expanded="false"
-      aria-controls="navmenu"
+      aria-controls="header"
     >
-      <i class="bi bi-list" aria-hidden="true"></i>
+      <i class="bi bi-list"></i>
     </button>
 
     <!-- ===============================================
@@ -519,7 +369,7 @@
       ==================== HERO SECTION ==================
       =============================================== -->
       <section id="hero" class="hero section dark-background">
-        <!-- Hero Background Image with explicit dimensions for CLS -->
+        <!-- Hero Background Image -->
         <link rel="preload" as="image" href="assets/img/hero-bg.jpg" />
         <img
           src="assets/img/hero-bg.jpg"
@@ -528,11 +378,30 @@
           class="hero-bg"
           width="1920"
           height="1080"
-          style="aspect-ratio: 16/9"
+          fetchpriority="high"
         />
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="hero-wrapper">
+            <!-- Hero Profile Image -->
+            <div
+              class="hero-profile-section"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <div class="hero-profile-img">
+                <img
+                  src="assets/img/my-profile-img-2.jpg"
+                  alt="AmirHossein Jalalian Profile Picture"
+                  class="img-fluid hero-img"
+                  width="400"
+                  height="400"
+                  fetchpriority="high"
+                />
+                <div class="hero-img-border"></div>
+                <div class="hero-img-shadow"></div>
+              </div>
+            </div>
 
             <!-- Content -->
             <div
@@ -545,9 +414,9 @@
                 <div class="hero-badge" data-aos="fade-up" data-aos-delay="200">
                   <span
                     class="badge-text"
-                    data-en="Available for Work"
-                    data-fa="آماده برای همکاری"
-                    >Available for Work</span
+                    data-en="💼 Available for Work"
+                    data-fa="💼 آماده برای همکاری"
+                    >💼 Available for Work</span
                   >
                   <div class="badge-dot"></div>
                 </div>
@@ -571,14 +440,15 @@
                   data-aos-delay="600"
                 >
                   <p class="hero-subtitle">
-                    <span class="subtitle-prefix" data-en="I'm a" data-fa="من یک"
+                    <span class="subtitle-prefix" data-en="I'm a" data-fa="من"
                       >I'm a</span
                     >
                     <span
                       class="typed"
-                      data-typed-items="Enterprise Network & SD-WAN Architect, Cybersecurity & Zero Trust Strategy Architect, Containerization & VDI Platform Architect, CI/CD & Automation Methodology Architect, Cloud Reliability and Performance Architect"
-                      data-typed-items-fa="معمار شبکه‌های Enterprise و SD-WAN هستم, معمار امنیت سایبری و استراتژی‌های Zero Trust هستم, معمار پلتفرم‌های Containerization و VDI هستم, معمار متدولوژی‌های CI/CD و اتوماسیون هستم, معمار پایداری و عملکرد Cloud Platform هستم"
-                    ></span>
+                      data-typed-items="🌐 Network Specialist, ⚙️ DevOps Engineer, 💡 IT Consultant, 🔧 Systems Expert, 🖥️ VMware Administrator"
+                      data-typed-items-fa="🌐 متخصص شبکه هستم, ⚙️ مهندس DevOps هستم, 💡 مشاور فناوری اطلاعات هستم, 🔧 کارشناس سیستم‌ها هستم, 🖥️ مدیر مجازی‌سازی VMware هستم"
+                      >🔧 System Administrator</span
+                    >
                   </p>
                 </div>
 
@@ -641,254 +511,313 @@
         =============================================== -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="about-wrapper">
-            <!-- Content Section -->
-            <div class="content-section">
-              <!-- Header -->
-              <div class="about-header">
-                <h2 class="about-title">
-                  <span
-                    class="title-main"
-                    data-en="Empowering Businesses with Reliable & Secure IT Infrastructures"
-                    data-fa="توانمندسازی کسب‌وکارها با زیرساخت‌های IT مطمئن و امن"
-                  >
-                    Empowering Businesses with Reliable &amp; Secure IT
-                    Infrastructures
-                  </span>
-                  <span
-                    class="title-accent"
-                    data-en="IT Professional"
-                    data-fa="متخصص فناوری اطلاعات"
-                    >IT Professional</span
-                  >
-                </h2>
-                <p
-                  class="about-subtitle"
-                  data-en="Passionate about developing innovative and sustainable network solutions that elevate organizational performance and efficiency."
-                  data-fa="علاقه‌مند به توسعه راهکارهای شبکه پایدار و نوآورانه که عملکرد و بهره‌وری سازمان‌ها را به سطحی بالاتر می‌رساند."
-                >
-                  Passionate about developing innovative and sustainable network
-                  solutions that elevate organizational performance and
-                  efficiency.
-                </p>
-              </div>
-
-              <!-- Info Cards Grid -->
-              <div class="info-grid">
-                <!-- Personal Info Card -->
+            <!-- Main About Grid -->
+            <div class="about-main-grid">
+              <!-- Left Column - Profile & Info -->
+              <div class="about-left-column">
+                <!-- Profile Card -->
                 <div
-                  class="info-card personal-info"
-                  data-aos="fade-up"
+                  class="profile-card"
+                  data-aos="fade-right"
                   data-aos-delay="200"
                 >
-                  <div class="card-header">
-                    <i class="bi bi-person-circle"></i>
-                    <h3 data-en="Personal Info" data-fa="اطلاعات شخصی">
-                      Personal Info
-                    </h3>
+                  <div class="profile-image">
+                    <img
+                      src="assets/img/my-profile-img-2.jpg"
+                      alt="Amirhossein Jalalian Profile"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    />
+                    <div class="profile-overlay">
+                      <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span data-en="Available" data-fa="در دسترس"
+                          >Available</span
+                        >
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-content">
-                    <div class="info-item">
-                      <div class="info-icon-wrapper">
-                        <i class="bi bi-gift"></i>
-                      </div>
-                      <div class="info-details">
-                        <span
-                          class="info-label"
-                          data-en="Birthday"
-                          data-fa="تاریخ تولد"
-                          >Birthday</span
-                        >
-                        <span
-                          class="info-value"
-                          data-en="19 July 1999"
-                          data-fa="۲۸ تیر ۱۳۷۸"
-                          >19 July 1999</span
-                        >
-                      </div>
-                    </div>
-                    <div class="info-item">
-                      <div class="info-icon-wrapper">
-                        <i class="bi bi-geo-alt-fill"></i>
-                      </div>
-                      <div class="info-details">
-                        <span
-                          class="info-label"
-                          data-en="Location"
-                          data-fa="محل سکونت"
-                          >Location</span
-                        >
-                        <span
-                          class="info-value"
-                          data-en="Tehran, Iran"
-                          data-fa="تهران، ایران"
-                          >Tehran, Iran</span
-                        >
-                      </div>
-                    </div>
-                    <div class="info-item">
-                      <div class="info-icon-wrapper">
-                        <i class="bi bi-mortarboard-fill"></i>
-                      </div>
-                      <div class="info-details">
-                        <span
-                          class="info-label"
-                          data-en="Degree"
-                          data-fa="مدرک تحصیلی"
-                          >Degree</span
-                        >
-                        <span
-                          class="info-value"
-                          data-en="Bachelor of IT Engineering"
-                          data-fa="کارشناسی مهندسی فناوری اطلاعات"
-                          >Bachelor of IT Engineering</span
-                        >
-                      </div>
+                  <div class="profile-info">
+                    <h3 class="profile-name">Amirhossein Jalalian</h3>
+                    <p
+                      class="profile-title"
+                      data-en="IT Infrastructure Specialist"
+                      data-fa="متخصص زیرساخت فناوری اطلاعات"
+                    >
+                      IT Infrastructure Specialist
+                    </p>
+                    <div class="profile-location">
+                      <i class="bi bi-geo-alt"></i>
+                      <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                        >Tehran, Iran</span
+                      >
                     </div>
                   </div>
                 </div>
 
-                <!-- Contact Info Card -->
+                <!-- Quick Stats -->
                 <div
-                  class="info-card contact-info"
-                  data-aos="fade-up"
+                  class="quick-stats"
+                  data-aos="fade-right"
                   data-aos-delay="300"
                 >
-                  <div class="card-header">
-                    <i class="bi bi-telephone"></i>
-                    <h3 data-en="Contact Info" data-fa="اطلاعات تماس">
-                      Contact Info
-                    </h3>
+                  <div class="stat-item">
+                    <div class="stat-icon">
+                      <i class="bi bi-calendar-event"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span
+                        class="stat-label"
+                        data-en="Birthday"
+                        data-fa="تاریخ تولد"
+                        >Birthday</span
+                      >
+                      <span
+                        class="stat-value"
+                        data-en="19 July 1999"
+                        data-fa="۲۸ تیر ۱۳۷۸"
+                        >19 July 1999</span
+                      >
+                    </div>
                   </div>
-                  <div class="card-content">
-                    <div class="info-item">
-                      <div class="info-icon-wrapper">
-                        <i class="bi bi-telephone-fill"></i>
-                      </div>
-                      <div class="info-details">
-                        <span
-                          class="info-label"
-                          data-en="Phone"
-                          data-fa="شماره تماس"
-                          >Phone</span
-                        >
-                        <a
-                          href="tel:+989197276219"
-                          class="info-value contact-link"
-                          data-en="+989197276219"
-                          data-fa="09197276219"
-                          >+989197276219</a
-                        >
-                      </div>
+                  <div class="stat-item">
+                    <div class="stat-icon">
+                      <i class="bi bi-mortarboard"></i>
                     </div>
-                    <div class="info-item">
-                      <div class="info-icon-wrapper">
-                        <i class="bi bi-envelope-fill"></i>
-                      </div>
-                      <div class="info-details">
-                        <span
-                          class="info-label"
-                          data-en="Email"
-                          data-fa="پست الکترونیکی"
-                          >Email</span
-                        >
-                        <a
-                          href="mailto:Jalalian.amirhossein@gmail.com"
-                          class="info-value contact-link"
-                          >Jalalian.amirhossein@gmail.com</a
-                        >
-                      </div>
+                    <div class="stat-content">
+                      <span
+                        class="stat-label"
+                        data-en="Degree"
+                        data-fa="مدرک تحصیلی"
+                        >Degree</span
+                      >
+                      <span
+                        class="stat-value"
+                        data-en="Bachelor of IT Engineering"
+                        data-fa="کارشناسی مهندسی فناوری اطلاعات"
+                        >Bachelor of IT Engineering</span
+                      >
                     </div>
-                    <div class="info-item">
-                      <div class="info-icon-wrapper">
-                        <i class="bi bi-check-circle-fill"></i>
-                      </div>
-                      <div class="info-details">
-                        <span
-                          class="info-label"
-                          data-en="Status"
-                          data-fa="وضعیت کاری"
-                          >Status</span
-                        >
-                        <span
-                          class="info-value status-available"
-                          data-en="Available for Collaboration"
-                          data-fa="آماده همکاری"
-                          >Available for Collaboration</span
-                        >
-                      </div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-icon">
+                      <i class="bi bi-briefcase"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span
+                        class="stat-label"
+                        data-en="Experience"
+                        data-fa="تجربه"
+                        >Experience</span
+                      >
+                      <span
+                        class="stat-value"
+                        data-en="5+ Years"
+                        data-fa="بیش از ۵ سال"
+                        >5+ Years</span
+                      >
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Description Section -->
-              <div class="description-section">
+                <!-- Core Values Section -->
                 <div
-                  class="description-card"
-                  data-aos="fade-up"
+                  class="values-section"
+                  data-aos="fade-right"
                   data-aos-delay="400"
                 >
                   <h3
-                    class="description-title"
-                    data-en="About Me"
-                    data-fa="درباره من"
+                    class="values-title"
+                    data-en="Core Values"
+                    data-fa="ارزش‌های اصلی"
                   >
-                    About Me
+                    Core Values
                   </h3>
-                  <p
-                    class="description-text"
-                    data-en="I have extensive experience in Windows Server, Cisco and MikroTik technologies, virtualization, and other IT infrastructure solutions. My approach is always results-driven, carrying out each project with accountability, precision, and strong teamwork. I focus on delivering secure, reliable, and optimized solutions that enhance organizational growth and efficiency."
-                    data-fa="من تجربه‌ای گسترده در Windows Server، تجهیزات سیسکو و میکروتیک، مجازی‌سازی و سایر فناوری‌های زیرساختی دارم. رویکرد من در کار، همواره نتیجه‌محور است و هر پروژه را با مسئولیت‌پذیری بالا، دقت فنی و روحیه کار تیمی به سرانجام می‌رسانم. تمرکزم بر ارائه راهکارهای امن، پایدار و بهینه است که به رشد و بهره‌وری سازمان‌ها کمک می‌کند."
-                  >
-                    I have extensive experience in Windows Server, Cisco and
-                    MikroTik technologies, virtualization, and other IT
-                    infrastructure solutions. My approach is always
-                    results-driven, carrying out each project with
-                    accountability, precision, and strong teamwork. I focus on
-                    delivering secure, reliable, and optimized solutions that
-                    enhance organizational growth and efficiency.
-                  </p>
-                </div>
-
-                <div
-                  class="philosophy-card"
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                >
-                  <h3
-                    class="philosophy-title"
-                    data-en="My Philosophy"
-                    data-fa="فلسفه من"
-                  >
-                    My Philosophy
-                  </h3>
-                  <p
-                    class="philosophy-text"
-                    data-en="I value honesty, discipline, patience, and accountability as core principles. I believe that respect for the profession and adherence to fundamental values form the foundation for achieving long-term and sustainable success in the field of Information Technology."
-                    data-fa="برای من، صداقت، انضباط، صبر و مسئولیت‌پذیری ارزش‌های اساسی هستند. باور دارم که احترام به حرفه و پایبندی به اصول بنیادین، زیربنای دستیابی به موفقیت پایدار و بلندمدت در حوزه فناوری اطلاعات است."
-                  >
-                    I value honesty, discipline, patience, and accountability as
-                    core principles. I believe that respect for the profession
-                    and adherence to fundamental values form the foundation for
-                    achieving long-term and sustainable success in the field of
-                    Information Technology.
-                  </p>
+                  <div class="values-grid">
+                    <div class="value-item">
+                      <div class="value-icon">
+                        <i class="bi bi-shield-check"></i>
+                      </div>
+                      <div class="value-content">
+                        <h4 data-en="Integrity" data-fa="صداقت">Integrity</h4>
+                        <p
+                          data-en="Honest and transparent in all professional interactions"
+                          data-fa="صادق و شفاف در تمام تعاملات حرفه‌ای"
+                        >
+                          Honest and transparent in all professional
+                          interactions
+                        </p>
+                      </div>
+                    </div>
+                    <div class="value-item">
+                      <div class="value-icon">
+                        <i class="bi bi-gear"></i>
+                      </div>
+                      <div class="value-content">
+                        <h4 data-en="Excellence" data-fa="تعالی">
+                          Excellence
+                        </h4>
+                        <p
+                          data-en="Committed to delivering the highest quality solutions"
+                          data-fa="متعهد به ارائه راهکارهای با بالاترین کیفیت"
+                        >
+                          Committed to delivering the highest quality
+                          solutions
+                        </p>
+                      </div>
+                    </div>
+                    <div class="value-item">
+                      <div class="value-icon">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="value-content">
+                        <h4 data-en="Collaboration" data-fa="همکاری">
+                          Collaboration
+                        </h4>
+                        <p
+                          data-en="Strong believer in teamwork and collective success"
+                          data-fa="باور قوی به کار تیمی و موفقیت جمعی"
+                        >
+                          Strong believer in teamwork and collective success
+                        </p>
+                      </div>
+                    </div>
+                    <div class="value-item">
+                      <div class="value-icon">
+                        <i class="bi bi-graph-up"></i>
+                      </div>
+                      <div class="value-content">
+                        <h4 data-en="Innovation" data-fa="نوآوری">
+                          Innovation
+                        </h4>
+                        <p
+                          data-en="Continuously learning and adapting to new technologies"
+                              data-fa="یادگیری مداوم و سازگاری با فناوری‌های جدید"
+                        >
+                          Continuously learning and adapting to new
+                          technologies
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <!-- Quote Section -->
-              <div class="quote-section">
-                <div class="quote-card" data-aos="fade-up" data-aos-delay="600">
-                  <i class="bi bi-quote"></i>
-                  <blockquote class="inspirational-quote">
+              <!-- Right Column - Content -->
+              <div class="about-right-column">
+                <!-- Main Description -->
+                <div
+                  class="main-description"
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                >
+                  <div class="description-header">
+                    <h2 class="description-title">
+                      <span data-en="About Me" data-fa="درباره من"
+                        >About Me</span
+                      >
+                      <span class="title-accent">👨‍💻</span>
+                    </h2>
                     <p
-                      data-en="Success is born of sustained effort, continuous learning, and faith in the journey."
-                      data-fa="موفقیت زاده تلاش مستمر، یادگیری مداوم و ایمان به مسیر است."
+                      class="description-subtitle"
+                      data-en="Passionate IT Professional with a Vision for Excellence"
+                      data-fa="متخصص فناوری اطلاعات با اشتیاق و چشم‌انداز تعالی"
                     >
-                      "Success is born of sustained effort, continuous learning,
-                      and faith in the journey."
+                      Passionate IT Professional with a Vision for Excellence
                     </p>
-                  </blockquote>
+                  </div>
+                  <div class="description-content">
+                    <p class="description-text">
+                      <span
+                        data-en="I am a dedicated Network and IT Infrastructure Specialist with extensive experience in designing, managing, and optimizing enterprise systems. My mission is to deliver reliable, secure, and scalable solutions that enhance organizational efficiency while minimizing risks."
+                        data-fa="من یک متخصص شبکه و زیرساخت فناوری اطلاعات متعهد هستم با تجربه گسترده در طراحی، مدیریت و بهینه‌سازی سیستم‌های سازمانی. مأموریت من، ارائه راهکارهای پایدار، امن و مقیاس‌پذیر است که بهره‌وری سازمان‌ها را افزایش داده و ریسک‌ها را کاهش می‌دهد."
+                      >
+                        I am a dedicated Network and IT Infrastructure
+                        Specialist with extensive experience in designing,
+                        managing, and optimizing enterprise systems. My mission
+                        is to deliver reliable, secure, and scalable solutions
+                        that enhance organizational efficiency while minimizing
+                        risks.
+                      </span>
+                    </p>
+                    <p class="description-text">
+                      <span
+                        data-en="I have extensive experience in Windows Server, Cisco and MikroTik technologies, virtualization, and other IT infrastructure solutions. My approach is always results-driven, carrying out each project with accountability, precision, and strong teamwork."
+                        data-fa="من تجربه‌ای گسترده در Windows Server، تجهیزات سیسکو و میکروتیک، مجازی‌سازی و سایر فناوری‌های زیرساختی دارم. رویکرد من در کار، همواره نتیجه‌محور است و هر پروژه را با مسئولیت‌پذیری بالا، دقت فنی و روحیه کار تیمی به سرانجام می‌رسانم."
+                      >
+                        I have extensive experience in Windows Server, Cisco and
+                        MikroTik technologies, virtualization, and other IT
+                        infrastructure solutions. My approach is always
+                        results-driven, carrying out each project with
+                        accountability, precision, and strong teamwork.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Philosophy & Values -->
+                <div
+                  class="philosophy-section"
+                  data-aos="fade-left"
+                  data-aos-delay="300"
+                >
+                  <div class="philosophy-card">
+                    <div class="philosophy-header">
+                      <h3 class="philosophy-title">
+                        <i class="bi bi-lightbulb"></i>
+                        <span data-en="My Philosophy" data-fa="فلسفه من"
+                          >My Philosophy</span
+                        >
+                      </h3>
+                    </div>
+                    <div class="philosophy-content">
+                      <p class="philosophy-text">
+                        <span
+                          data-en="I value honesty, discipline, patience, and accountability as core principles. I believe that respect for the profession and adherence to fundamental values form the foundation for achieving long-term and sustainable success in the field of Information Technology."
+                          data-fa="برای من، صداقت، انضباط، صبر و مسئولیت‌پذیری ارزش‌های اساسی هستند. باور دارم که احترام به حرفه و پایبندی به اصول بنیادین، زیربنای دستیابی به موفقیت پایدار و بلندمدت در حوزه فناوری اطلاعات است."
+                        >
+                          I value honesty, discipline, patience, and
+                          accountability as core principles. I believe that
+                          respect for the profession and adherence to
+                          fundamental values form the foundation for achieving
+                          long-term and sustainable success in the field of
+                          Information Technology.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Inspirational Quote Section -->
+                <div
+                  class="quote-section"
+                  data-aos="fade-right"
+                  data-aos-delay="500"
+                >
+                    <div class="quote-card">
+                      <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                      </div>
+                      <blockquote class="inspirational-quote">
+                        <p
+                          data-en="Success is born of sustained effort, continuous learning, and faith in the journey."
+                          data-fa="موفقیت زاده تلاش مستمر، یادگیری مداوم و ایمان به مسیر است."
+                        >
+                          "Success is born of sustained effort, continuous
+                          learning, and faith in the journey."
+                        </p>
+                      </blockquote>
+                      <div class="quote-author">
+                        <span
+                          data-en="— My Personal Motto"
+                          data-fa="— شعار شخصی من"
+                          >— My Personal Motto</span
+                        >
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1420,7 +1349,7 @@
               </div>
 
               <div class="resume-item">
-                <h4 data-en="LPIC-2" data-fa="LPIC-2">LPIC-2</h4>
+                <h4 data-en="LPIC-1" data-fa="LPIC-1">LPIC-2</h4>
                 <h5>2023</h5>
                 <p>
                   <em
@@ -1438,7 +1367,7 @@
               </div>
 
               <div class="resume-item">
-                <h4 data-en="LPIC-1" data-fa="LPIC-1">LPIC-1</h4>
+                <h4 data-en="LPIC-2" data-fa="LPIC-2">LPIC-1</h4>
                 <h5>2023</h5>
                 <p>
                   <em
@@ -3345,7 +3274,7 @@
       <section id="testimonials" class="testimonials section light-background">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2 data-en="Testimonials" data-fa="نظرات">Testimonials</h2>
+          <h2 data-en="💬 Testimonials" data-fa="💬 نظرات">💬 Testimonials</h2>
           <p
             data-en="What clients and colleagues say about my work and professional approach."
             data-fa="نظرات مشتریان و همکاران درباره کار و رویکرد حرفه‌ای من."
@@ -3360,282 +3289,278 @@
         ==================== TESTIMONIALS CONTENT =============
         =============================================== -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <!-- Swiper Configuration -->
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000,
-                  "pauseOnMouseEnter": true,
-                  "disableOnInteraction": false
-                },
-                "slidesPerView": 1,
-                "spaceBetween": 20,
-                "centeredSlides": true,
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true,
-                  "dynamicBullets": true
-                },
-                "navigation": {
-                  "nextEl": ".swiper-button-next",
-                  "prevEl": ".swiper-button-prev"
-                },
-                "breakpoints": {
-                  "320": {
-                    "slidesPerView": 1,
-                    "spaceBetween": 15,
-                    "centeredSlides": true
+          <!-- Modern Testimonials Slider -->
+          <div class="testimonials-slider">
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 800,
+                  "autoplay": {
+                    "delay": 4000,
+                    "pauseOnMouseEnter": true,
+                    "disableOnInteraction": false
                   },
-                  "480": {
-                    "slidesPerView": 1,
-                    "spaceBetween": 20,
-                    "centeredSlides": true
+                  "slidesPerView": 3,
+                  "spaceBetween": 30,
+                  "centeredSlides": false,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true,
+                    "dynamicBullets": true
                   },
-                  "768": {
-                    "slidesPerView": 2,
-                    "spaceBetween": 25,
-                    "centeredSlides": false
+                  "navigation": {
+                    "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"
                   },
-                  "992": {
-                    "slidesPerView": 2,
-                    "spaceBetween": 30,
-                    "centeredSlides": false
-                  },
-                  "1200": {
-                    "slidesPerView": 2,
-                    "spaceBetween": 30,
-                    "centeredSlides": false
+                  "breakpoints": {
+                    "320": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 20,
+                      "centeredSlides": true
+                    },
+                    "768": {
+                      "slidesPerView": 2,
+                      "spaceBetween": 30,
+                      "centeredSlides": false
+                    },
+                    "992": {
+                      "slidesPerView": 3,
+                      "spaceBetween": 30,
+                      "centeredSlides": false
+                    }
                   }
                 }
-              }
-            </script>
+              </script>
 
-            <!-- Testimonials Slider -->
-            <div class="swiper-wrapper">
-              <!-- Testimonial 1 -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      data-en="Amir's technical expertise and proactive approach have been game-changing for our IT infrastructure. His solutions are always reliable and well-thought-out."
-                      data-fa="تخصص فنی امیر و رویکرد پیشگیرانه‌اش برای زیرساخت IT ما تحول‌آفرین بوده. راهکارهایش همیشه قابل اعتماد و سنجیده است."
-                    >
-                      Amir's technical expertise and proactive approach have
-                      been game-changing for our IT infrastructure. His
-                      solutions are always reliable and well-thought-out.
-                    </span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img
-                    src="assets/img/testimonials/testimonials-1.jpg"
-                    loading="lazy"
-                    class="testimonial-img"
-                    alt="IT Director"
-                  />
-                  <h3 data-en="IT Director" data-fa="مدیر فناوری اطلاعات">
-                    IT Director
-                  </h3>
-                  <h4 data-en="NewshaDrinks Co." data-fa="شرکت نیوشاداریان ">
-                    NewshaDrinks Co.
-                  </h4>
+              <!-- Testimonials Slider -->
+              <div class="swiper-wrapper">
+                <!-- Testimonial 1 -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="testimonial-content">
+                      <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                      </div>
+                      <p class="testimonial-text">
+                        <span
+                          data-en="Amir's expertise in network infrastructure and system administration has been invaluable to our organization. His attention to detail and problem-solving skills are exceptional."
+                          data-fa="تخصص امیر در زیرساخت شبکه و مدیریت سیستم برای سازمان ما بسیار ارزشمند بوده است. توجه دقیق او به جزئیات و مهارت‌های حل مسئله فوق‌العاده است."
+                          >Amir's expertise in network infrastructure and system
+                          administration has been invaluable to our
+                          organization. His attention to detail and
+                          problem-solving skills are exceptional.</span
+                        >
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-avatar">
+                          <img
+                            src="assets/img/testimonials/testimonials-1.jpg"
+                            loading="lazy"
+                            alt="IT Director"
+                            width="80"
+                            height="80"
+                          />
+                        </div>
+                        <div class="author-info">
+                          <h4
+                            data-en="IT Director"
+                            data-fa="مدیر فناوری اطلاعات"
+                          >
+                            IT Director
+                          </h4>
+                          <span
+                            data-en="Newsha Drinks Co."
+                            data-fa="شرکت نوشیدنی نوشا"
+                            >Newsha Drinks Co.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="testimonial-content">
+                      <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                      </div>
+                      <p class="testimonial-text">
+                        <span
+                          data-en="Working with Amir on our virtualization project was a great experience. His technical knowledge and ability to explain complex concepts clearly made the implementation smooth and successful."
+                          data-fa="همکاری با امیر در پروژه مجازی‌سازی تجربه فوق‌العاده‌ای بود. دانش فنی عمیق او و توانایی در توضیح مفاهیم پیچیده، پیاده‌سازی را روان و موفق کرد."
+                          >Working with Amir on our virtualization project was a
+                          great experience. His technical knowledge and ability
+                          to explain complex concepts clearly made the
+                          implementation smooth and successful.</span
+                        >
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-avatar">
+                          <img
+                            src="assets/img/testimonials/testimonials-2.jpg"
+                            loading="lazy"
+                            alt="Project Manager"
+                            width="80"
+                            height="80"
+                          />
+                        </div>
+                        <div class="author-info">
+                          <h4 data-en="Project Manager" data-fa="مدیر پروژه">
+                            Project Manager
+                          </h4>
+                          <span
+                            data-en="Technology Solutions"
+                            data-fa="راهکارهای فناوری"
+                            >Technology Solutions</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="testimonial-content">
+                      <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                      </div>
+                      <p class="testimonial-text">
+                        <span
+                          data-en="Amir's monitoring and security implementations have significantly improved our system reliability. His proactive approach to IT infrastructure management is commendable."
+                          data-fa="پیاده‌سازی سیستم‌های نظارت و امنیت امیر، قابلیت اطمینان سیستم ما را به طور چشمگیری بهبود داده است. رویکرد پیشگیرانه او در مدیریت زیرساخت فناوری اطلاعات بسیار قابل تحسین است."
+                          >Amir's monitoring and security implementations have
+                          significantly improved our system reliability. His
+                          proactive approach to IT infrastructure management is
+                          commendable.</span
+                        >
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-avatar">
+                          <img
+                            src="assets/img/testimonials/testimonials-3.jpg"
+                            loading="lazy"
+                            alt="System Administrator"
+                            width="80"
+                            height="80"
+                          />
+                        </div>
+                        <div class="author-info">
+                          <h4
+                            data-en="System Administrator"
+                            data-fa="مدیر سیستم"
+                          >
+                            System Administrator
+                          </h4>
+                          <span
+                            data-en="Enterprise Client"
+                            data-fa="مشتری سازمانی"
+                            >Enterprise Client</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="testimonial-content">
+                      <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                      </div>
+                      <p class="testimonial-text">
+                        <span
+                          data-en="The network optimization and load balancing solutions implemented by Amir have greatly enhanced our internet connectivity and overall system performance."
+                          data-fa="راهکارهای بهینه‌سازی شبکه و تعادل بار پیاده‌سازی شده توسط امیر، اتصال اینترنت و عملکرد کلی سیستم ما را به طور چشمگیری بهبود داده است."
+                          >The network optimization and load balancing solutions
+                          implemented by Amir have greatly enhanced our internet
+                          connectivity and overall system performance.</span
+                        >
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-avatar">
+                          <img
+                            src="assets/img/testimonials/testimonials-4.jpg"
+                            loading="lazy"
+                            alt="Network Engineer"
+                            width="80"
+                            height="80"
+                          />
+                        </div>
+                        <div class="author-info">
+                          <h4 data-en="Network Engineer" data-fa="مهندس شبکه">
+                            Network Engineer
+                          </h4>
+                          <span
+                            data-en="Infrastructure Team"
+                            data-fa="تیم زیرساخت"
+                            >Infrastructure Team</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="testimonial-content">
+                      <div class="quote-icon">
+                        <i class="bi bi-quote"></i>
+                      </div>
+                      <p class="testimonial-text">
+                        <span
+                          data-en="Amir's expertise in DevOps and automation has streamlined our deployment processes. His technical documentation and knowledge transfer are excellent."
+                          data-fa="تخصص امیر در DevOps و اتوماسیون، فرآیندهای استقرار ما را به طور قابل توجهی روان کرده است. مستندات فنی و انتقال دانش او بسیار عالی است."
+                          >Amir's expertise in DevOps and automation has
+                          streamlined our deployment processes. His technical
+                          documentation and knowledge transfer are
+                          excellent.</span
+                        >
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-avatar">
+                          <img
+                            src="assets/img/testimonials/testimonials-5.jpg"
+                            loading="lazy"
+                            alt="DevOps Lead"
+                            width="80"
+                            height="80"
+                          />
+                        </div>
+                        <div class="author-info">
+                          <h4 data-en="DevOps Lead" data-fa="سرپرست DevOps">
+                            DevOps Lead
+                          </h4>
+                          <span data-en="Development Team" data-fa="تیم توسعه"
+                            >Development Team</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!-- End Testimonial 1 -->
+              <!-- End Testimonials Slider -->
 
-              <!-- Testimonial 2 -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      data-en="Amir made our virtualization project seamless. His clear explanations and QNAP storage expertise saved us weeks of work. Highly recommended!"
-                      data-fa="امیر پروژه مجازی‌سازی ما را بی‌نقص کرد. توضیحات واضحش و تخصصش در ذخیره‌سازی QNAP هفته‌ها کار ما را صرفه‌جویی کرد. به شدت توصیه می‌کنم!"
-                    >
-                      Amir made our virtualization project seamless. His clear
-                      explanations and QNAP storage expertise saved us weeks of
-                      work. Highly recommended!
-                    </span>
+              <!-- Swiper Navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
 
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img
-                    src="assets/img/testimonials/testimonials-2.jpg"
-                    loading="lazy"
-                    class="testimonial-img"
-                    alt="Project Manager"
-                  />
-                  <h3
-                    data-en="Creative Director & Founder of Pixel Studio"
-                    data-fa="مدیر خلاق و بنیان‌گذار استودیو پیکسل"
-                  >
-                    Creative Director & Founder of Pixel Studio
-                  </h3>
-
-                  <h4
-                    data-en="Creative Solutions for Digital Media"
-                    data-fa="راهکارهای خلاقانه برای رسانه‌های دیجیتال"
-                  >
-                    Creative Solutions for Digital Media
-                  </h4>
-                </div>
-              </div>
-              <!-- End Testimonial 2 -->
-
-              <!-- Testimonial 3 -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      data-en="Amir transformed our network infrastructure and camera systems. His attention to detail and leadership made the complex project look effortless. Exceptional work!"
-                      data-fa="امیر زیرساخت شبکه و سیستم دوربین‌های ما را متحول کرد. دقت و رهبری‌اش پروژه پیچیده را آسان نشان داد. کار فوق‌العاده!"
-                    >
-                      Amir transformed our network infrastructure and camera
-                      systems. His attention to detail and leadership made the
-                      complex project look effortless. Exceptional work!
-                    </span>
-
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img
-                    src="assets/img/testimonials/testimonials-3.jpg"
-                    loading="lazy"
-                    class="testimonial-img"
-                    alt="System Administrator"
-                  />
-                  <h3 data-en="Founder & Director" data-fa="موسس و مدیر">
-                    Founder & Director
-                  </h3>
-                  <h4 data-en="Faculty of Arts and Culture University" data-fa="دانشگاه فرهنگ و هنر واحد 48">
-                    Faculty of Arts and Culture University
-                  </h4>
-                </div>
-              </div>
-              <!-- End Testimonial 3 -->
-
-              <!-- Testimonial 4 -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      data-en="Amir's SQL Server HA setup was flawless. Our database uptime improved dramatically, and his scalable architecture design exceeded our expectations. A true professional!"
-                      data-fa="راه‌اندازی HA سرور SQL امیر بی‌نقص بود. زمان فعالیت پایگاه داده‌مان به شدت بهبود یافت و طراحی معماری مقیاس‌پذیرش فراتر از انتظارات ما بود. حرفه‌ای واقعی!"
-                    >
-                      Amir's SQL Server HA setup was flawless. Our database
-                      uptime improved dramatically, and his scalable
-                      architecture design exceeded our expectations. A true
-                      professional!
-                    </span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img
-                    src="assets/img/testimonials/testimonials-4.jpg"
-                    loading="lazy"
-                    class="testimonial-img"
-                    alt="Network Engineer"
-                  />
-                  <h3
-                    data-en="Database Administrator"
-                    data-fa="مدیر پایگاه داده"
-                  >
-                    Database Administrator
-                  </h3>
-                  <h4 data-en="Private Organization" data-fa="سازمان خصوصی">
-                    Private Organization
-                  </h4>
-                </div>
-              </div>
-              <!-- End Testimonial 4 -->
-
-              <!-- Testimonial 5 -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      data-en="Amir was an exceptional student with natural talent for IT. His problem-solving skills and genuine passion for technology made him stand out. He's destined for great success!"
-                      data-fa="امیر دانش‌آموزی استثنایی با استعداد طبیعی در IT بود. مهارت‌های حل مسئله‌اش و علاقه واقعی‌اش به فناوری او را متمایز می‌کرد. او برای موفقیت‌های بزرگ مقدر شده!"
-                    >
-                      Amir was an exceptional student with natural talent for
-                      IT. His problem-solving skills and genuine passion for
-                      technology made him stand out. He's destined for great
-                      success!
-                    </span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img
-                    src="assets/img/testimonials/testimonials-5.jpg"
-                    loading="lazy"
-                    class="testimonial-img"
-                    alt="DevOps Lead"
-                  />
-                  <h3
-                    data-en="Instructor of Microsoft & Cisco, Arzhang Institute"
-                    data-fa="مدرس مایکروسافت ، سیسکو"
-                  >
-                    Instructor of Microsoft & Cisco, Arzhang Institute
-                  </h3>
-                  <h4 data-en="Arzhang Institute" data-fa="مؤسسه ارژنگ">
-                    Arzhang Institute
-                  </h4>
-                </div>
-              </div>
-              <!-- End Testimonial 5 -->
-
-              <!-- Testimonial 6 -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      data-en="Amir's cloud migration strategy saved us thousands in costs while improving performance. His expertise in AWS and Azure is unmatched. Simply brilliant!"
-                      data-fa="استراتژی مهاجرت ابری امیر هزاران دلار هزینه ما را صرفه‌جویی کرد و عملکرد را بهبود بخشید. تخصصش در AWS و Azure بی‌نظیر است. به سادگی درخشان!"
-                    >
-                      Amir's cloud migration strategy saved us thousands in
-                      costs while improving performance. His expertise in AWS
-                      and Azure is unmatched. Simply brilliant!
-                    </span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img
-                    src="assets/img/testimonials/testimonial_photo_3.jpg"
-                    loading="lazy"
-                    class="testimonial-img"
-                    alt="Cloud Solutions Architect"
-                  />
-                  <h3
-                    data-en="Cloud Solutions Architect"
-                    data-fa="معمار راهکارهای ابری"
-                  >
-                    Cloud Solutions Architect
-                  </h3>
-                  <h4
-                    data-en="Tech Innovations Ltd."
-                    data-fa="شرکت نوآوری‌های فناوری"
-                  >
-                    Tech Innovations Ltd.
-                  </h4>
-                </div>
-              </div>
-              <!-- End Testimonial 6 -->
+              <!-- Swiper Pagination -->
+              <div class="swiper-pagination"></div>
             </div>
-            <!-- End Testimonials Slider -->
-
-            <!-- Swiper Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Swiper Pagination -->
-            <div class="swiper-pagination"></div>
           </div>
-          <!-- End Swiper Container -->
         </div>
+
         <!-- End Testimonials Container -->
       </section>
       <!-- /Testimonials Section -->
@@ -3661,245 +3586,325 @@
         ==================== CONTACT CONTENT ================
         =============================================== -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <!-- ===============================================
-            ==================== CONTACT INFO ==================
-            =============================================== -->
-            <div class="col-lg-5">
-              <div class="info-wrap">
-                <!-- Address Info -->
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
+          <div class="contact-wrapper">
+            <!-- Contact Header -->
+            <div class="contact-header" data-aos="fade-up" data-aos-delay="150">
+              <div class="contact-intro">
+                <h3 class="contact-intro-title">
+                  <span
+                    data-en="Let's Work Together"
+                    data-fa="بیایید با هم کار کنیم"
+                    >Let's Work Together</span
+                  >
+                  <span class="title-accent">🤝</span>
+                </h3>
+                <p
+                  class="contact-intro-text"
+                  data-en="Ready to discuss your IT infrastructure needs? I'm here to help you achieve your goals with professional solutions."
+                  data-fa="آماده بحث در مورد نیازهای زیرساخت IT شما هستم؟ من اینجا هستم تا با راهکارهای حرفه‌ای به شما کمک کنم."
                 >
-                  <i class="bi bi-geo-alt flex-shrink-0"></i>
-                  <div>
-                    <h3 data-en="Address" data-fa="آدرس">Address</h3>
-                    <p data-en="Tehran, Iran" data-fa="تهران، ایران">
-                      Tehran, Iran
-                    </p>
-                  </div>
-                </div>
-                <!-- End Info Item -->
+                  Ready to discuss your IT infrastructure needs? I'm here to
+                  help you achieve your goals with professional solutions.
+                </p>
+              </div>
+            </div>
 
-                <!-- Phone Info -->
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <i class="bi bi-telephone flex-shrink-0"></i>
-                  <div>
-                    <h3 data-en="Phone" data-fa="تلفن">Phone</h3>
-                    <p>
-                      <a
-                        href="tel:+989197276219"
-                        data-en="+98 9197276219"
-                        data-fa="09197276219"
-                        >+98 9197276219</a
+            <!-- Contact Main Grid -->
+            <div class="contact-main-grid">
+              <!-- Left Column - Contact Methods -->
+              <div class="contact-methods">
+                <!-- Quick Contact Cards -->
+                <div class="contact-cards-grid">
+                  <!-- Phone Card -->
+                  <div
+                    class="contact-card phone-card"
+                    data-aos="fade-right"
+                    data-aos-delay="200"
+                  >
+                    <div class="card-icon">
+                      <i class="bi bi-telephone"></i>
+                    </div>
+                    <div class="card-content">
+                      <h4 data-en="Call Me" data-fa="تماس تلفنی">Call Me</h4>
+                      <p
+                        data-en="Direct phone consultation"
+                        data-fa="مشاوره تلفنی مستقیم"
                       >
-                    </p>
+                        Direct phone consultation
+                      </p>
+                      <a href="tel:+989197276219" class="contact-link">
+                        <span data-en="+98 9197276219" data-fa="09197276219"
+                          >+98 9197276219</span
+                        >
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <!-- End Info Item -->
 
-                <!-- WhatsApp Info -->
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="350"
-                >
-                  <i class="bi bi-whatsapp flex-shrink-0"></i>
-                  <div>
-                    <h3 data-en="WhatsApp" data-fa="واتساپ">WhatsApp</h3>
-                    <p>
+                  <!-- WhatsApp Card -->
+                  <div
+                    class="contact-card whatsapp-card"
+                    data-aos="fade-right"
+                    data-aos-delay="250"
+                  >
+                    <div class="card-icon">
+                      <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div class="card-content">
+                      <h4 data-en="WhatsApp" data-fa="واتساپ">WhatsApp</h4>
+                      <p
+                        data-en="Quick messaging & support"
+                        data-fa="پیام‌رسانی سریع و پشتیبانی"
+                      >
+                        Quick messaging & support
+                      </p>
                       <a
                         href="https://wa.me/989197276219"
                         target="_blank"
                         rel="noopener"
-                        data-en="+98 9197276219"
-                        data-fa="09197276219"
-                        >+98 9197276219</a
+                        class="contact-link"
                       >
-                    </p>
+                        <span data-en="Start Chat" data-fa="شروع گفتگو"
+                          >Start Chat</span
+                        >
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <!-- End Info Item -->
 
-                <!-- Telegram Info -->
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="375"
-                >
-                  <i class="bi bi-telegram flex-shrink-0"></i>
-                  <div>
-                    <h3 data-en="Telegram" data-fa="تلگرام">Telegram</h3>
-                    <p>
+                  <!-- Email Card -->
+                  <div
+                    class="contact-card email-card"
+                    data-aos="fade-right"
+                    data-aos-delay="300"
+                  >
+                    <div class="card-icon">
+                      <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="card-content">
+                      <h4 data-en="Email Me" data-fa="ایمیل">Email Me</h4>
+                      <p
+                        data-en="Detailed project discussions"
+                        data-fa="بحث‌های تفصیلی پروژه"
+                      >
+                        Detailed project discussions
+                      </p>
+                      <a
+                        href="mailto:jalalian.amirhossein@gmail.com"
+                        class="contact-link"
+                      >
+                        <span>jalalian.amirhossein@gmail.com</span>
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Telegram Card -->
+                  <div
+                    class="contact-card telegram-card"
+                    data-aos="fade-right"
+                    data-aos-delay="350"
+                  >
+                    <div class="card-icon">
+                      <i class="bi bi-telegram"></i>
+                    </div>
+                    <div class="card-content">
+                      <h4 data-en="Telegram" data-fa="تلگرام">Telegram</h4>
+                      <p data-en="Instant communication" data-fa="ارتباط فوری">
+                        Instant communication
+                      </p>
                       <a
                         href="https://t.me/Aj_mercury"
                         target="_blank"
                         rel="noopener"
-                        >@Aj_mercury</a
+                        class="contact-link"
                       >
-                    </p>
+                        <span>@Aj_mercury</span>
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <!-- End Info Item -->
 
-                <!-- Email Info -->
+                <!-- Location Info -->
                 <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
+                  class="location-info"
+                  data-aos="fade-right"
                   data-aos-delay="400"
                 >
-                  <i class="bi bi-envelope flex-shrink-0"></i>
-                  <div>
-                    <h3 data-en="Email" data-fa="ایمیل">Email</h3>
-                    <p>
-                      <a href="mailto:jalalian.amirhossein@gmail.com"
-                        >jalalian.amirhossein@gmail.com</a
-                      >
-                    </p>
+                  <div class="location-card">
+                    <div class="location-header">
+                      <i class="bi bi-geo-alt"></i>
+                      <h4 data-en="My Location" data-fa="موقعیت من">
+                        My Location
+                      </h4>
+                    </div>
+                    <div class="location-content">
+                      <p data-en="Tehran, Iran" data-fa="تهران، ایران">
+                        Tehran, Iran
+                      </p>
+                      <div class="map-container">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1145.5099796149461!2d51.40510627035861!3d35.701826831163324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e010c2bbc0853%3A0xd7ec3a4d591a3242!2sReza%20Computer%20Center!5e0!3m2!1sen!2sde!4v1756209223815!5m2!1sen!2sde"
+                          frameborder="0"
+                          style="
+                            border: 0;
+                            width: 100%;
+                            height: 200px;
+                            border-radius: 12px;
+                          "
+                          allowfullscreen=""
+                          loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade"
+                          title="موقعیت مکانی - تهران، ایران"
+                        ></iframe>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <!-- End Info Item -->
+              </div>
 
-                <!-- Google Maps -->
-                <div class="map-container">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1145.5099796149461!2d51.40510627035861!3d35.701826831163324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e010c2bbc0853%3A0xd7ec3a4d591a3242!2sReza%20Computer%20Center!5e0!3m2!1sen!2sde!4v1756209223815!5m2!1sen!2sde"
-                    frameborder="0"
-                    style="border: 0; width: 100%; height: 300px"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="موقعیت مکانی - تهران، ایران"
-                  ></iframe>
+              <!-- Right Column - Contact Form -->
+              <div
+                class="contact-form-section"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
+                <div class="form-container">
+                  <div class="form-header">
+                    <h3 class="form-title">
+                      <span data-en="Send a Message" data-fa="ارسال پیام"
+                        >Send a Message</span
+                      >
+                      <span class="title-accent">💬</span>
+                    </h3>
+                    <p
+                      class="form-subtitle"
+                      data-en="Fill out the form below and I'll get back to you within 24 hours"
+                      data-fa="فرم زیر را پر کنید و من ظرف ۲۴ ساعت به شما پاسخ خواهم داد"
+                    >
+                      Fill out the form below and I'll get back to you within 24
+                      hours
+                    </p>
+                  </div>
+
+                  <form
+                    action="forms/contact.php"
+                    method="post"
+                    class="modern-contact-form"
+                  >
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="name-field" class="form-label">
+                          <i class="bi bi-person"></i>
+                          <span data-en="Your Name" data-fa="نام شما"
+                            >Your Name</span
+                          >
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          id="name-field"
+                          class="form-input"
+                          placeholder="Enter your full name"
+                          required
+                          minlength="2"
+                          maxlength="50"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email-field" class="form-label">
+                          <i class="bi bi-envelope"></i>
+                          <span data-en="Your Email" data-fa="ایمیل شما"
+                            >Your Email</span
+                          >
+                        </label>
+                        <input
+                          type="email"
+                          class="form-input"
+                          name="email"
+                          id="email-field"
+                          placeholder="Enter your email address"
+                          required
+                          maxlength="100"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="subject-field" class="form-label">
+                        <i class="bi bi-tag"></i>
+                        <span data-en="Subject" data-fa="موضوع">Subject</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-input"
+                        name="subject"
+                        id="subject-field"
+                        placeholder="What's this about?"
+                        required
+                        minlength="5"
+                        maxlength="100"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message-field" class="form-label">
+                        <i class="bi bi-chat-text"></i>
+                        <span data-en="Message" data-fa="پیام">Message</span>
+                      </label>
+                      <textarea
+                        class="form-textarea"
+                        name="message"
+                        rows="6"
+                        id="message-field"
+                        placeholder="Tell me about your project or requirements..."
+                        required
+                        minlength="10"
+                        maxlength="1000"
+                      ></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                      <div class="form-status">
+                        <div
+                          class="loading"
+                          data-en="Sending..."
+                          data-fa="در حال ارسال..."
+                        >
+                          <i class="bi bi-hourglass-split"></i>
+                          <span>Sending...</span>
+                        </div>
+                        <div class="error-message">
+                          <i class="bi bi-exclamation-triangle"></i>
+                          <span>Error sending message. Please try again.</span>
+                        </div>
+                        <div
+                          class="sent-message"
+                          data-en="Message sent successfully! I'll get back to you soon."
+                          data-fa="پیام با موفقیت ارسال شد! به زودی به شما پاسخ خواهم داد."
+                        >
+                          <i class="bi bi-check-circle"></i>
+                          <span
+                            >Message sent successfully! I'll get back to you
+                            soon.</span
+                          >
+                        </div>
+                      </div>
+
+                      <button type="submit" class="submit-btn">
+                        <span data-en="Send Message" data-fa="ارسال پیام"
+                          >Send Message</span
+                        >
+                        <i class="bi bi-send"></i>
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-            <!-- End Contact Info -->
-
-            <!-- ===============================================
-            ==================== CONTACT FORM ==================
-            =============================================== -->
-            <div class="col-lg-7">
-              <form
-                action="forms/contact.php"
-                method="post"
-                class="php-email-form"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <label
-                      for="name-field"
-                      class="pb-2"
-                      data-en="Your Name"
-                      data-fa="نام شما"
-                      >Your Name</label
-                    >
-                    <input
-                      type="text"
-                      name="name"
-                      id="name-field"
-                      class="form-control"
-                      required
-                      minlength="2"
-                      maxlength="50"
-                    />
-                  </div>
-
-                  <div class="col-md-6">
-                    <label
-                      for="email-field"
-                      class="pb-2"
-                      data-en="Your Email"
-                      data-fa="ایمیل شما"
-                      >Your Email</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email-field"
-                      required
-                      maxlength="100"
-                    />
-                  </div>
-
-                  <div class="col-md-12">
-                    <label
-                      for="subject-field"
-                      class="pb-2"
-                      data-en="Subject"
-                      data-fa="موضوع"
-                      >Subject</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="subject"
-                      id="subject-field"
-                      required
-                      minlength="5"
-                      maxlength="100"
-                    />
-                  </div>
-
-                  <div class="col-md-12">
-                    <label
-                      for="message-field"
-                      class="pb-2"
-                      data-en="Message"
-                      data-fa="پیام"
-                      >Message</label
-                    >
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      rows="10"
-                      id="message-field"
-                      required
-                      minlength="10"
-                      maxlength="1000"
-                    ></textarea>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div
-                      class="loading"
-                      data-en="Loading"
-                      data-fa="در حال ارسال"
-                    >
-                      Loading
-                    </div>
-                    <div class="error-message"></div>
-                    <div
-                      class="sent-message"
-                      data-en="Your message has been sent. Thank you!"
-                      data-fa="پیام شما ارسال شد. متشکرم!"
-                    >
-                      Your message has been sent. Thank you!
-                    </div>
-
-                    <button
-                      type="submit"
-                      data-en="Send Message"
-                      data-fa="ارسال پیام"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <!-- End Contact Form -->
           </div>
-          <!-- End Contact Row -->
         </div>
         <!-- End Contact Container -->
       </section>
@@ -3909,210 +3914,238 @@
     <!-- ===============================================
     ==================== FOOTER SECTION ==================
     =============================================== -->
-    <footer id="footer" class="footer position-relative light-background">
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
       <div class="container">
-        <div class="copyright text-center">
-          <p>
-            © <span>2025</span>
-            <strong
-              class="px-1"
-              data-en="Amir Hossein Jalalian"
-              data-fa="امیرحسین جلالیان"
-              >Amir Hossein Jalalian</strong
-            >
-            ❤️
-            <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">
-              All Rights Reserved
-            </span>
-          </p>
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
+              </p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
     <!-- End Footer Section -->
 
     <!-- ===============================================
-    ==================== SCROLL TO TOP ===================
-    =============================================== -->
-    <a
-      href="#hero"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      aria-label="Scroll to top"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
-
-    <!-- ===============================================
     PAGE PRELOADER
     =============================================== -->
     <div id="preloader">
-      <div class="logo-container">
-        <img src="assets/img/logo.png" alt="AJ Network" />
+      <div class="preloader-container">
+        <!-- Logo Animation -->
+        <div class="preloader-logo">
+          <img
+            src="assets/img/logo.png"
+            alt="Meet AJ Logo"
+            width="80"
+            height="80"
+          />
+          <div class="logo-ring"></div>
+        </div>
+
+        <!-- Loading Text -->
+        <div class="preloader-text">
+          <h3>Meet AJ</h3>
+          <p data-en="Loading..." data-fa="در حال بارگذاری...">Loading...</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="preloader-progress">
+          <div class="progress-bar"></div>
+        </div>
+
+        <!-- Loading Dots -->
+        <div class="loading-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <div class="network-nodes"></div>
-      <div class="loading-text">Initializing Secure Network</div>
-      <div class="progress-container">
-        <div class="progress-bar"></div>
-      </div>
-      <div class="status-text">Establishing encrypted connection...</div>
     </div>
 
     <!-- ===============================================
-    CRITICAL JAVASCRIPT - LOADED IMMEDIATELY
+    JAVASCRIPT LIBRARIES & SCRIPTS
     =============================================== -->
 
-    <!-- Critical mobile navigation functionality -->
-    <script>
-      // Critical mobile navigation functionality for better FID/INP
-      (function () {
-        "use strict";
+    <!-- Bootstrap JavaScript Bundle -->
+    <script
+      src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
 
-        const headerToggleBtn = document.querySelector("#menu-toggle");
-        const header = document.querySelector("#header");
-        let overlay = document.getElementById("menu-overlay");
+    <!-- PHP Email Form Validation -->
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
 
-        if (!overlay) {
-          overlay = document.createElement("div");
-          overlay.id = "menu-overlay";
-          overlay.className = "mobile-menu-overlay";
-          document.body.appendChild(overlay);
-        }
+    <!-- AOS Animation Library -->
+    <script src="assets/vendor/aos/aos.js" defer></script>
 
-        function openMenu() {
-          if (header) {
-            header.classList.add("header-show");
-            overlay.classList.add("active");
-            if (headerToggleBtn) {
-              headerToggleBtn.setAttribute("aria-expanded", "true");
-              const icon = headerToggleBtn.querySelector("i");
-              if (icon) {
-                icon.classList.remove("bi-list");
-                icon.classList.add("bi-x");
-              }
-            }
-            document.body.style.overflow = "hidden";
-          }
-        }
+    <!-- Typed.js Text Animation -->
+    <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
 
-        function closeMenu() {
-          if (header) {
-            header.classList.remove("header-show");
-            overlay.classList.remove("active");
-            if (headerToggleBtn) {
-              headerToggleBtn.setAttribute("aria-expanded", "false");
-              const icon = headerToggleBtn.querySelector("i");
-              if (icon) {
-                icon.classList.add("bi-list");
-                icon.classList.remove("bi-x");
-              }
-            }
-            document.body.style.overflow = "";
-          }
-        }
+    <!-- PureCounter Counter Animation -->
+    <script
+      src="assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
 
-        function headerToggle() {
-          if (header && header.classList.contains("header-show")) {
-            closeMenu();
-          } else {
-            openMenu();
-          }
-        }
+    <!-- Waypoints Scroll Triggers -->
+    <script
+      src="assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
 
-        // Event listeners
-        if (headerToggleBtn) {
-          headerToggleBtn.addEventListener("click", headerToggle);
-        }
+    <!-- GLightbox Gallery -->
+    <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
 
-        if (overlay) {
-          overlay.addEventListener("click", closeMenu);
-        }
+    <!-- ImagesLoaded Plugin -->
+    <script
+      src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
 
-        // Close menu after clicking menu links on mobile
-        document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-          navmenu.addEventListener("click", (e) => {
-            if (
-              window.innerWidth < 1200 &&
-              header &&
-              header.classList.contains("header-show")
-            ) {
-              closeMenu();
-            }
-          });
-        });
-      })();
-    </script>
+    <!-- Isotope Layout Plugin -->
+    <script
+      src="assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
+
+    <!-- Swiper Slider -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
     <!-- ===============================================
-    NON-CRITICAL JAVASCRIPT - LOADED DEFERRED
+    CUSTOM JAVASCRIPT MODULES
     =============================================== -->
 
-    <!-- Load non-critical JavaScript after page load for better FID/INP -->
-    <script>
-      // Defer non-critical JavaScript loading
-      function loadScript(src, callback) {
-        const script = document.createElement("script");
-        script.src = src;
-        script.async = true;
-        if (callback) script.onload = callback;
-        document.head.appendChild(script);
-      }
+    <!-- Main Application JavaScript -->
+    <script src="assets/js/main.js?v=999" defer></script>
 
-      // Load scripts after DOM is ready
-      document.addEventListener("DOMContentLoaded", function () {
-        // Load Bootstrap JS Bundle
-        loadScript("assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-
-        // Load AOS Animation Library
-        loadScript("assets/vendor/aos/aos.js", function () {
-          if (typeof AOS !== "undefined") {
-            AOS.init({
-              duration: 800,
-              easing: "ease-in-out",
-              once: true,
-              mirror: false,
-            });
-          }
-        });
-
-        // Load GLightbox Gallery Library
-        loadScript("assets/vendor/glightbox/js/glightbox.min.js", function () {
-          if (typeof GLightbox !== "undefined") {
-            GLightbox({
-              selector: ".glightbox",
-              touchNavigation: true,
-              loop: true,
-              autoplayVideos: false,
-            });
-          }
-        });
-
-        // Load Swiper Slider Library
-        loadScript("assets/vendor/swiper/swiper-bundle.min.js");
-
-        // Load Typed.js Animation Library
-        loadScript("assets/vendor/typed.js/typed.umd.js");
-
-        // Load PureCounter Animation Library
-        loadScript("assets/vendor/purecounter/purecounter_vanilla.js");
-
-        // Load Waypoints Scroll Library
-        loadScript("assets/vendor/waypoints/noframework.waypoints.js");
-
-        // Load ImagesLoaded Library
-        loadScript("assets/vendor/imagesloaded/imagesloaded.pkgd.min.js");
-
-        // Load Isotope Layout Library
-        loadScript("assets/vendor/isotope-layout/isotope.pkgd.min.js");
-
-        // Load PHP Email Form Validation
-        loadScript("assets/vendor/php-email-form/validate.js");
-
-        // Load main JavaScript
-        loadScript("assets/js/main.js?v=999");
-
-        // Load internationalization JavaScript
-        loadScript("assets/js/i18n.js?v=999");
-      });
-    </script>
+    <!-- Internationalization (i18n) Support -->
+    <!-- Language Toggle JavaScript -->
+    <script src="assets/js/i18n.js?v=999" defer></script>
 
     <!-- ===============================================
     SERVICE WORKER REGISTRATION
@@ -4123,11 +4156,14 @@
       // PERFORMANCE OPTIMIZATION & SERVICE WORKER
       // ===============================================
 
-      // Preload other critical resources for better performance
+      // Preload critical resources for better performance
       if ("requestIdleCallback" in window) {
         requestIdleCallback(() => {
-          // Preload images that will be needed soon (excluding already preloaded ones)
-          const criticalImages = ["assets/img/hero-bg.jpg"];
+          // Preload images that will be needed soon
+          const criticalImages = [
+            "assets/img/my-profile-img.jpg",
+            "assets/img/logo.png",
+          ];
           criticalImages.forEach((src) => {
             const link = document.createElement("link");
             link.rel = "preload";

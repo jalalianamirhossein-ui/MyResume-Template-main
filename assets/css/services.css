@@ -3,84 +3,49 @@
  * MEET AJ PORTFOLIO - SERVICES PAGE STYLES
  * ===============================================
  * 
- * Modern Professional Services Page CSS
- * IT Services showcase with modern design
+ * Clean & Simple Service Pages CSS
+ * Professional IT Services showcase styling
  * 
  * Features:
- * - Modern card-based layout with glassmorphism
- * - Responsive design with mobile-first approach
- * - Professional typography and spacing
- * - Service pricing display with modern styling
- * - Multi-language support (RTL/LTR)
- * - Consistent color palette with main site
+ * - Modern card-based layout
+ * - Responsive design
+ * - Clean typography
+ * - Service pricing display
+ * - Multi-language support
  * 
  * Author: AmirHossein Jalalian
- * Version: 3.0.0
- * Last Updated: December 2024
+ * Updated: December 2024
  * 
  * ===============================================
  */
-
-/* Prevent horizontal scroll */
-html,
-body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* Ensure all containers respect viewport width */
-.container,
-.card,
-.service-card {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
 
 /*--------------------------------------------------------------
 # CSS VARIABLES & DESIGN SYSTEM
 --------------------------------------------------------------*/
 
 /**
- * Modern Professional Color Palette
- * Consistent with main site design system
+ * Simple Color Palette
+ * Clean, professional color scheme for service pages
  */
 :root {
-  /* Apple Design System Color Palette - Consistent with main site */
-  --primary: #007aff; /* Modern Blue - Primary brand color */
-  --primary-hover: #0056cc; /* Primary hover state */
-  --secondary-accent: #007aff; /* Primary Accent Blue */
-  --accent-cyan: #007aff; /* Accent Blue - Apple Blue */
-  --accent-light-blue: #34c759; /* Success Green */
-  --info: #007aff; /* Info Blue - Information color */
-  --success: #34c759; /* Success Green - Success states */
-  --warning: #ff9500; /* Warning Orange - Warning states */
-  --danger: #ff3b30; /* Danger Red - Error states */
-  --security-accent: #007aff; /* Security accent (Blue) */
-  --devops-accent: #5856d6; /* Tech Highlight - DevOps accent */
-  --brand-highlight: #007aff; /* Tech Highlight */
-  --alert-green: #34c759; /* Alert Green */
+  /* Simple Color Palette */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #64748b;
+  --success: #059669;
+  --warning: #d97706;
+  --error: #dc2626;
 
-  /* Neutral Colors - Apple Design System */
-  --background: #fbfbfd; /* Main Background */
-  --surface: #ffffff; /* Surface Light */
-  --surface-muted: #f5f5f7; /* Muted Surface */
-  --divider-border: #e5e5ea; /* Divider Border */
-  --text-primary: #1d1d1f; /* Primary Text */
-  --text-secondary: #6e6e73; /* Secondary Text */
-  --disabled-quaternary: #8e8e93; /* Disabled Text */
-  --muted-text: #6e6e73; /* Muted Text */
+  --bg: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-gray: #f1f5f9;
 
-  /* Legacy Variables for Compatibility */
-  --primary-dark: var(--primary-hover);
-  --secondary: var(--text-secondary);
-  --bg: var(--surface);
-  --bg-light: var(--surface-muted);
-  --bg-gray: var(--surface-muted);
-  --text: var(--text-primary);
-  --text-light: var(--text-secondary);
-  --text-muted: var(--disabled-quaternary);
-  --border: var(--divider-border);
-  --border-light: var(--surface-muted);
+  --text: #1e293b;
+  --text-light: #64748b;
+  --text-muted: #94a3b8;
+
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
 
   /* Simple Spacing */
   --space-1: 0.25rem;
@@ -192,48 +157,23 @@ p {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   border: none;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   font-size: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.btn:hover::before {
-  left: 100%;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-  color: var(--surface);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  background: var(--primary);
+  color: white;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
-  color: var(--surface);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  background: var(--primary-dark);
+  color: white;
 }
 
 .btn-outline {
@@ -244,22 +184,17 @@ p {
 
 .btn-outline:hover {
   background: var(--primary);
-  color: var(--surface);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  color: white;
 }
 
 .btn-success {
-  background: linear-gradient(135deg, var(--success), #059669);
-  color: var(--surface);
-  box-shadow: 0 4px 15px rgba(52, 199, 89, 0.3);
+  background: var(--success);
+  color: white;
 }
 
 .btn-success:hover {
-  background: linear-gradient(135deg, #059669, var(--success));
-  color: var(--surface);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(52, 199, 89, 0.4);
+  background: #047857;
+  color: white;
 }
 
 /* Grid */
@@ -285,7 +220,7 @@ p {
 }
 
 .badge-primary {
-  background: var(--accent-light-blue);
+  background: #dbeafe;
   color: var(--primary);
 }
 
@@ -498,7 +433,7 @@ p {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 /* Toast */
@@ -528,68 +463,28 @@ p {
   display: flex;
   gap: var(--space-2);
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(59, 130, 246, 0.15);
-  border-radius: var(--radius-lg);
-  padding: var(--space-2);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.language-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
-  border-color: rgba(6, 182, 212, 0.3);
 }
 
 .lang-btn {
   padding: var(--space-2) var(--space-4);
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-light);
   border-radius: var(--radius);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.lang-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(59, 130, 246, 0.1),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.lang-btn:hover::before {
-  left: 100%;
+  transition: all 0.2s ease;
 }
 
 .lang-btn.active {
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-  color: var(--surface);
+  background: var(--primary);
+  color: white;
   border-color: var(--primary);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-  transform: scale(1.05);
 }
 
 .lang-btn:hover {
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--primary);
-  border-color: rgba(59, 130, 246, 0.2);
-  transform: translateY(-1px);
+  background: var(--bg-light);
 }
 
 .back-button {
@@ -598,26 +493,21 @@ p {
   left: var(--space-6);
   z-index: 1000;
   padding: var(--space-2) var(--space-4);
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--text-secondary);
-  border: 1px solid rgba(59, 130, 246, 0.15);
-  border-radius: var(--radius-lg);
+  background: var(--bg);
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 .back-button:hover {
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--primary);
-  border-color: rgba(59, 130, 246, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
+  background: var(--bg-light);
+  color: var(--text);
   text-decoration: none;
 }
 

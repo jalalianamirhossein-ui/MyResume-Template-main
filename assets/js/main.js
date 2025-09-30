@@ -2,16 +2,16 @@
  * ===============================================
  * MEET AJ PORTFOLIO - MAIN JAVASCRIPT
  * ===============================================
- *
+ * 
  * Main JavaScript functionality for the portfolio website
  * Handles navigation, mobile menu, and UI interactions
- *
+ * 
  * Features:
  * - Mobile navigation toggle
  * - Smooth scrolling
  * - Menu overlay management
  * - Accessibility improvements
- *
+ * 
  * ===============================================
  */
 (function () {
@@ -205,6 +205,7 @@
   }
   window.addEventListener("load", aosInit);
 
+
   if (window.PureCounter) {
     // Improve mobile settings for PureCounter
     let config = {
@@ -267,84 +268,6 @@
 
     const glightbox = GLightbox(config);
   }
-
-  // Initialize Typed.js Animation
-  function initTyped() {
-    if (window.Typed) {
-      const typedElements = document.querySelectorAll(".typed");
-
-      typedElements.forEach((element) => {
-        // Destroy existing Typed instance if it exists
-        if (element.typedInstance) {
-          element.typedInstance.destroy();
-        }
-
-        // Get current language
-        const currentLang = document.documentElement.lang || "en";
-        const isPersian = currentLang === "fa";
-
-        // Get strings based on current language
-        let strings;
-        if (isPersian) {
-          const faStrings = element.getAttribute("data-typed-items-fa");
-          strings = faStrings ? faStrings.split(", ") : ["متخصص شبکه هستم"];
-        } else {
-          const enStrings = element.getAttribute("data-typed-items");
-          strings = enStrings ? enStrings.split(", ") : ["Network Specialist"];
-        }
-
-        // Typed.js configuration
-        const typedConfig = {
-          strings: strings,
-          typeSpeed: 50,
-          backSpeed: 30,
-          backDelay: 2000,
-          startDelay: 1000,
-          loop: true,
-          showCursor: true,
-          cursorChar: "|",
-          smartBackspace: true,
-        };
-
-        // Improve mobile settings for Typed.js
-        if (window.innerWidth <= 768) {
-          typedConfig.typeSpeed = 40;
-          typedConfig.backSpeed = 25;
-          typedConfig.backDelay = 1500;
-        }
-
-        // Initialize Typed.js and store instance
-        element.typedInstance = new Typed(element, typedConfig);
-      });
-    }
-  }
-
-  // Initialize Typed.js after DOM is ready
-  window.addEventListener("load", initTyped);
-
-  // Re-initialize Typed.js when language changes
-  function reinitTypedOnLanguageChange() {
-    // Listen for language changes
-    const observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "lang"
-        ) {
-          // Small delay to ensure language change is complete
-          setTimeout(initTyped, 100);
-        }
-      });
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["lang"],
-    });
-  }
-
-  // Start observing language changes
-  window.addEventListener("load", reinitTypedOnLanguageChange);
 
   function initPortfolio() {
     document
@@ -635,12 +558,18 @@
 
               // Improve mobile settings for Swiper
               if (window.innerWidth <= 768) {
-                config.slidesPerView = 3;
+                config.slidesPerView = 1;
                 config.spaceBetween = 20;
                 config.autoplay = {
                   delay: 4000,
                   disableOnInteraction: false,
                 };
+              } else if (window.innerWidth <= 991) {
+                config.slidesPerView = 2;
+                config.spaceBetween = 30;
+              } else {
+                config.slidesPerView = 3;
+                config.spaceBetween = 30;
               }
 
               if (swiperElement.classList.contains("swiper-tab")) {
@@ -649,7 +578,7 @@
                 }
               } else {
                 const swiper = new Swiper(swiperElement, config);
-
+                
                 // Keep autoplay running continuously for testimonials
                 // No pause/resume functionality - autoplay continues during hover
               }
@@ -755,40 +684,40 @@
     }
   });
 
-  // Improve mobile performance for preloader
+  // Premium Preloader Animation
   const preloader = document.querySelector("#preloader");
   if (preloader) {
+    let progress = 0;
+    const progressBar = preloader.querySelector(".progress-bar");
+    
+    // Simulate loading progress
+    const progressInterval = setInterval(() => {
+      progress += Math.random() * 15;
+      if (progress > 100) progress = 100;
+      
+      if (progressBar) {
+        progressBar.style.width = progress + "%";
+      }
+      
+      if (progress >= 100) {
+        clearInterval(progressInterval);
+      }
+    }, 100);
+    
     window.addEventListener("load", () => {
+      // Ensure progress reaches 100%
+      if (progressBar) {
+        progressBar.style.width = "100%";
+      }
+      
       setTimeout(() => {
-        preloader.style.opacity = "0";
+        preloader.classList.add("fade-out");
         setTimeout(() => {
           preloader.remove();
-        }, 300);
-      }, 500);
+        }, 800);
+      }, 1000);
     });
   }
 
-  // Improve mobile performance for scroll top
-  let scrollTop = document.querySelector(".scroll-top");
-  function toggleScrollTop() {
-    if (!scrollTop) return;
-    let threshold = 100;
-    if (window.innerWidth <= 768) {
-      threshold = 50; // Reduce threshold for mobile
-    }
-
-    window.scrollY > threshold
-      ? scrollTop.classList.add("active")
-      : scrollTop.classList.remove("active");
-  }
-
-  if (scrollTop) {
-    scrollTop.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  window.addEventListener("load", toggleScrollTop);
   document.addEventListener("scroll", throttledScroll);
 })();

@@ -7,34 +7,14 @@
  * Overrides main styles to provide proper RTL layout and typography
  * 
  * Features:
- * - Persian font family integration (Vazirmatn, Estedad)
- * - RTL text alignment and layout adjustments
- * - Proper icon positioning for RTL
+ * - Persian font family integration
+ * - RTL text alignment
+ * - Proper icon positioning
  * - Mobile-responsive RTL layout
  * - Form and navigation RTL support
- * - About section RTL-specific styling
- * - Apple Design System color palette integration
- * 
- * Version: 3.0.0
- * Last Updated: December 2024
  * 
  * ===============================================
  */
-
-/* Prevent horizontal scroll in RTL */
-html[dir="rtl"],
-html[dir="rtl"] body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* Ensure RTL containers respect viewport width */
-html[dir="rtl"] .container,
-html[dir="rtl"] .article-container,
-html[dir="rtl"] .article-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
 
 /* Persian Fonts for RTL */
 html[dir="rtl"] {
@@ -43,13 +23,19 @@ html[dir="rtl"] {
   text-align: right !important;
 }
 
-/* General RTL text alignment - Only for text content */
+/* General RTL text alignment */
+html[dir="rtl"] body,
 html[dir="rtl"] p,
 html[dir="rtl"] div,
-html[dir="rtl"] span {
-  font-family: var(--persian-font) !important;
-  line-height: var(--persian-line-height) !important;
-  letter-spacing: var(--persian-letter-spacing) !important;
+html[dir="rtl"] span,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+  text-align: right !important;
+  direction: rtl !important;
 }
 
 /* RTL for main content */
@@ -85,27 +71,27 @@ html[dir="rtl"] .article-blocking .method-row {
 html[dir="rtl"] .article-blocking .intro-highlight,
 html[dir="rtl"] .article-blocking .prerequisites-box {
   border-left: none !important;
-  border-right: 6px solid var(--danger) !important;
+  border-right: 6px solid #d04338 !important;
 }
 
 html[dir="rtl"] .article-blocking .implementation-intro p {
   border-left: none !important;
-  border-right: 4px solid var(--accent-cyan) !important;
+  border-right: 4px solid #3388a5 !important;
 }
 
 html[dir="rtl"] .article-blocking .pros {
   border-left: none !important;
-  border-right: 4px solid var(--accent-cyan) !important;
+  border-right: 4px solid #3388a5 !important;
 }
 
 html[dir="rtl"] .article-blocking .cons {
   border-left: none !important;
-  border-right: 4px solid var(--danger) !important;
+  border-right: 4px solid #d04338 !important;
 }
 
 html[dir="rtl"] .article-blocking .author-bio .author-card {
   border-left: none !important;
-  border-right: 6px solid var(--danger) !important;
+  border-right: 6px solid #d04338 !important;
 }
 
 html[dir="rtl"] .article-blocking .code-block {
@@ -135,27 +121,27 @@ html[dir="rtl"] .article-openvpn .comparison-table {
 html[dir="rtl"] .article-openvpn .intro-highlight,
 html[dir="rtl"] .article-openvpn .prerequisites-box {
   border-left: none !important;
-  border-right: 6px solid var(--warning) !important;
+  border-right: 6px solid #ff8d19 !important;
 }
 
 html[dir="rtl"] .article-openvpn .implementation-intro p {
   border-left: none !important;
-  border-right: 4px solid var(--primary) !important;
+  border-right: 4px solid #0c3a53 !important;
 }
 
 html[dir="rtl"] .article-openvpn .pros {
   border-left: none !important;
-  border-right: 4px solid var(--primary) !important;
+  border-right: 4px solid #0c3a53 !important;
 }
 
 html[dir="rtl"] .article-openvpn .cons {
   border-left: none !important;
-  border-right: 4px solid var(--warning) !important;
+  border-right: 4px solid #ff8d19 !important;
 }
 
 html[dir="rtl"] .article-openvpn .author-bio .author-card {
   border-left: none !important;
-  border-right: 6px solid var(--warning) !important;
+  border-right: 6px solid #ff8d19 !important;
 }
 
 html[dir="rtl"] .article-openvpn .code-block {
@@ -180,7 +166,6 @@ html[dir="rtl"] .article-section h2:hover {
   transform: translateX(-10px) !important; /* Move left instead of right */
 }
 
-/* Typography RTL - Persian Fonts */
 html[dir="rtl"] h1,
 html[dir="rtl"] h2,
 html[dir="rtl"] h3,
@@ -193,8 +178,6 @@ html[dir="rtl"] h6 {
 
 html[dir="rtl"] .navmenu a {
   font-family: var(--persian-font) !important;
-  text-align: right;
-  direction: rtl;
 }
 
 html[dir="rtl"] .hero h2 {
@@ -235,7 +218,6 @@ html[dir="rtl"] .contact .info-item h3 {
   font-weight: 600;
 }
 
-/* Icon positioning RTL */
 html[dir="rtl"] .contact .info-item i {
   margin-right: 0;
   margin-left: 15px;
@@ -268,17 +250,10 @@ html[dir="rtl"] .contact .info-item p {
   text-align: right;
 }
 
-/* Form RTL - Keep LTR for technical inputs */
 html[dir="rtl"] .contact .php-email-form input,
 html[dir="rtl"] .contact .php-email-form textarea {
   text-align: right;
   direction: rtl;
-  font-family: var(--persian-font) !important;
-}
-
-html[dir="rtl"] .contact .php-email-form input::placeholder,
-html[dir="rtl"] .contact .php-email-form textarea::placeholder {
-  text-align: right;
 }
 
 html[dir="rtl"] .contact .php-email-form button {
@@ -290,27 +265,22 @@ html[dir="rtl"] .contact .php-email-form button {
   width: auto !important;
 }
 
-html[dir="rtl"] .contact .php-email-form .loading,
-html[dir="rtl"] .contact .php-email-form .sent-message {
-  font-family: var(--persian-font) !important;
-}
-
-/* Footer RTL - Center alignment */
 html[dir="rtl"] .footer .copyright {
   font-family: var(--persian-font) !important;
-  text-align: center !important;
+  text-align: center !important; /* Center align footer copyright in RTL */
 }
 
+/* RTL Footer Center Alignment */
 html[dir="rtl"] .footer {
-  text-align: center !important;
+  text-align: center !important; /* Center align entire footer in RTL */
 }
 
 html[dir="rtl"] .footer .copyright p {
-  text-align: center !important;
+  text-align: center !important; /* Center align copyright text in RTL */
 }
 
 html[dir="rtl"] .footer .credits {
-  text-align: center !important;
+  text-align: center !important; /* Center align credits in RTL */
 }
 
 /* General RTL improvements */
@@ -426,6 +396,22 @@ html[dir="rtl"] .services .service-item p {
   line-height: 1.7;
 }
 
+html[dir="rtl"] .contact .php-email-form input,
+html[dir="rtl"] .contact .php-email-form textarea {
+  font-family: var(--persian-font) !important;
+  text-align: right;
+}
+
+html[dir="rtl"] .contact .php-email-form input::placeholder,
+html[dir="rtl"] .contact .php-email-form textarea::placeholder {
+  text-align: right;
+}
+
+html[dir="rtl"] .contact .php-email-form .loading,
+html[dir="rtl"] .contact .php-email-form .sent-message {
+  font-family: var(--persian-font) !important;
+}
+
 /* Force header to the right on RTL */
 html[dir="rtl"] .header {
   left: auto !important;
@@ -458,23 +444,19 @@ html[dir="rtl"] .header {
   }
 }
 
-/* Navigation RTL - Keep LTR for technical elements */
+/* Details */
 html[dir="rtl"] .navmenu ul {
   text-align: right;
-  direction: rtl;
 }
-
 html[dir="rtl"] .header .logo img {
   margin-inline-start: 8px;
   margin-inline-end: 0;
 }
-
 html[dir="rtl"] .header .header-toggle {
   inset-inline-start: auto;
   inset-inline-end: 15px;
 }
 
-/* Menu toggle RTL - Keep LTR positioning */
 html[dir="rtl"] .menu-toggle {
   left: auto !important;
   right: 20px !important;
@@ -484,7 +466,6 @@ html[dir="rtl"] .menu-toggle {
 html[dir="rtl"] #navmenu a .navicon {
   margin-left: 10px;
 }
-
 html[dir="rtl"] .about .content ul strong {
   margin-left: 10px;
 }
@@ -496,6 +477,7 @@ html[dir="rtl"] .about .content ul strong {
     left: 20px !important;
     right: auto !important;
   }
+
 
   /* RTL mobile header positioning */
   html[dir="rtl"] .header {
@@ -731,7 +713,6 @@ html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
   }
 }
 
-/* Resume RTL */
 html[dir="rtl"] .resume .resume-item a::after {
   left: auto;
   right: 0;
@@ -785,277 +766,171 @@ html[dir="rtl"] .testimonials .testimonial-item h4 {
 html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
   margin: 0 auto 20px auto !important;
 }
-
-/* RTL Swiper Navigation Buttons */
-html[dir="rtl"] .testimonials .swiper-button-next {
-  right: auto !important;
-  left: 10px !important;
-  transform: scaleX(-1);
-}
-
-html[dir="rtl"] .testimonials .swiper-button-prev {
-  left: auto !important;
-  right: 10px !important;
-  transform: scaleX(-1);
-}
-
-html[dir="rtl"] .testimonials .swiper-button-next:after {
-  transform: scaleX(-1);
-}
-
-html[dir="rtl"] .testimonials .swiper-button-prev:after {
-  transform: scaleX(-1);
-}
-
-/* RTL Quote Icons Positioning */
-html[dir="rtl"] .testimonials .testimonial-item .quote-icon-left {
-  right: -4px !important;
-  left: auto !important;
-  transform: scaleX(-1);
-}
-
-html[dir="rtl"] .testimonials .testimonial-item .quote-icon-right {
-  left: -4px !important;
-  right: auto !important;
-  transform: scaleX(-1) scale(-1, -1);
-}
-
-/* RTL Testimonials Responsive */
-@media (max-width: 768px) {
-  html[dir="rtl"] .testimonials .testimonial-item {
-    text-align: center !important;
-    padding: 20px 15px;
-  }
-
-  html[dir="rtl"] .testimonials .testimonial-item p {
-    font-size: 14px;
-    line-height: 1.6;
-    text-align: center !important;
-    direction: rtl !important;
-  }
-
-  html[dir="rtl"] .testimonials .testimonial-item h3 {
-    font-size: 16px;
-    text-align: center !important;
-  }
-
-  html[dir="rtl"] .testimonials .testimonial-item h4 {
-    font-size: 13px;
-    text-align: center !important;
-  }
-
-  html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 15px auto !important;
-  }
-
-  /* Hide navigation buttons on mobile RTL */
-  html[dir="rtl"] .testimonials .swiper-button-next,
-  html[dir="rtl"] .testimonials .swiper-button-prev {
-    display: none !important;
-  }
-}
-
-@media (max-width: 480px) {
-  html[dir="rtl"] .testimonials .testimonial-item {
-    padding: 15px 12px;
-    min-height: 280px;
-  }
-
-  html[dir="rtl"] .testimonials .testimonial-item p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  html[dir="rtl"] .testimonials .testimonial-item h3 {
-    font-size: 15px;
-  }
-
-  html[dir="rtl"] .testimonials .testimonial-item h4 {
-    font-size: 12px;
-  }
-
-  html[dir="rtl"] .testimonials .testimonial-item .testimonial-img {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 12px auto !important;
-  }
-
-  html[dir="rtl"] .testimonials .swiper-pagination {
-    margin-top: 20px;
-  }
-}
-
-/* RTL Testimonials Hover Effects */
-html[dir="rtl"] .testimonials .testimonial-item:hover .quote-icon-left,
-html[dir="rtl"] .testimonials .testimonial-item:hover .quote-icon-right {
-  color: var(--accent) !important;
-  opacity: 1 !important;
-}
-
-/* RTL Testimonials Section Title */
-html[dir="rtl"] .testimonials .section-title h2 {
-  text-align: center !important;
-  font-family: var(--persian-heading-font) !important;
-}
-
-html[dir="rtl"] .testimonials .section-title p {
-  text-align: center !important;
-  direction: rtl !important;
-  font-family: var(--persian-font) !important;
-  line-height: 1.8;
-}
-
-/* RTL Testimonials Swiper Container */
-html[dir="rtl"] .testimonials .swiper {
-  direction: rtl;
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
-}
-
-html[dir="rtl"] .testimonials .swiper-wrapper {
-  direction: rtl;
-  align-items: stretch;
-}
-
-html[dir="rtl"] .testimonials .swiper-slide {
-  direction: rtl;
-  height: auto;
-  display: flex;
-}
-
-/* RTL Testimonials Pagination */
-html[dir="rtl"] .testimonials .swiper-pagination {
-  direction: ltr;
-  text-align: center;
-}
-
-html[dir="rtl"] .testimonials .swiper-pagination .swiper-pagination-bullet {
-  margin: 0 4px;
-}
-
-/* RTL Testimonials Flexbox Layout */
-html[dir="rtl"] .testimonials .testimonial-item {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  text-align: center !important;
-}
-
-html[dir="rtl"] .testimonials .testimonial-item p {
-  flex-grow: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  direction: rtl !important;
-  font-family: var(--persian-font) !important;
-  line-height: 1.8;
-}
-
-/* Mobile RTL Menu Toggle Optimization */
-@media (max-width: 1199px) {
-  html[dir="rtl"] .menu-toggle {
-    left: 20px !important;
-    right: auto !important;
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  html[dir="rtl"] .mobile-nav-toggle {
-    left: 20px !important;
-    right: auto !important;
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-}
-
-/* Mobile RTL Logo Adjustments */
-@media (max-width: 768px) {
-  html[dir="rtl"] .header .logo h1 {
-    font-size: 18px !important;
-    text-align: right !important;
-  }
-
-  html[dir="rtl"] .header .logo img {
-    max-height: 28px !important;
-    margin-left: 6px !important;
-    margin-right: 0 !important;
-  }
-
-  html[dir="rtl"] .header .profile-img {
-    width: 80px !important;
-    margin: 15px auto !important;
-  }
-
-  html[dir="rtl"] .header .profile-img img {
-    width: 80px !important;
-    border-width: 4px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  html[dir="rtl"] .header .logo h1 {
-    font-size: 16px !important;
-  }
-
-  html[dir="rtl"] .header .logo img {
-    max-height: 24px !important;
-    margin-left: 4px !important;
-  }
-
-  html[dir="rtl"] .header .profile-img {
-    width: 70px !important;
-    margin: 10px auto !important;
-  }
-}
-
-/*--------------------------------------------------------------
-# About Section RTL Styles
---------------------------------------------------------------*/
-
-/* Section Title RTL */
-html[dir="rtl"] .about .section-title {
-  text-align: right;
-}
-
-/* About Header RTL */
-html[dir="rtl"] .about-header {
-  text-align: right;
-}
-
-/* Info Item Hover RTL */
-html[dir="rtl"] .info-item:hover {
-  transform: translateX(-5px);
-}
-
-/* Contact Link Underline RTL */
-html[dir="rtl"] .contact-link::after {
-  left: auto;
-  right: 0;
-}
-
-/* Description & Philosophy Title RTL */
-html[dir="rtl"] .description-title,
-html[dir="rtl"] .philosophy-title {
-  flex-direction: row-reverse;
-}
-
-/* Quote Card RTL */
-html[dir="rtl"] .quote-card {
-  text-align: right;
-}
-
-/* Quote Icon RTL */
-html[dir="rtl"] .quote-card i {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-/* Quote Text RTL */
-html[dir="rtl"] .inspirational-quote p {
-  text-align: right;
-}
+/ *   R T L   S w i p e r   N a v i g a t i o n   B u t t o n s   * /  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - b u t t o n - n e x t   {  
+     r i g h t :   a u t o   ! i m p o r t a n t ;  
+     l e f t :   1 0 p x   ! i m p o r t a n t ;  
+     t r a n s f o r m :   s c a l e X ( - 1 ) ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - b u t t o n - p r e v   {  
+     l e f t :   a u t o   ! i m p o r t a n t ;  
+     r i g h t :   1 0 p x   ! i m p o r t a n t ;  
+     t r a n s f o r m :   s c a l e X ( - 1 ) ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - b u t t o n - n e x t : a f t e r   {  
+     t r a n s f o r m :   s c a l e X ( - 1 ) ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - b u t t o n - p r e v : a f t e r   {  
+     t r a n s f o r m :   s c a l e X ( - 1 ) ;  
+ }  
+  
+ / *   R T L   Q u o t e   I c o n s   P o s i t i o n i n g   * /  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   . q u o t e - i c o n - l e f t   {  
+     r i g h t :   - 4 p x   ! i m p o r t a n t ;  
+     l e f t :   a u t o   ! i m p o r t a n t ;  
+     t r a n s f o r m :   s c a l e X ( - 1 ) ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   . q u o t e - i c o n - r i g h t   {  
+     l e f t :   - 4 p x   ! i m p o r t a n t ;  
+     r i g h t :   a u t o   ! i m p o r t a n t ;  
+     t r a n s f o r m :   s c a l e X ( - 1 )   s c a l e ( - 1 ,   - 1 ) ;  
+ }  
+  
+ / *   R T L   T e s t i m o n i a l s   R e s p o n s i v e   * /  
+ @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   {  
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   {  
+         t e x t - a l i g n :   c e n t e r   ! i m p o r t a n t ;  
+         p a d d i n g :   2 0 p x   1 5 p x ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   p   {  
+         f o n t - s i z e :   1 4 p x ;  
+         l i n e - h e i g h t :   1 . 6 ;  
+         t e x t - a l i g n :   c e n t e r   ! i m p o r t a n t ;  
+         d i r e c t i o n :   r t l   ! i m p o r t a n t ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   h 3   {  
+         f o n t - s i z e :   1 6 p x ;  
+         t e x t - a l i g n :   c e n t e r   ! i m p o r t a n t ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   h 4   {  
+         f o n t - s i z e :   1 3 p x ;  
+         t e x t - a l i g n :   c e n t e r   ! i m p o r t a n t ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   . t e s t i m o n i a l - i m g   {  
+         w i d t h :   7 0 p x ;  
+         h e i g h t :   7 0 p x ;  
+         m a r g i n :   0   a u t o   1 5 p x   a u t o   ! i m p o r t a n t ;  
+     }  
+      
+     / *   H i d e   n a v i g a t i o n   b u t t o n s   o n   m o b i l e   R T L   * /  
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - b u t t o n - n e x t ,  
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - b u t t o n - p r e v   {  
+         d i s p l a y :   n o n e   ! i m p o r t a n t ;  
+     }  
+ }  
+  
+ @ m e d i a   ( m a x - w i d t h :   4 8 0 p x )   {  
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   {  
+         p a d d i n g :   1 5 p x   1 2 p x ;  
+         m i n - h e i g h t :   2 8 0 p x ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   p   {  
+         f o n t - s i z e :   1 3 p x ;  
+         l i n e - h e i g h t :   1 . 5 ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   h 3   {  
+         f o n t - s i z e :   1 5 p x ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   h 4   {  
+         f o n t - s i z e :   1 2 p x ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   . t e s t i m o n i a l - i m g   {  
+         w i d t h :   6 0 p x ;  
+         h e i g h t :   6 0 p x ;  
+         m a r g i n :   0   a u t o   1 2 p x   a u t o   ! i m p o r t a n t ;  
+     }  
+      
+     h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - p a g i n a t i o n   {  
+         m a r g i n - t o p :   2 0 p x ;  
+     }  
+ }  
+  
+ / *   R T L   T e s t i m o n i a l s   H o v e r   E f f e c t s   * /  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m : h o v e r   . q u o t e - i c o n - l e f t ,  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m : h o v e r   . q u o t e - i c o n - r i g h t   {  
+     c o l o r :   v a r ( - - a c c e n t )   ! i m p o r t a n t ;  
+     o p a c i t y :   1   ! i m p o r t a n t ;  
+ }  
+  
+ / *   R T L   T e s t i m o n i a l s   S e c t i o n   T i t l e   * /  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s e c t i o n - t i t l e   h 2   {  
+     t e x t - a l i g n :   c e n t e r   ! i m p o r t a n t ;  
+     f o n t - f a m i l y :   v a r ( - - p e r s i a n - h e a d i n g - f o n t )   ! i m p o r t a n t ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s e c t i o n - t i t l e   p   {  
+     t e x t - a l i g n :   c e n t e r   ! i m p o r t a n t ;  
+     d i r e c t i o n :   r t l   ! i m p o r t a n t ;  
+     f o n t - f a m i l y :   v a r ( - - p e r s i a n - f o n t )   ! i m p o r t a n t ;  
+     l i n e - h e i g h t :   1 . 8 ;  
+ }  
+  
+ / *   R T L   T e s t i m o n i a l s   S w i p e r   C o n t a i n e r   * /  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r   {  
+     d i r e c t i o n :   r t l ;  
+     t o u c h - a c t i o n :   p a n - y ;  
+     - w e b k i t - o v e r f l o w - s c r o l l i n g :   t o u c h ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - w r a p p e r   {  
+     d i r e c t i o n :   r t l ;  
+     a l i g n - i t e m s :   s t r e t c h ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - s l i d e   {  
+     d i r e c t i o n :   r t l ;  
+     h e i g h t :   a u t o ;  
+     d i s p l a y :   f l e x ;  
+ }  
+  
+ / *   R T L   T e s t i m o n i a l s   P a g i n a t i o n   * /  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - p a g i n a t i o n   {  
+     d i r e c t i o n :   l t r ;  
+     t e x t - a l i g n :   c e n t e r ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . s w i p e r - p a g i n a t i o n   . s w i p e r - p a g i n a t i o n - b u l l e t   {  
+     m a r g i n :   0   4 p x ;  
+ }  
+  
+ / *   R T L   T e s t i m o n i a l s   F l e x b o x   L a y o u t   * /  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   {  
+     d i s p l a y :   f l e x   ! i m p o r t a n t ;  
+     f l e x - d i r e c t i o n :   c o l u m n   ! i m p o r t a n t ;  
+     j u s t i f y - c o n t e n t :   s p a c e - b e t w e e n   ! i m p o r t a n t ;  
+     t e x t - a l i g n :   c e n t e r   ! i m p o r t a n t ;  
+ }  
+  
+ h t m l [ d i r = " r t l " ]   . t e s t i m o n i a l s   . t e s t i m o n i a l - i t e m   p   {  
+     f l e x - g r o w :   1   ! i m p o r t a n t ;  
+     d i s p l a y :   f l e x   ! i m p o r t a n t ;  
+     a l i g n - i t e m s :   c e n t e r   ! i m p o r t a n t ;  
+     j u s t i f y - c o n t e n t :   c e n t e r   ! i m p o r t a n t ;  
+     t e x t - a l i g n :   c e n t e r   ! i m p o r t a n t ;  
+     d i r e c t i o n :   r t l   ! i m p o r t a n t ;  
+     f o n t - f a m i l y :   v a r ( - - p e r s i a n - f o n t )   ! i m p o r t a n t ;  
+     l i n e - h e i g h t :   1 . 8 ;  
+ }  
+ 
