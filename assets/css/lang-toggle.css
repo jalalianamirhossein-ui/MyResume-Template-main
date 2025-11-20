@@ -50,19 +50,21 @@
   gap: 0.3rem;
   padding: 0.5rem 0.8rem;
   min-height: 36px;
-  background: var(--i18n-bg);
-  border: 1px solid var(--i18n-border);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50px;
   cursor: pointer;
   font: 600 13px/1.2 ui-sans-serif, system-ui;
-  color: var(--i18n-text);
+  color: #0b1220;
   position: absolute;
   top: 12px;
   inset-inline-end: 16px;
   user-select: none;
   outline: none;
   transition: var(--i18n-transition);
-  box-shadow: var(--i18n-shadow);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08);
   z-index: 1000;
   transform: scale(var(--i18n-scale)) rotate(var(--i18n-rotate));
   backdrop-filter: blur(10px);
@@ -78,11 +80,13 @@ html[dir="rtl"] .i18n-link {
 # PREMIUM HOVER EFFECTS
 --------------------------------------------------------------*/
 .i18n-link:hover {
-  background: var(--i18n-bg-hover);
-  box-shadow: var(--i18n-shadow-hover), var(--i18n-glow);
-  transform: scale(var(--i18n-scale-hover)) translateY(-2px) rotate(1deg);
-  color: var(--i18n-text-hover);
-  --i18n-rotate: 1deg;
+  background: rgba(37, 99, 235, 0.9); /* primary blue */
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px) scale(var(--i18n-scale-hover));
+  color: white;
 }
 
 .i18n-link:active {
@@ -99,7 +103,7 @@ html[dir="rtl"] .i18n-link {
   font-weight: 300;
   font-size: 0.85em;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: rgba(255, 255, 255, 0.7);
+  color: #1f2937;
   transform: scale(1);
 }
 
@@ -114,7 +118,7 @@ html[dir="rtl"] .i18n-link {
   font-weight: 700;
   font-size: 1em;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: white;
+  color: #0b1220;
   transform: scale(1);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -129,7 +133,7 @@ html[dir="rtl"] .i18n-link {
   opacity: 0.7;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: rgba(255, 255, 255, 0.8);
+  color: #111827;
   transform: scale(1);
 }
 

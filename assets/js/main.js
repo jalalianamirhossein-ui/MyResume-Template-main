@@ -684,39 +684,33 @@
     }
   });
 
-  // Premium Preloader Animation
+  // Modern Bilingual Preloader Animation
   const preloader = document.querySelector("#preloader");
+  
   if (preloader) {
-    let progress = 0;
-    const progressBar = preloader.querySelector(".progress-bar");
-    
-    // Simulate loading progress
-    const progressInterval = setInterval(() => {
-      progress += Math.random() * 15;
-      if (progress > 100) progress = 100;
-      
-      if (progressBar) {
-        progressBar.style.width = progress + "%";
-      }
-      
-      if (progress >= 100) {
-        clearInterval(progressInterval);
-      }
-    }, 100);
-    
+    // Hide preloader when page is loaded
     window.addEventListener("load", () => {
-      // Ensure progress reaches 100%
-      if (progressBar) {
-        progressBar.style.width = "100%";
-      }
-      
       setTimeout(() => {
-        preloader.classList.add("fade-out");
+        preloader.classList.remove("visible");
+        preloader.classList.add("hidden");
+        
         setTimeout(() => {
-          preloader.remove();
-        }, 800);
-      }, 1000);
+          preloader.style.display = "none";
+        }, 300);
+      }, 1500); // Show preloader for at least 1.5 seconds
     });
+    
+    // Optional: Hide preloader after minimum time even if page loads faster
+    setTimeout(() => {
+      if (preloader.classList.contains("visible")) {
+        preloader.classList.remove("visible");
+        preloader.classList.add("hidden");
+        
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 300);
+      }
+    }, 3000); // Maximum 3 seconds
   }
 
   document.addEventListener("scroll", throttledScroll);

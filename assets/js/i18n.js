@@ -1,62 +1,40 @@
 /**
- * Language Switch System - Minimal Nav Link Implementation
- * Clean, minimal implementation with navbar injection
- * 
- * @author Senior Frontend Architect
- * @version 9.0.0
+ * Language Switch System - Resilient Version
+ * Cleans corrupted data-fa attributes and falls back gracefully.
  */
 
 (() => {
   'use strict';
 
-  // Configuration
   const KEY = 'lang';
 
-  /**
-   * Detect initial language from localStorage, cookie, or browser
-   */
   const init = () => {
-    // Check localStorage first
     const stored = localStorage.getItem(KEY);
-    if (stored && (stored === 'fa' || stored === 'en')) {
-      return stored;
-    }
+    if (stored === 'fa' || stored === 'en') return stored;
 
-    // Check cookie
     const cookieMatch = document.cookie.match(/(?:^|;\s*)lang=(fa|en)\b/);
-    if (cookieMatch) {
-      return cookieMatch[1];
-    }
+    if (cookieMatch) return cookieMatch[1];
 
-    // Check browser language
     const browserLang = navigator.language || navigator.userLanguage;
-    if (browserLang && browserLang.startsWith('fa')) {
-      return 'fa';
-    }
+    if (browserLang && browserLang.startsWith('fa')) return 'fa';
 
-    // Default to English
     return 'en';
   };
 
-  /**
-   * Set language cookie
-   */
   const setCookie = (lang) => {
     document.cookie = `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax`;
   };
 
-  /**
-   * Apply language to the page
-   */
+  const isCorrupted = (val) =>
+    val == null || val.indexOf('\uFFFD') !== -1 || /[\u0000-\u001f]/.test(val);
+
   const apply = (lang) => {
     const isPersian = lang === 'fa';
     const html = document.documentElement;
-    
-    // Update HTML attributes
+
     html.lang = lang;
     html.dir = isPersian ? 'rtl' : 'ltr';
-    
-    // Enable/disable RTL CSS
+
     const rtlStyle = document.getElementById('rtl-style');
     if (rtlStyle) {
       if (isPersian) {
@@ -67,27 +45,30 @@
         rtlStyle.removeAttribute('rel');
       }
     }
-    
-    // Update text content for all translatable elements
-    document.querySelectorAll('[data-en][data-fa]').forEach(element => {
-      const translation = isPersian ? 
-        element.getAttribute('data-fa') : 
-        element.getAttribute('data-en');
-      
-      if (translation !== null) {
-        element.textContent = translation;
+
+    document.querySelectorAll('[data-en][data-fa]').forEach((el) => {
+      const en = el.getAttribute('data-en');
+      let fa = el.getAttribute('data-fa');
+
+      if (isCorrupted(fa)) {
+        fa = en || fa || '';
+        el.setAttribute('data-fa', fa);
+      }
+
+      const translation = isPersian ? fa : en;
+      if (translation != null) {
+        el.textContent = translation;
       }
     });
-    
-    // Update toggle button
+
     const btn = document.getElementById('lang-toggle');
     if (btn) {
       btn.setAttribute('aria-pressed', String(isPersian));
-      btn.setAttribute('aria-label', isPersian ? 
-        'تغییر زبان به English' : 
-        'Switch language to فارسی');
-      
-      // Update current and alternative language text
+      btn.setAttribute(
+        'aria-label',
+        isPersian ? 'تغییر زبان به انگلیسی' : 'Switch language to فارسی'
+      );
+
       const cur = btn.querySelector('.i18n-cur');
       const alt = btn.querySelector('.i18n-alt');
       if (cur && alt) {
@@ -95,39 +76,33 @@
         alt.textContent = isPersian ? 'EN' : 'FA';
       }
     }
-    
-    // Persist language preference
+
+    const preloaderContainer = document.getElementById('preloader-container');
+    const loadingText = document.getElementById('loading-text');
+    if (preloaderContainer && loadingText) {
+      preloaderContainer.className = `preloader-container ${
+        isPersian ? 'rtl' : 'ltr'
+      }`;
+      loadingText.textContent = isPersian
+        ? 'در حال بارگذاری...'
+        : 'Loading...';
+    }
+
     localStorage.setItem(KEY, lang);
     setCookie(lang);
   };
 
-  /**
-   * Toggle language with page refresh
-   */
   const toggle = () => {
     const currentLang = document.documentElement.lang;
     const nextLang = currentLang === 'fa' ? 'en' : 'fa';
-    
-    // Save the new language preference
     localStorage.setItem(KEY, nextLang);
     setCookie(nextLang);
-    
-    // Add a small delay for better UX, then refresh
-    setTimeout(() => {
-      window.location.reload();
-    }, 150);
+    setTimeout(() => window.location.reload(), 150);
   };
 
-  /**
-   * Auto-inject language toggle into navbar/header
-   */
   const injectLanguageToggle = () => {
-    // Check if toggle already exists
-    if (document.querySelector('#lang-toggle')) {
-      return;
-    }
-    
-    // Find navbar/header containers
+    if (document.querySelector('#lang-toggle')) return;
+
     const headerSelectors = [
       'nav',
       '.navbar',
@@ -136,44 +111,38 @@
       '.header',
       '.topbar',
       '#header',
-      '#navmenu'
+      '#navmenu',
     ];
-    
+
     let headerContainer = null;
     for (const selector of headerSelectors) {
       headerContainer = document.querySelector(selector);
-      if (headerContainer) {
-        break;
-      }
+      if (headerContainer) break;
     }
-    
-    // Create toggle button
+
     const toggleButton = document.createElement('button');
     toggleButton.id = 'lang-toggle';
     toggleButton.className = 'i18n-link';
     toggleButton.type = 'button';
     toggleButton.setAttribute('aria-pressed', 'false');
     toggleButton.setAttribute('aria-label', 'Switch language');
-    
-    // Create language segments
+
     const curSpan = document.createElement('span');
     curSpan.className = 'i18n-cur';
     curSpan.textContent = 'EN';
-    
+
     const sepSpan = document.createElement('span');
     sepSpan.className = 'i18n-sep';
     sepSpan.textContent = ' | ';
-    
+
     const altSpan = document.createElement('span');
     altSpan.className = 'i18n-alt';
     altSpan.textContent = 'FA';
-    
-    // Assemble button
+
     toggleButton.appendChild(curSpan);
     toggleButton.appendChild(sepSpan);
     toggleButton.appendChild(altSpan);
-    
-    // Inject into navbar/header or body
+
     if (headerContainer) {
       headerContainer.appendChild(toggleButton);
     } else {
@@ -181,68 +150,53 @@
     }
   };
 
-  /**
-   * Initialize the language switch system
-   */
   const initSystem = () => {
-    // Apply initial language
     apply(init());
-    
-    // Inject language toggle
     injectLanguageToggle();
-    
-    // Add event listeners
+
     const btn = document.getElementById('lang-toggle');
     if (!btn) return;
-    
-    // Click handler with visual feedback
+
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      
-      // Add visual feedback
       btn.style.transform = 'scale(0.95)';
       btn.style.opacity = '0.7';
-      
-      // Reset visual state after a short delay
       setTimeout(() => {
         btn.style.transform = '';
         btn.style.opacity = '';
       }, 100);
-      
-      // Toggle language
       toggle();
     });
-    
-    // Keyboard handler
+
     btn.addEventListener('keydown', (e) => {
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
-        
-        // Add visual feedback
         btn.style.transform = 'scale(0.95)';
         btn.style.opacity = '0.7';
-        
-        // Reset visual state after a short delay
         setTimeout(() => {
           btn.style.transform = '';
           btn.style.opacity = '';
         }, 100);
-        
-        // Toggle language
         toggle();
       }
     });
-    
-    // Listen for dynamic content
+
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
           if (node.nodeType === Node.ELEMENT_NODE) {
-            const headers = node.querySelectorAll ? 
-              node.querySelectorAll('nav, .navbar, .navmenu, header, .header, .topbar, #header, #navmenu') : 
-              (node.matches && node.matches('nav, .navbar, .navmenu, header, .header, .topbar, #header, #navmenu') ? [node] : []);
-            
-            headers.forEach(header => {
+            const headers = node.querySelectorAll
+              ? node.querySelectorAll(
+                  'nav, .navbar, .navmenu, header, .header, .topbar, #header, #navmenu'
+                )
+              : node.matches &&
+                node.matches(
+                  'nav, .navbar, .navmenu, header, .header, .topbar, #header, #navmenu'
+                )
+              ? [node]
+              : [];
+
+            headers.forEach((header) => {
               if (!header.querySelector('#lang-toggle')) {
                 injectLanguageToggle();
               }
@@ -251,21 +205,19 @@
         });
       });
     });
-    
+
     observer.observe(document.body, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
   };
 
-  // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSystem);
   } else {
     initSystem();
   }
 
-  // Expose public API
   window.i18n = {
     getCurrentLanguage: () => document.documentElement.lang,
     setLanguage: (lang) => {
@@ -280,7 +232,6 @@
     isRtlCssEnabled: () => {
       const rtlStyle = document.getElementById('rtl-style');
       return rtlStyle ? !rtlStyle.disabled : false;
-    }
+    },
   };
-
 })();
