@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <!-- ===============================================
@@ -21,7 +21,10 @@
     META TAGS & SEO CONFIGURATION
     =============================================== -->
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
 
     <!-- Page Title & SEO Meta Tags -->
     <title>Meet Aj - AmirHossein Jalalian Portfolio</title>
@@ -33,52 +36,6 @@
       content="Network Expert, DevOps Engineer, IT Infrastructure, Cisco, MikroTik, VMware, Linux, System Administration, Tehran Iran"
       name="keywords"
     />
-    <link rel="canonical" href="https://amirhosseinjalalian.com/" />
-    <meta property="og:site_name" content="Meet AJ" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Meet Aj - AmirHossein Jalalian Portfolio"
-    />
-    <meta
-      property="og:description"
-      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist. Experienced in Cisco, MikroTik, VMware, Linux administration, and system optimization."
-    />
-    <meta property="og:url" content="https://amirhosseinjalalian.com/" />
-    <meta
-      property="og:image"
-      content="https://amirhosseinjalalian.com/assets/img/hero-bg.jpg"
-    />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="fa_IR" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Meet Aj - AmirHossein Jalalian Portfolio"
-    />
-    <meta
-      name="twitter:description"
-      content="Professional portfolio of AmirHossein Jalalian - Network Expert, DevOps Engineer, and IT Infrastructure Specialist."
-    />
-    <meta
-      name="twitter:image"
-      content="https://amirhosseinjalalian.com/assets/img/hero-bg.jpg"
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "AmirHossein Jalalian",
-        "url": "https://amirhosseinjalalian.com/",
-        "jobTitle": "Network Expert & DevOps Engineer",
-        "image": "https://amirhosseinjalalian.com/assets/img/my-profile-img-2.jpg",
-        "sameAs": [
-          "https://www.linkedin.com/in/amirhosseinjalalian",
-          "https://github.com/amirhosseinjalalian",
-          "https://instagram.com/aj.mercury"
-        ]
-      }
-    </script>
 
     <!-- ===============================================
     FAVICONS & APP ICONS
@@ -97,7 +54,6 @@
     <meta name="apple-mobile-web-app-title" content="Meet AJ" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <link rel="preload" as="image" href="assets/img/hero-bg.jpg" />
 
     <!-- ===============================================
     GOOGLE FONTS & TYPOGRAPHY
@@ -145,6 +101,7 @@
 
     <!-- Language Toggle Stylesheet -->
     <link href="assets/css/lang-toggle.css?v=999" rel="stylesheet" />
+
 
     <!-- RTL Support Stylesheet -->
     <link
@@ -195,62 +152,7 @@
         border: 2px solid white;
         color: white;
       }
-
-      /* Responsive overrides to keep the hero section mobile friendly
-         when these critical styles load before the main bundle */
-      @media (max-width: 768px) {
-        .hero {
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          padding: 3rem 1.5rem;
-          gap: 1.25rem;
-        }
-
-        .hero-title {
-          font-size: 2.2rem;
-          color: #1e40af;
-        }
-
-        .hero-subtitle {
-          font-size: 1rem;
-          color: #374151;
-        }
-
-        .hero .hero-actions {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-          gap: 0.75rem;
-        }
-
-        .hero .hero-actions .btn {
-          width: 100%;
-          max-width: 260px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero {
-          padding: 2.5rem 1rem;
-        }
-
-        .hero-title {
-          font-size: 1.8rem;
-        }
-
-        .hero-subtitle {
-          font-size: 0.95rem;
-        }
-
-        .btn {
-          padding: 10px 18px;
-        }
-      }
     </style>
-    <noscript><style>#preloader{display:none!important}</style></noscript>
   </head>
 
   <!-- ===============================================
@@ -267,10 +169,9 @@
       <div class="profile-img">
         <img
           src="assets/img/my-profile-img.jpg"
+          loading="lazy"
           alt="AmirHossein Jalalian Profile Picture"
           class="img-fluid rounded-circle"
-          width="200"
-          height="200"
         />
       </div>
 
@@ -282,14 +183,10 @@
       >
         <!-- Site Logo & Name -->
         <a href="#hero" class="logo d-flex align-items-center">
-          <img
-            src="assets/img/logo.png"
-            alt="Aj-Network"
-            width="40"
-            height="40"
-          />
+          <img src="assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <h1 class="sitename">Meet AJ</h1>
         </a>
+
       </div>
 
       <!-- ===============================================
@@ -332,7 +229,7 @@
           ></a>
         </div>
 
-        <!-- ردیف دوم: بقیه -->
+        <!-- رد�?ف د�?�?: ب�?�?�? -->
         <div class="social-row social-row-secondary">
           <a
             href="https://twitter.com/RealAjMercury"
@@ -390,7 +287,7 @@
           <li>
             <a href="#hero" class="active"
               ><i class="bi bi-house navicon"></i
-              ><span data-en="Home" data-fa="صفحه اصلی">Home</span></a
+              ><span data-en="Home" data-fa="صفح�? اص�?�?">Home</span></a
             >
           </li>
 
@@ -398,7 +295,7 @@
           <li>
             <a href="#about"
               ><i class="bi bi-person navicon"></i
-              ><span data-en="About" data-fa="درباره من">About</span></a
+              ><span data-en="About" data-fa="دربار�? �?�?">About</span></a
             >
           </li>
 
@@ -406,7 +303,7 @@
           <li>
             <a href="#resume"
               ><i class="bi bi-file-earmark-text navicon"></i
-              ><span data-en="Resume" data-fa="رزومه کاری">Resume</span></a
+              ><span data-en="Resume" data-fa="رز�?�?�? کار�?">Resume</span></a
             >
           </li>
 
@@ -414,7 +311,7 @@
           <li>
             <a href="#services"
               ><i class="bi bi-hdd-stack navicon"></i
-              ><span data-en="Services" data-fa="خدمات">Services</span></a
+              ><span data-en="Services" data-fa="خد�?ات">Services</span></a
             >
           </li>
 
@@ -422,7 +319,7 @@
           <li>
             <a href="#portfolio"
               ><i class="bi bi-images navicon"></i
-              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+              ><span data-en="Articles" data-fa="�?�?ا�?ات">Articles</span></a
             >
           </li>
 
@@ -430,7 +327,7 @@
           <li>
             <a href="#testimonials"
               ><i class="bi bi-menu-button navicon"></i
-              ><span data-en="Testimonials" data-fa="نظرات"
+              ><span data-en="Testimonials" data-fa="�?ظرات"
                 >Testimonials</span
               ></a
             >
@@ -440,7 +337,7 @@
           <li>
             <a href="#contact"
               ><i class="bi bi-envelope navicon"></i
-              ><span data-en="Contact" data-fa="تماس با من">Contact</span></a
+              ><span data-en="Contact" data-fa="ت�?اس با �?�?">Contact</span></a
             >
           </li>
         </ul>
@@ -455,7 +352,7 @@
       class="menu-toggle d-xl-none"
       aria-label="Toggle navigation menu"
       aria-expanded="false"
-      aria-controls="navmenu"
+      aria-controls="header"
     >
       <i class="bi bi-list"></i>
     </button>
@@ -469,14 +366,12 @@
       =============================================== -->
       <section id="hero" class="hero section dark-background">
         <!-- Hero Background Image -->
+        <link rel="preload" as="image" href="assets/img/hero-bg.jpg" />
         <img
           src="assets/img/hero-bg.jpg"
           alt="Hero Background"
           data-aos="fade-in"
           class="hero-bg"
-          width="1920"
-          height="1080"
-          fetchpriority="high"
         />
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -487,6 +382,16 @@
               data-aos="fade-right"
               data-aos-delay="200"
             >
+              <div class="hero-profile-img">
+                <img
+                  src="assets/img/my-profile-img-2.jpg"
+                  loading="lazy"
+                  alt="AmirHossein Jalalian Profile Picture"
+                  class="img-fluid hero-img"
+                />
+                <div class="hero-img-border"></div>
+                <div class="hero-img-shadow"></div>
+              </div>
             </div>
 
             <!-- Content -->
@@ -500,9 +405,9 @@
                 <div class="hero-badge" data-aos="fade-up" data-aos-delay="200">
                   <span
                     class="badge-text"
-                    data-en="💼 Available for Work"
-                    data-fa="💼 آماده برای همکاری"
-                    >💼 Available for Work</span
+                    data-en="Available for Work"
+                    data-fa="آ�?اد�? برا�? �?�?کار�?"
+                    >Available for Work</span
                   >
                   <div class="badge-dot"></div>
                 </div>
@@ -511,7 +416,7 @@
                 <h1
                   class="hero-title"
                   data-en="AmirHossein Jalalian"
-                  data-fa="امیرحسین جلالیان"
+                  data-fa="ا�?�?رحس�?�? ج�?ا�?�?ا�?"
                   data-aos="fade-up"
                   data-aos-delay="400"
                 >
@@ -526,14 +431,14 @@
                   data-aos-delay="600"
                 >
                   <p class="hero-subtitle">
-                    <span class="subtitle-prefix" data-en="I'm a" data-fa="من"
+                    <span class="subtitle-prefix" data-en="I'm a" data-fa="�?�?"
                       >I'm a</span
                     >
                     <span
                       class="typed"
-                      data-typed-items="🌐 Network Specialist, ⚙️ DevOps Engineer, 💡 IT Consultant, 🔧 Systems Expert, 🖥️ VMware Administrator"
-                      data-typed-items-fa="🌐 متخصص شبکه هستم, ⚙️ مهندس DevOps هستم, 💡 مشاور فناوری اطلاعات هستم, 🔧 کارشناس سیستم‌ها هستم, 🖥️ مدیر مجازی‌سازی VMware هستم"
-                      >🔧 System Administrator</span
+                      data-typed-items="Network Specialist, DevOps Engineer, IT Consultant, Systems Expert, VMware Administrator"
+                      data-typed-items-fa="�?تخصص شبک�? �?ست�?, �?�?�?دس DevOps �?ست�?, �?شا�?ر ف�?ا�?ر�? اط�?اعات �?ست�?, کارش�?اس س�?ست�?�??�?ا �?ست�?, �?د�?ر �?جاز�?�??ساز�? VMware �?ست�?"
+                      >System Administrator</span
                     >
                   </p>
                 </div>
@@ -548,19 +453,19 @@
                     href="#contact"
                     class="btn btn-primary btn-modern"
                     data-en="Get In Touch"
-                    data-fa="ارتباط با من"
+                    data-fa="ارتباط با �?�?"
                   >
                     <span class="btn-text">Get In Touch</span>
-                    <span class="btn-icon">→</span>
+                    <span class="btn-icon">�??</span>
                   </a>
                   <a
                     href="#portfolio"
                     class="btn btn-outline-light btn-modern"
                     data-en="Articles"
-                    data-fa="مقالات"
+                    data-fa="�?�?ا�?ات"
                   >
                     <span class="btn-text">Articles</span>
-                    <span class="btn-icon">→</span>
+                    <span class="btn-icon">�??</span>
                   </a>
                 </div>
               </div>
@@ -576,12 +481,12 @@
       <section id="about" class="about section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2 data-en="Get to Know Me" data-fa="بهتر منو بشناس">
+          <h2 data-en="Get to Know Me" data-fa="ب�?تر �?�?�? بش�?اس">
             Get to Know Me
           </h2>
           <p
             data-en="I am Amirhossein Jalalian, a Network and IT Infrastructure Specialist with extensive experience in designing, managing, and optimizing enterprise systems. My mission is to deliver reliable, secure, and scalable solutions that enhance organizational efficiency while minimizing risks."
-            data-fa="من امیرحسین جلالیان هستم، متخصص شبکه و زیرساخت فناوری اطلاعات با تجربه گسترده در طراحی، مدیریت و بهینه‌سازی سیستم‌های سازمانی. مأموریت من، ایجاد راهکارهای پایدار، امن و مقیاس‌پذیر است که بهره‌وری سازمان‌ها را افزایش داده و ریسک‌ها را کاهش می‌دهد."
+            data-fa="�?�? ا�?�?رحس�?�? ج�?ا�?�?ا�? �?ست�?�? �?تخصص شبک�? �? ز�?رساخت ف�?ا�?ر�? اط�?اعات با تجرب�? گسترد�? در طراح�?�? �?د�?ر�?ت �? ب�?�?�?�?�??ساز�? س�?ست�?�??�?ا�? ساز�?ا�?�?. �?أ�?�?ر�?ت �?�?�? ا�?جاد را�?کار�?ا�? پا�?دار�? ا�?�? �? �?�?�?اس�??پذ�?ر است ک�? ب�?ر�?�??�?ر�? ساز�?ا�?�??�?ا را افزا�?ش داد�? �? ر�?سک�??�?ا را کا�?ش �?�?�??د�?د."
           >
             I am Amirhossein Jalalian, a Network and IT Infrastructure
             Specialist with extensive experience in designing, managing, and
@@ -597,299 +502,221 @@
         =============================================== -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="about-wrapper">
-            <!-- Main About Grid -->
-            <div class="about-main-grid">
-              <!-- Left Column - Profile & Info -->
-              <div class="about-left-column">
-                <!-- Profile Card -->
-                <div
-                  class="profile-card"
-                  data-aos="fade-right"
-                  data-aos-delay="200"
-                >
-                  <div class="profile-image">
-                    <img
-                      src="assets/img/my-profile-img-2.jpg"
-                      alt="Amirhossein Jalalian Profile"
-                      width="200"
-                      height="200"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="profile-info">
-                    <h3 class="profile-name">Amirhossein Jalalian</h3>
-                    <p
-                      class="profile-title"
-                      data-en="IT Infrastructure Specialist"
-                      data-fa="متخصص زیرساخت فناوری اطلاعات"
-                    >
-                      IT Infrastructure Specialist
-                    </p>
-                    <div class="profile-location">
-                      <i class="bi bi-geo-alt"></i>
-                      <span data-en="Tehran, Iran" data-fa="تهران، ایران"
-                        >Tehran, Iran</span
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Quick Stats -->
-                <div
-                  class="quick-stats"
-                  data-aos="fade-right"
-                  data-aos-delay="300"
-                >
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-calendar-event"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span
-                        class="stat-label"
-                        data-en="Birthday"
-                        data-fa="تاریخ تولد"
-                        >Birthday</span
-                      >
-                      <span
-                        class="stat-value"
-                        data-en="19 July 1999"
-                        data-fa="۲۸ تیر ۱۳۷۸"
-                        >19 July 1999</span
-                      >
-                    </div>
-                  </div>
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-mortarboard"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span
-                        class="stat-label"
-                        data-en="Degree"
-                        data-fa="مدرک تحصیلی"
-                        >Degree</span
-                      >
-                      <span
-                        class="stat-value"
-                        data-en="Bachelor of IT Engineering"
-                        data-fa="کارشناسی مهندسی فناوری اطلاعات"
-                        >Bachelor of IT Engineering</span
-                      >
-                    </div>
-                  </div>
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-briefcase"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span
-                        class="stat-label"
-                        data-en="Experience"
-                        data-fa="تجربه"
-                        >Experience</span
-                      >
-                      <span
-                        class="stat-value"
-                        data-en="5+ Years"
-                        data-fa="بیش از ۵ سال"
-                        >5+ Years</span
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Core Values Section -->
-                <div
-                  class="values-section"
-                  data-aos="fade-right"
-                  data-aos-delay="400"
-                >
-                  <h3
-                    class="values-title"
-                    data-en="Core Values"
-                    data-fa="ارزش‌های اصلی"
+            <!-- Content Section -->
+            <div class="content-section">
+              <!-- Header -->
+              <div class="about-header">
+                <h2 class="about-title">
+                  <span
+                    class="title-main"
+                    data-en="Empowering Businesses with Reliable & Secure IT Infrastructures"
+                    data-fa="ت�?ا�?�?�?دساز�? کسب�??�?کار�?ا با ز�?رساخت�??�?ا�? IT �?ط�?ئ�? �? ا�?�?"
                   >
-                    Core Values
-                  </h3>
-                  <div class="values-grid">
-                    <div class="value-item">
-                      <div class="value-icon">
-                        <i class="bi bi-shield-check"></i>
-                      </div>
-                      <div class="value-content">
-                        <h4 data-en="Integrity" data-fa="صداقت">Integrity</h4>
-                        <p
-                          data-en="Honest and transparent in all professional interactions"
-                          data-fa="صادق و شفاف در تمام تعاملات حرفه‌ای"
+                    Empowering Businesses with Reliable &amp; Secure IT
+                    Infrastructures
+                  </span>
+                  <span class="title-accent">IT Professional</span>
+                </h2>
+                <p
+                  class="about-subtitle"
+                  data-en="Passionate about developing innovative and sustainable network solutions that elevate organizational performance and efficiency."
+                  data-fa="ع�?ا�?�?�??�?�?د ب�? ت�?سع�? را�?کار�?ا�? شبک�? پا�?دار �? �?�?آ�?را�?�? ک�? ع�?�?کرد �? ب�?ر�?�??�?ر�? ساز�?ا�?�??�?ا را ب�? سطح�? با�?اتر �?�?�??رسا�?د."
+                >
+                  Passionate about developing innovative and sustainable network
+                  solutions that elevate organizational performance and
+                  efficiency.
+                </p>
+              </div>
+
+              <!-- Info Cards Grid -->
+              <div class="info-grid">
+                <!-- Personal Info Card -->
+                <div class="info-card personal-info">
+                  <div class="card-header">
+                    <i class="bi bi-person-circle"></i>
+                    <h3 data-en="Personal Info" data-fa="اط�?اعات شخص�?">
+                      Personal Info
+                    </h3>
+                  </div>
+                  <div class="card-content">
+                    <div class="info-item">
+                      <i class="bi bi-calendar-event"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Birthday"
+                          data-fa="تار�?خ ت�?�?د"
+                          >Birthday</span
                         >
-                          Honest and transparent in all professional
-                          interactions
-                        </p>
+                        <span
+                          class="info-value"
+                          data-en="19 July 1999"
+                          data-fa="۲۸ ت�?ر ۱۳۷۸"
+                          >19 July 1999</span
+                        >
                       </div>
                     </div>
-                    <div class="value-item">
-                      <div class="value-icon">
-                        <i class="bi bi-gear"></i>
-                      </div>
-                      <div class="value-content">
-                        <h4 data-en="Excellence" data-fa="تعالی">Excellence</h4>
-                        <p
-                          data-en="Committed to delivering the highest quality solutions"
-                          data-fa="متعهد به ارائه راهکارهای با بالاترین کیفیت"
+                    <div class="info-item">
+                      <i class="bi bi-geo-alt"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Location"
+                          data-fa="�?ح�? سک�?�?ت"
+                          >Location</span
                         >
-                          Committed to delivering the highest quality solutions
-                        </p>
+                        <span
+                          class="info-value"
+                          data-en="Tehran, Iran"
+                          data-fa="ت�?را�?�? ا�?را�?"
+                          >Tehran, Iran</span
+                        >
                       </div>
                     </div>
-                    <div class="value-item">
-                      <div class="value-icon">
-                        <i class="bi bi-people"></i>
-                      </div>
-                      <div class="value-content">
-                        <h4 data-en="Collaboration" data-fa="همکاری">
-                          Collaboration
-                        </h4>
-                        <p
-                          data-en="Strong believer in teamwork and collective success"
-                          data-fa="باور قوی به کار تیمی و موفقیت جمعی"
+                    <div class="info-item">
+                      <i class="bi bi-mortarboard"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Degree"
+                          data-fa="�?درک تحص�?�?�?"
+                          >Degree</span
                         >
-                          Strong believer in teamwork and collective success
-                        </p>
+                        <span
+                          class="info-value"
+                          data-en="Bachelor of IT Engineering"
+                          data-fa="کارش�?اس�? �?�?�?دس�? ف�?ا�?ر�? اط�?اعات"
+                          >Bachelor of IT Engineering</span
+                        >
                       </div>
                     </div>
-                    <div class="value-item">
-                      <div class="value-icon">
-                        <i class="bi bi-graph-up"></i>
-                      </div>
-                      <div class="value-content">
-                        <h4 data-en="Innovation" data-fa="نوآوری">
-                          Innovation
-                        </h4>
-                        <p
-                          data-en="Continuously learning and adapting to new technologies"
-                          data-fa="یادگیری مداوم و سازگاری با فناوری‌های جدید"
+                  </div>
+                </div>
+
+                <!-- Contact Info Card -->
+                <div class="info-card contact-info">
+                  <div class="card-header">
+                    <i class="bi bi-telephone"></i>
+                    <h3 data-en="Contact Info" data-fa="اط�?اعات ت�?اس">
+                      Contact Info
+                    </h3>
+                  </div>
+                  <div class="card-content">
+                    <div class="info-item">
+                      <i class="bi bi-phone"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Phone"
+                          data-fa="ش�?ار�? ت�?اس"
+                          >Phone</span
                         >
-                          Continuously learning and adapting to new technologies
-                        </p>
+                        <a
+                          href="tel:+989197276219"
+                          class="info-value contact-link"
+                          data-en="+989197276219"
+                          data-fa="09197276219"
+                          >+989197276219</a
+                        >
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="bi bi-envelope"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Email"
+                          data-fa="پست ا�?کتر�?�?�?ک�?"
+                          >Email</span
+                        >
+                        <a
+                          href="mailto:Jalalian.amirhossein@gmail.com"
+                          class="info-value contact-link"
+                          >Jalalian.amirhossein@gmail.com</a
+                        >
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="bi bi-briefcase"></i>
+                      <div class="info-details">
+                        <span
+                          class="info-label"
+                          data-en="Status"
+                          data-fa="�?ضع�?ت کار�?"
+                          >Status</span
+                        >
+                        <span
+                          class="info-value status-available"
+                          data-en="Available for Collaboration"
+                          data-fa="آ�?اد�? �?�?کار�?"
+                          >Available for Collaboration</span
+                        >
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Right Column - Content -->
-              <div class="about-right-column">
-                <!-- Main Description -->
-                <div
-                  class="main-description"
-                  data-aos="fade-left"
-                  data-aos-delay="200"
-                >
-                  <div class="description-header">
-                    <h2 class="description-title">
-                      <span data-en="About Me" data-fa="درباره من"
-                        >About Me</span
-                      >
-                      <span class="title-accent">👨‍💻</span>
-                    </h2>
+              <!-- Description Section -->
+              <div class="description-section">
+                <div class="description-card">
+                  <h3
+                    class="description-title"
+                    data-en="About Me"
+                    data-fa="دربار�? �?�?"
+                  >
+                    About Me
+                  </h3>
+                  <p
+                    class="description-text"
+                    data-en="I have extensive experience in Windows Server, Cisco and MikroTik technologies, virtualization, and other IT infrastructure solutions. My approach is always results-driven, carrying out each project with accountability, precision, and strong teamwork. I focus on delivering secure, reliable, and optimized solutions that enhance organizational growth and efficiency."
+                    data-fa="�?�? تجرب�?�??ا�? گسترد�? در Windows Server�? تج�?�?زات س�?سک�? �? �?�?کر�?ت�?ک�? �?جاز�?�??ساز�? �? سا�?ر ف�?ا�?ر�?�??�?ا�? ز�?رساخت�? دار�?. ر�?�?کرد �?�? در کار�? �?�?�?ار�? �?ت�?ج�?�??�?ح�?ر است �? �?ر پر�?�?�? را با �?سئ�?�?�?ت�??پذ�?ر�? با�?ا�? د�?ت ف�?�? �? ر�?ح�?�? کار ت�?�?�? ب�? سرا�?جا�? �?�?�??رسا�?�?. ت�?رکز�? بر ارائ�? را�?کار�?ا�? ا�?�?�? پا�?دار �? ب�?�?�?�? است ک�? ب�? رشد �? ب�?ر�?�??�?ر�? ساز�?ا�?�??�?ا ک�?ک �?�?�??ک�?د."
+                  >
+                    I have extensive experience in Windows Server, Cisco and
+                    MikroTik technologies, virtualization, and other IT
+                    infrastructure solutions. My approach is always
+                    results-driven, carrying out each project with
+                    accountability, precision, and strong teamwork. I focus on
+                    delivering secure, reliable, and optimized solutions that
+                    enhance organizational growth and efficiency.
+                  </p>
+                </div>
+
+                <div class="philosophy-card">
+                  <h3
+                    class="philosophy-title"
+                    data-en="My Philosophy"
+                    data-fa="ف�?سف�? �?�?"
+                  >
+                    My Philosophy
+                  </h3>
+                  <p
+                    class="philosophy-text"
+                    data-en="I value honesty, discipline, patience, and accountability as core principles. I believe that respect for the profession and adherence to fundamental values form the foundation for achieving long-term and sustainable success in the field of Information Technology."
+                    data-fa="برا�? �?�?�? صدا�?ت�? ا�?ضباط�? صبر �? �?سئ�?�?�?ت�??پذ�?ر�? ارزش�??�?ا�? اساس�? �?ست�?د. با�?ر دار�? ک�? احترا�? ب�? حرف�? �? پا�?ب�?د�? ب�? اص�?�? ب�?�?اد�?�?�? ز�?رب�?ا�? دست�?اب�? ب�? �?�?ف�?�?ت پا�?دار �? ب�?�?د�?دت در ح�?ز�? ف�?ا�?ر�? اط�?اعات است."
+                  >
+                    I value honesty, discipline, patience, and accountability as
+                    core principles. I believe that respect for the profession
+                    and adherence to fundamental values form the foundation for
+                    achieving long-term and sustainable success in the field of
+                    Information Technology.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Quote Section -->
+              <div class="quote-section">
+                <div class="quote-card">
+                  <i class="bi bi-quote"></i>
+                  <blockquote class="inspirational-quote">
                     <p
-                      class="description-subtitle"
-                      data-en="Passionate IT Professional with a Vision for Excellence"
-                      data-fa="متخصص فناوری اطلاعات با اشتیاق و چشم‌انداز تعالی"
+                      data-en="Success is born of sustained effort, continuous learning, and faith in the journey."
+                      data-fa="�?�?ف�?�?ت زاد�? ت�?اش �?ست�?ر�? �?ادگ�?ر�? �?دا�?�? �? ا�?�?ا�? ب�? �?س�?ر است."
                     >
-                      Passionate IT Professional with a Vision for Excellence
+                      "Success is born of sustained effort, continuous learning,
+                      and faith in the journey."
                     </p>
-                  </div>
-                  <div class="description-content">
-                    <p class="description-text">
-                      <span
-                        data-en="I am a dedicated Network and IT Infrastructure Specialist with extensive experience in designing, managing, and optimizing enterprise systems. My mission is to deliver reliable, secure, and scalable solutions that enhance organizational efficiency while minimizing risks."
-                        data-fa="من یک متخصص شبکه و زیرساخت فناوری اطلاعات متعهد هستم با تجربه گسترده در طراحی، مدیریت و بهینه‌سازی سیستم‌های سازمانی. مأموریت من، ارائه راهکارهای پایدار، امن و مقیاس‌پذیر است که بهره‌وری سازمان‌ها را افزایش داده و ریسک‌ها را کاهش می‌دهد."
-                      >
-                        I am a dedicated Network and IT Infrastructure
-                        Specialist with extensive experience in designing,
-                        managing, and optimizing enterprise systems. My mission
-                        is to deliver reliable, secure, and scalable solutions
-                        that enhance organizational efficiency while minimizing
-                        risks.
-                      </span>
-                    </p>
-                    <p class="description-text">
-                      <span
-                        data-en="I have extensive experience in Windows Server, Cisco and MikroTik technologies, virtualization, and other IT infrastructure solutions. My approach is always results-driven, carrying out each project with accountability, precision, and strong teamwork."
-                        data-fa="من تجربه‌ای گسترده در Windows Server، تجهیزات سیسکو و میکروتیک، مجازی‌سازی و سایر فناوری‌های زیرساختی دارم. رویکرد من در کار، همواره نتیجه‌محور است و هر پروژه را با مسئولیت‌پذیری بالا، دقت فنی و روحیه کار تیمی به سرانجام می‌رسانم."
-                      >
-                        I have extensive experience in Windows Server, Cisco and
-                        MikroTik technologies, virtualization, and other IT
-                        infrastructure solutions. My approach is always
-                        results-driven, carrying out each project with
-                        accountability, precision, and strong teamwork.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Philosophy & Values -->
-                <div
-                  class="philosophy-section"
-                  data-aos="fade-left"
-                  data-aos-delay="300"
-                >
-                  <div class="philosophy-card">
-                    <div class="philosophy-header">
-                      <h3 class="philosophy-title">
-                        <i class="bi bi-lightbulb"></i>
-                        <span data-en="My Philosophy" data-fa="فلسفه من"
-                          >My Philosophy</span
-                        >
-                      </h3>
-                    </div>
-                    <div class="philosophy-content">
-                      <p class="philosophy-text">
-                        <span
-                          data-en="I value honesty, discipline, patience, and accountability as core principles. I believe that respect for the profession and adherence to fundamental values form the foundation for achieving long-term and sustainable success in the field of Information Technology."
-                          data-fa="برای من، صداقت، انضباط، صبر و مسئولیت‌پذیری ارزش‌های اساسی هستند. باور دارم که احترام به حرفه و پایبندی به اصول بنیادین، زیربنای دستیابی به موفقیت پایدار و بلندمدت در حوزه فناوری اطلاعات است."
-                        >
-                          I value honesty, discipline, patience, and
-                          accountability as core principles. I believe that
-                          respect for the profession and adherence to
-                          fundamental values form the foundation for achieving
-                          long-term and sustainable success in the field of
-                          Information Technology.
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Inspirational Quote Section -->
-                <div
-                  class="quote-section"
-                  data-aos="fade-right"
-                  data-aos-delay="500"
-                >
-                  <div class="quote-card">
-                    <div class="quote-icon">
-                      <i class="bi bi-quote"></i>
-                    </div>
-                    <blockquote class="inspirational-quote">
-                      <p
-                        data-en="Success is born of sustained effort, continuous learning, and faith in the journey."
-                        data-fa="موفقیت زاده تلاش مستمر، یادگیری مداوم و ایمان به مسیر است."
-                      >
-                        "Success is born of sustained effort, continuous
-                        learning, and faith in the journey."
-                      </p>
-                    </blockquote>
-                    <div class="quote-author">
-                      <span
-                        data-en="— My Personal Motto"
-                        data-fa="— شعار شخصی من"
-                        >— My Personal Motto</span
-                      >
-                    </div>
-                  </div>
+                  </blockquote>
                 </div>
               </div>
             </div>
@@ -917,7 +744,7 @@
                   class="purecounter"
                 ></span>
                 <p>
-                  <span data-en="Satisfied customers" data-fa="مشتریان راضی"
+                  <span data-en="Satisfied customers" data-fa="�?شتر�?ا�? راض�?"
                     >Satisfied customers</span
                   >
                 </p>
@@ -936,7 +763,7 @@
                   class="purecounter"
                 ></span>
                 <p>
-                  <span data-en="Successful projects" data-fa="پروژه‌های موفق"
+                  <span data-en="Successful projects" data-fa="پر�?�?�?�??�?ا�? �?�?ف�?"
                     >Successful projects</span
                   >
                 </p>
@@ -957,7 +784,7 @@
                 <p>
                   <span
                     data-en="Support hours provided"
-                    data-fa="ساعت پشتیبانی ارائه شده"
+                    data-fa="ساعت پشت�?با�?�? ارائ�? شد�?"
                     >Support hours provided</span
                   >
                 </p>
@@ -976,7 +803,7 @@
                   class="purecounter"
                 ></span>
                 <p>
-                  <span data-en="Expert team" data-fa="تیم متخصص"
+                  <span data-en="Expert team" data-fa="ت�?�? �?تخصص"
                     >Expert team</span
                   >
                 </p>
@@ -997,10 +824,10 @@
         ==================== SECTION TITLE ==================
         =============================================== -->
         <div class="container section-title" data-aos="fade-up">
-          <h2 data-en="Skills" data-fa="مهارت‌ها">Skills</h2>
+          <h2 data-en="Skills" data-fa="�?�?ارت�??�?ا">Skills</h2>
           <p
             data-en="My core technical and professional skills in computer networks and IT infrastructure."
-            data-fa="مهارت‌های اصلی فنی و حرفه‌ای من در شبکه‌های کامپیوتری و زیرساخت فناوری اطلاعات."
+            data-fa="�?�?ارت�??�?ا�? اص�?�? ف�?�? �? حرف�?�??ا�? �?�? در شبک�?�??�?ا�? کا�?پ�?�?تر�? �? ز�?رساخت ف�?ا�?ر�? اط�?اعات."
           >
             My core technical and professional skills in computer networks and
             IT infrastructure.
@@ -1021,7 +848,7 @@
                 <span class="skill">
                   <span
                     data-en="Network Design (Cisco, MikroTik)"
-                    data-fa="طراحی شبکه (سیسکو، میکروتیک)"
+                    data-fa="طراح�? شبک�? (س�?سک�?�? �?�?کر�?ت�?ک)"
                     >Network Design (Cisco, MikroTik)</span
                   >
                   <i class="val">100%</i>
@@ -1038,7 +865,7 @@
                 <span class="skill">
                   <span
                     data-en="Firewall & Security Rules (MikroTik, Cisco)"
-                    data-fa="فایروال و قوانین امنیتی (میکروتیک، سیسکو)"
+                    data-fa="فا�?ر�?ا�? �? �?�?ا�?�?�? ا�?�?�?ت�? (�?�?کر�?ت�?ک�? س�?سک�?)"
                     >Firewall & Security Rules (MikroTik, Cisco)</span
                   >
                   <i class="val">92%</i>
@@ -1055,7 +882,7 @@
                 <span class="skill">
                   <span
                     data-en="Linux Administration (Ubuntu, CentOS)"
-                    data-fa="مدیریت لینوکس (اوبونتو، سنت‌اواس)"
+                    data-fa="�?د�?ر�?ت �?�?�?�?کس (ا�?ب�?�?ت�?�? س�?ت�??ا�?اس)"
                     >Linux Administration (Ubuntu, CentOS)</span
                   >
                   <i class="val">90%</i>
@@ -1072,7 +899,7 @@
                 <span class="skill">
                   <span
                     data-en="Microsoft Services (AD, DNS, DFS, WDS, WSUS, NTP)"
-                    data-fa="خدمات مایکروسافت (AD، DNS، DFS، WDS، WSUS، NTP)"
+                    data-fa="خد�?ات �?ا�?کر�?سافت (AD�? DNS�? DFS�? WDS�? WSUS�? NTP)"
                     >Microsoft Services (AD, DNS, DFS, WDS, WSUS, NTP)</span
                   >
                   <i class="val">88%</i>
@@ -1089,7 +916,7 @@
                 <span class="skill">
                   <span
                     data-en="Virtualization (VMware vSphere, KVM)"
-                    data-fa="مجازی‌سازی (VMware vSphere، KVM)"
+                    data-fa="�?جاز�?�??ساز�? (VMware vSphere�? KVM)"
                     >Virtualization (VMware vSphere, KVM)</span
                   >
                   <i class="val">77%</i>
@@ -1106,7 +933,7 @@
                 <span class="skill"
                   ><span
                     data-en="SQL Server (Clustering, HA, Monitoring)"
-                    data-fa="SQL Server (خوشه‌بندی، HA، نظارت)"
+                    data-fa="SQL Server (خ�?ش�?�??ب�?د�?�? HA�? �?ظارت)"
                     >SQL Server (Clustering, HA, Monitoring)</span
                   >
                   <i class="val">66%</i></span
@@ -1123,7 +950,7 @@
                 <span class="skill"
                   ><span
                     data-en="Backup Systems (Veeam Backup & NAS)"
-                    data-fa="سیستم‌های پشتیبان‌گیری (Veeam Backup & NAS)"
+                    data-fa="س�?ست�?�??�?ا�? پشت�?با�?�??گ�?ر�? (Veeam Backup & NAS)"
                     >Backup Systems (Veeam Backup & NAS)</span
                   >
                   <i class="val">98%</i></span
@@ -1140,7 +967,7 @@
                 <span class="skill"
                   ><span
                     data-en="Monitoring Tools (Zabbix, Cacti, Redgate)"
-                    data-fa="ابزارهای نظارت (Zabbix، Cacti، Redgate)"
+                    data-fa="ابزار�?ا�? �?ظارت (Zabbix�? Cacti�? Redgate)"
                     >Monitoring Tools (Zabbix, Cacti, Redgate)</span
                   >
                   <i class="val">94%</i></span
@@ -1157,7 +984,7 @@
                 <span class="skill"
                   ><span
                     data-en="VPN & Tunnel Configuration"
-                    data-fa="پیکربندی VPN و تانل"
+                    data-fa="پ�?کرب�?د�? VPN �? تا�?�?"
                     >VPN & Tunnel Configuration</span
                   >
                   <i class="val">96%</i></span
@@ -1174,7 +1001,7 @@
                 <span class="skill"
                   ><span
                     data-en="Cloud Platforms (AWS, Azure)"
-                    data-fa="پلتفرم‌های ابری (AWS، Azure)"
+                    data-fa="پ�?تفر�?�??�?ا�? ابر�? (AWS�? Azure)"
                     >Cloud Platforms (AWS, Azure)</span
                   >
                   <i class="val">66%</i></span
@@ -1196,7 +1023,7 @@
             <div class="col-lg-6">
               <div class="progress">
                 <span class="skill"
-                  ><span data-en="Technical Documentation" data-fa="مستندات فنی"
+                  ><span data-en="Technical Documentation" data-fa="�?ست�?دات ف�?�?"
                     >Technical Documentation</span
                   >
                   <i class="val">88%</i></span
@@ -1213,7 +1040,7 @@
                 <span class="skill"
                   ><span
                     data-en="Diagram & Network Mapping"
-                    data-fa="نمودار و نقشه‌برداری شبکه"
+                    data-fa="�?�?�?دار �? �?�?ش�?�??بردار�? شبک�?"
                     >Diagram & Network Mapping</span
                   >
                   <i class="val">80%</i></span
@@ -1230,7 +1057,7 @@
                 <span class="skill"
                   ><span
                     data-en="System Analysis & Troubleshooting"
-                    data-fa="تحلیل سیستم و عیب‌یابی"
+                    data-fa="تح�?�?�? س�?ست�? �? ع�?ب�??�?اب�?"
                     >System Analysis & Troubleshooting</span
                   >
                   <i class="val">95%</i></span
@@ -1247,7 +1074,7 @@
                 <span class="skill"
                   ><span
                     data-en="Project Planning & IT Management"
-                    data-fa="برنامه‌ریزی پروژه و مدیریت IT"
+                    data-fa="بر�?ا�?�?�??ر�?ز�? پر�?�?�? �? �?د�?ر�?ت IT"
                     >Project Planning & IT Management</span
                   >
                   <i class="val">88%</i></span
@@ -1264,7 +1091,7 @@
                 <span class="skill"
                   ><span
                     data-en="Team Collaboration & Communication"
-                    data-fa="همکاری تیمی و ارتباطات"
+                    data-fa="�?�?کار�? ت�?�?�? �? ارتباطات"
                     >Team Collaboration & Communication</span
                   >
                   <i class="val">85%</i></span
@@ -1281,7 +1108,7 @@
                 <span class="skill"
                   ><span
                     data-en="Problem Solving Under Pressure"
-                    data-fa="حل مسئله تحت فشار"
+                    data-fa="ح�? �?سئ�?�? تحت فشار"
                     >Problem Solving Under Pressure</span
                   >
                   <i class="val">92%</i></span
@@ -1296,7 +1123,7 @@
               </div>
               <div class="progress">
                 <span class="skill"
-                  ><span data-en="Security Awareness" data-fa="آگاهی امنیتی"
+                  ><span data-en="Security Awareness" data-fa="آگا�?�? ا�?�?�?ت�?"
                     >Security Awareness</span
                   >
                   <i class="val">90%</i></span
@@ -1313,7 +1140,7 @@
                 <span class="skill"
                   ><span
                     data-en="Adaptability & Continuous Learning"
-                    data-fa="انطباق‌پذیری و یادگیری مداوم"
+                    data-fa="ا�?طبا�?�??پذ�?ر�? �? �?ادگ�?ر�? �?دا�?�?"
                     >Adaptability & Continuous Learning</span
                   >
                   <i class="val">100%</i></span
@@ -1330,7 +1157,7 @@
                 <span class="skill"
                   ><span
                     data-en="Leadership & Mentoring"
-                    data-fa="رهبری و مربیگری"
+                    data-fa="ر�?بر�? �? �?رب�?گر�?"
                     >Leadership & Mentoring</span
                   >
                   <i class="val">75%</i></span
@@ -1347,7 +1174,7 @@
                 <span class="skill"
                   ><span
                     data-en="Client Communication & Reporting"
-                    data-fa="ارتباط با مشتری و گزارش‌دهی"
+                    data-fa="ارتباط با �?شتر�? �? گزارش�??د�?�?"
                     >Client Communication & Reporting</span
                   >
                   <i class="val">80%</i></span
@@ -1375,10 +1202,10 @@
       <section id="resume" class="resume section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2 data-en="Resume" data-fa="رزومه">Resume</h2>
+          <h2 data-en="Resume" data-fa="رز�?�?�?">Resume</h2>
           <p
             data-en="My academic background and professional work experience in computer networks and IT infrastructure."
-            data-fa="پیشینه تحصیلی و تجربه کاری حرفه‌ای من در شبکه‌های کامپیوتری و زیرساخت IT."
+            data-fa="پ�?ش�?�?�? تحص�?�?�? �? تجرب�? کار�? حرف�?�??ا�? �?�? در شبک�?�??�?ا�? کا�?پ�?�?تر�? �? ز�?رساخت IT."
           >
             My academic background and professional work experience in computer
             networks and IT infrastructure.
@@ -1395,13 +1222,13 @@
             ==================== EDUCATION COLUMN ================
             =============================================== -->
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="resume-title" data-en="Education" data-fa="تحصیلات">
+              <h3 class="resume-title" data-en="Education" data-fa="تحص�?�?ات">
                 Education
               </h3>
               <div class="resume-item">
                 <h4
                   data-en="DevOps Engineering Program"
-                  data-fa="برنامه مهندسی DevOps"
+                  data-fa="بر�?ا�?�? �?�?�?دس�? DevOps"
                 >
                   DevOps Engineering Program
                 </h4>
@@ -1413,7 +1240,7 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Sanat Training Center"
-                      data-fa="مرکز آموزش سانانت"
+                      data-fa="�?رکز آ�?�?زش سا�?ا�?ت"
                       >Sanat Training Center</a
                     ></em
                   >
@@ -1430,9 +1257,9 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
-                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
-                      >مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی،
-                      ذخیره‌سازی، برنامه‌نویسی، وب)</a
+                      data-fa="�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ (شبک�?�? ا�?�?�?ت�? �?جاز�?�??ساز�?�? ذخ�?ر�?�??ساز�?�? بر�?ا�?�?�??�?�?�?س�?�? �?ب)"
+                      >�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ (شبک�?�? ا�?�?�?ت�? �?جاز�?�??ساز�?�?
+                      ذخ�?ر�?�??ساز�?�? بر�?ا�?�?�??�?�?�?س�?�? �?ب)</a
                     ></em
                   >
                 </p>
@@ -1448,9 +1275,9 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
-                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
-                      >مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی،
-                      ذخیره‌سازی، برنامه‌نویسی، وب)</a
+                      data-fa="�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ (شبک�?�? ا�?�?�?ت�? �?جاز�?�??ساز�?�? ذخ�?ر�?�??ساز�?�? بر�?ا�?�?�??�?�?�?س�?�? �?ب)"
+                      >�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ (شبک�?�? ا�?�?�?ت�? �?جاز�?�??ساز�?�?
+                      ذخ�?ر�?�??ساز�?�? بر�?ا�?�?�??�?�?�?س�?�? �?ب)</a
                     ></em
                   >
                 </p>
@@ -1459,7 +1286,7 @@
               <div class="resume-item">
                 <h4
                   data-en="Comprehensive VMware vSphere: Install, Configure, Manage"
-                  data-fa="VMware vSphere جامع: نصب، پیکربندی، مدیریت"
+                  data-fa="VMware vSphere جا�?ع: �?صب�? پ�?کرب�?د�?�? �?د�?ر�?ت"
                 >
                   Comprehensive VMware vSphere: Install, Configure, Manage
                 </h4>
@@ -1471,8 +1298,8 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
-                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
-                      >مؤسسه آموزش عالی ارژنگ</a
+                      data-fa="�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ (شبک�?�? ا�?�?�?ت�? �?جاز�?�??ساز�?�? ذخ�?ر�?�??ساز�?�? بر�?ا�?�?�??�?�?�?س�?�? �?ب)"
+                      >�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ</a
                     ></em
                   >
                 </p>
@@ -1481,7 +1308,7 @@
               <div class="resume-item">
                 <h4
                   data-en="Bachelor's in Computer Networks & Internet"
-                  data-fa="کارشناسی شبکه‌های کامپیوتری و اینترنت"
+                  data-fa="کارش�?اس�? شبک�?�??�?ا�? کا�?پ�?�?تر�? �? ا�?�?تر�?ت"
                 >
                   Bachelor's in Computer Networks & Internet
                 </h4>
@@ -1493,7 +1320,7 @@
                       target="_blank"
                       rel="noopener"
                       data-en="University of Applied Science and Technology (Iran Informatics Branch)"
-                      data-fa="دانشگاه علمی و کاربردی (انفورماتیک ایران)"
+                      data-fa="دا�?شگا�? ع�?�?�? �? کاربرد�? (ا�?ف�?ر�?ات�?ک ا�?را�?)"
                       >University of Applied Science and Technology (Iran
                       Informatics Branch)</a
                     ></em
@@ -1502,7 +1329,7 @@
               </div>
 
               <div class="resume-item">
-                <h4 data-en="MCSA & Network Plus" data-fa="MCSA و Network Plus">
+                <h4 data-en="MCSA & Network Plus" data-fa="MCSA �? Network Plus">
                   MCSA & Network Plus
                 </h4>
                 <h5>2018</h5>
@@ -1513,8 +1340,8 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
-                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
-                      >مؤسسه آموزش عالی ارژنگ</a
+                      data-fa="�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ (شبک�?�? ا�?�?�?ت�? �?جاز�?�??ساز�?�? ذخ�?ر�?�??ساز�?�? بر�?ا�?�?�??�?�?�?س�?�? �?ب)"
+                      >�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ</a
                     ></em
                   >
                 </p>
@@ -1532,8 +1359,8 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
-                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
-                      >مؤسسه آموزش عالی ارژنگ</a
+                      data-fa="�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ (شبک�?�? ا�?�?�?ت�? �?جاز�?�??ساز�?�? ذخ�?ر�?�??ساز�?�? بر�?ا�?�?�??�?�?�?س�?�? �?ب)"
+                      >�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ</a
                     ></em
                   >
                 </p>
@@ -1542,7 +1369,7 @@
               <div class="resume-item">
                 <h4
                   data-en="Associate Degree in Software Engineering"
-                  data-fa="کاردانی مهندسی نرم‌افزار"
+                  data-fa="کاردا�?�? �?�?�?دس�? �?ر�?�??افزار"
                 >
                   Associate Degree in Software Engineering
                 </h4>
@@ -1554,7 +1381,7 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Shahid Shamsipour Technical and Vocational University"
-                      data-fa="دانشگاه فنی و حرفه‌ای شهید شمس‌پور"
+                      data-fa="دا�?شگا�? ف�?�? �? حرف�?�??ا�? ش�?�?د ش�?س�??پ�?ر"
                       >Shahid Shamsipour Technical and Vocational University</a
                     ></em
                   >
@@ -1573,8 +1400,8 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Arzhang Higher Education Institute (Networking, Security, Virtualization, Storage, Programming, Web)"
-                      data-fa="مؤسسه آموزش عالی ارژنگ (شبکه، امنیت، مجازی‌سازی، ذخیره‌سازی، برنامه‌نویسی، وب)"
-                      >مؤسسه آموزش عالی ارژنگ</a
+                      data-fa="�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ (شبک�?�? ا�?�?�?ت�? �?جاز�?�??ساز�?�? ذخ�?ر�?�??ساز�?�? بر�?ا�?�?�??�?�?�?س�?�? �?ب)"
+                      >�?ؤسس�? آ�?�?زش عا�?�? ار�?�?گ</a
                     ></em
                   >
                 </p>
@@ -1589,7 +1416,7 @@
               <h3
                 class="resume-title"
                 data-en="Professional Experience"
-                data-fa="تجربه کاری"
+                data-fa="تجرب�? کار�?"
               >
                 Professional Experience
               </h3>
@@ -1597,12 +1424,12 @@
               <div class="resume-item">
                 <h4
                   data-en="DevOps & Network Infrastructure Specialist"
-                  data-fa="متخصص DevOps و زیرساخت شبکه"
+                  data-fa="�?تخصص DevOps �? ز�?رساخت شبک�?"
                 >
                   DevOps & Network Infrastructure Specialist
                 </h4>
-                <h5 data-en="Sep 2018 – Present" data-fa="شهریور ۱۳۹۷ – تاکنون">
-                  Sep 2018 – Present
+                <h5 data-en="Sep 2018 �?? Present" data-fa="ش�?ر�?�?ر ۱۳۹۷ �?? تاک�?�?�?">
+                  Sep 2018 �?? Present
                 </h5>
                 <p>
                   <em
@@ -1611,7 +1438,7 @@
                       target="_blank"
                       rel="noopener"
                       data-en="Newsha Drinks Co."
-                      data-fa=" شرکت کشت و صنعت نیوشاداریان "
+                      data-fa=" شرکت کشت �? ص�?عت �?�?�?شادار�?ا�? "
                       >Newsha Drinks Co.</a
                     ></em
                   >
@@ -1619,191 +1446,191 @@
                 <ul>
                   <li
                     data-en="Designed and implemented virtualization infrastructure for all enterprise servers"
-                    data-fa="طراحی و پیاده‌سازی زیرساخت مجازی‌سازی برای تمام سرورهای سازمانی"
+                    data-fa="طراح�? �? پ�?اد�?�??ساز�? ز�?رساخت �?جاز�?�??ساز�? برا�? ت�?ا�? سر�?ر�?ا�? ساز�?ا�?�?"
                   >
                     Designed and implemented virtualization infrastructure for
                     all enterprise servers
                   </li>
                   <li
                     data-en="Deployed SQL Server cluster with High Availability and Redgate monitoring"
-                    data-fa="استقرار خوشه SQL Server با قابلیت دسترسی بالا و نظارت Redgate"
+                    data-fa="است�?رار خ�?ش�? SQL Server با �?اب�?�?ت دسترس�? با�?ا �? �?ظارت Redgate"
                   >
                     Deployed SQL Server cluster with High Availability and
                     Redgate monitoring
                   </li>
                   <li
                     data-en="Implemented core Windows infrastructure services: Active Directory, DNS, NTP, DFS, WDS, WSUS"
-                    data-fa="پیاده‌سازی سرویس‌های اصلی زیرساخت Windows: Active Directory، DNS، NTP، DFS، WDS، WSUS"
+                    data-fa="پ�?اد�?�??ساز�? سر�?�?س�??�?ا�? اص�?�? ز�?رساخت Windows: Active Directory�? DNS�? NTP�? DFS�? WDS�? WSUS"
                   >
                     Implemented core Windows infrastructure services: Active
                     Directory, DNS, NTP, DFS, WDS, WSUS
                   </li>
                   <li
                     data-en="Deployed Nginx Proxy Manager for advanced HTTP/HTTPS traffic management and load balancing"
-                    data-fa="استقرار Nginx Proxy Manager برای مدیریت پیشرفته ترافیک HTTP/HTTPS و تعادل بار"
+                    data-fa="است�?رار Nginx Proxy Manager برا�? �?د�?ر�?ت پ�?شرفت�? تراف�?ک HTTP/HTTPS �? تعاد�? بار"
                   >
                     Deployed Nginx Proxy Manager for advanced HTTP/HTTPS traffic
                     management and load balancing
                   </li>
                   <li
                     data-en="Redesigned LAN structure with segmented VLANs and removed direct static IPs"
-                    data-fa="طراحی مجدد ساختار LAN با VLAN های مجزا و حذف IP های استاتیک مستقیم"
+                    data-fa="طراح�? �?جدد ساختار LAN با VLAN �?ا�? �?جزا �? حذف IP �?ا�? استات�?ک �?ست�?�?�?"
                   >
                     Redesigned LAN structure with segmented VLANs and removed
                     direct static IPs
                   </li>
                   <li
                     data-en="Configured advanced Cisco switching (STP, VTP, VLAN, Port-Channel, Port Security)"
-                    data-fa="پیکربندی سوئیچ‌ینگ پیشرفته سیسکو (STP، VTP، VLAN، Port-Channel، Port Security)"
+                    data-fa="پ�?کرب�?د�? س�?ئ�?�?�??�?�?گ پ�?شرفت�? س�?سک�? (STP�? VTP�? VLAN�? Port-Channel�? Port Security)"
                   >
                     Configured advanced Cisco switching (STP, VTP, VLAN,
                     Port-Channel, Port Security)
                   </li>
                   <li
                     data-en="Implemented secure Site-to-Site VPN tunnels between Tehran offices"
-                    data-fa="پیاده‌سازی تونل‌های VPN امن Site-to-Site بین دفاتر تهران"
+                    data-fa="پ�?اد�?�??ساز�? ت�?�?�?�??�?ا�? VPN ا�?�? Site-to-Site ب�?�? دفاتر ت�?را�?"
                   >
                     Implemented secure Site-to-Site VPN tunnels between Tehran
                     offices
                   </li>
                   <li
                     data-en="Optimized Internet performance with MikroTik firewall and security rules"
-                    data-fa="بهینه‌سازی عملکرد اینترنت با فایروال MikroTik و قوانین امنیتی"
+                    data-fa="ب�?�?�?�?�??ساز�? ع�?�?کرد ا�?�?تر�?ت با فا�?ر�?ا�? MikroTik �? �?�?ا�?�?�? ا�?�?�?ت�?"
                   >
                     Optimized Internet performance with MikroTik firewall and
                     security rules
                   </li>
                   <li
                     data-en="Installed Kaspersky Endpoint Security with centralized management console"
-                    data-fa="نصب Kaspersky Endpoint Security با کنسول مدیریت متمرکز"
+                    data-fa="�?صب Kaspersky Endpoint Security با ک�?س�?�? �?د�?ر�?ت �?ت�?رکز"
                   >
                     Installed Kaspersky Endpoint Security with centralized
                     management console
                   </li>
                   <li
                     data-en="Upgraded Jira from version 6 to 9 with full documentation"
-                    data-fa="ارتقاء Jira از نسخه 6 به 9 با مستندات کامل"
+                    data-fa="ارت�?اء Jira از �?سخ�? 6 ب�? 9 با �?ست�?دات کا�?�?"
                   >
                     Upgraded Jira from version 6 to 8 with full documentation
                   </li>
                   <li
                     data-en="Upgraded HQ infrastructure with fiber backbone and improved datacenter"
-                    data-fa="ارتقاء زیرساخت مرکز اصلی با ستون فقرات فیبرنوری و بهبود مرکز داده"
+                    data-fa="ارت�?اء ز�?رساخت �?رکز اص�?�? با ست�?�? ف�?رات ف�?بر�?�?ر�? �? ب�?ب�?د �?رکز داد�?"
                   >
                     Upgraded HQ infrastructure with fiber backbone and improved
                     datacenter
                   </li>
                   <li
                     data-en="Integrated CCTV surveillance system with stable infrastructure"
-                    data-fa="یکپارچه‌سازی سیستم نظارت CCTV با زیرساخت پایدار"
+                    data-fa="�?کپار�?�?�??ساز�? س�?ست�? �?ظارت CCTV با ز�?رساخت پا�?دار"
                   >
                     Integrated CCTV surveillance system with stable
                     infrastructure
                   </li>
                   <li
                     data-en="Enhanced VoIP infrastructure for reliable internal telephony"
-                    data-fa="بهبود زیرساخت VoIP برای تلفن داخلی قابل اعتماد"
+                    data-fa="ب�?ب�?د ز�?رساخت VoIP برا�? ت�?ف�? داخ�?�? �?اب�? اعت�?اد"
                   >
                     Enhanced VoIP infrastructure for reliable internal telephony
                   </li>
                   <li
                     data-en="Implemented Zabbix with Telegram API alerts"
-                    data-fa="پیاده‌سازی Zabbix با هشدارهای Telegram API"
+                    data-fa="پ�?اد�?�??ساز�? Zabbix با �?شدار�?ا�? Telegram API"
                   >
                     Implemented Zabbix with Telegram API alerts
                   </li>
                   <li
                     data-en="Integrated Zabbix with Grafana for real-time dashboards"
-                    data-fa="یکپارچه‌سازی Zabbix با Grafana برای داشبوردهای زمان واقعی"
+                    data-fa="�?کپار�?�?�??ساز�? Zabbix با Grafana برا�? داشب�?رد�?ا�? ز�?ا�? �?ا�?ع�?"
                   >
                     Integrated Zabbix with Grafana for real-time dashboards
                   </li>
                   <li
                     data-en="Deployed Cacti for graphical network traffic monitoring"
-                    data-fa="استقرار Cacti برای نظارت گرافیکی ترافیک شبکه"
+                    data-fa="است�?رار Cacti برا�? �?ظارت گراف�?ک�? تراف�?ک شبک�?"
                   >
                     Deployed Cacti for graphical network traffic monitoring
                   </li>
                   <li
                     data-en="Implemented NAS and automated backups with Veeam Backup"
-                    data-fa="پیاده‌سازی NAS و پشتیبان‌گیری خودکار با Veeam Backup"
+                    data-fa="پ�?اد�?�??ساز�? NAS �? پشت�?با�?�??گ�?ر�? خ�?دکار با Veeam Backup"
                   >
                     Implemented NAS and automated backups with Veeam Backup
                   </li>
                   <li
                     data-en="Created technical diagrams, documentation, and asset inventory"
-                    data-fa="ایجاد نمودارهای فنی، مستندات و فهرست دارایی‌ها"
+                    data-fa="ا�?جاد �?�?�?دار�?ا�? ف�?�?�? �?ست�?دات �? ف�?رست دارا�?�?�??�?ا"
                   >
                     Created technical diagrams, documentation, and asset
                     inventory
                   </li>
                   <li
                     data-en="Configured CDN for improved website performance and security"
-                    data-fa="پیکربندی CDN برای بهبود عملکرد و امنیت وب‌سایت"
+                    data-fa="پ�?کرب�?د�? CDN برا�? ب�?ب�?د ع�?�?کرد �? ا�?�?�?ت �?ب�??سا�?ت"
                   >
                     Configured CDN for improved website performance and security
                   </li>
                   <li
                     data-en="Configured ArvanCloud with CDN, caching, and access security policies"
-                    data-fa="پیکربندی ArvanCloud با CDN، کش و سیاست‌های امنیت دسترسی"
+                    data-fa="پ�?کرب�?د�? ArvanCloud با CDN�? کش �? س�?است�??�?ا�? ا�?�?�?ت دسترس�?"
                   >
                     Configured ArvanCloud with CDN, caching, and access security
                     policies
                   </li>
                   <li
                     data-en="Deployed MongoDB for internal NoSQL services"
-                    data-fa="استقرار MongoDB برای سرویس‌های داخلی NoSQL"
+                    data-fa="است�?رار MongoDB برا�? سر�?�?س�??�?ا�? داخ�?�? NoSQL"
                   >
                     Deployed MongoDB for internal NoSQL services
                   </li>
                   <li
                     data-en="Implemented ABS NG for user behavior analytics and reporting"
-                    data-fa="پیاده‌سازی ABS NG برای تحلیل رفتار کاربر و گزارش‌گیری"
+                    data-fa="پ�?اد�?�??ساز�? ABS NG برا�? تح�?�?�? رفتار کاربر �? گزارش�??گ�?ر�?"
                   >
                     Implemented ABS NG for user behavior analytics and reporting
                   </li>
                   <li
                     data-en="Configured Xray for traffic control, tunneling, and bypassing restrictions"
-                    data-fa="پیکربندی Xray برای کنترل ترافیک، تونل‌زنی و دور زدن محدودیت‌ها"
+                    data-fa="پ�?کرب�?د�? Xray برا�? ک�?تر�? تراف�?ک�? ت�?�?�?�??ز�?�? �? د�?ر زد�? �?حد�?د�?ت�??�?ا"
                   >
                     Configured Xray for traffic control, tunneling, and
                     bypassing restrictions
                   </li>
                   <li
                     data-en="Deployed Docker for isolated environments and faster service delivery"
-                    data-fa="استقرار Docker برای محیط‌های مجزا و تحویل سریع‌تر سرویس"
+                    data-fa="است�?رار Docker برا�? �?ح�?ط�??�?ا�? �?جزا �? تح�?�?�? سر�?ع�??تر سر�?�?س"
                   >
                     Deployed Docker for isolated environments and faster service
                     delivery
                   </li>
                   <li
                     data-en="Configured Apache Maven for Java project build automation"
-                    data-fa="پیکربندی Apache Maven برای اتوماسیون بیلد پروژه‌های Java"
+                    data-fa="پ�?کرب�?د�? Apache Maven برا�? ات�?�?اس�?�?�? ب�?�?د پر�?�?�?�??�?ا�? Java"
                   >
                     Configured Apache Maven for Java project build automation
                   </li>
                   <li
                     data-en="Installed n8n for workflow automation"
-                    data-fa="نصب n8n برای اتوماسیون گردش کار"
+                    data-fa="�?صب n8n برا�? ات�?�?اس�?�?�? گردش کار"
                   >
                     Installed n8n for workflow automation
                   </li>
                   <li
                     data-en="Developed Bash scripts for automation and server management"
-                    data-fa="توسعه اسکریپت‌های Bash برای اتوماسیون و مدیریت سرور"
+                    data-fa="ت�?سع�? اسکر�?پت�??�?ا�? Bash برا�? ات�?�?اس�?�?�? �? �?د�?ر�?ت سر�?ر"
                   >
                     Developed Bash scripts for automation and server management
                   </li>
                   <li
                     data-en="Migrated Windows web servers to Linux for performance and cost optimization"
-                    data-fa="مهاجرت وب‌سرورهای Windows به Linux برای بهینه‌سازی عملکرد و هزینه"
+                    data-fa="�?�?اجرت �?ب�??سر�?ر�?ا�? Windows ب�? Linux برا�? ب�?�?�?�?�??ساز�? ع�?�?کرد �? �?ز�?�?�?"
                   >
                     Migrated Windows web servers to Linux for performance and
                     cost optimization
                   </li>
                   <li
                     data-en="Configured load balancing across 5 Internet connections for stability"
-                    data-fa="پیکربندی تعادل بار بین 5 اتصال اینترنت برای پایداری"
+                    data-fa="پ�?کرب�?د�? تعاد�? بار ب�?�? 5 اتصا�? ا�?�?تر�?ت برا�? پا�?دار�?"
                   >
                     Configured load balancing across 5 Internet connections for
                     stability
@@ -1812,14 +1639,14 @@
               </div>
 
               <div class="resume-item">
-                <h4 data-en="Network Administrator" data-fa="ادمین شبکه">
+                <h4 data-en="Network Administrator" data-fa="اد�?�?�? شبک�?">
                   Network Administrator
                 </h4>
                 <h5
-                  data-en="Jul 2017 – Aug 2018"
-                  data-fa="تیر ۱۳۹۶ – مرداد ۱۳۹۷"
+                  data-en="Jul 2017 �?? Aug 2018"
+                  data-fa="ت�?ر ۱۳۹۶ �?? �?رداد ۱۳۹۷"
                 >
-                  Jul 2017 – Aug 2018
+                  Jul 2017 �?? Aug 2018
                 </h5>
                 <p>
                   <em
@@ -1827,9 +1654,9 @@
                       href="https://uast48ac.ir/fa/"
                       target="_blank"
                       rel="noopener"
-                      data-en="University of Applied Science & Technology – Culture & Arts Unit 48"
-                      data-fa="دانشگاه علمی و کاربردی – واحد فرهنگ و هنر ۴۸"
-                      >University of Applied Science & Technology – Culture &
+                      data-en="University of Applied Science & Technology �?? Culture & Arts Unit 48"
+                      data-fa="دا�?شگا�? ع�?�?�? �? کاربرد�? �?? �?احد فر�?�?گ �? �?�?ر ۴۸"
+                      >University of Applied Science & Technology �?? Culture &
                       Arts Unit 48</a
                     ></em
                   >
@@ -1837,39 +1664,39 @@
                 <ul>
                   <li
                     data-en="Installed, configured, and maintained network equipment (switches, routers, servers)"
-                    data-fa="نصب، پیکربندی و نگهداری تجهیزات شبکه (سوئیچ، روتر، سرور)"
+                    data-fa="�?صب�? پ�?کرب�?د�? �? �?گ�?دار�? تج�?�?زات شبک�? (س�?ئ�?�?�? ر�?تر�? سر�?ر)"
                   >
                     Installed, configured, and maintained network equipment
                     (switches, routers, servers)
                   </li>
                   <li
                     data-en="Performed passive networking tasks including cabling, termination, and rack installation"
-                    data-fa="انجام وظایف شبکه‌سازی غیرفعال شامل کابل‌کشی، ترمینیشن و نصب رک"
+                    data-fa="ا�?جا�? �?ظا�?ف شبک�?�??ساز�? غ�?رفعا�? شا�?�? کاب�?�??کش�?�? تر�?�?�?�?ش�? �? �?صب رک"
                   >
                     Performed passive networking tasks including cabling,
                     termination, and rack installation
                   </li>
                   <li
                     data-en="Troubleshot LAN/WAN/Internet connectivity issues"
-                    data-fa="عیب‌یابی مشکلات اتصال LAN/WAN/اینترنت"
+                    data-fa="ع�?ب�??�?اب�? �?شک�?ات اتصا�? LAN/WAN/ا�?�?تر�?ت"
                   >
                     Troubleshot LAN/WAN/Internet connectivity issues
                   </li>
                   <li
                     data-en="Installed software and hardware for end-users"
-                    data-fa="نصب نرم‌افزار و سخت‌افزار برای کاربران نهایی"
+                    data-fa="�?صب �?ر�?�??افزار �? سخت�??افزار برا�? کاربرا�? �?�?ا�?�?"
                   >
                     Installed software and hardware for end-users
                   </li>
                   <li
                     data-en="Implemented CCTV surveillance systems"
-                    data-fa="پیاده‌سازی سیستم‌های نظارت CCTV"
+                    data-fa="پ�?اد�?�??ساز�? س�?ست�?�??�?ا�? �?ظارت CCTV"
                   >
                     Implemented CCTV surveillance systems
                   </li>
                   <li
                     data-en="Applied security policies and kept systems updated"
-                    data-fa="اعمال سیاست‌های امنیتی و به‌روزرسانی سیستم‌ها"
+                    data-fa="اع�?ا�? س�?است�??�?ا�? ا�?�?�?ت�? �? ب�?�??ر�?زرسا�?�? س�?ست�?�??�?ا"
                   >
                     Applied security policies and kept systems updated
                   </li>
@@ -1890,10 +1717,10 @@
       <section id="services" class="services section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2 data-en="Services" data-fa="خدمات">Services</h2>
+          <h2 data-en="Services" data-fa="خد�?ات">Services</h2>
           <p
             data-en="Professional IT services including network design, system administration, infrastructure management, and technical consulting."
-            data-fa="خدمات حرفه‌ای IT شامل طراحی شبکه، مدیریت سیستم، مدیریت زیرساخت و مشاوره فنی."
+            data-fa="خد�?ات حرف�?�??ا�? IT شا�?�? طراح�? شبک�?�? �?د�?ر�?ت س�?ست�?�? �?د�?ر�?ت ز�?رساخت �? �?شا�?ر�? ف�?�?."
           >
             Professional IT services including network design, system
             administration, infrastructure management, and technical consulting.
@@ -1917,9 +1744,10 @@
               </div>
               <div>
                 <h4 class="title">
-<span
+                  <a href="services/network-design.html" class="stretched-link"
+                    ><span
                       data-en="Network Design & Implementation"
-                      data-fa="طراحی و پیاده‌سازی شبکه"
+                      data-fa="طراح�? �? پ�?اد�?�??ساز�? شبک�?"
                       >Network Design & Implementation</span
                     ></a
                   >
@@ -1927,7 +1755,7 @@
                 <p
                   class="description"
                   data-en="Complete network infrastructure design, implementation, and optimization using Cisco and MikroTik equipment for enterprise environments."
-                  data-fa="طراحی کامل زیرساخت شبکه، پیاده‌سازی و بهینه‌سازی با استفاده از تجهیزات سیسکو و میکروتیک برای محیط‌های سازمانی."
+                  data-fa="طراح�? کا�?�? ز�?رساخت شبک�?�? پ�?اد�?�??ساز�? �? ب�?�?�?�?�??ساز�? با استفاد�? از تج�?�?زات س�?سک�? �? �?�?کر�?ت�?ک برا�? �?ح�?ط�??�?ا�? ساز�?ا�?�?."
                 >
                   Complete network infrastructure design, implementation, and
                   optimization using Cisco and MikroTik equipment for enterprise
@@ -1948,9 +1776,10 @@
               </div>
               <div>
                 <h4 class="title">
-<span
+                  <a href="services/system-administration.html" class="stretched-link"
+                    ><span
                       data-en="System Administration"
-                      data-fa="مدیریت سیستم"
+                      data-fa="�?د�?ر�?ت س�?ست�?"
                       >System Administration</span
                     ></a
                   >
@@ -1958,7 +1787,7 @@
                 <p
                   class="description"
                   data-en="Windows Server management, Active Directory, DNS, and Linux server administration for optimal system performance and security."
-                  data-fa="مدیریت Windows Server، Active Directory، DNS و مدیریت سرورهای لینوکس برای عملکرد بهینه و امنیت سیستم."
+                  data-fa="�?د�?ر�?ت Windows Server�? Active Directory�? DNS �? �?د�?ر�?ت سر�?ر�?ا�? �?�?�?�?کس برا�? ع�?�?کرد ب�?�?�?�? �? ا�?�?�?ت س�?ست�?."
                 >
                   Windows Server management, Active Directory, DNS, and Linux
                   server administration for optimal system performance and
@@ -1979,9 +1808,10 @@
               </div>
               <div>
                 <h4 class="title">
-<span
+                  <a href="services/devops-automation.html" class="stretched-link"
+                    ><span
                       data-en="DevOps & Automation"
-                      data-fa="دواپس و اتوماسیون"
+                      data-fa="د�?اپس �? ات�?�?اس�?�?�?"
                       >DevOps & Automation</span
                     ></a
                   >
@@ -1989,7 +1819,7 @@
                 <p
                   class="description"
                   data-en="Docker containerization, CI/CD pipeline setup, and automation scripts to streamline deployment and infrastructure management."
-                  data-fa="کانتینریزاسیون Docker، راه‌اندازی خط لوله CI/CD و اسکریپت‌های اتوماسیون برای تسهیل استقرار و مدیریت زیرساخت."
+                  data-fa="کا�?ت�?�?ر�?زاس�?�?�? Docker�? را�?�??ا�?داز�? خط �?�?�?�? CI/CD �? اسکر�?پت�??�?ا�? ات�?�?اس�?�?�? برا�? تس�?�?�? است�?رار �? �?د�?ر�?ت ز�?رساخت."
                 >
                   Docker containerization, CI/CD pipeline setup, and automation
                   scripts to streamline deployment and infrastructure
@@ -2010,9 +1840,10 @@
               </div>
               <div>
                 <h4 class="title">
-<span
+                  <a href="services/monitoring-security.html" class="stretched-link"
+                    ><span
                       data-en="Monitoring & Security"
-                      data-fa="مانیتورینگ و امنیت"
+                      data-fa="�?ا�?�?ت�?ر�?�?گ �? ا�?�?�?ت"
                       >Monitoring & Security</span
                     ></a
                   >
@@ -2020,7 +1851,7 @@
                 <p
                   class="description"
                   data-en="Comprehensive monitoring solutions with Zabbix, security implementation, and backup strategies to ensure system reliability."
-                  data-fa="راهکارهای جامع مانیتورینگ با Zabbix، پیاده‌سازی امنیت و استراتژی‌های پشتیبان‌گیری برای اطمینان از قابلیت اطمینان سیستم."
+                  data-fa="را�?کار�?ا�? جا�?ع �?ا�?�?ت�?ر�?�?گ با Zabbix�? پ�?اد�?�??ساز�? ا�?�?�?ت �? استرات�?�?�??�?ا�? پشت�?با�?�??گ�?ر�? برا�? اط�?�?�?ا�? از �?اب�?�?ت اط�?�?�?ا�? س�?ست�?."
                 >
                   Comprehensive monitoring solutions with Zabbix, security
                   implementation, and backup strategies to ensure system
@@ -2041,9 +1872,10 @@
               </div>
               <div>
                 <h4 class="title">
-<span
+                  <a href="services/virtualization-solutions.html" class="stretched-link"
+                    ><span
                       data-en="Virtualization Solutions"
-                      data-fa="راهکارهای مجازی‌سازی"
+                      data-fa="را�?کار�?ا�? �?جاز�?�??ساز�?"
                       >Virtualization Solutions</span
                     ></a
                   >
@@ -2051,7 +1883,7 @@
                 <p
                   class="description"
                   data-en="VMware vSphere deployment, KVM virtualization, and cloud migration services for scalable and efficient infrastructure."
-                  data-fa="استقرار VMware vSphere، مجازی‌سازی KVM و خدمات مهاجرت به ابر برای زیرساخت مقیاس‌پذیر و کارآمد."
+                  data-fa="است�?رار VMware vSphere�? �?جاز�?�??ساز�? KVM �? خد�?ات �?�?اجرت ب�? ابر برا�? ز�?رساخت �?�?�?اس�??پذ�?ر �? کارآ�?د."
                 >
                   VMware vSphere deployment, KVM virtualization, and cloud
                   migration services for scalable and efficient infrastructure.
@@ -2071,7 +1903,8 @@
               </div>
               <div>
                 <h4 class="title">
-<span data-en="Technical Consulting" data-fa="مشاوره فنی"
+                  <a href="services/technical-consulting.html" class="stretched-link"
+                    ><span data-en="Technical Consulting" data-fa="�?شا�?ر�? ف�?�?"
                       >Technical Consulting</span
                     ></a
                   >
@@ -2079,7 +1912,7 @@
                 <p
                   class="description"
                   data-en="Expert consultation on IT infrastructure planning, technology selection, and implementation strategies for business growth."
-                  data-fa="مشاوره تخصصی در برنامه‌ریزی زیرساخت IT، انتخاب فناوری و استراتژی‌های پیاده‌سازی برای رشد کسب‌وکار."
+                  data-fa="�?شا�?ر�? تخصص�? در بر�?ا�?�?�??ر�?ز�? ز�?رساخت IT�? ا�?تخاب ف�?ا�?ر�? �? استرات�?�?�??�?ا�? پ�?اد�?�??ساز�? برا�? رشد کسب�??�?کار."
                 >
                   Expert consultation on IT infrastructure planning, technology
                   selection, and implementation strategies for business growth.
@@ -2102,10 +1935,10 @@
         ==================== SECTION TITLE ==================
         =============================================== -->
         <div class="container section-title" data-aos="fade-up">
-          <h2 data-en="Articles" data-fa="مقالات">Articles</h2>
+          <h2 data-en="Articles" data-fa="�?�?ا�?ات">Articles</h2>
           <p
             data-en="A collection of my technical articles and insights on network infrastructure, system administration, and DevOps solutions."
-            data-fa="مجموعه‌ای از مقالات فنی و بینش‌های من در زمینه زیرساخت شبکه، مدیریت سیستم و راهکارهای DevOps."
+            data-fa="�?ج�?�?ع�?�??ا�? از �?�?ا�?ات ف�?�? �? ب�?�?ش�??�?ا�? �?�? در ز�?�?�?�? ز�?رساخت شبک�?�? �?د�?ر�?ت س�?ست�? �? را�?کار�?ا�? DevOps."
           >
             A collection of my technical articles and insights on network
             infrastructure, system administration, and DevOps solutions.
@@ -2136,7 +1969,7 @@
                 data-filter="*"
                 class="filter-active"
                 data-en="All Articles"
-                data-fa="همه مقالات"
+                data-fa="�?�?�? �?�?ا�?ات"
               >
                 All Articles
               </li>
@@ -2145,7 +1978,7 @@
               <li
                 data-filter=".filter-microsoft"
                 data-en="Microsoft"
-                data-fa="مایکروسافت"
+                data-fa="�?ا�?کر�?سافت"
               >
                 Microsoft
               </li>
@@ -2154,7 +1987,7 @@
               <li
                 data-filter=".filter-linux"
                 data-en="Linux Articles"
-                data-fa="لینوکس"
+                data-fa="�?�?�?�?کس"
               >
                 Linux Articles
               </li>
@@ -2163,7 +1996,7 @@
               <li
                 data-filter=".filter-mikrotik"
                 data-en="MikroTik"
-                data-fa="میکروتیک"
+                data-fa="�?�?کر�?ت�?ک"
               >
                 MikroTik
               </li>
@@ -2172,7 +2005,7 @@
               <li
                 data-filter=".filter-vmware"
                 data-en="Vmware"
-                data-fa="مجازی‌سازی"
+                data-fa="�?جاز�?�??ساز�?"
               >
                 Vmware
               </li>
@@ -2181,7 +2014,7 @@
               <li
                 data-filter=".filter-others"
                 data-en="Other Articles"
-                data-fa="سایر مقالات"
+                data-fa="سا�?ر �?�?ا�?ات"
               >
                 Other Articles
               </li>
@@ -2215,15 +2048,15 @@
                   <div class="portfolio-info">
                     <h4
                       data-en="Nginx Installation & Configuration Ubuntu"
-                      data-fa="نصب و پیکربندی Nginx در اوبونتو"
+                      data-fa="�?صب �? پ�?کرب�?د�? Nginx در ا�?ب�?�?ت�?"
                     >
-                      نصب و پیکربندی Nginx در اوبونتو
+                      �?صب �? پ�?کرب�?د�? Nginx در ا�?ب�?�?ت�?
                     </h4>
                     <p
                       data-en="Complete guide to Nginx web server setup"
-                      data-fa="راهنمای کامل راه‌اندازی وب‌سرور Nginx"
+                      data-fa="را�?�?�?ا�? کا�?�? را�?�??ا�?داز�? �?ب�??سر�?ر Nginx"
                     >
-                      راهنمای کامل راه‌اندازی وب‌سرور Nginx
+                      را�?�?�?ا�? کا�?�? را�?�??ا�?داز�? �?ب�??سر�?ر Nginx
                     </p>
 
                     <!-- Portfolio Links Container -->
@@ -2269,13 +2102,13 @@
                   <div class="portfolio-info">
                     <h4
                       data-en="Windows CMD Network Commands"
-                      data-fa="دستورات شبکه Windows CMD"
+                      data-fa="دست�?رات شبک�? Windows CMD"
                     >
                       Windows CMD Network Commands
                     </h4>
                     <p
                       data-en="Professional network commands for system administrators"
-                      data-fa="دستورات حرفه‌ای شبکه برای مدیران سیستم"
+                      data-fa="دست�?رات حرف�?�??ا�? شبک�? برا�? �?د�?را�? س�?ست�?"
                     >
                       Professional network commands for system administrators
                     </p>
@@ -2323,13 +2156,13 @@
                   <div class="portfolio-info">
                     <h4
                       data-en="Website Blocking on MikroTik"
-                      data-fa="بلاک کردن سایت در میکروتیک"
+                      data-fa="ب�?اک کرد�? سا�?ت در �?�?کر�?ت�?ک"
                     >
                       Website Blocking on MikroTik
                     </h4>
                     <p
                       data-en="Complete guide to blocking websites and domains"
-                      data-fa="راهنمای کامل بلاک کردن سایت‌ها و دامنه‌ها"
+                      data-fa="را�?�?�?ا�? کا�?�? ب�?اک کرد�? سا�?ت�??�?ا �? دا�?�?�?�??�?ا"
                     >
                       Complete guide to blocking websites and domains
                     </p>
@@ -2370,32 +2203,20 @@
                     src="assets/img/portfolio/mikrotik-2.png"
                     loading="lazy"
                     class="img-fluid"
-                    alt="پیکربندی حرفه‌ای Load Balancing نامتقارن با Failover در میکروتیک | Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik"
+                    alt="پ�?کرب�?د�? حرف�?�??ا�? Load Balancing �?ا�?ت�?ار�? با Failover در �?�?کر�?ت�?ک | Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik"
                   />
 
                   <!-- Article Info Overlay -->
                   <div class="portfolio-info">
-                    <h4
-                      data-fa="پیکربندی حرفه‌ای Load Balancing نامتقارن با Failover در میکروتیک"
-                      data-en="Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik"
-                    >
-                      پیکربندی حرفه‌ای Load Balancing نامتقارن با Failover در
-                      میکروتیک
-                    </h4>
-                    <p
-                      data-fa="آموزش کامل پیکربندی Load Balancing نامتقارن با Failover خودکار در میکروتیک به روش ECMP"
-                      data-en="Complete guide to configuring asymmetric Load Balancing with automatic Failover in MikroTik using ECMP method"
-                    >
-                      آموزش کامل پیکربندی Load Balancing نامتقارن با Failover
-                      خودکار در میکروتیک به روش ECMP
-                    </p>
+                    <h4 data-fa="پ�?کرب�?د�? حرف�?�??ا�? Load Balancing �?ا�?ت�?ار�? با Failover در �?�?کر�?ت�?ک" data-en="Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik">پ�?کرب�?د�? حرف�?�??ا�? Load Balancing �?ا�?ت�?ار�? با Failover در �?�?کر�?ت�?ک</h4>
+                    <p data-fa="آ�?�?زش کا�?�? پ�?کرب�?د�? Load Balancing �?ا�?ت�?ار�? با Failover خ�?دکار در �?�?کر�?ت�?ک ب�? ر�?ش ECMP" data-en="Complete guide to configuring asymmetric Load Balancing with automatic Failover in MikroTik using ECMP method">آ�?�?زش کا�?�? پ�?کرب�?د�? Load Balancing �?ا�?ت�?ار�? با Failover خ�?دکار در �?�?کر�?ت�?ک ب�? ر�?ش ECMP</p>
 
                     <!-- Portfolio Links Container -->
                     <div class="portfolio-links">
                       <!-- Preview Link -->
                       <a
                         href="assets/img/portfolio/mikrotik-2.png"
-                        title="پیکربندی حرفه‌ای Load Balancing نامتقارن با Failover در میکروتیک | Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik"
+                        title="پ�?کرب�?د�? حرف�?�??ا�? Load Balancing �?ا�?ت�?ار�? با Failover در �?�?کر�?ت�?ک | Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik"
                         data-gallery="portfolio-gallery-book"
                         class="glightbox preview-link"
                         ><i class="bi bi-zoom-in"></i
@@ -2404,7 +2225,7 @@
                       <!-- Details Link -->
                       <a
                         href="articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
-                        title="مشاهده مقاله کامل | View Full Article"
+                        title="�?شا�?د�? �?�?ا�?�? کا�?�? | View Full Article"
                         class="details-link"
                         ><i class="bi bi-link-45deg"></i
                       ></a>
@@ -2426,31 +2247,20 @@
                     src="assets/img/portfolio/linux-2.png"
                     loading="lazy"
                     class="img-fluid"
-                    alt="راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس | Complete Guide to Enabling and Configuring SSH in Linux"
+                    alt="را�?�?�?ا�? جا�?ع فعا�?�??ساز�? �? پ�?کرب�?د�? SSH در �?�?�?�?کس | Complete Guide to Enabling and Configuring SSH in Linux"
                   />
 
                   <!-- Article Info Overlay -->
                   <div class="portfolio-info">
-                    <h4
-                      data-fa="راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس"
-                      data-en="Complete Guide to Enabling and Configuring SSH in Linux"
-                    >
-                      راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس
-                    </h4>
-                    <p
-                      data-fa="آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در لینوکس"
-                      data-en="Complete guide to installing, activating, configuring and securing SSH in Linux"
-                    >
-                      آموزش کامل نصب، فعال‌سازی، پیکربندی و ایمن‌سازی SSH در
-                      لینوکس
-                    </p>
+                    <h4 data-fa="را�?�?�?ا�? جا�?ع فعا�?�??ساز�? �? پ�?کرب�?د�? SSH در �?�?�?�?کس" data-en="Complete Guide to Enabling and Configuring SSH in Linux">را�?�?�?ا�? جا�?ع فعا�?�??ساز�? �? پ�?کرب�?د�? SSH در �?�?�?�?کس</h4>
+                    <p data-fa="آ�?�?زش کا�?�? �?صب�? فعا�?�??ساز�?�? پ�?کرب�?د�? �? ا�?�?�?�??ساز�? SSH در �?�?�?�?کس" data-en="Complete guide to installing, activating, configuring and securing SSH in Linux">آ�?�?زش کا�?�? �?صب�? فعا�?�??ساز�?�? پ�?کرب�?د�? �? ا�?�?�?�??ساز�? SSH در �?�?�?�?کس</p>
 
                     <!-- Portfolio Links Container -->
                     <div class="portfolio-links">
                       <!-- Preview Link -->
                       <a
                         href="assets/img/portfolio/linux-2.png"
-                        title="راهنمای جامع فعال‌سازی و پیکربندی SSH در لینوکس | Complete Guide to Enabling and Configuring SSH in Linux"
+                        title="را�?�?�?ا�? جا�?ع فعا�?�??ساز�? �? پ�?کرب�?د�? SSH در �?�?�?�?کس | Complete Guide to Enabling and Configuring SSH in Linux"
                         data-gallery="portfolio-gallery-app"
                         class="glightbox preview-link"
                         ><i class="bi bi-zoom-in"></i
@@ -2459,7 +2269,7 @@
                       <!-- Details Link -->
                       <a
                         href="articles/enable-ssh-linux-complete-guide.html"
-                        title="مشاهده مقاله کامل | View Full Article"
+                        title="�?شا�?د�? �?�?ا�?�? کا�?�? | View Full Article"
                         class="details-link"
                         ><i class="bi bi-link-45deg"></i
                       ></a>
@@ -2928,15 +2738,15 @@
                   <div class="portfolio-info">
                     <h4
                       data-en="OpenVPN MikroTik Setup"
-                      data-fa="راه‌اندازی OpenVPN میکروتیک"
+                      data-fa="را�?�??ا�?داز�? OpenVPN �?�?کر�?ت�?ک"
                     >
-                      راه‌اندازی OpenVPN میکروتیک
+                      را�?�??ا�?داز�? OpenVPN �?�?کر�?ت�?ک
                     </h4>
                     <p
                       data-en="Complete guide to OpenVPN setup on RouterOS v7"
-                      data-fa="راهنمای کامل راه‌اندازی OpenVPN در RouterOS v7"
+                      data-fa="را�?�?�?ا�? کا�?�? را�?�??ا�?داز�? OpenVPN در RouterOS v7"
                     >
-                      راهنمای کامل راه‌اندازی OpenVPN در RouterOS v7
+                      را�?�?�?ا�? کا�?�? را�?�??ا�?داز�? OpenVPN در RouterOS v7
                     </p>
 
                     <!-- Portfolio Links Container -->
@@ -2962,6 +2772,7 @@
                 </div>
               </div>
               <!-- End Article 16 -->
+
 
               <!-- ===============================================
               ==================== ARTICLE 18: OTHERS =============
@@ -3330,10 +3141,10 @@
       <section id="testimonials" class="testimonials section light-background">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2 data-en="Testimonials" data-fa="نظرات">Testimonials</h2>
+          <h2 data-en="Testimonials" data-fa="�?ظرات">Testimonials</h2>
           <p
             data-en="What clients and colleagues say about my work and professional approach."
-            data-fa="نظرات مشتریان و همکاران درباره کار و رویکرد حرفه‌ای من."
+            data-fa="�?ظرات �?شتر�?ا�? �? �?�?کارا�? دربار�? کار �? ر�?�?کرد حرف�?�??ا�? �?�?."
           >
             What clients and colleagues say about my work and professional
             approach.
@@ -3345,6 +3156,7 @@
         ==================== TESTIMONIALS CONTENT =============
         =============================================== -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <!-- Swiper Configuration -->
           <div class="swiper init-swiper">
             <script type="application/json" class="swiper-config">
               {
@@ -3385,6 +3197,11 @@
                     "centeredSlides": false
                   },
                   "992": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 30,
+                    "centeredSlides": false
+                  },
+                  "1200": {
                     "slidesPerView": 3,
                     "spaceBetween": 30,
                     "centeredSlides": false
@@ -3393,6 +3210,7 @@
               }
             </script>
 
+            <!-- Testimonials Slider -->
             <div class="swiper-wrapper">
               <!-- Testimonial 1 -->
               <div class="swiper-slide">
@@ -3400,11 +3218,14 @@
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      data-en="Amir's expertise in network infrastructure and system administration has been invaluable to our organization. His attention to detail and problem-solving skills are exceptional."
-                      data-fa="تخصص امیر در زیرساخت شبکه و مدیریت سیستم برای سازمان ما بسیار ارزشمند بوده است. توجه دقیق او به جزئیات و مهارت‌های حل مسئله فوق‌العاده است."
+                      data-en="Amir's expertise in network infrastructure and system
+                      administration has been invaluable to our organization.
+                      His attention to detail and problem-solving skills are
+                      exceptional."
+                      data-fa="تخصص ا�?�?ر در ز�?رساخت شبک�? �? �?د�?ر�?ت س�?ست�? برا�? ساز�?ا�? �?ا بس�?ار ارزش�?�?د ب�?د�? است. ت�?ج�? د�?�?�? ا�? ب�? جزئ�?ات �? �?�?ارت�??�?ا�? ح�? �?سئ�?�? ف�?�?�??ا�?عاد�? است."
                       >Amir's expertise in network infrastructure and system
-                      administration has been invaluable to our organization. His
-                      attention to detail and problem-solving skills are
+                      administration has been invaluable to our organization.
+                      His attention to detail and problem-solving skills are
                       exceptional.</span
                     >
                     <i class="bi bi-quote quote-icon-right"></i>
@@ -3414,13 +3235,11 @@
                     loading="lazy"
                     class="testimonial-img"
                     alt="IT Director"
-                    width="80"
-                    height="80"
                   />
-                  <h3 data-en="IT Director" data-fa="مدیر فناوری اطلاعات">
+                  <h3 data-en="IT Director" data-fa="�?د�?ر ف�?ا�?ر�? اط�?اعات">
                     IT Director
                   </h3>
-                  <h4 data-en="Newsha Drinks Co." data-fa="شرکت نوشیدنی نوشا">
+                  <h4 data-en="Newsha Drinks Co." data-fa="شرکت �?�?ش�?د�?�? �?�?شا">
                     Newsha Drinks Co.
                   </h4>
                 </div>
@@ -3433,8 +3252,11 @@
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      data-en="Working with Amir on our virtualization project was a great experience. His technical knowledge and ability to explain complex concepts clearly made the implementation smooth and successful."
-                      data-fa="همکاری با امیر در پروژه مجازی‌سازی تجربه فوق‌العاده‌ای بود. دانش فنی عمیق او و توانایی در توضیح مفاهیم پیچیده، پیاده‌سازی را روان و موفق کرد."
+                      data-en="Working with Amir on our virtualization project was a
+                      great experience. His technical knowledge and ability to
+                      explain complex concepts clearly made the implementation
+                      smooth and successful."
+                      data-fa="�?�?کار�? با ا�?�?ر در پر�?�?�? �?جاز�?�??ساز�? تجرب�? ف�?�?�??ا�?عاد�?�??ا�? ب�?د. دا�?ش ف�?�? ع�?�?�? ا�? �? ت�?ا�?ا�?�? در ت�?ض�?ح �?فا�?�?�? پ�?�?�?د�?�? پ�?اد�?�??ساز�? را ر�?ا�? �? �?�?ف�? کرد."
                       >Working with Amir on our virtualization project was a
                       great experience. His technical knowledge and ability to
                       explain complex concepts clearly made the implementation
@@ -3447,13 +3269,11 @@
                     loading="lazy"
                     class="testimonial-img"
                     alt="Project Manager"
-                    width="80"
-                    height="80"
                   />
-                  <h3 data-en="Project Manager" data-fa="مدیر پروژه">
+                  <h3 data-en="Project Manager" data-fa="�?د�?ر پر�?�?�?">
                     Project Manager
                   </h3>
-                  <h4 data-en="Technology Solutions" data-fa="راهکارهای فناوری">
+                  <h4 data-en="Technology Solutions" data-fa="را�?کار�?ا�? ف�?ا�?ر�?">
                     Technology Solutions
                   </h4>
                 </div>
@@ -3466,8 +3286,11 @@
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      data-en="Amir's monitoring and security implementations have significantly improved our system reliability. His proactive approach to IT infrastructure management is commendable."
-                      data-fa="پیاده‌سازی سیستم‌های نظارت و امنیت امیر، قابلیت اطمینان سیستم ما را به طور چشمگیری بهبود داده است. رویکرد پیشگیرانه او در مدیریت زیرساخت فناوری اطلاعات بسیار قابل تحسین است."
+                      data-en="Amir's monitoring and security implementations have
+                      significantly improved our system reliability. His
+                      proactive approach to IT infrastructure management is
+                      commendable."
+                      data-fa="پ�?اد�?�??ساز�? س�?ست�?�??�?ا�? �?ظارت �? ا�?�?�?ت ا�?�?ر�? �?اب�?�?ت اط�?�?�?ا�? س�?ست�? �?ا را ب�? ط�?ر �?ش�?گ�?ر�? ب�?ب�?د داد�? است. ر�?�?کرد پ�?شگ�?را�?�? ا�? در �?د�?ر�?ت ز�?رساخت ف�?ا�?ر�? اط�?اعات بس�?ار �?اب�? تحس�?�? است."
                       >Amir's monitoring and security implementations have
                       significantly improved our system reliability. His
                       proactive approach to IT infrastructure management is
@@ -3480,13 +3303,11 @@
                     loading="lazy"
                     class="testimonial-img"
                     alt="System Administrator"
-                    width="80"
-                    height="80"
                   />
-                  <h3 data-en="System Administrator" data-fa="مدیر سیستم">
+                  <h3 data-en="System Administrator" data-fa="�?د�?ر س�?ست�?">
                     System Administrator
                   </h3>
-                  <h4 data-en="Enterprise Client" data-fa="مشتری سازمانی">
+                  <h4 data-en="Enterprise Client" data-fa="�?شتر�? ساز�?ا�?�?">
                     Enterprise Client
                   </h4>
                 </div>
@@ -3499,8 +3320,10 @@
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      data-en="The network optimization and load balancing solutions implemented by Amir have greatly enhanced our internet connectivity and overall system performance."
-                      data-fa="راهکارهای بهینه‌سازی شبکه و تعادل بار پیاده‌سازی شده توسط امیر، اتصال اینترنت و عملکرد کلی سیستم ما را به طور چشمگیری بهبود داده است."
+                      data-en="The network optimization and load balancing solutions
+                      implemented by Amir have greatly enhanced our internet
+                      connectivity and overall system performance."
+                      data-fa="را�?کار�?ا�? ب�?�?�?�?�??ساز�? شبک�? �? تعاد�? بار پ�?اد�?�??ساز�? شد�? ت�?سط ا�?�?ر�? اتصا�? ا�?�?تر�?ت �? ع�?�?کرد ک�?�? س�?ست�? �?ا را ب�? ط�?ر �?ش�?گ�?ر�? ب�?ب�?د داد�? است."
                       >The network optimization and load balancing solutions
                       implemented by Amir have greatly enhanced our internet
                       connectivity and overall system performance.</span
@@ -3512,13 +3335,11 @@
                     loading="lazy"
                     class="testimonial-img"
                     alt="Network Engineer"
-                    width="80"
-                    height="80"
                   />
-                  <h3 data-en="Network Engineer" data-fa="مهندس شبکه">
+                  <h3 data-en="Network Engineer" data-fa="�?�?�?دس شبک�?">
                     Network Engineer
                   </h3>
-                  <h4 data-en="Infrastructure Team" data-fa="تیم زیرساخت">
+                  <h4 data-en="Infrastructure Team" data-fa="ت�?�? ز�?رساخت">
                     Infrastructure Team
                   </h4>
                 </div>
@@ -3531,8 +3352,10 @@
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      data-en="Amir's expertise in DevOps and automation has streamlined our deployment processes. His technical documentation and knowledge transfer are excellent."
-                      data-fa="تخصص امیر در DevOps و اتوماسیون، فرآیندهای استقرار ما را به طور قابل توجهی روان کرده است. مستندات فنی و انتقال دانش او بسیار عالی است."
+                      data-en="Amir's expertise in DevOps and automation has streamlined
+                      our deployment processes. His technical documentation and
+                      knowledge transfer are excellent."
+                      data-fa="تخصص ا�?�?ر در DevOps �? ات�?�?اس�?�?�?�? فرآ�?�?د�?ا�? است�?رار �?ا را ب�? ط�?ر �?اب�? ت�?ج�?�? ر�?ا�? کرد�? است. �?ست�?دات ف�?�? �? ا�?ت�?ا�? دا�?ش ا�? بس�?ار عا�?�? است."
                       >Amir's expertise in DevOps and automation has streamlined
                       our deployment processes. His technical documentation and
                       knowledge transfer are excellent.</span
@@ -3544,26 +3367,28 @@
                     loading="lazy"
                     class="testimonial-img"
                     alt="DevOps Lead"
-                    width="80"
-                    height="80"
                   />
                   <h3 data-en="DevOps Lead" data-fa="سرپرست DevOps">
                     DevOps Lead
                   </h3>
-                  <h4 data-en="Development Team" data-fa="تیم توسعه">
+                  <h4 data-en="Development Team" data-fa="ت�?�? ت�?سع�?">
                     Development Team
                   </h4>
                 </div>
               </div>
               <!-- End Testimonial 5 -->
             </div>
+            <!-- End Testimonials Slider -->
 
+            <!-- Swiper Navigation -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
+            
+            <!-- Swiper Pagination -->
             <div class="swiper-pagination"></div>
           </div>
+          <!-- End Swiper Container -->
         </div>
-
         <!-- End Testimonials Container -->
       </section>
       <!-- /Testimonials Section -->
@@ -3574,10 +3399,10 @@
       <section id="contact" class="contact section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2 data-en="Contact" data-fa="تماس">Contact</h2>
+          <h2 data-en="Contact" data-fa="ت�?اس">Contact</h2>
           <p
             data-en="Get in touch for professional IT services, network solutions, or technical consulting."
-            data-fa="برای خدمات حرفه‌ای IT، راهکارهای شبکه یا مشاوره فنی با من تماس بگیرید."
+            data-fa="برا�? خد�?ات حرف�?�??ا�? IT�? را�?کار�?ا�? شبک�? �?ا �?شا�?ر�? ف�?�? با �?�? ت�?اس بگ�?ر�?د."
           >
             Get in touch for professional IT services, network solutions, or
             technical consulting.
@@ -3589,325 +3414,245 @@
         ==================== CONTACT CONTENT ================
         =============================================== -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="contact-wrapper">
-            <!-- Contact Header -->
-            <div class="contact-header" data-aos="fade-up" data-aos-delay="150">
-              <div class="contact-intro">
-                <h3 class="contact-intro-title">
-                  <span
-                    data-en="Let's Work Together"
-                    data-fa="بیایید با هم کار کنیم"
-                    >Let's Work Together</span
-                  >
-                  <span class="title-accent">🤝</span>
-                </h3>
-                <p
-                  class="contact-intro-text"
-                  data-en="Ready to discuss your IT infrastructure needs? I'm here to help you achieve your goals with professional solutions."
-                  data-fa="آماده بحث در مورد نیازهای زیرساخت IT شما هستم؟ من اینجا هستم تا با راهکارهای حرفه‌ای به شما کمک کنم."
+          <div class="row gy-4">
+            <!-- ===============================================
+            ==================== CONTACT INFO ==================
+            =============================================== -->
+            <div class="col-lg-5">
+              <div class="info-wrap">
+                <!-- Address Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
                 >
-                  Ready to discuss your IT infrastructure needs? I'm here to
-                  help you achieve your goals with professional solutions.
-                </p>
-              </div>
-            </div>
-
-            <!-- Contact Main Grid -->
-            <div class="contact-main-grid">
-              <!-- Left Column - Contact Methods -->
-              <div class="contact-methods">
-                <!-- Quick Contact Cards -->
-                <div class="contact-cards-grid">
-                  <!-- Phone Card -->
-                  <div
-                    class="contact-card phone-card"
-                    data-aos="fade-right"
-                    data-aos-delay="200"
-                  >
-                    <div class="card-icon">
-                      <i class="bi bi-telephone"></i>
-                    </div>
-                    <div class="card-content">
-                      <h4 data-en="Call Me" data-fa="تماس تلفنی">Call Me</h4>
-                      <p
-                        data-en="Direct phone consultation"
-                        data-fa="مشاوره تلفنی مستقیم"
-                      >
-                        Direct phone consultation
-                      </p>
-                      <a href="tel:+989197276219" class="contact-link">
-                        <span data-en="+98 9197276219" data-fa="09197276219"
-                          >+98 9197276219</span
-                        >
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="Address" data-fa="آدرس">Address</h3>
+                    <p data-en="Tehran, Iran" data-fa="ت�?را�?�? ا�?را�?">
+                      Tehran, Iran
+                    </p>
                   </div>
+                </div>
+                <!-- End Info Item -->
 
-                  <!-- WhatsApp Card -->
-                  <div
-                    class="contact-card whatsapp-card"
-                    data-aos="fade-right"
-                    data-aos-delay="250"
-                  >
-                    <div class="card-icon">
-                      <i class="bi bi-whatsapp"></i>
-                    </div>
-                    <div class="card-content">
-                      <h4 data-en="WhatsApp" data-fa="واتساپ">WhatsApp</h4>
-                      <p
-                        data-en="Quick messaging & support"
-                        data-fa="پیام‌رسانی سریع و پشتیبانی"
+                <!-- Phone Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="Phone" data-fa="ت�?ف�?">Phone</h3>
+                    <p>
+                      <a
+                        href="tel:+989197276219"
+                        data-en="+98 9197276219"
+                        data-fa="09197276219"
+                        >+98 9197276219</a
                       >
-                        Quick messaging & support
-                      </p>
+                    </p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <!-- WhatsApp Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="350"
+                >
+                  <i class="bi bi-whatsapp flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="WhatsApp" data-fa="�?اتساپ">WhatsApp</h3>
+                    <p>
                       <a
                         href="https://wa.me/989197276219"
                         target="_blank"
                         rel="noopener"
-                        class="contact-link"
+                        data-en="+98 9197276219"
+                        data-fa="09197276219"
+                        >+98 9197276219</a
                       >
-                        <span data-en="Start Chat" data-fa="شروع گفتگو"
-                          >Start Chat</span
-                        >
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
+                    </p>
                   </div>
+                </div>
+                <!-- End Info Item -->
 
-                  <!-- Email Card -->
-                  <div
-                    class="contact-card email-card"
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                  >
-                    <div class="card-icon">
-                      <i class="bi bi-envelope"></i>
-                    </div>
-                    <div class="card-content">
-                      <h4 data-en="Email Me" data-fa="ایمیل">Email Me</h4>
-                      <p
-                        data-en="Detailed project discussions"
-                        data-fa="بحث‌های تفصیلی پروژه"
-                      >
-                        Detailed project discussions
-                      </p>
-                      <a
-                        href="mailto:jalalian.amirhossein@gmail.com"
-                        class="contact-link"
-                      >
-                        <span>jalalian.amirhossein@gmail.com</span>
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-
-                  <!-- Telegram Card -->
-                  <div
-                    class="contact-card telegram-card"
-                    data-aos="fade-right"
-                    data-aos-delay="350"
-                  >
-                    <div class="card-icon">
-                      <i class="bi bi-telegram"></i>
-                    </div>
-                    <div class="card-content">
-                      <h4 data-en="Telegram" data-fa="تلگرام">Telegram</h4>
-                      <p data-en="Instant communication" data-fa="ارتباط فوری">
-                        Instant communication
-                      </p>
+                <!-- Telegram Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="375"
+                >
+                  <i class="bi bi-telegram flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="Telegram" data-fa="ت�?گرا�?">Telegram</h3>
+                    <p>
                       <a
                         href="https://t.me/Aj_mercury"
                         target="_blank"
                         rel="noopener"
-                        class="contact-link"
+                        >@Aj_mercury</a
                       >
-                        <span>@Aj_mercury</span>
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Location Info -->
-                <div
-                  class="location-info"
-                  data-aos="fade-right"
-                  data-aos-delay="400"
-                >
-                  <div class="location-card">
-                    <div class="location-header">
-                      <i class="bi bi-geo-alt"></i>
-                      <h4 data-en="My Location" data-fa="موقعیت من">
-                        My Location
-                      </h4>
-                    </div>
-                    <div class="location-content">
-                      <p data-en="Tehran, Iran" data-fa="تهران، ایران">
-                        Tehran, Iran
-                      </p>
-                      <div class="map-container">
-                        <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1145.5099796149461!2d51.40510627035861!3d35.701826831163324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e010c2bbc0853%3A0xd7ec3a4d591a3242!2sReza%20Computer%20Center!5e0!3m2!1sen!2sde!4v1756209223815!5m2!1sen!2sde"
-                          frameborder="0"
-                          style="
-                            border: 0;
-                            width: 100%;
-                            height: 200px;
-                            border-radius: 12px;
-                          "
-                          allowfullscreen=""
-                          loading="lazy"
-                          referrerpolicy="no-referrer-when-downgrade"
-                          title="موقعیت مکانی - تهران، ایران"
-                        ></iframe>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column - Contact Form -->
-              <div
-                class="contact-form-section"
-                data-aos="fade-left"
-                data-aos-delay="200"
-              >
-                <div class="form-container">
-                  <div class="form-header">
-                    <h3 class="form-title">
-                      <span data-en="Send a Message" data-fa="ارسال پیام"
-                        >Send a Message</span
-                      >
-                      <span class="title-accent">💬</span>
-                    </h3>
-                    <p
-                      class="form-subtitle"
-                      data-en="Fill out the form below and I'll get back to you within 24 hours"
-                      data-fa="فرم زیر را پر کنید و من ظرف ۲۴ ساعت به شما پاسخ خواهم داد"
-                    >
-                      Fill out the form below and I'll get back to you within 24
-                      hours
                     </p>
                   </div>
+                </div>
+                <!-- End Info Item -->
 
-                  <form
-                    action="forms/contact.php"
-                    method="post"
-                    class="php-email-form"
-                  >
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="name-field" class="form-label">
-                          <i class="bi bi-person"></i>
-                          <span data-en="Your Name" data-fa="نام شما"
-                            >Your Name</span
-                          >
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          id="name-field"
-                          class="form-input"
-                          placeholder="Enter your full name"
-                          required
-                          minlength="2"
-                          maxlength="50"
-                        />
-                      </div>
+                <!-- Email Info -->
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h3 data-en="Email" data-fa="ا�?�?�?�?">Email</h3>
+                    <p>
+                      <a href="mailto:jalalian.amirhossein@gmail.com"
+                        >jalalian.amirhossein@gmail.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
 
-                      <div class="form-group">
-                        <label for="email-field" class="form-label">
-                          <i class="bi bi-envelope"></i>
-                          <span data-en="Your Email" data-fa="ایمیل شما"
-                            >Your Email</span
-                          >
-                        </label>
-                        <input
-                          type="email"
-                          class="form-input"
-                          name="email"
-                          id="email-field"
-                          placeholder="Enter your email address"
-                          required
-                          maxlength="100"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="subject-field" class="form-label">
-                        <i class="bi bi-tag"></i>
-                        <span data-en="Subject" data-fa="موضوع">Subject</span>
-                      </label>
-                      <input
-                        type="text"
-                        class="form-input"
-                        name="subject"
-                        id="subject-field"
-                        placeholder="What's this about?"
-                        required
-                        minlength="5"
-                        maxlength="100"
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label for="message-field" class="form-label">
-                        <i class="bi bi-chat-text"></i>
-                        <span data-en="Message" data-fa="پیام">Message</span>
-                      </label>
-                      <textarea
-                        class="form-textarea"
-                        name="message"
-                        rows="6"
-                        id="message-field"
-                        placeholder="Tell me about your project or requirements..."
-                        required
-                        minlength="10"
-                        maxlength="1000"
-                      ></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                      <div class="form-status">
-                        <div
-                          class="loading"
-                          data-en="Sending..."
-                          data-fa="در حال ارسال..."
-                        >
-                          <i class="bi bi-hourglass-split"></i>
-                          <span>Sending...</span>
-                        </div>
-                        <div class="error-message">
-                          <i class="bi bi-exclamation-triangle"></i>
-                          <span>Error sending message. Please try again.</span>
-                        </div>
-                        <div
-                          class="sent-message"
-                          data-en="Message sent successfully! I'll get back to you soon."
-                          data-fa="پیام با موفقیت ارسال شد! به زودی به شما پاسخ خواهم داد."
-                        >
-                          <i class="bi bi-check-circle"></i>
-                          <span
-                            >Message sent successfully! I'll get back to you
-                            soon.</span
-                          >
-                        </div>
-                      </div>
-
-                      <button type="submit" class="submit-btn">
-                        <span data-en="Send Message" data-fa="ارسال پیام"
-                          >Send Message</span
-                        >
-                        <i class="bi bi-send"></i>
-                      </button>
-                    </div>
-                  </form>
+                <!-- Google Maps -->
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1145.5099796149461!2d51.40510627035861!3d35.701826831163324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e010c2bbc0853%3A0xd7ec3a4d591a3242!2sReza%20Computer%20Center!5e0!3m2!1sen!2sde!4v1756209223815!5m2!1sen!2sde"
+                    frameborder="0"
+                    style="border: 0; width: 100%; height: 300px"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="�?�?�?ع�?ت �?کا�?�? - ت�?را�?�? ا�?را�?"
+                  ></iframe>
                 </div>
               </div>
             </div>
+            <!-- End Contact Info -->
+
+            <!-- ===============================================
+            ==================== CONTACT FORM ==================
+            =============================================== -->
+            <div class="col-lg-7">
+              <form
+                action="forms/contact.php"
+                method="post"
+                class="php-email-form"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label
+                      for="name-field"
+                      class="pb-2"
+                      data-en="Your Name"
+                      data-fa="�?ا�? ش�?ا"
+                      >Your Name</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      id="name-field"
+                      class="form-control"
+                      required
+                      minlength="2"
+                      maxlength="50"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label
+                      for="email-field"
+                      class="pb-2"
+                      data-en="Your Email"
+                      data-fa="ا�?�?�?�? ش�?ا"
+                      >Your Email</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email-field"
+                      required
+                      maxlength="100"
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label
+                      for="subject-field"
+                      class="pb-2"
+                      data-en="Subject"
+                      data-fa="�?�?ض�?ع"
+                      >Subject</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      id="subject-field"
+                      required
+                      minlength="5"
+                      maxlength="100"
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label
+                      for="message-field"
+                      class="pb-2"
+                      data-en="Message"
+                      data-fa="پ�?ا�?"
+                      >Message</label
+                    >
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="10"
+                      id="message-field"
+                      required
+                      minlength="10"
+                      maxlength="1000"
+                    ></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <div
+                      class="loading"
+                      data-en="Loading"
+                      data-fa="در حا�? ارسا�?"
+                    >
+                      Loading
+                    </div>
+                    <div class="error-message"></div>
+                    <div
+                      class="sent-message"
+                      data-en="Your message has been sent. Thank you!"
+                      data-fa="پ�?ا�? ش�?ا ارسا�? شد. �?تشکر�?!"
+                    >
+                      Your message has been sent. Thank you!
+                    </div>
+
+                    <button
+                      type="submit"
+                      data-en="Send Message"
+                      data-fa="ارسا�? پ�?ا�?"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End Contact Form -->
           </div>
+          <!-- End Contact Row -->
         </div>
         <!-- End Contact Container -->
       </section>
@@ -3917,166 +3662,44 @@
     <!-- ===============================================
     ==================== FOOTER SECTION ==================
     =============================================== -->
-    <footer id="footer" class="footer position-relative">
-      <div class="footer-background">
-        <div class="footer-pattern"></div>
-      </div>
+    <footer id="footer" class="footer position-relative light-background">
       <div class="container">
-        <div class="footer-content">
-          <!-- Footer Main Content -->
-          <div class="footer-main">
-            <!-- Brand Section -->
-            <div class="footer-brand">
-              <h3 class="brand-name">
-                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
-                  >AmirHossein Jalalian</span
-                >
-              </h3>
-              <p
-                class="brand-title"
-                data-en="IT Infrastructure Specialist"
-                data-fa="متخصص زیرساخت فناوری اطلاعات"
-              >
-                IT Infrastructure Specialist
-              </p>
-              <p
-                class="brand-description"
-                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
-              >
-                Delivering reliable, secure, and scalable IT solutions for your
-                business success.
-              </p>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="footer-contact">
-              <h4
-                class="contact-title"
-                data-en="Get In Touch"
-                data-fa="تماس با من"
-              >
-                Get In Touch
-              </h4>
-              <div class="contact-info">
-                <div class="contact-item">
-                  <i class="bi bi-geo-alt"></i>
-                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
-                    >Tehran, Iran</span
-                  >
-                </div>
-                <div class="contact-item">
-                  <i class="bi bi-telephone"></i>
-                  <a
-                    href="tel:+989197276219"
-                    data-en="+98 9197276219"
-                    data-fa="09197276219"
-                    >+98 9197276219</a
-                  >
-                </div>
-                <div class="contact-item">
-                  <i class="bi bi-envelope"></i>
-                  <a href="mailto:jalalian.amirhossein@gmail.com"
-                    >jalalian.amirhossein@gmail.com</a
-                  >
-                </div>
-              </div>
-
-              <!-- Social Links -->
-              <div class="social-links">
-                <h5
-                  class="social-title"
-                  data-en="Follow Me"
-                  data-fa="دنبال کنید"
-                >
-                  Follow Me
-                </h5>
-                <div class="social-icons">
-                  <a
-                    href="https://wa.me/989197276219"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-link whatsapp"
-                    aria-label="WhatsApp"
-                  >
-                    <i class="bi bi-whatsapp"></i>
-                  </a>
-                  <a
-                    href="https://t.me/Aj_mercury"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-link telegram"
-                    aria-label="Telegram"
-                  >
-                    <i class="bi bi-telegram"></i>
-                  </a>
-                  <a
-                    href="mailto:jalalian.amirhossein@gmail.com"
-                    class="social-link email"
-                    aria-label="Email"
-                  >
-                    <i class="bi bi-envelope"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Footer Bottom -->
-          <div class="footer-bottom">
-            <div class="footer-bottom-content">
-              <div class="copyright">
-                <p>
-                  © <span>2025</span>
-                  <strong
-                    data-en="AmirHossein Jalalian"
-                    data-fa="امیرحسین جلالیان"
-                    >AmirHossein Jalalian</strong
-                  >
-                  <span
-                    data-en="All Rights Reserved"
-                    data-fa="تمام حقوق محفوظ است"
-                    >All Rights Reserved</span
-                  >
-                </p>
-              </div>
-              <div class="footer-heart">
-                <span data-en="Made with" data-fa="ساخته شده با"
-                  >Made with</span
-                >
-                <i class="bi bi-heart-fill"></i>
-                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
-              </div>
-            </div>
-          </div>
+        <!-- Copyright -->
+        <div class="copyright text-center">
+          <p>
+            © <span>2025</span>
+            <strong
+              class="px-1"
+              data-en="AmirHossein Jalalian"
+              data-fa="ا�?�?رحس�?�? ج�?ا�?�?ا�?"
+              >AmirHossein Jalalian</strong
+            >
+            <span data-en="All Rights Reserved" data-fa="ت�?ا�? ح�?�?�? �?حف�?ظ است"
+              >All Rights Reserved</span
+            >
+          </p>
         </div>
+        <!-- End Copyright -->
       </div>
+      <!-- End Footer Container -->
     </footer>
     <!-- End Footer Section -->
 
     <!-- ===============================================
-    PAGE PRELOADER - Modern Bilingual Design
+    ==================== SCROLL TO TOP ===================
     =============================================== -->
-    <div id="preloader" class="preloader-overlay visible">
-      <div id="preloader-container" class="preloader-container ltr">
-        <!-- Spinning Circle Animation -->
-        <div class="preloader-spinner">
-          <div class="spinner-circle">
-            <div class="spinner-inner"></div>
-          </div>
-        </div>
+    <a
+      href="#hero"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Scroll to top"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-        <!-- Loading Text -->
-        <div class="preloader-text">
-          <span id="loading-text" class="loading-text">Loading...</span>
-        </div>
-
-        <!-- Progress Line Animation -->
-        <div class="preloader-progress">
-          <div class="progress-line"></div>
-        </div>
-      </div>
-    </div>
+    <!-- ===============================================
+    PAGE PRELOADER
+    =============================================== -->
+    <div id="preloader"></div>
 
     <!-- ===============================================
     JAVASCRIPT LIBRARIES & SCRIPTS
@@ -4138,70 +3761,7 @@
     <!-- Language Toggle JavaScript -->
     <script src="assets/js/i18n.js?v=999" defer></script>
 
-    <!-- Fix corrupted Persian labels and typed items (language-safe) -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        try {
-          const faMap = {
-            Home: "\u062e\u0627\u0646\u0647",
-            About: "\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0646",
-            Resume: "\u0631\u0632\u0648\u0645\u0647",
-            Services: "\u062e\u062f\u0645\u0627\u062a",
-            Articles: "\u0645\u0642\u0627\u0644\u0627\u062a",
-            Testimonials: "\u062a\u0648\u0635\u06cc\u0647\u200c\u0646\u0627\u0645\u0647\u200c\u0647\u0627",
-            Contact: "\u062a\u0645\u0627\u0633",
-          };
-          Object.entries(faMap).forEach(([en, fa]) => {
-            document
-              .querySelectorAll('#navmenu [data-en="' + en + '"]')
-              .forEach((el) => el.setAttribute("data-fa", fa));
-          });
 
-          const subtitle = document.querySelector(".subtitle-prefix");
-          if (subtitle) subtitle.setAttribute("data-fa", "\u0645\u0646");
-
-          const typedEl = document.querySelector(".typed");
-          if (typedEl) {
-            const enItems = [
-              "Network Specialist",
-              "DevOps Engineer",
-              "IT Consultant",
-              "Systems Expert",
-              "VMware Administrator",
-            ];
-            const faItems = [
-              "\u0645\u062a\u062e\u0635\u0635 \u0634\u0628\u06a9\u0647 \u0647\u0633\u062a\u0645",
-              "\u0645\u0647\u0646\u062f\u0633 DevOps \u0647\u0633\u062a\u0645",
-              "\u0645\u0634\u0627\u0648\u0631 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0647\u0633\u062a\u0645",
-              "\u0643\u0627\u0631\u0634\u0646\u0627\u0633 \u0633\u064a\u0633\u062a\u0645\u200c\u0647\u0627 \u0647\u0633\u062a\u0645",
-              "\u0645\u062f\u064a\u0631 \u0645\u062c\u0627\u0632\u064a\u200c\u0633\u0627\u0632\u064a VMware \u0647\u0633\u062a\u0645",
-            ];
-
-            const isFa = document.documentElement.lang === "fa";
-            const strings = (isFa ? faItems : enItems).map((s) => s.trim());
-
-            typedEl.setAttribute("data-typed-items", enItems.join(", "));
-            typedEl.setAttribute("data-typed-items-fa", faItems.join(", "));
-            typedEl.textContent = strings[0] || "System Administrator";
-
-            if (window.Typed) {
-              if (typedEl._typedInstance && typedEl._typedInstance.destroy) {
-                typedEl._typedInstance.destroy();
-              }
-              typedEl._typedInstance = new window.Typed(".typed", {
-                strings,
-                typeSpeed: 100,
-                backSpeed: 50,
-                backDelay: 2000,
-                loop: true,
-              });
-            }
-          }
-        } catch (e) {
-          console.warn("Label normalization skipped:", e);
-        }
-      });
-    </script>
 
     <!-- ===============================================
     SERVICE WORKER REGISTRATION
@@ -4272,3 +3832,4 @@
 <!-- ===============================================
 END OF MEET AJ PORTFOLIO HTML DOCUMENT
 =============================================== -->
+

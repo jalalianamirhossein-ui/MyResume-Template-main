@@ -556,56 +556,14 @@
             try {
               let config = JSON.parse(configElement.innerHTML.trim());
 
-              const isRtl = document.documentElement.dir === "rtl";
-              const isTestimonialsSlider = swiperElement.closest(".testimonials");
-
-              // Keep Swiper aware of document direction for testimonials
-              if (isTestimonialsSlider) {
-                swiperElement.setAttribute("dir", isRtl ? "rtl" : "ltr");
-                swiperElement.classList.toggle("swiper-rtl", isRtl);
-              }
-
-              const hasBreakpoints =
-                config.breakpoints &&
-                Object.keys(config.breakpoints).length > 0;
-
-              if (!hasBreakpoints) {
-                if (window.innerWidth <= 768) {
-                  config.slidesPerView = 1;
-                  config.spaceBetween = 20;
-                } else if (window.innerWidth <= 991) {
-                  config.slidesPerView = 2;
-                  config.spaceBetween = 30;
-                } else {
-                  config.slidesPerView = 3;
-                  config.spaceBetween = 30;
-                }
-              }
-
-              if (
-                isTestimonialsSlider &&
-                isRtl &&
-                config.navigation &&
-                config.navigation.nextEl &&
-                config.navigation.prevEl
-              ) {
-                const originalNext = config.navigation.nextEl;
-                config.navigation.nextEl = config.navigation.prevEl;
-                config.navigation.prevEl = originalNext;
-              }
-
+              // Improve mobile settings for Swiper
               if (window.innerWidth <= 768) {
-                if (config.autoplay) {
-                  config.autoplay = Object.assign({}, config.autoplay, {
-                    delay: config.autoplay.delay || 4000,
-                    disableOnInteraction: false,
-                  });
-                } else {
-                  config.autoplay = {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                  };
-                }
+                config.slidesPerView = 3;
+                config.spaceBetween = 20;
+                config.autoplay = {
+                  delay: 4000,
+                  disableOnInteraction: false,
+                };
               }
 
               if (swiperElement.classList.contains("swiper-tab")) {
@@ -720,34 +678,41 @@
     }
   });
 
-  // Modern Bilingual Preloader Animation
+  // Improve mobile performance for preloader
   const preloader = document.querySelector("#preloader");
-  
   if (preloader) {
-    // Hide preloader when page is loaded
     window.addEventListener("load", () => {
       setTimeout(() => {
-        preloader.classList.remove("visible");
-        preloader.classList.add("hidden");
-        
+        preloader.style.opacity = "0";
         setTimeout(() => {
-          preloader.style.display = "none";
+          preloader.remove();
         }, 300);
-      }, 1500); // Show preloader for at least 1.5 seconds
+      }, 500);
     });
-    
-    // Optional: Hide preloader after minimum time even if page loads faster
-    setTimeout(() => {
-      if (preloader.classList.contains("visible")) {
-        preloader.classList.remove("visible");
-        preloader.classList.add("hidden");
-        
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 300);
-      }
-    }, 3000); // Maximum 3 seconds
   }
 
+  // Improve mobile performance for scroll top
+  let scrollTop = document.querySelector(".scroll-top");
+  function toggleScrollTop() {
+    if (!scrollTop) return;
+    let threshold = 100;
+    if (window.innerWidth <= 768) {
+      threshold = 50; // Reduce threshold for mobile
+    }
+
+    window.scrollY > threshold
+      ? scrollTop.classList.add("active")
+      : scrollTop.classList.remove("active");
+  }
+
+  if (scrollTop) {
+    scrollTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  window.addEventListener("load", toggleScrollTop);
   document.addEventListener("scroll", throttledScroll);
 })();
+

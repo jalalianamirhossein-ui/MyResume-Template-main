@@ -50,6 +50,23 @@ html[dir="rtl"] .main span {
   direction: rtl !important;
 }
 
+/* Override for centered profile card content */
+html[dir="rtl"] .profile-card,
+html[dir="rtl"] .profile-card .profile-info,
+html[dir="rtl"] .profile-card .profile-name,
+html[dir="rtl"] .profile-card .profile-title,
+html[dir="rtl"] .profile-card .profile-location {
+  text-align: center !important;
+}
+
+html[dir="rtl"] .profile-card {
+  align-items: center !important;
+}
+
+html[dir="rtl"] .profile-card .profile-location {
+  justify-content: center !important;
+}
+
 /* RTL for Blocking Article */
 html[dir="rtl"] .article-blocking .intro-content,
 html[dir="rtl"] .article-blocking .methods-overview,

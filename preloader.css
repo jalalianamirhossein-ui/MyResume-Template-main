@@ -12,12 +12,15 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
 }
 
 .preloader-overlay.visible {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.3s ease-in-out, visibility 0s;
 }
 
 .preloader-overlay.hidden {
@@ -69,12 +72,17 @@
   border: 2px solid rgba(37, 99, 235, 0.2);
   border-top: 2px solid #2563eb;
   border-radius: 50%;
-  animation: spin 0.8s linear infinite reverse;
+  animation: spinCentered 0.8s linear infinite reverse;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes spinCentered {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Loading Text */
@@ -116,6 +124,13 @@
   border-radius: 2px;
   animation: progress 2s ease-in-out infinite;
   transform-origin: left;
+}
+
+/* Performance hint for animated transforms */
+.spinner-circle,
+.spinner-inner,
+.progress-line {
+  will-change: transform;
 }
 
 @keyframes progress {
