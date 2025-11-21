@@ -284,11 +284,13 @@
 
 /* OpenVPN Article Text Colors */
 .article-openvpn .hero .article-meta .meta-date {
-  color: rgba(231, 227, 204, 0.8); /* Light cream with transparency */
+  color: rgba(231, 227, 204, 0.8);
+  /* Light cream with transparency */
 }
 
 .article-openvpn .hero .article-meta .meta-date time {
-  color: rgba(231, 227, 204, 0.9); /* Light cream with transparency */
+  color: rgba(231, 227, 204, 0.9);
+  /* Light cream with transparency */
 }
 
 .article-openvpn .article-category {
@@ -379,12 +381,11 @@
 /* Article Content Styles */
 .article-content {
   padding: 80px 0;
-  background: linear-gradient(
-    135deg,
-    var(--background) 0%,
-    var(--surface-muted) 100%
-  );
-  overflow: visible; /* Allow step badges to extend outside */
+  background: linear-gradient(135deg,
+      var(--background) 0%,
+      var(--surface-muted) 100%);
+  overflow: visible;
+  /* Allow step badges to extend outside */
 }
 
 .article-body {
@@ -397,7 +398,8 @@
   padding: 60px 40px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--divider-border);
-  overflow: visible; /* Allow step badges to extend outside */
+  overflow: visible;
+  /* Allow step badges to extend outside */
   animation: fadeInUp 0.8s ease-out;
   transition: all 0.3s ease;
 }
@@ -471,8 +473,10 @@
   padding: 25px;
   margin: 30px 0;
   overflow-x: auto;
-  direction: ltr !important; /* Force left-to-right for code blocks */
-  text-align: left !important; /* Force left alignment for code blocks */
+  direction: ltr !important;
+  /* Force left-to-right for code blocks */
+  text-align: left !important;
+  /* Force left alignment for code blocks */
 }
 
 .code-block h4 {
@@ -641,7 +645,8 @@ html[dir="rtl"] .article-section ol {
     padding: 30px 15px;
     margin: 0 10px;
     border-radius: 12px;
-    overflow: visible; /* Allow step badges to extend outside */
+    overflow: visible;
+    /* Allow step badges to extend outside */
   }
 
   .article-section h2 {
@@ -659,6 +664,7 @@ html[dir="rtl"] .article-section ol {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -670,6 +676,7 @@ html[dir="rtl"] .article-section ol {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -681,11 +688,13 @@ html[dir="rtl"] .article-section ol {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 /* Microsoft-inspired Custom CSS for Windows CMD Article */
 .article-cmd {
   --ms-blue: #3f95bc;
@@ -693,11 +702,9 @@ html[dir="rtl"] .article-section ol {
   --ms-white: #ffffff;
   --ms-light-blue: rgba(63, 149, 188, 0.1);
   --ms-gradient: linear-gradient(135deg, #3f95bc 0%, #081a2a 100%);
-  --ms-gradient-light: linear-gradient(
-    135deg,
-    rgba(63, 149, 188, 0.1) 0%,
-    rgba(8, 26, 42, 0.1) 100%
-  );
+  --ms-gradient-light: linear-gradient(135deg,
+      rgba(63, 149, 188, 0.1) 0%,
+      rgba(8, 26, 42, 0.1) 100%);
 
   /* Command-specific colors */
   --cmd-bg: var(--ms-dark);
@@ -915,10 +922,12 @@ html[dir="rtl"] .article-section ol {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -1166,14 +1175,12 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 .article-header {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    var(--article-primary) 0%,
-    var(--article-accent) 25%,
-    var(--article-primary) 50%,
-    var(--article-accent) 75%,
-    var(--article-primary) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--article-primary) 0%,
+      var(--article-accent) 25%,
+      var(--article-primary) 50%,
+      var(--article-accent) 75%,
+      var(--article-primary) 100%);
   background-size: 300% 300%;
   animation: gradientFlow 8s ease-in-out infinite;
   min-height: 100vh;
@@ -1189,21 +1196,15 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-      circle at 20% 80%,
+  background: radial-gradient(circle at 20% 80%,
       rgba(255, 255, 255, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
+      transparent 50%),
+    radial-gradient(circle at 80% 20%,
       rgba(255, 255, 255, 0.08) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 40%,
+      transparent 50%),
+    radial-gradient(circle at 40% 40%,
       rgba(255, 255, 255, 0.05) 0%,
-      transparent 50%
-    );
+      transparent 50%);
   z-index: 1;
   /* Remove any backdrop-filter that might cause blur */
 }
@@ -1267,12 +1268,10 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   animation: categoryShine 3s ease-in-out infinite;
 }
 
@@ -1386,11 +1385,9 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1527,12 +1524,10 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -1611,6 +1606,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
     transform: scale(1);
   }
+
   100% {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 255, 255, 0.5);
     transform: scale(1.02);
@@ -1621,6 +1617,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
@@ -1631,6 +1628,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     opacity: 0.9;
     transform: translateY(0) scale(1);
   }
+
   100% {
     opacity: 1;
     transform: translateY(-3px) scale(1.01);
@@ -1639,20 +1637,17 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 
 @keyframes categoryPulseEnhanced {
   0% {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.25),
-      rgba(255, 255, 255, 0.15)
-    );
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.15));
     transform: scale(1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
+
   100% {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.35),
-      rgba(255, 255, 255, 0.25)
-    );
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.35),
+        rgba(255, 255, 255, 0.25));
     transform: scale(1.05);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   }
@@ -1662,6 +1657,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
@@ -1672,6 +1668,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     opacity: 0.8;
   }
+
   100% {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.3);
     opacity: 1;
@@ -1683,6 +1680,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     transform: scale(1);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
   }
+
   100% {
     transform: scale(1.15);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.5);
@@ -1694,10 +1692,12 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     transform: translateY(0);
     opacity: 0.9;
   }
+
   50% {
     transform: translateY(-2px);
     opacity: 1;
   }
+
   100% {
     transform: translateY(0);
     opacity: 0.9;
@@ -1708,15 +1708,19 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   0% {
     transform: translateY(0) rotate(0deg) scale(1);
   }
+
   25% {
     transform: translateY(-8px) rotate(5deg) scale(1.1);
   }
+
   50% {
     transform: translateY(-5px) rotate(-3deg) scale(1.05);
   }
+
   75% {
     transform: translateY(-8px) rotate(3deg) scale(1.1);
   }
+
   100% {
     transform: translateY(0) rotate(0deg) scale(1);
   }
@@ -1727,6 +1731,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
     transform: scale(1);
   }
+
   100% {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.4);
     transform: scale(1.03);
@@ -1738,6 +1743,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     transform: translateY(0);
     opacity: 0.9;
   }
+
   100% {
     transform: translateY(-2px);
     opacity: 1;
@@ -1748,19 +1754,23 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   0% {
     transform: rotate(0deg) scale(1);
   }
+
   50% {
     transform: rotate(180deg) scale(1.1);
   }
+
   100% {
     transform: rotate(360deg) scale(1);
   }
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -1773,6 +1783,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
       0 0 60px rgba(255, 255, 255, 0.1);
     transform: scale(1);
   }
+
   100% {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 50px rgba(255, 255, 255, 0.5),
       0 0 100px rgba(255, 255, 255, 0.2);
@@ -1784,6 +1795,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
@@ -1794,6 +1806,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     opacity: 0.9;
     transform: translateY(0) scale(1);
   }
+
   100% {
     opacity: 1;
     transform: translateY(-3px) scale(1.005);
@@ -1801,10 +1814,12 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 }
 
 @keyframes categoryFloat {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-3px);
   }
@@ -1814,6 +1829,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
@@ -1824,6 +1840,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     opacity: 0.8;
   }
+
   100% {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.4);
     opacity: 1;
@@ -1835,6 +1852,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     transform: scale(1);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
   }
+
   100% {
     transform: scale(1.1);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.5);
@@ -1846,10 +1864,12 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     transform: translateY(0);
     opacity: 0.9;
   }
+
   50% {
     transform: translateY(-2px);
     opacity: 1;
   }
+
   100% {
     transform: translateY(0);
     opacity: 0.9;
@@ -1860,15 +1880,19 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   0% {
     transform: translateY(0) rotate(0deg) scale(1);
   }
+
   25% {
     transform: translateY(-8px) rotate(3deg) scale(1.05);
   }
+
   50% {
     transform: translateY(-5px) rotate(-2deg) scale(1.02);
   }
+
   75% {
     transform: translateY(-8px) rotate(2deg) scale(1.05);
   }
+
   100% {
     transform: translateY(0) rotate(0deg) scale(1);
   }
@@ -1876,12 +1900,10 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 
 /* Progress Fill - Use Article Theme Colors */
 .progress-fill {
-  background: linear-gradient(
-    90deg,
-    var(--article-primary) 0%,
-    var(--article-accent) 50%,
-    var(--article-primary) 100%
-  ) !important;
+  background: linear-gradient(90deg,
+      var(--article-primary) 0%,
+      var(--article-accent) 50%,
+      var(--article-primary) 100%) !important;
   box-shadow: 0 2px 8px var(--article-shadow) !important;
 }
 
@@ -1893,7 +1915,8 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 
 /* CSS Variables for Professional Theme */
 :root {
-  --pcd-bg: #0b1020; /* dark */
+  --pcd-bg: #0b1020;
+  /* dark */
   --pcd-fg: #e6edf3;
   --pcd-muted: #9aa5b1;
   --pcd-border: #1f2a44;
@@ -1907,7 +1930,8 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --pcd-bg: #f8fafc; /* light */
+    --pcd-bg: #f8fafc;
+    /* light */
     --pcd-fg: #0f172a;
     --pcd-muted: #495769;
     --pcd-border: #e2e8f0;
@@ -1982,16 +2006,12 @@ html[dir="rtl"] .step-content .code-block code {
   gap: 12px;
   padding: 12px 16px;
   border-bottom: 1px solid var(--pcd-border);
-  background: radial-gradient(
-      1200px 120px at 0% -20%,
+  background: radial-gradient(1200px 120px at 0% -20%,
       rgba(91, 155, 255, 0.15),
-      transparent 60%
-    ),
-    radial-gradient(
-      1200px 120px at 100% -20%,
+      transparent 60%),
+    radial-gradient(1200px 120px at 100% -20%,
       rgba(91, 155, 255, 0.08),
-      transparent 60%
-    ),
+      transparent 60%),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03), transparent);
   position: relative;
 }
@@ -2092,12 +2112,9 @@ html[dir="rtl"] .step-content .code-block code {
   tab-size: 2;
   min-height: 52px;
   counter-reset: line;
-  background: linear-gradient(
-      180deg,
+  background: linear-gradient(180deg,
       rgba(91, 155, 255, 0.08),
-      transparent 140px
-    )
-    no-repeat;
+      transparent 140px) no-repeat;
 }
 
 /* Professional Code Lines */
@@ -2126,19 +2143,24 @@ html[dir="rtl"] .step-content .code-block code {
   color: #7dd3fc;
   font-weight: 600;
 }
+
 .token-fn {
   color: #a5b4fc;
 }
+
 .token-str {
   color: #86efac;
 }
+
 .token-num {
   color: #fca5a5;
 }
+
 .token-com {
   color: #94a3b8;
   font-style: italic;
 }
+
 .token-kw2 {
   color: #f9a8d4;
 }
@@ -2251,15 +2273,16 @@ html[dir="rtl"] .step-content .code-block code {
 .article-openvpn {
   --article-primary: #ff8d19;
   --article-primary-hover: #e67e00;
-  --article-accent: #ff6b35; /* Enhanced orange accent */
+  --article-accent: #ff6b35;
+  /* Enhanced orange accent */
   --article-shadow: rgba(255, 141, 25, 0.15);
-  --article-gradient: linear-gradient(
-    135deg,
-    #ff8d19,
-    #ff6b35,
-    #e67e00
-  ); /* Enhanced orange gradient */
-  --article-secondary: #ff8d19; /* Orange instead of blue */
+  --article-gradient: linear-gradient(135deg,
+      #ff8d19,
+      #ff6b35,
+      #e67e00);
+  /* Enhanced orange gradient */
+  --article-secondary: #ff8d19;
+  /* Orange instead of blue */
   --article-text-light: rgba(255, 179, 102, 0.9);
   --article-text-medium: rgba(255, 179, 102, 0.8);
   --article-bg-light: rgba(255, 141, 25, 0.1);
@@ -2268,17 +2291,19 @@ html[dir="rtl"] .step-content .code-block code {
 
 /* Website Blocking Article Theme - Enhanced Red Gradient */
 .article-blocking {
-  --article-primary: #d04338; /* Red for blocking article */
+  --article-primary: #d04338;
+  /* Red for blocking article */
   --article-primary-hover: #b8392f;
-  --article-accent: #e74c3c; /* Enhanced red accent */
+  --article-accent: #e74c3c;
+  /* Enhanced red accent */
   --article-shadow: rgba(208, 67, 56, 0.15);
-  --article-gradient: linear-gradient(
-    135deg,
-    #d04338,
-    #e74c3c,
-    #b8392f
-  ); /* Enhanced red gradient */
-  --article-secondary: #d04338; /* Red secondary instead of cream */
+  --article-gradient: linear-gradient(135deg,
+      #d04338,
+      #e74c3c,
+      #b8392f);
+  /* Enhanced red gradient */
+  --article-secondary: #d04338;
+  /* Red secondary instead of cream */
   --article-text-light: rgba(208, 67, 56, 0.9);
   --article-text-medium: rgba(208, 67, 56, 0.8);
   --article-bg-light: rgba(208, 67, 56, 0.1);
@@ -2287,17 +2312,19 @@ html[dir="rtl"] .step-content .code-block code {
 
 /* Nginx Article Theme - Green/Orange/Dark Gradient */
 .article-nginx {
-  --article-primary: #00bf73; /* Green for nginx article */
+  --article-primary: #00bf73;
+  /* Green for nginx article */
   --article-primary-hover: #00a864;
-  --article-accent: #ff830a; /* Orange accent */
+  --article-accent: #ff830a;
+  /* Orange accent */
   --article-shadow: rgba(0, 191, 115, 0.15);
-  --article-gradient: linear-gradient(
-    135deg,
-    #00bf73,
-    #ff830a,
-    #0d191c
-  ); /* Green to Orange to Dark gradient */
-  --article-secondary: #0d191c; /* Dark secondary */
+  --article-gradient: linear-gradient(135deg,
+      #00bf73,
+      #ff830a,
+      #0d191c);
+  /* Green to Orange to Dark gradient */
+  --article-secondary: #0d191c;
+  /* Dark secondary */
   --article-text-light: rgba(0, 191, 115, 0.9);
   --article-text-medium: rgba(0, 191, 115, 0.8);
   --article-bg-light: rgba(0, 191, 115, 0.1);
@@ -2306,17 +2333,19 @@ html[dir="rtl"] .step-content .code-block code {
 
 /* Windows CMD Article Theme - Microsoft Blue Gradient */
 .article-cmd {
-  --article-primary: #2c5aa0; /* Enhanced blue for CMD article */
+  --article-primary: #2c5aa0;
+  /* Enhanced blue for CMD article */
   --article-primary-hover: #1e3f73;
-  --article-accent: #4a90e2; /* Light blue accent */
+  --article-accent: #4a90e2;
+  /* Light blue accent */
   --article-shadow: rgba(44, 90, 160, 0.15);
-  --article-gradient: linear-gradient(
-    135deg,
-    #3f95bc,
-    #081a2a,
-    #ffffff
-  ); /* Microsoft blue gradient */
-  --article-secondary: #ffffff; /* White secondary */
+  --article-gradient: linear-gradient(135deg,
+      #3f95bc,
+      #081a2a,
+      #ffffff);
+  /* Microsoft blue gradient */
+  --article-secondary: #ffffff;
+  /* White secondary */
   --article-text-light: rgba(63, 149, 188, 0.9);
   --article-text-medium: rgba(63, 149, 188, 0.8);
   --article-bg-light: rgba(63, 149, 188, 0.1);
@@ -2325,14 +2354,21 @@ html[dir="rtl"] .step-content .code-block code {
 
 /* MikroTik ECMP Article Theme - Professional Blue Gradient */
 .article-ecmp {
-  --article-primary: #0d47a1; /* Ø¢Ø¨ÛŒ ØªÛŒØ±Ù‡ - Ø§ØµÙ„ÛŒ */
+  --article-primary: #0d47a1;
+  /* Ø¢Ø¨ÛŒ ØªÛŒØ±Ù‡ - Ø§ØµÙ„ÛŒ */
   --article-primary-hover: #0a3a8a;
-  --article-accent: #0288d1; /* Ø¢Ø¨ÛŒ ÙÛŒØ±ÙˆØ²Ù‡â€ŒØ§ÛŒ - Ù‡Ø§ÛŒÙ„Ø§ÛŒØª */
-  --article-secondary: #eceff1; /* Ø®Ø§Ú©Ø³ØªØ±ÛŒ Ø±ÙˆØ´Ù† - Ù¾Ø³â€ŒØ²Ù…ÛŒÙ†Ù‡ */
-  --article-success: #388e3c; /* Ø³Ø¨Ø² Ù„Ø§Ø¬ÙˆØ±Ø¯ÛŒ - Ù…ÙˆÙÙ‚ÛŒØª */
-  --article-warning: #fbc02d; /* Ø²Ø±Ø¯ Ú©Ù‡Ø±Ø¨Ø§ÛŒÛŒ - Ù‡Ø´Ø¯Ø§Ø± */
-  --article-error: #c62828; /* Ù‚Ø±Ù…Ø² ØªÛŒØ±Ù‡ - Ø®Ø·Ø§ */
-  --article-text-dark: #263238; /* Ø®Ø§Ú©Ø³ØªØ±ÛŒ ØªÛŒØ±Ù‡ - Ù…ØªÙ† Ø§ØµÙ„ÛŒ */
+  --article-accent: #0288d1;
+  /* Ø¢Ø¨ÛŒ ÙÛŒØ±ÙˆØ²Ù‡â€ŒØ§ÛŒ - Ù‡Ø§ÛŒÙ„Ø§ÛŒØª */
+  --article-secondary: #eceff1;
+  /* Ø®Ø§Ú©Ø³ØªØ±ÛŒ Ø±ÙˆØ´Ù† - Ù¾Ø³â€ŒØ²Ù…ÛŒÙ†Ù‡ */
+  --article-success: #388e3c;
+  /* Ø³Ø¨Ø² Ù„Ø§Ø¬ÙˆØ±Ø¯ÛŒ - Ù…ÙˆÙÙ‚ÛŒØª */
+  --article-warning: #fbc02d;
+  /* Ø²Ø±Ø¯ Ú©Ù‡Ø±Ø¨Ø§ÛŒÛŒ - Ù‡Ø´Ø¯Ø§Ø± */
+  --article-error: #c62828;
+  /* Ù‚Ø±Ù…Ø² ØªÛŒØ±Ù‡ - Ø®Ø·Ø§ */
+  --article-text-dark: #263238;
+  /* Ø®Ø§Ú©Ø³ØªØ±ÛŒ ØªÛŒØ±Ù‡ - Ù…ØªÙ† Ø§ØµÙ„ÛŒ */
   --article-shadow: rgba(13, 71, 161, 0.15);
   --article-gradient: linear-gradient(135deg, #0d47a1, #0288d1, #eceff1);
   --article-text-light: rgba(255, 255, 255, 0.95);
@@ -2523,14 +2559,21 @@ html[dir="rtl"] .step-content .code-block code {
 
 /* SSH Linux Article Theme - Professional Green Gradient */
 .article-ssh {
-  --article-primary: #1b5e20; /* Ø³Ø¨Ø² ØªÛŒØ±Ù‡ - Ø§ØµÙ„ÛŒ */
+  --article-primary: #1b5e20;
+  /* Ø³Ø¨Ø² ØªÛŒØ±Ù‡ - Ø§ØµÙ„ÛŒ */
   --article-primary-hover: #0d4a16;
-  --article-accent: #4caf50; /* Ø³Ø¨Ø² Ø±ÙˆØ´Ù† - Ù‡Ø§ÛŒÙ„Ø§ÛŒØª */
-  --article-secondary: #e8f5e8; /* Ø³Ø¨Ø² Ø±ÙˆØ´Ù† - Ù¾Ø³â€ŒØ²Ù…ÛŒÙ†Ù‡ */
-  --article-success: #2e7d32; /* Ø³Ø¨Ø² Ø²Ù…Ø±Ø¯ÛŒ - Ù…ÙˆÙÙ‚ÛŒØª */
-  --article-warning: #ff9800; /* Ù†Ø§Ø±Ù†Ø¬ÛŒ - Ù‡Ø´Ø¯Ø§Ø± */
-  --article-error: #d32f2f; /* Ù‚Ø±Ù…Ø² - Ø®Ø·Ø§ */
-  --article-text-dark: #1b5e20; /* Ø³Ø¨Ø² ØªÛŒØ±Ù‡ - Ù…ØªÙ† Ø§ØµÙ„ÛŒ */
+  --article-accent: #4caf50;
+  /* Ø³Ø¨Ø² Ø±ÙˆØ´Ù† - Ù‡Ø§ÛŒÙ„Ø§ÛŒØª */
+  --article-secondary: #e8f5e8;
+  /* Ø³Ø¨Ø² Ø±ÙˆØ´Ù† - Ù¾Ø³â€ŒØ²Ù…ÛŒÙ†Ù‡ */
+  --article-success: #2e7d32;
+  /* Ø³Ø¨Ø² Ø²Ù…Ø±Ø¯ÛŒ - Ù…ÙˆÙÙ‚ÛŒØª */
+  --article-warning: #ff9800;
+  /* Ù†Ø§Ø±Ù†Ø¬ÛŒ - Ù‡Ø´Ø¯Ø§Ø± */
+  --article-error: #d32f2f;
+  /* Ù‚Ø±Ù…Ø² - Ø®Ø·Ø§ */
+  --article-text-dark: #1b5e20;
+  /* Ø³Ø¨Ø² ØªÛŒØ±Ù‡ - Ù…ØªÙ† Ø§ØµÙ„ÛŒ */
   --article-shadow: rgba(27, 94, 32, 0.2);
   --article-gradient: linear-gradient(135deg, #1b5e20, #4caf50, #e8f5e8);
   --article-text-light: rgba(255, 255, 255, 0.95);
@@ -2574,7 +2617,7 @@ html[dir="rtl"] .step-content .code-block code {
   font-weight: 500;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
   content: "â€º";
   color: #0288d1;
   font-weight: bold;
@@ -2593,12 +2636,10 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-ssh .code-block {
-  background: linear-gradient(
-    135deg,
-    rgba(27, 94, 32, 0.9) 0%,
-    rgba(76, 175, 80, 0.8) 50%,
-    rgba(27, 94, 32, 0.9) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(27, 94, 32, 0.9) 0%,
+      rgba(76, 175, 80, 0.8) 50%,
+      rgba(27, 94, 32, 0.9) 100%);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(27, 94, 32, 0.3),
@@ -2615,12 +2656,10 @@ html[dir="rtl"] .step-content .code-block code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.05) 100%);
   pointer-events: none;
 }
 
@@ -2660,12 +2699,10 @@ html[dir="rtl"] .step-content .code-block code {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -2686,11 +2723,9 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-ssh .method-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(232, 245, 232, 0.8) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(232, 245, 232, 0.8) 100%);
   backdrop-filter: blur(10px);
   border-radius: 24px;
   border-left: 6px solid #1b5e20;
@@ -2709,11 +2744,9 @@ html[dir="rtl"] .step-content .code-block code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(27, 94, 32, 0.02) 0%,
-    rgba(76, 175, 80, 0.05) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(27, 94, 32, 0.02) 0%,
+      rgba(76, 175, 80, 0.05) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -2752,12 +2785,10 @@ html[dir="rtl"] .step-content .code-block code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 100%);
   border-radius: 50%;
 }
 
@@ -2790,12 +2821,10 @@ html[dir="rtl"] .step-content .code-block code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 100%);
   border-radius: 12px;
 }
 
@@ -2820,12 +2849,10 @@ html[dir="rtl"] .step-content .code-block code {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -2892,12 +2919,10 @@ html[dir="rtl"] .step-content .code-block code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(76, 175, 80, 0.3) 0%,
-    transparent 50%,
-    rgba(27, 94, 32, 0.2) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(76, 175, 80, 0.3) 0%,
+      transparent 50%,
+      rgba(27, 94, 32, 0.2) 100%);
   border-radius: 16px;
 }
 
@@ -2929,12 +2954,10 @@ html[dir="rtl"] .step-content .code-block code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.1) 100%);
   border-radius: 20px;
 }
 
@@ -3322,11 +3345,13 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px) rotate(0deg);
     opacity: 0.7;
   }
+
   50% {
     transform: translateY(-20px) rotate(180deg);
     opacity: 1;
@@ -3540,7 +3565,8 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-blocking .method-pros {
-  color: #d04338; /* Red instead of blue */
+  color: #d04338;
+  /* Red instead of blue */
   font-weight: 500;
 }
 
@@ -3555,19 +3581,22 @@ html[dir="rtl"] .step-content .code-block code {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   padding: 1.5rem;
   border-radius: 12px;
-  border-left: 4px solid #d04338; /* Red instead of blue */
+  border-left: 4px solid #d04338;
+  /* Red instead of blue */
 }
 
 .article-blocking .prerequisites-box {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   border-radius: 16px;
   padding: 1.5rem;
-  border-left: 6px solid #d04338; /* Red instead of blue */
+  border-left: 6px solid #d04338;
+  /* Red instead of blue */
   margin: 2rem 0;
 }
 
 .article-blocking .prerequisites-box h4 {
-  color: #d04338; /* Red instead of blue */
+  color: #d04338;
+  /* Red instead of blue */
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -3617,12 +3646,12 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-blocking .pros {
-  background: linear-gradient(
-    135deg,
-    #fef2f2 0%,
-    #fee2e2 100%
-  ); /* Red background instead of blue */
-  border-left: 4px solid #d04338; /* Red instead of blue */
+  background: linear-gradient(135deg,
+      #fef2f2 0%,
+      #fee2e2 100%);
+  /* Red background instead of blue */
+  border-left: 4px solid #d04338;
+  /* Red instead of blue */
 }
 
 .article-blocking .cons {
@@ -3637,7 +3666,8 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-blocking .pros h5 {
-  color: #d04338; /* Red instead of blue */
+  color: #d04338;
+  /* Red instead of blue */
 }
 
 .article-blocking .cons h5 {
@@ -3658,7 +3688,8 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-blocking .pros li {
-  color: #d04338; /* Red instead of blue */
+  color: #d04338;
+  /* Red instead of blue */
 }
 
 .article-blocking .cons li {
@@ -3753,7 +3784,8 @@ html[dir="rtl"] .step-content .code-block code {
   margin: 0;
   padding: 1.5rem;
   background: transparent;
-  color: #ffffff; /* White instead of cream */
+  color: #ffffff;
+  /* White instead of cream */
   font-family: "Courier New", monospace;
   font-size: 0.9rem;
   line-height: 1.6;
@@ -3761,7 +3793,8 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-blocking .code-block code {
-  color: #ffffff; /* White instead of cream */
+  color: #ffffff;
+  /* White instead of cream */
   background: transparent;
   padding: 0;
   border-radius: 0;
@@ -3782,7 +3815,8 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-blocking .author-bio .author-details h4 {
-  color: #d04338; /* Red instead of blue */
+  color: #d04338;
+  /* Red instead of blue */
   font-weight: 600;
 }
 
@@ -3801,7 +3835,8 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 .article-blocking .author-bio .author-social a:hover {
-  color: #d04338; /* Red instead of blue */
+  color: #d04338;
+  /* Red instead of blue */
   transform: translateY(-2px);
 }
 
@@ -3872,11 +3907,9 @@ html[dir="rtl"] .step-content .code-block code {
 
 /* OpenVPN Article Author Bio */
 .article-openvpn .author-bio .author-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 141, 25, 0.1),
-    rgba(255, 179, 102, 0.05)
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 141, 25, 0.1),
+      rgba(255, 179, 102, 0.05));
   border: 1px solid rgba(255, 141, 25, 0.2);
   border-left: 6px solid #ff8d19;
   box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
@@ -3957,15 +3990,13 @@ html[dir="rtl"] .step-content .code-block code {
 
 /* Article Header Text Colors */
 .article-page .hero .article-title {
-  background: linear-gradient(
-    135deg,
-    var(--article-secondary) 0%,
-    var(--article-primary) 20%,
-    var(--article-secondary) 40%,
-    var(--article-primary) 60%,
-    var(--article-secondary) 80%,
-    var(--article-primary) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--article-secondary) 0%,
+      var(--article-primary) 20%,
+      var(--article-secondary) 40%,
+      var(--article-primary) 60%,
+      var(--article-secondary) 80%,
+      var(--article-primary) 100%);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -4284,11 +4315,9 @@ html[dir="rtl"] .step-content .code-block code {
 
 /* Override for Nginx theme */
 .article-nginx .author-bio .author-card {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 191, 115, 0.1),
-    rgba(255, 131, 10, 0.05)
-  ) !important;
+  background: linear-gradient(135deg,
+      rgba(0, 191, 115, 0.1),
+      rgba(255, 131, 10, 0.05)) !important;
   border: 1px solid rgba(0, 191, 115, 0.2) !important;
   border-left: 6px solid #00bf73 !important;
   box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1) !important;
@@ -4401,10 +4430,12 @@ html[dir="rtl"] .step-content .code-block code {
    =============================================== */
 
 @keyframes gradientShift {
+
   0%,
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -4414,15 +4445,19 @@ html[dir="rtl"] .step-content .code-block code {
   0% {
     background-position: 0% 50%;
   }
+
   25% {
     background-position: 100% 50%;
   }
+
   50% {
     background-position: 100% 100%;
   }
+
   75% {
     background-position: 0% 100%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -4432,6 +4467,7 @@ html[dir="rtl"] .step-content .code-block code {
   0% {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.1);
   }
+
   100% {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
   }
@@ -4442,6 +4478,7 @@ html[dir="rtl"] .step-content .code-block code {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.1),
       0 0 40px rgba(255, 255, 255, 0.05);
   }
+
   100% {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.3),
       0 0 60px rgba(255, 255, 255, 0.1);
@@ -4549,6 +4586,7 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 
 /* Accessibility - Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   body[data-page="mikrotik-block-website"] .hero-background h1,
   body[data-page="mikrotik-block-website"] .hero-background h2,
   body[data-page="mikrotik-block-website"] .hero-background h3,
@@ -4770,11 +4808,13 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px) rotate(0deg);
     opacity: 0.3;
   }
+
   50% {
     transform: translateY(-20px) rotate(180deg);
     opacity: 0.8;
@@ -4801,16 +4841,12 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-      circle at 20% 80%,
+  background: radial-gradient(circle at 20% 80%,
       rgba(255, 255, 255, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
+      transparent 50%),
+    radial-gradient(circle at 80% 20%,
       rgba(255, 255, 255, 0.08) 0%,
-      transparent 50%
-    );
+      transparent 50%);
   z-index: 1;
 }
 
@@ -4836,11 +4872,9 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(
-    135deg,
-    var(--article-primary),
-    var(--article-accent)
-  );
+  background: linear-gradient(135deg,
+      var(--article-primary),
+      var(--article-accent));
   border-radius: 2px;
 }
 
@@ -4923,6 +4957,7 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 .read-more:hover::after {
   transform: translateX(3px);
 }
+
 /* ===============================================
  * RELATED ARTICLES SECTION
  * ===============================================
@@ -4943,16 +4978,12 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-      circle at 20% 80%,
+  background: radial-gradient(circle at 20% 80%,
       rgba(255, 255, 255, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
+      transparent 50%),
+    radial-gradient(circle at 80% 20%,
       rgba(255, 255, 255, 0.08) 0%,
-      transparent 50%
-    );
+      transparent 50%);
   z-index: 1;
 }
 
@@ -4978,11 +5009,9 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(
-    135deg,
-    var(--article-primary),
-    var(--article-accent)
-  );
+  background: linear-gradient(135deg,
+      var(--article-primary),
+      var(--article-accent));
   border-radius: 2px;
 }
 
@@ -5064,4 +5093,9 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 
 .read-more:hover::after {
   transform: translateX(3px);
+}
+
+/* Override Header Background for Article Pages */
+.article-page .header {
+  background: var(--article-gradient);
 }
