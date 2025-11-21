@@ -90,6 +90,16 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
+
+  /* Default article palette (aligns menu with main theme) */
+  --article-primary: var(--primary);
+  --article-primary-hover: var(--primary-hover);
+  --article-secondary: var(--accent);
+  --article-accent: var(--accent-hover);
+  --article-shadow: rgba(37, 99, 235, 0.12);
+  --article-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+  --article-text-light: rgba(255, 255, 255, 0.9);
+  --article-text-medium: rgba(255, 255, 255, 0.8);
 }
 
 /* Article Theme Variables - Optimized */
@@ -157,6 +167,50 @@
   --article-gradient: linear-gradient(135deg, #dc2626, #ef4444);
   --article-text-light: rgba(255, 255, 255, 0.9);
   --article-text-medium: rgba(255, 255, 255, 0.8);
+}
+
+.article-nginx {
+  --article-primary: #00bf73;
+  --article-primary-hover: #00915a;
+  --article-secondary: #ff830a;
+  --article-accent: #14e38b;
+  --article-shadow: rgba(0, 191, 115, 0.12);
+  --article-gradient: linear-gradient(135deg, #00bf73, #ff830a);
+  --article-text-light: rgba(255, 255, 255, 0.9);
+  --article-text-medium: rgba(255, 255, 255, 0.85);
+}
+
+.article-ecmp {
+  --article-primary: #0d47a1;
+  --article-primary-hover: #0b3c85;
+  --article-secondary: #0288d1;
+  --article-accent: #1e88e5;
+  --article-shadow: rgba(13, 71, 161, 0.12);
+  --article-gradient: linear-gradient(135deg, #0d47a1, #0288d1);
+  --article-text-light: rgba(255, 255, 255, 0.92);
+  --article-text-medium: rgba(255, 255, 255, 0.82);
+}
+
+.article-ssh {
+  --article-primary: #2e7d32;
+  --article-primary-hover: #1b5e20;
+  --article-secondary: #43a047;
+  --article-accent: #66bb6a;
+  --article-shadow: rgba(46, 125, 50, 0.12);
+  --article-gradient: linear-gradient(135deg, #2e7d32, #43a047);
+  --article-text-light: rgba(255, 255, 255, 0.9);
+  --article-text-medium: rgba(255, 255, 255, 0.82);
+}
+
+.article-cmd {
+  --article-primary: #3f95bc;
+  --article-primary-hover: #32789a;
+  --article-secondary: #0ea5e9;
+  --article-accent: #081a2a;
+  --article-shadow: rgba(63, 149, 188, 0.12);
+  --article-gradient: linear-gradient(135deg, #3f95bc, #0ea5e9);
+  --article-text-light: rgba(255, 255, 255, 0.9);
+  --article-text-medium: rgba(255, 255, 255, 0.82);
 }
 
 /* Base Article Components - Optimized with CSS Custom Properties */
@@ -632,38 +686,6 @@ html[dir="rtl"] .article-section ol {
     transform: translateX(0);
   }
 }
-.article-openvpn .header .logo h1 {
-  color: #ff8d19 !important;
-  background: linear-gradient(135deg, #ff8d19, #e67e00) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-}
-
-.article-blocking .header .logo h1 {
-  color: #d04338 !important;
-  background: linear-gradient(135deg, #d04338, #b8392f) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-}
-
-.article-nginx .header .logo h1 {
-  color: #00bf73 !important;
-  background: linear-gradient(135deg, #00bf73, #ff830a) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-}
-
-.article-cmd .header .logo h1 {
-  color: #2c5aa0 !important;
-  background: linear-gradient(135deg, #2c5aa0, #4a90e2) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-}
-
 /* Microsoft-inspired Custom CSS for Windows CMD Article */
 .article-cmd {
   --ms-blue: #3f95bc;
@@ -1131,14 +1153,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     direction: ltr !important;
     text-align: left !important;
   }
-}
-
-.article-ecmp .header .logo h1 {
-  color: #0d47a1 !important;
-  background: linear-gradient(135deg, #0d47a1, #0288d1) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
 }
 
 /* ===============================================
@@ -1993,15 +2007,6 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 /* RTL Support for Copy Button */
-html[dir="rtl"] .copy-btn {
-  margin-left: 0;
-  margin-right: auto;
-}
-
-html[dir="rtl"] .code-header {
-  flex-direction: row-reverse;
-}
-
 /* Output Block Styling */
 .output-block {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -2048,8 +2053,11 @@ html[dir="rtl"] .code-header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   user-select: none;
-  margin-left: auto;
+  margin-inline-start: auto;
+  margin-inline-end: 0;
 }
+
+/* Keep header styling derived from main.css to match the index page */
 
 .copy-btn:hover {
   transform: translateY(-2px);
@@ -2573,16 +2581,6 @@ html[dir="rtl"] .code-header {
 }
 
 /* SSH Article Specific Styles */
-.article-ssh .header .logo h1 {
-  color: #1b5e20 !important;
-  background: linear-gradient(135deg, #1b5e20, #4caf50, #66bb6a) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  background-size: 200% 200%;
-  animation: gradientFlow 3s ease-in-out infinite;
-}
-
 .article-ssh {
   --pcd-accent: var(--article-primary);
   --pcd-border: rgba(46, 125, 50, 0.2);
