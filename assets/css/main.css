@@ -769,7 +769,7 @@ h6 {
   transform: scale(1.05);
 }
 
-.header .logo h1 {
+.header .logo .sitename {
   font-size: 22px;
   margin: 0;
   font-weight: 700;
@@ -781,7 +781,7 @@ h6 {
   transition: all 0.3s ease;
 }
 
-.header .logo:hover h1 {
+.header .logo:hover .sitename {
   transform: scale(1.05);
   background: linear-gradient(135deg, #4a9eff 0%, #007aff 50%, #0056cc 100%);
   -webkit-background-clip: text;

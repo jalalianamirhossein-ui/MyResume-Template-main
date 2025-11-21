@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://meetaj.ir/sitemap.xml
