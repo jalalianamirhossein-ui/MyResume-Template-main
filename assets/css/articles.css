@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ===============================================
  * MEET AJ PORTFOLIO - ARTICLES CSS (OPTIMIZED)
  * ===============================================
@@ -91,15 +91,7 @@
   --z-popover: 1060;
   --z-tooltip: 1070;
 
-  /* Default article palette (aligns menu with main theme) */
-  --article-primary: var(--primary);
-  --article-primary-hover: var(--primary-hover);
-  --article-secondary: var(--accent);
-  --article-accent: var(--accent-hover);
-  --article-shadow: rgba(37, 99, 235, 0.12);
-  --article-gradient: linear-gradient(135deg, var(--primary), var(--accent));
-  --article-text-light: rgba(255, 255, 255, 0.9);
-  --article-text-medium: rgba(255, 255, 255, 0.8);
+
 }
 
 /* Align all article themes with the main site palette (blue) */
@@ -490,23 +482,9 @@
 }
 
 /* Code Block Styles */
-.code-block {
-  background: #1e1e1e;
-  border-radius: 12px;
-  padding: 25px;
-  margin: 30px 0;
-  overflow-x: auto;
-  direction: ltr !important;
-  /* Force left-to-right for code blocks */
-  text-align: left !important;
-  /* Force left alignment for code blocks */
-}
 
-.code-block h4 {
-  color: var(--pure-white);
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
+
+
 
 /* RTL Support for Article Page */
 html[dir="rtl"] .article-header {
@@ -1036,31 +1014,11 @@ html[dir="rtl"] .article-cmd .cmd-block {
   letter-spacing: 0.5px;
 }
 
-.article-cmd .copy-btn {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--ms-white);
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
 
-.article-cmd .copy-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-1px);
-}
 
-.article-cmd .copy-btn.copied {
-  background: #28a745;
-  border-color: #28a745;
-  transform: scale(1.05);
-}
+
+
+
 
 .article-cmd .cmd-block pre {
   background: var(--cmd-bg);
@@ -1998,79 +1956,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 }
 
 .article-ecmp {
-  --pcd-accent: var(--article-primary);
-  --pcd-border: rgba(13, 71, 161, 0.2);
-  --pcd-btn: rgba(13, 71, 161, 0.1);
-}
-
-/* Professional Code Block Container */
-.code-block {
-  margin: 24px auto;
-  max-width: 980px;
-  border: 1px solid var(--pcd-border);
-  border-radius: 16px;
-  box-shadow: var(--pcd-shadow);
-  overflow: hidden;
-  background: var(--pcd-bg);
-  color: var(--pcd-fg);
-  direction: ltr !important;
-  text-align: left !important;
-}
-
-/* Force all code blocks to be left-aligned */
-.code-block,
-.code-block pre,
-.code-block code,
-.step-content .code-block,
-.step-content .code-block pre,
-.step-content .code-block code {
-  direction: ltr !important;
-  text-align: left !important;
-}
-
-/* RTL Code Block Override - Ensure LTR for all code blocks */
-html[dir="rtl"] .code-block,
-html[dir="rtl"] .code-block pre,
-html[dir="rtl"] .code-block code,
-html[dir="rtl"] .step-content .code-block,
-html[dir="rtl"] .step-content .code-block pre,
-html[dir="rtl"] .step-content .code-block code {
-  direction: ltr !important;
-  text-align: left !important;
-}
-
-/* Professional Code Bar */
-.code-block-header,
-.code-header {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--pcd-border);
-  background: radial-gradient(
-      1200px 120px at 0% -20%,
-      rgba(91, 155, 255, 0.15),
-      transparent 60%
-    ),
-    radial-gradient(
-      1200px 120px at 100% -20%,
-      rgba(91, 155, 255, 0.08),
-      transparent 60%
-    ),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03), transparent);
-  position: relative;
-}
-
-.code-block-title,
-.code-lang {
-  font: 600 13px/1.2 system-ui, Segoe UI, Roboto;
-  color: var(--pcd-muted);
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-  user-select: none;
-  margin: 0;
-}
 
 /* RTL Support for Copy Button */
 /* Output Block Styling */
@@ -2098,94 +1983,25 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 /* Professional Copy Button - Floating */
-.copy-btn {
-  position: relative;
-  appearance: none;
-  border: 1px solid var(--pcd-border);
-  background: var(--pcd-btn);
-  color: var(--pcd-fg);
-  padding: 8px 12px;
-  border-radius: 8px;
-  font: 600 12px/1 system-ui;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  min-width: 70px;
-  text-align: center;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px);
-  user-select: none;
-  margin-inline-start: auto;
-  margin-inline-end: 0;
-}
+
 
 /* Keep header styling derived from main.css to match the index page */
 
-.copy-btn:hover {
-  transform: translateY(-2px);
-  border-color: var(--pcd-accent);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
 
-.copy-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.copy-btn.copied {
-  background: #10b981;
-  border-color: #10b981;
-  color: white;
-  transform: scale(1.05);
-}
+
+
+
 
 /* Professional Code Wrap */
-.code-block pre {
-  position: relative;
-  overflow: auto;
-  overscroll-behavior: contain;
-}
 
-.code-block pre {
-  margin: 0;
-  padding: 16px 0 16px 0;
-  font: 13.5px/1.6 var(--pcd-font);
-  tab-size: 2;
-  min-height: 52px;
-  counter-reset: line;
-  background: linear-gradient(
-      180deg,
-      rgba(91, 155, 255, 0.08),
-      transparent 140px
-    )
-    no-repeat;
-}
+
+
 
 /* Professional Code Lines */
-.code-block pre {
-  position: relative;
-  padding: 0;
-  overflow: auto;
-}
 
-.code-block pre code {
-  white-space: pre;
-  display: block;
-  width: max-content;
-  min-width: 100%;
-  padding: 16px;
-  font-size: inherit;
-  color: inherit;
-  direction: ltr;
-  text-align: left;
-  font-weight: inherit;
-  position: relative;
-}
+
+
 
 /* Professional Syntax Highlighting */
 .token-key {
@@ -2215,108 +2031,42 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 /* Legacy token support */
-.code-block pre code .token.comment {
-  color: #94a3b8;
-  font-style: italic;
-}
 
-.code-block pre code .token.keyword {
-  color: #7dd3fc;
-  font-weight: 600;
-}
 
-.code-block pre code .token.string {
-  color: #86efac;
-}
 
-.code-block pre code .token.number {
-  color: #fca5a5;
-}
 
-.code-block pre code .token.function {
-  color: #a5b4fc;
-}
+
+
+
+
+
 
 /* Professional Scrollbar */
-.code-block pre::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
 
-.code-block pre::-webkit-scrollbar-thumb {
-  background: var(--pcd-border);
-  border-radius: 8px;
-}
 
-.code-block pre:hover::-webkit-scrollbar-thumb {
-  background: var(--pcd-muted);
-}
+
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .code-block {
-    margin: 20px 0;
-    border-radius: 12px;
-  }
 
-  .code-block-header,
-  .code-header {
-    padding: 8px 10px;
-  }
+  
 
-  .code-block-title,
-  .code-lang {
-    font-size: 11px;
-  }
+  
 
-  .copy-btn {
-    padding: 6px 10px;
-    font-size: 11px;
-    min-width: 60px;
-    border-radius: 6px;
-    gap: 4px;
-  }
+  
 
-  .code-block pre {
-    padding: 12px 0 12px 0;
-    font-size: 12px;
-  }
+  
 
-  .code-block pre {
-    padding-left: 50px;
-  }
+  
 
-  .code-block pre::before {
-    width: 50px;
-  }
+  html[dir="rtl"] 
 
-  .code-block pre code::before {
-    left: -50px;
-    width: 40px;
-    font-size: 11px;
-    content: "1\A2\A3\A4\A5\A6\A7\A8\A9\A10\A11\A12\A13\A14\A15\A16\A17\A18\A19\A20";
-  }
+  html[dir="rtl"] 
 
-  html[dir="rtl"] .code-block pre::before {
-    left: auto;
-    right: 0;
-    width: 50px;
-  }
+  html[dir="rtl"] 
 
-  html[dir="rtl"] .code-block pre code {
-    padding: 12px;
-    padding-right: 50px;
-    padding-left: 12px;
-  }
-
-  html[dir="rtl"] .code-block pre code::before {
-    left: auto;
-    right: -50px;
-    width: 40px;
-    font-size: 11px;
-    content: "1\A2\A3\A4\A5\A6\A7\A8\A9\A10\A11\A12\A13\A14\A15\A16\A17\A18\A19\A20";
-  }
-}
 
 /* OpenVPN Article Theme - Enhanced Orange Gradient */
 .article-openvpn {
@@ -2436,37 +2186,17 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 /* ECMP Article Specific Styles */
-.article-ecmp .code-block {
-  background: linear-gradient(135deg, #0d47a1 0%, #0288d1 100%);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px -5px rgba(13, 71, 161, 0.3);
-  border: 1px solid rgba(2, 136, 209, 0.2);
-}
 
-.article-ecmp .code-block .code-header {
-  background: rgba(13, 71, 161, 0.1);
-  border-bottom: 1px solid rgba(2, 136, 209, 0.2);
-}
 
-.article-ecmp .code-block .code-lang {
-  color: #eceff1;
-  background: rgba(2, 136, 209, 0.2);
-}
 
-.article-ecmp .code-block .copy-btn {
-  background: rgba(2, 136, 209, 0.2);
-  color: #eceff1;
-  border: 1px solid rgba(2, 136, 209, 0.3);
-}
 
-.article-ecmp .code-block .copy-btn:hover {
-  background: rgba(2, 136, 209, 0.4);
-  color: white;
-}
 
-.article-ecmp .code-block pre {
-  color: #eceff1;
-}
+
+
+
+
+
+
 
 /* ECMP Article Method Cards */
 .article-ecmp .method-card {
@@ -2672,98 +2402,23 @@ html[dir="rtl"] .step-content .code-block code {
   box-shadow: 0 8px 32px var(--article-shadow);
 }
 
-.article-ssh .code-block {
-  background: linear-gradient(
-    135deg,
-    rgba(27, 94, 32, 0.9) 0%,
-    rgba(76, 175, 80, 0.8) 50%,
-    rgba(27, 94, 32, 0.9) 100%
-  );
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(27, 94, 32, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-}
 
-.article-ssh .code-block::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  pointer-events: none;
-}
 
-.article-ssh .code-block .code-header {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  z-index: 1;
-}
 
-.article-ssh .code-block .code-lang {
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  border-radius: 8px;
-  padding: 0.25rem 0.75rem;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
 
-.article-ssh .code-block .copy-btn {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
 
-.article-ssh .code-block .copy-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
 
-.article-ssh .code-block .copy-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
-}
 
-.article-ssh .code-block .copy-btn:hover::before {
-  left: 100%;
-}
 
-.article-ssh .code-block pre {
-  color: #eceff1;
-}
+
+
+
+
+
+
+
+
+
 
 .article-ssh .method-card {
   background: linear-gradient(
@@ -3037,10 +2692,7 @@ html[dir="rtl"] .step-content .code-block code {
     font-size: 1rem;
   }
 
-  .article-ssh .code-block {
-    border-radius: 12px;
-    margin: 1rem 0;
-  }
+  
 
   .article-ssh .btn-primary,
   .article-ssh .btn-outline-secondary {
@@ -3067,18 +2719,11 @@ html[dir="rtl"] .step-content .code-block code {
     font-size: 0.9rem;
   }
 
-  .article-ssh .code-block {
-    border-radius: 8px;
-  }
+  
 
-  .article-ssh .code-block .code-header {
-    padding: 0.5rem;
-  }
+  
 
-  .article-ssh .code-block .code-lang {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
-  }
+  
 
   .article-ssh .btn-primary,
   .article-ssh .btn-outline-secondary {
@@ -3089,55 +2734,19 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 /* Nginx Article Specific Styles */
-.article-nginx .code-block {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  margin: 1.5rem 0;
-}
 
-.article-nginx .code-block .code-header {
-  background: linear-gradient(135deg, #00bf73 0%, #ff830a 100%);
-  padding: 0.75rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.article-nginx .code-block .code-lang {
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
 
-.article-nginx .code-block .copy-btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-.article-nginx .code-block .copy-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
 
-.article-nginx .code-block pre {
-  margin: 0;
-  padding: 1.5rem;
-  background: transparent;
-}
 
-.article-nginx .code-block code {
-  color: #e6e6e6;
-  font-family: "Fira Code", "Consolas", "Monaco", monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
+
+
+
+
+
+
+
 
 .article-nginx .prerequisites-box {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -3796,64 +3405,19 @@ html[dir="rtl"] .step-content .code-block code {
 }
 
 /* Blocking Article Code Blocks */
-.article-blocking .code-block {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  margin: 1.5rem 0;
-}
 
-.article-blocking .code-block .code-header {
-  background: linear-gradient(135deg, #d04338 0%, #b8392f 100%);
-  padding: 0.75rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.article-blocking .code-block .code-lang {
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
 
-.article-blocking .code-block .copy-btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-.article-blocking .code-block .copy-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
 
-.article-blocking .code-block pre {
-  margin: 0;
-  padding: 1.5rem;
-  background: transparent;
-  color: #ffffff;
-  /* White instead of cream */
-  font-family: "Courier New", monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  overflow-x: auto;
-}
 
-.article-blocking .code-block code {
-  color: #ffffff;
-  /* White instead of cream */
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  font-family: "Courier New", monospace;
-}
+
+
+
+
+
+
+
 
 /* Blocking Article Author Bio */
 .article-blocking .author-bio .author-card {
@@ -4140,62 +3704,19 @@ html[dir="rtl"] .step-content .code-block code {
    =============================================== */
 
 /* Code Blocks */
-.article-page .code-block {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  margin: 1.5rem 0;
-}
 
-.article-page .code-block .code-header {
-  background: var(--article-gradient);
-  padding: 0.75rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.article-page .code-block .code-lang {
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
 
-.article-page .code-block .copy-btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-.article-page .code-block .copy-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
 
-.article-page .code-block pre {
-  margin: 0;
-  padding: 1.5rem;
-  background: transparent;
-  color: #ffffff;
-  font-family: "Courier New", monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  overflow-x: auto;
-}
 
-.article-page .code-block code {
-  color: #ffffff;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  font-family: "Courier New", monospace;
-}
+
+
+
+
+
+
+
 
 /* Force key surfaces to stay on the main (blue) palette across all articles */
 .article-page .hero,
@@ -4212,21 +3733,11 @@ html[dir="rtl"] .step-content .code-block code {
   box-shadow: 0 8px 32px var(--article-shadow) !important;
 }
 
-.article-page .code-block {
-  background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
-  border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent) !important;
-  box-shadow: 0 8px 25px -5px rgba(37, 99, 235, 0.3) !important;
-}
 
-.article-page .code-block .code-header {
-  background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--primary) 30%, transparent) !important;
-}
 
-.article-page .code-block .copy-btn {
-  border-color: color-mix(in srgb, var(--primary) 40%, transparent) !important;
-  color: #fff !important;
-}
+
+
+
 
 /* Highlight Boxes */
 .article-page .highlight-box,
@@ -5195,10 +4706,6 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   transform: translateX(3px);
 }
 
-/* Override Header Background for Article Pages */
-.article-page .header {
-  background: var(--article-gradient);
-}
 
 /* ====================================================
  * SYNC ARTICLE THEME WITH MAIN SITE PALETTE
@@ -5212,5 +4719,102 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   --article-shadow: rgba(37, 99, 235, 0.12);
   --article-gradient: linear-gradient(135deg, var(--primary), var(--accent));
   --article-text-light: rgba(255, 255, 255, 0.9);
-  --article-text-medium: rgba(255, 255, 255, 0.82);
+  --article-text-medium: rgba(255, 255, 255, 0.8);
+}
+
+/* ===============================================
+ * UNIFIED COPY BUTTON (ALL PAGES)
+ * =============================================== */
+.copy-btn,
+.code-block .copy-btn,
+[class*="article-"] .copy-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover)) !important;
+  border: 1px solid color-mix(in srgb, var(--primary) 50%, transparent) !important;
+  color: #fff !important;
+  padding: 8px 14px !important;
+  border-radius: 10px !important;
+  font: 600 12px/1 "Poppins", "Vazirmatn", sans-serif !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.copy-btn:hover,
+.code-block .copy-btn:hover,
+[class*="article-"] .copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3) !important;
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary)) !important;
+}
+
+.copy-btn:active,
+.code-block .copy-btn:active,
+[class*="article-"] .copy-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25) !important;
+}
+
+.copy-btn.copied,
+.code-block .copy-btn.copied,
+[class*="article-"] .copy-btn.copied {
+  background: linear-gradient(135deg, #0ea965, #0c8a53) !important;
+  border-color: color-mix(in srgb, #0ea965 60%, transparent) !important;
+  box-shadow: 0 8px 18px rgba(14, 169, 101, 0.3) !important;
+}
+
+/* ===============================================
+ * UNIFIED CODE BLOCK (BLACK THEME)
+ * =============================================== */
+.code-block,
+.code-block pre,
+.code-block code,
+[class*="article-"] .code-block,
+[class*="article-"] .code-block pre,
+[class*="article-"] .code-block code {
+  background: #0a0a0a !important;
+  color: #f5f5f5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.code-block,
+[class*="article-"] .code-block {
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 12px;
+  overflow: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.code-block pre,
+[class*="article-"] .code-block pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  line-height: 1.6;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.code-block code,
+[class*="article-"] .code-block code {
+  display: block;
+  white-space: pre;
+  font-size: 13px;
+}
+
+.code-block .code-header,
+[class*="article-"] .code-block .code-header {
+  background: #111;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: -16px -16px 12px -16px;
 }
