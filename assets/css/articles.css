@@ -90,8 +90,6 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
-
-
 }
 
 /* Align all article themes with the main site palette (blue) */
@@ -482,9 +480,6 @@
 }
 
 /* Code Block Styles */
-
-
-
 
 /* RTL Support for Article Page */
 html[dir="rtl"] .article-header {
@@ -1013,12 +1008,6 @@ html[dir="rtl"] .article-cmd .cmd-block {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
-
-
-
-
-
 
 .article-cmd .cmd-block pre {
   background: var(--cmd-bg);
@@ -1955,8 +1944,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   --pcd-btn: rgba(208, 67, 56, 0.1);
 }
 
-.article-ecmp {
-
 /* RTL Support for Copy Button */
 /* Output Block Styling */
 .output-block {
@@ -1984,24 +1971,11 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 
 /* Professional Copy Button - Floating */
 
-
 /* Keep header styling derived from main.css to match the index page */
-
-
-
-
-
-
 
 /* Professional Code Wrap */
 
-
-
-
 /* Professional Code Lines */
-
-
-
 
 /* Professional Syntax Highlighting */
 .token-key {
@@ -2032,41 +2006,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 
 /* Legacy token support */
 
-
-
-
-
-
-
-
-
-
 /* Professional Scrollbar */
-
-
-
-
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  html[dir="rtl"] 
-
-  html[dir="rtl"] 
-
-  html[dir="rtl"] 
-
 
 /* OpenVPN Article Theme - Enhanced Orange Gradient */
 .article-openvpn {
@@ -2186,17 +2126,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 }
 
 /* ECMP Article Specific Styles */
-
-
-
-
-
-
-
-
-
-
-
 
 /* ECMP Article Method Cards */
 .article-ecmp .method-card {
@@ -2401,24 +2330,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   background: var(--article-gradient);
   box-shadow: 0 8px 32px var(--article-shadow);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .article-ssh .method-card {
   background: linear-gradient(
@@ -2692,8 +2603,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     font-size: 1rem;
   }
 
-  
-
   .article-ssh .btn-primary,
   .article-ssh .btn-outline-secondary {
     padding: 0.6rem 1.5rem;
@@ -2719,12 +2628,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
     font-size: 0.9rem;
   }
 
-  
-
-  
-
-  
-
   .article-ssh .btn-primary,
   .article-ssh .btn-outline-secondary {
     padding: 0.5rem 1rem;
@@ -2734,19 +2637,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 }
 
 /* Nginx Article Specific Styles */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .article-nginx .prerequisites-box {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -3406,19 +3296,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 
 /* Blocking Article Code Blocks */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Blocking Article Author Bio */
 .article-blocking .author-bio .author-card {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -3705,19 +3582,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 
 /* Code Blocks */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Force key surfaces to stay on the main (blue) palette across all articles */
 .article-page .hero,
 .article-header {
@@ -3732,12 +3596,6 @@ html[dir="rtl"] .article-cmd .cmd-block code {
   background: var(--article-gradient) !important;
   box-shadow: 0 8px 32px var(--article-shadow) !important;
 }
-
-
-
-
-
-
 
 /* Highlight Boxes */
 .article-page .highlight-box,
@@ -4706,7 +4564,6 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   transform: translateX(3px);
 }
 
-
 /* ====================================================
  * SYNC ARTICLE THEME WITH MAIN SITE PALETTE
  * ==================================================== */
@@ -4728,7 +4585,11 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 .copy-btn,
 .code-block .copy-btn,
 [class*="article-"] .copy-btn {
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover)) !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-hover)
+  ) !important;
   border: 1px solid color-mix(in srgb, var(--primary) 50%, transparent) !important;
   color: #fff !important;
   padding: 8px 14px !important;
@@ -4748,7 +4609,11 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 [class*="article-"] .copy-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3) !important;
-  background: linear-gradient(135deg, var(--primary-hover), var(--primary)) !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary-hover),
+    var(--primary)
+  ) !important;
 }
 
 .copy-btn:active,
@@ -4795,7 +4660,8 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   padding: 0;
   background: transparent;
   line-height: 1.6;
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+    monospace;
 }
 
 .code-block code,
