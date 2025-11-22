@@ -4648,11 +4648,77 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   overflow: auto;
 }
 
-/* Hide the header/copy button ("code lock") */
+/* Hide the header/copy button ("code lock") - REVERTED/MODIFIED */
 .code-block .code-header,
 .cmd-block .code-header,
 [class*="article-"] .code-block .code-header {
-  display: none !important;
+  display: flex !important;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 10;
+}
+
+/* RTL Support for code header */
+[dir="rtl"] .code-block .code-header,
+[dir="rtl"] .cmd-block .code-header,
+[dir="rtl"] [class*="article-"] .code-block .code-header {
+  right: auto;
+  left: 5px;
+}
+
+/* Icon-only Copy Button */
+.copy-btn,
+.code-block .copy-btn,
+[class*="article-"] .copy-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #6a737c !important; /* Stack Overflow gray */
+  padding: 4px !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copy-btn span,
+.code-block .copy-btn span,
+[class*="article-"] .copy-btn span {
+  display: none !important; /* Hide text */
+}
+
+.copy-btn:hover,
+.code-block .copy-btn:hover,
+[class*="article-"] .copy-btn:hover {
+  background-color: #e3e6e8 !important;
+  color: #2f3337 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Success State (Green) */
+.copy-btn.copied,
+.code-block .copy-btn.copied,
+[class*="article-"] .copy-btn.copied {
+  color: #2e7d32 !important; /* Green */
+  background-color: rgba(46, 125, 50, 0.1) !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.code-block,
+.cmd-block,
+[class*="article-"] .code-block,
+[class*="article-"] .cmd-block {
+  position: relative; /* For absolute positioning of header */
 }
 
 .code-block pre,
