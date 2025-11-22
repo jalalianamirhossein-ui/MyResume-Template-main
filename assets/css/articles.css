@@ -4649,18 +4649,28 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 }
 
 /* Hide the header/copy button ("code lock") - REVERTED/MODIFIED */
+/* Hide the header/copy button ("code lock") - REVERTED/MODIFIED */
 .code-block .code-header,
 .cmd-block .code-header,
 [class*="article-"] .code-block .code-header {
   display: flex !important;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: -40px; /* Move outside */
+  right: 0;
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
   z-index: 10;
+}
+
+/* Ensure code block has space above it */
+.code-block,
+.cmd-block,
+[class*="article-"] .code-block,
+[class*="article-"] .cmd-block {
+  margin-top: 40px !important;
+  position: relative;
 }
 
 /* RTL Support for code header */
