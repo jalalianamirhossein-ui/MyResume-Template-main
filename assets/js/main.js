@@ -298,6 +298,15 @@
               isOriginLeft: document.documentElement.dir !== "rtl",
             });
             container._isotopeInstance = initIsotope;
+            container.classList.add("isotope-ready");
+
+            // Force a relayout after fonts/images settle to avoid broken first render
+            setTimeout(() => initIsotope.arrange(), 150);
+            if (document.fonts && document.fonts.ready) {
+              document.fonts.ready.then(() => {
+                if (container._isotopeInstance) container._isotopeInstance.arrange();
+              });
+            }
 
             // After initializing Isotope, refresh AOS
             if (typeof aosInit === "function") {
@@ -378,6 +387,16 @@
   // Execute mobile settings for portfolio
   window.addEventListener("load", initPortfolioMobile);
   window.addEventListener("resize", initPortfolioMobile);
+
+  // Safeguard: relayout isotope on resize/orientation to keep articles grid aligned
+  window.addEventListener(
+    "resize",
+    debounce(() => {
+      document.querySelectorAll(".isotope-container").forEach((container) => {
+        if (container._isotopeInstance) container._isotopeInstance.arrange();
+      });
+    }, 150)
+  );
 
   // Improve mobile performance for portfolio filters
   function initPortfolioFiltersMobile() {

@@ -76,13 +76,21 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spinCentered {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* Loading Text */
@@ -91,7 +99,8 @@
 }
 
 .loading-text {
-  font-family: 'Vazirmatn', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Vazirmatn", "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
   font-size: 18px;
   font-weight: 500;
   color: #333;
@@ -100,12 +109,17 @@
 }
 
 .rtl .loading-text {
-  font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+  font-family: "Vazirmatn", "Tahoma", sans-serif;
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Progress Line Animation */
@@ -134,15 +148,15 @@
 }
 
 @keyframes progress {
-  0% { 
+  0% {
     transform: scaleX(0);
     transform-origin: left;
   }
-  50% { 
+  50% {
     transform: scaleX(0.7);
     transform-origin: left;
   }
-  100% { 
+  100% {
     transform: scaleX(1);
     transform-origin: left;
   }
@@ -155,15 +169,15 @@
 }
 
 @keyframes progressRTL {
-  0% { 
+  0% {
     transform: scaleX(0);
     transform-origin: right;
   }
-  50% { 
+  50% {
     transform: scaleX(0.7);
     transform-origin: right;
   }
-  100% { 
+  100% {
     transform: scaleX(1);
     transform-origin: right;
   }
@@ -175,21 +189,21 @@
     gap: 20px;
     padding: 16px;
   }
-  
+
   .preloader-spinner {
     width: 50px;
     height: 50px;
   }
-  
+
   .spinner-inner {
     width: 25px;
     height: 25px;
   }
-  
+
   .loading-text {
     font-size: 16px;
   }
-  
+
   .preloader-progress {
     width: 160px;
     height: 2px;
@@ -201,21 +215,21 @@
     gap: 16px;
     padding: 12px;
   }
-  
+
   .preloader-spinner {
     width: 40px;
     height: 40px;
   }
-  
+
   .spinner-inner {
     width: 20px;
     height: 20px;
   }
-  
+
   .loading-text {
     font-size: 14px;
   }
-  
+
   .preloader-progress {
     width: 120px;
     height: 2px;
@@ -236,12 +250,12 @@
   .spinner-inner {
     animation: none;
   }
-  
+
   .loading-text {
     animation: none;
     opacity: 1;
   }
-  
+
   .progress-line {
     animation: none;
     transform: scaleX(1);
@@ -253,21 +267,21 @@
   .preloader-overlay {
     background: #1a1a1a;
   }
-  
+
   .loading-text {
     color: #ffffff;
   }
-  
+
   .spinner-circle {
     border-color: rgba(37, 99, 235, 0.2);
     border-top-color: #2563eb;
   }
-  
+
   .spinner-inner {
     border-color: rgba(37, 99, 235, 0.3);
     border-top-color: #2563eb;
   }
-  
+
   .preloader-progress {
     background: rgba(37, 99, 235, 0.2);
   }

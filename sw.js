@@ -2,17 +2,17 @@
  * ===============================================
  * MEET AJ PORTFOLIO - SERVICE WORKER
  * ===============================================
- * 
+ *
  * Progressive Web App (PWA) service worker
  * Handles offline functionality and caching strategies
- * 
+ *
  * Features:
  * - Offline-first caching
  * - Automatic cache updates
  * - Background sync
  * - Push notifications support
  * - Performance optimization
- * 
+ *
  * Version: 1.0.4
  * Author: AmirHossein Jalalian
  * ===============================================
@@ -62,7 +62,7 @@ self.addEventListener("install", function (event) {
       })
       .catch(function (error) {
         // Cache failed silently - app will still work
-        console.warn('Cache installation failed:', error);
+        console.warn("Cache installation failed:", error);
       })
   );
   // Skip waiting to activate immediately

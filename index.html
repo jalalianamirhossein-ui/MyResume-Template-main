@@ -33,6 +33,11 @@
       content="Network Expert, DevOps Engineer, IT Infrastructure, Cisco, MikroTik, VMware, Linux, System Administration, Tehran Iran"
       name="keywords"
     />
+    <meta name="author" content="AmirHossein Jalalian" />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
     <link rel="canonical" href="https://meetaj.ir/" />
     <meta property="og:site_name" content="Meet AJ" />
     <meta property="og:type" content="website" />
@@ -48,6 +53,10 @@
     <meta
       property="og:image"
       content="https://meetaj.ir/assets/img/hero-bg.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="AmirHossein Jalalian network infrastructure portfolio hero"
     />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="fa_IR" />
@@ -79,6 +88,35 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://meetaj.ir/",
+        "name": "Meet AJ - AmirHossein Jalalian Portfolio",
+        "inLanguage": "en",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.google.com/search?q=site:meetaj.ir+{search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://meetaj.ir/#hero" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://meetaj.ir/#about" },
+          { "@type": "ListItem", "position": 3, "name": "Resume", "item": "https://meetaj.ir/#resume" },
+          { "@type": "ListItem", "position": 4, "name": "Services", "item": "https://meetaj.ir/#services" },
+          { "@type": "ListItem", "position": 5, "name": "Articles", "item": "https://meetaj.ir/#portfolio" },
+          { "@type": "ListItem", "position": 6, "name": "Testimonials", "item": "https://meetaj.ir/#testimonials" },
+          { "@type": "ListItem", "position": 7, "name": "Contact", "item": "https://meetaj.ir/#contact" }
+        ]
+      }
+    </script>
 
     <!-- ===============================================
     FAVICONS & APP ICONS
@@ -95,8 +133,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Meet AJ" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https://meetaj.ir; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src 'self' https://www.google.com https://maps.gstatic.com;"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="preload" as="image" href="assets/img/hero-bg.jpg" />
 
     <!-- ===============================================
@@ -112,6 +156,9 @@
     <!-- ===============================================
     STYLESHEETS & CSS FRAMEWORKS
     =============================================== -->
+
+    <!-- Preload main stylesheet for faster first paint -->
+    <link href="assets/css/main.css?v=999" rel="preload" as="style" />
 
     <!-- Bootstrap CSS Framework -->
     <link
@@ -198,6 +245,23 @@
         color: white;
       }
 
+      .skip-link {
+        position: absolute;
+        top: -999px;
+        left: -999px;
+        padding: 10px 14px;
+        background: #0ea5e9;
+        color: #fff;
+        border-radius: 8px;
+        z-index: 10000;
+        transition: top 0.2s ease, left 0.2s ease;
+      }
+
+      .skip-link:focus-visible {
+        top: 16px;
+        left: 16px;
+      }
+
       .btn-outline-light {
         border: 2px solid white;
         color: white;
@@ -271,6 +335,7 @@
   =============================================== -->
 
   <body class="index-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- ===============================================
     ==================== HEADER SECTION ================
     =============================================== -->
@@ -287,6 +352,7 @@
           height="200"
           decoding="async"
           fetchpriority="high"
+          sizes="120px"
         />
       </div>
 
@@ -297,17 +363,18 @@
         class="logo-section d-flex align-items-center justify-content-between"
       >
         <!-- Site Logo & Name -->
-      <a href="#hero" class="logo d-flex align-items-center">
-        <img
-          src="assets/img/logo.png"
-          alt="Aj-Network"
-          width="40"
-          height="40"
-          decoding="async"
-          fetchpriority="high"
-        />
-        <div class="sitename">Meet AJ</div>
-      </a>
+        <a href="#hero" class="logo d-flex align-items-center">
+          <img
+            src="assets/img/logo.png"
+            alt="Aj-Network"
+            width="40"
+            height="40"
+            decoding="async"
+            fetchpriority="high"
+            sizes="40px"
+          />
+          <div class="sitename">Meet AJ</div>
+        </a>
       </div>
 
       <!-- ===============================================
@@ -402,11 +469,11 @@
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" role="navigation" aria-label="Primary">
         <ul>
           <!-- Home Section -->
           <li>
-            <a href="#hero" class="active"
+            <a href="#hero" class="active" aria-current="page"
               ><i class="bi bi-house navicon"></i
               ><span data-en="Home" data-fa="صفحه اصلی">Home</span></a
             >
@@ -481,7 +548,7 @@
     <!-- ===============================================
     ==================== MAIN CONTENT ====================
     =============================================== -->
-    <main class="main">
+    <main id="main-content" class="main" role="main">
       <!-- ===============================================
       ==================== HERO SECTION ==================
       =============================================== -->
@@ -489,12 +556,14 @@
         <!-- Hero Background Image -->
         <img
           src="assets/img/hero-bg.jpg"
-          alt="Hero Background"
+          alt="Network infrastructure inspired hero background"
           data-aos="fade-in"
           class="hero-bg"
           width="1920"
           height="1080"
+          decoding="async"
           fetchpriority="high"
+          sizes="100vw"
         />
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -550,6 +619,8 @@
                       class="typed"
                       data-typed-items="🌐 Network Specialist, ⚙️ DevOps Engineer, 💡 IT Consultant, 🔧 Systems Expert, 🖥️ VMware Administrator"
                       data-typed-items-fa="🌐 متخصص شبکه هستم, ⚙️ مهندس DevOps هستم, 💡 مشاور فناوری اطلاعات هستم, 🔧 کارشناس سیستم‌ها هستم, 🖥️ مدیر مجازی‌سازی VMware هستم"
+                      aria-live="polite"
+                      aria-atomic="true"
                       >🔧 System Administrator</span
                     >
                   </p>
@@ -632,6 +703,7 @@
                       width="200"
                       height="200"
                       loading="lazy"
+                      sizes="160px"
                     />
                   </div>
                   <div class="profile-info">
@@ -3783,8 +3855,11 @@
               <!-- End Testimonial 5 -->
             </div>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next" aria-label="Next testimonial"></div>
+            <div
+              class="swiper-button-prev"
+              aria-label="Previous testimonial"
+            ></div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
@@ -4362,6 +4437,80 @@
     <!-- Internationalization (i18n) Support -->
     <!-- Language Toggle JavaScript -->
     <script src="assets/js/i18n.js?v=999" defer></script>
+
+    <!-- Progressive image loading for non-critical media -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("img:not([loading])").forEach((img) => {
+          const priority = (
+            img.getAttribute("fetchpriority") || ""
+          ).toLowerCase();
+          if (priority === "high") return;
+          img.setAttribute("loading", "lazy");
+          if (!img.hasAttribute("decoding")) {
+            img.setAttribute("decoding", "async");
+          }
+        });
+      });
+    </script>
+
+    <!-- Contact form button state helper -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector(".php-email-form");
+        if (!form) return;
+
+        const submitBtn = form.querySelector(".submit-btn");
+        const submitLabel = submitBtn?.querySelector("span");
+        const loadingEl = form.querySelector(".form-status .loading");
+        const successEl = form.querySelector(".form-status .sent-message");
+        const errorEl = form.querySelector(".form-status .error-message");
+
+        const hideStatus = (el) => {
+          if (!el) return;
+          el.classList.remove("d-block");
+          el.style.display = "none";
+        };
+
+        hideStatus(loadingEl);
+        hideStatus(successEl);
+        hideStatus(errorEl);
+
+        const setSendingState = (isSending) => {
+          if (!submitBtn) return;
+          submitBtn.disabled = isSending;
+          submitBtn.setAttribute("aria-busy", String(isSending));
+          if (submitLabel) {
+            submitLabel.textContent = isSending ? "Sending..." : "Send Message";
+          }
+          if (loadingEl) {
+            loadingEl.classList.toggle("d-block", isSending);
+            loadingEl.style.display = isSending ? "" : "none";
+          }
+          if (successEl && isSending) successEl.classList.remove("d-block");
+          if (errorEl && isSending) errorEl.classList.remove("d-block");
+        };
+
+        form.addEventListener("submit", () => setSendingState(true));
+
+        const resetOnVisible = (el) => {
+          if (!el) return;
+          const observer = new MutationObserver(() => {
+            if (el.classList.contains("d-block")) {
+              el.style.display = "";
+              setSendingState(false);
+            }
+          });
+          observer.observe(el, {
+            attributes: true,
+            attributeFilter: ["class"],
+          });
+        };
+
+        resetOnVisible(successEl);
+        resetOnVisible(errorEl);
+      });
+    </script>
 
     <!-- Fix corrupted Persian labels and typed items (language-safe) -->
     <script>
