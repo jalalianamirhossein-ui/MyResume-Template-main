@@ -994,6 +994,13 @@ html[dir="ltr"] .header .social-links a {
   .header ~ #footer {
     margin-left: 300px;
   }
+
+  /* Keep desktop menu fixed without inner scroll */
+  .header {
+    position: fixed;
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 1199px) {

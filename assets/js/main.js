@@ -847,8 +847,8 @@
         
         setTimeout(() => {
           preloader.style.display = "none";
-        }, 300);
-      }, 1500); // Show preloader for at least 1.5 seconds
+        }, 200);
+      }, 500); // Shorten minimum preloader time for faster perceived load
     });
     
     // Optional: Hide preloader after minimum time even if page loads faster
@@ -859,9 +859,9 @@
         
         setTimeout(() => {
           preloader.style.display = "none";
-        }, 300);
+        }, 200);
       }
-    }, 3000); // Maximum 3 seconds
+    }, 1500); // Tighten maximum wait time
   }
 
   document.addEventListener("scroll", throttledScroll);
