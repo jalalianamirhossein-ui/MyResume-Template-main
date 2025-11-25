@@ -20,6 +20,15 @@
   const headerToggleBtn = document.querySelector("#menu-toggle");
   const header = document.querySelector("#header");
 
+  // Simple debounce helper to prevent ReferenceError and calm resize spam
+  function debounce(fn, delay = 200) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
   // Create overlay for mobile
   let overlay = document.getElementById("menu-overlay");
   if (!overlay) {
