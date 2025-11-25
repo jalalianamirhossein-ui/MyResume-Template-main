@@ -5727,6 +5727,9 @@ html[dir="ltr"] .testimonials .swiper-slide {
   color: var(--secondary);
   margin-bottom: 15px;
   line-height: 1.5;
+  /* Keep long words/URLs inside the card on desktop */
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-link {
@@ -5744,6 +5747,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   font-size: 0.9rem;
   position: relative;
   overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-link::before {
