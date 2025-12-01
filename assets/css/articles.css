@@ -4758,12 +4758,206 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   line-height: 1.5;
 }
 
+/* ====================================================
+ * SYNC ARTICLE THEME WITH MAIN SITE PALETTE
+ * ==================================================== */
+.article-page,
+[class*="article-"] {
+  --article-primary: var(--primary);
+  --article-primary-hover: var(--primary-hover);
+  --article-secondary: var(--accent);
+  --article-accent: var(--accent);
+  --article-shadow: rgba(37, 99, 235, 0.12);
+  --article-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+  --article-text-light: rgba(255, 255, 255, 0.9);
+  --article-text-medium: rgba(255, 255, 255, 0.8);
+}
+
+/* ===============================================
+ * UNIFIED COPY BUTTON (ALL PAGES)
+ * =============================================== */
+.copy-btn,
+.code-block .copy-btn,
+[class*="article-"] .copy-btn {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-hover)
+  ) !important;
+  border: 1px solid color-mix(in srgb, var(--primary) 50%, transparent) !important;
+  color: #fff !important;
+  padding: 8px 14px !important;
+  border-radius: 10px !important;
+  font: 600 12px/1 "Poppins", "Vazirmatn", sans-serif !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.copy-btn:hover,
+.code-block .copy-btn:hover,
+[class*="article-"] .copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3) !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary-hover),
+    var(--primary)
+  ) !important;
+}
+
+.copy-btn:active,
+.code-block .copy-btn:active,
+[class*="article-"] .copy-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25) !important;
+}
+
+.copy-btn.copied,
+.code-block .copy-btn.copied,
+[class*="article-"] .copy-btn.copied {
+  background: linear-gradient(135deg, #0ea965, #0c8a53) !important;
+  border-color: color-mix(in srgb, #0ea965 60%, transparent) !important;
+  box-shadow: 0 8px 18px rgba(14, 169, 101, 0.3) !important;
+}
+
+/* ===============================================
+ * UNIFIED CODE BLOCK (STACK OVERFLOW STYLE)
+ * =============================================== */
+.code-block,
+.cmd-block,
+[class*="article-"] .code-block,
+[class*="article-"] .cmd-block {
+  background-color: #f6f6f6 !important;
+  color: #2f3337 !important;
+  border: 1px solid #e3e6e8 !important;
+  border-radius: 4px !important;
+  padding: 12px !important;
+  margin: 16px 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* Handle scrolling for code content */
+.code-block pre,
+.cmd-block pre,
+[class*="article-"] .code-block pre,
+[class*="article-"] .cmd-block pre {
+  overflow-x: auto !important;
+  margin: 0 !important;
+  width: 100%;
+}
+
+/* Hide the header/copy button ("code lock") - REVERTED/MODIFIED */
+/* Hide the header/copy button ("code lock") - REVERTED/MODIFIED */
+.code-block .code-header,
+.cmd-block .code-header,
+[class*="article-"] .code-block .code-header {
+  display: flex !important;
+  position: absolute;
+  top: -40px; /* Move outside */
+  right: 0;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 10;
+}
+
+/* Ensure code block has space above it */
+.code-block,
+.cmd-block,
+[class*="article-"] .code-block,
+[class*="article-"] .cmd-block {
+  margin-top: 40px !important;
+  position: relative;
+}
+
+/* RTL Support for code header */
+[dir="rtl"] .code-block .code-header,
+[dir="rtl"] .cmd-block .code-header,
+[dir="rtl"] [class*="article-"] .code-block .code-header {
+  right: auto;
+  left: 5px;
+}
+
+/* Icon-only Copy Button */
+.copy-btn,
+.code-block .copy-btn,
+[class*="article-"] .copy-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #6a737c !important; /* Stack Overflow gray */
+  padding: 4px !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copy-btn span,
+.code-block .copy-btn span,
+[class*="article-"] .copy-btn span {
+  display: none !important; /* Hide text */
+}
+
+.copy-btn:hover,
+.code-block .copy-btn:hover,
+[class*="article-"] .copy-btn:hover {
+  background-color: #e3e6e8 !important;
+  color: #2f3337 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Success State (Green) */
+.copy-btn.copied,
+.code-block .copy-btn.copied,
+[class*="article-"] .copy-btn.copied {
+  color: #2e7d32 !important; /* Green */
+  background-color: rgba(46, 125, 50, 0.1) !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.code-block,
+.cmd-block,
+[class*="article-"] .code-block,
+[class*="article-"] .cmd-block {
+  position: relative; /* For absolute positioning of header */
+}
+
+.code-block pre,
+.code-block code,
+.cmd-block pre,
+.cmd-block code,
+[class*="article-"] .code-block pre,
+[class*="article-"] .code-block code {
+  background: transparent !important;
+  color: inherit !important;
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono",
+    Menlo, Monaco, Consolas, monospace !important;
+  font-size: 13px !important;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
 /* ===============================================
  * GLOBAL CODE BLOCK STYLES - MODERN TERMINAL LOOK
  * ===============================================
  */
 .code-block {
-  background: #1e1e1e;
+  background: #000000;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   margin: 2rem 0;
@@ -4779,12 +4973,13 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 }
 
 .code-header {
-  background: #2d2d2d;
+  background: #1a1a1a;
   padding: 12px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  height: 48px;
 }
 
 /* Mac-like Window Controls */
@@ -4796,6 +4991,8 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 12'%3E%3Ccircle cx='6' cy='6' r='6' fill='%23ff5f56'/%3E%3Ccircle cx='26' cy='6' r='6' fill='%23ffbd2e'/%3E%3Ccircle cx='46' cy='6' r='6' fill='%2327c93f'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   opacity: 0.8;
+  position: absolute;
+  left: 20px;
 }
 
 .code-lang {
@@ -4805,33 +5002,41 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-left: auto;
-  margin-right: 15px;
+  margin: 0 auto; /* Center the title */
 }
 
 /* Copy Button Styling */
 .copy-btn {
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
-  padding: 6px 12px;
+  color: #666;
+  width: 32px;
+  height: 32px;
   border-radius: 6px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-family: inherit;
+  justify-content: center;
+  position: absolute;
+  right: 20px;
 }
 
 .copy-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .copy-btn:active {
   transform: translateY(0);
+}
+
+.copy-btn.copied {
+  color: #27c93f;
+  border-color: #27c93f;
+  background: rgba(39, 201, 63, 0.1);
 }
 
 /* Code Content Styling */
@@ -4839,7 +5044,7 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   margin: 0;
   padding: 20px;
   overflow-x: auto;
-  background: #1e1e1e;
+  background: #000000;
 }
 
 .code-block code {
@@ -4857,9 +5062,19 @@ html[dir="rtl"] .code-header {
   flex-direction: row-reverse;
 }
 
+html[dir="rtl"] .code-header::before {
+  left: auto;
+  right: 20px;
+}
+
 html[dir="rtl"] .code-lang {
   margin-left: 15px;
   margin-right: auto;
+}
+
+html[dir="rtl"] .copy-btn {
+  right: auto;
+  left: 20px;
 }
 
 html[dir="rtl"] .code-block code {
@@ -4878,6 +5093,22 @@ html[dir="rtl"] .code-block code {
 
   .code-header {
     padding: 10px 15px;
+  }
+
+  .code-header::before {
+    left: 15px;
+  }
+
+  .copy-btn {
+    right: 15px;
+  }
+
+  html[dir="rtl"] .code-header::before {
+    right: 15px;
+  }
+
+  html[dir="rtl"] .copy-btn {
+    left: 15px;
   }
 
   .code-block pre {
