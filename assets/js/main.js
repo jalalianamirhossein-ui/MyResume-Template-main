@@ -865,4 +865,82 @@
   }
 
   document.addEventListener("scroll", throttledScroll);
+
+  // ===============================================
+  // ARTICLE CODE COPY FUNCTIONALITY
+  // ===============================================
+  function initCodeCopy() {
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const codeBlock = this.closest('.code-block');
+        const code = codeBlock.querySelector('code').innerText;
+        
+        navigator.clipboard.writeText(code).then(() => {
+          const originalText = this.innerHTML;
+          const isRtl = document.documentElement.dir === 'rtl';
+          
+          this.innerHTML = isRtl ? '<i class="bi bi-check2"></i> کپی شد!' : '<i class="bi bi-check2"></i> Copied!';
+          this.classList.add('copied');
+          
+          setTimeout(() => {
+            this.innerHTML = originalText;
+            this.classList.remove('copied');
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy:', err);
+        });
+      });
+    });
+  }
+  
+  window.addEventListener('load', initCodeCopy);
+
+  // ===============================================
+  // ARTICLE SCROLL PROGRESS
+  // ===============================================
+  function initScrollProgress() {
+    // Only run on article pages
+    if (!document.querySelector('.article-content')) return;
+    
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress-container';
+    progressBar.innerHTML = '<div class="scroll-progress"></div>';
+    document.body.appendChild(progressBar);
+    
+    const progress = progressBar.querySelector('.scroll-progress');
+    
+    // Add styles dynamically if not present
+    if (!document.getElementById('scroll-progress-style')) {
+      const style = document.createElement('style');
+      style.id = 'scroll-progress-style';
+      style.textContent = `
+        .scroll-progress-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: transparent;
+          z-index: 9999;
+        }
+        .scroll-progress {
+          height: 100%;
+          background: linear-gradient(90deg, var(--primary, #00bf73), var(--accent, #ff830a));
+          width: 0%;
+          transition: width 0.1s;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+    
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progress.style.width = scrolled + "%";
+    });
+  }
+  
+  window.addEventListener('load', initScrollProgress);
+
 })();
