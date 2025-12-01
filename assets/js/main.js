@@ -20,6 +20,15 @@
   const headerToggleBtn = document.querySelector("#menu-toggle");
   const header = document.querySelector("#header");
 
+  // Simple debounce helper to prevent ReferenceError and calm resize spam
+  function debounce(fn, delay = 200) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
   // Create overlay for mobile
   let overlay = document.getElementById("menu-overlay");
   if (!overlay) {
@@ -295,7 +304,18 @@
               filter: filter,
               sortBy: sort,
               transitionDuration: transitionDuration,
+              isOriginLeft: document.documentElement.dir !== "rtl",
             });
+            container._isotopeInstance = initIsotope;
+            container.classList.add("isotope-ready");
+
+            // Force a relayout after fonts/images settle to avoid broken first render
+            setTimeout(() => initIsotope.arrange(), 150);
+            if (document.fonts && document.fonts.ready) {
+              document.fonts.ready.then(() => {
+                if (container._isotopeInstance) container._isotopeInstance.arrange();
+              });
+            }
 
             // After initializing Isotope, refresh AOS
             if (typeof aosInit === "function") {
@@ -376,6 +396,16 @@
   // Execute mobile settings for portfolio
   window.addEventListener("load", initPortfolioMobile);
   window.addEventListener("resize", initPortfolioMobile);
+
+  // Safeguard: relayout isotope on resize/orientation to keep articles grid aligned
+  window.addEventListener(
+    "resize",
+    debounce(() => {
+      document.querySelectorAll(".isotope-container").forEach((container) => {
+        if (container._isotopeInstance) container._isotopeInstance.arrange();
+      });
+    }, 150)
+  );
 
   // Improve mobile performance for portfolio filters
   function initPortfolioFiltersMobile() {
@@ -720,6 +750,91 @@
     }
   });
 
+  // Load-more for articles (portfolio) section
+  function initArticlesLoadMore() {
+    const container = document.querySelector(
+      "#portfolio .isotope-container"
+    );
+    const loadMoreBtn = document.getElementById("articles-load-more");
+    if (!container || !loadMoreBtn) return;
+
+    const items = Array.from(container.querySelectorAll(".portfolio-item"));
+    const batchSize = 6;
+    let visibleCount = batchSize;
+    let ready = false;
+
+    const getFilteredItems = () => {
+      const iso = container._isotopeInstance;
+      if (iso && Array.isArray(iso.filteredItems)) {
+        return iso.filteredItems.map((entry) => entry.element);
+      }
+      return items;
+    };
+
+    const updateVisibility = () => {
+      const filtered = getFilteredItems();
+
+      // Reset hidden state on all items first
+      items.forEach((item) => item.classList.remove("is-hidden"));
+
+      filtered.forEach((item, index) => {
+        const show = index < visibleCount;
+        item.classList.toggle("is-hidden", !show);
+      });
+
+      if (container._isotopeInstance) {
+        container._isotopeInstance.arrange();
+      }
+
+      loadMoreBtn.style.display =
+        visibleCount >= filtered.length ? "none" : "inline-flex";
+    };
+
+    const kickOff = () => {
+      if (ready) return;
+      if (container._isotopeInstance) {
+        ready = true;
+        updateVisibility();
+      } else {
+        // Wait for isotope to initialize
+        setTimeout(kickOff, 50);
+      }
+    };
+
+    kickOff();
+
+    loadMoreBtn.addEventListener("click", () => {
+      visibleCount += batchSize;
+      updateVisibility();
+    });
+
+    // Reset and recalc when filters change
+    document
+      .querySelectorAll(".portfolio-filters li")
+      .forEach((filterBtn) => {
+        filterBtn.addEventListener("click", () => {
+          visibleCount = batchSize;
+          // Give Isotope a moment to apply the filter
+          setTimeout(updateVisibility, 50);
+        });
+      });
+
+    // If Isotope is present, sync after arrange completes
+    if (container._isotopeInstance && container._isotopeInstance.on) {
+      container._isotopeInstance.on("arrangeComplete", updateVisibility);
+    } else {
+      // Retry once Isotope initializes
+      setTimeout(() => {
+        if (container._isotopeInstance && container._isotopeInstance.on) {
+          container._isotopeInstance.on("arrangeComplete", updateVisibility);
+          updateVisibility();
+        }
+      }, 200);
+    }
+  }
+
+  window.addEventListener("load", initArticlesLoadMore);
+
   // Modern Bilingual Preloader Animation
   const preloader = document.querySelector("#preloader");
   
@@ -732,8 +847,8 @@
         
         setTimeout(() => {
           preloader.style.display = "none";
-        }, 300);
-      }, 1500); // Show preloader for at least 1.5 seconds
+        }, 200);
+      }, 500); // Shorten minimum preloader time for faster perceived load
     });
     
     // Optional: Hide preloader after minimum time even if page loads faster
@@ -744,9 +859,9 @@
         
         setTimeout(() => {
           preloader.style.display = "none";
-        }, 300);
+        }, 200);
       }
-    }, 3000); // Maximum 3 seconds
+    }, 1500); // Tighten maximum wait time
   }
 
   document.addEventListener("scroll", throttledScroll);

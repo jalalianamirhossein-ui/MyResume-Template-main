@@ -74,6 +74,8 @@
       if (cur && alt) {
         cur.textContent = isPersian ? 'FA' : 'EN';
         alt.textContent = isPersian ? 'EN' : 'FA';
+        cur.classList.add('is-active');
+        alt.classList.remove('is-active');
       }
     }
 
@@ -153,6 +155,7 @@
   const initSystem = () => {
     apply(init());
     injectLanguageToggle();
+    apply(document.documentElement.lang);
 
     const btn = document.getElementById('lang-toggle');
     if (!btn) return;

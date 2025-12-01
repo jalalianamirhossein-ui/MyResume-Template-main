@@ -50,6 +50,20 @@ html[dir="rtl"] .main span {
   direction: rtl !important;
 }
 
+/* Hero action buttons: reverse hover direction for RTL */
+html[dir="rtl"] .hero-actions .btn-modern:hover .btn-icon {
+  transform: translateX(-4px);
+}
+
+html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
+  transform: translateX(2px);
+}
+
+/* Articles grid align from right in RTL */
+html[dir="rtl"] .portfolio .isotope-container {
+  direction: rtl;
+}
+
 /* Override for centered profile card content */
 html[dir="rtl"] .profile-card,
 html[dir="rtl"] .profile-card .profile-info,

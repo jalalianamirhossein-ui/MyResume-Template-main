@@ -206,6 +206,11 @@ a:focus {
   border-radius: 2px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Status Indicators */
 .status-success {
   color: var(--success);
@@ -375,6 +380,34 @@ a:focus {
     width: 16px;
     left: 3px;
     bottom: 3px;
+  }
+}
+
+/* Mobile ergonomics and tap targets */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .navmenu a {
+    min-height: 48px;
+    padding: 12px 14px;
+  }
+
+  .btn,
+  button,
+  .contact .contact-card,
+  .contact .form-input {
+    min-height: 48px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .hero .hero-title {
+    letter-spacing: -0.01em;
   }
 }
 
@@ -589,6 +622,7 @@ body {
   font-family: var(--default-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 a {
@@ -959,6 +993,13 @@ html[dir="ltr"] .header .social-links a {
 @media (min-width: 1200px) {
   .header ~ #footer {
     margin-left: 300px;
+  }
+
+  /* Keep desktop menu fixed without inner scroll */
+  .header {
+    position: fixed;
+    height: 100vh;
+    overflow: hidden;
   }
 }
 
@@ -4719,6 +4760,10 @@ html[dir="rtl"] .resume .resume-item::before {
   box-shadow: 0 8px 30px rgba(0, 113, 227, 0.3);
 }
 
+.portfolio .isotope-container {
+  direction: ltr;
+}
+
 .portfolio .portfolio-filters li.filter-active::before {
   opacity: 0;
 }
@@ -4855,6 +4900,63 @@ html[dir="rtl"] .resume .resume-item::before {
 
 .portfolio .portfolio-content .portfolio-info .details-link {
   font-size: 1.1rem;
+}
+
+/* Articles load-more controls */
+.portfolio .articles-load-more {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.portfolio .load-more-btn {
+  min-width: 220px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
+.portfolio-item.is-hidden {
+  display: none !important;
+}
+
+/* Articles load-more controls */
+.portfolio .articles-load-more {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio .load-more-btn {
+  min-width: 220px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.18);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.85),
+    rgba(14, 165, 233, 0.75)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.portfolio .load-more-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+}
+
+.portfolio .load-more-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
 }
 
 /* Container for buttons */
@@ -5331,6 +5433,19 @@ html[dir="rtl"] .resume .resume-item::before {
 .testimonials .swiper-button-prev:after {
   font-size: 18px;
   font-weight: bold;
+  content: "";
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+.testimonials .swiper-button-prev:after {
+  transform: rotate(135deg);
+}
+
+.testimonials .swiper-button-next:after {
+  transform: rotate(315deg);
 }
 
 .testimonials .swiper-button-next {
@@ -5344,13 +5459,11 @@ html[dir="rtl"] .resume .resume-item::before {
 html[dir="rtl"] .testimonials .swiper-button-next {
   right: 10px;
   left: auto;
-  transform: scaleX(-1);
 }
 
 html[dir="rtl"] .testimonials .swiper-button-prev {
   left: 10px;
   right: auto;
-  transform: scaleX(-1);
 }
 
 html[dir="rtl"] .testimonials .swiper,
@@ -5727,6 +5840,9 @@ html[dir="ltr"] .testimonials .swiper-slide {
   color: var(--secondary);
   margin-bottom: 15px;
   line-height: 1.5;
+  /* Keep long words/URLs inside the card on desktop */
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-link {
@@ -5744,6 +5860,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   font-size: 0.9rem;
   position: relative;
   overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-link::before {
@@ -8970,6 +9088,15 @@ html[dir="rtl"] .related-content {
 
 .hero-actions .btn-modern:hover .btn-text {
   transform: translateX(-2px);
+}
+
+/* RTL: mirror hover motion direction */
+html[dir="rtl"] .hero-actions .btn-modern:hover .btn-icon {
+  transform: translateX(-4px);
+}
+
+html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
+  transform: translateX(2px);
 }
 
 /* Modern Primary Button - Glass Effect */
