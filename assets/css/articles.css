@@ -4645,7 +4645,17 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
   padding: 12px !important;
   margin: 16px 0 !important;
   box-shadow: none !important;
-  overflow: auto;
+  overflow: visible !important;
+}
+
+/* Handle scrolling for code content */
+.code-block pre,
+.cmd-block pre,
+[class*="article-"] .code-block pre,
+[class*="article-"] .cmd-block pre {
+  overflow-x: auto !important;
+  margin: 0 !important;
+  width: 100%;
 }
 
 /* Hide the header/copy button ("code lock") - REVERTED/MODIFIED */
