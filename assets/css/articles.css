@@ -5119,3 +5119,99 @@ html[dir="rtl"] .code-block code {
     font-size: 0.85rem;
   }
 }
+
+/* ====================================================
+ * FINAL CODE BLOCK OVERRIDES (BLACK THEME + ICON COPY)
+ * Ensures dark background and visible copy icon even
+ * when earlier duplicate rules exist with !important.
+ * ==================================================== */
+.code-block,
+.cmd-block,
+[class*="article-"] .code-block,
+[class*="article-"] .cmd-block {
+  background: #0b0b0f !important;
+  color: #e5e7eb !important;
+  border: 1px solid #111827 !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+.code-block pre,
+.cmd-block pre,
+[class*="article-"] .code-block pre,
+[class*="article-"] .cmd-block pre {
+  background: #0b0b0f !important;
+}
+
+.code-block code,
+.cmd-block code,
+[class*="article-"] .code-block code,
+[class*="article-"] .cmd-block code {
+  color: #e5e7eb !important;
+}
+
+.code-block .copy-btn,
+[class*="article-"] .code-block .copy-btn {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 0 !important; /* hide text while JS injects icon */
+  top: 14px !important;
+}
+
+.code-block .copy-btn i,
+[class*="article-"] .code-block .copy-btn i {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.code-block .copy-btn:hover,
+[class*="article-"] .code-block .copy-btn:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+.code-block .copy-btn.copied,
+[class*="article-"] .code-block .copy-btn.copied {
+  background: rgba(34, 197, 94, 0.16) !important;
+  border-color: rgba(34, 197, 94, 0.4) !important;
+  color: #bbf7d0 !important;
+}
+
+/* Final header alignment + visibility tweaks */
+.code-header {
+  background: #111827 !important;
+  padding: 12px 16px !important;
+  height: 48px !important;
+}
+
+.code-header::before {
+  left: 16px !important;
+  opacity: 1 !important;
+}
+
+.code-lang {
+  margin: 0 0 0 76px !important; /* keep text left after circles */
+  color: #e5e7eb !important;
+  text-shadow: none !important;
+}
+
+.code-block .copy-btn,
+[class*="article-"] .code-block .copy-btn {
+  right: 16px !important;
+  background: #1f2937 !important;
+  border-color: #334155 !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+  font-size: 0 !important;
+}
+
+.code-block .copy-btn:hover,
+[class*="article-"] .code-block .copy-btn:hover {
+  background: #111827 !important;
+  border-color: #475569 !important;
+}
+
+html[dir="rtl"] .code-lang {
+  margin: 0 76px 0 0 !important;
+}

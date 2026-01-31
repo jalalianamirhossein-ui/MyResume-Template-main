@@ -870,20 +870,31 @@
   // ARTICLE CODE COPY FUNCTIONALITY
   // ===============================================
   function initCodeCopy() {
+    const isRtl = document.documentElement.dir === 'rtl';
+    const defaultIcon = '<i class="bi bi-clipboard"></i>';
+    const successIcon = '<i class="bi bi-check2"></i>';
+
     document.querySelectorAll('.copy-btn').forEach(btn => {
+      // Use icon-only button for cleaner UI but keep accessible label
+      btn.innerHTML = defaultIcon;
+      const label = isRtl ? 'کپی کد' : 'Copy code';
+      btn.setAttribute('aria-label', label);
+      btn.title = label;
+
       btn.addEventListener('click', function() {
         const codeBlock = this.closest('.code-block');
-        const code = codeBlock.querySelector('code').innerText;
+        const codeElement = codeBlock ? codeBlock.querySelector('code') : null;
+        if (!codeElement) return;
+        const code = codeElement.innerText;
         
         navigator.clipboard.writeText(code).then(() => {
-          const originalText = this.innerHTML;
-          const isRtl = document.documentElement.dir === 'rtl';
-          
-          this.innerHTML = isRtl ? '<i class="bi bi-check2"></i> کپی شد!' : '<i class="bi bi-check2"></i> Copied!';
+          const originalContent = this.innerHTML || defaultIcon;
+
+          this.innerHTML = successIcon;
           this.classList.add('copied');
           
           setTimeout(() => {
-            this.innerHTML = originalText;
+            this.innerHTML = originalContent;
             this.classList.remove('copied');
           }, 2000);
         }).catch(err => {
