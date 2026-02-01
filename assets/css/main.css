@@ -4832,11 +4832,10 @@ html[dir="rtl"] .resume .resume-item::before {
   position: absolute;
   inset: 0;
   z-index: 3;
-  transition: all ease-in-out 0.4s;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+  transition: opacity 0.3s ease;
+  background: rgba(2, 6, 23, 0.65);
   padding: 1.5rem;
   border-radius: 20px;
-  backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4852,7 +4851,6 @@ html[dir="rtl"] .resume .resume-item::before {
   color: white;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 25px;
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   margin-bottom: 1rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -4882,7 +4880,6 @@ html[dir="rtl"] .resume .resume-item::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   margin: 0 8px;
   text-decoration: none;
@@ -4974,9 +4971,32 @@ html[dir="rtl"] .resume .resume-item::before {
   pointer-events: auto;
 }
 
-.portfolio .portfolio-content:hover img,
-.portfolio .portfolio-content:focus-within img {
-  transform: scale(1.1);
+.portfolio .portfolio-content:focus-within .portfolio-info,
+.portfolio .portfolio-content.is-active .portfolio-info {
+  opacity: 1;
+  pointer-events: auto;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+@supports not ((backdrop-filter: blur(6px)) or (-webkit-backdrop-filter: blur(6px))) {
+  .portfolio .portfolio-content:focus-within .portfolio-info,
+  .portfolio .portfolio-content.is-active .portfolio-info {
+    background: rgba(2, 6, 23, 0.8);
+  }
+}
+
+@media (hover: hover) {
+  .portfolio .portfolio-content:hover .portfolio-info {
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .portfolio .portfolio-content:hover img {
+    transform: scale(1.05);
+  }
 }
 
 @media (hover: none), (pointer: coarse) {
@@ -4984,19 +5004,26 @@ html[dir="rtl"] .resume .resume-item::before {
     min-height: 340px;
   }
 
+  .portfolio .portfolio-content,
+  .portfolio .portfolio-content img {
+    filter: none;
+  }
+
+  .portfolio .portfolio-content img {
+    transform: none;
+    transition: none;
+  }
+
   .portfolio .portfolio-content .portfolio-info {
-    opacity: 1;
-    position: relative;
-    pointer-events: auto;
-    background: linear-gradient(
-      180deg,
-      rgba(2, 6, 23, 0.95) 0%,
-      rgba(2, 6, 23, 0.75) 40%,
-      rgba(2, 6, 23, 0.4) 100%
-    );
-    align-items: flex-start;
-    text-align: left;
-    padding: 1.75rem 1.5rem 1.5rem;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    background: rgba(2, 6, 23, 0.65);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
     gap: 0.85rem;
   }
 
@@ -5004,6 +5031,8 @@ html[dir="rtl"] .resume .resume-item::before {
     width: 100%;
     text-align: left;
     background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .portfolio .portfolio-content .portfolio-info p {
@@ -5013,8 +5042,23 @@ html[dir="rtl"] .resume .resume-item::before {
 
   .portfolio .portfolio-content .portfolio-info .portfolio-links {
     width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .portfolio .portfolio-content .portfolio-info .preview-link,
+  .portfolio .portfolio-content .portfolio-info .details-link {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .portfolio .portfolio-content:focus-within .portfolio-info,
+  .portfolio .portfolio-content.is-active .portfolio-info {
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
   .portfolio .portfolio-content:hover,
@@ -5026,6 +5070,60 @@ html[dir="rtl"] .resume .resume-item::before {
   .portfolio .portfolio-content:hover img,
   .portfolio .portfolio-content:focus-within img {
     transform: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .portfolio .isotope-container {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .portfolio .portfolio-content {
+    min-height: 0 !important;
+    border-radius: 16px;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    filter: none;
+  }
+
+  .portfolio .portfolio-content img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
+  .portfolio .portfolio-content .portfolio-info {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .portfolio .portfolio-content .portfolio-info h4,
+  .portfolio .portfolio-content .portfolio-info .preview-link,
+  .portfolio .portfolio-content .portfolio-info .details-link {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .portfolio .portfolio-content:focus-within .portfolio-info,
+  .portfolio .portfolio-content.is-active .portfolio-info {
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 }
 
