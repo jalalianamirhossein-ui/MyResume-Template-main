@@ -66,7 +66,7 @@
       btn.setAttribute('aria-pressed', String(isPersian));
       btn.setAttribute(
         'aria-label',
-        isPersian ? 'تغییر زبان به انگلیسی' : 'Switch language to فارسی'
+        isPersian ? '\u062A\u063A\u06CC\u06CC\u0631 \u0632\u0628\u0627\u0646 \u0628\u0647 \u0627\u0646\u06AF\u0644\u06CC\u0633\u06CC' : 'Switch language to \u0641\u0627\u0631\u0633\u06CC'
       );
 
       const cur = btn.querySelector('.i18n-cur');
@@ -86,7 +86,7 @@
         isPersian ? 'rtl' : 'ltr'
       }`;
       loadingText.textContent = isPersian
-        ? 'در حال بارگذاری...'
+        ? '\u062F\u0631 \u062D\u0627\u0644 \u0628\u0627\u0631\u06AF\u0630\u0627\u0631\u06CC...'
         : 'Loading...';
     }
 
@@ -238,3 +238,4 @@
     },
   };
 })();
+

@@ -905,8 +905,6 @@
     }, 1500); // Tighten maximum wait time
   }
 
-  document.addEventListener("scroll", throttledScroll);
-
   // ===============================================
   // ARTICLE CODE COPY FUNCTIONALITY
   // ===============================================

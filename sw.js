@@ -19,15 +19,20 @@
  */
 
 // Cache configuration
-const CACHE_NAME = "meet-aj-v1.0.4";
-const urlsToCache = [
-  "./",
-  "./index.html",
+const ASSET_VERSION = "999";
+const CACHE_NAME = `meet-aj-v1.0.5-${ASSET_VERSION}`;
+const versionedAssets = [
   "./assets/css/main.css",
   "./assets/css/rtl.css",
   "./assets/css/lang-toggle.css",
   "./assets/js/main.js",
   "./assets/js/i18n.js",
+];
+const urlsToCache = [
+  "./",
+  "./index.html",
+  ...versionedAssets,
+  ...versionedAssets.map((url) => `${url}?v=${ASSET_VERSION}`),
   "./assets/img/favicon.png",
   "./assets/img/apple-touch-icon.png",
   "./assets/img/logo.png",

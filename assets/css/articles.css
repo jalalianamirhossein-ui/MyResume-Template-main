@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ===============================================
  * MEET AJ PORTFOLIO - ARTICLES CSS (OPTIMIZED)
  * ===============================================
@@ -2082,20 +2082,13 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 /* MikroTik ECMP Article Theme - Professional Blue Gradient */
 .article-ecmp {
   --article-primary: #0d47a1;
-  /* Ø¢Ø¨ÛŒ ØªÛŒØ±Ù‡ - Ø§ØµÙ„ÛŒ */
   --article-primary-hover: #0a3a8a;
   --article-accent: #0288d1;
-  /* Ø¢Ø¨ÛŒ ÙÛŒØ±ÙˆØ²Ù‡â€ŒØ§ÛŒ - Ù‡Ø§ÛŒÙ„Ø§ÛŒØª */
   --article-secondary: #eceff1;
-  /* Ø®Ø§Ú©Ø³ØªØ±ÛŒ Ø±ÙˆØ´Ù† - Ù¾Ø³â€ŒØ²Ù…ÛŒÙ†Ù‡ */
   --article-success: #388e3c;
-  /* Ø³Ø¨Ø² Ù„Ø§Ø¬ÙˆØ±Ø¯ÛŒ - Ù…ÙˆÙÙ‚ÛŒØª */
   --article-warning: #fbc02d;
-  /* Ø²Ø±Ø¯ Ú©Ù‡Ø±Ø¨Ø§ÛŒÛŒ - Ù‡Ø´Ø¯Ø§Ø± */
   --article-error: #c62828;
-  /* Ù‚Ø±Ù…Ø² ØªÛŒØ±Ù‡ - Ø®Ø·Ø§ */
   --article-text-dark: #263238;
-  /* Ø®Ø§Ú©Ø³ØªØ±ÛŒ ØªÛŒØ±Ù‡ - Ù…ØªÙ† Ø§ØµÙ„ÛŒ */
   --article-shadow: rgba(13, 71, 161, 0.15);
   --article-gradient: linear-gradient(135deg, #0d47a1, #0288d1, #eceff1);
   --article-text-light: rgba(255, 255, 255, 0.95);
@@ -2256,20 +2249,13 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 /* SSH Linux Article Theme - Professional Green Gradient */
 .article-ssh {
   --article-primary: #1b5e20;
-  /* Ø³Ø¨Ø² ØªÛŒØ±Ù‡ - Ø§ØµÙ„ÛŒ */
   --article-primary-hover: #0d4a16;
   --article-accent: #4caf50;
-  /* Ø³Ø¨Ø² Ø±ÙˆØ´Ù† - Ù‡Ø§ÛŒÙ„Ø§ÛŒØª */
   --article-secondary: #e8f5e8;
-  /* Ø³Ø¨Ø² Ø±ÙˆØ´Ù† - Ù¾Ø³â€ŒØ²Ù…ÛŒÙ†Ù‡ */
   --article-success: #2e7d32;
-  /* Ø³Ø¨Ø² Ø²Ù…Ø±Ø¯ÛŒ - Ù…ÙˆÙÙ‚ÛŒØª */
   --article-warning: #ff9800;
-  /* Ù†Ø§Ø±Ù†Ø¬ÛŒ - Ù‡Ø´Ø¯Ø§Ø± */
   --article-error: #d32f2f;
-  /* Ù‚Ø±Ù…Ø² - Ø®Ø·Ø§ */
   --article-text-dark: #1b5e20;
-  /* Ø³Ø¨Ø² ØªÛŒØ±Ù‡ - Ù…ØªÙ† Ø§ØµÙ„ÛŒ */
   --article-shadow: rgba(27, 94, 32, 0.2);
   --article-gradient: linear-gradient(135deg, #1b5e20, #4caf50, #e8f5e8);
   --article-text-light: rgba(255, 255, 255, 0.95);
@@ -2314,7 +2300,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  content: "â€º";
+  content: "›";
   color: #0288d1;
   font-weight: bold;
 }
@@ -2670,7 +2656,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 }
 
 .article-nginx .advantages-list ul li:before {
-  content: "âœ“";
+  content: "✓";
   position: absolute;
   left: 0;
   color: #00bf73;
@@ -3001,7 +2987,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 }
 
 .article-blocking .method-tips h4::before {
-  content: "âš¡";
+  content: "⚡";
   font-size: 1.1rem;
   color: #d04338;
 }
@@ -3687,7 +3673,7 @@ html[dir="rtl"] .article-cmd .cmd-block code {
 }
 
 .article-page .method-tips h4::before {
-  content: "âš¡";
+  content: "⚡";
   font-size: 1.1rem;
   color: var(--article-primary);
   margin-left: 0.5rem;
@@ -4413,7 +4399,7 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 }
 
 .read-more::after {
-  content: "â†’";
+  content: "→";
   transition: transform 0.3s ease;
 }
 
@@ -4556,7 +4542,7 @@ body[data-page="windows-cmd-common-network-commands"] .hero-background h6 {
 }
 
 .read-more::after {
-  content: "â†’";
+  content: "→";
   transition: transform 0.3s ease;
 }
 
@@ -5215,3 +5201,4 @@ html[dir="rtl"] .code-block code {
 html[dir="rtl"] .code-lang {
   margin: 0 76px 0 0 !important;
 }
+
