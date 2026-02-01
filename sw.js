@@ -19,8 +19,8 @@
  */
 
 // Cache configuration
-const ASSET_VERSION = "999";
-const CACHE_NAME = `meet-aj-v1.0.5-${ASSET_VERSION}`;
+const ASSET_VERSION = "1000";
+const CACHE_NAME = `meet-aj-v1.0.6-${ASSET_VERSION}`;
 const versionedAssets = [
   "./assets/css/main.css",
   "./assets/css/rtl.css",

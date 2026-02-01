@@ -5009,18 +5009,13 @@ html[dir="rtl"] .resume .resume-item::before {
     filter: none;
   }
 
-  .portfolio .portfolio-content img {
-    transform: none;
-    transition: none;
-  }
-
   .portfolio .portfolio-content .portfolio-info {
     opacity: 0;
     position: absolute;
     pointer-events: none;
     background: rgba(2, 6, 23, 0.65);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     align-items: center;
     text-align: center;
     padding: 1.5rem;
@@ -5029,10 +5024,10 @@ html[dir="rtl"] .resume .resume-item::before {
 
   .portfolio .portfolio-content .portfolio-info h4 {
     width: 100%;
-    text-align: left;
+    text-align: center;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
   .portfolio .portfolio-content .portfolio-info p {
@@ -5049,8 +5044,8 @@ html[dir="rtl"] .resume .resume-item::before {
 
   .portfolio .portfolio-content .portfolio-info .preview-link,
   .portfolio .portfolio-content .portfolio-info .details-link {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
   .portfolio .portfolio-content:focus-within .portfolio-info,
@@ -5061,15 +5056,15 @@ html[dir="rtl"] .resume .resume-item::before {
     -webkit-backdrop-filter: blur(6px);
   }
 
-  .portfolio .portfolio-content:hover,
-  .portfolio .portfolio-content:focus-within {
-    transform: none;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  .portfolio .portfolio-content:focus-within,
+  .portfolio .portfolio-content.is-active {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 113, 227, 0.2);
   }
 
-  .portfolio .portfolio-content:hover img,
-  .portfolio .portfolio-content:focus-within img {
-    transform: none;
+  .portfolio .portfolio-content:focus-within img,
+  .portfolio .portfolio-content.is-active img {
+    transform: scale(1.05);
   }
 }
 
@@ -5107,15 +5102,16 @@ html[dir="rtl"] .resume .resume-item::before {
     opacity: 0;
     pointer-events: none;
     border-radius: inherit;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background: rgba(2, 6, 23, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
   .portfolio .portfolio-content .portfolio-info h4,
   .portfolio .portfolio-content .portfolio-info .preview-link,
   .portfolio .portfolio-content .portfolio-info .details-link {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
   .portfolio .portfolio-content:focus-within .portfolio-info,
