@@ -19,10 +19,22 @@
       "purpose": "any"
     },
     {
+      "src": "assets/img/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "assets/img/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "assets/img/logo.png",
@@ -32,21 +44,33 @@
     },
     {
       "src": "assets/img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/img/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "screenshots": [
     {
-      "src": "assets/img/hero-bg.jpg",
+      "src": "assets/img/screenshot-wide.jpg",
       "sizes": "1280x720",
       "type": "image/jpeg",
       "form_factor": "wide",
       "label": "Desktop view of portfolio"
     },
     {
-      "src": "assets/img/hero-bg.jpg",
+      "src": "assets/img/screenshot-narrow.jpg",
       "sizes": "390x844",
       "type": "image/jpeg",
       "form_factor": "narrow",
@@ -63,8 +87,8 @@
       "url": "./#contact",
       "icons": [
         {
-          "src": "assets/img/favicon.png",
-          "sizes": "32x32"
+          "src": "assets/img/logo.png",
+          "sizes": "192x192"
         }
       ]
     },
@@ -75,8 +99,8 @@
       "url": "./#portfolio",
       "icons": [
         {
-          "src": "assets/img/favicon.png",
-          "sizes": "32x32"
+          "src": "assets/img/logo.png",
+          "sizes": "192x192"
         }
       ]
     }

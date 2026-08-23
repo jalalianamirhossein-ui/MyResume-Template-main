@@ -455,6 +455,14 @@ p {
   display: block;
 }
 
+/* Honeypot - hidden from humans but visible to bots */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Navigation Controls */
 .language-toggle {
   position: fixed;

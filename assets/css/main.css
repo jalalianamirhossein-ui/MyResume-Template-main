@@ -6208,6 +6208,14 @@ html[dir="ltr"] .testimonials .swiper-slide {
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
 }
 
+/* Honeypot - hidden from humans but visible to bots */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .form-actions {
   display: flex;
   flex-direction: column;

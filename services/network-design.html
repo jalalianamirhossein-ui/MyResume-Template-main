@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-en="Network Design & Implementation — Pricing & Scope" data-fa="طراحی و پیاده‌سازی شبکه — قیمت‌گذاری و محدوده">Network Design & Implementation — Pricing & Scope</title>
     <meta name="description" content="Enterprise network architecture, Cisco/MikroTik deployment, security policies, HA, and documentation. Fixed price AED 4,900.">
-    
+
     <!-- Modern Service Pages CSS -->
-    <link rel="stylesheet" href="../assets/css/services.css">
-    
+    <link rel="stylesheet" href="../assets/css/services.css?v=1000">
+
     <!-- Language Toggle Stylesheet -->
-    <link href="../assets/css/lang-toggle.css?v=999" rel="stylesheet" />
+    <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
     <link
       id="rtl-style"
-      href="../assets/css/rtl.css?v=999"
+      href="../assets/css/rtl.css?v=1000"
       rel="stylesheet"
       disabled
     />
-    
+
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
+
     <!-- AOS Animation CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -51,7 +51,7 @@
         <section id="pricing" class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="card grid grid-2">
                 <div>
-                    <span class="badge" data-en="Fixed Price" data-fa="قیمت ثابت">Fixed Price</span>
+                    <span class="badge badge-primary" data-en="Fixed Price" data-fa="قیمت ثابت">Fixed Price</span>
                     <h2 data-en="Pricing" data-fa="قیمت‌گذاری">Pricing</h2>
                     <div class="price" aria-label="Price">
                         <div class="amount" data-en="AED 4,900" data-fa="۴,۹۰۰ درهم">AED 4,900</div>
@@ -164,37 +164,37 @@
                 <i class="bi bi-question-circle"></i>
                 <span data-en="FAQ" data-fa="پرسش‌های پرتکرار">FAQ</span>
             </h2>
-            
+
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-1">
                     <span data-en="Do you work remotely or on-site?" data-fa="خدمات به‌صورت ریموت است یا حضوری؟">Do you work remotely or on-site?</span>
                     <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
+                </button>
+                <div class="faq-answer" id="faq-answer-1" role="region" aria-hidden="true">
                     <p data-en="Remote by default; on-site is available upon request." data-fa="به‌صورت پیش‌فرض ریموت؛ حضوری بنا به درخواست امکان‌پذیر است.">
                         Remote by default; on-site is available upon request.
                     </p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-2">
                     <span data-en="Can the scope be expanded?" data-fa="آیا امکان گسترش محدوده کار وجود دارد؟">Can the scope be expanded?</span>
                     <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
+                </button>
+                <div class="faq-answer" id="faq-answer-2" role="region" aria-hidden="true">
                     <p data-en="Yes, via a change request and updated quotation." data-fa="بله، از طریق درخواست تغییر و پیش‌فاکتور به‌روزشده.">
                         Yes, via a change request and updated quotation.
                     </p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-3">
                     <span data-en="What vendor gear do you support?" data-fa="از چه تجهیزات وندورها پشتیبانی می‌کنید؟">What vendor gear do you support?</span>
                     <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
+                </button>
+                <div class="faq-answer" id="faq-answer-3" role="region" aria-hidden="true">
                     <p data-en="Cisco, MikroTik, Ubiquiti, and standard L2/L3 devices." data-fa="سیسکو، میکروتیک، یوبیکویتی و تجهیزات استاندارد لایه ۲/۳.">
                         Cisco, MikroTik, Ubiquiti, and standard L2/L3 devices.
                     </p>
@@ -214,9 +214,14 @@
             <button class="btn btn-primary" onclick="showContactForm()" data-en="Request Quote" data-fa="درخواست پیش‌فاکتور">
                 Request Quote
             </button>
-            
+
             <div class="contact-form" id="contactForm">
                 <form onsubmit="submitForm(event)">
+                    <!-- Honeypot field for bot detection (hidden from humans via CSS) -->
+                    <div class="form-group honeypot" aria-hidden="true" style="display: none;">
+                        <label for="website-field">Website</label>
+                        <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="form-group">
                         <label data-en="Full Name" data-fa="نام کامل">Full Name</label>
                         <input type="text" name="name" required>
@@ -233,6 +238,7 @@
                         <label data-en="Project Details" data-fa="جزئیات پروژه">Project Details</label>
                         <textarea name="message" rows="4" placeholder="Describe your network requirements..."></textarea>
                     </div>
+                    <input type="hidden" name="csrf_token" id="csrf_token" value="">
                     <button type="submit" class="btn btn-success" data-en="Submit Request" data-fa="ارسال درخواست">
                         Submit Request
                     </button>
@@ -242,7 +248,7 @@
     </div>
 
     <!-- Toast -->
-    <div class="toast" id="toast">
+    <div class="toast" id="toast" role="alert" aria-live="polite">
         <span data-en="Request submitted successfully! We'll contact you soon." data-fa="درخواست با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت.">
             Request submitted successfully! We'll contact you soon.
         </span>
@@ -250,7 +256,7 @@
 
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
@@ -285,12 +291,6 @@
             once: true
         });
 
-        // Internationalization (i18n) Support
-        const script = document.createElement('script');
-        script.src = '../assets/js/i18n.js?v=999';
-        script.defer = true;
-        document.head.appendChild(script);
-        
         // Language switching function
         function setLang(lang) {
             // Update button states
@@ -298,7 +298,7 @@
                 btn.classList.remove('active');
             });
             document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-            
+
             // Update text content
             document.querySelectorAll('[data-en][data-fa]').forEach(element => {
                 if (lang === 'fa') {
@@ -307,70 +307,121 @@
                     element.textContent = element.getAttribute('data-en');
                 }
             });
-            
+
             // Update page direction
             if (lang === 'fa') {
                 document.body.classList.add('rtl');
             } else {
                 document.body.classList.remove('rtl');
             }
-            
+
             // Store language preference
             localStorage.setItem('preferredLang', lang);
         }
-        
+
         // FAQ toggle function
         function toggleFAQ(element) {
             const answer = element.nextElementSibling;
             const icon = element.querySelector('i');
-            
-            if (answer.classList.contains('show')) {
+            const isOpen = answer.classList.contains('show');
+
+            if (isOpen) {
                 answer.classList.remove('show');
                 icon.style.transform = 'rotate(0deg)';
+                element.setAttribute('aria-expanded', 'false');
+                answer.setAttribute('aria-hidden', 'true');
             } else {
                 // Close all other FAQs
                 document.querySelectorAll('.faq-answer.show').forEach(item => {
                     item.classList.remove('show');
+                    item.setAttribute('aria-hidden', 'true');
                 });
-                document.querySelectorAll('.faq-question i').forEach(item => {
-                    item.style.transform = 'rotate(0deg)';
+                document.querySelectorAll('.faq-question').forEach(item => {
+                    item.querySelector('i').style.transform = 'rotate(0deg)';
+                    item.setAttribute('aria-expanded', 'false');
                 });
-                
+
                 // Open current FAQ
                 answer.classList.add('show');
                 icon.style.transform = 'rotate(180deg)';
+                element.setAttribute('aria-expanded', 'true');
+                answer.setAttribute('aria-hidden', 'false');
             }
         }
-        
+
         // Contact form functions
         function showContactForm() {
             const form = document.getElementById('contactForm');
             form.classList.add('show');
             form.scrollIntoView({ behavior: 'smooth' });
         }
-        
-        function submitForm(event) {
+
+        async function submitForm(event) {
             event.preventDefault();
-            
-            // Show success toast
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            
-            // Hide form
-            document.getElementById('contactForm').classList.remove('show');
-            
-            // Hide toast after 3 seconds
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            // Get CSRF token from session
+            try {
+                const csrfResponse = await fetch('/forms/get-csrf-token.php');
+                const csrfData = await csrfResponse.json();
+                if (csrfData.token) {
+                    formData.set('csrf_token', csrfData.token);
+                }
+            } catch (e) {
+                console.warn('Could not fetch CSRF token');
+            }
+
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('/forms/contact.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    // Show success toast
+                    const toast = document.getElementById('toast');
+                    toast.classList.add('show');
+
+                    // Reset form
+                    form.reset();
+
+                    // Hide form
+                    document.getElementById('contactForm').classList.remove('show');
+                } else {
+                    const error = await response.text();
+                    alert('Error: ' + error);
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('An error occurred. Please try again later.');
+            } finally {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+
+                // Hide toast after 3 seconds
+                setTimeout(() => {
+                    const toast = document.getElementById('toast');
+                    toast.classList.remove('show');
+                }, 3000);
+            }
         }
-        
+
         // Load saved language preference on page load
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLang') || 'en';
             setLang(savedLang);
         });
+    </script>
     <!-- Language Toggle JavaScript -->
-    <script src="../assets/js/i18n.js?v=999" defer></script>
+    <script src="../assets/js/i18n.js?v=1000" defer></script>
 </body>
 </html>

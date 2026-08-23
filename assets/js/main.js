@@ -906,6 +906,78 @@
   }
 
   // ===============================================
+  // CONTACT FORM HANDLING
+  // ===============================================
+  function initContactForm() {
+    const form = document.querySelector('.php-email-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      const statusContainer = form.querySelector('.form-status');
+      const loadingEl = statusContainer?.querySelector('.loading');
+      const errorEl = statusContainer?.querySelector('.error-message');
+      const sentEl = statusContainer?.querySelector('.sent-message');
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i><span data-en="Sending..." data-fa="در حال ارسال...">Sending...</span>';
+      loadingEl?.classList.add('visible');
+      errorEl?.classList.remove('visible');
+      sentEl?.classList.remove('visible');
+
+      // Get CSRF token
+      try {
+        const csrfResponse = await fetch('/forms/get-csrf-token.php');
+        const csrfData = await csrfResponse.json();
+        if (csrfData.token) {
+          formData.set('csrf_token', csrfData.token);
+        }
+      } catch (err) {
+        console.warn('Could not fetch CSRF token:', err);
+      }
+
+      try {
+        const response = await fetch('/forms/contact.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          // Show success
+          loadingEl?.classList.remove('visible');
+          sentEl?.classList.add('visible');
+          form.reset();
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            sentEl?.classList.remove('visible');
+          }, 5000);
+        } else {
+          const errorText = await response.text();
+          loadingEl?.classList.remove('visible');
+          errorEl?.classList.add('visible');
+          errorEl.querySelector('span').textContent = errorText || 'Error sending message. Please try again.';
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        loadingEl?.classList.remove('visible');
+        errorEl?.classList.add('visible');
+        errorEl.querySelector('span').textContent = 'An error occurred. Please try again later.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
+  }
+
+  window.addEventListener('load', initContactForm);
+
+  // ===============================================
   // ARTICLE CODE COPY FUNCTIONALITY
   // ===============================================
   function initCodeCopy() {
