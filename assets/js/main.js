@@ -912,42 +912,67 @@
     const form = document.querySelector('.php-email-form');
     if (!form) return;
 
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const statusContainer = form.querySelector('.form-status');
+    const loadingEl = statusContainer?.querySelector('.loading');
+    const errorEl = statusContainer?.querySelector('.error-message');
+    const sentEl = statusContainer?.querySelector('.sent-message');
+    const originalText = submitBtn.innerHTML;
+
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       const formData = new FormData(form);
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      const statusContainer = form.querySelector('.form-status');
-      const loadingEl = statusContainer?.querySelector('.loading');
-      const errorEl = statusContainer?.querySelector('.error-message');
-      const sentEl = statusContainer?.querySelector('.sent-message');
 
       // Show loading state
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i><span data-en="Sending..." data-fa="در حال ارسال...">Sending...</span>';
+      submitBtn.setAttribute('aria-busy', 'true');
       loadingEl?.classList.add('visible');
       errorEl?.classList.remove('visible');
       sentEl?.classList.remove('visible');
 
-      // Get CSRF token
+      // Get CSRF token - must succeed before submitting
+      let csrfToken = null;
       try {
-        const csrfResponse = await fetch('/forms/get-csrf-token.php');
+        const csrfResponse = await fetch('/forms/get-csrf-token.php', {
+          cache: 'no-store',
+          credentials: 'same-origin'
+        });
+        if (!csrfResponse.ok) {
+          throw new Error('CSRF endpoint returned ' + csrfResponse.status);
+        }
         const csrfData = await csrfResponse.json();
         if (csrfData.token) {
-          formData.set('csrf_token', csrfData.token);
+          csrfToken = csrfData.token;
+        } else {
+          throw new Error('No CSRF token in response');
         }
       } catch (err) {
-        console.warn('Could not fetch CSRF token:', err);
+        console.error('Could not fetch CSRF token:', err);
+        loadingEl?.classList.remove('visible');
+        errorEl?.classList.add('visible');
+        const errorSpan = errorEl?.querySelector('span');
+        if (errorSpan) errorSpan.textContent = 'Security token error. Please refresh and try again.';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        submitBtn.removeAttribute('aria-busy');
+        return;
       }
+
+      formData.set('csrf_token', csrfToken);
 
       try {
         const response = await fetch('/forms/contact.php', {
           method: 'POST',
-          body: formData
+          body: formData,
+          credentials: 'same-origin'
         });
 
-        if (response.ok) {
+        // Read response body to check for "OK"
+        const responseText = await response.text();
+
+        if (response.ok && responseText.trim() === 'OK') {
           // Show success
           loadingEl?.classList.remove('visible');
           sentEl?.classList.add('visible');
@@ -958,19 +983,21 @@
             sentEl?.classList.remove('visible');
           }, 5000);
         } else {
-          const errorText = await response.text();
           loadingEl?.classList.remove('visible');
           errorEl?.classList.add('visible');
-          errorEl.querySelector('span').textContent = errorText || 'Error sending message. Please try again.';
+          const errorSpan = errorEl?.querySelector('span');
+          if (errorSpan) errorSpan.textContent = responseText || 'Error sending message. Please try again.';
         }
       } catch (error) {
         console.error('Form submission error:', error);
         loadingEl?.classList.remove('visible');
         errorEl?.classList.add('visible');
-        errorEl.querySelector('span').textContent = 'An error occurred. Please try again later.';
+        const errorSpan = errorEl?.querySelector('span');
+        if (errorSpan) errorSpan.textContent = 'An error occurred. Please try again later.';
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
+        submitBtn.removeAttribute('aria-busy');
       }
     });
   }

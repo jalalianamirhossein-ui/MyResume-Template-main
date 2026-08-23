@@ -7,13 +7,12 @@
  * Handles offline functionality and caching strategies
  *
  * Features:
- * - Offline-first caching
+ * - Offline-first caching for static assets
  * - Automatic cache updates
- * - Background sync
- * - Push notifications support
  * - Performance optimization
+ * - Dynamic form/API endpoints are NEVER cached
  *
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: AmirHossein Jalalian
  * ===============================================
  */
@@ -121,16 +120,16 @@ self.addEventListener("install", function (event) {
         return self.skipWaiting();
       })
       .catch(function (error) {
-        // Cache failed - don't skip waiting, let old SW continue
+        // Core cache installation is mandatory - propagate failure
         console.error("Core cache installation failed:", error);
-        // Don't call skipWaiting() - old SW remains active
+        throw error;
       })
   );
 });
 
-// Fetch Event - Stale-While-Revalidate for Static Assets, Cache-First for Core
+// Fetch Event - Stale-While-Revalidate for Static Assets, Network-First for Documents
 self.addEventListener("fetch", function (event) {
-  // Skip non-GET requests
+  // Skip non-GET requests (POST contact form submissions must reach the server)
   if (event.request.method !== "GET") {
     return;
   }
@@ -141,26 +140,29 @@ self.addEventListener("fetch", function (event) {
   }
 
   const url = new URL(event.request.url);
+
+  // NEVER cache dynamic PHP endpoints (CSRF tokens, contact form, etc.)
+  if (url.pathname.startsWith("/forms/") || url.pathname.endsWith(".php")) {
+    return;
+  }
+
   const isPortfolioImage = portfolioImages.some((img) => url.pathname.endsWith(img.replace("./", "")));
   const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ico)$/i.test(url.pathname);
   const isHtmlDocument = event.request.destination === "document" || url.pathname.endsWith(".html");
 
-  // Strategy 1: Navigation Preload for HTML documents
-  if (isHtmlDocument && self.registration.navigationPreload) {
+  // Strategy 1: Network-First for HTML documents (with offline fallback)
+  if (isHtmlDocument) {
     event.respondWith(
       (async function () {
-        // Try navigation preload first
-        const preloadResponse = await event.preloadResponse;
-        if (preloadResponse) {
-          return preloadResponse;
+        // Use navigation preload if available for faster response
+        if (self.registration.navigationPreload) {
+          const preloadResponse = await event.preloadResponse;
+          if (preloadResponse) {
+            return preloadResponse;
+          }
         }
 
-        // Fallback to cache-first with network fallback
-        const cachedResponse = await caches.match(event.request);
-        if (cachedResponse) {
-          return cachedResponse;
-        }
-
+        // Network-first with cache fallback
         try {
           const networkResponse = await fetch(event.request);
           if (networkResponse.ok) {
@@ -169,6 +171,11 @@ self.addEventListener("fetch", function (event) {
           }
           return networkResponse;
         } catch (error) {
+          // Network failed - return cached if available
+          const cachedResponse = await caches.match(event.request);
+          if (cachedResponse) {
+            return cachedResponse;
+          }
           // Return offline fallback
           return caches.match("./index.html");
         }
@@ -238,11 +245,13 @@ self.addEventListener("fetch", function (event) {
   );
 });
 
-// Activate Event - Clean Up Old Caches
+// Activate Event - Clean Up Old Caches and Enable Navigation Preload
 self.addEventListener("activate", function (event) {
   event.waitUntil(
-    caches.keys().then(function (cacheNames) {
-      return Promise.all(
+    (async function () {
+      // Clean up old caches
+      const cacheNames = await caches.keys();
+      await Promise.all(
         cacheNames.map(function (cacheName) {
           if (cacheName !== CACHE_NAME && cacheName !== OFFLINE_FALLBACK_CACHE) {
             console.log("Deleting old cache:", cacheName);
@@ -250,17 +259,19 @@ self.addEventListener("activate", function (event) {
           }
         })
       );
-    })
-  );
-  self.clients.claim();
-});
 
-// Enable Navigation Preload
-self.addEventListener("activate", function (event) {
-  event.waitUntil(
-    self.registration.navigationPreload.enable().catch(function (error) {
-      console.warn("Navigation preload not supported:", error);
-    })
+      // Enable Navigation Preload (if supported)
+      if ("navigationPreload" in self.registration) {
+        try {
+          await self.registration.navigationPreload.enable();
+        } catch (error) {
+          console.warn("Navigation preload not supported:", error);
+        }
+      }
+
+      // Take control of all clients immediately
+      await self.clients.claim();
+    })()
   );
 });
 
@@ -277,34 +288,6 @@ self.addEventListener("message", function (event) {
     });
   }
 });
-
-// Background Sync for Offline Form Submissions
-self.addEventListener("sync", function (event) {
-  if (event.tag === "contact-form-sync") {
-    event.waitUntil(syncContactForms());
-  }
-});
-
-async function syncContactForms() {
-  try {
-    const cache = await caches.open(OFFLINE_FALLBACK_CACHE);
-    const requests = await cache.keys();
-
-    for (const request of requests) {
-      try {
-        const response = await fetch(request);
-        if (response.ok) {
-          await cache.delete(request);
-        }
-      } catch (error) {
-        // Keep in cache for next sync attempt
-        console.log("Sync failed for:", request.url, error);
-      }
-    }
-  } catch (error) {
-    console.error("Background sync error:", error);
-  }
-}
 
 // Periodic cache cleanup (optional - runs when SW is active)
 self.addEventListener("periodicsync", function (event) {
