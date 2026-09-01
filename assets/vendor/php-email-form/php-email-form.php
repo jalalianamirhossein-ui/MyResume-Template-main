@@ -38,8 +38,8 @@ class PHP_Email_Form
 
     public function add_message($value, $label = '', $max_length = 0)
     {
-        if ($max_length > 0 && strlen($value) > $max_length) {
-            $value = substr($value, 0, $max_length);
+        if ($max_length > 0 && mb_strlen($value, 'UTF-8') > $max_length) {
+            $value = mb_substr($value, 0, $max_length, 'UTF-8');
         }
 
         if (!empty($label)) {

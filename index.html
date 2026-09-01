@@ -4211,25 +4211,30 @@
                     </div>
 
                     <div class="form-actions">
-                      <div class="form-status">
+                      <div class="form-status" aria-live="polite" aria-atomic="true">
                         <div
                           class="loading"
                           data-en="Sending..."
                           data-fa="در حال ارسال..."
+                          role="status"
+                          aria-live="polite"
+                          aria-busy="true"
                         >
-                          <i class="bi bi-hourglass-split"></i>
+                          <i class="bi bi-hourglass-split" aria-hidden="true"></i>
                           <span>Sending...</span>
                         </div>
-                        <div class="error-message">
-                          <i class="bi bi-exclamation-triangle"></i>
+                        <div class="error-message" role="alert" aria-live="assertive">
+                          <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
                           <span>Error sending message. Please try again.</span>
                         </div>
                         <div
                           class="sent-message"
                           data-en="Message sent successfully! I'll get back to you soon."
                           data-fa="پیام با موفقیت ارسال شد! به زودی به شما پاسخ خواهم داد."
+                          role="status"
+                          aria-live="polite"
                         >
-                          <i class="bi bi-check-circle"></i>
+                          <i class="bi bi-check-circle" aria-hidden="true"></i>
                           <span
                             >Message sent successfully! I'll get back to you
                             soon.</span
@@ -4489,64 +4494,6 @@
             img.setAttribute("decoding", "async");
           }
         });
-      });
-    </script>
-
-    <!-- Contact form button state helper -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.querySelector(".php-email-form");
-        if (!form) return;
-
-        const submitBtn = form.querySelector(".submit-btn");
-        const submitLabel = submitBtn?.querySelector("span");
-        const loadingEl = form.querySelector(".form-status .loading");
-        const successEl = form.querySelector(".form-status .sent-message");
-        const errorEl = form.querySelector(".form-status .error-message");
-
-        const hideStatus = (el) => {
-          if (!el) return;
-          el.classList.remove("d-block");
-          el.style.display = "none";
-        };
-
-        hideStatus(loadingEl);
-        hideStatus(successEl);
-        hideStatus(errorEl);
-
-        const setSendingState = (isSending) => {
-          if (!submitBtn) return;
-          submitBtn.disabled = isSending;
-          submitBtn.setAttribute("aria-busy", String(isSending));
-          if (submitLabel) {
-            submitLabel.textContent = isSending ? "Sending..." : "Send Message";
-          }
-          if (loadingEl) {
-            loadingEl.classList.toggle("d-block", isSending);
-            loadingEl.style.display = isSending ? "" : "none";
-          }
-          if (successEl && isSending) successEl.classList.remove("d-block");
-          if (errorEl && isSending) errorEl.classList.remove("d-block");
-        };
-
-        form.addEventListener("submit", () => setSendingState(true));
-
-        const resetOnVisible = (el) => {
-          if (!el) return;
-          const observer = new MutationObserver(() => {
-            if (el.classList.contains("d-block")) {
-              el.style.display = "";
-              setSendingState(false);
-            }
-          });
-          observer.observe(el, {
-            attributes: true,
-            attributeFilter: ["class"],
-          });
-        };
-
-        resetOnVisible(successEl);
-        resetOnVisible(errorEl);
       });
     </script>
 

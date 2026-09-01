@@ -52,23 +52,23 @@ $email = trim($_POST['email'] ?? '');
 $subject = trim($_POST['subject'] ?? '');
 $message = trim($_POST['message'] ?? '');
 
-// Validate required fields
-if (empty($name) || strlen($name) < 2 || strlen($name) > 50) {
+// Validate required fields (mb_strlen counts characters, not bytes - important for Persian text)
+if (empty($name) || mb_strlen($name, 'UTF-8') < 2 || mb_strlen($name, 'UTF-8') > 50) {
     http_response_code(400);
     die('Invalid name (2-50 characters required)');
 }
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 100) {
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email, 'UTF-8') > 100) {
     http_response_code(400);
     die('Invalid email address');
 }
 
-if (empty($subject) || strlen($subject) < 5 || strlen($subject) > 100) {
+if (empty($subject) || mb_strlen($subject, 'UTF-8') < 5 || mb_strlen($subject, 'UTF-8') > 100) {
     http_response_code(400);
     die('Invalid subject (5-100 characters required)');
 }
 
-if (empty($message) || strlen($message) < 10 || strlen($message) > 1000) {
+if (empty($message) || mb_strlen($message, 'UTF-8') < 10 || mb_strlen($message, 'UTF-8') > 1000) {
     http_response_code(400);
     die('Invalid message (10-1000 characters required)');
 }

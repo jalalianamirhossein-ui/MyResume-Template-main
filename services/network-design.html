@@ -216,29 +216,31 @@
             </button>
 
             <div class="contact-form" id="contactForm">
-                <form onsubmit="submitForm(event)">
+                <form onsubmit="submitForm(event)" novalidate>
                     <!-- Honeypot field for bot detection (hidden from humans via CSS) -->
                     <div class="form-group honeypot" aria-hidden="true" style="display: none;">
                         <label for="website-field">Website</label>
                         <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off">
                     </div>
+                    <input type="hidden" name="subject" value="Network Design & Implementation Quote Request">
                     <div class="form-group">
-                        <label data-en="Full Name" data-fa="نام کامل">Full Name</label>
-                        <input type="text" name="name" required>
+                        <label for="contact-name" data-en="Full Name" data-fa="نام کامل">Full Name</label>
+                        <input type="text" name="name" id="contact-name" required minlength="2" maxlength="50" autocomplete="name">
                     </div>
                     <div class="form-group">
-                        <label data-en="Email Address" data-fa="آدرس ایمیل">Email Address</label>
-                        <input type="email" name="email" required>
+                        <label for="contact-email" data-en="Email Address" data-fa="آدرس ایمیل">Email Address</label>
+                        <input type="email" name="email" id="contact-email" required maxlength="100" autocomplete="email">
                     </div>
                     <div class="form-group">
-                        <label data-en="Phone Number" data-fa="شماره تلفن">Phone Number</label>
-                        <input type="tel" name="phone">
+                        <label for="contact-phone" data-en="Phone Number" data-fa="شماره تلفن">Phone Number</label>
+                        <input type="tel" name="phone" id="contact-phone" autocomplete="tel">
                     </div>
                     <div class="form-group">
-                        <label data-en="Project Details" data-fa="جزئیات پروژه">Project Details</label>
-                        <textarea name="message" rows="4" placeholder="Describe your network requirements..."></textarea>
+                        <label for="contact-message" data-en="Project Details" data-fa="جزئیات پروژه">Project Details</label>
+                        <textarea name="message" id="contact-message" rows="4" placeholder="Describe your network requirements..." required minlength="10" maxlength="1000"></textarea>
                     </div>
                     <input type="hidden" name="csrf_token" id="csrf_token" value="">
+                    <div class="form-error" id="form-error" role="alert" aria-live="assertive" hidden></div>
                     <button type="submit" class="btn btn-success" data-en="Submit Request" data-fa="ارسال درخواست">
                         Submit Request
                     </button>
@@ -293,11 +295,10 @@
 
         // Language switching function
         function setLang(lang) {
-            // Update button states
+            // Update button states (only if lang-btn elements exist)
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
             });
-            document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
 
             // Update text content
             document.querySelectorAll('[data-en][data-fa]').forEach(element => {
@@ -308,15 +309,30 @@
                 }
             });
 
-            // Update page direction
+            // Update root language and direction
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+
+            // Sync RTL stylesheet
+            var rtlStyle = document.getElementById('rtl-style');
+            if (rtlStyle) {
+                if (lang === 'fa') {
+                    rtlStyle.disabled = false;
+                    rtlStyle.setAttribute('rel', 'stylesheet');
+                } else {
+                    rtlStyle.disabled = true;
+                }
+            }
+
+            // Update body class for CSS compatibility
             if (lang === 'fa') {
                 document.body.classList.add('rtl');
             } else {
                 document.body.classList.remove('rtl');
             }
 
-            // Store language preference
-            localStorage.setItem('preferredLang', lang);
+            // Store language preference (use 'lang' key to sync with shared i18n.js)
+            localStorage.setItem('lang', lang);
         }
 
         // FAQ toggle function
@@ -361,57 +377,93 @@
 
             const form = event.target;
             const formData = new FormData(form);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const errorEl = document.getElementById('form-error');
+            const toast = document.getElementById('toast');
 
-            // Get CSRF token from session
-            try {
-                const csrfResponse = await fetch('/forms/get-csrf-token.php');
-                const csrfData = await csrfResponse.json();
-                if (csrfData.token) {
-                    formData.set('csrf_token', csrfData.token);
-                }
-            } catch (e) {
-                console.warn('Could not fetch CSRF token');
+            // Validate required fields client-side
+            const name = (formData.get('name') || '').trim();
+            const email = (formData.get('email') || '').trim();
+            const message = (formData.get('message') || '').trim();
+
+            if (name.length < 2 || name.length > 50) {
+                if (errorEl) { errorEl.hidden = false; errorEl.textContent = 'Name must be 2–50 characters.'; }
+                return;
+            }
+            if (!email || email.length > 100) {
+                if (errorEl) { errorEl.hidden = false; errorEl.textContent = 'Please enter a valid email address.'; }
+                return;
+            }
+            if (message.length < 10 || message.length > 1000) {
+                if (errorEl) { errorEl.hidden = false; errorEl.textContent = 'Message must be 10–1000 characters.'; }
+                return;
             }
 
-            // Show loading state
-            const submitBtn = form.querySelector('button[type="submit"]');
+            if (errorEl) { errorEl.hidden = true; }
+
+            // Disable button immediately to prevent double-submit
             const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
+            // Get CSRF token from session — must succeed before submitting
+            let csrfToken = null;
+            try {
+                const csrfResponse = await fetch('/forms/get-csrf-token.php', {
+                    cache: 'no-store',
+                    credentials: 'same-origin'
+                });
+                if (!csrfResponse.ok) {
+                    throw new Error('CSRF endpoint returned ' + csrfResponse.status);
+                }
+                const csrfData = await csrfResponse.json();
+                if (csrfData.token) {
+                    csrfToken = csrfData.token;
+                } else {
+                    throw new Error('No CSRF token in response');
+                }
+            } catch (e) {
+                console.error('Could not fetch CSRF token:', e);
+                if (errorEl) { errorEl.hidden = false; errorEl.textContent = 'Security token error. Please refresh and try again.'; }
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                return;
+            }
+
+            formData.set('csrf_token', csrfToken);
+
             try {
                 const response = await fetch('/forms/contact.php', {
                     method: 'POST',
-                    body: formData
+                    body: formData,
+                    credentials: 'same-origin'
                 });
 
-                if (response.ok) {
+                const responseText = await response.text();
+
+                if (response.ok && responseText.trim() === 'OK') {
                     // Show success toast
-                    const toast = document.getElementById('toast');
-                    toast.classList.add('show');
+                    if (toast) { toast.classList.add('show'); }
 
                     // Reset form
                     form.reset();
 
                     // Hide form
                     document.getElementById('contactForm').classList.remove('show');
+
+                    // Hide toast after 3 seconds
+                    setTimeout(() => {
+                        if (toast) { toast.classList.remove('show'); }
+                    }, 3000);
                 } else {
-                    const error = await response.text();
-                    alert('Error: ' + error);
+                    if (errorEl) { errorEl.hidden = false; errorEl.textContent = responseText || 'Error sending message. Please try again.'; }
                 }
             } catch (error) {
                 console.error('Form submission error:', error);
-                alert('An error occurred. Please try again later.');
+                if (errorEl) { errorEl.hidden = false; errorEl.textContent = 'An error occurred. Please try again later.'; }
             } finally {
-                // Reset button
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
-
-                // Hide toast after 3 seconds
-                setTimeout(() => {
-                    const toast = document.getElementById('toast');
-                    toast.classList.remove('show');
-                }, 3000);
             }
         }
 
