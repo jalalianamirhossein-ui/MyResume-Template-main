@@ -20,20 +20,23 @@
  * ===============================================
  */
 
+require_once __DIR__ . '/security.php';
+
 // Email configuration
 $receiving_email_address = 'jalalian.amirhossein@gmail.com';
 
-// Security: Start session early for CSRF
-session_start();
-
 // Basic security checks
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    meet_aj_send_endpoint_security_headers('text/plain; charset=UTF-8');
     http_response_code(405);
     die('Invalid request method');
 }
 
+meet_aj_start_secure_session();
+meet_aj_send_endpoint_security_headers('text/plain; charset=UTF-8');
+
 // CSRF Token Validation
-if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'] ?? '', $_POST['csrf_token'])) {
+if (!meet_aj_is_valid_csrf_token($_POST['csrf_token'] ?? null)) {
     http_response_code(403);
     die('CSRF validation failed');
 }
@@ -74,41 +77,17 @@ if (empty($message) || mb_strlen($message, 'UTF-8') < 10 || mb_strlen($message, 
 }
 
 // Rate limiting - IP based (after validation, so bots/invalid requests don't consume quota)
-$rate_limit_file = sys_get_temp_dir() . '/contact_rate_limit_' . md5($_SERVER['REMOTE_ADDR'] ?? 'unknown');
-$now = time();
-$rate_limit_data = [];
-
-if (file_exists($rate_limit_file)) {
-    $content = file_get_contents($rate_limit_file);
-    if ($content !== false) {
-        $decoded = json_decode($content, true);
-        if (is_array($decoded)) {
-            $rate_limit_data = $decoded;
-        }
-    }
+try {
+    $withinRateLimit = meet_aj_consume_contact_rate_limit((string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown'));
+} catch (RuntimeException $exception) {
+    error_log('Contact form rate limiting unavailable: ' . $exception->getMessage());
+    http_response_code(503);
+    die('Service temporarily unavailable. Please try again later.');
 }
 
-// Clean old entries
-$rate_limit_data = array_filter($rate_limit_data, function($timestamp) use ($now) {
-    return ($now - $timestamp) < 3600; // 1 hour window
-});
-
-// Check rate limit (max 5 per hour per IP)
-if (count($rate_limit_data) >= 5) {
+if (!$withinRateLimit) {
     http_response_code(429);
     die('Too many requests. Please try again later.');
-}
-
-// Add current request and save with file locking
-$rate_limit_data[] = $now;
-$fp = fopen($rate_limit_file, 'c');
-if ($fp) {
-    if (flock($fp, LOCK_EX)) {
-        ftruncate($fp, 0);
-        fwrite($fp, json_encode($rate_limit_data));
-        flock($fp, LOCK_UN);
-    }
-    fclose($fp);
 }
 
 // Header injection prevention - strip newlines from header fields ONLY
@@ -160,6 +139,9 @@ if ($result !== "OK") {
     http_response_code(500);
     die($result);
 }
+
+// A token may not be replayed after a successful form submission.
+meet_aj_consume_csrf_token();
 
 echo "OK";
 ?>

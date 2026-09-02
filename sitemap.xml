@@ -12,4 +12,27 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://meetaj.ir/articles/nginx-installation-configuration-ubuntu.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://meetaj.ir/articles/windows-cmd-common-network-commands.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://meetaj.ir/articles/mikrotik-block-website.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://meetaj.ir/articles/enable-ssh-linux-complete-guide.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://meetaj.ir/articles/windows-hardware-info-cmd-vs-dxdiag.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/mikrotik-block-port-scanners.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/linux-cli-common-commands.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/ubuntu-date-time-settings.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/http-vs-https-ssl-certificate-impact.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/vmware-esxi-8-installation-basic-configuration.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/install-vmware-esxi-vmware-workstation-vmcisr.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/set-static-ip-ubuntu-server-netplan.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/creating-a-bootable-usb.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://meetaj.ir/articles/imap-vs-pop3-email-protocol-comparison.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/windows-password-reset-secure-access-recovery.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/downgrade-mikrotik-routeros-firmware-safely.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/vsphere-standard-switch-vs-distributed-switch.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/linux-security-account-access-management.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/sql-server-automatic-backup-job.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/install-mikrotik-chr-vmware-workstation.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meetaj.ir/articles/install-dfs-server-windows-server.html</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

@@ -1,48 +1,11 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!doctype html>
+<html lang="en" dir="ltr">
   <head>
-    <!-- ===============================================
-    MIKROTIK OPENVPN SETUP GUIDE - TECHNICAL ARTICLE
-    ===============================================
-    
-    Comprehensive step-by-step guide for implementing OpenVPN
-    on MikroTik RouterOS v7 with interactive progress tracking
-    
-    Features:
-    - Bilingual support (English/Persian) with RTL layout
-    - Interactive progress indicator for setup steps
-    - Copy-to-clipboard functionality for code blocks
-    - Responsive design optimized for all devices
-    - SEO optimized with structured data markup
-    - Accessibility compliant (WCAG 2.1 AA)
-    - Dark/Light theme support
-    - Performance optimized with lazy loading
-    
-    Technical Stack:
-    - HTML5 semantic structure
-    - CSS3 with custom properties and animations
-    - Vanilla JavaScript with modern APIs
-    - Intersection Observer for scroll tracking
-    - Clipboard API for copy functionality
-    
-    Author: AmirHossein Jalalian
-    Version: 2.0.0
-    Last Updated: 2024-12-19
-    =============================================== -->
-
-    <!-- Character encoding and responsive viewport configuration -->
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-    <!-- ===============================================
-    SEO META TAGS - PRIMARY OPTIMIZATION
-    ===============================================
-    Essential meta tags for search engine optimization,
-    social media sharing, and browser compatibility
-    =============================================== -->
     <title>
       Complete Guide to OpenVPN Setup in MikroTik RouterOS v7 - Meet AJ
     </title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
       content="راهنمای کامل پیاده‌سازی OpenVPN روی میکروتیک RouterOS v7 شامل ایجاد Certificate، پیکربندی سرور و کلاینت، نکات امنیتی و رفع اشکال"
       name="description"
@@ -69,31 +32,6 @@
       name="msapplication-TileImage"
       content="../assets/img/apple-touch-icon.png"
     />
-
-    <!-- Canonical URL -->
-    <link
-      rel="canonical"
-      href="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
-    />
-
-    <!-- Alternate Language Versions -->
-    <link
-      rel="alternate"
-      hreflang="fa"
-      href="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
-    />
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta
       property="og:title"
@@ -109,8 +47,6 @@
       content="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
     />
     <meta property="og:site_name" content="Meet AJ - Technical Articles" />
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta
       property="twitter:title"
@@ -121,8 +57,6 @@
       content="راهنمای کامل پیاده‌سازی OpenVPN روی میکروتیک RouterOS v7 شامل ایجاد Certificate، پیکربندی سرور و کلاینت، نکات امنیتی و رفع اشکال"
     />
     <meta property="twitter:image" content="../assets/img/my-profile-img.jpg" />
-
-    <!-- Article Specific Meta Tags -->
     <meta property="article:author" content="AmirHossein Jalalian" />
     <meta
       property="article:published_time"
@@ -134,119 +68,32 @@
     <meta property="article:tag" content="RouterOS" />
     <meta property="article:tag" content="VPN" />
     <meta property="article:tag" content="Network Security" />
-
-    <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#ff8d19" />
     <meta name="msapplication-TileColor" content="#ff8d19" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Meet AJ" />
-
-    <!-- Favicons -->
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="fa"
+      href="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://meetaj.ir/articles/mikrotik-openvpn-setup-v7.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
     <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- ===============================================
-    VENDOR CSS LIBRARIES - EXTERNAL DEPENDENCIES
-    ===============================================
-    Third-party CSS libraries for enhanced functionality
-    and consistent cross-browser compatibility
-    =============================================== -->
-    <link
-      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      href="../assets/vendor/aos/aos.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      href="../assets/vendor/swiper/swiper-bundle.min.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-
-    <!-- ===============================================
-    MAIN STYLESHEETS - CORE DESIGN SYSTEM
-    ===============================================
-    Primary CSS files containing custom styles,
-    RTL support, and responsive design patterns
-    =============================================== -->
-    <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1000" rel="stylesheet" />
-
-    <!-- Language Toggle Stylesheet -->
-    <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link
-      id="rtl-style"
-      href="../assets/css/rtl.css?v=1000"
-      rel="stylesheet"
-      disabled
-    />
-
-    <!-- Preload critical resources for better performance -->
-    <link
-      rel="preload"
-      href="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
-      as="script"
-    />
-    <link rel="preload" href="../assets/js/main.js?v=1000" as="script" />
-    <link rel="preload" href="../assets/js/i18n.js?v=1000" as="script" />
-    <link rel="preload" href="../assets/css/main.css?v=1000" as="style" />
-    <link rel="preload" href="../assets/css/articles.css?v=1000" as="style" />
-    
-    <!-- Preload critical fonts for better typography -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" as="style" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" />
-    
-    <!-- Resource hints for external domains -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="../assets/img/portfolio/mikrotik-4.png"
-      as="image"
-    />
-
-    <!-- DNS Prefetch for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- ===============================================
-    STRUCTURED DATA - SCHEMA.ORG MARKUP
-    ===============================================
-    JSON-LD structured data for enhanced SEO,
-    rich snippets, and search engine understanding
-    =============================================== -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -311,50 +158,22 @@
       }
     </script>
 
-    <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-
-  <!-- ===============================================
-  PAGE BODY - MAIN CONTAINER
-  ===============================================
-  Article-specific body classes for theme customization
-  and accessibility features for screen readers
-  =============================================== -->
-  <body
-    class="article-page article-openvpn"
-    data-page="mikrotik-openvpn-setup-v7"
-  >
-    <!-- Skip to main content link for accessibility compliance -->
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable">
-      <span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
-        >Skip to main content</span
-      >
-    </a>
-
-    <!-- ===============================================
-    ==================== MOBILE MENU TOGGLE ==============
-    =============================================== -->
-    <button
-      id="menu-toggle"
-      class="menu-toggle d-xl-none"
-      aria-label="Toggle navigation menu"
-      aria-expanded="false"
-      aria-controls="header"
-      type="button"
-    >
-      <i class="bi bi-list" aria-hidden="true"></i>
-      <span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
-    </button>
-
-    <!-- ===============================================
-    ==================== HEADER SECTION ================
-    =============================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
+    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+  </head>
+  <body class="article-page theme-mikrotik">
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
+    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -377,7 +196,7 @@
         <!-- Site Logo & Name -->
         <a href="../index.html#hero" class="logo d-flex align-items-center">
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
-          <h1 class="sitename">Meet AJ</h1>
+          <p class="sitename">Meet AJ</p>
         </a>
 
       </div>
@@ -471,77 +290,20 @@
         </div>
       </div>
 
-      
+
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
         <ul>
-          <!-- Home Section -->
-          <li>
-            <a href="../index.html#hero"
-              ><i class="bi bi-house navicon"></i
-              ><span data-en="Home" data-fa="صفحه اصلی">Home</span></a
-            >
-          </li>
-
-          <!-- OpenVPN Advantages -->
-          <li>
-            <a href="#advantages"
-              ><i class="bi bi-shield-check navicon"></i
-              ><span data-en="OpenVPN Advantages" data-fa="مزایای OpenVPN"
-                >OpenVPN Advantages</span
-              ></a
-            >
-          </li>
-
-          <!-- RouterOS Changes -->
-          <li>
-            <a href="#routeros-changes"
-              ><i class="bi bi-gear navicon"></i
-              ><span data-en="RouterOS v7 Changes" data-fa="تغییرات RouterOS v7"
-                >RouterOS v7 Changes</span
-              ></a
-            >
-          </li>
-
-          <!-- Prerequisites -->
-          <li>
-            <a href="#prerequisites"
-              ><i class="bi bi-list-check navicon"></i
-              ><span data-en="Prerequisites" data-fa="پیش‌نیازها"
-                >Prerequisites</span
-              ></a
-            >
-          </li>
-
-          <!-- Setup Steps -->
-          <li>
-            <a href="#setup-steps"
-              ><i class="bi bi-diagram-3 navicon"></i
-              ><span data-en="Setup Steps" data-fa="مراحل راه‌اندازی"
-                >Setup Steps</span
-              ></a
-            >
-          </li>
-
-          <!-- Security Tips -->
-          <li>
-            <a href="#security-tips"
-              ><i class="bi bi-shield-exclamation navicon"></i
-              ><span data-en="Security Tips" data-fa="نکات امنیتی"
-                >Security Tips</span
-              ></a
-            >
-          </li>
-
-          <!-- FAQ -->
-          <li>
-            <a href="#faq"
-              ><i class="bi bi-question-circle navicon"></i
-              ><span data-en="FAQ" data-fa="پرسش‌های متداول">FAQ</span></a
-            >
-          </li>
+          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
+          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
+          <li class="article-nav-item"><a href="#advantages"><i class="bi bi-award navicon" aria-hidden="true"></i><span data-en="1. OpenVPN Advantages in MikroTik" data-fa="1. مزایای OpenVPN در میکروتیک">1. OpenVPN Advantages in MikroTik</span></a></li>
+          <li class="article-nav-item"><a href="#routeros-changes"><i class="bi bi-arrow-repeat navicon" aria-hidden="true"></i><span data-en="2. Key Changes in RouterOS v7" data-fa="2. تغییرات کلیدی OpenVPN در RouterOS v7">2. Key Changes in RouterOS v7</span></a></li>
+          <li class="article-nav-item"><a href="#prerequisites"><i class="bi bi-clipboard-check navicon" aria-hidden="true"></i><span data-en="3. Prerequisites" data-fa="3. پیش‌نیازها">3. Prerequisites</span></a></li>
+          <li class="article-nav-item"><a href="#setup-steps"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="4. OpenVPN Setup Steps" data-fa="4. مراحل راه‌اندازی OpenVPN">4. OpenVPN Setup Steps</span></a></li>
+          <li class="article-nav-item"><a href="#security-tips"><i class="bi bi-shield-check navicon" aria-hidden="true"></i><span data-en="5. Security Tips and Optimization" data-fa="5. نکات امنیتی و بهینه‌سازی">5. Security Tips and Optimization</span></a></li>
+          <li class="article-nav-item"><a href="#faq"><i class="bi bi-question-circle navicon" aria-hidden="true"></i><span data-en="6. Frequently Asked Questions" data-fa="6. پرسش‌های متداول">6. Frequently Asked Questions</span></a></li>
         </ul>
       </nav>
       <button
@@ -555,205 +317,23 @@
         ><span class="i18n-alt">FA</span>
       </button>
     </header>
-
-    <!-- Main Content -->
     <main id="main-content" class="main" role="main">
-        
-      <!-- ===============================================
-      ==================== ARTICLE HEADER ================
-      =============================================== -->
-      <!-- 
-        Article Header Section:
-        - Contains article metadata (category, date)
-        - Article title with gradient animation
-        - Article excerpt/description
-        - Statistics (steps, time, level)
-        - Banner card with icon and description
-        - Action buttons (Start Tutorial, FAQ)
-        - Background decorative elements
-      -->
-      <section class="article-header hero" role="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <!-- Article Meta Information -->
-              <!-- Contains category badge and publication date -->
-              <div class="article-meta" data-aos="fade-up" data-aos-delay="100">
-                <div class="meta-badge">
-                  <span
-                    class="article-category"
-                    data-en="Network Security & VPN"
-                    data-fa="امنیت شبکه و VPN"
-                    >Network Security & VPN</span
-                  >
-                </div>
-                <div class="meta-date">
-                  <span
-                    class="article-date"
-                    data-en="Published on"
-                    data-fa="منتشر شده در"
-                    >Published on</span
-                  >
-                  <time
-                    datetime="2024-01-15"
-                    data-en="January 15, 2024"
-                    data-fa="25 دی 1402"
-                    >January 15, 2024</time
-                  >
-                </div>
-              </div>
-
-              <!-- Article Title -->
-              <!-- Main article title with gradient animation effect -->
-              <h1
-                class="article-title hero-title"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-en="Complete Guide to OpenVPN Setup on MikroTik RouterOS v7"
-                data-fa="آموزش جامع راه‌اندازی OpenVPN در میکروتیک RouterOS v7"
-              >
-                Complete Guide to OpenVPN Setup on MikroTik RouterOS v7
-              </h1>
-
-              <!-- Article Excerpt -->
-              <p
-                class="article-excerpt hero-subtitle"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-en="Complete guide to implementing OpenVPN on MikroTik RouterOS v7 including certificate creation, server and client configuration, security tips and troubleshooting."
-                data-fa="راهنمای کامل پیاده‌سازی OpenVPN روی میکروتیک RouterOS v7 شامل ایجاد Certificate، پیکربندی سرور و کلاینت، نکات امنیتی و رفع اشکال"
-              >
-                Complete guide to implementing OpenVPN on MikroTik RouterOS v7
-                including certificate creation, server and client configuration,
-                security tips and troubleshooting.
-              </p>
-
-              <!-- Article Stats -->
-              <div
-                class="article-stats"
-                data-aos="fade-up"
-                data-aos-delay="350"
-              >
-                <div class="stats-container">
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-list-ol"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span class="stat-number">7</span>
-                      <span class="stat-label" data-en="Steps" data-fa="مرحله"
-                        >Steps</span
-                      >
-                    </div>
-                  </div>
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-award"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span class="stat-number">Expert</span>
-                      <span class="stat-label" data-en="Level" data-fa="سطح"
-                        >Level</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Article Banner -->
-              <div
-                class="article-banner"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="banner-card">
-                  <div class="banner-icon">
-                    <i class="bi bi-shield-lock"></i>
-                  </div>
-                  <div class="banner-content">
-                    <h3
-                      class="banner-title"
-                      data-en="OpenVPN on MikroTik"
-                      data-fa="OpenVPN در میکروتیک"
-                    >
-                      OpenVPN on MikroTik
-                    </h3>
-                    <p
-                      class="banner-subtitle"
-                      data-en="Complete Guide to Secure VPN Implementation"
-                      data-fa="راهنمای کامل پیاده‌سازی VPN امن"
-                    >
-                      Complete Guide to Secure VPN Implementation
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Action Buttons -->
-              <div
-                class="article-actions"
-                data-aos="fade-up"
-                data-aos-delay="450"
-              >
-                <a
-                  href="#setup-steps"
-                  class="btn btn-primary btn-lg action-btn"
-                >
-                  <div class="btn-content">
-                    <i class="bi bi-play-circle"></i>
-                    <span data-en="Start Tutorial" data-fa="شروع آموزش"
-                      >Start Tutorial</span
-                    >
-                  </div>
-                  <div class="btn-arrow">
-                    <i class="bi bi-arrow-right"></i>
-                  </div>
-                </a>
-                <a
-                  href="#faq"
-                  class="btn btn-outline-secondary btn-lg action-btn"
-                >
-                  <div class="btn-content">
-                    <i class="bi bi-question-circle"></i>
-                    <span data-en="FAQ" data-fa="سوالات متداول">FAQ</span>
-                  </div>
-                  <div class="btn-arrow">
-                    <i class="bi bi-arrow-right"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Background -->
-        <div class="hero-background">
-          <h1>راهنمای کامل راه‌اندازی OpenVPN در MikroTik v7</h1>
-          <p>آموزش گام به گام پیکربندی OpenVPN Server در MikroTik RouterOS v7 با تنظیمات امنیتی پیشرفته</p>
-        </div>
+      <section class="article-hero article-header hero" role="banner">
+        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>MikroTik</span></nav>
+          <div class="article-meta"><span class="article-category">MikroTik</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">MikroTik</time></span></div>
+          <h1 class="article-title hero-title">OpenVPN on MikroTik RouterOS v7</h1>
+          <p class="article-excerpt hero-subtitle">Step-by-step OpenVPN server/client setup with certificates, firewall, and routing</p>
+          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/mikrotik-4.png" alt="OpenVPN on MikroTik RouterOS v7" /><div class="banner-content"><h2 class="banner-title">MikroTik</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
+          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
+        </div></div></div>
+        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
       </section>
+      <section id="article-content" class="article-content article-container" aria-label="Article content">
+        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
 
-      <!-- ===============================================
-      ==================== ARTICLE CONTENT ================
-      =============================================== -->
-      <!-- 
-        Main Article Content Section:
-        - Introduction paragraph
-        - Table of contents navigation
-        - OpenVPN advantages section
-        - RouterOS v7 changes section
-        - Prerequisites checklist
-        - Step-by-step setup guide (7 steps)
-        - Security tips and optimization
-        - FAQ section
-      -->
-      <section class="article-content" role="main">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <!-- Main Article Body -->
-              <article class="article-body">
-                <!-- Introduction -->
+          <article class="article-body">
+<!-- Introduction -->
                 <section class="article-section">
                   <h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2>
                   <p
@@ -775,7 +355,7 @@
                   <h2 data-en="Table of Contents" data-fa="فهرست مطالب">
                     Table of Contents
                   </h2>
-                  <nav class="toc">
+                  <nav class="article-toc">
                     <ul>
                       <li>
                         <a
@@ -838,10 +418,10 @@
                     1. مزایای OpenVPN در میکروتیک
                   </h2>
 
-                  <div class="highlight-box">
-                    <h4 data-en="Key Advantages" data-fa="مزایای کلیدی">
+                  <div class="article-callout article-callout--info">
+                    <h3 class="article-callout-title" data-en="Key Advantages" data-fa="مزایای کلیدی">
                       مزایای کلیدی
-                    </h4>
+                    </h3>
                     <ul>
                       <li
                         data-en="TCP and UDP Support"
@@ -880,10 +460,10 @@
                     2. تغییرات کلیدی OpenVPN در RouterOS v7
                   </h2>
 
-                  <div class="info-box">
-                    <h4 data-en="Major Improvements" data-fa="بهبودهای عمده">
+                  <div class="article-callout article-callout--info">
+                    <h3 class="article-callout-title" data-en="Major Improvements" data-fa="بهبودهای عمده">
                       بهبودهای عمده
-                    </h4>
+                    </h3>
                     <ul>
                       <li
                         data-en="UDP Support (Previously only TCP was supported)"
@@ -919,10 +499,10 @@
                     3. پیش‌نیازها
                   </h2>
 
-                  <div class="highlight-box">
-                    <h4 data-en="Required Items" data-fa="موارد مورد نیاز">
+                  <div class="article-callout article-callout--info">
+                    <h3 class="article-callout-title" data-en="Required Items" data-fa="موارد مورد نیاز">
                       موارد مورد نیاز
-                    </h4>
+                    </h3>
                     <ul>
                       <li
                         data-en="RouterOS v7 Latest Version"
@@ -955,7 +535,7 @@
                 <!-- OpenVPN Setup Steps -->
                 <!-- OpenVPN Setup Steps - Redesigned -->
                 <section id="setup-steps" class="article-section">
-                  <div class="setup-header">
+                  <div class="article-section-intro">
                     <h2
                       data-en="4. OpenVPN Setup Steps"
                       data-fa="4. مراحل راه‌اندازی OpenVPN"
@@ -963,7 +543,7 @@
                       4. مراحل راه‌اندازی OpenVPN
                     </h2>
                     <p
-                      class="setup-description"
+                      class="article-section-description"
                       data-en="Follow these 7 comprehensive steps to set up OpenVPN on your MikroTik RouterOS v7 device. Each step includes detailed commands and explanations."
                       data-fa="این 7 مرحله جامع را برای راه‌اندازی OpenVPN روی دستگاه MikroTik RouterOS v7 خود دنبال کنید. هر مرحله شامل دستورات و توضیحات کامل است."
                     >
@@ -983,124 +563,124 @@
                   - Uses Intersection Observer for performance
                   =============================================== -->
                   <div
-                    class="setup-progress"
+                    class="article-progress"
                     role="progressbar"
                     aria-label="Setup progress"
                     aria-valuenow="0"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   >
-                    <div class="progress-bar">
-                      <div class="progress-fill" aria-hidden="true"></div>
+                    <div class="article-progress-track">
+                      <div class="article-progress-fill" aria-hidden="true"></div>
                     </div>
                     <div
-                      class="progress-steps"
+                      class="article-progress-steps"
                       role="tablist"
                       aria-label="Setup steps navigation"
                     >
                       <div
-                        class="step-indicator active"
+                        class="article-progress-step active"
                         data-step="1"
                         role="tab"
                         aria-selected="true"
                         aria-label="Step 1: Network Configuration"
                         tabindex="0"
                       >
-                        <span class="step-number" aria-hidden="true">1</span>
+                        <span class="article-progress-number" aria-hidden="true">1</span>
                         <span
-                          class="step-label"
+                          class="article-progress-label"
                           data-en="Network"
                           data-fa="شبکه"
                           >شبکه</span
                         >
                       </div>
                       <div
-                        class="step-indicator"
+                        class="article-progress-step"
                         data-step="2"
                         role="tab"
                         aria-selected="false"
                         aria-label="Step 2: Certificate Creation"
                         tabindex="-1"
                       >
-                        <span class="step-number" aria-hidden="true">2</span>
+                        <span class="article-progress-number" aria-hidden="true">2</span>
                         <span
-                          class="step-label"
+                          class="article-progress-label"
                           data-en="Certificates"
                           data-fa="گواهی‌ها"
                           >گواهی‌ها</span
                         >
                       </div>
                       <div
-                        class="step-indicator"
+                        class="article-progress-step"
                         data-step="3"
                         role="tab"
                         aria-selected="false"
                         aria-label="Step 3: Server Configuration"
                         tabindex="-1"
                       >
-                        <span class="step-number" aria-hidden="true">3</span>
-                        <span class="step-label" data-en="Server" data-fa="سرور"
+                        <span class="article-progress-number" aria-hidden="true">3</span>
+                        <span class="article-progress-label" data-en="Server" data-fa="سرور"
                           >سرور</span
                         >
                       </div>
                       <div
-                        class="step-indicator"
+                        class="article-progress-step"
                         data-step="4"
                         role="tab"
                         aria-selected="false"
                         aria-label="Step 4: User Management"
                         tabindex="-1"
                       >
-                        <span class="step-number" aria-hidden="true">4</span>
+                        <span class="article-progress-number" aria-hidden="true">4</span>
                         <span
-                          class="step-label"
+                          class="article-progress-label"
                           data-en="Users"
                           data-fa="کاربران"
                           >کاربران</span
                         >
                       </div>
                       <div
-                        class="step-indicator"
+                        class="article-progress-step"
                         data-step="5"
                         role="tab"
                         aria-selected="false"
                         aria-label="Step 5: Firewall Configuration"
                         tabindex="-1"
                       >
-                        <span class="step-number" aria-hidden="true">5</span>
+                        <span class="article-progress-number" aria-hidden="true">5</span>
                         <span
-                          class="step-label"
+                          class="article-progress-label"
                           data-en="Firewall"
                           data-fa="فایروال"
                           >فایروال</span
                         >
                       </div>
                       <div
-                        class="step-indicator"
+                        class="article-progress-step"
                         data-step="6"
                         role="tab"
                         aria-selected="false"
                         aria-label="Step 6: Client Files Preparation"
                         tabindex="-1"
                       >
-                        <span class="step-number" aria-hidden="true">6</span>
+                        <span class="article-progress-number" aria-hidden="true">6</span>
                         <span
-                          class="step-label"
+                          class="article-progress-label"
                           data-en="Client Files"
                           data-fa="فایل‌ها"
                           >فایل‌ها</span
                         >
                       </div>
                       <div
-                        class="step-indicator"
+                        class="article-progress-step"
                         data-step="7"
                         role="tab"
                         aria-selected="false"
                         aria-label="Step 7: Testing and Verification"
                         tabindex="-1"
                       >
-                        <span class="step-number" aria-hidden="true">7</span>
-                        <span class="step-label" data-en="Testing" data-fa="تست"
+                        <span class="article-progress-number" aria-hidden="true">7</span>
+                        <span class="article-progress-label" data-en="Testing" data-fa="تست"
                           >تست</span
                         >
                       </div>
@@ -1117,30 +697,30 @@
                   - Important notes and tips for each step
                   - Responsive design for all screen sizes
                   =============================================== -->
-                  <div class="setup-steps-container">
+                  <div class="article-grid article-grid--steps">
                     <!-- Step 1: Network Configuration -->
                     <div
-                      class="step-card"
+                      class="article-card article-card--step"
                       data-step="1"
                       role="tabpanel"
                       aria-labelledby="step-1"
                       aria-hidden="false"
                     >
-                      <div class="step-number-badge" aria-hidden="true">01</div>
-                      <div class="step-header">
-                        <div class="step-icon" aria-hidden="true">
+                      <div class="article-card-index" aria-hidden="true">01</div>
+                      <div class="article-card-header">
+                        <div class="article-card-icon" aria-hidden="true">
                           <i class="bi bi-router"></i>
                         </div>
-                        <div class="step-info">
+                        <div class="article-card-info">
                           <h3
-                            class="step-title"
+                            class="article-card-title"
                             data-en="Step 1: Initial Network Settings"
                             data-fa="مرحله اول: تنظیمات اولیه شبکه"
                           >
                             مرحله اول: تنظیمات اولیه شبکه
                           </h3>
                           <p
-                            class="step-description"
+                            class="article-card-description"
                             data-en="Configure basic network settings including IP address, gateway, and DNS servers."
                             data-fa="تنظیمات اولیه شبکه شامل آدرس IP، گیت‌وی و سرورهای DNS."
                           >
@@ -1149,22 +729,21 @@
                           </p>
                         </div>
                       </div>
-                      <div class="step-content">
+                      <div class="article-card-content">
                         <!-- Interactive Code Block with Copy Functionality -->
                         <div
-                          class="code-block"
+                          class="article-code"
                           role="region"
                           aria-label="Code block"
                         >
-                          <div class="code-header">
+                          <div class="article-code-header">
                             <span
-                              class="code-lang"
+                              class="article-code-label"
                               aria-label="Programming language"
                               >MikroTik RouterOS</span
                             >
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                            <button type="button"
+                              class="article-copy-button"
                               data-en="Copy"
                               data-fa="کپی"
                               aria-label="Copy code to clipboard"
@@ -1178,7 +757,7 @@
 /ip dns set servers=8.8.8.8</code></pre>
                         </div>
                         <!-- Important Tips and Notes Section -->
-                        <div class="step-tips">
+                        <div class="article-card-note">
                           <h4 data-en="Important Notes" data-fa="نکات مهم">
                             نکات مهم
                           </h4>
@@ -1202,22 +781,22 @@
                     </div>
 
                     <!-- Step 2: Certificate Creation -->
-                    <div class="step-card" data-step="2">
-                      <div class="step-number-badge">02</div>
-                      <div class="step-header">
-                        <div class="step-icon">
+                    <div class="article-card article-card--step" data-step="2">
+                      <div class="article-card-index">02</div>
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-shield-check"></i>
                         </div>
-                        <div class="step-info">
+                        <div class="article-card-info">
                           <h3
-                            class="step-title"
+                            class="article-card-title"
                             data-en="Step 2: Creating and Signing Certificates"
                             data-fa="مرحله دوم: ایجاد و ساین کردن Certificateها"
                           >
                             مرحله دوم: ایجاد و ساین کردن Certificateها
                           </h3>
                           <p
-                            class="step-description"
+                            class="article-card-description"
                             data-en="Create CA, server, and client certificates for secure authentication."
                             data-fa="ایجاد گواهی‌های CA، سرور و کلاینت برای احراز هویت امن."
                           >
@@ -1226,13 +805,12 @@
                           </p>
                         </div>
                       </div>
-                      <div class="step-content">
-                        <div class="code-block">
-                          <div class="code-header">
-                            <span class="code-lang">MikroTik RouterOS</span>
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                      <div class="article-card-content">
+                        <div class="article-code">
+                          <div class="article-code-header">
+                            <span class="article-code-label">MikroTik RouterOS</span>
+                            <button type="button"
+                              class="article-copy-button"
                               data-en="Copy"
                               data-fa="کپی"
                             >
@@ -1248,7 +826,7 @@ add name=client common-name=client1.meetaj.ir key-usage=tls-client
 /certificate sign server ca=ca name=server
 /certificate sign client ca=ca name=client</code></pre>
                         </div>
-                        <div class="step-tips">
+                        <div class="article-card-note">
                           <h4 data-en="Important Notes" data-fa="نکات مهم">
                             نکات مهم
                           </h4>
@@ -1272,22 +850,22 @@ add name=client common-name=client1.meetaj.ir key-usage=tls-client
                     </div>
 
                     <!-- Step 3: OVPN Server Configuration -->
-                    <div class="step-card" data-step="3">
-                      <div class="step-number-badge">03</div>
-                      <div class="step-header">
-                        <div class="step-icon">
+                    <div class="article-card article-card--step" data-step="3">
+                      <div class="article-card-index">03</div>
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-server"></i>
                         </div>
-                        <div class="step-info">
+                        <div class="article-card-info">
                           <h3
-                            class="step-title"
+                            class="article-card-title"
                             data-en="Step 3: Enabling and Configuring OVPN Server"
                             data-fa="مرحله سوم: فعال‌سازی و پیکربندی OVPN Server"
                           >
                             مرحله سوم: فعال‌سازی و پیکربندی OVPN Server
                           </h3>
                           <p
-                            class="step-description"
+                            class="article-card-description"
                             data-en="Configure the OpenVPN server with encryption settings and authentication methods."
                             data-fa="پیکربندی سرور OpenVPN با تنظیمات رمزنگاری و روش‌های احراز هویت."
                           >
@@ -1296,13 +874,12 @@ add name=client common-name=client1.meetaj.ir key-usage=tls-client
                           </p>
                         </div>
                       </div>
-                      <div class="step-content">
-                        <div class="code-block">
-                          <div class="code-header">
-                            <span class="code-lang">MikroTik RouterOS</span>
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                      <div class="article-card-content">
+                        <div class="article-code">
+                          <div class="article-code-header">
+                            <span class="article-code-label">MikroTik RouterOS</span>
+                            <button type="button"
+                              class="article-copy-button"
                               data-en="Copy"
                               data-fa="کپی"
                             >
@@ -1314,7 +891,7 @@ set enabled=yes port=1194 protocol=udp mode=ip \
    netmask=24 certificate=server require-client-certificate=yes \
    auth=sha1 cipher=aes128,aes192,aes256</code></pre>
                         </div>
-                        <div class="step-tips">
+                        <div class="article-card-note">
                           <h4
                             data-en="Configuration Details"
                             data-fa="جزئیات پیکربندی"
@@ -1346,22 +923,22 @@ set enabled=yes port=1194 protocol=udp mode=ip \
                     </div>
 
                     <!-- Step 4: User Profile Configuration -->
-                    <div class="step-card" data-step="4">
-                      <div class="step-number-badge">04</div>
-                      <div class="step-header">
-                        <div class="step-icon">
+                    <div class="article-card article-card--step" data-step="4">
+                      <div class="article-card-index">04</div>
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-people"></i>
                         </div>
-                        <div class="step-info">
+                        <div class="article-card-info">
                           <h3
-                            class="step-title"
+                            class="article-card-title"
                             data-en="Step 4: Creating Profiles and VPN Users"
                             data-fa="مرحله چهارم: ایجاد پروفایل و کاربران VPN"
                           >
                             مرحله چهارم: ایجاد پروفایل و کاربران VPN
                           </h3>
                           <p
-                            class="step-description"
+                            class="article-card-description"
                             data-en="Create IP pools, PPP profiles, and user accounts for VPN access."
                             data-fa="ایجاد IP pool، پروفایل‌های PPP و حساب‌های کاربری برای دسترسی VPN."
                           >
@@ -1370,13 +947,12 @@ set enabled=yes port=1194 protocol=udp mode=ip \
                           </p>
                         </div>
                       </div>
-                      <div class="step-content">
-                        <div class="code-block">
-                          <div class="code-header">
-                            <span class="code-lang">MikroTik RouterOS</span>
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                      <div class="article-card-content">
+                        <div class="article-code">
+                          <div class="article-code-header">
+                            <span class="article-code-label">MikroTik RouterOS</span>
+                            <button type="button"
+                              class="article-copy-button"
                               data-en="Copy"
                               data-fa="کپی"
                             >
@@ -1388,7 +964,7 @@ set enabled=yes port=1194 protocol=udp mode=ip \
    remote-address=ovpn-pool use-encryption=yes
 /ppp secret add name=testuser password=StrongPass profile=ovpn-profile</code></pre>
                         </div>
-                        <div class="step-tips">
+                        <div class="article-card-note">
                           <h4
                             data-en="User Management"
                             data-fa="مدیریت کاربران"
@@ -1423,22 +999,22 @@ set enabled=yes port=1194 protocol=udp mode=ip \
                     </div>
 
                     <!-- Step 5: Firewall Configuration -->
-                    <div class="step-card" data-step="5">
-                      <div class="step-number-badge">05</div>
-                      <div class="step-header">
-                        <div class="step-icon">
+                    <div class="article-card article-card--step" data-step="5">
+                      <div class="article-card-index">05</div>
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-shield-lock"></i>
                         </div>
-                        <div class="step-info">
+                        <div class="article-card-info">
                           <h3
-                            class="step-title"
+                            class="article-card-title"
                             data-en="Step 5: Firewall and NAT Settings"
                             data-fa="مرحله پنجم: تنظیمات Firewall و NAT"
                           >
                             مرحله پنجم: تنظیمات Firewall و NAT
                           </h3>
                           <p
-                            class="step-description"
+                            class="article-card-description"
                             data-en="Configure firewall rules and NAT for secure VPN traffic routing."
                             data-fa="پیکربندی قوانین فایروال و NAT برای مسیریابی امن ترافیک VPN."
                           >
@@ -1447,13 +1023,12 @@ set enabled=yes port=1194 protocol=udp mode=ip \
                           </p>
                         </div>
                       </div>
-                      <div class="step-content">
-                        <div class="code-block">
-                          <div class="code-header">
-                            <span class="code-lang">MikroTik RouterOS</span>
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                      <div class="article-card-content">
+                        <div class="article-code">
+                          <div class="article-code-header">
+                            <span class="article-code-label">MikroTik RouterOS</span>
+                            <button type="button"
+                              class="article-copy-button"
                               data-en="Copy"
                               data-fa="کپی"
                             >
@@ -1463,7 +1038,7 @@ set enabled=yes port=1194 protocol=udp mode=ip \
                           <pre><code class="language-bash">/ip firewall nat add chain=srcnat action=masquerade out-interface=ether1
 /ip firewall filter add chain=input action=accept protocol=udp dst-port=1194</code></pre>
                         </div>
-                        <div class="step-tips">
+                        <div class="article-card-note">
                           <h4
                             data-en="Security Configuration"
                             data-fa="پیکربندی امنیتی"
@@ -1497,22 +1072,22 @@ set enabled=yes port=1194 protocol=udp mode=ip \
                     </div>
 
                     <!-- Step 6: Client Files Preparation -->
-                    <div class="step-card" data-step="6">
-                      <div class="step-number-badge">06</div>
-                      <div class="step-header">
-                        <div class="step-icon">
+                    <div class="article-card article-card--step" data-step="6">
+                      <div class="article-card-index">06</div>
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-file-earmark-code"></i>
                         </div>
-                        <div class="step-info">
+                        <div class="article-card-info">
                           <h3
-                            class="step-title"
+                            class="article-card-title"
                             data-en="Step 6: Preparing Client Files"
                             data-fa="مرحله ششم: آماده‌سازی فایل‌های کلاینت"
                           >
                             مرحله ششم: آماده‌سازی فایل‌های کلاینت
                           </h3>
                           <p
-                            class="step-description"
+                            class="article-card-description"
                             data-en="Export certificates and create client configuration files."
                             data-fa="خروجی گرفتن از گواهی‌ها و ایجاد فایل‌های پیکربندی کلاینت."
                           >
@@ -1521,13 +1096,12 @@ set enabled=yes port=1194 protocol=udp mode=ip \
                           </p>
                         </div>
                       </div>
-                      <div class="step-content">
-                        <div class="code-block">
-                          <div class="code-header">
-                            <span class="code-lang">MikroTik RouterOS</span>
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                      <div class="article-card-content">
+                        <div class="article-code">
+                          <div class="article-code-header">
+                            <span class="article-code-label">MikroTik RouterOS</span>
+                            <button type="button"
+                              class="article-copy-button"
                               data-en="Copy"
                               data-fa="کپی"
                             >
@@ -1538,12 +1112,11 @@ set enabled=yes port=1194 protocol=udp mode=ip \
 /certificate export-certificate client export-passphrase=123456</code></pre>
                         </div>
 
-                        <div class="code-block">
-                          <div class="code-header">
-                            <span class="code-lang">OpenVPN Config</span>
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                        <div class="article-code">
+                          <div class="article-code-header">
+                            <span class="article-code-label">OpenVPN Config</span>
+                            <button type="button"
+                              class="article-copy-button"
                               data-en="Copy"
                               data-fa="کپی"
                             >
@@ -1567,7 +1140,7 @@ remote-cert-tls server
 verb 3</code></pre>
                         </div>
 
-                        <div class="step-tips">
+                        <div class="article-card-note">
                           <h4
                             data-en="File Management"
                             data-fa="مدیریت فایل‌ها"
@@ -1601,22 +1174,22 @@ verb 3</code></pre>
                     </div>
 
                     <!-- Step 7: Testing -->
-                    <div class="step-card" data-step="7">
-                      <div class="step-number-badge">07</div>
-                      <div class="step-header">
-                        <div class="step-icon">
+                    <div class="article-card article-card--step" data-step="7">
+                      <div class="article-card-index">07</div>
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-check-circle"></i>
                         </div>
-                        <div class="step-info">
+                        <div class="article-card-info">
                           <h3
-                            class="step-title"
+                            class="article-card-title"
                             data-en="Step 7: Testing Client Connection"
                             data-fa="مرحله هفتم: تست اتصال کلاینت"
                           >
                             مرحله هفتم: تست اتصال کلاینت
                           </h3>
                           <p
-                            class="step-description"
+                            class="article-card-description"
                             data-en="Test the VPN connection and verify successful setup."
                             data-fa="تست اتصال VPN و تأیید راه‌اندازی موفق."
                           >
@@ -1624,13 +1197,13 @@ verb 3</code></pre>
                           </p>
                         </div>
                       </div>
-                      <div class="step-content">
-                        <div class="testing-steps">
-                          <div class="test-item">
-                            <div class="test-icon">
+                      <div class="article-card-content">
+                        <div class="article-grid">
+                          <div class="article-card article-card--test">
+                            <div class="article-card-icon">
                               <i class="bi bi-windows"></i>
                             </div>
-                            <div class="test-content">
+                            <div class="article-card-info">
                               <h4
                                 data-en="Windows Testing"
                                 data-fa="تست در ویندوز"
@@ -1647,11 +1220,11 @@ verb 3</code></pre>
                             </div>
                           </div>
 
-                          <div class="test-item">
-                            <div class="test-icon">
+                          <div class="article-card article-card--test">
+                            <div class="article-card-icon">
                               <i class="bi bi-terminal"></i>
                             </div>
-                            <div class="test-content">
+                            <div class="article-card-info">
                               <h4
                                 data-en="Linux Testing"
                                 data-fa="تست در لینوکس"
@@ -1667,11 +1240,11 @@ verb 3</code></pre>
                             </div>
                           </div>
 
-                          <div class="test-item">
-                            <div class="test-icon">
+                          <div class="article-card article-card--test">
+                            <div class="article-card-icon">
                               <i class="bi bi-search"></i>
                             </div>
-                            <div class="test-content">
+                            <div class="article-card-info">
                               <h4 data-en="Verification" data-fa="تأیید">
                                 تأیید
                               </h4>
@@ -1686,7 +1259,7 @@ verb 3</code></pre>
                           </div>
                         </div>
 
-                        <div class="step-tips">
+                        <div class="article-card-note">
                           <h4 data-en="Troubleshooting" data-fa="عیب‌یابی">
                             عیب‌یابی
                           </h4>
@@ -1726,13 +1299,13 @@ verb 3</code></pre>
                     5. نکات امنیتی و بهینه‌سازی
                   </h2>
 
-                  <div class="security-checklist">
-                    <h4
+                  <div class="article-callout article-callout--tip">
+                    <h3 class="article-callout-title"
                       data-en="Security Recommendations"
                       data-fa="توصیه‌های امنیتی"
                     >
                       Security Recommendations
-                    </h4>
+                    </h3>
                     <ul>
                       <li
                         data-en="Always use AES-256-GCM (Better than CBC)"
@@ -1779,13 +1352,13 @@ verb 3</code></pre>
                     6. پرسش‌های متداول
                   </h2>
 
-                  <div class="faq-item">
-                    <h4
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: What is the main difference between OpenVPN in RouterOS v6 and v7?"
                       data-fa="س: تفاوت اصلی OpenVPN در RouterOS v6 و v7 چیست؟"
                     >
                       س: تفاوت اصلی OpenVPN در RouterOS v6 و v7 چیست؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: In v6 only TCP and limited algorithms were supported; in v7 complete support for UDP, TLS and new algorithms has been added."
                       data-fa="ج: در v6 فقط TCP و الگوریتم‌های محدود پشتیبانی می‌شد؛ در v7 پشتیبانی کامل از UDP، TLS و الگوریتم‌های جدید اضافه شده است."
@@ -1794,15 +1367,15 @@ verb 3</code></pre>
                       v7 پشتیبانی کامل از UDP، TLS و الگوریتم‌های جدید اضافه شده
                       است.
                     </p>
-                  </div>
+                  </div></div>
 
-                  <div class="faq-item">
-                    <h4
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: Can authentication be done only with Certificate?"
                       data-fa="س: آیا می‌توان فقط با Certificate احراز هویت کرد؟"
                     >
                       س: آیا می‌توان فقط با Certificate احراز هویت کرد؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: Yes, in v7 it is possible to authenticate only with Certificate."
                       data-fa="ج: بله، در v7 امکان احراز هویت فقط با Certificate وجود دارد."
@@ -1810,30 +1383,30 @@ verb 3</code></pre>
                       ج: بله، در v7 امکان احراز هویت فقط با Certificate وجود
                       دارد.
                     </p>
-                  </div>
+                  </div></div>
 
-                  <div class="faq-item">
-                    <h4
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: What is the best encryption algorithm?"
                       data-fa="س: بهترین الگوریتم رمزنگاری چیست؟"
                     >
                       س: بهترین الگوریتم رمزنگاری چیست؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: AES-256-GCM is recommended due to its high security and speed."
                       data-fa="ج: AES-256-GCM به‌دلیل امنیت و سرعت بالا توصیه می‌شود."
                     >
                       ج: AES-256-GCM به‌دلیل امنیت و سرعت بالا توصیه می‌شود.
                     </p>
-                  </div>
+                  </div></div>
 
-                  <div class="faq-item">
-                    <h4
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: How can I limit user connections?"
                       data-fa="س: چگونه اتصال کاربران را محدود کنم؟"
                     >
                       س: چگونه اتصال کاربران را محدود کنم؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: Using Firewall and Address-List, you can control users' access to internal network or internet."
                       data-fa="ج: با استفاده از Firewall و Address-List می‌توانید دسترسی کاربران به شبکه داخلی یا اینترنت را کنترل کنید."
@@ -1841,7 +1414,7 @@ verb 3</code></pre>
                       ج: با استفاده از Firewall و Address-List می‌توانید دسترسی
                       کاربران به شبکه داخلی یا اینترنت را کنترل کنید.
                     </p>
-                  </div>
+                  </div></div>
                 </section>
 
                 <!-- Conclusion -->
@@ -1859,206 +1432,33 @@ verb 3</code></pre>
                 </section>
 
                 <!-- Enhanced Author Bio Section -->
-                <section
-                  class="author-bio"
-                  role="complementary"
-                  aria-label="Author Information"
-                >
-                  <!-- Floating particles for visual effect -->
-                  <div class="floating-particles">
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                  </div>
-                  <div class="author-card">
-                    <div class="author-photo">
-                      <img
-                        src="../assets/img/my-profile-img.jpg"
-                        alt="AmirHossein Jalalian - Network Security Specialist"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="author-details">
-                      <h3 data-en="About the Author" data-fa="درباره نویسنده">
-                        About the Author
-                      </h3>
-                      <h4
-                        data-en="AmirHossein Jalalian"
-                        data-fa="امیرحسین جلالیان"
-                      >
-                        AmirHossein Jalalian
-                        <span
-                          class="expert-badge"
-                          data-en="Expert"
-                          data-fa="متخصص"
-                          >Expert</span
-                        >
-                      </h4>
-                      <p
-                        data-en="Network Security & MikroTik Specialist with extensive experience in enterprise environments. Expert in OpenVPN, RouterOS, network security, and VPN implementation."
-                        data-fa="متخصص امنیت شبکه و میکروتیک با تجربه گسترده در محیط‌های سازمانی. متخصص در OpenVPN، RouterOS، امنیت شبکه و پیاده‌سازی VPN."
-                      >
-                        متخصص امنیت شبکه و میکروتیک با تجربه گسترده در محیط‌های
-                        سازمانی. متخصص در OpenVPN، RouterOS، امنیت شبکه و
-                        پیاده‌سازی VPN.
-                      </p>
-                      <div
-                        class="author-social"
-                        role="group"
-                        aria-label="Social Media Links"
-                      >
-                        <a
-                          href="https://linkedin.com/in/amirhossein-jalalian"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="LinkedIn Profile"
-                          title="Connect on LinkedIn"
-                        >
-                          <i class="bi bi-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a
-                          href="https://github.com/amirhossein-jalalian"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="GitHub Profile"
-                          title="View GitHub Profile"
-                        >
-                          <i class="bi bi-github" aria-hidden="true"></i>
-                        </a>
-                        <a
-                          href="https://twitter.com/amirhossein_j"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="Twitter Profile"
-                          title="Follow on Twitter"
-                        >
-                          <i class="bi bi-twitter-x" aria-hidden="true"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Related Articles -->
-      <section class="related-articles">
-        <div class="container">
-          <h2 data-en="Related Articles" data-fa="مقالات مرتبط">
-            Related Articles
-          </h2>
-          <div class="row">
-            <div class="col-md-4">
-              <article class="related-card">
-                <div class="related-image">
-                  <img
-                    src="../assets/img/portfolio/linux-1.png"
-                    alt="Linux Administration"
-                    loading="lazy"
-                  />
+            <footer class="article-footer" aria-label="Article footer">
+              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
+                <div class="article-author-card">
+                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
+                  <div class="article-author-content">
+                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
+                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
+                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
+                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
+                    <div class="article-author-social" role="group" aria-label="Author links">
+                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
+                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
                 </div>
-                <div class="related-content">
-                  <h3
-                    data-en="MikroTik RouterOS Advanced Configuration"
-                    data-fa="پیکربندی پیشرفته MikroTik RouterOS"
-                  >
-                    پیکربندی پیشرفته MikroTik RouterOS
-                  </h3>
-                  <p
-                    data-en="Advanced techniques for configuring MikroTik routers in enterprise environments"
-                    data-fa="تکنیک‌های پیشرفته برای پیکربندی روترهای میکروتیک در محیط‌های سازمانی"
-                  >
-                    تکنیک‌های پیشرفته برای پیکربندی روترهای میکروتیک در محیط‌های
-                    سازمانی
-                  </p>
-                  <a
-                    href="#"
-                    class="read-more"
-                    data-en="Read More"
-                    data-fa="ادامه مطلب"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="related-card">
-                <div class="related-image">
-                  <img
-                    src="../assets/img/portfolio/vmware-1.png"
-                    alt="VMware Virtualization"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="related-content">
-                  <h3
-                    data-en="Network Security Fundamentals"
-                    data-fa="اصول پایه امنیت شبکه"
-                  >
-                    اصول پایه امنیت شبکه
-                  </h3>
-                  <p
-                    data-en="Comprehensive guide to network security principles and implementation"
-                    data-fa="راهنمای جامع اصول امنیت شبکه و پیاده‌سازی"
-                  >
-                    راهنمای جامع اصول امنیت شبکه و پیاده‌سازی
-                  </p>
-                  <a
-                    href="#"
-                    class="read-more"
-                    data-en="Read More"
-                    data-fa="ادامه مطلب"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="related-card">
-                <div class="related-image">
-                  <img
-                    src="../assets/img/portfolio/mikrotik-1.png"
-                    alt="Network Security"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="related-content">
-                  <h3
-                    data-en="VPN Technologies Comparison"
-                    data-fa="مقایسه تکنولوژی‌های VPN"
-                  >
-                    مقایسه تکنولوژی‌های VPN
-                  </h3>
-                  <p
-                    data-en="Detailed comparison of different VPN technologies and their use cases"
-                    data-fa="مقایسه تفصیلی تکنولوژی‌های مختلف VPN و موارد استفاده آنها"
-                  >
-                    مقایسه تفصیلی تکنولوژی‌های مختلف VPN و موارد استفاده آنها
-                  </p>
-                  <a
-                    href="#"
-                    class="read-more"
-                    data-en="Read More"
-                    data-fa="ادامه مطلب"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
+              </section>
+              <nav class="article-footer-nav" aria-label="Article footer navigation">
+                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
+              </nav>
+            </footer>
+          </article>
+        </div></div></div>
       </section>
     </main>
-
-  <!-- ===============================================
-    ==================== FOOTER SECTION ==================
-    =============================================== -->
-  <footer id="footer" class="footer position-relative">
+    <footer id="footer" class="footer position-relative">
     <div class="footer-background">
       <div class="footer-pattern"></div>
     </div>
@@ -2144,47 +1544,19 @@ verb 3</code></pre>
       </div>
     </div>
   </footer>
-  <!-- End Footer Section -->
-
-    <!-- Preloader -->
     <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
-    <script
-      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
+    <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-
-    <!-- Main JS Files -->
     <script src="../assets/js/main.js?v=1000" defer></script>
-
-    <!-- Language Toggle JavaScript -->
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
-    <!-- ===============================================
-    ==================== JAVASCRIPT FUNCTIONS ============
-    ===============================================
-    
-    Article Page Specific JavaScript Implementation:
-    - DOM ready event handling and initialization
-    - Smooth scrolling for internal navigation links
-    - AOS (Animate On Scroll) library integration
-    - Copy-to-clipboard functionality for code blocks
-    - Interactive progress indicator with scroll tracking
-    - Error handling and fallback mechanisms
-    - Performance optimizations and accessibility features
-    
-    Technical Features:
-    - Modern ES6+ JavaScript syntax
-    - Intersection Observer API for scroll tracking
-    - Clipboard API with fallback support
-    - Event delegation for dynamic content
-    - Cross-browser compatibility
-    - Progressive enhancement approach
-    
-    =============================================== -->
     <script>
       /**
        * DOM CONTENT LOADED EVENT LISTENER
@@ -2237,28 +1609,7 @@ verb 3</code></pre>
         }
       });
     </script>
-
-    <!-- ===============================================
-    COPY-TO-CLIPBOARD FUNCTIONALITY
-    ===============================================
-    
-    Advanced clipboard integration with:
-    - Modern Clipboard API support with fallback
-    - Visual feedback with success/error states
-    - Bilingual error messages (English/Persian)
-    - Cross-browser compatibility
-    - Security context handling
-    - Performance optimized with error handling
-    
-    Features:
-    - Automatic text extraction from code blocks
-    - Visual button state changes
-    - Timeout-based feedback reset
-    - Console logging for debugging
-    - Graceful degradation for older browsers
-    
-    =============================================== -->
-    <script>
+<script>
       /**
        * COPY CODE FUNCTIONALITY
        * =======================
@@ -2268,38 +1619,7 @@ verb 3</code></pre>
        *
        * @param {HTMLElement} button - The copy button element
        */
-      function copyCode(button) {
-        // Get the code block container and extract text content
-        const codeBlock = button.closest(".code-block");
-        if (!codeBlock) {
-          console.error("Code block not found");
-          return;
-        }
 
-        const codeElement = codeBlock.querySelector("code");
-        if (!codeElement) {
-          console.error("Code element not found");
-          return;
-        }
-
-        const text = codeElement.textContent;
-
-        // Try modern Clipboard API first (for secure contexts)
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard
-            .writeText(text)
-            .then(function () {
-              showCopySuccess(button);
-            })
-            .catch(function (err) {
-              console.error("Clipboard API failed: ", err);
-              fallbackCopy(text, button);
-            });
-        } else {
-          // Fallback for older browsers or non-secure contexts
-          fallbackCopy(text, button);
-        }
-      }
 
       /**
        * FALLBACK COPY FUNCTION
@@ -2310,29 +1630,7 @@ verb 3</code></pre>
        * @param {string} text - Text to copy
        * @param {HTMLElement} button - Copy button element
        */
-      function fallbackCopy(text, button) {
-        // Create temporary textarea element
-        const textArea = document.createElement("textarea");
-        textArea.value = text;
-        textArea.style.position = "fixed";
-        textArea.style.left = "-999999px";
-        textArea.style.top = "-999999px";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
 
-        try {
-          // Execute copy command
-          document.execCommand("copy");
-          showCopySuccess(button);
-        } catch (err) {
-          console.error("Fallback copy failed: ", err);
-          showCopyError(button);
-        }
-
-        // Clean up temporary element
-        document.body.removeChild(textArea);
-      }
 
       /**
        * SHOW COPY SUCCESS FEEDBACK
@@ -2342,22 +1640,7 @@ verb 3</code></pre>
        *
        * @param {HTMLElement} button - Copy button element
        */
-      function showCopySuccess(button) {
-        // Add success styling
-        button.classList.add("copied");
-        const originalText = button.textContent.trim();
 
-        // Show success message in current language
-        button.textContent = button.getAttribute("data-fa")
-          ? "کپی شد!"
-          : "Copied!";
-
-        // Reset after 2 seconds
-        setTimeout(function () {
-          button.classList.remove("copied");
-          button.textContent = originalText;
-        }, 2000);
-      }
 
       /**
        * SHOW COPY ERROR FEEDBACK
@@ -2367,19 +1650,7 @@ verb 3</code></pre>
        *
        * @param {HTMLElement} button - Copy button element
        */
-      function showCopyError(button) {
-        // Add error styling
-        button.style.background = "rgba(239, 68, 68, 0.9)";
 
-        // Show error message in current language
-        button.textContent = button.getAttribute("data-fa") ? "خطا!" : "Error!";
-
-        // Reset after 2 seconds
-        setTimeout(function () {
-          button.style.background = "";
-          button.textContent = button.getAttribute("data-fa") ? "کپی" : "Copy";
-        }, 2000);
-      }
 
       /**
        * SETUP STEPS PROGRESS INDICATOR
@@ -2403,9 +1674,9 @@ verb 3</code></pre>
        */
       function updateProgressIndicator() {
         // Get all step-related elements
-        const stepCards = document.querySelectorAll(".step-card");
-        const progressFill = document.querySelector(".progress-fill");
-        const stepIndicators = document.querySelectorAll(".step-indicator");
+        const stepCards = document.querySelectorAll(".article-card--step");
+        const progressFill = document.querySelector(".article-progress-fill");
+        const stepIndicators = document.querySelectorAll(".article-progress-step");
 
         // Check if required elements exist
         if (!stepCards.length || !progressFill || !stepIndicators.length) {
@@ -2485,7 +1756,3 @@ verb 3</code></pre>
     </script>
   </body>
 </html>
-
-
-
-

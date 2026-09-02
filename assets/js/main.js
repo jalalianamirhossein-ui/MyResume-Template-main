@@ -2,16 +2,16 @@
  * ===============================================
  * MEET AJ PORTFOLIO - MAIN JAVASCRIPT
  * ===============================================
- * 
+ *
  * Main JavaScript functionality for the portfolio website
  * Handles navigation, mobile menu, and UI interactions
- * 
+ *
  * Features:
  * - Mobile navigation toggle
  * - Smooth scrolling
  * - Menu overlay management
  * - Accessibility improvements
- * 
+ *
  * ===============================================
  */
 (function () {
@@ -685,7 +685,7 @@
                 }
               } else {
                 const swiper = new Swiper(swiperElement, config);
-                
+
                 // Keep autoplay running continuously for testimonials
                 // No pause/resume functionality - autoplay continues during hover
               }
@@ -878,26 +878,26 @@
 
   // Modern Bilingual Preloader Animation
   const preloader = document.querySelector("#preloader");
-  
+
   if (preloader) {
     // Hide preloader when page is loaded
     window.addEventListener("load", () => {
       setTimeout(() => {
         preloader.classList.remove("visible");
         preloader.classList.add("hidden");
-        
+
         setTimeout(() => {
           preloader.style.display = "none";
         }, 200);
       }, 500); // Shorten minimum preloader time for faster perceived load
     });
-    
+
     // Optional: Hide preloader after minimum time even if page loads faster
     setTimeout(() => {
       if (preloader.classList.contains("visible")) {
         preloader.classList.remove("visible");
         preloader.classList.add("hidden");
-        
+
         setTimeout(() => {
           preloader.style.display = "none";
         }, 200);
@@ -1005,44 +1005,90 @@
   window.addEventListener('load', initContactForm);
 
   // ===============================================
-  // ARTICLE CODE COPY FUNCTIONALITY
+  // ARTICLE CODE COPY COMPONENT
   // ===============================================
-  function initCodeCopy() {
-    const isRtl = document.documentElement.dir === 'rtl';
-    const defaultIcon = '<i class="bi bi-clipboard"></i>';
-    const successIcon = '<i class="bi bi-check2"></i>';
+  function initArticleCodeCopy() {
+    const selector = '.article-page .article-copy-button';
+    const defaultIcon = '<i class="bi bi-clipboard" aria-hidden="true"></i>';
+    const successIcon = '<i class="bi bi-check2" aria-hidden="true"></i>';
 
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      // Use icon-only button for cleaner UI but keep accessible label
-      btn.innerHTML = defaultIcon;
-      const label = isRtl ? 'کپی کد' : 'Copy code';
-      btn.setAttribute('aria-label', label);
-      btn.title = label;
+    const labels = () => {
+      const isRtl = document.documentElement.dir === 'rtl';
+      return isRtl
+        ? { copy: 'کپی کد', copied: 'کپی شد', error: 'کپی نشد' }
+        : { copy: 'Copy code', copied: 'Code copied', error: 'Could not copy code' };
+    };
 
-      btn.addEventListener('click', function() {
-        const codeBlock = this.closest('.code-block');
-        const codeElement = codeBlock ? codeBlock.querySelector('code') : null;
-        if (!codeElement) return;
-        const code = codeElement.innerText;
-        
-        navigator.clipboard.writeText(code).then(() => {
-          const originalContent = this.innerHTML || defaultIcon;
+    const updateButton = (button, state = 'default') => {
+      const label = labels();
+      button.classList.remove('is-copied', 'is-copy-error');
+      button.disabled = false;
+      button.innerHTML = defaultIcon;
+      button.setAttribute('aria-label', label.copy);
+      button.title = label.copy;
 
-          this.innerHTML = successIcon;
-          this.classList.add('copied');
-          
-          setTimeout(() => {
-            this.innerHTML = originalContent;
-            this.classList.remove('copied');
-          }, 2000);
-        }).catch(err => {
-          console.error('Failed to copy:', err);
-        });
-      });
+      if (state === 'copied') {
+        button.classList.add('is-copied');
+        button.innerHTML = successIcon;
+        button.setAttribute('aria-label', label.copied);
+        button.title = label.copied;
+      }
+
+      if (state === 'error') {
+        button.classList.add('is-copy-error');
+        button.setAttribute('aria-label', label.error);
+        button.title = label.error;
+      }
+    };
+
+    const fallbackCopy = (value) => {
+      const textArea = document.createElement('textarea');
+      textArea.value = value;
+      textArea.setAttribute('readonly', '');
+      textArea.style.cssText = 'position:fixed;left:-9999px;top:0;opacity:0;';
+      document.body.appendChild(textArea);
+      textArea.select();
+      const copied = document.execCommand('copy');
+      textArea.remove();
+      return copied;
+    };
+
+    document.querySelectorAll(selector).forEach((button) => {
+      button.type = 'button';
+      updateButton(button);
+    });
+
+    document.addEventListener('click', async (event) => {
+      const button = event.target.closest(selector);
+      if (!button || button.dataset.articleCopyBusy === 'true') return;
+
+      const code = button.closest('.article-code')?.querySelector('code')?.textContent;
+      if (!code) return;
+
+      button.dataset.articleCopyBusy = 'true';
+      button.disabled = true;
+
+      try {
+        if (navigator.clipboard?.writeText && window.isSecureContext) {
+          await navigator.clipboard.writeText(code);
+        } else if (!fallbackCopy(code)) {
+          throw new Error('Clipboard fallback failed');
+        }
+
+        updateButton(button, 'copied');
+      } catch (error) {
+        console.error('Article code copy failed:', error);
+        updateButton(button, 'error');
+      }
+
+      window.setTimeout(() => {
+        delete button.dataset.articleCopyBusy;
+        updateButton(button);
+      }, 1800);
     });
   }
-  
-  window.addEventListener('load', initCodeCopy);
+
+  window.addEventListener('load', initArticleCodeCopy);
 
   // ===============================================
   // ARTICLE SCROLL PROGRESS
@@ -1050,38 +1096,14 @@
   function initScrollProgress() {
     // Only run on article pages
     if (!document.querySelector('.article-content')) return;
-    
+
     const progressBar = document.createElement('div');
     progressBar.className = 'scroll-progress-container';
     progressBar.innerHTML = '<div class="scroll-progress"></div>';
     document.body.appendChild(progressBar);
-    
+
     const progress = progressBar.querySelector('.scroll-progress');
-    
-    // Add styles dynamically if not present
-    if (!document.getElementById('scroll-progress-style')) {
-      const style = document.createElement('style');
-      style.id = 'scroll-progress-style';
-      style.textContent = `
-        .scroll-progress-container {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          background: transparent;
-          z-index: 9999;
-        }
-        .scroll-progress {
-          height: 100%;
-          background: linear-gradient(90deg, var(--primary, #00bf73), var(--accent, #ff830a));
-          width: 0%;
-          transition: width 0.1s;
-        }
-      `;
-      document.head.appendChild(style);
-    }
-    
+
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1089,7 +1111,7 @@
       progress.style.width = scrolled + "%";
     });
   }
-  
+
   window.addEventListener('load', initScrollProgress);
 
 })();

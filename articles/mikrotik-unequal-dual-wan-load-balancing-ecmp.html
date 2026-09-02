@@ -1,47 +1,12 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!doctype html>
+<html lang="en" dir="ltr">
   <head>
-    <!-- ===============================================
-    MIKROTIK ECMP LOAD BALANCING ARTICLE
-    ===============================================
-    
-    Professional Configuration of Asymmetric Load Balancing 
-    with Failover in MikroTik using ECMP Method
-    
-    Features:
-    - Complete ECMP configuration guide
-    - Step-by-step MikroTik commands
-    - Real-world testing scenarios
-    - Professional monitoring setup
-    - Security best practices
-    - Enterprise-level recommendations
-    
-    Technical Content:
-    - Dual WAN configuration
-    - Asymmetric load balancing (2:1 ratio)
-    - Automatic failover setup
-    - Policy-based routing
-    - Network monitoring integration
-    
-    Author: AmirHossein Jalalian
-    Version: 2.0.0
-    Last Updated: 2024-12-19
-    =============================================== -->
-
-    <!-- Character encoding and responsive viewport configuration -->
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-    <!-- ===============================================
-    SEO META TAGS - PRIMARY OPTIMIZATION
-    ===============================================
-    Essential meta tags for search engine optimization,
-    social media sharing, and browser compatibility
-    =============================================== -->
     <title>
       Professional Asymmetric Load Balancing with Failover in MikroTik using
       ECMP Method | Complete Guide
     </title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
       content="آموزش کامل پیکربندی Load Balancing نامتقارن با Failover خودکار در میکروتیک به روش ECMP. شامل دستورات MikroTik، تست عملی، مانیتورینگ و بهترین روش‌های امنیتی برای سازمان‌ها."
       name="description"
@@ -68,31 +33,6 @@
       name="msapplication-TileImage"
       content="../assets/img/apple-touch-icon.png"
     />
-
-    <!-- Canonical URL -->
-    <link
-      rel="canonical"
-      href="https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
-    />
-
-    <!-- Alternate Language Versions -->
-    <link
-      rel="alternate"
-      hreflang="fa"
-      href="https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
-    />
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta
       property="og:title"
@@ -115,8 +55,6 @@
     />
     <meta property="og:site_name" content="Meet AJ - Technical Articles" />
     <meta property="og:locale" content="fa_IR" />
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta
       property="twitter:title"
@@ -133,8 +71,6 @@
     />
     <meta property="twitter:site" content="@RealAjMercury" />
     <meta property="twitter:creator" content="@RealAjMercury" />
-
-    <!-- Article Specific Meta Tags -->
     <meta property="article:author" content="AmirHossein Jalalian" />
     <meta
       property="article:published_time"
@@ -155,122 +91,32 @@
     <meta property="article:tag" content="Policy Based Routing" />
     <meta property="article:tag" content="Network Monitoring" />
     <meta property="article:tag" content="Enterprise Network" />
-
-    <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#0D47A1" />
     <meta name="msapplication-TileColor" content="#0D47A1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Meet AJ" />
-
-    <!-- Favicons -->
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="fa"
+      href="https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://meetaj.ir/articles/mikrotik-unequal-dual-wan-load-balancing-ecmp.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
     <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- ===============================================
-    VENDOR CSS LIBRARIES - EXTERNAL DEPENDENCIES
-    ===============================================
-    Third-party CSS libraries for enhanced functionality
-    and consistent cross-browser compatibility
-    =============================================== -->
-    <link
-      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      href="../assets/vendor/aos/aos.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <link
-      href="../assets/vendor/swiper/swiper-bundle.min.css"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-
-    <!-- ===============================================
-    MAIN STYLESHEETS - CORE DESIGN SYSTEM
-    ===============================================
-    Primary CSS files containing custom styles,
-    RTL support, and responsive design patterns
-    =============================================== -->
-    <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1000" rel="stylesheet" />
-
-    <!-- Language Toggle Stylesheet -->
-    <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link
-      id="rtl-style"
-      href="../assets/css/rtl.css?v=1000"
-      rel="stylesheet"
-      disabled
-    />
-
-    <!-- Preload critical resources for better performance -->
-    <link
-      rel="preload"
-      href="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
-      as="script"
-    />
-    <link rel="preload" href="../assets/js/main.js?v=1000" as="script" />
-    <link rel="preload" href="../assets/js/i18n.js?v=1000" as="script" />
-    <link rel="preload" href="../assets/css/main.css?v=1000" as="style" />
-    <link rel="preload" href="../assets/css/articles.css?v=1000" as="style" />
-
-    <!-- Preload critical fonts for better typography -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      as="style"
-    />
-
-    <!-- Resource hints for external domains -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- DNS Prefetch for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- ===============================================
-    STRUCTURED DATA - SCHEMA.ORG MARKUP
-    ===============================================
-    JSON-LD structured data for enhanced SEO,
-    rich snippets, and search engine understanding
-    =============================================== -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -365,47 +211,22 @@
       }
     </script>
 
-    <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
+    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
   </head>
-
-  <!-- ===============================================
-  PAGE BODY - MAIN CONTAINER
-  ===============================================
-  Article-specific body classes for theme customization
-  and accessibility features for screen readers
-  =============================================== -->
-  <body class="article-page article-ecmp" data-page="mikrotik-ecmp">
-    <!-- Skip to main content link for accessibility compliance -->
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable">
-      <span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
-        >Skip to main content</span
-      >
-    </a>
-
-    <!-- ===============================================
-    ==================== MOBILE MENU TOGGLE ==============
-    =============================================== -->
-    <button
-      id="menu-toggle"
-      class="menu-toggle d-xl-none"
-      aria-label="Toggle navigation menu"
-      aria-expanded="false"
-      aria-controls="header"
-      type="button"
-    >
-      <i class="bi bi-list" aria-hidden="true"></i>
-      <span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
-    </button>
-
-    <!-- ===============================================
-    ==================== HEADER SECTION ================
-    =============================================== -->
+  <body class="article-page theme-mikrotik">
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
+    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -414,7 +235,7 @@
         <img
           src="../assets/img/my-profile-img.jpg"
           loading="lazy"
-          alt="AmirHossein Jalalian - Network Engineer and MikroTik Expert Profile Picture"
+          alt="AmirHossein Jalalian Profile Picture"
           class="img-fluid rounded-circle"
         />
       </div>
@@ -427,13 +248,10 @@
       >
         <!-- Site Logo & Name -->
         <a href="../index.html#hero" class="logo d-flex align-items-center">
-          <img
-            src="../assets/img/logo.png"
-            alt="Meet AJ - Technical Articles and Network Solutions"
-            loading="lazy"
-          />
-          <h1 class="sitename">Meet AJ</h1>
+          <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
+          <p class="sitename">Meet AJ</p>
         </a>
+
       </div>
 
       <!-- ===============================================
@@ -525,103 +343,27 @@
         </div>
       </div>
 
+
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
         <ul>
-          <!-- Home Section -->
-          <li>
-            <a href="../index.html#hero"
-              ><i class="bi bi-house navicon"></i
-              ><span data-en="Home" data-fa="صفحه اصلی">Home</span></a
-            >
-          </li>
-
-          <!-- Article Sections -->
-          <li>
-            <a href="#introduction"
-              ><i class="bi bi-info-circle navicon"></i
-              ><span data-en="Introduction" data-fa="مقدمه"
-                >Introduction</span
-              ></a
-            >
-          </li>
-
-          <li>
-            <a href="#why-asymmetric"
-              ><i class="bi bi-question-circle navicon"></i
-              ><span data-en="Why Asymmetric?" data-fa="چرا نامتقارن؟"
-                >Why Asymmetric?</span
-              ></a
-            >
-          </li>
-
-          <li>
-            <a href="#ecmp-comparison"
-              ><i class="bi bi-diagram-3 navicon"></i
-              ><span data-en="ECMP Comparison" data-fa="مقایسه ECMP"
-                >ECMP Comparison</span
-              ></a
-            >
-          </li>
-
-          <li>
-            <a href="#lab-scenario"
-              ><i class="bi bi-gear navicon"></i
-              ><span data-en="Lab Scenario" data-fa="سناریوی آزمایشگاهی"
-                >Lab Scenario</span
-              ></a
-            >
-          </li>
-
-          <li>
-            <a href="#configuration"
-              ><i class="bi bi-code-slash navicon"></i
-              ><span data-en="Configuration" data-fa="پیکربندی"
-                >Configuration</span
-              ></a
-            >
-          </li>
-
-          <li>
-            <a href="#testing"
-              ><i class="bi bi-check-circle navicon"></i
-              ><span data-en="Testing" data-fa="تست و خطایابی">Testing</span></a
-            >
-          </li>
-
-          <li>
-            <a href="#monitoring"
-              ><i class="bi bi-graph-up navicon"></i
-              ><span data-en="Monitoring" data-fa="مانیتورینگ"
-                >Monitoring</span
-              ></a
-            >
-          </li>
-
-          <li>
-            <a href="#best-practices"
-              ><i class="bi bi-star navicon"></i
-              ><span data-en="Best Practices" data-fa="بهترین روش‌ها"
-                >Best Practices</span
-              ></a
-            >
-          </li>
-
-          <li>
-            <a href="#faq"
-              ><i class="bi bi-question-circle navicon"></i
-              ><span data-en="FAQ" data-fa="پرسش‌های متداول">FAQ</span></a
-            >
-          </li>
-
-          <li>
-            <a href="#author"
-              ><i class="bi bi-person navicon"></i
-              ><span data-en="Author" data-fa="نویسنده">Author</span></a
-            >
-          </li>
+          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
+          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
+          <li class="article-nav-item"><a href="#introduction"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a></li>
+          <li class="article-nav-item"><a href="#why-asymmetric"><i class="bi bi-diagram-3 navicon" aria-hidden="true"></i><span data-en="Why Asymmetric Load Balancing?" data-fa="چرا Load Balancing نامتقارن؟">Why Asymmetric Load Balancing?</span></a></li>
+          <li class="article-nav-item"><a href="#ecmp-comparison"><i class="bi bi-bar-chart-line navicon" aria-hidden="true"></i><span data-en="ECMP Comparison with PCC and Other Methods" data-fa="مقایسه ECMP با PCC و سایر روش‌ها">ECMP Comparison with PCC and Other Methods</span></a></li>
+          <li class="article-nav-item"><a href="#ecmp-intro"><i class="bi bi-signpost-split navicon" aria-hidden="true"></i><span data-en="Introduction to ECMP" data-fa="آشنایی با ECMP">Introduction to ECMP</span></a></li>
+          <li class="article-nav-item"><a href="#lab-scenario"><i class="bi bi-pc-display navicon" aria-hidden="true"></i><span data-en="Laboratory Scenario (Lab Scenario)" data-fa="توپولوژی آزمایشگاهی (Lab Scenario)">Laboratory Scenario (Lab Scenario)</span></a></li>
+          <li class="article-nav-item"><a href="#configuration"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Configuration Steps" data-fa="مراحل پیکربندی">Configuration Steps</span></a></li>
+          <li class="article-nav-item"><a href="#testing"><i class="bi bi-wrench-adjustable navicon" aria-hidden="true"></i><span data-en="Testing and Troubleshooting with Real Examples" data-fa="تست و خطایابی با مثال واقعی">Testing and Troubleshooting with Real Examples</span></a></li>
+          <li class="article-nav-item"><a href="#monitoring"><i class="bi bi-activity navicon" aria-hidden="true"></i><span data-en="Monitoring and Alerting" data-fa="مانیتورینگ و هشداردهی">Monitoring and Alerting</span></a></li>
+          <li class="article-nav-item"><a href="#security"><i class="bi bi-shield-check navicon" aria-hidden="true"></i><span data-en="Security Tips and Optimization" data-fa="نکات امنیتی و بهینه‌سازی">Security Tips and Optimization</span></a></li>
+          <li class="article-nav-item"><a href="#best-practices"><i class="bi bi-check2-square navicon" aria-hidden="true"></i><span data-en="Best Practices for Organizations" data-fa="Best Practices برای سازمان‌ها">Best Practices for Organizations</span></a></li>
+          <li class="article-nav-item"><a href="#cheat-sheet"><i class="bi bi-table navicon" aria-hidden="true"></i><span data-en="Summary Table (Cheat Sheet)" data-fa="جدول خلاصه (Cheat Sheet)">Summary Table (Cheat Sheet)</span></a></li>
+          <li class="article-nav-item"><a href="#conclusion"><i class="bi bi-flag navicon" aria-hidden="true"></i><span data-en="Conclusion" data-fa="نتیجه‌گیری">Conclusion</span></a></li>
+          <li class="article-nav-item"><a href="#faq"><i class="bi bi-question-circle navicon" aria-hidden="true"></i><span data-en="Frequently Asked Questions" data-fa="پرسش‌های متداول">Frequently Asked Questions</span></a></li>
         </ul>
       </nav>
       <button
@@ -635,175 +377,23 @@
         ><span class="i18n-alt">FA</span>
       </button>
     </header>
-    <!-- Main Content -->
     <main id="main-content" class="main" role="main">
-      <!-- ===============================================
-      ==================== ARTICLE HEADER ================
-      =============================================== -->
-      <section class="article-header hero" role="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <!-- Article Meta Information -->
-              <div class="article-meta" data-aos="fade-up" data-aos-delay="100">
-                <div class="meta-badge">
-                  <span
-                    class="article-category"
-                    data-en="MikroTik & Networking"
-                    data-fa="میکروتیک و شبکه"
-                    >MikroTik & Networking</span
-                  >
-                </div>
-                <div class="meta-date">
-                  <span
-                    class="article-date"
-                    data-en="Published on"
-                    data-fa="منتشر شده در"
-                    >Published on</span
-                  >
-                  <time
-                    datetime="2024-01-15"
-                    data-en="January 15, 2024"
-                    data-fa="25 دی 1402"
-                    >January 15, 2024</time
-                  >
-                </div>
-              </div>
-
-              <!-- Article Title -->
-              <h1
-                class="article-title hero-title"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-en="Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik using ECMP Method"
-                data-fa="پیکربندی حرفه‌ای Load Balancing نامتقارن با Failover در میکروتیک به روش ECMP"
-              >
-                پیکربندی حرفه‌ای Load Balancing نامتقارن با Failover در میکروتیک
-                به روش ECMP
-              </h1>
-
-              <!-- Article Excerpt -->
-              <p
-                class="article-excerpt hero-subtitle"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-en="Managing multiple internet links simultaneously in organizations helps increase stability and efficiency. One of the simplest methods in MikroTik for this purpose is ECMP (Equal-Cost Multi-Path Routing)."
-                data-fa="مدیریت همزمان چندین لینک اینترنتی در سازمان‌ها به افزایش پایداری و کارایی کمک می‌کند. یکی از ساده‌ترین روش‌ها در MikroTik برای این هدف، ECMP است."
-              >
-                مدیریت همزمان چندین لینک اینترنتی در سازمان‌ها به افزایش پایداری
-                و کارایی کمک می‌کند. یکی از ساده‌ترین روش‌ها در MikroTik برای
-                این هدف، ECMP است.
-              </p>
-
-              <!-- Article Stats -->
-              <div
-                class="article-stats"
-                data-aos="fade-up"
-                data-aos-delay="350"
-              >
-                <div class="stats-container">
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-router"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span class="stat-number">ECMP</span>
-                      <span class="stat-label" data-en="Method" data-fa="روش"
-                        >Method</span
-                      >
-                    </div>
-                  </div>
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-award"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span class="stat-number">Intermediate</span>
-                      <span class="stat-label" data-en="Level" data-fa="سطح"
-                        >Level</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Article Banner -->
-              <div
-                class="article-banner"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="banner-card">
-                  <div class="banner-icon">
-                    <i class="bi bi-router"></i>
-                  </div>
-                  <div class="banner-content">
-                    <h3
-                      class="banner-title"
-                      data-en="ECMP Load Balancing"
-                      data-fa="لود بالانسینگ ECMP"
-                    >
-                      لود بالانسینگ ECMP
-                    </h3>
-                    <p
-                      class="banner-subtitle"
-                      data-en="Asymmetric Dual WAN with Failover"
-                      data-fa="Dual WAN نامتقارن با Failover"
-                    >
-                      Dual WAN نامتقارن با Failover
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Action Buttons -->
-              <div
-                class="article-actions"
-                data-aos="fade-up"
-                data-aos-delay="450"
-              >
-                <a
-                  href="#introduction"
-                  class="btn btn-primary btn-lg action-btn"
-                >
-                  <div class="btn-content">
-                    <i class="bi bi-play-circle"></i>
-                    <span data-en="Start Reading" data-fa="شروع مطالعه"
-                      >Start Reading</span
-                    >
-                  </div>
-                  <div class="btn-arrow">
-                    <i class="bi bi-arrow-right"></i>
-                  </div>
-                </a>
-                <a
-                  href="#examples"
-                  class="btn btn-outline-secondary btn-lg action-btn"
-                >
-                  <div class="btn-content">
-                    <i class="bi bi-code-slash"></i>
-                    <span data-en="Examples" data-fa="مثال‌ها">Examples</span>
-                  </div>
-                  <div class="btn-arrow">
-                    <i class="bi bi-arrow-right"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section class="article-hero article-header hero" role="banner">
+        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>MikroTik</span></nav>
+          <div class="article-meta"><span class="article-category">MikroTik</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">MikroTik</time></span></div>
+          <h1 class="article-title hero-title">Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik</h1>
+          <p class="article-excerpt hero-subtitle">Complete guide to configuring asymmetric Load Balancing with automatic Failover in MikroTik using ECMP method</p>
+          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/mikrotik-2.png" alt="Professional Configuration of Asymmetric Load Balancing with Failover in MikroTik" /><div class="banner-content"><h2 class="banner-title">MikroTik</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
+          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
+        </div></div></div>
+        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
       </section>
+      <section id="article-content" class="article-content article-container" aria-label="Article content">
+        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
 
-      <!-- ===============================================
-      ==================== ARTICLE CONTENT ================
-      =============================================== -->
-      <section class="article-content" role="main">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <!-- Main Article Body -->
-              <article class="article-body">
-                <!-- Introduction -->
+          <article class="article-body">
+<!-- Introduction -->
                 <section id="introduction" class="article-section">
                   <h2 data-en="Introduction" data-fa="مقدمه">مقدمه</h2>
                   <div class="intro-content">
@@ -863,8 +453,8 @@
                     مقایسه ECMP با PCC و سایر روش‌ها
                   </h2>
                   <div class="content">
-                    <div class="table-responsive">
-                      <table class="table table-striped">
+                    <div class="article-table-wrap">
+                      <table class="article-table">
                         <thead>
                           <tr>
                             <th data-en="Method" data-fa="روش">روش</th>
@@ -1033,22 +623,22 @@
                   </h2>
 
                   <!-- Step 1: Interface Naming -->
-                  <div class="method-card">
-                    <div class="method-number-badge">1</div>
-                    <div class="method-header">
-                      <div class="method-icon">
+                  <div class="article-card article-card--method">
+                    <div class="article-card-index">1</div>
+                    <div class="article-card-header">
+                      <div class="article-card-icon">
                         <i class="bi bi-ethernet"></i>
                       </div>
-                      <div class="method-info">
+                      <div class="article-card-info">
                         <h3
-                          class="method-title"
+                          class="article-card-title"
                           data-fa="تغییر نام اینترفیس‌ها"
                           data-en="Interface Naming"
                         >
                           تغییر نام اینترفیس‌ها
                         </h3>
                         <p
-                          class="method-description"
+                          class="article-card-description"
                           data-fa="ابتدا نام اینترفیس‌ها را تغییر دهید"
                           data-en="First, change the interface names"
                         >
@@ -1057,18 +647,17 @@
                       </div>
                     </div>
 
-                    <div class="method-content">
-                      <div class="code-block">
-                        <div class="code-header">
+                    <div class="article-card-content">
+                      <div class="article-code">
+                        <div class="article-code-header">
                           <span
-                            class="code-lang"
+                            class="article-code-label"
                             data-fa="MikroTik"
                             data-en="MikroTik"
                             >MikroTik</span
                           >
-                          <button
-                            class="copy-btn"
-                            onclick="copyCode(this)"
+                          <button type="button"
+                            class="article-copy-button"
                             data-fa="کپی"
                             data-en="Copy"
                           >
@@ -1083,22 +672,22 @@
                   </div>
 
                   <!-- Step 2: IP Assignment -->
-                  <div class="method-card">
-                    <div class="method-number-badge">2</div>
-                    <div class="method-header">
-                      <div class="method-icon">
+                  <div class="article-card article-card--method">
+                    <div class="article-card-index">2</div>
+                    <div class="article-card-header">
+                      <div class="article-card-icon">
                         <i class="bi bi-hdd-network"></i>
                       </div>
-                      <div class="method-info">
+                      <div class="article-card-info">
                         <h3
-                          class="method-title"
+                          class="article-card-title"
                           data-fa="اختصاص IP"
                           data-en="IP Assignment"
                         >
                           اختصاص IP
                         </h3>
                         <p
-                          class="method-description"
+                          class="article-card-description"
                           data-fa="تنظیم آدرس‌های IP برای اینترفیس‌ها"
                           data-en="Set IP addresses for interfaces"
                         >
@@ -1107,18 +696,17 @@
                       </div>
                     </div>
 
-                    <div class="method-content">
-                      <div class="code-block">
-                        <div class="code-header">
+                    <div class="article-card-content">
+                      <div class="article-code">
+                        <div class="article-code-header">
                           <span
-                            class="code-lang"
+                            class="article-code-label"
                             data-fa="MikroTik"
                             data-en="MikroTik"
                             >MikroTik</span
                           >
-                          <button
-                            class="copy-btn"
-                            onclick="copyCode(this)"
+                          <button type="button"
+                            class="article-copy-button"
                             data-fa="کپی"
                             data-en="Copy"
                           >
@@ -1134,22 +722,22 @@ add address=10.10.10.1/24 interface=LAN</code></pre>
                   </div>
 
                   <!-- Step 3: DNS Configuration -->
-                  <div class="method-card">
-                    <div class="method-number-badge">3</div>
-                    <div class="method-header">
-                      <div class="method-icon">
+                  <div class="article-card article-card--method">
+                    <div class="article-card-index">3</div>
+                    <div class="article-card-header">
+                      <div class="article-card-icon">
                         <i class="bi bi-globe"></i>
                       </div>
-                      <div class="method-info">
+                      <div class="article-card-info">
                         <h3
-                          class="method-title"
+                          class="article-card-title"
                           data-fa="تنظیم DNS"
                           data-en="DNS Configuration"
                         >
                           تنظیم DNS
                         </h3>
                         <p
-                          class="method-description"
+                          class="article-card-description"
                           data-fa="تنظیم سرورهای DNS"
                           data-en="Configure DNS servers"
                         >
@@ -1158,18 +746,17 @@ add address=10.10.10.1/24 interface=LAN</code></pre>
                       </div>
                     </div>
 
-                    <div class="method-content">
-                      <div class="code-block">
-                        <div class="code-header">
+                    <div class="article-card-content">
+                      <div class="article-code">
+                        <div class="article-code-header">
                           <span
-                            class="code-lang"
+                            class="article-code-label"
                             data-fa="MikroTik"
                             data-en="MikroTik"
                             >MikroTik</span
                           >
-                          <button
-                            class="copy-btn"
-                            onclick="copyCode(this)"
+                          <button type="button"
+                            class="article-copy-button"
                             data-fa="کپی"
                             data-en="Copy"
                           >
@@ -1182,22 +769,22 @@ add address=10.10.10.1/24 interface=LAN</code></pre>
                   </div>
 
                   <!-- Step 4: NAT Configuration -->
-                  <div class="method-card">
-                    <div class="method-number-badge">4</div>
-                    <div class="method-header">
-                      <div class="method-icon">
+                  <div class="article-card article-card--method">
+                    <div class="article-card-index">4</div>
+                    <div class="article-card-header">
+                      <div class="article-card-icon">
                         <i class="bi bi-shield-check"></i>
                       </div>
-                      <div class="method-info">
+                      <div class="article-card-info">
                         <h3
-                          class="method-title"
+                          class="article-card-title"
                           data-fa="پیکربندی NAT"
                           data-en="NAT Configuration"
                         >
                           پیکربندی NAT
                         </h3>
                         <p
-                          class="method-description"
+                          class="article-card-description"
                           data-fa="تنظیم قوانین NAT برای هر اینترفیس"
                           data-en="Set NAT rules for each interface"
                         >
@@ -1206,18 +793,17 @@ add address=10.10.10.1/24 interface=LAN</code></pre>
                       </div>
                     </div>
 
-                    <div class="method-content">
-                      <div class="code-block">
-                        <div class="code-header">
+                    <div class="article-card-content">
+                      <div class="article-code">
+                        <div class="article-code-header">
                           <span
-                            class="code-lang"
+                            class="article-code-label"
                             data-fa="MikroTik"
                             data-en="MikroTik"
                             >MikroTik</span
                           >
-                          <button
-                            class="copy-btn"
-                            onclick="copyCode(this)"
+                          <button type="button"
+                            class="article-copy-button"
                             data-fa="کپی"
                             data-en="Copy"
                           >
@@ -1232,22 +818,22 @@ add chain=srcnat out-interface=WAN2 action=masquerade</code></pre>
                   </div>
 
                   <!-- Step 5: ECMP Routes -->
-                  <div class="method-card">
-                    <div class="method-number-badge">5</div>
-                    <div class="method-header">
-                      <div class="method-icon">
+                  <div class="article-card article-card--method">
+                    <div class="article-card-index">5</div>
+                    <div class="article-card-header">
+                      <div class="article-card-icon">
                         <i class="bi bi-diagram-3"></i>
                       </div>
-                      <div class="method-info">
+                      <div class="article-card-info">
                         <h3
-                          class="method-title"
+                          class="article-card-title"
                           data-fa="تعریف مسیرهای ECMP نامتقارن"
                           data-en="Define Asymmetric ECMP Routes"
                         >
                           تعریف مسیرهای ECMP نامتقارن
                         </h3>
                         <p
-                          class="method-description"
+                          class="article-card-description"
                           data-fa="تنظیم مسیرهای ECMP با نسبت 2:1"
                           data-en="Set ECMP routes with 2:1 ratio"
                         >
@@ -1256,18 +842,17 @@ add chain=srcnat out-interface=WAN2 action=masquerade</code></pre>
                       </div>
                     </div>
 
-                    <div class="method-content">
-                      <div class="code-block">
-                        <div class="code-header">
+                    <div class="article-card-content">
+                      <div class="article-code">
+                        <div class="article-code-header">
                           <span
-                            class="code-lang"
+                            class="article-code-label"
                             data-fa="MikroTik"
                             data-en="MikroTik"
                             >MikroTik</span
                           >
-                          <button
-                            class="copy-btn"
-                            onclick="copyCode(this)"
+                          <button type="button"
+                            class="article-copy-button"
                             data-fa="کپی"
                             data-en="Copy"
                           >
@@ -1278,21 +863,21 @@ add chain=srcnat out-interface=WAN2 action=masquerade</code></pre>
 add dst-address=0.0.0.0/0 gateway=192.168.30.1,192.168.30.1,172.30.30.1 check-gateway=ping</code></pre>
                       </div>
 
-                      <div class="method-tips">
+                      <div class="article-card-note">
                         <h4 data-fa="خروجی نمونه" data-en="Sample Output">
                           خروجی نمونه:
                         </h4>
-                        <div class="code-block">
-                          <div class="code-header">
+                        <div class="article-code">
+                          <div class="article-code-header">
                             <span
-                              class="code-lang"
+                              class="article-code-label"
                               data-fa="خروجی"
                               data-en="Output"
                               >خروجی</span
                             >
-                          </div>
+                          <button class="article-copy-button" type="button" data-en="Copy code" data-fa="کپی کد" aria-label="Copy code"><i class="bi bi-clipboard" aria-hidden="true"></i></button></div>
                           <pre><code class="language-bash">[admin@MikroTik] > /ip route print
-Flags: D - dynamic; A - active; C - connect; S - static; r - rip; o - ospf; b - bgp 
+Flags: D - dynamic; A - active; C - connect; S - static; r - rip; o - ospf; b - bgp
  #      DST-ADDRESS        GATEWAY          DISTANCE
  0  AS  0.0.0.0/0          192.168.30.1     1
  1  AS  0.0.0.0/0          192.168.30.1     1
@@ -1303,22 +888,22 @@ Flags: D - dynamic; A - active; C - connect; S - static; r - rip; o - ospf; b - 
                   </div>
 
                   <!-- Step 6: Policy Based Routing -->
-                  <div class="method-card">
-                    <div class="method-number-badge">6</div>
-                    <div class="method-header">
-                      <div class="method-icon">
+                  <div class="article-card article-card--method">
+                    <div class="article-card-index">6</div>
+                    <div class="article-card-header">
+                      <div class="article-card-icon">
                         <i class="bi bi-arrow-left-right"></i>
                       </div>
-                      <div class="method-info">
+                      <div class="article-card-info">
                         <h3
-                          class="method-title"
+                          class="article-card-title"
                           data-fa="مدیریت دسترسی به خود روتر (Policy Based Routing)"
                           data-en="Router Access Management (Policy Based Routing)"
                         >
                           مدیریت دسترسی به خود روتر (Policy Based Routing)
                         </h3>
                         <p
-                          class="method-description"
+                          class="article-card-description"
                           data-fa="تنظیم Policy Based Routing برای دسترسی به روتر"
                           data-en="Configure Policy Based Routing for router access"
                         >
@@ -1327,18 +912,17 @@ Flags: D - dynamic; A - active; C - connect; S - static; r - rip; o - ospf; b - 
                       </div>
                     </div>
 
-                    <div class="method-content">
-                      <div class="code-block">
-                        <div class="code-header">
+                    <div class="article-card-content">
+                      <div class="article-code">
+                        <div class="article-code-header">
                           <span
-                            class="code-lang"
+                            class="article-code-label"
                             data-fa="MikroTik"
                             data-en="MikroTik"
                             >MikroTik</span
                           >
-                          <button
-                            class="copy-btn"
-                            onclick="copyCode(this)"
+                          <button type="button"
+                            class="article-copy-button"
                             data-fa="کپی"
                             data-en="Copy"
                           >
@@ -1368,21 +952,21 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                     تست و خطایابی با مثال واقعی
                   </h2>
                   <div class="content">
-                    <div class="method-card">
-                      <div class="method-header">
-                        <div class="method-icon">
+                    <div class="article-card article-card--method">
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-check-circle"></i>
                         </div>
-                        <div class="method-info">
+                        <div class="article-card-info">
                           <h3
-                            class="method-title"
+                            class="article-card-title"
                             data-fa="تست Failover"
                             data-en="Failover Test"
                           >
                             تست Failover
                           </h3>
                           <p
-                            class="method-description"
+                            class="article-card-description"
                             data-fa="کابل WAN1 را قطع کنید → تمام ترافیک از WAN2 عبور می‌کند"
                             data-en="Disconnect WAN1 cable → All traffic passes through WAN2"
                           >
@@ -1393,21 +977,21 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                       </div>
                     </div>
 
-                    <div class="method-card">
-                      <div class="method-header">
-                        <div class="method-icon">
+                    <div class="article-card article-card--method">
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-speedometer2"></i>
                         </div>
-                        <div class="method-info">
+                        <div class="article-card-info">
                           <h3
-                            class="method-title"
+                            class="article-card-title"
                             data-fa="تست Load Balancing"
                             data-en="Load Balancing Test"
                           >
                             تست Load Balancing
                           </h3>
                           <p
-                            class="method-description"
+                            class="article-card-description"
                             data-fa="همزمان چند دانلود/آپلود اجرا کنید"
                             data-en="Run multiple downloads/uploads simultaneously"
                           >
@@ -1416,18 +1000,17 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                         </div>
                       </div>
 
-                      <div class="method-content">
-                        <div class="code-block">
-                          <div class="code-header">
+                      <div class="article-card-content">
+                        <div class="article-code">
+                          <div class="article-code-header">
                             <span
-                              class="code-lang"
+                              class="article-code-label"
                               data-fa="MikroTik"
                               data-en="MikroTik"
                               >MikroTik</span
                             >
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                            <button type="button"
+                              class="article-copy-button"
                               data-fa="کپی"
                               data-en="Copy"
                             >
@@ -1440,21 +1023,21 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                       </div>
                     </div>
 
-                    <div class="method-card">
-                      <div class="method-header">
-                        <div class="method-icon">
+                    <div class="article-card article-card--method">
+                      <div class="article-card-header">
+                        <div class="article-card-icon">
                           <i class="bi bi-search"></i>
                         </div>
-                        <div class="method-info">
+                        <div class="article-card-info">
                           <h3
-                            class="method-title"
+                            class="article-card-title"
                             data-fa="بررسی مسیرها"
                             data-en="Route Check"
                           >
                             بررسی مسیرها
                           </h3>
                           <p
-                            class="method-description"
+                            class="article-card-description"
                             data-fa="بررسی جدول مسیریابی و traceroute"
                             data-en="Check routing table and traceroute"
                           >
@@ -1463,18 +1046,17 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                         </div>
                       </div>
 
-                      <div class="method-content">
-                        <div class="code-block">
-                          <div class="code-header">
+                      <div class="article-card-content">
+                        <div class="article-code">
+                          <div class="article-code-header">
                             <span
-                              class="code-lang"
+                              class="article-code-label"
                               data-fa="MikroTik"
                               data-en="MikroTik"
                               >MikroTik</span
                             >
-                            <button
-                              class="copy-btn"
-                              onclick="copyCode(this)"
+                            <button type="button"
+                              class="article-copy-button"
                               data-fa="کپی"
                               data-en="Copy"
                             >
@@ -1485,24 +1067,24 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
 /tool traceroute 8.8.8.8</code></pre>
                         </div>
 
-                        <div class="method-tips">
+                        <div class="article-card-note">
                           <h4
                             data-fa="خروجی نمونه traceroute"
                             data-en="Sample traceroute output"
                           >
                             خروجی نمونه traceroute:
                           </h4>
-                          <div class="code-block">
-                            <div class="code-header">
+                          <div class="article-code">
+                            <div class="article-code-header">
                               <span
-                                class="code-lang"
+                                class="article-code-label"
                                 data-fa="خروجی"
                                 data-en="Output"
                                 >خروجی</span
                               >
-                            </div>
-                            <pre><code> 1  10.10.10.1  
- 2  192.168.30.1  (ISP1)  
+                            <button class="article-copy-button" type="button" data-en="Copy code" data-fa="کپی کد" aria-label="Copy code"><i class="bi bi-clipboard" aria-hidden="true"></i></button></div>
+                            <pre><code> 1  10.10.10.1
+ 2  192.168.30.1  (ISP1)
  3  8.8.8.8</code></pre>
                           </div>
                         </div>
@@ -1630,8 +1212,8 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                     جدول خلاصه (Cheat Sheet)
                   </h2>
                   <div class="content">
-                    <div class="table-responsive">
-                      <table class="table table-striped">
+                    <div class="article-table-wrap">
+                      <table class="article-table">
                         <thead>
                           <tr>
                             <th data-en="Section" data-fa="بخش">بخش</th>
@@ -1721,28 +1303,28 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                     پرسش‌های متداول
                   </h2>
                   <div class="content">
-                    <div class="faq-item">
-                      <h4
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question"
                         data-en="Q: Can more than two links be used in ECMP?"
                         data-fa="س: آیا می‌توان بیش از دو لینک در ECMP استفاده کرد؟"
                       >
                         س: آیا می‌توان بیش از دو لینک در ECMP استفاده کرد؟
-                      </h4>
+                      </h3><div class="article-faq-answer">
                       <p
                         data-en="A: Yes, by adding more Gateways in the Route table."
                         data-fa="بله، با افزودن Gatewayهای بیشتر در جدول Route."
                       >
                         بله، با افزودن Gatewayهای بیشتر در جدول Route.
                       </p>
-                    </div>
+                    </div></div>
 
-                    <div class="faq-item">
-                      <h4
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question"
                         data-en="Q: When is PCC better than ECMP?"
                         data-fa="س: چه زمانی PCC بهتر از ECMP است؟"
                       >
                         س: چه زمانی PCC بهتر از ECMP است؟
-                      </h4>
+                      </h3><div class="article-faq-answer">
                       <p
                         data-en="A: When you have many users and need more precise load distribution."
                         data-fa="وقتی تعداد کاربران زیاد است و نیاز به توزیع دقیق‌تر بار دارید."
@@ -1750,15 +1332,15 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                         وقتی تعداد کاربران زیاد است و نیاز به توزیع دقیق‌تر بار
                         دارید.
                       </p>
-                    </div>
+                    </div></div>
 
-                    <div class="faq-item">
-                      <h4
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question"
                         data-en="Q: How does Failover work?"
                         data-fa="س: Failover چطور عمل می‌کند؟"
                       >
                         س: Failover چطور عمل می‌کند؟
-                      </h4>
+                      </h3><div class="article-faq-answer">
                       <p
                         data-en="A: With check-gateway=ping, when a link is disconnected, the route is removed and traffic is transferred to the healthy link."
                         data-fa="با check-gateway=ping، در صورت قطع لینک، مسیر حذف و ترافیک روی لینک سالم منتقل می‌شود."
@@ -1766,345 +1348,164 @@ add dst-address=0.0.0.0/0 gateway=172.30.30.1 routing-mark=to_WAN2 check-gateway
                         با check-gateway=ping، در صورت قطع لینک، مسیر حذف و
                         ترافیک روی لینک سالم منتقل می‌شود.
                       </p>
-                    </div>
+                    </div></div>
 
-                    <div class="faq-item">
-                      <h4
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question"
                         data-en="Q: Is this method stable for VoIP and VPN?"
                         data-fa="س: آیا این روش روی VoIP و VPN پایدار است؟"
                       >
                         س: آیا این روش روی VoIP و VPN پایدار است؟
-                      </h4>
+                      </h3><div class="article-faq-answer">
                       <p
                         data-en="A: Yes, because it is session-based and the connection is not interrupted."
                         data-fa="بله، چون Session-based است و اتصال قطع نمی‌شود."
                       >
                         بله، چون Session-based است و اتصال قطع نمی‌شود.
                       </p>
-                    </div>
+                    </div></div>
                   </div>
                 </section>
 
                 <!-- Author Bio -->
-                <section
-                  id="author"
-                  class="author-bio"
-                  role="complementary"
-                  aria-label="Author Information"
-                >
-                  <div class="author-card">
-                    <div class="author-photo">
-                      <img
-                        src="../assets/img/my-profile-img.jpg"
-                        alt="AmirHossein Jalalian - Network Engineer and MikroTik Expert"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="author-details">
-                      <h3 data-en="About the Author" data-fa="درباره نویسنده">
-                        درباره نویسنده
-                      </h3>
-                      <h4
-                        data-en="AmirHossein Jalalian"
-                        data-fa="امیرحسین جلالیان"
-                      >
-                        امیرحسین جلالیان
-                      </h4>
-                      <span
-                        class="expert-badge"
-                        data-fa="Network Engineer & MikroTik Expert"
-                        data-en="Network Engineer & MikroTik Expert"
-                        >Network Engineer & MikroTik Expert</span
-                      >
-                      <p
-                        data-en="Experienced network engineer specializing in MikroTik configurations, load balancing, and enterprise network solutions."
-                        data-fa="مهندس شبکه با تجربه در پیکربندی میکروتیک، لود بالانسینگ و راه‌حل‌های شبکه سازمانی."
-                      >
-                        مهندس شبکه با تجربه در پیکربندی میکروتیک، لود بالانسینگ
-                        و راه‌حل‌های شبکه سازمانی.
-                      </p>
-                      <div
-                        class="author-social"
-                        role="group"
-                        aria-label="Social Media Links"
-                      >
-                        <a
-                          href="https://linkedin.com/in/amirhossein-jalalian"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="LinkedIn Profile"
-                        >
-                          <i class="bi bi-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a
-                          href="https://github.com/amirhossein-jalalian"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="GitHub Profile"
-                        >
-                          <i class="bi bi-github" aria-hidden="true"></i>
-                        </a>
-                        <a
-                          href="https://twitter.com/amirhossein_j"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="Twitter Profile"
-                        >
-                          <i class="bi bi-twitter-x" aria-hidden="true"></i>
-                        </a>
-                      </div>
+
+            <footer class="article-footer" aria-label="Article footer">
+              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
+                <div class="article-author-card">
+                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
+                  <div class="article-author-content">
+                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
+                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
+                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
+                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
+                    <div class="article-author-social" role="group" aria-label="Author links">
+                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
+                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
                     </div>
                   </div>
-                </section>
-              </article>
-            </div>
-          </div>
-        </div>
+                </div>
+              </section>
+              <nav class="article-footer-nav" aria-label="Article footer navigation">
+                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
+              </nav>
+            </footer>
+          </article>
+        </div></div></div>
       </section>
     </main>
-
-    <!-- ===============================================
-    ==================== FOOTER SECTION ==================
-    =============================================== -->
     <footer id="footer" class="footer position-relative">
-      <div class="footer-background">
-        <div class="footer-pattern"></div>
-      </div>
-      <div class="container">
-        <div class="footer-content">
-          <!-- Footer Main Content -->
-          <div class="footer-main">
-            <!-- Brand Section -->
-            <div class="footer-brand">
-              <h3 class="brand-name">
-                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
-                  >AmirHossein Jalalian</span
-                >
-              </h3>
-              <p
-                class="brand-title"
-                data-en="IT Infrastructure Specialist"
-                data-fa="متخصص زیرساخت فناوری اطلاعات"
-              >
-                IT Infrastructure Specialist
-              </p>
-              <p
-                class="brand-description"
-                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
-              >
-                Delivering reliable, secure, and scalable IT solutions for your
-                business success.
-              </p>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="footer-contact">
-              <h4
-                class="contact-title"
-                data-en="Get In Touch"
-                data-fa="تماس با من"
-              >
-                Get In Touch
-              </h4>
-              <div class="contact-info">
-                <div class="contact-item">
-                  <i class="bi bi-geo-alt"></i>
-                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
-                    >Tehran, Iran</span
-                  >
-                </div>
-                <div class="contact-item">
-                  <i class="bi bi-telephone"></i>
-                  <a
-                    href="tel:+989197276219"
-                    data-en="+98 9197276219"
-                    data-fa="09197276219"
-                    >+98 9197276219</a
-                  >
-                </div>
-                <div class="contact-item">
-                  <i class="bi bi-envelope"></i>
-                  <a href="mailto:jalalian.amirhossein@gmail.com"
-                    >jalalian.amirhossein@gmail.com</a
-                  >
-                </div>
-              </div>
-
-              <!-- Social Links -->
-              <div class="social-links">
-                <h5
-                  class="social-title"
-                  data-en="Follow Me"
-                  data-fa="دنبال کنید"
-                >
-                  Follow Me
-                </h5>
-                <div class="social-icons">
-                  <a
-                    href="https://wa.me/989197276219"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-link whatsapp"
-                    aria-label="WhatsApp"
-                  >
-                    <i class="bi bi-whatsapp"></i>
-                  </a>
-                  <a
-                    href="https://t.me/Aj_mercury"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-link telegram"
-                    aria-label="Telegram"
-                  >
-                    <i class="bi bi-telegram"></i>
-                  </a>
-                  <a
-                    href="mailto:jalalian.amirhossein@gmail.com"
-                    class="social-link email"
-                    aria-label="Email"
-                  >
-                    <i class="bi bi-envelope"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
+    <div class="footer-background">
+      <div class="footer-pattern"></div>
+    </div>
+    <div class="container">
+      <div class="footer-content">
+        <!-- Footer Main Content -->
+        <div class="footer-main">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <h3 class="brand-name">
+              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
+            </h3>
+            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
+              IT Infrastructure Specialist
+            </p>
+            <p class="brand-description"
+              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
+              Delivering reliable, secure, and scalable IT solutions for your
+              business success.
+            </p>
           </div>
 
-          <!-- Footer Bottom -->
-          <div class="footer-bottom">
-            <div class="footer-bottom-content">
-              <div class="copyright">
-                <p>
-                  © <span>2025</span>
-                  <strong
-                    data-en="AmirHossein Jalalian"
-                    data-fa="امیرحسین جلالیان"
-                    >AmirHossein Jalalian</strong
-                  >
-                  <span
-                    data-en="All Rights Reserved"
-                    data-fa="تمام حقوق محفوظ است"
-                    >All Rights Reserved</span
-                  >
-                </p>
+          <!-- Contact Info -->
+          <div class="footer-contact">
+            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
+              Get In Touch
+            </h4>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="bi bi-geo-alt"></i>
+                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="footer-heart">
-                <span data-en="Made with" data-fa="ساخته شده با"
-                  >Made with</span
-                >
-                <i class="bi bi-heart-fill"></i>
-                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              <div class="contact-item">
+                <i class="bi bi-telephone"></i>
+                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
+                Follow Me
+              </h5>
+              <div class="social-icons">
+                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
+                  aria-label="WhatsApp">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
+                  aria-label="Telegram">
+                  <i class="bi bi-telegram"></i>
+                </a>
+                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
+                  <i class="bi bi-envelope"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-    <!-- End Footer Section -->
 
-    <!-- Preloader -->
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="copyright">
+              <p>
+                © <span>2025</span>
+                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
+                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+              </p>
+            </div>
+            <div class="footer-heart">
+              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
+              <i class="bi bi-heart-fill"></i>
+              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
     <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
-    <script
-      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
+    <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-
-    <!-- Main JS Files -->
     <script src="../assets/js/main.js?v=1000" defer></script>
-
-    <!-- Language Toggle JavaScript -->
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
-    <!-- ===============================================
-    ==================== JAVASCRIPT FUNCTIONS ============
-    =============================================== -->
     <script>
       /**
        * COPY CODE FUNCTIONALITY
        * =======================
        * Handles copying code blocks to clipboard with visual feedback
        */
-      function copyCode(button) {
-        const codeBlock = button.closest(".code-block");
-        if (!codeBlock) {
-          console.error("Code block not found");
-          return;
-        }
 
-        const codeElement = codeBlock.querySelector("code");
-        if (!codeElement) {
-          console.error("Code element not found");
-          return;
-        }
 
-        const text = codeElement.textContent;
 
-        // Try modern Clipboard API first
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard
-            .writeText(text)
-            .then(function () {
-              showCopySuccess(button);
-            })
-            .catch(function (err) {
-              console.error("Clipboard API failed: ", err);
-              fallbackCopy(text, button);
-            });
-        } else {
-          // Fallback for older browsers
-          fallbackCopy(text, button);
-        }
-      }
 
-      function fallbackCopy(text, button) {
-        const textArea = document.createElement("textarea");
-        textArea.value = text;
-        textArea.style.position = "fixed";
-        textArea.style.left = "-999999px";
-        textArea.style.top = "-999999px";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
 
-        try {
-          document.execCommand("copy");
-          showCopySuccess(button);
-        } catch (err) {
-          console.error("Fallback copy failed: ", err);
-          showCopyError(button);
-        }
 
-        document.body.removeChild(textArea);
-      }
 
-      function showCopySuccess(button) {
-        button.classList.add("copied");
-        const originalText = button.textContent.trim();
-
-        button.textContent = button.getAttribute("data-fa")
-          ? "کپی شد!"
-          : "Copied!";
-
-        setTimeout(function () {
-          button.classList.remove("copied");
-          button.textContent = originalText;
-        }, 2000);
-      }
-
-      function showCopyError(button) {
-        button.style.background = "rgba(220, 53, 69, 0.9)";
-        button.textContent = button.getAttribute("data-fa") ? "خطا!" : "Error!";
-
-        setTimeout(function () {
-          button.style.background = "";
-          button.textContent = button.getAttribute("data-fa") ? "کپی" : "Copy";
-        }, 2000);
-      }
 
       /**
        * DOM CONTENT LOADED EVENT LISTENER

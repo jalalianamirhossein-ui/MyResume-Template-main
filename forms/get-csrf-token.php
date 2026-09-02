@@ -6,34 +6,23 @@
  * This endpoint MUST NOT be cached - tokens are single-use and session-bound
  */
 
+require_once __DIR__ . '/security.php';
+
+meet_aj_send_endpoint_security_headers('application/json; charset=UTF-8');
+
 // Only allow GET requests
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     http_response_code(405);
-    header('Content-Type: application/json');
     echo json_encode(['success' => false, 'error' => 'Method not allowed']);
     exit;
 }
 
-// Start session to store CSRF token
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Prevent ALL caching - CSRF tokens must never be cached
-header('Content-Type: application/json');
-header('X-Content-Type-Options: nosniff');
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-header('Pragma: no-cache');
-header('Expires: 0');
+meet_aj_start_secure_session();
 
 // Generate CSRF token if not exists
 try {
-    if (empty($_SESSION['csrf_token'])) {
-        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-    }
-
     $response = [
-        'token' => $_SESSION['csrf_token'],
+        'token' => meet_aj_issue_csrf_token(),
         'success' => true
     ];
 

@@ -67,34 +67,62 @@
     });
   });
 
-  function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
-    })
-    .then(response => {
-      if( response.ok ) {
-        return response.text();
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-      }
-    })
-    .then(data => {
-      const loading = thisForm.querySelector('.loading');
-      const sentMsg = thisForm.querySelector('.sent-message');
-      
-      if (loading) loading.classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        if (sentMsg) sentMsg.classList.add('d-block');
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      }
-    })
-    .catch((error) => {
-      displayError(thisForm, error);
+  function isContactFormAction(action) {
+    const actionUrl = new URL(action, window.location.href);
+    return actionUrl.origin === window.location.origin && actionUrl.pathname === '/forms/contact.php';
+  }
+
+  async function getCsrfToken() {
+    const response = await fetch('/forms/get-csrf-token.php', {
+      cache: 'no-store',
+      credentials: 'same-origin',
+      headers: { 'Accept': 'application/json' }
     });
+
+    if (!response.ok) {
+      throw new Error('Unable to initialize the security token. Please refresh and try again.');
+    }
+
+    const data = await response.json();
+    if (!data.success || typeof data.token !== 'string' || data.token.length !== 64) {
+      throw new Error('Unable to initialize the security token. Please refresh and try again.');
+    }
+
+    return data.token;
+  }
+
+  async function php_email_form_submit(thisForm, action, formData) {
+    try {
+      if (isContactFormAction(action)) {
+        formData.set('csrf_token', await getCsrfToken());
+      }
+
+      const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        credentials: 'same-origin',
+        headers: {'X-Requested-With': 'XMLHttpRequest'}
+      });
+
+      if( response.ok ) {
+        const data = await response.text();
+        const loading = thisForm.querySelector('.loading');
+        const sentMsg = thisForm.querySelector('.sent-message');
+
+        if (loading) loading.classList.remove('d-block');
+        if (data.trim() === 'OK') {
+          if (sentMsg) sentMsg.classList.add('d-block');
+          thisForm.reset();
+          return;
+        }
+
+        throw new Error('Form submission failed. Please try again.');
+      } else {
+        throw new Error('Form submission failed. Please try again.');
+      }
+    } catch (error) {
+      displayError(thisForm, error);
+    }
   }
 
   function displayError(thisForm, error) {
@@ -103,7 +131,7 @@
     
     if (loading) loading.classList.remove('d-block');
     if (errorMsg) {
-      errorMsg.innerHTML = error;
+      errorMsg.textContent = error instanceof Error ? error.message : String(error);
       errorMsg.classList.add('d-block');
     }
   }

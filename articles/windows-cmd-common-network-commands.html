@@ -1,66 +1,20 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!doctype html>
+<html lang="en" dir="ltr">
   <head>
-    <!-- ===============================================
-    WINDOWS CMD NETWORK COMMANDS - TECHNICAL ARTICLE
-    ===============================================
-    
-    Comprehensive guide for Windows CMD network commands
-    for system administrators and IT professionals
-    
-    Features:
-    - Bilingual support (English/Persian) with RTL layout
-    - Interactive command examples with copy functionality
-    - Modern gradient design with enhanced color palette
-    - Responsive design optimized for all devices
-    - SEO optimized with structured data markup
-    - Accessibility compliant (WCAG 2.1 AA)
-    - Performance optimized with lazy loading
-    - Interactive progress tracking for commands
-    - Copy-to-clipboard functionality for code blocks
-    
-    Technical Stack:
-    - HTML5 semantic structure
-    - CSS3 with custom properties and animations
-    - Vanilla JavaScript with modern APIs
-    - Intersection Observer for scroll tracking
-    - Clipboard API for copy functionality
-    
-    Author: AmirHossein Jalalian
-    Version: 2.0.0
-    Last Updated: 2024-12-19
-    =============================================== -->
-
-    <!-- Character encoding and responsive viewport configuration -->
+    <title>Windows CMD - Professional Network Commands for System Administrators | Complete Guide - Meet AJ</title>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-    <!-- ===============================================
-    SEO META TAGS - ENHANCED BILINGUAL OPTIMIZATION
-    ===============================================
-    Comprehensive meta tags for search engine optimization,
-    social media sharing, and browser compatibility
-    =============================================== -->
-    <title>Windows CMD - Professional Network Commands for System Administrators | Complete Guide - Meet AJ</title>
-    
-    <!-- Primary Description (Persian) -->
     <meta
       content="راهنمای جامع دستورات شبکه Windows CMD برای مدیران سیستم و متخصصان IT. شامل ping، tracert، netstat، nslookup، ipconfig و دستورات پیشرفته با مثال‌های عملی و سناریوهای عیب‌یابی شبکه."
       name="description"
     />
-    
-    <!-- Enhanced Keywords (Bilingual) -->
     <meta
       content="Windows CMD, Network Commands, دستورات شبکه, ping, tracert, netstat, nslookup, ipconfig, pathping, arp, route, netsh, System Administration, مدیریت سیستم, Network Troubleshooting, عیب‌یابی شبکه, IT Professional, متخصص فناوری اطلاعات, Command Line, خط فرمان, Network Monitoring, مانیتورینگ شبکه, TCP/IP, DNS, DHCP"
       name="keywords"
     />
-    
-    <!-- Author and Publication Info -->
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="fa, en" />
-    
-    <!-- Enhanced Theme Colors -->
     <meta name="theme-color" content="#2c5aa0" />
     <meta name="msapplication-TileColor" content="#2c5aa0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -76,31 +30,6 @@
       name="msapplication-TileImage"
       content="../assets/img/apple-touch-icon.png"
     />
-
-    <!-- Canonical URL -->
-    <link
-      rel="canonical"
-      href="https://meetaj.ir/articles/windows-cmd-common-network-commands.html"
-    />
-
-    <!-- Enhanced Alternate Language Versions -->
-    <link
-      rel="alternate"
-      hreflang="fa"
-      href="https://meetaj.ir/articles/windows-cmd-common-network-commands.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://meetaj.ir/en/articles/windows-cmd-common-network-commands.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://meetaj.ir/articles/windows-cmd-common-network-commands.html"
-    />
-
-    <!-- Enhanced Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta
       property="og:title"
@@ -129,8 +58,6 @@
     <meta property="article:tag" content="Windows CMD" />
     <meta property="article:tag" content="Network Commands" />
     <meta property="article:tag" content="System Administration" />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@meetaj_ir" />
     <meta name="twitter:creator" content="@amirhosseinjalalian" />
@@ -144,90 +71,27 @@
     />
     <meta name="twitter:image" content="../assets/img/portfolio/windows-1.png" />
     <meta name="twitter:image:alt" content="Windows CMD Network Commands Guide - Professional System Administration" />
-
-    <!-- Favicons -->
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/windows-cmd-common-network-commands.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="fa"
+      href="https://meetaj.ir/articles/windows-cmd-common-network-commands.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://meetaj.ir/en/articles/windows-cmd-common-network-commands.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://meetaj.ir/articles/windows-cmd-common-network-commands.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
     <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Vendor CSS Files -->
-    <link
-      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link
-      href="../assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
-    <!-- Template Main CSS File -->
-    <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-
-    <!-- Articles Specific CSS -->
-    <link href="../assets/css/articles.css?v=1000" rel="stylesheet" />
-
-    <!-- Language Toggle Stylesheet -->
-    <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-
-    <!-- RTL CSS (disabled by default, enabled via JavaScript for Persian) -->
-    <link
-      id="rtl-style"
-      href="../assets/css/rtl.css?v=1000"
-      rel="stylesheet"
-      disabled
-    />
-
-    <!-- Microsoft-inspired Custom CSS moved to articles.css -->
-
-
-    <!-- Preload critical resources for better performance -->
-    <link
-      rel="preload"
-      href="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
-      as="script"
-    />
-    <link rel="preload" href="../assets/js/main.js?v=1000" as="script" />
-    <link rel="preload" href="../assets/js/i18n.js?v=1000" as="script" />
-    <link rel="preload" href="../assets/css/main.css?v=1000" as="style" />
-    <link rel="preload" href="../assets/css/articles.css?v=1000" as="style" />
-    
-    <!-- Preload critical fonts for better typography -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" as="style" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" />
-    
-    <!-- Resource hints for external domains -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- DNS Prefetch for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- ===============================================
-    STRUCTURED DATA - ENHANCED SCHEMA.ORG MARKUP
-    ===============================================
-    JSON-LD structured data for enhanced SEO,
-    rich snippets, and search engine understanding
-    =============================================== -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -324,42 +188,26 @@
       }
     </script>
 
-    <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-  <body
-    class="article-page article-cmd"
-    data-page="windows-cmd-common-network-commands"
-  >
-    <!-- Skip to main content link for accessibility compliance -->
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable">
-      <span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
-        >رفتن به محتوای اصلی</span
-      >
-    </a>
-
-    <!-- ===============================================
-    ==================== MOBILE MENU TOGGLE ==============
-    =============================================== -->
-    <button
-      id="menu-toggle"
-      class="menu-toggle d-xl-none"
-      aria-label="Toggle navigation menu"
-      aria-expanded="false"
-      aria-controls="header"
-      type="button"
-    >
-      <i class="bi bi-list" aria-hidden="true"></i>
-      <span class="sr-only" data-en="Menu" data-fa="منو">منو</span>
-    </button>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
+    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+  </head>
+  <body class="article-page theme-microsoft">
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
+    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
     <header id="header" class="header dark-background d-flex flex-column">
-      <!-- Profile Image -->
+      <!-- ===============================================
+      ==================== PROFILE IMAGE =================
+      =============================================== -->
       <div class="profile-img">
         <img
           src="../assets/img/my-profile-img.jpg"
@@ -369,11 +217,16 @@
         />
       </div>
 
-      <!-- Logo Section -->
-      <div class="logo-section d-flex align-items-center justify-content-between">
+      <!-- ===============================================
+      ==================== LOGO SECTION ==================
+      =============================================== -->
+      <div
+        class="logo-section d-flex align-items-center justify-content-between"
+      >
+        <!-- Site Logo & Name -->
         <a href="../index.html#hero" class="logo d-flex align-items-center">
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
-          <h1 class="sitename">Meet AJ</h1>
+          <p class="sitename">Meet AJ</p>
         </a>
 
       </div>
@@ -467,80 +320,22 @@
         </div>
       </div>
 
+
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
         <ul>
-          <!-- Home Section -->
-          <li>
-            <a href="../index.html#hero"
-              ><i class="bi bi-house navicon"></i
-              ><span data-en="Home" data-fa="خانه">خانه</span></a
-            >
-          </li>
-
-          <!-- About Section -->
-          <li>
-            <a href="../index.html#about"
-              ><i class="bi bi-person navicon"></i
-              ><span data-en="About" data-fa="درباره من">درباره من</span></a
-            >
-          </li>
-
-          <!-- Resume Section -->
-          <li>
-            <a href="../index.html#resume"
-              ><i class="bi bi-file-earmark-person navicon"></i
-              ><span data-en="Resume" data-fa="رزومه">رزومه</span></a
-            >
-          </li>
-
-          <!-- Services Section -->
-          <li>
-            <a href="../index.html#services"
-              ><i class="bi bi-gear navicon"></i
-              ><span data-en="Services" data-fa="خدمات">خدمات</span></a
-            >
-          </li>
-
-          <!-- Portfolio Section -->
-          <li>
-            <a href="../index.html#portfolio"
-              ><i class="bi bi-collection navicon"></i
-              ><span data-en="Portfolio" data-fa="نمونه کارها"
-                >نمونه کارها</span
-              ></a
-            >
-          </li>
-
-          <!-- Contact Section -->
-          <li>
-            <a href="../index.html#contact"
-              ><i class="bi bi-envelope navicon"></i
-              ><span data-en="Contact" data-fa="تماس">تماس</span></a
-            >
-          </li>
-
-          <!-- Troubleshooting -->
-          <li>
-            <a href="#troubleshooting"
-              ><i class="bi bi-tools navicon"></i
-              ><span data-en="Troubleshooting" data-fa="عیب‌یابی"
-                >عیب‌یابی</span
-              ></a
-            >
-          </li>
-
-          <!-- FAQ -->
-          <li>
-            <a href="#faq"
-              ><i class="bi bi-question-circle navicon"></i
-              ><span data-en="FAQ" data-fa="سوالات متداول"
-                >سوالات متداول</span
-              ></a
-            >
-          </li>
+          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
+          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
+          <li class="article-nav-item"><a href="#introduction"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a></li>
+          <li class="article-nav-item"><a href="#basic-commands"><i class="bi bi-terminal navicon" aria-hidden="true"></i><span data-en="Basic Network Commands in CMD" data-fa="دستورات پایه شبکه در CMD">Basic Network Commands in CMD</span></a></li>
+          <li class="article-nav-item"><a href="#advanced-commands"><i class="bi bi-terminal-plus navicon" aria-hidden="true"></i><span data-en="Advanced Network Commands in CMD" data-fa="دستورات پیشرفته شبکه در CMD">Advanced Network Commands in CMD</span></a></li>
+          <li class="article-nav-item"><a href="#cheat-sheet"><i class="bi bi-table navicon" aria-hidden="true"></i><span data-en="Cheat Sheet Summary Table" data-fa="جدول خلاصه (Cheat Sheet)">Cheat Sheet Summary Table</span></a></li>
+          <li class="article-nav-item"><a href="#troubleshooting"><i class="bi bi-wrench-adjustable navicon" aria-hidden="true"></i><span data-en="Practical Scenarios (Troubleshooting Examples)" data-fa="سناریوهای عملی (Troubleshooting Examples)">Practical Scenarios (Troubleshooting Examples)</span></a></li>
+          <li class="article-nav-item"><a href="#professional-tips"><i class="bi bi-lightbulb navicon" aria-hidden="true"></i><span data-en="Professional Tips for System Administrators" data-fa="نکات حرفه‌ای برای مدیران سیستم">Professional Tips for System Administrators</span></a></li>
+          <li class="article-nav-item"><a href="#conclusion"><i class="bi bi-flag navicon" aria-hidden="true"></i><span data-en="Conclusion" data-fa="نتیجه‌گیری">Conclusion</span></a></li>
+          <li class="article-nav-item"><a href="#faq"><i class="bi bi-question-circle navicon" aria-hidden="true"></i><span data-en="Frequently Asked Questions" data-fa="پرسش‌های متداول">Frequently Asked Questions</span></a></li>
         </ul>
       </nav>
       <button
@@ -554,201 +349,23 @@
         ><span class="i18n-alt">FA</span>
       </button>
     </header>
-
-    <main class="main" id="main-content">
-        
-      <!-- ===============================================
-      ==================== ARTICLE HEADER ==================
-      =============================================== -->
-      <section class="hero" role="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <!-- Article Meta Information -->
-              <div class="article-meta" data-aos="fade-up" data-aos-delay="100">
-                <div class="meta-badge">
-                  <span
-                    class="article-category"
-                    data-en="System Administration & Networking"
-                    data-fa="مدیریت سیستم و شبکه"
-                    >مدیریت سیستم و شبکه</span
-                  >
-                </div>
-                <div class="meta-date">
-                  <span
-                    class="article-date"
-                    data-en="Published on"
-                    data-fa="منتشر شده در"
-                    >منتشر شده در</span
-                  >
-                  <time
-                    datetime="2024-12-19"
-                    data-en="December 19, 2024"
-                    data-fa="29 آذر 1403"
-                    >December 19, 2024</time
-                  >
-                </div>
-              </div>
-              <!-- Main article title with gradient animation effect -->
-              <h1
-                class="article-title hero-title"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-en="Windows CMD – Professional Network Commands for System Administrators"
-                data-fa="Windows CMD – دستورات حرفه‌ای شبکه برای مدیران سیستم"
-              >
-                Windows CMD – دستورات حرفه‌ای شبکه برای مدیران سیستم
-              </h1>
-
-              <!-- Article Excerpt -->
-              <p
-                class="article-excerpt hero-subtitle"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-en="Complete guide to Windows CMD network commands with practical examples and troubleshooting scenarios for IT professionals"
-                data-fa="راهنمای جامع دستورات شبکه Windows CMD با مثال‌های عملی و سناریوهای عیب‌یابی برای متخصصان فناوری اطلاعات"
-              >
-                راهنمای جامع دستورات شبکه Windows CMD با مثال‌های عملی و سناریوهای عیب‌یابی برای متخصصان فناوری اطلاعات
-              </p>
-
-              <!-- Article Stats -->
-              <div
-                class="article-stats"
-                data-aos="fade-up"
-                data-aos-delay="350"
-              >
-                <div class="stats-container">
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-terminal"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span class="stat-number">15</span>
-                      <span class="stat-label" data-en="Commands" data-fa="دستور"
-                        >دستور</span
-                      >
-                    </div>
-                  </div>
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-clock"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span class="stat-number">20</span>
-                      <span class="stat-label" data-en="Minutes" data-fa="دقیقه"
-                        >دقیقه</span
-                      >
-                    </div>
-                  </div>
-                  <div class="stat-item">
-                    <div class="stat-icon">
-                      <i class="bi bi-award"></i>
-                    </div>
-                    <div class="stat-content">
-                      <span class="stat-number">Expert</span>
-                      <span class="stat-label" data-en="Level" data-fa="سطح"
-                        >سطح</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Article Banner -->
-              <div
-                class="article-banner"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="banner-card">
-                  <div class="banner-icon">
-                    <i class="bi bi-terminal-fill"></i>
-                  </div>
-                  <div class="banner-content">
-                    <h3
-                      class="banner-title"
-                      data-en="Windows CMD Network Commands"
-                      data-fa="دستورات شبکه Windows CMD"
-                    >
-                      دستورات شبکه Windows CMD
-                    </h3>
-                    <p
-                      class="banner-subtitle"
-                      data-en="Complete Guide to Professional Network Diagnostics"
-                      data-fa="راهنمای کامل تشخیص حرفه‌ای شبکه"
-                    >
-                      راهنمای کامل تشخیص حرفه‌ای شبکه
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Action Buttons -->
-              <div
-                class="article-actions"
-                data-aos="fade-up"
-                data-aos-delay="450"
-              >
-                <a
-                  href="#introduction"
-                  class="btn btn-primary btn-lg action-btn"
-                >
-                  <div class="btn-content">
-                    <i class="bi bi-play-circle"></i>
-                    <span data-en="Start Tutorial" data-fa="شروع آموزش"
-                      >شروع آموزش</span
-                    >
-                  </div>
-                  <div class="btn-arrow">
-                    <i class="bi bi-arrow-right"></i>
-                  </div>
-                </a>
-                <a
-                  href="#faq"
-                  class="btn btn-outline-secondary btn-lg action-btn"
-                >
-                  <div class="btn-content">
-                    <i class="bi bi-question-circle"></i>
-                    <span data-en="FAQ" data-fa="سوالات متداول">سوالات متداول</span>
-                  </div>
-                  <div class="btn-arrow">
-                    <i class="bi bi-arrow-right"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Background -->
-        <div class="hero-background">
-          <div class="bg-shape bg-shape-1"></div>
-          <div class="bg-shape bg-shape-2"></div>
-          <div class="bg-shape bg-shape-3"></div>
-        </div>
+    <main id="main-content" class="main" role="main">
+      <section class="article-hero article-header hero" role="banner">
+        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Microsoft</span></nav>
+          <div class="article-meta"><span class="article-category">Microsoft</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Microsoft</time></span></div>
+          <h1 class="article-title hero-title">Windows CMD Network Commands</h1>
+          <p class="article-excerpt hero-subtitle">Professional network commands for system administrators</p>
+          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/windows-1.png" alt="Windows CMD Network Commands" /><div class="banner-content"><h2 class="banner-title">Microsoft</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
+          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
+        </div></div></div>
+        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
       </section>
+      <section id="article-content" class="article-content article-container" aria-label="Article content">
+        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
 
-      <!-- ===============================================
-      ==================== ARTICLE CONTENT ================
-      =============================================== -->
-      <!-- 
-        Main Article Content Section:
-        - Introduction paragraph
-        - Table of contents navigation
-        - Basic commands section
-        - Advanced commands section
-        - Cheat sheet table
-        - Troubleshooting scenarios
-        - Professional tips
-        - FAQ section
-      -->
-      <section class="article-content" role="main">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <!-- Main Article Body -->
-              <article class="article-body">
-                <!-- Introduction -->
+          <article class="article-body">
+<!-- Introduction -->
                 <section id="introduction" class="article-section">
                   <h2 data-en="Introduction" data-fa="مقدمه">مقدمه</h2>
                   <p
@@ -764,7 +381,7 @@
                   <h2 data-en="Table of Contents" data-fa="فهرست مطالب">
                     فهرست مطالب
                   </h2>
-                  <nav class="toc">
+                  <nav class="article-toc">
                     <ul>
                       <li>
                         <a
@@ -842,7 +459,7 @@
                   >
                     دستورات پایه شبکه در CMD
                   </h2>
-                  
+
                   <h3
                     data-en="ipconfig"
                     data-fa="ipconfig"
@@ -855,9 +472,9 @@
                   >
                     نمایش اطلاعات IP، Gateway، DNS.
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -879,9 +496,9 @@ ipconfig /flushdns</code></pre>
                   >
                     تست اتصال و زمان پاسخ:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -900,9 +517,9 @@ ipconfig /flushdns</code></pre>
                   >
                     نمایش مسیر بسته‌ها تا مقصد:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -910,10 +527,10 @@ ipconfig /flushdns</code></pre>
                   </div>
 
                   <!-- Sample Output -->
-                  <div class="code-block cmd-block output-block">
-                    <div class="code-header">
-                      <span class="code-lang" data-fa="خروجی نمونه" data-en="Sample Output">خروجی نمونه</span>
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header">
+                      <span class="article-code-label" data-fa="خروجی نمونه" data-en="Sample Output">خروجی نمونه</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -941,9 +558,9 @@ Trace complete.</code></pre>
                   >
                     بررسی DNS دامنه‌ها:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -959,7 +576,7 @@ Trace complete.</code></pre>
                   >
                     دستورات پیشرفته شبکه در CMD
                   </h2>
-                  
+
                   <h3
                     data-en="netstat"
                     data-fa="netstat"
@@ -972,9 +589,9 @@ Trace complete.</code></pre>
                   >
                     نمایش ارتباطات فعال و پورت‌ها:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -994,9 +611,9 @@ netstat -r</code></pre>
                   >
                     بررسی جدول ARP:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -1015,9 +632,9 @@ netstat -r</code></pre>
                   >
                     نمایش و ویرایش جدول مسیریابی:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -1037,9 +654,9 @@ route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                   >
                     ترکیبی از ping و tracert با اطلاعات Packet Loss:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -1058,9 +675,9 @@ route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                   >
                     نمایش MAC Address کارت‌های شبکه:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -1079,9 +696,9 @@ route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                   >
                     اتصال به منابع شبکه (Share Folder, Printer):
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -1100,9 +717,9 @@ route add 192.168.20.0 mask 255.255.255.0 192.168.1.1</code></pre>
                   >
                     ابزاری پیشرفته برای مدیریت شبکه:
                   </p>
-                  <div class="code-block cmd-block">
-                    <div class="code-header">
-                      <button class="copy-btn" onclick="copyCode(this)">
+                  <div class="article-code">
+                    <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                      <button type="button" class="article-copy-button">
                         <i class="bi bi-files"></i>
                       </button>
                     </div>
@@ -1115,9 +732,9 @@ netsh int ip reset</code></pre>
                 <!-- Cheat Sheet -->
                 <section id="cheat-sheet" class="article-section">
                   <h2 data-en="Cheat Sheet Summary Table" data-fa="جدول خلاصه (Cheat Sheet)">جدول خلاصه (Cheat Sheet)</h2>
-                  <div class="table-responsive">
-                    <table class="table table-striped table-hover">
-                      <thead class="table-dark">
+                  <div class="article-table-wrap">
+                    <table class="article-table">
+                      <thead class="">
                         <tr>
                           <th data-en="Command" data-fa="دستور">دستور</th>
                           <th data-en="Main Purpose" data-fa="کاربرد اصلی">کاربرد اصلی</th>
@@ -1193,23 +810,23 @@ netsh int ip reset</code></pre>
                   >
                     سناریوهای عملی (Troubleshooting Examples)
                   </h2>
-                  
-                  <div class="troubleshooting-scenario">
-                    <h4
+
+                  <div class="article-card article-card--scenario">
+                    <h3 class="article-card-title"
                       data-en="User has no internet → Check DNS"
                       data-fa="کاربر اینترنت ندارد → بررسی DNS"
                     >
                       کاربر اینترنت ندارد → بررسی DNS
-                    </h4>
+                    </h3>
                     <p
                       data-en="When users report no internet access, start by checking DNS resolution and flushing the DNS cache."
                       data-fa="وقتی کاربران گزارش عدم دسترسی به اینترنت می‌دهند، ابتدا بررسی رزولوشن DNS و پاک کردن کش DNS را شروع کنید."
                     >
                       وقتی کاربران گزارش عدم دسترسی به اینترنت می‌دهند، ابتدا بررسی رزولوشن DNS و پاک کردن کش DNS را شروع کنید.
                     </p>
-                    <div class="code-block cmd-block">
-                      <div class="code-header">
-                        <button class="copy-btn" onclick="copyCode(this)">
+                    <div class="article-code">
+                      <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                        <button type="button" class="article-copy-button">
                           <i class="bi bi-files"></i>
                         </button>
                       </div>
@@ -1218,22 +835,22 @@ nslookup google.com</code></pre>
                     </div>
                   </div>
 
-                  <div class="troubleshooting-scenario">
-                    <h4
+                  <div class="article-card article-card--scenario">
+                    <h3 class="article-card-title"
                       data-en="Slow network → Check route"
                       data-fa="کندی شبکه → بررسی مسیر"
                     >
                       کندی شبکه → بررسی مسیر
-                    </h4>
+                    </h3>
                     <p
                       data-en="For network performance issues, trace the route to identify bottlenecks and packet loss."
                       data-fa="برای مشکلات عملکرد شبکه، مسیر را ردیابی کنید تا گلوگاه‌ها و از دست رفتن بسته‌ها را شناسایی کنید."
                     >
                       برای مشکلات عملکرد شبکه، مسیر را ردیابی کنید تا گلوگاه‌ها و از دست رفتن بسته‌ها را شناسایی کنید.
                     </p>
-                    <div class="code-block cmd-block">
-                      <div class="code-header">
-                        <button class="copy-btn" onclick="copyCode(this)">
+                    <div class="article-code">
+                      <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                        <button type="button" class="article-copy-button">
                           <i class="bi bi-files"></i>
                         </button>
                       </div>
@@ -1242,22 +859,22 @@ pathping 8.8.8.8</code></pre>
                     </div>
                   </div>
 
-                  <div class="troubleshooting-scenario">
-                    <h4
+                  <div class="article-card article-card--scenario">
+                    <h3 class="article-card-title"
                       data-en="Suspected malware → Check open ports"
                       data-fa="شک به وجود بدافزار → بررسی پورت‌های باز"
                     >
                       شک به وجود بدافزار → بررسی پورت‌های باز
-                    </h4>
+                    </h3>
                     <p
                       data-en="When investigating potential malware, check for suspicious network connections and running processes."
                       data-fa="هنگام بررسی بدافزار احتمالی، اتصالات شبکه مشکوک و فرآیندهای در حال اجرا را بررسی کنید."
                     >
                       هنگام بررسی بدافزار احتمالی، اتصالات شبکه مشکوک و فرآیندهای در حال اجرا را بررسی کنید.
                     </p>
-                    <div class="code-block cmd-block">
-                      <div class="code-header">
-                        <button class="copy-btn" onclick="copyCode(this)">
+                    <div class="article-code">
+                      <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                        <button type="button" class="article-copy-button">
                           <i class="bi bi-files"></i>
                         </button>
                       </div>
@@ -1266,22 +883,22 @@ tasklist /fi "pid eq <PID>"</code></pre>
                     </div>
                   </div>
 
-                  <div class="troubleshooting-scenario">
-                    <h4
+                  <div class="article-card article-card--scenario">
+                    <h3 class="article-card-title"
                       data-en="Share folder access issue"
                       data-fa="مشکل در دسترسی به Share Folder"
                     >
                       مشکل در دسترسی به Share Folder
-                    </h4>
+                    </h3>
                     <p
                       data-en="For network share access problems, use net use command to map drives and troubleshoot authentication."
                       data-fa="برای مشکلات دسترسی به اشتراک شبکه، از دستور net use برای مپ کردن درایوها و عیب‌یابی احراز هویت استفاده کنید."
                     >
                       برای مشکلات دسترسی به اشتراک شبکه، از دستور net use برای مپ کردن درایوها و عیب‌یابی احراز هویت استفاده کنید.
                     </p>
-                    <div class="code-block cmd-block">
-                      <div class="code-header">
-                        <button class="copy-btn" onclick="copyCode(this)">
+                    <div class="article-code">
+                      <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                        <button type="button" class="article-copy-button">
                           <i class="bi bi-files"></i>
                         </button>
                       </div>
@@ -1310,9 +927,9 @@ tasklist /fi "pid eq <PID>"</code></pre>
                       data-fa="خروجی دستورات را برای گزارش ذخیره کنید."
                     >
                       خروجی دستورات را برای گزارش ذخیره کنید:
-                      <div class="code-block cmd-block">
-                        <div class="code-header">
-                          <button class="copy-btn" onclick="copyCode(this)">
+                      <div class="article-code">
+                        <div class="article-code-header"><span class="article-code-label" data-en="Command" data-fa="دستور">Command</span>
+                          <button type="button" class="article-copy-button">
                             <i class="bi bi-files"></i>
                           </button>
                         </div>
@@ -1376,340 +993,111 @@ tasklist /fi "pid eq <PID>"</code></pre>
                   >
                     پرسش‌های متداول
                   </h2>
-                  
-                  <div class="faq-item">
-                    <h4
+
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: Are CMD commands the same in Windows Server and Client?"
                       data-fa="س: آیا دستورات CMD در ویندوز سرور و کلاینت یکسان هستند؟"
                     >
                       س: آیا دستورات CMD در ویندوز سرور و کلاینت یکسان هستند؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: Yes, but Windows Server has additional commands and PowerShell cmdlets available."
                       data-fa="ج: بله، اما در ویندوز سرور برخی دستورات بیشتری مانند PowerShell Cmdlets در دسترس است."
                     >
                       <strong>ج:</strong> بله، اما در ویندوز سرور برخی دستورات بیشتری مانند PowerShell Cmdlets در دسترس است.
                     </p>
-                  </div>
+                  </div></div>
 
-                  <div class="faq-item">
-                    <h4
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: Which command is used to discover open ports?"
                       data-fa="س: کدام دستور برای کشف پورت‌های باز استفاده می‌شود؟"
                     >
                       س: کدام دستور برای کشف پورت‌های باز استفاده می‌شود؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: netstat -ano is the best choice for discovering open ports and active connections."
                       data-fa="ج: netstat -ano بهترین انتخاب برای کشف پورت‌های باز و اتصالات فعال است."
                     >
                       <strong>ج:</strong> netstat -ano بهترین انتخاب برای کشف پورت‌های باز و اتصالات فعال است.
                     </p>
-                  </div>
+                  </div></div>
 
-                  <div class="faq-item">
-                    <h4
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: What is the modern alternative to CMD?"
                       data-fa="س: جایگزین مدرن CMD چیست؟"
                     >
                       س: جایگزین مدرن CMD چیست؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: PowerShell with its extensive capabilities and object-oriented approach is the modern alternative."
                       data-fa="ج: PowerShell با قابلیت‌های گسترده‌تر و رویکرد شی‌گرا جایگزین مدرن است."
                     >
                       <strong>ج:</strong> PowerShell با قابلیت‌های گسترده‌تر و رویکرد شی‌گرا جایگزین مدرن است.
                     </p>
-                  </div>
+                  </div></div>
 
-                  <div class="faq-item">
-                    <h4
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: How can I save command outputs to files?"
                       data-fa="س: چگونه می‌توانم خروجی دستورات را در فایل ذخیره کنم؟"
                     >
                       س: چگونه می‌توانم خروجی دستورات را در فایل ذخیره کنم؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: Use the > operator to redirect output to a file, for example: ipconfig /all > network_info.txt"
                       data-fa="ج: از عملگر > برای هدایت خروجی به فایل استفاده کنید، مثلاً: ipconfig /all > network_info.txt"
                     >
                       <strong>ج:</strong> از عملگر > برای هدایت خروجی به فایل استفاده کنید، مثلاً: ipconfig /all > network_info.txt
                     </p>
-                  </div>
+                  </div></div>
 
-                  <div class="faq-item">
-                    <h4
+                  <div class="article-faq-item">
+                    <h3 class="article-faq-question"
                       data-en="Q: What's the difference between ping and pathping?"
                       data-fa="س: تفاوت بین ping و pathping چیست؟"
                     >
                       س: تفاوت بین ping و pathping چیست؟
-                    </h4>
+                    </h3><div class="article-faq-answer">
                     <p
                       data-en="A: ping tests basic connectivity, while pathping combines ping and tracert functionality with packet loss statistics."
                       data-fa="ج: ping اتصال پایه را تست می‌کند، در حالی که pathping عملکرد ping و tracert را با آمار از دست رفتن بسته ترکیب می‌کند."
                     >
                       <strong>ج:</strong> ping اتصال پایه را تست می‌کند، در حالی که pathping عملکرد ping و tracert را با آمار از دست رفتن بسته ترکیب می‌کند.
                     </p>
-                  </div>
+                  </div></div>
                 </section>
 
                 <!-- Enhanced Author Bio Section -->
-                <section
-                  class="author-bio"
-                  role="complementary"
-                  aria-label="Author Information"
-                >
-                  <!-- Floating particles for visual effect -->
-                  <div class="floating-particles">
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                  </div>
-                  <div class="author-card">
-                    <div class="author-photo">
-                      <img
-                        src="../assets/img/my-profile-img.jpg"
-                        alt="AmirHossein Jalalian - System Administrator & Network Specialist"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="author-details">
-                      <h3 data-en="About the Author" data-fa="درباره نویسنده">
-                        About the Author
-                      </h3>
-                      <h4
-                        data-en="AmirHossein Jalalian"
-                        data-fa="امیرحسین جلالیان"
-                      >
-                        AmirHossein Jalalian
-                        <span
-                          class="expert-badge"
-                          data-en="Expert"
-                          data-fa="متخصص"
-                          >Expert</span
-                        >
-                      </h4>
-                      <p
-                        data-en="System Administrator & Network Specialist with extensive experience in Windows environments. Expert in CMD, PowerShell, network troubleshooting, and enterprise system management."
-                        data-fa="مدیر سیستم و متخصص شبکه با تجربه گسترده در محیط‌های ویندوز. متخصص در CMD، PowerShell، عیب‌یابی شبکه و مدیریت سیستم‌های سازمانی."
-                      >
-                        مدیر سیستم و متخصص شبکه با تجربه گسترده در محیط‌های
-                        ویندوز. متخصص در CMD، PowerShell، عیب‌یابی شبکه و مدیریت
-                        سیستم‌های سازمانی.
-                      </p>
-                      <div
-                        class="author-social"
-                        role="group"
-                        aria-label="Social Media Links"
-                      >
-                        <a
-                          href="https://linkedin.com/in/amirhossein-jalalian"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="LinkedIn Profile"
-                          title="Connect on LinkedIn"
-                        >
-                          <i class="bi bi-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a
-                          href="https://github.com/amirhossein-jalalian"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="GitHub Profile"
-                          title="View GitHub Profile"
-                        >
-                          <i class="bi bi-github" aria-hidden="true"></i>
-                        </a>
-                        <a
-                          href="https://twitter.com/amirhossein_j"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="Twitter Profile"
-                          title="Follow on Twitter"
-                        >
-                          <i class="bi bi-twitter-x" aria-hidden="true"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Related Articles -->
-      <section class="related-articles">
-        <div class="container">
-          <h2 data-en="Related Articles" data-fa="مقالات مرتبط">
-            Related Articles
-          </h2>
-          <div class="row">
-            <div class="col-md-4">
-              <article class="related-card">
-                <div class="related-image">
-                  <img
-                    src="../assets/img/portfolio/linux-1.png"
-                    alt="Linux Administration"
-                    loading="lazy"
-                  />
+            <footer class="article-footer" aria-label="Article footer">
+              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
+                <div class="article-author-card">
+                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
+                  <div class="article-author-content">
+                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
+                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
+                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
+                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
+                    <div class="article-author-social" role="group" aria-label="Author links">
+                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
+                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
                 </div>
-                <div class="related-content">
-                  <h3
-                    data-en="MikroTik RouterOS Advanced Configuration"
-                    data-fa="پیکربندی پیشرفته MikroTik RouterOS"
-                  >
-                    پیکربندی پیشرفته MikroTik RouterOS
-                  </h3>
-                  <p
-                    data-en="Advanced techniques for configuring MikroTik routers in enterprise environments"
-                    data-fa="تکنیک‌های پیشرفته برای پیکربندی روترهای میکروتیک در محیط‌های سازمانی"
-                  >
-                    تکنیک‌های پیشرفته برای پیکربندی روترهای میکروتیک در محیط‌های
-                    سازمانی
-                  </p>
-                  <a
-                    href="#"
-                    class="read-more"
-                    data-en="Read More"
-                    data-fa="ادامه مطلب"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="related-card">
-                <div class="related-image">
-                  <img
-                    src="../assets/img/portfolio/vmware-1.png"
-                    alt="VMware Virtualization"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="related-content">
-                  <h3
-                    data-en="Network Security Fundamentals"
-                    data-fa="اصول پایه امنیت شبکه"
-                  >
-                    اصول پایه امنیت شبکه
-                  </h3>
-                  <p
-                    data-en="Comprehensive guide to network security principles and implementation"
-                    data-fa="راهنمای جامع اصول امنیت شبکه و پیاده‌سازی"
-                  >
-                    راهنمای جامع اصول امنیت شبکه و پیاده‌سازی
-                  </p>
-                  <a
-                    href="#"
-                    class="read-more"
-                    data-en="Read More"
-                    data-fa="ادامه مطلب"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="related-card">
-                <div class="related-image">
-                  <img
-                    src="../assets/img/portfolio/mikrotik-1.png"
-                    alt="Network Security"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="related-content">
-                  <h3
-                    data-en="VPN Technologies Comparison"
-                    data-fa="مقایسه تکنولوژی‌های VPN"
-                  >
-                    مقایسه تکنولوژی‌های VPN
-                  </h3>
-                  <p
-                    data-en="Detailed comparison of different VPN technologies and their use cases"
-                    data-fa="مقایسه تفصیلی تکنولوژی‌های مختلف VPN و موارد استفاده آنها"
-                  >
-                    مقایسه تفصیلی تکنولوژی‌های مختلف VPN و موارد استفاده آنها
-                  </p>
-                  <a
-                    href="#"
-                    class="read-more"
-                    data-en="Read More"
-                    data-fa="ادامه مطلب"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
+              </section>
+              <nav class="article-footer-nav" aria-label="Article footer navigation">
+                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
+              </nav>
+            </footer>
+          </article>
+        </div></div></div>
       </section>
     </main>
-
-    <!-- Scripts -->
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-    <script src="../assets/vendor/aos/aos.js" defer></script>
-    <script src="../assets/js/main.js?v=1000" defer></script>
-
-    <!-- Language Toggle JavaScript -->
-    <script src="../assets/js/i18n.js?v=1000" defer></script>
-
-    <!-- Custom JavaScript for CMD Article -->
-    <script>
-      // Copy code functionality
-      function copyCode(button) {
-        const codeBlock = button.parentElement.nextElementSibling.querySelector('code');
-        const text = codeBlock.textContent;
-        
-        navigator.clipboard.writeText(text).then(() => {
-          const originalIcon = button.innerHTML;
-          button.innerHTML = '<i class="bi bi-check"></i>';
-          button.classList.add('copied');
-          
-          setTimeout(() => {
-            button.innerHTML = originalIcon;
-            button.classList.remove('copied');
-          }, 2000);
-        }).catch(err => {
-          console.error('Failed to copy text: ', err);
-        });
-      }
-
-      // Initialize AOS (Animate On Scroll)
-      document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-          duration: 1000,
-          easing: 'ease-in-out',
-          once: true,
-          mirror: false
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-              target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          });
-        });
-
-      });
-
-    </script>
-
-  <!-- ===============================================
-    ==================== FOOTER SECTION ==================
-    =============================================== -->
-  <footer id="footer" class="footer position-relative">
+    <footer id="footer" class="footer position-relative">
     <div class="footer-background">
       <div class="footer-pattern"></div>
     </div>
@@ -1795,11 +1183,19 @@ tasklist /fi "pid eq <PID>"</code></pre>
       </div>
     </div>
   </footer>
-  <!-- End Footer Section -->
+    <div id="preloader"></div>
+
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../assets/vendor/aos/aos.js" defer></script>
+    <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../assets/js/main.js?v=1000" defer></script>
+    <script src="../assets/js/i18n.js?v=1000" defer></script>
 
   </body>
 </html>
-
-
-
-
