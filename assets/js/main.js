@@ -148,7 +148,7 @@
           e.preventDefault();
           headerToggle();
         },
-        { passive: false }
+        { passive: false },
       );
     }
 
@@ -176,7 +176,7 @@
           e.preventDefault();
           closeMenu();
         },
-        { passive: false }
+        { passive: false },
       );
     }
   }
@@ -213,7 +213,6 @@
     }
   }
   window.addEventListener("load", aosInit);
-
 
   if (window.PureCounter) {
     // Improve mobile settings for PureCounter
@@ -313,7 +312,8 @@
             setTimeout(() => initIsotope.arrange(), 150);
             if (document.fonts && document.fonts.ready) {
               document.fonts.ready.then(() => {
-                if (container._isotopeInstance) container._isotopeInstance.arrange();
+                if (container._isotopeInstance)
+                  container._isotopeInstance.arrange();
               });
             }
 
@@ -331,7 +331,7 @@
                 "click",
                 function () {
                   const activeFilter = isotopeItem.querySelector(
-                    ".isotope-filters .filter-active"
+                    ".isotope-filters .filter-active",
                   );
                   if (activeFilter) {
                     activeFilter.classList.remove("filter-active");
@@ -347,7 +347,7 @@
                     }, 200);
                   }
                 },
-                false
+                false,
               );
 
               // Improve touch events performance for filters on mobile
@@ -358,7 +358,7 @@
                     e.preventDefault();
                     this.click();
                   },
-                  { passive: false }
+                  { passive: false },
                 );
               }
             });
@@ -404,7 +404,7 @@
       document.querySelectorAll(".isotope-container").forEach((container) => {
         if (container._isotopeInstance) container._isotopeInstance.arrange();
       });
-    }, 150)
+    }, 150),
   );
 
   // Improve mobile performance for portfolio filters
@@ -465,7 +465,7 @@
     if (window.innerWidth <= 768) {
       document
         .querySelectorAll(
-          ".portfolio-info .preview-link, .portfolio-info .details-link"
+          ".portfolio-info .preview-link, .portfolio-info .details-link",
         )
         .forEach((link) => {
           link.style.fontSize = "20px";
@@ -628,7 +628,8 @@
               let config = JSON.parse(configElement.innerHTML.trim());
 
               const isRtl = document.documentElement.dir === "rtl";
-              const isTestimonialsSlider = swiperElement.closest(".testimonials");
+              const isTestimonialsSlider =
+                swiperElement.closest(".testimonials");
 
               // Keep Swiper aware of document direction for testimonials
               if (isTestimonialsSlider) {
@@ -793,9 +794,7 @@
 
   // Load-more for articles (portfolio) section
   function initArticlesLoadMore() {
-    const container = document.querySelector(
-      "#portfolio .isotope-container"
-    );
+    const container = document.querySelector("#portfolio .isotope-container");
     const loadMoreBtn = document.getElementById("articles-load-more");
     if (!container || !loadMoreBtn) return;
 
@@ -850,15 +849,13 @@
     });
 
     // Reset and recalc when filters change
-    document
-      .querySelectorAll(".portfolio-filters li")
-      .forEach((filterBtn) => {
-        filterBtn.addEventListener("click", () => {
-          visibleCount = batchSize;
-          // Give Isotope a moment to apply the filter
-          setTimeout(updateVisibility, 50);
-        });
+    document.querySelectorAll(".portfolio-filters li").forEach((filterBtn) => {
+      filterBtn.addEventListener("click", () => {
+        visibleCount = batchSize;
+        // Give Isotope a moment to apply the filter
+        setTimeout(updateVisibility, 50);
       });
+    });
 
     // If Isotope is present, sync after arrange completes
     if (container._isotopeInstance && container._isotopeInstance.on) {
@@ -909,176 +906,188 @@
   // CONTACT FORM HANDLING
   // ===============================================
   function initContactForm() {
-    const form = document.querySelector('.php-email-form');
+    const form = document.querySelector(".php-email-form");
     if (!form) return;
 
     const submitBtn = form.querySelector('button[type="submit"]');
-    const statusContainer = form.querySelector('.form-status');
-    const loadingEl = statusContainer?.querySelector('.loading');
-    const errorEl = statusContainer?.querySelector('.error-message');
-    const sentEl = statusContainer?.querySelector('.sent-message');
+    const statusContainer = form.querySelector(".form-status");
+    const loadingEl = statusContainer?.querySelector(".loading");
+    const errorEl = statusContainer?.querySelector(".error-message");
+    const sentEl = statusContainer?.querySelector(".sent-message");
     const originalText = submitBtn.innerHTML;
 
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       const formData = new FormData(form);
 
       // Show loading state
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i><span data-en="Sending..." data-fa="در حال ارسال...">Sending...</span>';
-      submitBtn.setAttribute('aria-busy', 'true');
-      loadingEl?.classList.add('visible');
-      errorEl?.classList.remove('visible');
-      sentEl?.classList.remove('visible');
+      submitBtn.innerHTML =
+        '<i class="bi bi-hourglass-split"></i><span data-en="Sending..." data-fa="در حال ارسال...">Sending...</span>';
+      submitBtn.setAttribute("aria-busy", "true");
+      loadingEl?.classList.add("visible");
+      errorEl?.classList.remove("visible");
+      sentEl?.classList.remove("visible");
 
       // Get CSRF token - must succeed before submitting
       let csrfToken = null;
       try {
-        const csrfResponse = await fetch('/forms/get-csrf-token.php', {
-          cache: 'no-store',
-          credentials: 'same-origin'
+        const csrfResponse = await fetch("/forms/get-csrf-token.php", {
+          cache: "no-store",
+          credentials: "same-origin",
         });
         if (!csrfResponse.ok) {
-          throw new Error('CSRF endpoint returned ' + csrfResponse.status);
+          throw new Error("CSRF endpoint returned " + csrfResponse.status);
         }
         const csrfData = await csrfResponse.json();
         if (csrfData.token) {
           csrfToken = csrfData.token;
         } else {
-          throw new Error('No CSRF token in response');
+          throw new Error("No CSRF token in response");
         }
       } catch (err) {
-        console.error('Could not fetch CSRF token:', err);
-        loadingEl?.classList.remove('visible');
-        errorEl?.classList.add('visible');
-        const errorSpan = errorEl?.querySelector('span');
-        if (errorSpan) errorSpan.textContent = 'Security token error. Please refresh and try again.';
+        console.error("Could not fetch CSRF token:", err);
+        loadingEl?.classList.remove("visible");
+        errorEl?.classList.add("visible");
+        const errorSpan = errorEl?.querySelector("span");
+        if (errorSpan)
+          errorSpan.textContent =
+            "Security token error. Please refresh and try again.";
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        submitBtn.removeAttribute('aria-busy');
+        submitBtn.removeAttribute("aria-busy");
         return;
       }
 
-      formData.set('csrf_token', csrfToken);
+      formData.set("csrf_token", csrfToken);
 
       try {
-        const response = await fetch('/forms/contact.php', {
-          method: 'POST',
+        const response = await fetch("/forms/contact.php", {
+          method: "POST",
           body: formData,
-          credentials: 'same-origin'
+          credentials: "same-origin",
         });
 
         // Read response body to check for "OK"
         const responseText = await response.text();
 
-        if (response.ok && responseText.trim() === 'OK') {
+        if (response.ok && responseText.trim() === "OK") {
           // Show success
-          loadingEl?.classList.remove('visible');
-          sentEl?.classList.add('visible');
+          loadingEl?.classList.remove("visible");
+          sentEl?.classList.add("visible");
           form.reset();
 
           // Hide success message after 5 seconds
           setTimeout(() => {
-            sentEl?.classList.remove('visible');
+            sentEl?.classList.remove("visible");
           }, 5000);
         } else {
-          loadingEl?.classList.remove('visible');
-          errorEl?.classList.add('visible');
-          const errorSpan = errorEl?.querySelector('span');
-          if (errorSpan) errorSpan.textContent = responseText || 'Error sending message. Please try again.';
+          loadingEl?.classList.remove("visible");
+          errorEl?.classList.add("visible");
+          const errorSpan = errorEl?.querySelector("span");
+          if (errorSpan)
+            errorSpan.textContent =
+              responseText || "Error sending message. Please try again.";
         }
       } catch (error) {
-        console.error('Form submission error:', error);
-        loadingEl?.classList.remove('visible');
-        errorEl?.classList.add('visible');
-        const errorSpan = errorEl?.querySelector('span');
-        if (errorSpan) errorSpan.textContent = 'An error occurred. Please try again later.';
+        console.error("Form submission error:", error);
+        loadingEl?.classList.remove("visible");
+        errorEl?.classList.add("visible");
+        const errorSpan = errorEl?.querySelector("span");
+        if (errorSpan)
+          errorSpan.textContent = "An error occurred. Please try again later.";
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        submitBtn.removeAttribute('aria-busy');
+        submitBtn.removeAttribute("aria-busy");
       }
     });
   }
 
-  window.addEventListener('load', initContactForm);
+  window.addEventListener("load", initContactForm);
 
   // ===============================================
   // ARTICLE CODE COPY COMPONENT
   // ===============================================
   function initArticleCodeCopy() {
-    const selector = '.article-page .article-copy-button';
+    const selector = ".article-page .article-copy-button";
     const defaultIcon = '<i class="bi bi-clipboard" aria-hidden="true"></i>';
     const successIcon = '<i class="bi bi-check2" aria-hidden="true"></i>';
 
     const labels = () => {
-      const isRtl = document.documentElement.dir === 'rtl';
+      const isRtl = document.documentElement.dir === "rtl";
       return isRtl
-        ? { copy: 'کپی کد', copied: 'کپی شد', error: 'کپی نشد' }
-        : { copy: 'Copy code', copied: 'Code copied', error: 'Could not copy code' };
+        ? { copy: "کپی کد", copied: "کپی شد", error: "کپی نشد" }
+        : {
+            copy: "Copy code",
+            copied: "Code copied",
+            error: "Could not copy code",
+          };
     };
 
-    const updateButton = (button, state = 'default') => {
+    const updateButton = (button, state = "default") => {
       const label = labels();
-      button.classList.remove('is-copied', 'is-copy-error');
+      button.classList.remove("is-copied", "is-copy-error");
       button.disabled = false;
       button.innerHTML = defaultIcon;
-      button.setAttribute('aria-label', label.copy);
+      button.setAttribute("aria-label", label.copy);
       button.title = label.copy;
 
-      if (state === 'copied') {
-        button.classList.add('is-copied');
+      if (state === "copied") {
+        button.classList.add("is-copied");
         button.innerHTML = successIcon;
-        button.setAttribute('aria-label', label.copied);
+        button.setAttribute("aria-label", label.copied);
         button.title = label.copied;
       }
 
-      if (state === 'error') {
-        button.classList.add('is-copy-error');
-        button.setAttribute('aria-label', label.error);
+      if (state === "error") {
+        button.classList.add("is-copy-error");
+        button.setAttribute("aria-label", label.error);
         button.title = label.error;
       }
     };
 
     const fallbackCopy = (value) => {
-      const textArea = document.createElement('textarea');
+      const textArea = document.createElement("textarea");
       textArea.value = value;
-      textArea.setAttribute('readonly', '');
-      textArea.style.cssText = 'position:fixed;left:-9999px;top:0;opacity:0;';
+      textArea.setAttribute("readonly", "");
+      textArea.style.cssText = "position:fixed;left:-9999px;top:0;opacity:0;";
       document.body.appendChild(textArea);
       textArea.select();
-      const copied = document.execCommand('copy');
+      const copied = document.execCommand("copy");
       textArea.remove();
       return copied;
     };
 
     document.querySelectorAll(selector).forEach((button) => {
-      button.type = 'button';
+      button.type = "button";
       updateButton(button);
     });
 
-    document.addEventListener('click', async (event) => {
+    document.addEventListener("click", async (event) => {
       const button = event.target.closest(selector);
-      if (!button || button.dataset.articleCopyBusy === 'true') return;
+      if (!button || button.dataset.articleCopyBusy === "true") return;
 
-      const code = button.closest('.article-code')?.querySelector('code')?.textContent;
+      const code = button
+        .closest(".article-code")
+        ?.querySelector("code")?.textContent;
       if (!code) return;
 
-      button.dataset.articleCopyBusy = 'true';
+      button.dataset.articleCopyBusy = "true";
       button.disabled = true;
 
       try {
         if (navigator.clipboard?.writeText && window.isSecureContext) {
           await navigator.clipboard.writeText(code);
         } else if (!fallbackCopy(code)) {
-          throw new Error('Clipboard fallback failed');
+          throw new Error("Clipboard fallback failed");
         }
 
-        updateButton(button, 'copied');
+        updateButton(button, "copied");
       } catch (error) {
-        console.error('Article code copy failed:', error);
-        updateButton(button, 'error');
+        console.error("Article code copy failed:", error);
+        updateButton(button, "error");
       }
 
       window.setTimeout(() => {
@@ -1088,30 +1097,32 @@
     });
   }
 
-  window.addEventListener('load', initArticleCodeCopy);
+  window.addEventListener("load", initArticleCodeCopy);
 
   // ===============================================
   // ARTICLE SCROLL PROGRESS
   // ===============================================
   function initScrollProgress() {
     // Only run on article pages
-    if (!document.querySelector('.article-content')) return;
+    if (!document.querySelector(".article-content")) return;
 
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress-container';
+    const progressBar = document.createElement("div");
+    progressBar.className = "scroll-progress-container";
     progressBar.innerHTML = '<div class="scroll-progress"></div>';
     document.body.appendChild(progressBar);
 
-    const progress = progressBar.querySelector('.scroll-progress');
+    const progress = progressBar.querySelector(".scroll-progress");
 
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    window.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
       progress.style.width = scrolled + "%";
     });
   }
 
-  window.addEventListener('load', initScrollProgress);
-
+  window.addEventListener("load", initScrollProgress);
 })();

@@ -109,8 +109,8 @@ self.addEventListener("install", function (event) {
                 })
                 .catch(() => {
                   // Silently fail for portfolio images - they'll be cached on demand
-                })
-            )
+                }),
+            ),
           );
         });
       })
@@ -123,7 +123,7 @@ self.addEventListener("install", function (event) {
         // Core cache installation is mandatory - propagate failure
         console.error("Core cache installation failed:", error);
         throw error;
-      })
+      }),
   );
 });
 
@@ -146,9 +146,13 @@ self.addEventListener("fetch", function (event) {
     return;
   }
 
-  const isPortfolioImage = portfolioImages.some((img) => url.pathname.endsWith(img.replace("./", "")));
-  const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ico)$/i.test(url.pathname);
-  const isHtmlDocument = event.request.destination === "document" || url.pathname.endsWith(".html");
+  const isPortfolioImage = portfolioImages.some((img) =>
+    url.pathname.endsWith(img.replace("./", "")),
+  );
+  const isStaticAsset =
+    /\.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ico)$/i.test(url.pathname);
+  const isHtmlDocument =
+    event.request.destination === "document" || url.pathname.endsWith(".html");
 
   // Strategy 1: Network-First for HTML documents (with offline fallback)
   if (isHtmlDocument) {
@@ -179,7 +183,7 @@ self.addEventListener("fetch", function (event) {
           // Return offline fallback
           return caches.match("./index.html");
         }
-      })()
+      })(),
     );
     return;
   }
@@ -206,7 +210,7 @@ self.addEventListener("fetch", function (event) {
 
         // Return cached immediately if available, otherwise wait for network
         return cachedResponse || networkFetch;
-      })()
+      })(),
     );
     return;
   }
@@ -241,7 +245,7 @@ self.addEventListener("fetch", function (event) {
         if (event.request.destination === "document") {
           return caches.match("./index.html");
         }
-      })
+      }),
   );
 });
 
@@ -253,11 +257,14 @@ self.addEventListener("activate", function (event) {
       const cacheNames = await caches.keys();
       await Promise.all(
         cacheNames.map(function (cacheName) {
-          if (cacheName !== CACHE_NAME && cacheName !== OFFLINE_FALLBACK_CACHE) {
+          if (
+            cacheName !== CACHE_NAME &&
+            cacheName !== OFFLINE_FALLBACK_CACHE
+          ) {
             console.log("Deleting old cache:", cacheName);
             return caches.delete(cacheName);
           }
-        })
+        }),
       );
 
       // Enable Navigation Preload (if supported)
@@ -271,7 +278,7 @@ self.addEventListener("activate", function (event) {
 
       // Take control of all clients immediately
       await self.clients.claim();
-    })()
+    })(),
   );
 });
 

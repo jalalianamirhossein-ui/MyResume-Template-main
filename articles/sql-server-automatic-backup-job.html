@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>SQL Server Automatic Backup Job | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Schedule secure SQL Server backups with Agent jobs, retention, and alerts" />
+    <meta
+      name="description"
+      content="Schedule secure SQL Server backups with Agent jobs, retention, and alerts"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/sql-server-automatic-backup-job.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/sql-server-automatic-backup-job.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-microsoft">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,111 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Check SQL Server Agent" data-fa="۰۱ — بررسی SQL Server Agent">Check SQL Server Agent</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#test-full-backup"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Test Full Backup" data-fa="۰۲ — تست Full Backup">Test Full Backup</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#create-job"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Create Agent Job" data-fa="۰۳ — ساخت SQL Server Agent Job">Create Agent Job</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#dated-backup-file"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Dated backup file" data-fa="۰۴ — ایجاد فایل Backup با تاریخ">Dated backup file</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#schedule"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Schedule" data-fa="۰۵ — Schedule">Schedule</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#verify-backup"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Verify Backup" data-fa="۰۶ — بررسی صحت Backup">Verify Backup</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#job-history"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Job History" data-fa="۰۷ — بررسی Job History">Job History</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#official-resources"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official resources" data-fa="منابع رسمی">Official resources</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,145 +301,907 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Microsoft</span></nav>
-          <div class="article-meta"><span class="article-category">Microsoft</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Microsoft</time></span></div>
-          <h1 class="article-title hero-title">SQL Server Automatic Backup Job</h1>
-          <p class="article-excerpt hero-subtitle">Schedule secure SQL Server backups with Agent jobs, retention, and alerts</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/windows-5.png" alt="SQL Server Automatic Backup Job" /><div class="banner-content"><h2 class="banner-title">Microsoft</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Schedule secure SQL Server backups with Agent jobs, retention, and alerts</p></section><section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section><section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">Microsoft</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">Microsoft</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Configure Automatic SQL Server Backups with SQL Server Agent"
+                data-fa="تنظیم بکاپ خودکار SQL Server با SQL Server Agent"
+              >
+                Configure Automatic SQL Server Backups with SQL Server Agent
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Create a scheduled job for full database backups in SQL Server"
+                data-fa="ساخت Job زمان‌بندی‌شده برای Full Backup دیتابیس در SQL Server"
+              >
+                Create a scheduled job for full database backups in SQL Server
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/windows-5.png"
+                    alt="SQL Server Automatic Backup Job"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">Microsoft</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section">
+                  <h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2>
+                  <p
+                    data-en="Regular backups of SQL Server databases are essential to prevent data loss. SQL Server Agent can run backup operations automatically on a schedule."
+                    data-fa="برای جلوگیری از ازدست‌رفتن اطلاعات، تهیه Backup منظم از دیتابیس‌های SQL Server ضروری است. با SQL Server Agent می‌توان عملیات Backup را به‌صورت خودکار و زمان‌بندی‌شده اجرا کرد."
+                  >
+                    Regular backups of SQL Server databases are essential to
+                    prevent data loss. SQL Server Agent can run backup
+                    operations automatically on a schedule.
+                  </p>
+                </section>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+                <section id="article-status" class="article-section">
+                  <h2 data-en="Prerequisites" data-fa="پیش‌نیازها">
+                    Prerequisites
+                  </h2>
+                  <ul>
+                    <li
+                      data-en="SQL Server Agent is enabled."
+                      data-fa="SQL Server Agent فعال باشد."
+                    >
+                      SQL Server Agent is enabled.
+                    </li>
+                    <li
+                      data-en="Appropriate access to SQL Server is available."
+                      data-fa="دسترسی مناسب به SQL Server در دسترس باشد."
+                    >
+                      Appropriate access to SQL Server is available.
+                    </li>
+                    <li
+                      data-en="There is sufficient storage space for the backup."
+                      data-fa="فضای کافی برای Backup وجود داشته باشد."
+                    >
+                      There is sufficient storage space for the backup.
+                    </li>
+                    <li
+                      data-en="The SQL Server Service Account can access the destination path."
+                      data-fa="SQL Server Service Account به مسیر مقصد دسترسی داشته باشد."
+                    >
+                      The SQL Server Service Account can access the destination
+                      path.
+                    </li>
+                  </ul>
+                </section>
+
+                <section id="planned-sections" class="article-section">
+                  <h2
+                    data-en="01 — Check SQL Server Agent"
+                    data-fa="۰۱ — بررسی SQL Server Agent"
+                  >
+                    01 — Check SQL Server Agent
+                  </h2>
+                  <p
+                    data-en="In SQL Server Management Studio, confirm that the SQL Server Agent service is in the Running state before creating the job."
+                    data-fa="در SQL Server Management Studio بررسی کنید سرویس SQL Server Agent در وضعیت Running باشد؛ سپس Job را ایجاد کنید."
+                  >
+                    In SQL Server Management Studio, confirm that the SQL Server
+                    Agent service is in the Running state before creating the
+                    job.
+                  </p>
+                </section>
+
+                <section id="test-full-backup" class="article-section">
+                  <h2
+                    data-en="02 — Test a full backup"
+                    data-fa="۰۲ — تست Full Backup"
+                  >
+                    02 — Test a full backup
+                  </h2>
+                  <p
+                    data-en="Run a full backup once before scheduling it to confirm that the database and destination path are ready."
+                    data-fa="پیش از زمان‌بندی، یک Full Backup را یک‌بار اجرا کنید تا آماده‌بودن دیتابیس و مسیر مقصد تأیید شود."
+                  >
+                    Run a full backup once before scheduling it to confirm that
+                    the database and destination path are ready.
+                  </p>
+                  <div class="article-code">
+                    <div class="article-code-header">
+                      <span
+                        class="article-code-label"
+                        data-en="T-SQL"
+                        data-fa="T-SQL"
+                        >T-SQL</span
+                      >
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <pre><code class="language-sql">BACKUP DATABASE [NewShop]
+TO DISK = N'D:\SQLBackup\NewShop_FULL.bak'
+WITH
+    COMPRESSION,
+    CHECKSUM,
+    STATS = 10;</code></pre>
+                  </div>
+                  <div class="article-callout article-callout--tip">
+                    <p
+                      class="article-callout-title"
+                      data-en="Backup options"
+                      data-fa="گزینه‌های Backup"
+                    >
+                      Backup options
+                    </p>
+                    <p
+                      data-en="COMPRESSION reduces backup size. CHECKSUM helps detect possible corruption during the backup operation, and STATS = 10 reports progress at 10-percent intervals."
+                      data-fa="COMPRESSION حجم Backup را کاهش می‌دهد. CHECKSUM برای تشخیص خرابی احتمالی در فرایند Backup استفاده می‌شود و STATS = 10 میزان پیشرفت را در بازه‌های ۱۰ درصدی گزارش می‌کند."
+                    >
+                      COMPRESSION reduces backup size. CHECKSUM helps detect
+                      possible corruption during the backup operation, and STATS
+                      = 10 reports progress at 10-percent intervals.
+                    </p>
+                  </div>
+                </section>
+
+                <section id="create-job" class="article-section">
+                  <h2
+                    data-en="03 — Create a SQL Server Agent job"
+                    data-fa="۰۳ — ساخت SQL Server Agent Job"
+                  >
+                    03 — Create a SQL Server Agent job
+                  </h2>
+                  <p
+                    data-en="In SQL Server Management Studio, open SQL Server Agent, then Jobs, and select New Job."
+                    data-fa="در SQL Server Management Studio به مسیر SQL Server Agent > Jobs > New Job بروید."
+                  >
+                    In SQL Server Management Studio, open SQL Server Agent, then
+                    Jobs, and select New Job.
+                  </p>
+                  <div class="article-card-note">
+                    <p
+                      data-en="On the Steps page, create a step with the Transact-SQL script (T-SQL) type and add the backup command to that step."
+                      data-fa="در بخش Steps، یک Step از نوع Transact-SQL script (T-SQL) ایجاد کرده و دستور Backup را در آن قرار دهید."
+                    >
+                      On the Steps page, create a step with the Transact-SQL
+                      script (T-SQL) type and add the backup command to that
+                      step.
+                    </p>
+                  </div>
+                </section>
+
+                <section id="dated-backup-file" class="article-section">
+                  <h2
+                    data-en="04 — Create a dated backup file"
+                    data-fa="۰۴ — ایجاد فایل Backup با تاریخ"
+                  >
+                    04 — Create a dated backup file
+                  </h2>
+                  <p
+                    data-en="Use the following script in the job step to add the execution date to the backup file name."
+                    data-fa="برای افزودن تاریخ اجرا به نام فایل Backup، اسکریپت زیر را در Job Step قرار دهید."
+                  >
+                    Use the following script in the job step to add the
+                    execution date to the backup file name.
+                  </p>
+                  <div class="article-code">
+                    <div class="article-code-header">
+                      <span
+                        class="article-code-label"
+                        data-en="T-SQL"
+                        data-fa="T-SQL"
+                        >T-SQL</span
+                      >
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <pre><code class="language-sql">DECLARE @FileName nvarchar(500);
+
+SET @FileName =
+    N'D:\SQLBackup\NewShop_FULL_' +
+    CONVERT(char(8), GETDATE(), 112) +
+    N'.bak';
+
+BACKUP DATABASE [NewShop]
+TO DISK = @FileName
+WITH COMPRESSION, CHECKSUM, STATS = 10;</code></pre>
+                  </div>
+                </section>
+
+                <section id="schedule" class="article-section">
+                  <h2
+                    data-en="05 — Configure the schedule"
+                    data-fa="۰۵ — تنظیم Schedule"
+                  >
+                    05 — Configure the schedule
+                  </h2>
+                  <p
+                    data-en="On the Schedules page of the job, add a recurring schedule. For example, configure the Full Backup to run every night at 02:00."
+                    data-fa="در بخش Schedules مربوط به Job، یک Schedule تکرارشونده ایجاد کنید؛ برای مثال Full Backup را هر شب ساعت ۰۲:۰۰ اجرا کنید."
+                  >
+                    On the Schedules page of the job, add a recurring schedule.
+                    For example, configure the Full Backup to run every night at
+                    02:00.
+                  </p>
+                  <div class="article-callout article-callout--warning">
+                    <p
+                      class="article-callout-title"
+                      data-en="Plan the schedule"
+                      data-fa="Schedule را با برنامه‌ریزی انتخاب کنید"
+                    >
+                      Plan the schedule
+                    </p>
+                    <p
+                      data-en="Choose a time that fits the workload and available storage capacity of the server."
+                      data-fa="زمان اجرا را متناسب با بار کاری و ظرفیت ذخیره‌سازی در دسترس سرور انتخاب کنید."
+                    >
+                      Choose a time that fits the workload and available storage
+                      capacity of the server.
+                    </p>
+                  </div>
+                </section>
+
+                <section id="verify-backup" class="article-section">
+                  <h2
+                    data-en="06 — Verify the backup"
+                    data-fa="۰۶ — بررسی صحت Backup"
+                  >
+                    06 — Verify the backup
+                  </h2>
+                  <p
+                    data-en="Use RESTORE VERIFYONLY to check that the backup set is complete and readable."
+                    data-fa="از RESTORE VERIFYONLY برای بررسی کامل‌بودن و خوانا بودن Backup Set استفاده کنید."
+                  >
+                    Use RESTORE VERIFYONLY to check that the backup set is
+                    complete and readable.
+                  </p>
+                  <div class="article-code">
+                    <div class="article-code-header">
+                      <span
+                        class="article-code-label"
+                        data-en="T-SQL"
+                        data-fa="T-SQL"
+                        >T-SQL</span
+                      >
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <pre><code class="language-sql">RESTORE VERIFYONLY
+FROM DISK = N'D:\SQLBackup\NewShop_FULL_20260902.bak';</code></pre>
+                  </div>
+                  <div class="article-callout article-callout--warning">
+                    <p
+                      class="article-callout-title"
+                      data-en="Important limitation"
+                      data-fa="محدودیت مهم"
+                    >
+                      Important limitation
+                    </p>
+                    <p
+                      data-en="RESTORE VERIFYONLY is not a replacement for a real restore test. Backups must be restored periodically to a test environment and verified there."
+                      data-fa="RESTORE VERIFYONLY جایگزین تست واقعی Restore نیست. Backup باید به‌صورت دوره‌ای واقعاً روی محیط Test Restore و در همان محیط بررسی شود."
+                    >
+                      RESTORE VERIFYONLY is not a replacement for a real restore
+                      test. Backups must be restored periodically to a test
+                      environment and verified there.
+                    </p>
+                  </div>
+                </section>
+
+                <section id="job-history" class="article-section">
+                  <h2
+                    data-en="07 — Review job history"
+                    data-fa="۰۷ — بررسی تاریخچه Job"
+                  >
+                    07 — Review job history
+                  </h2>
+                  <p
+                    data-en="In SQL Server Management Studio, expand SQL Server Agent and Jobs, right-click the job, and select View History. Review failed runs and the messages recorded for the job step; use the SQL Server Agent error information to investigate failures."
+                    data-fa="در SQL Server Management Studio، SQL Server Agent و سپس Jobs را باز کنید، روی Job راست‌کلیک کرده و View History را انتخاب کنید. اجراهای ناموفق و پیام‌های ثبت‌شده برای Job Step را بررسی کنید و برای بررسی خطاها از اطلاعات خطای SQL Server Agent استفاده کنید."
+                  >
+                    In SQL Server Management Studio, expand SQL Server Agent and
+                    Jobs, right-click the job, and select View History. Review
+                    failed runs and the messages recorded for the job step; use
+                    the SQL Server Agent error information to investigate
+                    failures.
+                  </p>
+                </section>
+
+                <section id="troubleshooting" class="article-section">
+                  <h2 data-en="Troubleshooting" data-fa="رفع اشکال">
+                    Troubleshooting
+                  </h2>
+                  <div class="article-grid">
+                    <div class="article-card article-card--method">
+                      <span class="article-card-icon"
+                        ><i class="bi bi-play-circle" aria-hidden="true"></i
+                      ></span>
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="SQL Server Agent is not running"
+                          data-fa="SQL Server Agent در حال اجرا نیست"
+                        >
+                          SQL Server Agent is not running
+                        </h3>
+                        <p
+                          data-en="Start SQL Server Agent and confirm that its status is Running before expecting the schedule to execute."
+                          data-fa="SQL Server Agent را اجرا کرده و پیش از انتظار برای اجرای Schedule، وضعیت آن را روی Running تأیید کنید."
+                        >
+                          Start SQL Server Agent and confirm that its status is
+                          Running before expecting the schedule to execute.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <span class="article-card-icon"
+                        ><i class="bi bi-folder-x" aria-hidden="true"></i
+                      ></span>
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="The destination path cannot be accessed"
+                          data-fa="مسیر مقصد در دسترس نیست"
+                        >
+                          The destination path cannot be accessed
+                        </h3>
+                        <p
+                          data-en="Verify that the backup folder exists and that the SQL Server Service Account has the required access to it."
+                          data-fa="بررسی کنید پوشه Backup وجود دارد و SQL Server Service Account دسترسی لازم به آن را دارد."
+                        >
+                          Verify that the backup folder exists and that the SQL
+                          Server Service Account has the required access to it.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <span class="article-card-icon"
+                        ><i class="bi bi-device-hdd" aria-hidden="true"></i
+                      ></span>
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="There is not enough disk space"
+                          data-fa="فضای دیسک کافی نیست"
+                        >
+                          There is not enough disk space
+                        </h3>
+                        <p
+                          data-en="Check the available space in the backup destination and review the retention plan before the next scheduled run."
+                          data-fa="پیش از اجرای زمان‌بندی‌شده بعدی، فضای موجود در مسیر Backup و برنامه نگهداری فایل‌ها را بررسی کنید."
+                        >
+                          Check the available space in the backup destination
+                          and review the retention plan before the next
+                          scheduled run.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <span class="article-card-icon"
+                        ><i class="bi bi-clock-history" aria-hidden="true"></i
+                      ></span>
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="The job fails or does not run"
+                          data-fa="Job اجرا نمی‌شود یا ناموفق است"
+                        >
+                          The job fails or does not run
+                        </h3>
+                        <p
+                          data-en="Review Job History, the job step message, the schedule configuration, and SQL Server Agent error information to identify the failed stage."
+                          data-fa="برای شناسایی مرحله ناموفق، Job History، پیام Job Step، تنظیمات Schedule و اطلاعات خطای SQL Server Agent را بررسی کنید."
+                        >
+                          Review Job History, the job step message, the schedule
+                          configuration, and SQL Server Agent error information
+                          to identify the failed stage.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="best-practices" class="article-section">
+                  <h2 data-en="Best practices" data-fa="بهترین روش‌ها">
+                    Best practices
+                  </h2>
+                  <div class="article-callout article-callout--tip">
+                    <ul>
+                      <li
+                        data-en="Keep the backup destination available and ensure the SQL Server Service Account has the required access."
+                        data-fa="مسیر Backup را در دسترس نگه دارید و دسترسی لازم SQL Server Service Account را تأیید کنید."
+                      >
+                        Keep the backup destination available and ensure the SQL
+                        Server Service Account has the required access.
+                      </li>
+                      <li
+                        data-en="Use COMPRESSION and CHECKSUM as appropriate for the backup policy."
+                        data-fa="متناسب با سیاست Backup، از COMPRESSION و CHECKSUM استفاده کنید."
+                      >
+                        Use COMPRESSION and CHECKSUM as appropriate for the
+                        backup policy.
+                      </li>
+                      <li
+                        data-en="Review Job History after scheduled runs and investigate failed executions promptly."
+                        data-fa="پس از اجراهای زمان‌بندی‌شده Job History را بررسی کرده و اجراهای ناموفق را سریع بررسی کنید."
+                      >
+                        Review Job History after scheduled runs and investigate
+                        failed executions promptly.
+                      </li>
+                      <li
+                        data-en="Periodically restore backups to a test environment; verification alone is not a restore test."
+                        data-fa="Backupها را به‌صورت دوره‌ای روی محیط Test Restore کنید؛ بررسی صحت به‌تنهایی تست Restore نیست."
+                      >
+                        Periodically restore backups to a test environment;
+                        verification alone is not a restore test.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section id="faq" class="article-section">
+                  <h2
+                    data-en="Frequently asked questions"
+                    data-fa="سوالات متداول"
+                  >
+                    Frequently asked questions
+                  </h2>
+                  <div class="article-faq">
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="What type of job step should be created for the backup command?"
+                          data-fa="برای دستور Backup چه نوع Job Step باید ایجاد شود؟"
+                          >What type of job step should be created for the
+                          backup command?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="Create a step with the Transact-SQL script (T-SQL) type and place the backup script in that step."
+                          data-fa="یک Step از نوع Transact-SQL script (T-SQL) ایجاد کرده و اسکریپت Backup را در آن قرار دهید."
+                        >
+                          Create a step with the Transact-SQL script (T-SQL)
+                          type and place the backup script in that step.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="Can RESTORE VERIFYONLY replace a test restore?"
+                          data-fa="آیا RESTORE VERIFYONLY می‌تواند جایگزین تست Restore شود؟"
+                          >Can RESTORE VERIFYONLY replace a test restore?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="No. It verifies that the backup is complete and readable but does not perform a real restore. Periodically restore the backup to a test environment."
+                          data-fa="خیر. این دستور کامل‌بودن و خوانا بودن Backup را بررسی می‌کند، اما Restore واقعی انجام نمی‌دهد. Backup را به‌صورت دوره‌ای روی محیط Test Restore کنید."
+                        >
+                          No. It verifies that the backup is complete and
+                          readable but does not perform a real restore.
+                          Periodically restore the backup to a test environment.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="Where can I review failures of a scheduled backup job?"
+                          data-fa="خطاهای Job زمان‌بندی‌شده Backup را از کجا بررسی کنم؟"
+                          >Where can I review failures of a scheduled backup
+                          job?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="Use View History for the job in SQL Server Agent and inspect the job-step messages and SQL Server Agent error information."
+                          data-fa="از View History مربوط به Job در SQL Server Agent استفاده کرده و پیام‌های Job Step و اطلاعات خطای SQL Server Agent را بررسی کنید."
+                        >
+                          Use View History for the job in SQL Server Agent and
+                          inspect the job-step messages and SQL Server Agent
+                          error information.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="conclusion" class="article-section">
+                  <h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2>
+                  <p
+                    data-en="A scheduled SQL Server Agent job automates full backups after the database, destination path, permissions, and schedule are configured. Verify every backup and regularly perform a real restore in a test environment."
+                    data-fa="با آماده‌سازی دیتابیس، مسیر مقصد، دسترسی‌ها و Schedule، یک SQL Server Agent Job می‌تواند Full Backup را خودکار اجرا کند. هر Backup را بررسی کرده و Restore واقعی را نیز به‌صورت منظم در محیط Test انجام دهید."
+                  >
+                    A scheduled SQL Server Agent job automates full backups
+                    after the database, destination path, permissions, and
+                    schedule are configured. Verify every backup and regularly
+                    perform a real restore in a test environment.
+                  </p>
+                </section>
+
+                <section id="official-resources" class="article-section">
+                  <h2
+                    data-en="Official Microsoft Learn resources"
+                    data-fa="منابع رسمی Microsoft Learn"
+                  >
+                    Official Microsoft Learn resources
+                  </h2>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://learn.microsoft.com/en-us/ssms/agent/create-a-job"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="Create a SQL Server Agent job"
+                        data-fa="ایجاد SQL Server Agent Job"
+                        >Create a SQL Server Agent job</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://learn.microsoft.com/en-us/ssms/agent/schedule-a-job"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="Configure a SQL Server Agent job schedule"
+                        data-fa="تنظیم Schedule برای SQL Server Agent Job"
+                        >Configure a SQL Server Agent job schedule</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver17"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="BACKUP (Transact-SQL)"
+                        data-fa="دستور BACKUP در Transact-SQL"
+                        >BACKUP (Transact-SQL)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://learn.microsoft.com/en-us/sql/t-sql/statements/restore-statements-verifyonly-transact-sql?view=sql-server-ver17"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="RESTORE VERIFYONLY (Transact-SQL)"
+                        data-fa="دستور RESTORE VERIFYONLY در Transact-SQL"
+                        >RESTORE VERIFYONLY (Transact-SQL)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases?view=sql-server-ver17"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="Back up and restore SQL Server databases"
+                        data-fa="پشتیبان‌گیری و Restore دیتابیس‌های SQL Server"
+                        >Back up and restore SQL Server databases</a
+                      >
+                    </li>
+                  </ul>
+                </section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

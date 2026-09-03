@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Complete Guide to Nginx Installation and Configuration on Ubuntu - Meet AJ</title>
-    <meta charset="utf-8" />
+    <title>
+      Complete Guide to Nginx Installation and Configuration on Ubuntu - Meet AJ
+    </title>
+    <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
       content="راهنمای کامل نصب و پیکربندی وب‌سرور Nginx در اوبونتو شامل Virtual Host، SSL، HTTP/2، فایروال و بهینه‌سازی عملکرد. آموزش گام به گام نصب Nginx، تنظیم SSL رایگان، پیکربندی HTTP/2 و بهینه‌سازی سرعت."
@@ -43,7 +45,10 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:alt" content="Nginx Ubuntu Installation Guide - Web Server Configuration" />
+    <meta
+      property="og:image:alt"
+      content="Nginx Ubuntu Installation Guide - Web Server Configuration"
+    />
     <meta
       property="og:url"
       content="https://meetaj.ir/articles/nginx-installation-configuration-ubuntu.html"
@@ -58,8 +63,14 @@
       property="twitter:description"
       content="راهنمای کامل نصب و پیکربندی وب‌سرور Nginx در اوبونتو شامل Virtual Host، SSL، HTTP/2، فایروال و بهینه‌سازی عملکرد. آموزش گام به گام نصب Nginx، تنظیم SSL رایگان، پیکربندی HTTP/2 و بهینه‌سازی سرعت."
     />
-    <meta property="twitter:image" content="../assets/img/portfolio/linux-1.png" />
-    <meta property="twitter:image:alt" content="Nginx Ubuntu Installation Guide - Web Server Configuration" />
+    <meta
+      property="twitter:image"
+      content="../assets/img/portfolio/linux-1.png"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="Nginx Ubuntu Installation Guide - Web Server Configuration"
+    />
     <meta property="article:author" content="AmirHossein Jalalian" />
     <meta
       property="article:published_time"
@@ -169,20 +180,54 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-linux">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -207,7 +252,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -299,25 +343,145 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#advantages"><i class="bi bi-award navicon" aria-hidden="true"></i><span data-en="Advantages of Nginx over Apache" data-fa="مزایای Nginx نسبت به Apache">Advantages of Nginx over Apache</span></a></li>
-          <li class="article-nav-item"><a href="#prerequisites"><i class="bi bi-clipboard-check navicon" aria-hidden="true"></i><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a></li>
-          <li class="article-nav-item"><a href="#installation"><i class="bi bi-download navicon" aria-hidden="true"></i><span data-en="Installing Nginx" data-fa="نصب Nginx">Installing Nginx</span></a></li>
-          <li class="article-nav-item"><a href="#service-management"><i class="bi bi-gear navicon" aria-hidden="true"></i><span data-en="Service Management" data-fa="مدیریت سرویس Nginx">Service Management</span></a></li>
-          <li class="article-nav-item"><a href="#virtual-host"><i class="bi bi-hdd-network navicon" aria-hidden="true"></i><span data-en="Virtual Host Configuration" data-fa="ساخت و پیکربندی Virtual Host">Virtual Host Configuration</span></a></li>
-          <li class="article-nav-item"><a href="#ssl-setup"><i class="bi bi-lock navicon" aria-hidden="true"></i><span data-en="SSL Setup with Let" data-fa="فعال‌سازی SSL با Let">SSL Setup with Let</span></a></li>
-          <li class="article-nav-item"><a href="#http2-config"><i class="bi bi-lightning-charge navicon" aria-hidden="true"></i><span data-en="HTTP/2 Configuration" data-fa="پیکربندی HTTP/2 در Nginx">HTTP/2 Configuration</span></a></li>
-          <li class="article-nav-item"><a href="#firewall"><i class="bi bi-shield-check navicon" aria-hidden="true"></i><span data-en="Firewall Management (UFW)" data-fa="مدیریت فایروال (UFW)">Firewall Management (UFW)</span></a></li>
-          <li class="article-nav-item"><a href="#monitoring"><i class="bi bi-activity navicon" aria-hidden="true"></i><span data-en="Logs and Monitoring" data-fa="لاگ‌ها و مانیتورینگ">Logs and Monitoring</span></a></li>
-          <li class="article-nav-item"><a href="#optimization"><i class="bi bi-speedometer2 navicon" aria-hidden="true"></i><span data-en="Performance Optimization" data-fa="بهینه‌سازی Performance در Nginx">Performance Optimization</span></a></li>
-          <li class="article-nav-item"><a href="#faq"><i class="bi bi-question-circle navicon" aria-hidden="true"></i><span data-en="Frequently Asked Questions" data-fa="پرسش‌های متداول">Frequently Asked Questions</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#introduction"
+              ><i class="bi bi-info-circle navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#advantages"
+              ><i class="bi bi-award navicon" aria-hidden="true"></i
+              ><span
+                data-en="Advantages of Nginx over Apache"
+                data-fa="مزایای Nginx نسبت به Apache"
+                >Advantages of Nginx over Apache</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#prerequisites"
+              ><i class="bi bi-clipboard-check navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها"
+                >Prerequisites</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#installation"
+              ><i class="bi bi-download navicon" aria-hidden="true"></i
+              ><span data-en="Installing Nginx" data-fa="نصب Nginx"
+                >Installing Nginx</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#configuration"
+              ><i class="bi bi-sliders navicon" aria-hidden="true"></i
+              ><span data-en="Basic Configuration" data-fa="پیکربندی پایه">Basic Configuration</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#service-management"
+              ><i class="bi bi-gear navicon" aria-hidden="true"></i
+              ><span data-en="Service Management" data-fa="مدیریت سرویس Nginx"
+                >Service Management</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#virtual-host"
+              ><i class="bi bi-hdd-network navicon" aria-hidden="true"></i
+              ><span
+                data-en="Virtual Host Configuration"
+                data-fa="ساخت و پیکربندی Virtual Host"
+                >Virtual Host Configuration</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#ssl-setup"
+              ><i class="bi bi-lock navicon" aria-hidden="true"></i
+              ><span data-en="SSL Setup with Let" data-fa="فعال‌سازی SSL با Let"
+                >SSL Setup with Let</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#http2-config"
+              ><i class="bi bi-lightning-charge navicon" aria-hidden="true"></i
+              ><span
+                data-en="HTTP/2 Configuration"
+                data-fa="پیکربندی HTTP/2 در Nginx"
+                >HTTP/2 Configuration</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#firewall"
+              ><i class="bi bi-shield-check navicon" aria-hidden="true"></i
+              ><span
+                data-en="Firewall Management (UFW)"
+                data-fa="مدیریت فایروال (UFW)"
+                >Firewall Management (UFW)</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#monitoring"
+              ><i class="bi bi-activity navicon" aria-hidden="true"></i
+              ><span data-en="Logs and Monitoring" data-fa="لاگ‌ها و مانیتورینگ"
+                >Logs and Monitoring</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#optimization"
+              ><i class="bi bi-speedometer2 navicon" aria-hidden="true"></i
+              ><span
+                data-en="Performance Optimization"
+                data-fa="بهینه‌سازی Performance در Nginx"
+                >Performance Optimization</span
+              ></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-flag navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="نتیجه‌گیری">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-question-circle navicon" aria-hidden="true"></i
+              ><span
+                data-en="Frequently Asked Questions"
+                data-fa="پرسش‌های متداول"
+                >Frequently Asked Questions</span
+              ></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -333,22 +497,82 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Linux</span></nav>
-          <div class="article-meta"><span class="article-category">Linux</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Linux</time></span></div>
-          <h1 class="article-title hero-title">Nginx Installation &amp; Configuration Ubuntu</h1>
-          <p class="article-excerpt hero-subtitle">Complete guide to Nginx web server setup</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/linux-1.png" alt="Nginx Installation &amp; Configuration Ubuntu" /><div class="banner-content"><h2 class="banner-title">Linux</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">Linux</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">Linux</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Nginx Installation &amp; Configuration Ubuntu"
+                data-fa="نصب و پیکربندی Nginx در Ubuntu"
+              >
+                Nginx Installation &amp; Configuration Ubuntu
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Complete guide to Nginx web server setup"
+                data-fa="راهنمای کامل راه‌اندازی وب‌سرور Nginx"
+              >
+                Complete guide to Nginx web server setup
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/linux-1.png"
+                    alt="Nginx Installation &amp; Configuration Ubuntu"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">Linux</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
       </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<!-- Introduction -->
-                <section class="article-section">
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <!-- Introduction -->
+                <section id="introduction" class="article-section">
                   <h2 data-en="Introduction" data-fa="مقدمه">مقدمه</h2>
                   <div class="intro-content">
                     <p
@@ -375,7 +599,7 @@
                 </section>
 
                 <!-- Table of Contents -->
-                <section class="article-section">
+                <section id="article-toc" class="article-section">
                   <h2 data-en="Table of Contents" data-fa="فهرست مطالب">
                     فهرست مطالب
                   </h2>
@@ -558,7 +782,12 @@
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -576,7 +805,12 @@ sudo apt upgrade -y</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -613,7 +847,12 @@ sudo apt upgrade -y</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -629,7 +868,12 @@ sudo apt upgrade -y</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -645,7 +889,12 @@ sudo apt upgrade -y</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -672,7 +921,12 @@ sudo systemctl stop nginx</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -686,7 +940,12 @@ sudo chown -R $USER:$USER /var/www/example.com/html</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -702,7 +961,12 @@ sudo chown -R $USER:$USER /var/www/example.com/html</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -712,8 +976,15 @@ sudo chown -R $USER:$USER /var/www/example.com/html</code></pre>
                   <p data-en="Content:" data-fa="محتوا:">محتوا:</p>
                   <div class="article-code">
                     <div class="article-code-header">
-                      <span class="article-code-label">Nginx Configuration</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <span class="article-code-label"
+                        >Nginx Configuration</span
+                      >
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -739,7 +1010,12 @@ sudo chown -R $USER:$USER /var/www/example.com/html</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -764,7 +1040,12 @@ sudo systemctl reload nginx</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -794,8 +1075,15 @@ sudo certbot --nginx -d example.com -d www.example.com</code></pre>
                   </p>
                   <div class="article-code">
                     <div class="article-code-header">
-                      <span class="article-code-label">Nginx Configuration</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <span class="article-code-label"
+                        >Nginx Configuration</span
+                      >
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -819,7 +1107,12 @@ sudo certbot --nginx -d example.com -d www.example.com</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -856,7 +1149,12 @@ sudo ufw enable</code></pre>
                   <div class="article-code">
                     <div class="article-code-header">
                       <span class="article-code-label">Ubuntu Terminal</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -881,8 +1179,15 @@ sudo ufw enable</code></pre>
                   </p>
                   <div class="article-code">
                     <div class="article-code-header">
-                      <span class="article-code-label">Nginx Configuration</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <span class="article-code-label"
+                        >Nginx Configuration</span
+                      >
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -897,8 +1202,15 @@ events {
                   </p>
                   <div class="article-code">
                     <div class="article-code-header">
-                      <span class="article-code-label">Nginx Configuration</span>
-                      <button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">
+                      <span class="article-code-label"
+                        >Nginx Configuration</span
+                      >
+                      <button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
                         <i class="bi bi-clipboard"></i>
                       </button>
                     </div>
@@ -908,7 +1220,7 @@ gzip_types text/plain text/css application/json application/javascript applicati
                 </section>
 
                 <!-- Conclusion -->
-                <section class="article-section">
+                <section id="conclusion" class="article-section">
                   <h2 data-en="Conclusion" data-fa="نتیجه‌گیری">نتیجه‌گیری</h2>
                   <p
                     data-en="Nginx is not only a fast web server but also a comprehensive tool for managing web traffic and increasing security. By installing SSL, enabling HTTP/2 and optimizing parameters, you can provide a professional experience for your users."
@@ -931,198 +1243,346 @@ gzip_types text/plain text/css application/json application/javascript applicati
                   </h2>
 
                   <div class="article-faq-item">
-                    <h3 class="article-faq-question"
+                    <h3
+                      class="article-faq-question"
                       data-en="Q: What is the difference between Nginx and Apache in practice?"
                       data-fa="س: تفاوت Nginx و Apache در عمل چیست؟"
                     >
                       س: تفاوت Nginx و Apache در عمل چیست؟
-                    </h3><div class="article-faq-answer">
-                    <p
-                      data-en="A: Apache is process-oriented but Nginx is event-driven, so Nginx performs better in high traffic."
-                      data-fa="ج: Apache فرآیند‌محور است ولی Nginx event-driven است، به همین دلیل Nginx در ترافیک‌های بالا کارایی بهتری دارد."
-                    >
-                      ج: Apache فرآیند‌محور است ولی Nginx event-driven است، به
-                      همین دلیل Nginx در ترافیک‌های بالا کارایی بهتری دارد.
-                    </p>
-                  </div></div>
+                    </h3>
+                    <div class="article-faq-answer">
+                      <p
+                        data-en="A: Apache is process-oriented but Nginx is event-driven, so Nginx performs better in high traffic."
+                        data-fa="ج: Apache فرآیند‌محور است ولی Nginx event-driven است، به همین دلیل Nginx در ترافیک‌های بالا کارایی بهتری دارد."
+                      >
+                        ج: Apache فرآیند‌محور است ولی Nginx event-driven است، به
+                        همین دلیل Nginx در ترافیک‌های بالا کارایی بهتری دارد.
+                      </p>
+                    </div>
+                  </div>
 
                   <div class="article-faq-item">
-                    <h3 class="article-faq-question"
+                    <h3
+                      class="article-faq-question"
                       data-en="Q: How to automatically renew SSL?"
                       data-fa="س: چگونه SSL را به‌طور خودکار تمدید کنم؟"
                     >
                       س: چگونه SSL را به‌طور خودکار تمدید کنم؟
-                    </h3><div class="article-faq-answer">
-                    <p
-                      data-en="A: Certbot creates a Cronjob by default. You can test with sudo certbot renew --dry-run."
-                      data-fa="ج: Certbot به‌طور پیش‌فرض Cronjob ایجاد می‌کند. می‌توانید با sudo certbot renew --dry-run تست کنید."
-                    >
-                      ج: Certbot به‌طور پیش‌فرض Cronjob ایجاد می‌کند. می‌توانید
-                      با <code>sudo certbot renew --dry-run</code> تست کنید.
-                    </p>
-                  </div></div>
+                    </h3>
+                    <div class="article-faq-answer">
+                      <p
+                        data-en="A: Certbot creates a Cronjob by default. You can test with sudo certbot renew --dry-run."
+                        data-fa="ج: Certbot به‌طور پیش‌فرض Cronjob ایجاد می‌کند. می‌توانید با sudo certbot renew --dry-run تست کنید."
+                      >
+                        ج: Certbot به‌طور پیش‌فرض Cronjob ایجاد می‌کند.
+                        می‌توانید با
+                        <code>sudo certbot renew --dry-run</code> تست کنید.
+                      </p>
+                    </div>
+                  </div>
 
                   <div class="article-faq-item">
-                    <h3 class="article-faq-question"
+                    <h3
+                      class="article-faq-question"
                       data-en="Q: How to host multiple sites on one Nginx?"
                       data-fa="س: چطور چند سایت روی یک Nginx میزبانی کنم؟"
                     >
                       س: چطور چند سایت روی یک Nginx میزبانی کنم؟
-                    </h3><div class="article-faq-answer">
-                    <p
-                      data-en="A: By creating multiple Virtual Hosts in /etc/nginx/sites-available/ path and linking them in /sites-enabled/."
-                      data-fa="ج: با ساخت Virtual Hostهای متعدد در مسیر /etc/nginx/sites-available/ و لینک آن‌ها در /sites-enabled/."
-                    >
-                      ج: با ساخت Virtual Hostهای متعدد در مسیر
-                      <code>/etc/nginx/sites-available/</code> و لینک آن‌ها در
-                      <code>/sites-enabled/</code>.
-                    </p>
-                  </div></div>
+                    </h3>
+                    <div class="article-faq-answer">
+                      <p
+                        data-en="A: By creating multiple Virtual Hosts in /etc/nginx/sites-available/ path and linking them in /sites-enabled/."
+                        data-fa="ج: با ساخت Virtual Hostهای متعدد در مسیر /etc/nginx/sites-available/ و لینک آن‌ها در /sites-enabled/."
+                      >
+                        ج: با ساخت Virtual Hostهای متعدد در مسیر
+                        <code>/etc/nginx/sites-available/</code> و لینک آن‌ها در
+                        <code>/sites-enabled/</code>.
+                      </p>
+                    </div>
+                  </div>
 
                   <div class="article-faq-item">
-                    <h3 class="article-faq-question"
+                    <h3
+                      class="article-faq-question"
                       data-en="Q: Can Nginx be used as a Load Balancer?"
                       data-fa="س: آیا می‌توان Nginx را به‌عنوان Load Balancer استفاده کرد؟"
                     >
                       س: آیا می‌توان Nginx را به‌عنوان Load Balancer استفاده
                       کرد؟
-                    </h3><div class="article-faq-answer">
-                    <p
-                      data-en="A: Yes, with the upstream module you can define multiple backend servers."
-                      data-fa="ج: بله، با ماژول upstream می‌توانید چند سرور backend تعریف کنید."
-                    >
-                      ج: بله، با ماژول upstream می‌توانید چند سرور backend تعریف
-                      کنید.
-                    </p>
-                  </div></div>
+                    </h3>
+                    <div class="article-faq-answer">
+                      <p
+                        data-en="A: Yes, with the upstream module you can define multiple backend servers."
+                        data-fa="ج: بله، با ماژول upstream می‌توانید چند سرور backend تعریف کنید."
+                      >
+                        ج: بله، با ماژول upstream می‌توانید چند سرور backend
+                        تعریف کنید.
+                      </p>
+                    </div>
+                  </div>
                 </section>
 
                 <!-- Enhanced Author Bio Section -->
 
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
-              </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
             </div>
           </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

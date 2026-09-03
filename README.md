@@ -22,7 +22,7 @@ Template URL: https://meetaj.ir
 Author: AmirHossein Jalalian
 License: https://meetaj.ir
 Version: 1.0.4
-Last Updated: December 2024  
+Last Updated: December 2024
 
 ## PROJECT OVERVIEW
 
@@ -31,6 +31,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## KEY FEATURES
 
 ### 🌐 PROGRESSIVE WEB APP (PWA)
+
 - Offline-first caching strategy
 - Service Worker implementation
 - App-like installation experience
@@ -38,6 +39,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - Push notification support
 
 ### 🌍 MULTILINGUAL SUPPORT
+
 - English and Persian/Farsi languages
 - RTL (Right-to-Left) layout support
 - Dynamic language switching
@@ -45,6 +47,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - Typed.js animations with language-specific content
 
 ### 📱 RESPONSIVE DESIGN
+
 - Mobile-first approach
 - Cross-device compatibility
 - Touch-friendly interface
@@ -52,6 +55,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - Modern Apple Design System
 
 ### 🎨 MODERN UI/UX
+
 - Clean, minimalist design
 - Smooth animations and transitions
 - Dark/Light theme support
@@ -59,6 +63,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - Performance optimized
 
 ### 📧 CONTACT SYSTEM
+
 - Secure contact form with validation
 - Rate limiting protection
 - XSS and injection prevention
@@ -66,6 +71,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - PHP backend processing
 
 ### 📚 CONTENT MANAGEMENT
+
 - Portfolio showcase with filtering
 - Technical articles and guides
 - Service details pages
@@ -75,12 +81,14 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## TECHNICAL STACK
 
 ### FRONTEND TECHNOLOGIES:
+
 - HTML5 (Semantic structure)
 - CSS3 (Custom properties, animations)
 - JavaScript ES6+ (Modern APIs)
 - Bootstrap 5.3.3 (Grid system, components)
 
 ### LIBRARIES & FRAMEWORKS:
+
 - AOS (Animate On Scroll) - Scroll animations
 - Swiper.js - Touch sliders and carousels
 - Typed.js - Typing animation effects
@@ -91,6 +99,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - ImagesLoaded - Image loading optimization
 
 ### PWA FEATURES:
+
 - Service Worker (sw.js)
 - Web App Manifest (manifest.json)
 - Offline caching strategies
@@ -98,6 +107,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - Push notifications
 
 ### BACKEND & SECURITY:
+
 - PHP contact form handler
 - Input validation and sanitization
 - Rate limiting protection
@@ -151,20 +161,24 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## INSTALLATION & SETUP
 
 ### 1. CLONE OR DOWNLOAD:
+
 - Download the project files
 - Extract to your web server directory
 
 ### 2. WEB SERVER REQUIREMENTS:
+
 - Apache/Nginx web server
 - PHP 7.4+ (for contact form)
 - HTTPS support (required for PWA)
 
 ### 3. CONFIGURATION:
+
 - Update contact form email in forms/contact.php
 - Configure web server for HTTPS
 - Set proper file permissions
 
 ### 4. DEPLOYMENT:
+
 - Upload files to web server
 - Ensure Service Worker is accessible
 - Test PWA functionality
@@ -172,24 +186,28 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## CUSTOMIZATION GUIDE
 
 ### 🎨 DESIGN CUSTOMIZATION:
+
 - Modify CSS variables in main.css
 - Update color scheme in :root selector
 - Customize Apple Design System colors
 - Adjust animations and transitions
 
 ### 🌍 LANGUAGE CUSTOMIZATION:
+
 - Edit translations in assets/js/i18n.js
 - Add new languages to DICT object
 - Update RTL support for new languages
 - Modify Typed.js content arrays
 
 ### 📱 PWA CUSTOMIZATION:
+
 - Update manifest.json for app details
 - Modify Service Worker caching strategy
 - Add new icons and screenshots
 - Configure push notification settings
 
 ### 📧 CONTACT FORM CUSTOMIZATION:
+
 - Update email address in contact.php
 - Configure SMTP settings (optional)
 - Modify validation rules
@@ -198,6 +216,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## PERFORMANCE OPTIMIZATION
 
 ### ✅ IMPLEMENTED OPTIMIZATIONS:
+
 - Service Worker caching
 - Image lazy loading
 - CSS/JS minification
@@ -207,6 +226,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - Accessibility optimizations
 
 ### 📊 PERFORMANCE METRICS:
+
 - Lighthouse Score: 95+ (Performance)
 - First Contentful Paint: < 1.5s
 - Largest Contentful Paint: < 2.5s
@@ -216,18 +236,21 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## BROWSER SUPPORT
 
 ### ✅ FULLY SUPPORTED:
+
 - Chrome 80+
 - Firefox 75+
 - Safari 13+
 - Edge 80+
 
 ### ⚠️ PARTIAL SUPPORT:
+
 - Internet Explorer 11 (basic functionality)
 - Older mobile browsers (graceful degradation)
 
 ## SECURITY FEATURES
 
 ### 🔒 IMPLEMENTED SECURITY:
+
 - Input validation and sanitization
 - XSS prevention
 - CSRF protection
@@ -239,11 +262,13 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## SUPPORT & MAINTENANCE
 
 ### 📞 SUPPORT:
+
 - Website: https://meetaj.ir
 - Email: jalalian.amirhossein@gmail.com
 - Documentation: This README file
 
 ### 🔄 MAINTENANCE:
+
 - Regular security updates
 - Performance monitoring
 - Browser compatibility testing
@@ -253,11 +278,13 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## LICENSE & CREDITS
 
 ### 📄 LICENSE:
+
 - Template: Custom License
 - Author: AmirHossein Jalalian
 - Website: https://meetaj.ir
 
 ### 🙏 CREDITS:
+
 - Based on: iPortfolio Template by BootstrapMade
 - Icons: Bootstrap Icons
 - Fonts: System fonts (SF Pro Display, etc.)
@@ -266,6 +293,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 ## CHANGELOG
 
 ### v1.0.4 (December 2024):
+
 - Enhanced PWA functionality
 - Improved mobile performance
 - Updated Service Worker caching
@@ -274,22 +302,26 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 - Accessibility enhancements
 
 ### v1.0.3 (November 2024):
+
 - Added multilingual support
 - Implemented RTL layout
 - Enhanced contact form security
 - Performance optimizations
 
 ### v1.0.2 (October 2024):
+
 - Initial PWA implementation
 - Service Worker integration
 - Mobile optimization
 
 ### v1.0.1 (September 2024):
+
 - Basic portfolio template
 - Contact form implementation
 - Responsive design
 
 ### v1.0.0 (August 2024):
+
 - Initial release
 - Core functionality
 - Basic design system
@@ -299,6 +331,7 @@ This is a modern, responsive portfolio website built as a Progressive Web App (P
 Modern bilingual preloader component with RTL/LTR support and CSS animations.
 
 ### Features:
+
 - ✅ **Bilingual**: Full Persian (RTL) and English (LTR) support
 - ✅ **CSS Animations**: High performance and smooth
 - ✅ **Responsive**: Compatible with all screen sizes
@@ -310,20 +343,20 @@ Modern bilingual preloader component with RTL/LTR support and CSS animations.
 ### Usage:
 
 #### React Component:
+
 ```jsx
-import Preloader from './Preloader';
+import Preloader from "./Preloader";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [language, setLanguage] = useState('en'); // 'en' or 'fa'
+  const [language, setLanguage] = useState("en"); // 'en' or 'fa'
 
-  return (
-    <Preloader isVisible={isLoading} language={language} />
-  );
+  return <Preloader isVisible={isLoading} language={language} />;
 }
 ```
 
 #### HTML:
+
 ```html
 <div id="preloader" class="preloader-overlay visible">
   <div class="preloader-container ltr">
@@ -343,12 +376,14 @@ function App() {
 ```
 
 ### Props:
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `isVisible` | boolean | `true` | Show or hide preloader |
-| `language` | string | `'en'` | Site language (`'en'` or `'fa'`) |
+
+| Prop        | Type    | Default | Description                      |
+| ----------- | ------- | ------- | -------------------------------- |
+| `isVisible` | boolean | `true`  | Show or hide preloader           |
+| `language`  | string  | `'en'`  | Site language (`'en'` or `'fa'`) |
 
 ### CSS Classes:
+
 - `.preloader-overlay` - Background layer
 - `.preloader-container` - Main container
 - `.preloader-spinner` - Spinning animation
@@ -360,6 +395,7 @@ function App() {
 - `.hidden` - Hide preloader
 
 ### Customization:
+
 ```css
 :root {
   --primary-color: #2563eb;
@@ -368,6 +404,7 @@ function App() {
 ```
 
 ### Browser Support:
+
 - ✅ Chrome 60+
 - ✅ Firefox 55+
 - ✅ Safari 12+
@@ -376,6 +413,7 @@ function App() {
 - ✅ Android Chrome 60+
 
 ### Performance:
+
 - ⚡ Pure CSS animations (no JavaScript)
 - 🎯 Optimized GPU usage
 - 📱 Mobile optimized

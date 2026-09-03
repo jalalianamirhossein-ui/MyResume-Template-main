@@ -1,31 +1,73 @@
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
-    <title>VMware ESXi 8.0 Installation &amp; Basic Configuration | Meet AJ</title>
-    <meta charset="utf-8" />
+    <title>
+      VMware ESXi 8.0 Installation &amp; Basic Configuration | Meet AJ
+    </title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Step-by-step ESXi 8.0 setup, networking, storage, and host hardening" />
+    <meta
+      name="description"
+      content="Step-by-step ESXi 8.0 setup, networking, storage, and host hardening"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/vmware-esxi-8-installation-basic-configuration.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/vmware-esxi-8-installation-basic-configuration.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-vmware">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +92,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +183,129 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Boot from ISO" data-fa="۰۱ — Boot از ISO">Boot from ISO</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#install-esxi"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Install ESXi" data-fa="۰۲ — نصب ESXi 8">Install ESXi</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#dcui"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="DCUI" data-fa="۰۳ — اولین Boot و ورود به DCUI">DCUI</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#management-network"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Management Network" data-fa="۰۴ — تنظیم Management Network">Management Network</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#dns-hostname"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="DNS and Hostname" data-fa="۰۵ — تنظیم DNS و Hostname">DNS and Hostname</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#management-vlan"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Management VLAN" data-fa="۰۶ — تنظیم Management VLAN">Management VLAN</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#network-test"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Network test" data-fa="۰۷ — تست شبکه">Network test</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#host-client"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="ESXi Host Client" data-fa="۰۸ — ورود به ESXi Host Client">ESXi Host Client</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#datastore"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Datastore" data-fa="Datastore">Datastore</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#initial-networking"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Initial Networking" data-fa="Networking اولیه">Initial Networking</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#ntp"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="NTP" data-fa="NTP">NTP</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#security-best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Security Best Practices" data-fa="بهترین روش‌های امنیتی">Security Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,147 +321,824 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>VMware</span></nav>
-          <div class="article-meta"><span class="article-category">VMware</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">VMware</time></span></div>
-          <h1 class="article-title hero-title">VMware ESXi 8.0 Installation &amp; Basic Configuration</h1>
-          <p class="article-excerpt hero-subtitle">Step-by-step ESXi 8.0 setup, networking, storage, and host hardening</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/vmware-1.png" alt="VMware ESXi 8.0 Installation &amp; Basic Configuration" /><div class="banner-content"><h2 class="banner-title">VMware</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Step-by-step ESXi 8.0 setup, networking, storage, and host hardening</p></section>
-          <section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section>
-          <section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">VMware</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">VMware</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Install and Perform Initial Configuration of VMware ESXi 8"
+                data-fa="نصب و پیکربندی اولیه VMware ESXi 8"
+              >
+                Install and Perform Initial Configuration of VMware ESXi 8
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Install ESXi 8 and configure the Management Network to prepare the host"
+                data-fa="راهنمای نصب ESXi 8 و تنظیم Management Network برای آماده‌سازی Host"
+              >
+                Install ESXi 8 and configure the Management Network to prepare
+                the host
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/vmware-1.png"
+                    alt="VMware ESXi 8.0 Installation &amp; Basic Configuration"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">VMware</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section">
+                  <h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2>
+                  <p
+                    data-en="VMware ESXi is a bare-metal hypervisor installed directly on a server. It provides the platform for running virtual machines and managing their compute, memory, storage, and networking resources."
+                    data-fa="VMware ESXi یک Hypervisor نوع Bare-Metal است که مستقیماً روی سرور نصب می‌شود و امکان اجرای Virtual Machineها و مدیریت منابع پردازشی، حافظه، ذخیره‌سازی و شبکه آن‌ها را فراهم می‌کند."
+                  >
+                    VMware ESXi is a bare-metal hypervisor installed directly on
+                    a server. It provides the platform for running virtual
+                    machines and managing their compute, memory, storage, and
+                    networking resources.
+                  </p>
+                </section>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+                <section id="article-status" class="article-section">
+                  <h2 data-en="Prerequisites" data-fa="پیش‌نیازها">
+                    Prerequisites
+                  </h2>
+                  <div class="article-callout article-callout--tip">
+                    <ul>
+                      <li
+                        data-en="Verify that the server hardware is compatible with VMware ESXi 8."
+                        data-fa="سازگاری سخت‌افزار سرور با VMware ESXi 8 را بررسی کنید."
+                      >
+                        Verify that the server hardware is compatible with
+                        VMware ESXi 8.
+                      </li>
+                      <li
+                        data-en="Prepare the appropriate ESXi 8 ISO image and an installation disk or virtual media."
+                        data-fa="ISO مناسب ESXi 8 و یک دیسک نصب یا Virtual Media را آماده کنید."
+                      >
+                        Prepare the appropriate ESXi 8 ISO image and an
+                        installation disk or virtual media.
+                      </li>
+                      <li
+                        data-en="Have console access or remote-management access such as iLO or iDRAC available."
+                        data-fa="دسترسی Console یا Remote Management مانند iLO یا iDRAC را در اختیار داشته باشید."
+                      >
+                        Have console access or remote-management access such as
+                        iLO or iDRAC available.
+                      </li>
+                      <li
+                        data-en="Prepare the Management Network information, including IP address, subnet mask, default gateway, DNS servers, host name, and VLAN ID if applicable."
+                        data-fa="اطلاعات Management Network شامل IP Address، Subnet Mask، Default Gateway، DNS Serverها، Hostname و در صورت نیاز VLAN ID را آماده کنید."
+                      >
+                        Prepare the Management Network information, including IP
+                        address, subnet mask, default gateway, DNS servers, host
+                        name, and VLAN ID if applicable.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section id="planned-sections" class="article-section">
+                  <h2
+                    data-en="01 — Boot from the ISO"
+                    data-fa="۰۱ — Boot از ISO"
+                  >
+                    01 — Boot from the ISO
+                  </h2>
+                  <p
+                    data-en="Mount the ESXi 8 ISO through the server virtual-media interface, such as iLO or iDRAC, or create a bootable USB drive from the ISO. Restart the server and choose the mounted virtual media or USB device as the boot source."
+                    data-fa="ISO مربوط به ESXi 8 را از طریق Virtual Media سرور مانند iLO یا iDRAC Mount کنید یا از آن یک USB Bootable بسازید. سرور را Restart کرده و Virtual Media یا USB را به‌عنوان Boot Source انتخاب کنید."
+                  >
+                    Mount the ESXi 8 ISO through the server virtual-media
+                    interface, such as iLO or iDRAC, or create a bootable USB
+                    drive from the ISO. Restart the server and choose the
+                    mounted virtual media or USB device as the boot source.
+                  </p>
+                </section>
+
+                <section id="install-esxi" class="article-section">
+                  <h2 data-en="02 — Install ESXi 8" data-fa="۰۲ — نصب ESXi 8">
+                    02 — Install ESXi 8
+                  </h2>
+                  <p
+                    data-en="After the installer loads, accept the EULA, select the destination disk, choose the required keyboard layout, and set a strong root password. Review the selections, start the installation, and wait for it to finish before restarting the host."
+                    data-fa="پس از بارگذاری Installer، EULA را بپذیرید، Disk مقصد را انتخاب کنید، Keyboard Layout موردنیاز را تعیین کرده و یک root password قوی بسازید. انتخاب‌ها را بازبینی کنید، Installation را شروع کنید و پس از پایان، Host را Restart کنید."
+                  >
+                    After the installer loads, accept the EULA, select the
+                    destination disk, choose the required keyboard layout, and
+                    set a strong root password. Review the selections, start the
+                    installation, and wait for it to finish before restarting
+                    the host.
+                  </p>
+                  <div class="article-callout article-callout--warning">
+                    <p
+                      class="article-callout-title"
+                      data-en="Installation disk"
+                      data-fa="دیسک نصب"
+                    >
+                      Installation disk
+                    </p>
+                    <p
+                      data-en="Confirm the selected destination disk before starting the installation. The installer writes ESXi to the selected disk."
+                      data-fa="پیش از شروع Installation، Disk مقصد را با دقت تأیید کنید. Installer، ESXi را روی Disk انتخاب‌شده می‌نویسد."
+                    >
+                      Confirm the selected destination disk before starting the
+                      installation. The installer writes ESXi to the selected
+                      disk.
+                    </p>
+                  </div>
+                </section>
+
+                <section id="dcui" class="article-section">
+                  <h2
+                    data-en="03 — First Boot and DCUI Login"
+                    data-fa="۰۳ — اولین Boot و ورود به DCUI"
+                  >
+                    03 — First Boot and DCUI Login
+                  </h2>
+                  <p
+                    data-en="After the host restarts, wait for the ESXi Direct Console User Interface to appear. Press F2, enter the root credentials created during installation, and open the system customization menu."
+                    data-fa="پس از Restart شدن Host، منتظر نمایش ESXi Direct Console User Interface بمانید. کلید F2 را فشار دهید، اطلاعات root ساخته‌شده در زمان نصب را وارد کنید و وارد منوی System Customization شوید."
+                  >
+                    After the host restarts, wait for the ESXi Direct Console
+                    User Interface to appear. Press F2, enter the root
+                    credentials created during installation, and open the system
+                    customization menu.
+                  </p>
+                </section>
+
+                <section id="management-network" class="article-section">
+                  <h2
+                    data-en="04 — Configure the Management Network"
+                    data-fa="۰۴ — تنظیم Management Network"
+                  >
+                    04 — Configure the Management Network
+                  </h2>
+                  <p
+                    data-en="In the DCUI, open Configure Management Network, then select IPv4 Configuration. Choose a static configuration and enter the Management IP address, subnet mask, and default gateway that belong to the management network."
+                    data-fa="در DCUI وارد Configure Management Network شوید و IPv4 Configuration را انتخاب کنید. پیکربندی Static را انتخاب کرده و Management IP Address، Subnet Mask و Default Gateway مربوط به شبکه مدیریت را وارد کنید."
+                  >
+                    In the DCUI, open Configure Management Network, then select
+                    IPv4 Configuration. Choose a static configuration and enter
+                    the Management IP address, subnet mask, and default gateway
+                    that belong to the management network.
+                  </p>
+                  <div class="article-callout article-callout--tip">
+                    <p
+                      data-en="Use a static Management IP so that the host address remains predictable for administration and monitoring."
+                      data-fa="برای اینکه آدرس Host در مدیریت و Monitoring ثابت و قابل‌پیش‌بینی بماند، از Static Management IP استفاده کنید."
+                    >
+                      Use a static Management IP so that the host address
+                      remains predictable for administration and monitoring.
+                    </p>
+                  </div>
+                </section>
+
+                <section id="dns-hostname" class="article-section">
+                  <h2
+                    data-en="05 — Configure DNS and Hostname"
+                    data-fa="۰۵ — تنظیم DNS و Hostname"
+                  >
+                    05 — Configure DNS and Hostname
+                  </h2>
+                  <p
+                    data-en="From Configure Management Network, open DNS Configuration. Enter the DNS server addresses and assign a host name that can be resolved correctly in the management environment."
+                    data-fa="از مسیر Configure Management Network وارد DNS Configuration شوید. آدرس DNS Serverها را وارد کنید و Hostnameی تعیین کنید که در محیط مدیریت به‌درستی Resolve شود."
+                  >
+                    From Configure Management Network, open DNS Configuration.
+                    Enter the DNS server addresses and assign a host name that
+                    can be resolved correctly in the management environment.
+                  </p>
+                </section>
+
+                <section id="management-vlan" class="article-section">
+                  <h2
+                    data-en="06 — Configure the Management VLAN"
+                    data-fa="۰۶ — تنظیم VLAN مدیریت"
+                  >
+                    06 — Configure the Management VLAN
+                  </h2>
+                  <p
+                    data-en="If the Management Network uses a VLAN, select VLAN (Optional) in Configure Management Network and enter the correct VLAN ID. Ensure that the physical switch port connected to the host is configured to carry that VLAN."
+                    data-fa="اگر Management Network از VLAN استفاده می‌کند، در Configure Management Network گزینه VLAN (Optional) را انتخاب کرده و VLAN ID صحیح را وارد کنید. مطمئن شوید Port فیزیکی Switch متصل به Host برای عبور این VLAN پیکربندی شده است."
+                  >
+                    If the Management Network uses a VLAN, select VLAN
+                    (Optional) in Configure Management Network and enter the
+                    correct VLAN ID. Ensure that the physical switch port
+                    connected to the host is configured to carry that VLAN.
+                  </p>
+                </section>
+
+                <section id="network-test" class="article-section">
+                  <h2
+                    data-en="07 — Test the Management Network"
+                    data-fa="۰۷ — تست شبکه مدیریت"
+                  >
+                    07 — Test the Management Network
+                  </h2>
+                  <p
+                    data-en="Use Test Management Network in the DCUI to test reachability to the default gateway and DNS servers. Resolve any network, VLAN, gateway, or DNS issue before continuing to the Host Client."
+                    data-fa="در DCUI از گزینه Test Management Network برای تست دسترسی به Default Gateway و DNS Serverها استفاده کنید. پیش از ورود به Host Client، هر مشکل شبکه، VLAN، Gateway یا DNS را برطرف کنید."
+                  >
+                    Use Test Management Network in the DCUI to test reachability
+                    to the default gateway and DNS servers. Resolve any network,
+                    VLAN, gateway, or DNS issue before continuing to the Host
+                    Client.
+                  </p>
+                </section>
+
+                <section id="host-client" class="article-section">
+                  <h2
+                    data-en="08 — Sign In to the ESXi Host Client"
+                    data-fa="۰۸ — ورود به ESXi Host Client"
+                  >
+                    08 — Sign In to the ESXi Host Client
+                  </h2>
+                  <p
+                    data-en="Open the following address in a browser, replace ESXI-IP with the Management IP configured for the host, and sign in with the root account."
+                    data-fa="آدرس زیر را در Browser باز کنید، ESXI-IP را با Management IP تنظیم‌شده برای Host جایگزین کرده و با حساب root وارد شوید."
+                  >
+                    Open the following address in a browser, replace ESXI-IP
+                    with the Management IP configured for the host, and sign in
+                    with the root account.
+                  </p>
+                  <div class="article-code">
+                    <div class="article-code-header">
+                      <span
+                        class="article-code-label"
+                        data-en="ESXi Host Client"
+                        data-fa="ESXi Host Client"
+                        >ESXi Host Client</span
+                      ><button
+                        type="button"
+                        class="article-copy-button"
+                        data-en="Copy"
+                        data-fa="کپی"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <pre><code class="language-bash">https://ESXI-IP/</code></pre>
+                  </div>
+                </section>
+
+                <section id="datastore" class="article-section">
+                  <h2 data-en="Datastore" data-fa="Datastore">Datastore</h2>
+                  <p
+                    data-en="In the ESXi Host Client, review the available storage devices before creating or selecting a datastore. Use a datastore with enough capacity and the intended redundancy level for the virtual machines that will run on this host."
+                    data-fa="در ESXi Host Client، پیش از ایجاد یا انتخاب Datastore، Storage Deviceهای موجود را بررسی کنید. برای Virtual Machineهایی که روی این Host اجرا می‌شوند، Datastoreی با ظرفیت کافی و سطح افزونگی موردنیاز انتخاب کنید."
+                  >
+                    In the ESXi Host Client, review the available storage
+                    devices before creating or selecting a datastore. Use a
+                    datastore with enough capacity and the intended redundancy
+                    level for the virtual machines that will run on this host.
+                  </p>
+                </section>
+
+                <section id="initial-networking" class="article-section">
+                  <h2 data-en="Initial Networking" data-fa="شبکه‌سازی اولیه">
+                    Initial Networking
+                  </h2>
+                  <p
+                    data-en="Review the physical uplinks and the default virtual switch after the Management Network is reachable. Confirm that the intended physical NICs are connected and that port groups and VLAN assignments match the network design before creating virtual machines."
+                    data-fa="پس از در دسترس بودن Management Network، Uplinkهای فیزیکی و Virtual Switch پیش‌فرض را بررسی کنید. پیش از ساخت Virtual Machine، مطمئن شوید NICهای فیزیکی موردنظر متصل هستند و Port Groupها و VLAN Assignmentها با طراحی شبکه مطابقت دارند."
+                  >
+                    Review the physical uplinks and the default virtual switch
+                    after the Management Network is reachable. Confirm that the
+                    intended physical NICs are connected and that port groups
+                    and VLAN assignments match the network design before
+                    creating virtual machines.
+                  </p>
+                </section>
+
+                <section id="ntp" class="article-section">
+                  <h2 data-en="NTP" data-fa="NTP">NTP</h2>
+                  <p
+                    data-en="Configure a reliable NTP source for the ESXi host and verify that the time is synchronized. Accurate time is important for logs, certificates, authentication, and troubleshooting across the virtual infrastructure."
+                    data-fa="یک منبع NTP قابل‌اعتماد برای ESXi Host تنظیم کرده و همگام‌بودن زمان را بررسی کنید. زمان دقیق برای Logها، Certificateها، Authentication و رفع اشکال در زیرساخت مجازی اهمیت دارد."
+                  >
+                    Configure a reliable NTP source for the ESXi host and verify
+                    that the time is synchronized. Accurate time is important
+                    for logs, certificates, authentication, and troubleshooting
+                    across the virtual infrastructure.
+                  </p>
+                </section>
+
+                <section id="security-best-practices" class="article-section">
+                  <h2
+                    data-en="Security Best Practices"
+                    data-fa="بهترین روش‌های امنیتی"
+                  >
+                    Security Best Practices
+                  </h2>
+                  <div class="article-callout article-callout--tip">
+                    <ul>
+                      <li
+                        data-en="Use a strong, unique root password and protect access to the remote-management interface."
+                        data-fa="از root password قوی و یکتا استفاده کنید و دسترسی به رابط Remote Management را محافظت کنید."
+                      >
+                        Use a strong, unique root password and protect access to
+                        the remote-management interface.
+                      </li>
+                      <li
+                        data-en="Restrict Management Network access to authorized administrators and trusted management systems."
+                        data-fa="دسترسی Management Network را به Administratorهای مجاز و سیستم‌های مدیریت مورداعتماد محدود کنید."
+                      >
+                        Restrict Management Network access to authorized
+                        administrators and trusted management systems.
+                      </li>
+                      <li
+                        data-en="Keep ESXi updated according to the approved maintenance process."
+                        data-fa="ESXi را مطابق فرآیند تأییدشده Maintenance به‌روز نگه دارید."
+                      >
+                        Keep ESXi updated according to the approved maintenance
+                        process.
+                      </li>
+                      <li
+                        data-en="Review services and enable only the management services required by the environment."
+                        data-fa="Serviceها را بازبینی کرده و فقط Serviceهای مدیریتی موردنیاز محیط را فعال کنید."
+                      >
+                        Review services and enable only the management services
+                        required by the environment.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section id="troubleshooting" class="article-section">
+                  <h2 data-en="Troubleshooting" data-fa="رفع اشکال">
+                    Troubleshooting
+                  </h2>
+                  <div class="article-grid">
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="The host cannot boot from the installation media"
+                          data-fa="Host از رسانه نصب Boot نمی‌شود"
+                        >
+                          The host cannot boot from the installation media
+                        </h3>
+                        <p
+                          data-en="Confirm that the ISO or USB was mounted correctly and that the selected boot source has priority in the server boot settings."
+                          data-fa="بررسی کنید ISO یا USB به‌درستی Mount شده و Boot Source انتخاب‌شده در تنظیمات Boot سرور اولویت دارد."
+                        >
+                          Confirm that the ISO or USB was mounted correctly and
+                          that the selected boot source has priority in the
+                          server boot settings.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="The Management Network is unreachable"
+                          data-fa="Management Network در دسترس نیست"
+                        >
+                          The Management Network is unreachable
+                        </h3>
+                        <p
+                          data-en="Verify the static IP settings, subnet mask, default gateway, physical uplink connection, and switch VLAN configuration."
+                          data-fa="تنظیمات Static IP، Subnet Mask، Default Gateway، اتصال Uplink فیزیکی و پیکربندی VLAN در Switch را بررسی کنید."
+                        >
+                          Verify the static IP settings, subnet mask, default
+                          gateway, physical uplink connection, and switch VLAN
+                          configuration.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="DNS or hostname resolution fails"
+                          data-fa="Resolve شدن DNS یا Hostname ناموفق است"
+                        >
+                          DNS or hostname resolution fails
+                        </h3>
+                        <p
+                          data-en="Confirm the configured DNS server addresses, network reachability, and the DNS record for the host name."
+                          data-fa="آدرس DNS Serverهای تنظیم‌شده، دسترسی شبکه و DNS Record مربوط به Hostname را بررسی کنید."
+                        >
+                          Confirm the configured DNS server addresses, network
+                          reachability, and the DNS record for the host name.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="A Management VLAN is not working"
+                          data-fa="VLAN مدیریت کار نمی‌کند"
+                        >
+                          A Management VLAN is not working
+                        </h3>
+                        <p
+                          data-en="Confirm that the VLAN ID in ESXi matches the network design and is allowed on the physical switch port connected to the host."
+                          data-fa="بررسی کنید VLAN ID در ESXi با طراحی شبکه یکسان است و روی Port فیزیکی Switch متصل به Host اجازه عبور دارد."
+                        >
+                          Confirm that the VLAN ID in ESXi matches the network
+                          design and is allowed on the physical switch port
+                          connected to the host.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="faq" class="article-section">
+                  <h2
+                    data-en="Frequently Asked Questions"
+                    data-fa="سوالات متداول"
+                  >
+                    Frequently Asked Questions
+                  </h2>
+                  <div class="article-faq">
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="Should the Management Network use a static IP address?"
+                          data-fa="آیا Management Network باید Static IP داشته باشد؟"
+                          >Should the Management Network use a static IP
+                          address?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="Yes. A static Management IP keeps the host address predictable for administration, monitoring, and integrations."
+                          data-fa="بله. Static Management IP باعث می‌شود آدرس Host برای مدیریت، Monitoring و Integrationها ثابت و قابل‌پیش‌بینی باشد."
+                        >
+                          Yes. A static Management IP keeps the host address
+                          predictable for administration, monitoring, and
+                          integrations.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="When should a VLAN ID be configured for management?"
+                          data-fa="چه زمانی باید VLAN ID برای مدیریت تنظیم شود؟"
+                          >When should a VLAN ID be configured for
+                          management?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="Configure it when the Management Network is assigned to a tagged VLAN and the connected switch port carries that VLAN."
+                          data-fa="زمانی آن را تنظیم کنید که Management Network روی VLAN Tag شده قرار دارد و Port متصل در Switch آن VLAN را عبور می‌دهد."
+                        >
+                          Configure it when the Management Network is assigned
+                          to a tagged VLAN and the connected switch port carries
+                          that VLAN.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="Why should NTP be configured on ESXi?"
+                          data-fa="چرا باید NTP روی ESXi تنظیم شود؟"
+                          >Why should NTP be configured on ESXi?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="It helps keep time accurate for logs, certificates, authentication, and troubleshooting."
+                          data-fa="این کار به دقیق ماندن زمان برای Logها، Certificateها، Authentication و رفع اشکال کمک می‌کند."
+                        >
+                          It helps keep time accurate for logs, certificates,
+                          authentication, and troubleshooting.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="conclusion" class="article-section">
+                  <h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2>
+                  <p
+                    data-en="After installing ESXi 8, configure a reachable and secure Management Network, verify DNS and VLAN settings, test connectivity, and sign in to the ESXi Host Client. The host is then ready for the next storage, networking, time synchronization, and virtual-machine configuration tasks."
+                    data-fa="پس از نصب ESXi 8، یک Management Network امن و قابل‌دسترسی پیکربندی کنید، تنظیمات DNS و VLAN را بررسی کرده، اتصال را تست کنید و وارد ESXi Host Client شوید. سپس Host برای مراحل بعدی Storage، Networking، همگام‌سازی زمان و پیکربندی Virtual Machine آماده است."
+                  >
+                    After installing ESXi 8, configure a reachable and secure
+                    Management Network, verify DNS and VLAN settings, test
+                    connectivity, and sign in to the ESXi Host Client. The host
+                    is then ready for the next storage, networking, time
+                    synchronization, and virtual-machine configuration tasks.
+                  </p>
+                </section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

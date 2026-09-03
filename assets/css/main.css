@@ -123,8 +123,9 @@
   --shadow-surface: rgba(0, 0, 0, 0.05);
 
   /* Typography - Font Family Variables */
-  --default-font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --default-font:
+    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   --persian-font: "Vazirmatn", "Estedad", "Tahoma", Arial, sans-serif;
   --persian-heading-font: "Estedad", "Vazirmatn", "Tahoma", Arial, sans-serif;
 
@@ -776,7 +777,9 @@ h6 {
   transform: scale(1.05);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
   border-color: var(--primary);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 0 4px rgba(0, 122, 255, 0.3),
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.4),
+    0 0 0 4px rgba(0, 122, 255, 0.3),
     0 0 20px rgba(0, 122, 255, 0.2);
 }
 
@@ -799,7 +802,9 @@ h6 {
 }
 
 .header .logo:hover img {
-  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.3), 0 0 15px rgba(0, 122, 255, 0.2);
+  box-shadow:
+    0 0 0 2px rgba(0, 122, 255, 0.3),
+    0 0 15px rgba(0, 122, 255, 0.2);
   transform: scale(1.05);
 }
 
@@ -863,8 +868,10 @@ h6 {
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
@@ -902,8 +909,10 @@ html[dir="ltr"] .header .social-links a {
   color: white;
   background: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(25px);
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.4);
@@ -914,16 +923,20 @@ html[dir="ltr"] .header .social-links a {
 /* X (Twitter) specific styling */
 .header .social-links a.twitter:hover {
   background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   border-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Facebook specific styling */
 .header .social-links a.facebook:hover {
   background: rgba(24, 119, 242, 0.8);
-  box-shadow: 0 8px 30px rgba(24, 119, 242, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 30px rgba(24, 119, 242, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-color: rgba(24, 119, 242, 0.4);
 }
 
@@ -937,56 +950,70 @@ html[dir="ltr"] .header .social-links a {
     rgba(204, 35, 102, 0.8) 75%,
     rgba(188, 24, 136, 0.8) 100%
   );
-  box-shadow: 0 8px 30px rgba(220, 39, 67, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 30px rgba(220, 39, 67, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-color: rgba(220, 39, 67, 0.4);
 }
 
 /* Phone specific styling */
 .header .social-links a.google-plus:hover {
   background: rgba(16, 185, 129, 0.8);
-  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 30px rgba(16, 185, 129, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-color: rgba(16, 185, 129, 0.4);
 }
 
 /* WhatsApp specific styling */
 .header .social-links a.whatsapp:hover {
   background: rgba(37, 211, 102, 0.8);
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 30px rgba(37, 211, 102, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-color: rgba(37, 211, 102, 0.4);
 }
 
 /* Telegram specific styling */
 .header .social-links a.telegram:hover {
   background: rgba(0, 136, 204, 0.8);
-  box-shadow: 0 8px 30px rgba(0, 136, 204, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 30px rgba(0, 136, 204, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-color: rgba(0, 136, 204, 0.4);
 }
 
 /* LinkedIn specific styling */
 .header .social-links a.linkedin:hover {
   background: rgba(0, 119, 181, 0.8);
-  box-shadow: 0 8px 30px rgba(0, 119, 181, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 30px rgba(0, 119, 181, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-color: rgba(0, 119, 181, 0.4);
 }
 
 /* GitHub specific styling */
 .header .social-links a.github:hover {
   background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   border-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Stack Overflow specific styling */
 .header .social-links a.stackoverflow:hover {
   background: rgba(244, 128, 36, 0.8);
-  box-shadow: 0 8px 30px rgba(244, 128, 36, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 30px rgba(244, 128, 36, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-color: rgba(244, 128, 36, 0.4);
 }
 
@@ -1345,7 +1372,9 @@ html[dir="ltr"] .about .content ul strong {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  transition:
+    width 0.6s,
+    height 0.6s;
   pointer-events: none;
 }
 
@@ -1458,7 +1487,8 @@ html[dir="ltr"] .about .content ul strong {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 20% 80%,
       rgba(255, 255, 255, 0.1) 0%,
       transparent 50%
@@ -1742,8 +1772,14 @@ html[dir="ltr"] .about .content ul strong {
 }
 
 .loading-text {
-  font-family: "Vazirmatn", "Inter", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, sans-serif;
+  font-family:
+    "Vazirmatn",
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-size: 18px;
   font-weight: 500;
   color: #333;
@@ -3753,14 +3789,17 @@ html[dir="rtl"] .section-title p {
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
   animation: gradientShift 8s ease infinite;
   transition: all 0.3s ease;
 }
 
 .quote-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15),
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
@@ -3942,7 +3981,8 @@ html[dir="rtl"] .section-title p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 80%,
       rgba(0, 113, 227, 0.03) 0%,
       transparent 50%
@@ -3974,7 +4014,8 @@ html[dir="rtl"] .section-title p {
   max-width: 350px;
   height: auto;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 113, 227, 0.15),
+  box-shadow:
+    0 20px 40px rgba(0, 113, 227, 0.15),
     0 0 0 1px rgba(0, 113, 227, 0.1);
   transition: all 0.4s ease;
   object-fit: cover;
@@ -3983,7 +4024,8 @@ html[dir="rtl"] .section-title p {
 
 .about .col-lg-4 img:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 113, 227, 0.2),
+  box-shadow:
+    0 30px 60px rgba(0, 113, 227, 0.2),
     0 0 0 1px rgba(0, 113, 227, 0.15);
 }
 
@@ -4248,7 +4290,8 @@ html[dir="rtl"] .section-title p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 30% 70%,
       rgba(0, 113, 227, 0.02) 0%,
       transparent 50%
@@ -4291,7 +4334,8 @@ html[dir="rtl"] .section-title p {
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.1px;
 }
@@ -4510,7 +4554,8 @@ html[dir="rtl"] .resume .resume-item:hover {
   );
   color: white;
   border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.4),
+  box-shadow:
+    0 2px 8px rgba(0, 122, 255, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
@@ -4522,7 +4567,8 @@ html[dir="rtl"] .resume .resume-item:hover {
     var(--primary) 100%
   );
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.5),
+  box-shadow:
+    0 4px 12px rgba(0, 122, 255, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
@@ -4678,7 +4724,8 @@ html[dir="rtl"] .resume .resume-item::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 40% 60%,
       rgba(0, 113, 227, 0.03) 0%,
       transparent 50%
@@ -4719,7 +4766,8 @@ html[dir="rtl"] .resume .resume-item::before {
   overflow: hidden;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .portfolio .portfolio-filters li::before {
@@ -4809,7 +4857,8 @@ html[dir="rtl"] .resume .resume-item::before {
 .portfolio .portfolio-content:focus-within {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
-  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2),
+  box-shadow:
+    0 0 0 4px rgba(14, 165, 233, 0.2),
     0 18px 40px rgba(0, 113, 227, 0.25);
 }
 
@@ -4854,7 +4903,8 @@ html[dir="rtl"] .resume .resume-item::before {
   border: 1px solid rgba(255, 255, 255, 0.15);
   margin-bottom: 1rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .portfolio .portfolio-content .portfolio-info p {
@@ -4979,7 +5029,9 @@ html[dir="rtl"] .resume .resume-item::before {
   -webkit-backdrop-filter: blur(6px);
 }
 
-@supports not ((backdrop-filter: blur(6px)) or (-webkit-backdrop-filter: blur(6px))) {
+@supports not (
+  (backdrop-filter: blur(6px)) or (-webkit-backdrop-filter: blur(6px))
+) {
   .portfolio .portfolio-content:focus-within .portfolio-info,
   .portfolio .portfolio-content.is-active .portfolio-info {
     background: rgba(2, 6, 23, 0.8);
@@ -5309,7 +5361,8 @@ html[dir="rtl"] .resume .resume-item::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(0, 120, 212, 0.03) 0%,
       rgba(16, 124, 16, 0.03) 50%,
@@ -5680,7 +5733,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 80%,
       rgba(37, 99, 235, 0.03) 0%,
       transparent 50%
@@ -5731,7 +5785,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 20%,
       rgba(37, 99, 235, 0.05) 0%,
       transparent 50%
@@ -5820,8 +5875,10 @@ html[dir="ltr"] .testimonials .swiper-slide {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
   padding: 25px;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08),
-    0 2px 10px rgba(14, 165, 233, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 4px 20px rgba(37, 99, 235, 0.08),
+    0 2px 10px rgba(14, 165, 233, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(37, 99, 235, 0.1);
   transition: all 0.3s ease;
   position: relative;
@@ -5841,8 +5898,10 @@ html[dir="ltr"] .testimonials .swiper-slide {
 }
 
 .contact-card:hover {
-  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15),
-    0 4px 15px rgba(14, 165, 233, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 8px 30px rgba(37, 99, 235, 0.15),
+    0 4px 15px rgba(14, 165, 233, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transform: translateY(-5px);
   border-color: rgba(37, 99, 235, 0.2);
 }
@@ -5861,7 +5920,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   margin-bottom: 15px;
   font-size: 1.3rem;
   color: white;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2),
+  box-shadow:
+    0 4px 15px rgba(37, 99, 235, 0.2),
     0 2px 8px rgba(14, 165, 233, 0.15);
   transition: all 0.3s ease;
   position: relative;
@@ -5890,7 +5950,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
 
 .card-icon:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3),
+  box-shadow:
+    0 6px 20px rgba(37, 99, 235, 0.3),
     0 3px 10px rgba(14, 165, 233, 0.2);
 }
 
@@ -5996,8 +6057,10 @@ html[dir="ltr"] .testimonials .swiper-slide {
   padding: 25px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08),
-    0 2px 10px rgba(14, 165, 233, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 4px 20px rgba(37, 99, 235, 0.08),
+    0 2px 10px rgba(14, 165, 233, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(37, 99, 235, 0.1);
   position: relative;
   overflow: hidden;
@@ -6042,7 +6105,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
 .map-container {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1),
+  box-shadow:
+    0 4px 15px rgba(37, 99, 235, 0.1),
     0 2px 8px rgba(14, 165, 233, 0.05);
   border: 1px solid rgba(37, 99, 235, 0.1);
 }
@@ -6058,8 +6122,10 @@ html[dir="ltr"] .testimonials .swiper-slide {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08),
-    0 2px 10px rgba(14, 165, 233, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 4px 20px rgba(37, 99, 235, 0.08),
+    0 2px 10px rgba(14, 165, 233, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(37, 99, 235, 0.1);
   position: relative;
   overflow: hidden;
@@ -6287,7 +6353,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   gap: 8px;
   width: 100%;
   box-sizing: border-box;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2),
+  box-shadow:
+    0 4px 15px rgba(37, 99, 235, 0.2),
     0 2px 8px rgba(14, 165, 233, 0.1);
   position: relative;
   overflow: hidden;
@@ -6316,7 +6383,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
     var(--primary-dark) 100%
   );
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3),
+  box-shadow:
+    0 6px 20px rgba(37, 99, 235, 0.3),
     0 3px 10px rgba(14, 165, 233, 0.2);
 }
 
@@ -6526,7 +6594,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 80%,
       rgba(0, 113, 227, 0.03) 0%,
       transparent 50%
@@ -6817,7 +6886,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .contact .php-email-form input[type="text"]:hover,
@@ -6871,7 +6941,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
   box-shadow: 0 8px 25px rgba(0, 113, 227, 0.1);
   text-transform: none;
   letter-spacing: 0.5px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .contact .php-email-form button[type="submit"]::before {
@@ -7064,8 +7135,8 @@ html[dir="ltr"] .testimonials .swiper-slide {
 
 /* 2) Fonts */
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Arial,
-    sans-serif;
+  --default-font:
+    "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   --heading-font: "Poppins", "Raleway", sans-serif;
 
   /* Persian fonts for RTL support */
@@ -7521,7 +7592,8 @@ html[dir="rtl"] .colon::before {
   margin-bottom: 3rem;
   margin-top: 1.5rem; /* Add top margin to accommodate the badge */
   overflow: visible; /* Allow badge to extend outside */
-  box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 12px 40px -8px rgba(0, 0, 0, 0.1),
     0 4px 16px -4px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -7541,7 +7613,8 @@ html[dir="rtl"] .colon::before {
 }
 
 .step-card:hover {
-  box-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.2),
+  box-shadow:
+    0 25px 50px -8px rgba(0, 0, 0, 0.2),
     0 8px 25px -4px rgba(0, 0, 0, 0.1);
   transform: translateY(-6px) scale(1.02);
   background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
@@ -8092,7 +8165,8 @@ html[dir="rtl"] .colon::before {
   border-radius: 50%;
   border: 6px solid #ffffff;
   flex-shrink: 0;
-  box-shadow: 0 20px 40px -8px rgba(255, 141, 25, 0.4),
+  box-shadow:
+    0 20px 40px -8px rgba(255, 141, 25, 0.4),
     0 8px 25px -4px rgba(0, 0, 0, 0.1);
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -8134,7 +8208,8 @@ html[dir="rtl"] .colon::before {
 
 .author-photo:hover {
   transform: scale(1.05);
-  box-shadow: 0 25px 50px -8px rgba(255, 141, 25, 0.5),
+  box-shadow:
+    0 25px 50px -8px rgba(255, 141, 25, 0.5),
     0 12px 30px -4px rgba(0, 0, 0, 0.15);
 }
 
@@ -8322,7 +8397,8 @@ html[dir="rtl"] .colon::before {
   border-radius: 16px;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 8px 25px -5px rgba(0, 0, 0, 0.1),
     0 4px 12px -2px rgba(0, 0, 0, 0.05);
   border: 1px solid #e2e8f0;
   position: relative;
@@ -8376,7 +8452,8 @@ html[dir="rtl"] .colon::before {
 
 .author-social a:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 16px 40px -8px rgba(255, 141, 25, 0.4),
+  box-shadow:
+    0 16px 40px -8px rgba(255, 141, 25, 0.4),
     0 8px 25px -4px rgba(0, 0, 0, 0.1);
 }
 
@@ -8391,7 +8468,8 @@ html[dir="rtl"] .colon::before {
 
 /* Specific colors for each social platform */
 .author-social a[href*="linkedin"]:hover {
-  box-shadow: 0 16px 40px -8px rgba(0, 119, 181, 0.4),
+  box-shadow:
+    0 16px 40px -8px rgba(0, 119, 181, 0.4),
     0 8px 25px -4px rgba(0, 0, 0, 0.1);
 }
 
@@ -8400,7 +8478,8 @@ html[dir="rtl"] .colon::before {
 }
 
 .author-social a[href*="github"]:hover {
-  box-shadow: 0 16px 40px -8px rgba(51, 51, 51, 0.4),
+  box-shadow:
+    0 16px 40px -8px rgba(51, 51, 51, 0.4),
     0 8px 25px -4px rgba(0, 0, 0, 0.1);
 }
 
@@ -8409,7 +8488,8 @@ html[dir="rtl"] .colon::before {
 }
 
 .author-social a[href*="twitter"]:hover {
-  box-shadow: 0 16px 40px -8px rgba(29, 161, 242, 0.4),
+  box-shadow:
+    0 16px 40px -8px rgba(29, 161, 242, 0.4),
     0 8px 25px -4px rgba(0, 0, 0, 0.1);
 }
 
@@ -8890,8 +8970,10 @@ html[dir="rtl"] .related-content {
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   border: 6px solid rgba(255, 255, 255, 0.2);
   animation: heroImgFloat 6s ease-in-out infinite;
-  box-shadow: 0 20px 40px rgba(0, 113, 227, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 20px 40px rgba(0, 113, 227, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 3;
 }
@@ -9206,7 +9288,8 @@ html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
   color: var(--primary);
   border: 1px solid rgba(0, 122, 255, 0.2);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 25px rgba(0, 113, 227, 0.1),
+  box-shadow:
+    0 8px 25px rgba(0, 113, 227, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
@@ -9231,7 +9314,8 @@ html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
   background: rgba(0, 122, 255, 0.2);
   border-color: rgba(0, 122, 255, 0.4);
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 113, 227, 0.4),
+  box-shadow:
+    0 15px 35px rgba(0, 113, 227, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
 }
@@ -9251,7 +9335,9 @@ html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   backdrop-filter: blur(20px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .hero-actions .btn-outline-light.btn-modern::before {
@@ -9273,7 +9359,9 @@ html[dir="rtl"] .hero-actions .btn-modern:hover .btn-text {
 
 .hero-actions .btn-outline-light.btn-modern:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.4);
   background: rgba(0, 0, 0, 0.9);
 }

@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>vSphere: Standard Switch vs Distributed Switch | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Key differences, design choices, and migration tips between vSS and vDS" />
+    <meta
+      name="description"
+      content="Key differences, design choices, and migration tips between vSS and vDS"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/vsphere-standard-switch-vs-distributed-switch.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/vsphere-standard-switch-vs-distributed-switch.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-vmware">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,111 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="vSphere Standard Switch" data-fa="۰۱ — vSphere Standard Switch چیست؟">vSphere Standard Switch</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#comparison"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Comparison" data-fa="۰۳ — مقایسه">Comparison</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#port-groups"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Port Groups" data-fa="۰۴ — Port Group و Distributed Port Group">Port Groups</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#uplink-vmkernel"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Uplink and VMkernel" data-fa="۰۵ — Uplink و VMkernel">Uplink and VMkernel</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#choose-vss"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Choose vSS" data-fa="۰۶ — چه زمانی vSS انتخاب کنیم؟">Choose vSS</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#choose-vds"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Choose vDS" data-fa="۰۷ — چه زمانی vDS انتخاب کنیم؟">Choose vDS</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#migration"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Migration" data-fa="۰۸ — نکات Migration">Migration</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#official-resources"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official resources" data-fa="منابع رسمی">Official resources</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,145 +301,935 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>VMware</span></nav>
-          <div class="article-meta"><span class="article-category">VMware</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">VMware</time></span></div>
-          <h1 class="article-title hero-title">vSphere: Standard Switch vs Distributed Switch</h1>
-          <p class="article-excerpt hero-subtitle">Key differences, design choices, and migration tips between vSS and vDS</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/vmware-3.png" alt="vSphere: Standard Switch vs Distributed Switch" /><div class="banner-content"><h2 class="banner-title">VMware</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Key differences, design choices, and migration tips between vSS and vDS</p></section><section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section><section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">VMware</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">VMware</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Compare vSphere Standard Switch and Distributed Switch"
+                data-fa="مقایسه vSphere Standard Switch و Distributed Switch"
+              >
+                Compare vSphere Standard Switch and Distributed Switch
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Differences between vSS and vDS and choosing the right option for VMware vSphere networking"
+                data-fa="تفاوت‌های vSS و vDS و انتخاب مناسب برای شبکه VMware vSphere"
+              >
+                Differences between vSS and vDS and choosing the right option
+                for VMware vSphere networking
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/vmware-3.png"
+                    alt="vSphere: Standard Switch vs Distributed Switch"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">VMware</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section">
+                  <h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2>
+                  <p
+                    data-en="VMware vSphere provides two main virtual-switch types: vSphere Standard Switch (vSS) and vSphere Distributed Switch (vDS). Both connect virtual machines, VMkernel adapters, and physical uplinks, but their management model and capabilities differ."
+                    data-fa="در VMware vSphere دو نوع Virtual Switch اصلی وجود دارد: vSphere Standard Switch (vSS) و vSphere Distributed Switch (vDS). هر دو برای اتصال Virtual Machineها، VMkernel Adapterها و Uplinkهای فیزیکی استفاده می‌شوند، اما نحوه مدیریت و قابلیت‌های آن‌ها متفاوت است."
+                  >
+                    VMware vSphere provides two main virtual-switch types:
+                    vSphere Standard Switch (vSS) and vSphere Distributed Switch
+                    (vDS). Both connect virtual machines, VMkernel adapters, and
+                    physical uplinks, but their management model and
+                    capabilities differ.
+                  </p>
+                </section>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+                <section id="article-status" class="article-section">
+                  <h2
+                    data-en="01 — What Is a vSphere Standard Switch?"
+                    data-fa="۰۱ — vSphere Standard Switch چیست؟"
+                  >
+                    01 — What Is a vSphere Standard Switch?
+                  </h2>
+                  <p
+                    data-en="A vSphere Standard Switch is configured and stored independently on each ESXi host. In an environment with multiple hosts, administrators must create and maintain the required port groups, VLAN settings, and policies on every host that needs them. Consistent switch and port-group names are important when workloads must move between hosts."
+                    data-fa="تنظیمات vSphere Standard Switch روی هر ESXi Host به‌صورت مستقل نگهداری می‌شود. در محیط‌های چند Host، Administrator باید Port Groupها، تنظیمات VLAN و Policyهای موردنیاز را روی هر Host جداگانه ایجاد و نگهداری کند. در زمان جابه‌جایی Workloadها بین Hostها، یکسان‌بودن نام Switch و Port Group اهمیت دارد."
+                  >
+                    A vSphere Standard Switch is configured and stored
+                    independently on each ESXi host. In an environment with
+                    multiple hosts, administrators must create and maintain the
+                    required port groups, VLAN settings, and policies on every
+                    host that needs them. Consistent switch and port-group names
+                    are important when workloads must move between hosts.
+                  </p>
+                </section>
+
+                <section id="planned-sections" class="article-section">
+                  <h2
+                    data-en="02 — What Is a vSphere Distributed Switch?"
+                    data-fa="۰۲ — vSphere Distributed Switch چیست؟"
+                  >
+                    02 — What Is a vSphere Distributed Switch?
+                  </h2>
+                  <p
+                    data-en="A vSphere Distributed Switch is managed centrally through vCenter Server. Hosts that join the vDS use the shared switch configuration, and distributed port groups provide a consistent configuration across participating hosts. Virtual machines and VMkernel adapters can connect to these distributed port groups."
+                    data-fa="vSphere Distributed Switch از طریق vCenter Server به‌صورت مرکزی مدیریت می‌شود. Hostهایی که به vDS اضافه می‌شوند از پیکربندی مشترک Switch استفاده می‌کنند و Distributed Port Groupها تنظیمات یکپارچه‌ای را بین Hostهای عضو فراهم می‌کنند. Virtual Machineها و VMkernel Adapterها می‌توانند به این Distributed Port Groupها متصل شوند."
+                  >
+                    A vSphere Distributed Switch is managed centrally through
+                    vCenter Server. Hosts that join the vDS use the shared
+                    switch configuration, and distributed port groups provide a
+                    consistent configuration across participating hosts. Virtual
+                    machines and VMkernel adapters can connect to these
+                    distributed port groups.
+                  </p>
+                </section>
+
+                <section id="comparison" class="article-section">
+                  <h2 data-en="03 — Comparison" data-fa="۰۳ — مقایسه">
+                    03 — Comparison
+                  </h2>
+                  <div class="article-table-wrap">
+                    <table class="article-table">
+                      <thead>
+                        <tr>
+                          <th data-en="Feature" data-fa="ویژگی">Feature</th>
+                          <th data-en="vSS" data-fa="vSS">vSS</th>
+                          <th data-en="vDS" data-fa="vDS">vDS</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td data-en="Management" data-fa="مدیریت">
+                            Management
+                          </td>
+                          <td
+                            data-en="On each ESXi host"
+                            data-fa="روی هر ESXi Host"
+                          >
+                            On each ESXi host
+                          </td>
+                          <td
+                            data-en="Centralized in vCenter"
+                            data-fa="مرکزی در vCenter"
+                          >
+                            Centralized in vCenter
+                          </td>
+                        </tr>
+                        <tr>
+                          <td data-en="VLAN" data-fa="VLAN">VLAN</td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                        </tr>
+                        <tr>
+                          <td data-en="NIC Teaming" data-fa="NIC Teaming">
+                            NIC Teaming
+                          </td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                        </tr>
+                        <tr>
+                          <td
+                            data-en="Outbound Traffic Shaping"
+                            data-fa="Outbound Traffic Shaping"
+                          >
+                            Outbound Traffic Shaping
+                          </td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                        </tr>
+                        <tr>
+                          <td
+                            data-en="Inbound Traffic Shaping"
+                            data-fa="Inbound Traffic Shaping"
+                          >
+                            Inbound Traffic Shaping
+                          </td>
+                          <td data-en="Not supported" data-fa="ندارد">
+                            Not supported
+                          </td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                        </tr>
+                        <tr>
+                          <td data-en="Private VLAN" data-fa="Private VLAN">
+                            Private VLAN
+                          </td>
+                          <td data-en="Not supported" data-fa="ندارد">
+                            Not supported
+                          </td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                        </tr>
+                        <tr>
+                          <td data-en="LLDP" data-fa="LLDP">LLDP</td>
+                          <td
+                            data-en="Limited or unavailable"
+                            data-fa="محدود یا ندارد"
+                          >
+                            Limited or unavailable
+                          </td>
+                          <td data-en="Supported" data-fa="دارد">Supported</td>
+                        </tr>
+                        <tr>
+                          <td
+                            data-en="Suitable for a small environment"
+                            data-fa="مناسب محیط کوچک"
+                          >
+                            Suitable for a small environment
+                          </td>
+                          <td data-en="Yes" data-fa="بله">Yes</td>
+                          <td
+                            data-en="Usually not required"
+                            data-fa="معمولاً ضروری نیست"
+                          >
+                            Usually not required
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            data-en="Suitable for a large cluster"
+                            data-fa="مناسب Cluster بزرگ"
+                          >
+                            Suitable for a large cluster
+                          </td>
+                          <td
+                            data-en="More difficult to manage"
+                            data-fa="مدیریت دشوارتر"
+                          >
+                            More difficult to manage
+                          </td>
+                          <td data-en="Yes" data-fa="بله">Yes</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                <section id="port-groups" class="article-section">
+                  <h2
+                    data-en="04 — Port Group and Distributed Port Group"
+                    data-fa="۰۴ — Port Group و Distributed Port Group"
+                  >
+                    04 — Port Group and Distributed Port Group
+                  </h2>
+                  <p
+                    data-en="A Standard Port Group belongs to a vSS on one host and provides settings such as VLAN and security policies for connected virtual-machine adapters or VMkernel adapters. A Distributed Port Group belongs to a vDS and acts as a shared configuration template for distributed ports across the member hosts."
+                    data-fa="Standard Port Group به یک vSS روی یک Host تعلق دارد و تنظیماتی مانند VLAN و Security Policy را برای Virtual Machine Adapterها یا VMkernel Adapterهای متصل فراهم می‌کند. Distributed Port Group به یک vDS تعلق دارد و به‌عنوان الگوی پیکربندی مشترک برای Distributed Portها در Hostهای عضو عمل می‌کند."
+                  >
+                    A Standard Port Group belongs to a vSS on one host and
+                    provides settings such as VLAN and security policies for
+                    connected virtual-machine adapters or VMkernel adapters. A
+                    Distributed Port Group belongs to a vDS and acts as a shared
+                    configuration template for distributed ports across the
+                    member hosts.
+                  </p>
+                </section>
+
+                <section id="uplink-vmkernel" class="article-section">
+                  <h2
+                    data-en="05 — Uplink and VMkernel"
+                    data-fa="۰۵ — Uplink و VMkernel"
+                  >
+                    05 — Uplink and VMkernel
+                  </h2>
+                  <div class="article-grid">
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="vmnic and uplink"
+                          data-fa="vmnic و Uplink"
+                        >
+                          vmnic and uplink
+                        </h3>
+                        <p
+                          data-en="A vmnic is a physical network adapter detected by ESXi. An uplink connects a virtual switch to one or more vmnic adapters so traffic can reach the physical network."
+                          data-fa="vmnic یک Network Adapter فیزیکی است که ESXi آن را شناسایی می‌کند. Uplink، Virtual Switch را به یک یا چند vmnic متصل می‌کند تا ترافیک به شبکه فیزیکی برسد."
+                        >
+                          A vmnic is a physical network adapter detected by
+                          ESXi. An uplink connects a virtual switch to one or
+                          more vmnic adapters so traffic can reach the physical
+                          network.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="vmk0 and management"
+                          data-fa="vmk0 و مدیریت"
+                        >
+                          vmk0 and management
+                        </h3>
+                        <p
+                          data-en="vmk0 is commonly the first VMkernel adapter created for the ESXi Management Network. Its connectivity is needed to administer the host through the management interface."
+                          data-fa="vmk0 معمولاً نخستین VMkernel Adapter ایجادشده برای ESXi Management Network است. اتصال آن برای مدیریت Host از طریق رابط مدیریت ضروری است."
+                        >
+                          vmk0 is commonly the first VMkernel adapter created
+                          for the ESXi Management Network. Its connectivity is
+                          needed to administer the host through the management
+                          interface.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="vMotion and storage networks"
+                          data-fa="شبکه‌های vMotion و Storage"
+                        >
+                          vMotion and storage networks
+                        </h3>
+                        <p
+                          data-en="vMotion and storage services use VMkernel adapters connected to the appropriate network. Keep their network design, VLAN assignment, and physical connectivity consistent across the hosts that participate in the service."
+                          data-fa="سرویس‌های vMotion و Storage از VMkernel Adapterهای متصل به شبکه مناسب استفاده می‌کنند. طراحی شبکه، VLAN Assignment و اتصال فیزیکی آن‌ها را در Hostهای عضو سرویس یکسان نگه دارید."
+                        >
+                          vMotion and storage services use VMkernel adapters
+                          connected to the appropriate network. Keep their
+                          network design, VLAN assignment, and physical
+                          connectivity consistent across the hosts that
+                          participate in the service.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="choose-vss" class="article-section">
+                  <h2
+                    data-en="06 — When Should You Choose vSS?"
+                    data-fa="۰۶ — چه زمانی vSS انتخاب کنیم؟"
+                  >
+                    06 — When Should You Choose vSS?
+                  </h2>
+                  <p
+                    data-en="Choose vSS for a small or simple environment, an independent host, or a scenario that does not depend on vCenter Server. It is suitable when host-by-host management is acceptable and advanced distributed-switch capabilities are not required."
+                    data-fa="vSS را برای محیط کوچک یا ساده، Host مستقل یا سناریویی انتخاب کنید که به vCenter Server وابسته نیست. زمانی مناسب است که مدیریت Host به Host قابل‌قبول باشد و به قابلیت‌های پیشرفته Distributed Switch نیاز نداشته باشید."
+                  >
+                    Choose vSS for a small or simple environment, an independent
+                    host, or a scenario that does not depend on vCenter Server.
+                    It is suitable when host-by-host management is acceptable
+                    and advanced distributed-switch capabilities are not
+                    required.
+                  </p>
+                </section>
+
+                <section id="choose-vds" class="article-section">
+                  <h2
+                    data-en="07 — When Should You Choose vDS?"
+                    data-fa="۰۷ — چه زمانی vDS انتخاب کنیم؟"
+                  >
+                    07 — When Should You Choose vDS?
+                  </h2>
+                  <p
+                    data-en="Choose vDS for multi-host clusters that benefit from centralized management and consistent policies. It is appropriate when the design needs features such as Distributed Port Groups, Private VLANs, LLDP, inbound traffic shaping, and advanced distributed networking capabilities."
+                    data-fa="vDS را برای Clusterهای چند Host انتخاب کنید که از مدیریت مرکزی و Policyهای یکسان بهره می‌برند. زمانی مناسب است که طراحی به قابلیت‌هایی مانند Distributed Port Group، Private VLAN، LLDP، Inbound Traffic Shaping و امکانات پیشرفته شبکه توزیع‌شده نیاز دارد."
+                  >
+                    Choose vDS for multi-host clusters that benefit from
+                    centralized management and consistent policies. It is
+                    appropriate when the design needs features such as
+                    Distributed Port Groups, Private VLANs, LLDP, inbound
+                    traffic shaping, and advanced distributed networking
+                    capabilities.
+                  </p>
+                </section>
+
+                <section id="migration" class="article-section">
+                  <h2
+                    data-en="08 — Migration Considerations"
+                    data-fa="۰۸ — نکات Migration"
+                  >
+                    08 — Migration Considerations
+                  </h2>
+                  <p
+                    data-en="Plan a staged migration from vSS to vDS. Create the required distributed port groups and confirm VLAN and uplink assignments before moving workloads. Do not move all uplinks and vmk0 at the same time without a tested plan, because the host can lose Management Network connectivity. Migrate in controlled steps and verify connectivity after each change."
+                    data-fa="Migration از vSS به vDS را مرحله‌ای برنامه‌ریزی کنید. پیش از جابه‌جایی Workloadها، Distributed Port Groupهای موردنیاز را ایجاد کرده و VLAN و Uplink Assignmentها را تأیید کنید. همه Uplinkها و vmk0 را هم‌زمان و بدون برنامه تست‌شده منتقل نکنید؛ زیرا ممکن است اتصال Management Network در Host قطع شود. Migration را در مراحل کنترل‌شده انجام داده و پس از هر تغییر اتصال را بررسی کنید."
+                  >
+                    Plan a staged migration from vSS to vDS. Create the required
+                    distributed port groups and confirm VLAN and uplink
+                    assignments before moving workloads. Do not move all uplinks
+                    and vmk0 at the same time without a tested plan, because the
+                    host can lose Management Network connectivity. Migrate in
+                    controlled steps and verify connectivity after each change.
+                  </p>
+                  <div class="article-callout article-callout--warning">
+                    <p
+                      class="article-callout-title"
+                      data-en="Protect management connectivity"
+                      data-fa="از اتصال مدیریت محافظت کنید"
+                    >
+                      Protect management connectivity
+                    </p>
+                    <p
+                      data-en="Keep a recovery path, such as console or DCUI access, available throughout a networking migration."
+                      data-fa="در تمام مراحل Migration شبکه، یک مسیر بازیابی مانند دسترسی Console یا DCUI در دسترس نگه دارید."
+                    >
+                      Keep a recovery path, such as console or DCUI access,
+                      available throughout a networking migration.
+                    </p>
+                  </div>
+                </section>
+
+                <section id="best-practices" class="article-section">
+                  <h2 data-en="Best Practices" data-fa="بهترین روش‌ها">
+                    Best Practices
+                  </h2>
+                  <div class="article-callout article-callout--tip">
+                    <ul>
+                      <li
+                        data-en="Use consistent switch, port-group, VLAN, and VMkernel naming across hosts."
+                        data-fa="نام‌گذاری Switch، Port Group، VLAN و VMkernel را در همه Hostها یکسان نگه دارید."
+                      >
+                        Use consistent switch, port-group, VLAN, and VMkernel
+                        naming across hosts.
+                      </li>
+                      <li
+                        data-en="Document the physical vmnic-to-switch-port connections and the intended uplink assignments."
+                        data-fa="اتصال‌های فیزیکی vmnic به Portهای Switch و Uplink Assignmentهای موردنظر را مستندسازی کنید."
+                      >
+                        Document the physical vmnic-to-switch-port connections
+                        and the intended uplink assignments.
+                      </li>
+                      <li
+                        data-en="Use separate, appropriately designed networks for management, vMotion, storage, and virtual-machine traffic when required by the environment."
+                        data-fa="در صورت نیاز محیط، برای Management، vMotion، Storage و ترافیک Virtual Machineها شبکه‌های جداگانه و با طراحی مناسب در نظر بگیرید."
+                      >
+                        Use separate, appropriately designed networks for
+                        management, vMotion, storage, and virtual-machine
+                        traffic when required by the environment.
+                      </li>
+                      <li
+                        data-en="Test a design or migration on one host first and keep console access available for recovery."
+                        data-fa="ابتدا طراحی یا Migration را روی یک Host تست کنید و برای بازیابی، دسترسی Console را در دسترس نگه دارید."
+                      >
+                        Test a design or migration on one host first and keep
+                        console access available for recovery.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section id="troubleshooting" class="article-section">
+                  <h2 data-en="Troubleshooting" data-fa="رفع اشکال">
+                    Troubleshooting
+                  </h2>
+                  <div class="article-grid">
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="Management connectivity was lost"
+                          data-fa="اتصال Management قطع شده است"
+                        >
+                          Management connectivity was lost
+                        </h3>
+                        <p
+                          data-en="Use console or DCUI access to review vmk0, its port-group assignment, uplinks, VLAN settings, and the physical switch configuration."
+                          data-fa="از Console یا DCUI برای بررسی vmk0، Port Group Assignment آن، Uplinkها، تنظیمات VLAN و پیکربندی Switch فیزیکی استفاده کنید."
+                        >
+                          Use console or DCUI access to review vmk0, its
+                          port-group assignment, uplinks, VLAN settings, and the
+                          physical switch configuration.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="A VM has no network access"
+                          data-fa="Virtual Machine به شبکه دسترسی ندارد"
+                        >
+                          A VM has no network access
+                        </h3>
+                        <p
+                          data-en="Confirm that the virtual NIC is connected to the intended port group and that its VLAN configuration matches the physical network path."
+                          data-fa="بررسی کنید Virtual NIC به Port Group موردنظر متصل است و پیکربندی VLAN آن با مسیر شبکه فیزیکی مطابقت دارد."
+                        >
+                          Confirm that the virtual NIC is connected to the
+                          intended port group and that its VLAN configuration
+                          matches the physical network path.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="An uplink is unavailable"
+                          data-fa="یک Uplink در دسترس نیست"
+                        >
+                          An uplink is unavailable
+                        </h3>
+                        <p
+                          data-en="Check the vmnic link state, cable and physical switch port, and verify that the assigned uplink is available on the selected switch."
+                          data-fa="وضعیت Link در vmnic، کابل و Port فیزیکی Switch را بررسی کنید و مطمئن شوید Uplink اختصاص‌یافته روی Switch انتخاب‌شده در دسترس است."
+                        >
+                          Check the vmnic link state, cable and physical switch
+                          port, and verify that the assigned uplink is available
+                          on the selected switch.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-card article-card--method">
+                      <div class="article-card-content">
+                        <h3
+                          class="article-card-title"
+                          data-en="Policies differ between hosts"
+                          data-fa="Policyها بین Hostها متفاوت هستند"
+                        >
+                          Policies differ between hosts
+                        </h3>
+                        <p
+                          data-en="Review the local vSS and port-group configuration on every affected host, or use a vDS where centralized policy consistency is required."
+                          data-fa="پیکربندی vSS و Port Group محلی را روی همه Hostهای درگیر بررسی کنید یا در صورت نیاز به Policy یکپارچه، از vDS استفاده کنید."
+                        >
+                          Review the local vSS and port-group configuration on
+                          every affected host, or use a vDS where centralized
+                          policy consistency is required.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="faq" class="article-section">
+                  <h2
+                    data-en="Frequently Asked Questions"
+                    data-fa="سوالات متداول"
+                  >
+                    Frequently Asked Questions
+                  </h2>
+                  <div class="article-faq">
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="Can vSS use VLANs and NIC Teaming?"
+                          data-fa="آیا vSS از VLAN و NIC Teaming پشتیبانی می‌کند؟"
+                          >Can vSS use VLANs and NIC Teaming?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="Yes. Both vSS and vDS support VLAN segmentation, multiple uplinks, and NIC Teaming."
+                          data-fa="بله. هر دو vSS و vDS از VLAN Segmentation، چند Uplink و NIC Teaming پشتیبانی می‌کنند."
+                        >
+                          Yes. Both vSS and vDS support VLAN segmentation,
+                          multiple uplinks, and NIC Teaming.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="Does vDS require vCenter Server?"
+                          data-fa="آیا vDS به vCenter Server نیاز دارد؟"
+                          >Does vDS require vCenter Server?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="Yes. vDS configuration is managed centrally through vCenter Server."
+                          data-fa="بله. پیکربندی vDS به‌صورت مرکزی از طریق vCenter Server مدیریت می‌شود."
+                        >
+                          Yes. vDS configuration is managed centrally through
+                          vCenter Server.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="article-faq-item">
+                      <h3 class="article-faq-question">
+                        <span
+                          data-en="Why should vmk0 not be moved with every uplink at once?"
+                          data-fa="چرا vmk0 نباید هم‌زمان با همه Uplinkها منتقل شود؟"
+                          >Why should vmk0 not be moved with every uplink at
+                          once?</span
+                        ><i class="bi bi-chevron-down" aria-hidden="true"></i>
+                      </h3>
+                      <div class="article-faq-answer">
+                        <p
+                          data-en="An incorrect migration can disconnect the Management Network. Move networking in controlled stages and keep a recovery path available."
+                          data-fa="Migration نادرست می‌تواند Management Network را قطع کند. شبکه را مرحله‌ای منتقل کنید و یک مسیر بازیابی در دسترس نگه دارید."
+                        >
+                          An incorrect migration can disconnect the Management
+                          Network. Move networking in controlled stages and keep
+                          a recovery path available.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="conclusion" class="article-section">
+                  <h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2>
+                  <p
+                    data-en="vSS is a practical choice for independent hosts and simple environments, while vDS is designed for centrally managed multi-host environments that need consistent policies and advanced networking capabilities. Choose according to the size of the environment, management requirements, and the services your network design must provide."
+                    data-fa="vSS انتخابی کاربردی برای Hostهای مستقل و محیط‌های ساده است، در حالی که vDS برای محیط‌های چند Host با مدیریت مرکزی، Policyهای یکپارچه و قابلیت‌های پیشرفته شبکه طراحی شده است. انتخاب را بر اساس اندازه محیط، نیازهای مدیریتی و سرویس‌هایی که طراحی شبکه باید ارائه دهد انجام دهید."
+                  >
+                    vSS is a practical choice for independent hosts and simple
+                    environments, while vDS is designed for centrally managed
+                    multi-host environments that need consistent policies and
+                    advanced networking capabilities. Choose according to the
+                    size of the environment, management requirements, and the
+                    services your network design must provide.
+                  </p>
+                </section>
+
+                <section id="official-resources" class="article-section">
+                  <h2 data-en="Official References" data-fa="منابع رسمی">
+                    Official References
+                  </h2>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://knowledge.broadcom.com/external/article?legacyId=1010555"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="Broadcom Knowledge Base: vSS and vDS concepts and comparison"
+                        data-fa="پایگاه دانش Broadcom: مفاهیم و مقایسه vSS و vDS"
+                        >Broadcom Knowledge Base: vSS and vDS concepts and
+                        comparison</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://d3bql97l1ytoxn.cloudfront.net/app_resources/405778/documentation/1300723_1670493000072_en-US.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="VMware documentation: vSphere Networking 8.0"
+                        data-fa="مستندات VMware: شبکه vSphere 8.0"
+                        >VMware documentation: vSphere Networking 8.0</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://knowledge.broadcom.com/external/article/324555/host-requirements-for-link-aggregation-e.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="Broadcom Knowledge Base: Link aggregation requirements for ESXi"
+                        data-fa="پایگاه دانش Broadcom: الزامات Link Aggregation در ESXi"
+                        >Broadcom Knowledge Base: Link aggregation requirements
+                        for ESXi</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://knowledge.broadcom.com/external/article?legacyId=2032908"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-en="Broadcom Knowledge Base: Removing a management VMkernel adapter"
+                        data-fa="پایگاه دانش Broadcom: حذف VMkernel Adapter مدیریت"
+                        >Broadcom Knowledge Base: Removing a management VMkernel
+                        adapter</a
+                      >
+                    </li>
+                  </ul>
+                </section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

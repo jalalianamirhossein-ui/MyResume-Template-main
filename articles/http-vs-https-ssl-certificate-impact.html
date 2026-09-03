@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>HTTP vs HTTPS: SSL Certificate Impact | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Why HTTPS matters for security, SEO, and user trust with SSL/TLS" />
+    <meta
+      name="description"
+      content="Why HTTPS matters for security, SEO, and user trust with SSL/TLS"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/http-vs-https-ssl-certificate-impact.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/http-vs-https-ssl-certificate-impact.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-security">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,117 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="What is HTTP?" data-fa="۰۱ — HTTP چیست؟">What is HTTP?</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="What is HTTPS?" data-fa="۰۲ — HTTPS چیست؟">What is HTTPS?</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="TLS certificate" data-fa="۰۳ — TLS Certificate چیست؟">TLS certificate</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#tls-certificate"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Certificate role" data-fa="نقش TLS Certificate">Certificate role</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#tls-handshake"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="TLS Handshake" data-fa="۰۴ — TLS Handshake">TLS Handshake</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#check-certificate"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Check Certificate" data-fa="۰۵ — بررسی Certificate">Check Certificate</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#http-redirect"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="HTTP to HTTPS redirect" data-fa="۰۶ — Redirect از HTTP به HTTPS">HTTP to HTTPS redirect</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#hsts"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="HSTS" data-fa="۰۷ — HSTS">HSTS</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#common-errors"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Common errors" data-fa="۰۸ — خطاهای رایج">Common errors</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#comparison"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="HTTP and HTTPS comparison" data-fa="جدول مقایسه">HTTP and HTTPS comparison</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#official-resources"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official resources" data-fa="منابع رسمی">Official resources</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,147 +307,456 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Other</span></nav>
-          <div class="article-meta"><span class="article-category">Other</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Other</time></span></div>
-          <h1 class="article-title hero-title">HTTP vs HTTPS: SSL Certificate Impact</h1>
-          <p class="article-excerpt hero-subtitle">Why HTTPS matters for security, SEO, and user trust with SSL/TLS</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/other-2.png" alt="HTTP vs HTTPS: SSL Certificate Impact" /><div class="banner-content"><h2 class="banner-title">Other</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Why HTTPS matters for security, SEO, and user trust with SSL/TLS</p></section>
-          <section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section>
-          <section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category" data-en="Other" data-fa="سایر"
+                  >Other</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="" data-en="Other" data-fa="سایر"
+                    >Other</time
+                  ></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="HTTP vs HTTPS and the Impact of TLS Certificates"
+                data-fa="تفاوت HTTP و HTTPS و تأثیر SSL/TLS Certificate"
+              >
+                HTTP vs HTTPS and the Impact of TLS Certificates
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Security, encryption, certificates, and the difference between HTTP and HTTPS"
+                data-fa="بررسی امنیت، رمزنگاری، Certificate و تفاوت ارتباط HTTP و HTTPS"
+              >
+                Security, encryption, certificates, and the difference between HTTP and HTTPS
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/other-2.png"
+                    alt="HTTP vs HTTPS: SSL Certificate Impact"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title" data-en="Other" data-fa="سایر">
+                      Other
+                    </h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section">
+                  <h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2>
+                  <p data-en="HTTP and HTTPS are web communication protocols. HTTP transfers data without transport encryption, while HTTPS uses HTTP over TLS to protect the connection. The term SSL Certificate is common, but modern HTTPS deployments use TLS." data-fa="HTTP و HTTPS پروتکل‌های ارتباط وب هستند. HTTP داده‌ها را بدون رمزنگاری در لایه انتقال جابه‌جا می‌کند، در حالی که HTTPS از HTTP روی TLS برای محافظت از اتصال استفاده می‌کند. اصطلاح SSL Certificate رایج است، اما در پیاده‌سازی‌های مدرن HTTPS از TLS استفاده می‌شود.">HTTP and HTTPS are web communication protocols. HTTP transfers data without transport encryption, while HTTPS uses HTTP over TLS to protect the connection. The term SSL Certificate is common, but modern HTTPS deployments use TLS.</p>
+                </section>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+                <section id="article-status" class="article-section">
+                  <h2 data-en="01 — What Is HTTP?" data-fa="۰۱ — HTTP چیست؟">01 — What Is HTTP?</h2>
+                  <p data-en="HTTP transfers requests and responses without TLS encryption. It conventionally uses port 80/TCP, so information sent through a plain HTTP connection can be read or modified by an attacker on the network path." data-fa="HTTP درخواست‌ها و پاسخ‌ها را بدون رمزنگاری TLS منتقل می‌کند. این پروتکل معمولاً از پورت 80/TCP استفاده می‌کند؛ بنابراین اطلاعات ارسال‌شده در یک اتصال HTTP ساده ممکن است توسط مهاجم در مسیر شبکه خوانده یا تغییر داده شود.">HTTP transfers requests and responses without TLS encryption. It conventionally uses port 80/TCP, so information sent through a plain HTTP connection can be read or modified by an attacker on the network path.</p>
+                </section>
+
+                <section id="planned-sections" class="article-section">
+                  <h2 data-en="02 — What Is HTTPS?" data-fa="۰۲ — HTTPS چیست؟">02 — What Is HTTPS?</h2>
+                  <p data-en="HTTPS is HTTP carried over TLS. It conventionally uses port 443/TCP and protects the connection with encryption, integrity checks, and server authentication." data-fa="HTTPS همان HTTP روی TLS است. این پروتکل معمولاً از پورت 443/TCP استفاده می‌کند و اتصال را با Encryption، بررسی Integrity و Server Authentication محافظت می‌کند.">HTTPS is HTTP carried over TLS. It conventionally uses port 443/TCP and protects the connection with encryption, integrity checks, and server authentication.</p>
+                </section>
+
+                <section id="tls-certificate" class="article-section">
+                  <h2 data-en="03 — What Is a TLS Certificate?" data-fa="۰۳ — TLS Certificate چیست؟">03 — What Is a TLS Certificate?</h2>
+                  <p data-en="A TLS Certificate binds the server public key to its domain identity so the browser can authenticate the server. The certificate itself does not encrypt the page content; it supports the authenticated TLS handshake that establishes the session keys used for encryption and integrity protection." data-fa="TLS Certificate، Public Key سرور را به Identity دامنه متصل می‌کند تا Browser بتواند Server را احراز هویت کند. Certificate به‌تنهایی محتوای صفحه را رمزنگاری نمی‌کند؛ بلکه از TLS Handshake احراز هویت‌شده پشتیبانی می‌کند تا Session Keyهای مورد استفاده برای Encryption و Integrity ایجاد شوند.">A TLS Certificate binds the server public key to its domain identity so the browser can authenticate the server. The certificate itself does not encrypt the page content; it supports the authenticated TLS handshake that establishes the session keys used for encryption and integrity protection.</p>
+                  <div class="article-grid">
+                    <div class="article-card article-card--method"><div class="article-card-content"><h3 class="article-card-title" data-en="Domain identity" data-fa="تأیید Identity دامنه">Domain identity</h3><p data-en="The certificate helps the browser verify that the server is authorized for the requested domain name." data-fa="Certificate به Browser کمک می‌کند بررسی کند که Server برای Domain Name درخواستی مجاز است.">The certificate helps the browser verify that the server is authorized for the requested domain name.</p></div></div>
+                    <div class="article-card article-card--method"><div class="article-card-content"><h3 class="article-card-title" data-en="Encryption" data-fa="Encryption">Encryption</h3><p data-en="TLS uses negotiated session keys to encrypt data in transit after the handshake." data-fa="TLS پس از Handshake از Session Keyهای توافق‌شده برای رمزنگاری داده‌ها در مسیر استفاده می‌کند.">TLS uses negotiated session keys to encrypt data in transit after the handshake.</p></div></div>
+                    <div class="article-card article-card--method"><div class="article-card-content"><h3 class="article-card-title" data-en="Integrity" data-fa="Integrity">Integrity</h3><p data-en="TLS detects unauthorized changes to protected data while it is being transmitted." data-fa="TLS تغییر غیرمجاز در داده‌های محافظت‌شده هنگام انتقال را تشخیص می‌دهد.">TLS detects unauthorized changes to protected data while it is being transmitted.</p></div></div>
+                  </div>
+                </section>
+
+                <section id="tls-handshake" class="article-section">
+                  <h2 data-en="04 — TLS Handshake" data-fa="۰۴ — TLS Handshake">04 — TLS Handshake</h2>
+                  <p data-en="During a simplified TLS handshake, the client sends ClientHello with supported protocol versions and cryptographic options. The server responds with ServerHello, presents its certificate, and the peers perform key exchange. After the server identity is validated and the handshake completes, both sides use shared session keys to protect HTTP requests and responses." data-fa="در یک TLS Handshake ساده‌شده، Client پیام ClientHello را همراه با Versionهای پشتیبانی‌شده و گزینه‌های رمزنگاری می‌فرستد. Server با ServerHello پاسخ می‌دهد، Certificate خود را ارائه می‌کند و دو طرف Key Exchange را انجام می‌دهند. پس از اعتبارسنجی Identity سرور و تکمیل Handshake، هر دو سمت از Session Keyهای مشترک برای محافظت از درخواست‌ها و پاسخ‌های HTTP استفاده می‌کنند.">During a simplified TLS handshake, the client sends ClientHello with supported protocol versions and cryptographic options. The server responds with ServerHello, presents its certificate, and the peers perform key exchange. After the server identity is validated and the handshake completes, both sides use shared session keys to protect HTTP requests and responses.</p>
+                </section>
+
+                <section id="check-certificate" class="article-section">
+                  <h2 data-en="05 — Check a Certificate" data-fa="۰۵ — بررسی Certificate">05 — Check a Certificate</h2>
+                  <p data-en="Use these commands to inspect the TLS connection and make an HTTPS header request. Replace the example domain with the target host you are authorized to test." data-fa="برای بررسی اتصال TLS و ارسال درخواست Header روی HTTPS از دستورهای زیر استفاده کنید. example.com را با Host مجازی که مجاز به بررسی آن هستید جایگزین کنید.">Use these commands to inspect the TLS connection and make an HTTPS header request. Replace the example domain with the target host you are authorized to test.</p>
+                  <div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">openssl s_client -connect example.com:443 -servername example.com</code></pre></div>
+                  <div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">curl -I https://example.com</code></pre></div>
+                </section>
+
+                <section id="http-redirect" class="article-section">
+                  <h2 data-en="06 — Redirect HTTP to HTTPS" data-fa="۰۶ — Redirect از HTTP به HTTPS">06 — Redirect HTTP to HTTPS</h2>
+                  <p data-en="Keep an HTTP listener only to redirect visitors to the HTTPS URL. The following Nginx server block returns a permanent redirect." data-fa="یک Listener برای HTTP را فقط برای Redirect کردن بازدیدکنندگان به URL مبتنی بر HTTPS نگه دارید. Server Block زیر در Nginx یک Redirect دائمی برمی‌گرداند.">Keep an HTTP listener only to redirect visitors to the HTTPS URL. The following Nginx server block returns a permanent redirect.</p>
+                  <div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Nginx" data-fa="Nginx">Nginx</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-nginx">server {
+    listen 80;
+    server_name example.com www.example.com;
+    return 301 https://$host$request_uri;
+}</code></pre></div>
+                </section>
+
+                <section id="hsts" class="article-section">
+                  <h2 data-en="07 — HSTS" data-fa="۰۷ — HSTS">07 — HSTS</h2>
+                  <p data-en="The Strict-Transport-Security response header tells browsers to use HTTPS for future connections to a host. It strengthens protection against downgrade attempts after the browser has received the policy over HTTPS." data-fa="Response Header با نام Strict-Transport-Security به Browser اعلام می‌کند که برای اتصال‌های بعدی به یک Host از HTTPS استفاده کند. این Header پس از دریافت Policy از طریق HTTPS، محافظت در برابر تلاش‌های Downgrade را تقویت می‌کند.">The Strict-Transport-Security response header tells browsers to use HTTPS for future connections to a host. It strengthens protection against downgrade attempts after the browser has received the policy over HTTPS.</p>
+                  <div class="article-callout article-callout--warning"><p class="article-callout-title" data-en="Test before enabling broadly" data-fa="پیش از فعال‌سازی گسترده تست کنید">Test before enabling broadly</p><p data-en="HSTS must be sent over HTTPS. Enabling includeSubDomains or a long max-age before every affected host supports valid HTTPS can make those hosts unavailable to users, and browsers do not allow users to bypass certificate errors for HSTS hosts." data-fa="HSTS باید از طریق HTTPS ارسال شود. فعال‌کردن includeSubDomains یا max-age طولانی پیش از آن‌که همه Hostهای تحت تأثیر از HTTPS معتبر پشتیبانی کنند، ممکن است آن Hostها را برای کاربران غیرقابل‌دسترسی کند؛ همچنین Browserها برای Hostهای HSTS اجازه عبور از خطای Certificate را نمی‌دهند.">HSTS must be sent over HTTPS. Enabling includeSubDomains or a long max-age before every affected host supports valid HTTPS can make those hosts unavailable to users, and browsers do not allow users to bypass certificate errors for HSTS hosts.</p></div>
+                </section>
+
+                <section id="common-errors" class="article-section">
+                  <h2 data-en="08 — Common Errors" data-fa="۰۸ — خطاهای رایج">08 — Common Errors</h2>
+                  <div class="article-grid">
+                    <div class="article-card article-card--method"><div class="article-card-content"><h3 class="article-card-title" data-en="Certificate Expired" data-fa="Certificate Expired">Certificate Expired</h3><p data-en="Renew and deploy the certificate before its expiry date, then verify that the server is presenting the renewed certificate." data-fa="Certificate را پیش از تاریخ انقضا Renew و Deploy کنید، سپس بررسی کنید Server، Certificate تمدیدشده را ارائه می‌کند.">Renew and deploy the certificate before its expiry date, then verify that the server is presenting the renewed certificate.</p></div></div>
+                    <div class="article-card article-card--method"><div class="article-card-content"><h3 class="article-card-title" data-en="Hostname Mismatch" data-fa="Hostname Mismatch">Hostname Mismatch</h3><p data-en="Ensure that the requested host name appears in the certificate Subject Alternative Name entries." data-fa="اطمینان حاصل کنید Hostname درخواستی در Subject Alternative Nameهای Certificate وجود دارد.">Ensure that the requested host name appears in the certificate Subject Alternative Name entries.</p></div></div>
+                    <div class="article-card article-card--method"><div class="article-card-content"><h3 class="article-card-title" data-en="Untrusted CA or Incomplete Chain" data-fa="Untrusted CA یا Incomplete Chain">Untrusted CA or Incomplete Chain</h3><p data-en="Install a certificate issued by a trusted CA where public trust is required and configure the complete intermediate certificate chain on the server." data-fa="در مواردی که Public Trust لازم است، از Certificate صادرشده توسط CA مورداعتماد استفاده کنید و Intermediate Certificate Chain کامل را روی Server پیکربندی کنید.">Install a certificate issued by a trusted CA where public trust is required and configure the complete intermediate certificate chain on the server.</p></div></div>
+                    <div class="article-card article-card--method"><div class="article-card-content"><h3 class="article-card-title" data-en="Mixed Content" data-fa="Mixed Content">Mixed Content</h3><p data-en="Load every script, stylesheet, image, font, and other subresource over HTTPS when the main page is delivered over HTTPS." data-fa="وقتی صفحه اصلی با HTTPS ارائه می‌شود، همه Scriptها، Stylesheetها، Imageها، Fontها و سایر Subresourceها را نیز با HTTPS بارگذاری کنید.">Load every script, stylesheet, image, font, and other subresource over HTTPS when the main page is delivered over HTTPS.</p></div></div>
+                  </div>
+                </section>
+
+                <section id="comparison" class="article-section">
+                  <h2 data-en="HTTP and HTTPS Comparison" data-fa="جدول مقایسه HTTP و HTTPS">HTTP and HTTPS Comparison</h2>
+                  <div class="article-table-wrap"><table class="article-table"><thead><tr><th data-en="Feature" data-fa="ویژگی">Feature</th><th data-en="HTTP" data-fa="HTTP">HTTP</th><th data-en="HTTPS" data-fa="HTTPS">HTTPS</th></tr></thead><tbody>
+                    <tr><td data-en="Transport protection" data-fa="محافظت از انتقال">Transport protection</td><td data-en="No TLS encryption" data-fa="بدون Encryption مبتنی بر TLS">No TLS encryption</td><td data-en="HTTP over TLS" data-fa="HTTP روی TLS">HTTP over TLS</td></tr>
+                    <tr><td data-en="Typical port" data-fa="پورت معمول">Typical port</td><td>80/TCP</td><td>443/TCP</td></tr>
+                    <tr><td data-en="Confidentiality and integrity" data-fa="محرمانگی و Integrity">Confidentiality and integrity</td><td data-en="Not provided by HTTP itself" data-fa="توسط خود HTTP فراهم نمی‌شود">Not provided by HTTP itself</td><td data-en="Provided by TLS" data-fa="توسط TLS فراهم می‌شود">Provided by TLS</td></tr>
+                    <tr><td data-en="Server identity" data-fa="Identity سرور">Server identity</td><td data-en="No TLS certificate validation" data-fa="بدون اعتبارسنجی TLS Certificate">No TLS certificate validation</td><td data-en="Validated with a TLS certificate" data-fa="با TLS Certificate اعتبارسنجی می‌شود">Validated with a TLS certificate</td></tr>
+                    <tr><td data-en="Recommended for websites" data-fa="توصیه برای وب‌سایت‌ها">Recommended for websites</td><td data-en="No" data-fa="خیر">No</td><td data-en="Yes" data-fa="بله">Yes</td></tr>
+                  </tbody></table></div>
+                </section>
+
+                <section id="best-practices" class="article-section">
+                  <h2 data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</h2>
+                  <div class="article-callout article-callout--tip"><ul>
+                    <li data-en="Serve all pages and subresources over HTTPS and redirect HTTP to HTTPS." data-fa="همه صفحه‌ها و Subresourceها را با HTTPS ارائه کنید و HTTP را به HTTPS Redirect کنید.">Serve all pages and subresources over HTTPS and redirect HTTP to HTTPS.</li>
+                    <li data-en="Use currently supported TLS versions and maintain a valid, complete certificate chain." data-fa="از Versionهای پشتیبانی‌شده TLS استفاده کنید و Certificate Chain معتبر و کامل را نگه دارید.">Use currently supported TLS versions and maintain a valid, complete certificate chain.</li>
+                    <li data-en="Monitor certificate expiry and renew certificates before they expire." data-fa="تاریخ انقضای Certificate را Monitoring کنید و پیش از انقضا آن‌ها را Renew کنید.">Monitor certificate expiry and renew certificates before they expire.</li>
+                    <li data-en="Test HTTPS and all subdomains before enabling broad HSTS policies." data-fa="پیش از فعال‌سازی Policyهای گسترده HSTS، HTTPS و همه Subdomainها را تست کنید.">Test HTTPS and all subdomains before enabling broad HSTS policies.</li>
+                  </ul></div>
+                </section>
+
+                <section id="troubleshooting" class="article-section">
+                  <h2 data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</h2>
+                  <p data-en="When HTTPS does not work as expected, verify the domain name, certificate validity period, certificate chain, server TLS configuration, and the web-server redirect. Review browser developer tools for mixed-content warnings." data-fa="وقتی HTTPS مطابق انتظار کار نمی‌کند، Domain Name، دوره اعتبار Certificate، Certificate Chain، پیکربندی TLS در Server و Redirect وب‌سرور را بررسی کنید. برای هشدارهای Mixed Content، ابزار توسعه‌دهنده Browser را بازبینی کنید.">When HTTPS does not work as expected, verify the domain name, certificate validity period, certificate chain, server TLS configuration, and the web-server redirect. Review browser developer tools for mixed-content warnings.</p>
+                </section>
+
+                <section id="faq" class="article-section">
+                  <h2 data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</h2>
+                  <div class="article-faq">
+                    <div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Is SSL the same as TLS?" data-fa="آیا SSL همان TLS است؟">Is SSL the same as TLS?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="SSL is the older name that remains common in product names such as SSL Certificate. Modern secure web connections use TLS." data-fa="SSL نام قدیمی‌تری است که هنوز در نام‌هایی مانند SSL Certificate رایج است. اتصال‌های امن وب مدرن از TLS استفاده می‌کنند.">SSL is the older name that remains common in product names such as SSL Certificate. Modern secure web connections use TLS.</p></div></div>
+                    <div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Does an HTTP redirect replace HSTS?" data-fa="آیا Redirect از HTTP جای HSTS را می‌گیرد؟">Does an HTTP redirect replace HSTS?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. A redirect helps users reach HTTPS, while HSTS instructs browsers to use HTTPS directly for future requests after receiving the policy securely." data-fa="خیر. Redirect به کاربران کمک می‌کند به HTTPS برسند، در حالی که HSTS پس از دریافت امن Policy به Browser می‌گوید برای درخواست‌های بعدی مستقیماً از HTTPS استفاده کند.">No. A redirect helps users reach HTTPS, while HSTS instructs browsers to use HTTPS directly for future requests after receiving the policy securely.</p></div></div>
+                    <div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Why can a valid certificate still show an error?" data-fa="چرا یک Certificate معتبر باز هم می‌تواند خطا نشان دهد؟">Why can a valid certificate still show an error?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="The requested host name may not match the certificate, the intermediate chain may be incomplete, or the client may not trust the issuing CA." data-fa="ممکن است Hostname درخواستی با Certificate مطابقت نداشته باشد، Intermediate Chain ناقص باشد یا Client به CA صادرکننده اعتماد نداشته باشد.">The requested host name may not match the certificate, the intermediate chain may be incomplete, or the client may not trust the issuing CA.</p></div></div>
+                  </div>
+                </section>
+
+                <section id="conclusion" class="article-section">
+                  <h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2>
+                  <p data-en="HTTPS protects HTTP with TLS by providing encryption, integrity, and server authentication. Use a valid TLS certificate, redirect HTTP to HTTPS, test all resources for secure loading, and enable HSTS only after confirming that the relevant hosts can reliably serve HTTPS." data-fa="HTTPS با ارائه Encryption، Integrity و Server Authentication از HTTP با TLS محافظت می‌کند. از TLS Certificate معتبر استفاده کنید، HTTP را به HTTPS Redirect کنید، بارگذاری امن همه Resourceها را تست کنید و HSTS را فقط پس از اطمینان از ارائه پایدار HTTPS توسط Hostهای مرتبط فعال کنید.">HTTPS protects HTTP with TLS by providing encryption, integrity, and server authentication. Use a valid TLS certificate, redirect HTTP to HTTPS, test all resources for secure loading, and enable HSTS only after confirming that the relevant hosts can reliably serve HTTPS.</p>
+                </section>
+
+                <section id="official-resources" class="article-section">
+                  <h2 data-en="Official References" data-fa="منابع رسمی">Official References</h2>
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security" target="_blank" rel="noopener noreferrer" data-en="MDN: Transport Layer Security" data-fa="MDN: Transport Layer Security">MDN: Transport Layer Security</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security" target="_blank" rel="noopener noreferrer" data-en="MDN: Strict-Transport-Security" data-fa="MDN: Strict-Transport-Security">MDN: Strict-Transport-Security</a></li>
+                    <li><a href="https://www.rfc-editor.org/rfc/rfc8446.html" target="_blank" rel="noopener noreferrer" data-en="IETF RFC 8446: TLS 1.3" data-fa="IETF RFC 8446: TLS 1.3">IETF RFC 8446: TLS 1.3</a></li>
+                    <li><a href="https://www.rfc-editor.org/rfc/rfc6797.html" target="_blank" rel="noopener noreferrer" data-en="IETF RFC 6797: HTTP Strict Transport Security" data-fa="IETF RFC 6797: HTTP Strict Transport Security">IETF RFC 6797: HTTP Strict Transport Security</a></li>
+                  </ul>
+                </section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

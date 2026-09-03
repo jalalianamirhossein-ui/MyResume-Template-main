@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Windows CMD - Professional Network Commands for System Administrators | Complete Guide - Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
       content="راهنمای جامع دستورات شبکه Windows CMD برای مدیران سیستم و متخصصان IT. شامل ping، tracert، netstat، nslookup، ipconfig و دستورات پیشرفته با مثال‌های عملی و سناریوهای عیب‌یابی شبکه."
@@ -197,7 +197,7 @@
     <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
     <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
     <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
   </head>
@@ -331,8 +331,8 @@
           <li class="article-nav-item"><a href="#introduction"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a></li>
           <li class="article-nav-item"><a href="#basic-commands"><i class="bi bi-terminal navicon" aria-hidden="true"></i><span data-en="Basic Network Commands in CMD" data-fa="دستورات پایه شبکه در CMD">Basic Network Commands in CMD</span></a></li>
           <li class="article-nav-item"><a href="#advanced-commands"><i class="bi bi-terminal-plus navicon" aria-hidden="true"></i><span data-en="Advanced Network Commands in CMD" data-fa="دستورات پیشرفته شبکه در CMD">Advanced Network Commands in CMD</span></a></li>
-          <li class="article-nav-item"><a href="#cheat-sheet"><i class="bi bi-table navicon" aria-hidden="true"></i><span data-en="Cheat Sheet Summary Table" data-fa="جدول خلاصه (Cheat Sheet)">Cheat Sheet Summary Table</span></a></li>
-          <li class="article-nav-item"><a href="#troubleshooting"><i class="bi bi-wrench-adjustable navicon" aria-hidden="true"></i><span data-en="Practical Scenarios (Troubleshooting Examples)" data-fa="سناریوهای عملی (Troubleshooting Examples)">Practical Scenarios (Troubleshooting Examples)</span></a></li>
+          <li class="article-nav-item"><a href="#cheat-sheet"><i class="bi bi-table navicon" aria-hidden="true"></i><span data-en="Cheat Sheet Summary Table" data-fa="جدول خلاصه دستورات">Cheat Sheet Summary Table</span></a></li>
+          <li class="article-nav-item"><a href="#troubleshooting"><i class="bi bi-wrench-adjustable navicon" aria-hidden="true"></i><span data-en="Practical Scenarios (Troubleshooting Examples)" data-fa="سناریوهای عملی (نمونه‌های رفع اشکال)">Practical Scenarios (Troubleshooting Examples)</span></a></li>
           <li class="article-nav-item"><a href="#professional-tips"><i class="bi bi-lightbulb navicon" aria-hidden="true"></i><span data-en="Professional Tips for System Administrators" data-fa="نکات حرفه‌ای برای مدیران سیستم">Professional Tips for System Administrators</span></a></li>
           <li class="article-nav-item"><a href="#conclusion"><i class="bi bi-flag navicon" aria-hidden="true"></i><span data-en="Conclusion" data-fa="نتیجه‌گیری">Conclusion</span></a></li>
           <li class="article-nav-item"><a href="#faq"><i class="bi bi-question-circle navicon" aria-hidden="true"></i><span data-en="Frequently Asked Questions" data-fa="پرسش‌های متداول">Frequently Asked Questions</span></a></li>
@@ -352,10 +352,9 @@
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
         <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Microsoft</span></nav>
           <div class="article-meta"><span class="article-category">Microsoft</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Microsoft</time></span></div>
-          <h1 class="article-title hero-title">Windows CMD Network Commands</h1>
-          <p class="article-excerpt hero-subtitle">Professional network commands for system administrators</p>
+          <h1 class="article-title hero-title" data-en="Windows CMD Network Commands" data-fa="دستورات شبکه Windows CMD">Windows CMD Network Commands</h1>
+          <p class="article-excerpt hero-subtitle" data-en="Professional network commands for system administrators" data-fa="دستورات حرفه‌ای شبکه برای مدیران سیستم">Professional network commands for system administrators</p>
           <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/windows-1.png" alt="Windows CMD Network Commands" /><div class="banner-content"><h2 class="banner-title">Microsoft</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
           <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
         </div></div></div>
@@ -377,7 +376,7 @@
                 </section>
 
                 <!-- Table of Contents -->
-                <section class="article-section">
+                <section id="article-toc" class="article-section">
                   <h2 data-en="Table of Contents" data-fa="فهرست مطالب">
                     فهرست مطالب
                   </h2>
@@ -410,16 +409,14 @@
                       <li>
                         <a
                           href="#cheat-sheet"
-                          data-en="4. Cheat Sheet Summary Table"
-                          data-fa="4. جدول خلاصه (Cheat Sheet)"
+                          data-en="4. Cheat Sheet Summary Table" data-fa="۴. جدول خلاصه دستورات"
                           >4. جدول خلاصه (Cheat Sheet)</a
                         >
                       </li>
                       <li>
                         <a
                           href="#troubleshooting"
-                          data-en="5. Practical Scenarios (Troubleshooting Examples)"
-                          data-fa="5. سناریوهای عملی (Troubleshooting Examples)"
+                          data-en="5. Practical Scenarios (Troubleshooting Examples)" data-fa="۵. سناریوهای عملی (نمونه‌های رفع اشکال)"
                           >5. سناریوهای عملی (Troubleshooting Examples)</a
                         >
                       </li>
@@ -731,7 +728,7 @@ netsh int ip reset</code></pre>
 
                 <!-- Cheat Sheet -->
                 <section id="cheat-sheet" class="article-section">
-                  <h2 data-en="Cheat Sheet Summary Table" data-fa="جدول خلاصه (Cheat Sheet)">جدول خلاصه (Cheat Sheet)</h2>
+                  <h2 data-en="Cheat Sheet Summary Table" data-fa="جدول خلاصه دستورات">جدول خلاصه (Cheat Sheet)</h2>
                   <div class="article-table-wrap">
                     <table class="article-table">
                       <thead class="">
@@ -805,8 +802,7 @@ netsh int ip reset</code></pre>
                 <!-- Troubleshooting Examples -->
                 <section id="troubleshooting" class="article-section">
                   <h2
-                    data-en="Practical Scenarios (Troubleshooting Examples)"
-                    data-fa="سناریوهای عملی (Troubleshooting Examples)"
+                    data-en="Practical Scenarios (Troubleshooting Examples)" data-fa="سناریوهای عملی (نمونه‌های رفع اشکال)"
                   >
                     سناریوهای عملی (Troubleshooting Examples)
                   </h2>

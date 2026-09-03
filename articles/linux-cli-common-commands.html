@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Linux CLI Common Commands | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Essential Linux terminal commands for admins and power users" />
+    <meta
+      name="description"
+      content="Essential Linux terminal commands for admins and power users"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/linux-cli-common-commands.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/linux-cli-common-commands.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-linux">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,111 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="File operations" data-fa="۰۱ — عملیات فایل">File operations</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#storage"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Storage and system state" data-fa="۰۲ — Storage و وضعیت سیستم">Storage and system state</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#services-logs"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Services and logs" data-fa="۰۳ — Serviceها و Logها">Services and logs</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#network"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Network diagnostics" data-fa="۰۴ — عیب‌یابی شبکه">Network diagnostics</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#permissions"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Permissions and ownership" data-fa="۰۵ — Permission و Ownership">Permissions and ownership</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#search-pipes"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Search, pipes, redirects" data-fa="۰۶ — جستجو، Pipe و Redirect">Search, pipes, redirects</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#test"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Safe verification" data-fa="۰۷ — اعتبارسنجی ایمن">Safe verification</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#references"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official references" data-fa="منابع رسمی">Official references</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,147 +301,374 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Linux</span></nav>
-          <div class="article-meta"><span class="article-category">Linux</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Linux</time></span></div>
-          <h1 class="article-title hero-title">Linux CLI Common Commands</h1>
-          <p class="article-excerpt hero-subtitle">Essential Linux terminal commands for admins and power users</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/linux-3.png" alt="Linux CLI Common Commands" /><div class="banner-content"><h2 class="banner-title">Linux</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Essential Linux terminal commands for admins and power users</p></section>
-          <section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section>
-          <section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">Linux</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">Linux</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Common Linux CLI commands for system management"
+                data-fa="دستورات پرکاربرد Linux CLI برای مدیریت سیستم"
+              >
+                Linux CLI Common Commands
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Essential Linux terminal commands for admins and power users"
+                data-fa="دستورات ضروری ترمینال Linux برای مدیران و کاربران حرفه‌ای"
+              >
+                Essential Linux terminal commands for admins and power users
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/linux-3.png"
+                    alt="Linux CLI Common Commands"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">Linux</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section"><h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2><p data-en="The Linux command line provides direct control over files, processes, services, logs, storage, and networking. Run each command deliberately, verify the target path or service first, and use sudo only when elevated access is actually required." data-fa="Linux Command Line کنترل مستقیم فایل‌ها، Processها، Serviceها، Logها، Storage و Network را فراهم می‌کند. هر دستور را آگاهانه اجرا کنید، ابتدا مسیر یا Service هدف را بررسی کنید و فقط زمانی که واقعاً لازم است از sudo استفاده کنید.">The Linux command line provides direct control over files, processes, services, logs, storage, and networking. Run each command deliberately, verify the target path or service first, and use sudo only when elevated access is actually required.</p></section>
+                <section id="article-status" class="article-section"><h2 data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</h2><ul><li data-en="A Linux shell account and, only where required, approved sudo access." data-fa="یک حساب Shell در Linux و فقط در موارد لازم، دسترسی sudo تأییدشده.">A Linux shell account and, only where required, approved sudo access.</li><li data-en="A terminal session with access to the intended server or lab system." data-fa="یک Terminal Session با دسترسی به Server یا Lab System موردنظر.">A terminal session with access to the intended server or lab system.</li><li data-en="A current backup or snapshot before changing production files, ownership, permissions, or services." data-fa="Backup یا Snapshot به‌روز پیش از تغییر فایل‌ها، Ownership، Permission یا Serviceهای Production.">A current backup or snapshot before changing production files, ownership, permissions, or services.</li></ul></section>
+                <section id="planned-sections" class="article-section"><h2 data-en="01 — Navigation and file operations" data-fa="۰۱ — پیمایش و عملیات فایل">01 — Navigation and file operations</h2><p data-en="Start by identifying the current directory and inspecting its contents. Use interactive deletion for uncertain targets; never run a destructive command until the path has been checked." data-fa="با شناسایی مسیر فعلی و بررسی محتویات آن شروع کنید. برای هدف‌های نامطمئن از حذف تعاملی استفاده کنید و تا زمانی که مسیر بررسی نشده است، دستور مخرب اجرا نکنید.">Start by identifying the current directory and inspecting its contents. Use interactive deletion for uncertain targets; never run a destructive command until the path has been checked.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">pwd
+ls -lah
+cd /var/log
+cp -a source destination
+mv old new
+rm -i file
+mkdir -p /data/backup</code></pre></div><ul><li data-en="pwd prints the current directory; ls -lah lists entries with human-readable sizes and hidden files." data-fa="pwd مسیر فعلی را نمایش می‌دهد و ls -lah فهرست موارد را با اندازهٔ خوانا و فایل‌های مخفی نشان می‌دهد.">pwd prints the current directory; ls -lah lists entries with human-readable sizes and hidden files.</li><li data-en="cp -a preserves attributes when copying; mv renames or moves; mkdir -p creates missing parent directories." data-fa="cp -a هنگام کپی Attributeها را حفظ می‌کند؛ mv جابه‌جا یا Rename می‌کند و mkdir -p Parent Directoryهای موجود‌نبودن را می‌سازد.">cp -a preserves attributes when copying; mv renames or moves; mkdir -p creates missing parent directories.</li></ul></section>
+                <section id="storage" class="article-section"><h2 data-en="02 — Storage and system state" data-fa="۰۲ — Storage و وضعیت سیستم">02 — Storage and system state</h2><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">df -h
+du -sh /*
+free -h
+uptime
+ps aux
+top</code></pre></div><p data-en="df -h reports filesystem capacity, while du -sh /* estimates usage below top-level paths and can produce permission errors for an unprivileged user. free -h, uptime, ps aux, and top provide memory, load, process, and live system information." data-fa="df -h ظرفیت File System را گزارش می‌کند و du -sh /* میزان استفاده زیر مسیرهای سطح بالا را تخمین می‌زند و برای User بدون دسترسی ممکن است Permission Error نمایش دهد. free -h، uptime، ps aux و top اطلاعات Memory، Load، Process و وضعیت زندهٔ سیستم را ارائه می‌کنند.">df -h reports filesystem capacity, while du -sh /* estimates usage below top-level paths and can produce permission errors for an unprivileged user. free -h, uptime, ps aux, and top provide memory, load, process, and live system information.</p></section>
+                <section id="services-logs" class="article-section"><h2 data-en="03 — Services and logs" data-fa="۰۳ — Serviceها و Logها">03 — Services and logs</h2><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">systemctl status nginx
+journalctl -u nginx</code></pre></div><p data-en="systemctl status shows the state of a systemd service. journalctl -u narrows the system journal to a unit; add an appropriate time filter when investigating a specific incident. Replace nginx with the actual service name." data-fa="systemctl status وضعیت یک systemd Service را نشان می‌دهد. journalctl -u System Journal را به یک Unit محدود می‌کند؛ برای بررسی یک Incident مشخص، Time Filter مناسب اضافه کنید. nginx را با نام Service واقعی جایگزین کنید.">systemctl status shows the state of a systemd service. journalctl -u narrows the system journal to a unit; add an appropriate time filter when investigating a specific incident. Replace nginx with the actual service name.</p></section>
+                <section id="network" class="article-section"><h2 data-en="04 — Network diagnostics" data-fa="۰۴ — عیب‌یابی شبکه">04 — Network diagnostics</h2><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">ip addr
+ip route
+ss -tulpn
+ping -c 4 8.8.8.8
+curl -I https://example.com</code></pre></div><p data-en="ip addr shows interfaces and addresses; ip route shows routing decisions; ss -tulpn displays listening sockets and may need sudo to show process details. Test the local gateway before testing an external IP, then use curl to test HTTP response headers." data-fa="ip addr Interfaceها و Addressها را نشان می‌دهد؛ ip route تصمیم‌های Routing را نمایش می‌دهد؛ ss -tulpn Socketهای Listening را نشان می‌دهد و برای نمایش جزئیات Process ممکن است به sudo نیاز داشته باشد. ابتدا Gateway محلی و سپس یک IP خارجی را تست کنید و در ادامه با curl Headerهای پاسخ HTTP را بررسی کنید.">ip addr shows interfaces and addresses; ip route shows routing decisions; ss -tulpn displays listening sockets and may need sudo to show process details. Test the local gateway before testing an external IP, then use curl to test HTTP response headers.</p></section>
+                <section id="permissions" class="article-section"><h2 data-en="05 — Permissions, ownership, and access" data-fa="۰۵ — Permission، Ownership و Access">05 — Permissions, ownership, and access</h2><p data-en="Linux permissions apply read, write, and execute access to the owner, group, and others. chmod changes mode bits; chown changes ownership. Always inspect the current owner and mode with ls -l before making a change." data-fa="Permissionهای Linux، دسترسی Read، Write و Execute را برای Owner، Group و Other اعمال می‌کنند. chmod Mode Bitها را تغییر می‌دهد و chown Ownership را تغییر می‌دهد. پیش از هر تغییر، Owner و Mode فعلی را با ls -l بررسی کنید.">Linux permissions apply read, write, and execute access to the owner, group, and others. chmod changes mode bits; chown changes ownership. Always inspect the current owner and mode with ls -l before making a change.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">ls -l /path/to/file
+chmod 640 /path/to/file
+chown user:group /path/to/file</code></pre></div><div class="article-callout article-callout--warning"><p data-en="Avoid broad modes such as 777. Grant only the minimum permissions required by the intended user, service, or group." data-fa="از Modeهای گسترده مانند 777 پرهیز کنید. فقط حداقل Permission لازم را به User، Service یا Group موردنظر بدهید.">Avoid broad modes such as 777. Grant only the minimum permissions required by the intended user, service, or group.</p></div></section>
+                <section id="search-pipes" class="article-section"><h2 data-en="06 — Search, pipes, and redirects" data-fa="۰۶ — جستجو، Pipe و Redirect">06 — Search, pipes, and redirects</h2><p data-en="grep searches text, find locates filesystem entries, a pipe (|) sends one command’s output to another command, and redirects write output to a file. Use > only when replacement is intentional; use >> when appending is intended." data-fa="grep متن را جستجو می‌کند، find موارد File System را پیدا می‌کند، Pipe یا | خروجی یک دستور را به دستور دیگر می‌فرستد و Redirect خروجی را در فایل می‌نویسد. فقط زمانی از > استفاده کنید که جایگزینی عمدی است و برای Append از >> استفاده کنید.">grep searches text, find locates filesystem entries, a pipe (|) sends one command’s output to another command, and redirects write output to a file. Use > only when replacement is intentional; use >> when appending is intended.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">grep -R "error" /var/log
+find /var/log -type f -name "*.log"
+journalctl -u nginx | grep -i "error"
+echo "check completed" &gt;&gt; /tmp/check.log</code></pre></div></section>
+                <section id="test" class="article-section"><h2 data-en="07 — Safe verification routine" data-fa="۰۷ — روال اعتبارسنجی ایمن">07 — Safe verification routine</h2><ol><li data-en="Use pwd and ls -lah before copying, moving, or removing a file." data-fa="پیش از Copy، Move یا Remove کردن فایل، از pwd و ls -lah استفاده کنید.">Use pwd and ls -lah before copying, moving, or removing a file.</li><li data-en="Check df -h before writing a large backup and verify the result with ls -lh after completion." data-fa="پیش از نوشتن Backup بزرگ، df -h را بررسی و پس از پایان با ls -lh نتیجه را تأیید کنید.">Check df -h before writing a large backup and verify the result with ls -lh after completion.</li><li data-en="For a network issue, work from interface and route checks to gateway, external IP, DNS, and application-layer testing." data-fa="برای مشکل شبکه، از بررسی Interface و Route به Gateway، IP خارجی، DNS و تست Application Layer پیش بروید.">For a network issue, work from interface and route checks to gateway, external IP, DNS, and application-layer testing.</li></ol></section>
+                <section id="troubleshooting" class="article-section"><h2 data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</h2><ul><li data-en="Permission denied: inspect ls -l, the parent-directory execute permission, ownership, and whether sudo is actually approved for the task." data-fa="Permission denied: ls -l، Permission Execute روی Parent Directory، Ownership و مجازبودن واقعی sudo برای کار را بررسی کنید.">Permission denied: inspect ls -l, the parent-directory execute permission, ownership, and whether sudo is actually approved for the task.</li><li data-en="Command not found: verify spelling, package installation, and the PATH of the current shell." data-fa="Command not found: املای دستور، نصب Package و PATH مربوط به Shell فعلی را بررسی کنید.">Command not found: verify spelling, package installation, and the PATH of the current shell.</li><li data-en="Service is inactive: inspect systemctl status and journalctl output before restarting it; preserve the reported error for investigation." data-fa="Service غیرفعال است: پیش از Restart، خروجی systemctl status و journalctl را بررسی و Error گزارش‌شده را برای بررسی نگه دارید.">Service is inactive: inspect systemctl status and journalctl output before restarting it; preserve the reported error for investigation.</li></ul></section>
+                <section id="best-practices" class="article-section"><h2 data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</h2><ul><li data-en="Use absolute paths for administrative commands and quote paths that contain spaces." data-fa="برای دستورهای مدیریتی از Absolute Path استفاده کنید و مسیر دارای فاصله را Quote کنید.">Use absolute paths for administrative commands and quote paths that contain spaces.</li><li data-en="Prefer read-only inspection before an operation that changes data or service state." data-fa="پیش از عملیاتی که داده یا وضعیت Service را تغییر می‌دهد، بررسی Read-only را ترجیح دهید.">Prefer read-only inspection before an operation that changes data or service state.</li><li data-en="Keep a command history or change record for production work, without storing passwords or secrets in it." data-fa="برای کار Production، Command History یا Change Record نگه دارید، اما Password یا Secret را در آن ذخیره نکنید.">Keep a command history or change record for production work, without storing passwords or secrets in it.</li></ul></section>
+                <section id="faq" class="article-section"><h2 data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</h2><div class="article-faq"><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="What is the difference between df and du?" data-fa="تفاوت df و du چیست؟">What is the difference between df and du?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="df reports filesystem capacity; du estimates the space consumed by files and directories." data-fa="df ظرفیت File System را گزارش می‌کند و du فضای مصرف‌شده توسط فایل‌ها و Directoryها را تخمین می‌زند.">df reports filesystem capacity; du estimates the space consumed by files and directories.</p></div></div><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Should every administrative command use sudo?" data-fa="آیا هر دستور مدیریتی باید با sudo اجرا شود؟">Should every administrative command use sudo?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. Use sudo only for the specific command that needs elevated rights, after verifying its purpose and target." data-fa="خیر. فقط برای دستور مشخصی که به دسترسی بالاتر نیاز دارد، پس از بررسی هدف و مقصد آن، از sudo استفاده کنید.">No. Use sudo only for the specific command that needs elevated rights, after verifying its purpose and target.</p></div></div></div></section>
+                <section id="conclusion" class="article-section"><h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2><p data-en="A small set of well-understood Linux CLI commands is more valuable than a long unverified command list. Inspect first, change deliberately, restrict elevated access, and verify the outcome after each production operation." data-fa="مجموعه‌ای کوچک از دستورهای Linux CLI که خوب درک شده‌اند از فهرست بلندِ تست‌نشده ارزشمندتر است. ابتدا بررسی کنید، آگاهانه تغییر دهید، دسترسی Elevated را محدود و نتیجهٔ هر عملیات Production را اعتبارسنجی کنید.">A small set of well-understood Linux CLI commands is more valuable than a long unverified command list. Inspect first, change deliberately, restrict elevated access, and verify the outcome after each production operation.</p></section>
+                <section id="references" class="article-section"><h2 data-en="Official references" data-fa="منابع رسمی">Official references</h2><ul><li><a href="https://documentation.ubuntu.com/desktop/en/latest/tutorial/the-linux-command-line-for-beginners/" target="_blank" rel="noopener noreferrer" data-en="Ubuntu Documentation — Linux command line" data-fa="مستندات Ubuntu — Linux Command Line">Ubuntu Documentation — Linux command line</a></li><li><a href="https://documentation.ubuntu.com/server/how-to/security/firewalls/" target="_blank" rel="noopener noreferrer" data-en="Ubuntu Server Documentation — Security and logs" data-fa="مستندات Ubuntu Server — امنیت و Logها">Ubuntu Server Documentation — Security and logs</a></li></ul></section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

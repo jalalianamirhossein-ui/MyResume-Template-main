@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Install MikroTik CHR on VMware Workstation | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Guide to deploy and configure Cloud Hosted Router (CHR) as a VM on Workstation" />
+    <meta
+      name="description"
+      content="Guide to deploy and configure Cloud Hosted Router (CHR) as a VM on Workstation"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/install-mikrotik-chr-vmware-workstation.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/install-mikrotik-chr-vmware-workstation.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-mikrotik">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,105 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Download image" data-fa="۰۱ — دانلود Image رسمی">Download image</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#vm"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Create VM" data-fa="۰۲ — ساخت VM و اتصال Disk">Create VM</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#network"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="NIC mapping and boot" data-fa="۰۳ — نگاشت NIC و Boot">NIC mapping and boot</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#configuration"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Network configuration" data-fa="۰۴ — پیکربندی اولیه شبکه">Network configuration</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#license"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="CHR licenses" data-fa="۰۵ — سطح‌های License در CHR">CHR licenses</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#test"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Test" data-fa="۰۶ — تست">Test</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#references"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official references" data-fa="منابع رسمی">Official references</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,145 +295,357 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>MikroTik</span></nav>
-          <div class="article-meta"><span class="article-category">MikroTik</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">MikroTik</time></span></div>
-          <h1 class="article-title hero-title">Install MikroTik CHR on VMware Workstation</h1>
-          <p class="article-excerpt hero-subtitle">Guide to deploy and configure Cloud Hosted Router (CHR) as a VM on Workstation</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/mikrotik-6.png" alt="Install MikroTik CHR on VMware Workstation" /><div class="banner-content"><h2 class="banner-title">MikroTik</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Guide to deploy and configure Cloud Hosted Router (CHR) as a VM on Workstation</p></section><section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section><section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">MikroTik</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">MikroTik</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Install MikroTik CHR on VMware Workstation"
+                data-fa="نصب MikroTik CHR روی VMware Workstation"
+              >
+                Install MikroTik CHR on VMware Workstation
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Guide to deploy and configure Cloud Hosted Router (CHR) as a VM on Workstation"
+                data-fa="راهنمای نصب و پیکربندی Cloud Hosted Router (CHR) به‌عنوان VM در VMware Workstation"
+              >
+                Guide to deploy and configure Cloud Hosted Router (CHR) as a VM
+                on Workstation
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/mikrotik-6.png"
+                    alt="Install MikroTik CHR on VMware Workstation"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">MikroTik</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section"><h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2><p data-en="Cloud Hosted Router (CHR) is the RouterOS edition designed to run as a virtual machine. In VMware Workstation, the official VMDK image can be attached as the virtual disk and then configured as a lab router." data-fa="Cloud Hosted Router یا CHR نسخه‌ای از RouterOS است که برای اجرا به‌صورت Virtual Machine طراحی شده است. در VMware Workstation می‌توانید VMDK رسمی را به‌عنوان Virtual Disk متصل و آن را به‌عنوان Router آزمایشگاهی پیکربندی کنید.">Cloud Hosted Router (CHR) is the RouterOS edition designed to run as a virtual machine. In VMware Workstation, the official VMDK image can be attached as the virtual disk and then configured as a lab router.</p></section>
+                <section id="article-status" class="article-section"><h2 data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</h2><ul><li data-en="VMware Workstation and a 64-bit host with virtualization support." data-fa="VMware Workstation و یک Host ۶۴بیتی با پشتیبانی Virtualization.">VMware Workstation and a 64-bit host with virtualization support.</li><li data-en="The official CHR image for VMware (VMDK), downloaded from MikroTik." data-fa="Image رسمی CHR برای VMware با فرمت VMDK که از MikroTik دانلود شده است.">The official CHR image for VMware (VMDK), downloaded from MikroTik.</li><li data-en="A planned lab network, IP address, gateway, DNS servers, and access to the Workstation virtual-network settings." data-fa="یک شبکهٔ Lab برنامه‌ریزی‌شده، IP Address، Gateway، DNS Server و دسترسی به تنظیمات Virtual Network در Workstation.">A planned lab network, IP address, gateway, DNS servers, and access to the Workstation virtual-network settings.</li></ul></section>
+                <section id="planned-sections" class="article-section"><h2 data-en="01 — Download the official image" data-fa="۰۱ — دانلود Image رسمی">01 — Download the official image</h2><p data-en="Download the CHR VMware disk image from the official MikroTik download area. CHR images are virtual disks, not ready-made VMs; create a new guest VM and attach the downloaded VMDK as its disk." data-fa="Image دیسک VMware مربوط به CHR را از بخش دانلود رسمی MikroTik دریافت کنید. Imageهای CHR Virtual Disk هستند، نه VM آماده؛ یک Guest VM جدید بسازید و VMDK دانلودشده را به‌عنوان Disk آن متصل کنید.">Download the CHR VMware disk image from the official MikroTik download area. CHR images are virtual disks, not ready-made VMs; create a new guest VM and attach the downloaded VMDK as its disk.</p></section>
+                <section id="vm" class="article-section"><h2 data-en="02 — Create the VM and attach the disk" data-fa="۰۲ — ساخت VM و اتصال Disk">02 — Create the VM and attach the disk</h2><ol><li data-en="Create a new virtual machine in VMware Workstation and select an appropriate 64-bit guest type." data-fa="یک Virtual Machine جدید در VMware Workstation بسازید و Guest Type ۶۴بیتی مناسب را انتخاب کنید.">Create a new virtual machine in VMware Workstation and select an appropriate 64-bit guest type.</li><li data-en="Remove the automatically created empty disk if needed, then add the official CHR VMDK as an existing virtual disk." data-fa="در صورت نیاز Disk خالی خودکار را حذف و سپس VMDK رسمی CHR را به‌عنوان Existing Virtual Disk اضافه کنید.">Remove the automatically created empty disk if needed, then add the official CHR VMDK as an existing virtual disk.</li><li data-en="Allocate CPU and RAM appropriate to the lab; MikroTik documents 256 MB as a minimum and recommends at least 1024 MiB for CHR instances." data-fa="CPU و RAM را متناسب با Lab اختصاص دهید؛ MikroTik مقدار حداقل ۲۵۶ MB و پیشنهاد حداقل ۱۰۲۴ MiB را برای Instanceهای CHR منتشر کرده است.">Allocate CPU and RAM appropriate to the lab; MikroTik documents 256 MB as a minimum and recommends at least 1024 MiB for CHR instances.</li></ol></section>
+                <section id="network" class="article-section"><h2 data-en="03 — NIC mapping and boot" data-fa="۰۳ — نگاشت NIC و Boot">03 — NIC mapping and boot</h2><p data-en="Add the required virtual NICs before starting the VM. In Workstation, NAT normally gives the lab guest outbound access through the host; Bridged connects the guest to the selected physical network. Choose intentionally and avoid connecting an untrusted lab router to a production network." data-fa="پیش از روشن‌کردن VM، تعداد لازم Virtual NIC اضافه کنید. در Workstation، NAT معمولاً از طریق Host به Guest آزمایشگاهی دسترسی خروجی می‌دهد و Bridged Guest را به شبکهٔ فیزیکی انتخاب‌شده متصل می‌کند. آگاهانه انتخاب کنید و Router آزمایشگاهی غیرمورداعتماد را به شبکهٔ Production وصل نکنید.">Add the required virtual NICs before starting the VM. In Workstation, NAT normally gives the lab guest outbound access through the host; Bridged connects the guest to the selected physical network. Choose intentionally and avoid connecting an untrusted lab router to a production network.</p><p data-en="Boot the VM, sign in as the default admin user, and set a strong password immediately. Check interface names with /interface print; interface order can change when adapters are added, removed, or reordered in the hypervisor." data-fa="VM را Boot کنید، با کاربر پیش‌فرض admin وارد شوید و بلافاصله Password قوی بگذارید. نام Interfaceها را با /interface print بررسی کنید؛ Interface Order ممکن است با افزودن، حذف یا جابه‌جایی Adapterها در Hypervisor تغییر کند.">Boot the VM, sign in as the default admin user, and set a strong password immediately. Check interface names with /interface print; interface order can change when adapters are added, removed, or reordered in the hypervisor.</p></section>
+                <section id="configuration" class="article-section"><h2 data-en="04 — Configure basic network settings" data-fa="۰۴ — پیکربندی اولیهٔ شبکه">04 — Configure basic network settings</h2><p data-en="Replace the example address, gateway, DNS servers, and interface name with values for the actual lab network. Confirm the correct interface before adding the address." data-fa="Address، Gateway، DNS Server و Interface Name نمونه را با مقادیر شبکهٔ واقعی Lab جایگزین کنید. قبل از افزودن Address، درست‌بودن Interface را تأیید کنید.">Replace the example address, gateway, DNS servers, and interface name with values for the actual lab network. Confirm the correct interface before adding the address.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="RouterOS" data-fa="RouterOS">RouterOS</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">/system identity set name=CHR-LAB
+/ip address add address=192.168.1.10/24 interface=ether1
+/ip route add dst-address=0.0.0.0/0 gateway=192.168.1.1
+/ip dns set servers=1.1.1.1,8.8.8.8
+/ping 8.8.8.8</code></pre></div></section>
+                <section id="license" class="article-section"><h2 data-en="05 — CHR license levels" data-fa="۰۵ — سطح‌های License در CHR">05 — CHR license levels</h2><div class="article-table-wrap"><table class="article-table"><thead><tr><th data-en="Level" data-fa="سطح">Level</th><th data-en="Upload limit per interface" data-fa="محدودیت Upload هر Interface">Upload limit per interface</th><th data-en="Use" data-fa="کاربرد">Use</th></tr></thead><tbody><tr><td>Free</td><td>1 Mbit</td><td data-en="Permanent lab use with limited speed." data-fa="استفادهٔ دائمی Lab با سرعت محدود.">Permanent lab use with limited speed.</td></tr><tr><td>P1</td><td>1 Gbit</td><td data-en="Perpetual paid license." data-fa="License دائمیِ پولی.">Perpetual paid license.</td></tr><tr><td>P10</td><td>10 Gbit</td><td data-en="Perpetual paid license." data-fa="License دائمیِ پولی.">Perpetual paid license.</td></tr><tr><td>P-Unlimited</td><td data-en="Unlimited" data-fa="بدون محدودیت">Unlimited</td><td data-en="Highest perpetual tier." data-fa="بالاترین سطح دائمی.">Highest perpetual tier.</td></tr></tbody></table></div><p data-en="MikroTik also documents a 60-day trial for paid levels. Check the current official licensing page before purchasing or changing a license." data-fa="MikroTik برای سطح‌های پولی Trial شصت‌روزه نیز مستند کرده است. قبل از خرید یا تغییر License، صفحهٔ رسمی فعلی Licensing را بررسی کنید.">MikroTik also documents a 60-day trial for paid levels. Check the current official licensing page before purchasing or changing a license.</p></section>
+                <section id="test" class="article-section"><h2 data-en="06 — Test" data-fa="۰۶ — تست">06 — Test</h2><ol><li data-en="Verify the address and default route with /ip address print and /ip route print." data-fa="Address و Default Route را با /ip address print و /ip route print بررسی کنید.">Verify the address and default route with /ip address print and /ip route print.</li><li data-en="Ping the gateway first, then test an external IP address. Test DNS separately with a name lookup after enabling the required RouterOS DNS behavior for the lab." data-fa="ابتدا Gateway و سپس یک IP خارجی را Ping کنید. DNS را پس از فعال‌کردن رفتار لازم RouterOS DNS برای Lab، جداگانه با Name Lookup تست کنید.">Ping the gateway first, then test an external IP address. Test DNS separately with a name lookup after enabling the required RouterOS DNS behavior for the lab.</li><li data-en="Open WinBox or WebFig only from the management network and confirm the identity and interface mapping." data-fa="WinBox یا WebFig را فقط از Management Network باز و Identity و Interface Mapping را تأیید کنید.">Open WinBox or WebFig only from the management network and confirm the identity and interface mapping.</li></ol></section>
+                <section id="troubleshooting" class="article-section"><h2 data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</h2><ul><li data-en="No network: verify the selected NAT or Bridged network, adapter connection state, and the corresponding RouterOS interface name." data-fa="نبود شبکه: شبکهٔ NAT یا Bridged انتخاب‌شده، وضعیت اتصال Adapter و نام Interface متناظر در RouterOS را بررسی کنید.">No network: verify the selected NAT or Bridged network, adapter connection state, and the corresponding RouterOS interface name.</li><li data-en="No route: confirm the gateway is reachable from the configured subnet and that only the intended default route is active." data-fa="نبود Route: دسترسی Gateway از Subnet پیکربندی‌شده و فعال‌بودن فقط Default Route موردنظر را بررسی کنید.">No route: confirm the gateway is reachable from the configured subnet and that only the intended default route is active.</li><li data-en="Unexpected traffic behavior: inspect Workstation virtual-network settings and RouterOS firewall/NAT configuration; do not assume NAT or Bridged creates RouterOS firewall rules automatically." data-fa="رفتار غیرمنتظرهٔ ترافیک: تنظیمات Virtual Network در Workstation و Firewall/NAT در RouterOS را بررسی کنید؛ فرض نکنید NAT یا Bridged به‌طور خودکار RouterOS Firewall Rule می‌سازد.">Unexpected traffic behavior: inspect Workstation virtual-network settings and RouterOS firewall/NAT configuration; do not assume NAT or Bridged creates RouterOS firewall rules automatically.</li></ul></section>
+                <section id="best-practices" class="article-section"><h2 data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</h2><ul><li data-en="Use an isolated NAT or host-only lab network unless Bridged access is explicitly required." data-fa="مگر در صورت نیاز صریح به Bridged، از شبکهٔ Lab ایزولهٔ NAT یا Host-only استفاده کنید.">Use an isolated NAT or host-only lab network unless Bridged access is explicitly required.</li><li data-en="Label VM NICs and RouterOS interfaces consistently, record the mapping, and take snapshots only with a clear rollback plan." data-fa="NICهای VM و Interfaceهای RouterOS را یکسان نام‌گذاری، Mapping را ثبت و Snapshot را فقط با Rollback Plan روشن بگیرید.">Label VM NICs and RouterOS interfaces consistently, record the mapping, and take snapshots only with a clear rollback plan.</li><li data-en="Change the default password, restrict management access, and keep RouterOS updated according to the supported release plan." data-fa="Password پیش‌فرض را تغییر دهید، Management Access را محدود و RouterOS را مطابق Release Plan پشتیبانی‌شده به‌روز نگه دارید.">Change the default password, restrict management access, and keep RouterOS updated according to the supported release plan.</li></ul></section>
+                <section id="faq" class="article-section"><h2 data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</h2><div class="article-faq"><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Which CHR disk format should VMware Workstation use?" data-fa="VMware Workstation از کدام Disk Format برای CHR استفاده کند؟">Which CHR disk format should VMware Workstation use?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="Use the VMware VMDK image supplied by MikroTik for VMware environments." data-fa="برای محیط VMware از Image با فرمت VMDK که MikroTik ارائه می‌کند استفاده کنید.">Use the VMware VMDK image supplied by MikroTik for VMware environments.</p></div></div><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Does the Free license expire?" data-fa="آیا License رایگان منقضی می‌شود؟">Does the Free license expire?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="MikroTik documents the Free level as permanent with a 1 Mbit upload limit per interface." data-fa="MikroTik سطح Free را دائمی با محدودیت Upload برابر ۱ Mbit برای هر Interface مستند کرده است.">MikroTik documents the Free level as permanent with a 1 Mbit upload limit per interface.</p></div></div></div></section>
+                <section id="conclusion" class="article-section"><h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2><p data-en="Attach the official CHR VMDK to a deliberately networked Workstation VM, confirm interface order, then apply and test the correct address, route, and DNS settings. Use the license tier and virtual network mode that match the lab objective." data-fa="VMDK رسمی CHR را به VM در VMware Workstation با Network طراحی‌شده متصل کنید، Interface Order را تأیید و سپس Address، Route و DNS درست را اعمال و تست کنید. License Tier و Virtual Network Mode را مطابق هدف Lab انتخاب کنید.">Attach the official CHR VMDK to a deliberately networked Workstation VM, confirm interface order, then apply and test the correct address, route, and DNS settings. Use the license tier and virtual network mode that match the lab objective.</p></section>
+                <section id="references" class="article-section"><h2 data-en="Official references" data-fa="منابع رسمی">Official references</h2><ul><li><a href="https://help.mikrotik.com/docs/spaces/ROS/pages/18350234/Cloud%2BHosted%2BRouter%2BCHR" target="_blank" rel="noopener noreferrer" data-en="MikroTik Documentation — Cloud Hosted Router (CHR)" data-fa="مستندات MikroTik — Cloud Hosted Router (CHR)">MikroTik Documentation — Cloud Hosted Router (CHR)</a></li><li><a href="https://mikrotik.com/download" target="_blank" rel="noopener noreferrer" data-en="MikroTik — Official downloads" data-fa="MikroTik — دانلودهای رسمی">MikroTik — Official downloads</a></li></ul></section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

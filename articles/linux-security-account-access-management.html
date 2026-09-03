@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Linux Security: Account &amp; Access Management | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Hardening user accounts, sudo policies, SSH keys, and access controls on Linux" />
+    <meta
+      name="description"
+      content="Hardening user accounts, sudo policies, SSH keys, and access controls on Linux"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/linux-security-account-access-management.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/linux-security-account-access-management.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-linux">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,105 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Create users" data-fa="۰۱ — ایجاد و بررسی کاربران">Create users</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#account-lifecycle"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Account lifecycle" data-fa="۰۲ — چرخه عمر Account">Account lifecycle</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#sudo"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="sudo policy" data-fa="۰۳ — sudo و دسترسی کنترل‌شده">sudo policy</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#ssh"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="SSH hardening" data-fa="۰۴ — SSH Hardening">SSH hardening</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#permissions-audit"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Permissions and audit" data-fa="۰۵ — Permission و Audit">Permissions and audit</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#test"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Test access" data-fa="۰۶ — تست مدل دسترسی">Test access</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#references"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official references" data-fa="منابع رسمی">Official references</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,145 +295,360 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Linux</span></nav>
-          <div class="article-meta"><span class="article-category">Linux</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Linux</time></span></div>
-          <h1 class="article-title hero-title">Linux Security: Account &amp; Access Management</h1>
-          <p class="article-excerpt hero-subtitle">Hardening user accounts, sudo policies, SSH keys, and access controls on Linux</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/linux-6.png" alt="Linux Security: Account &amp; Access Management" /><div class="banner-content"><h2 class="banner-title">Linux</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Hardening user accounts, sudo policies, SSH keys, and access controls on Linux</p></section><section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section><section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">Linux</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">Linux</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Secure user and access management in Linux"
+                data-fa="مدیریت امن کاربران و دسترسی‌ها در Linux"
+              >
+                Linux Security: Account &amp; Access Management
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Hardening user accounts, sudo policies, SSH keys, and access controls on Linux"
+                data-fa="سخت‌سازی حساب‌های کاربری، سیاست‌های sudo، کلیدهای SSH و کنترل‌های دسترسی در Linux"
+              >
+                Hardening user accounts, sudo policies, SSH keys, and access
+                controls on Linux
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/linux-6.png"
+                    alt="Linux Security: Account &amp; Access Management"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">Linux</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section"><h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2><p data-en="Secure account management limits who can sign in, what they can administer, and how access is reviewed. Apply the Principle of Least Privilege: give each person or service only the permissions required for its defined task, then audit those permissions regularly." data-fa="مدیریت امن حساب‌ها مشخص می‌کند چه کسی می‌تواند وارد شود، چه کاری را مدیریت کند و دسترسی چگونه بازبینی شود. Principle of Least Privilege را اعمال کنید: به هر شخص یا Service فقط Permission لازم برای وظیفهٔ تعریف‌شده را بدهید و آن Permissionها را به‌طور دوره‌ای Audit کنید.">Secure account management limits who can sign in, what they can administer, and how access is reviewed. Apply the Principle of Least Privilege: give each person or service only the permissions required for its defined task, then audit those permissions regularly.</p></section>
+                <section id="article-status" class="article-section"><h2 data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</h2><ul><li data-en="An approved administrator account with sudo access, plus a tested backup or console recovery path." data-fa="یک Administrator Account تأییدشده با sudo Access، به‌همراه Backup یا Console Recovery Path تست‌شده.">An approved administrator account with sudo access, plus a tested backup or console recovery path.</li><li data-en="The target username, required groups, business owner, and approved access duration." data-fa="Username هدف، Groupهای موردنیاز، مالک کسب‌وکار و زمان تأییدشدهٔ دسترسی.">The target username, required groups, business owner, and approved access duration.</li><li data-en="A separate active administrator session before changing SSH or sudo configuration." data-fa="یک Administrator Session فعال و جداگانه پیش از تغییر SSH یا sudo Configuration.">A separate active administrator session before changing SSH or sudo configuration.</li></ul></section>
+                <section id="planned-sections" class="article-section"><h2 data-en="01 — Create and review users" data-fa="۰۱ — ایجاد و بررسی کاربران">01 — Create and review users</h2><p data-en="Create named accounts for individual administrators instead of sharing credentials. Review identity and group membership after each change." data-fa="به‌جای Credential مشترک، برای هر Administrator یک Account نام‌دار بسازید. پس از هر تغییر، Identity و Group Membership را بررسی کنید.">Create named accounts for individual administrators instead of sharing credentials. Review identity and group membership after each change.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">sudo adduser newuser
+sudo usermod -aG sudo newuser
+id newuser</code></pre></div><p data-en="On Ubuntu, membership in the sudo group grants broad administrative capability. Add it only when the account genuinely needs administration, and remove it when the role ends." data-fa="در Ubuntu، عضویت در sudo Group توانمندی گستردهٔ مدیریتی می‌دهد. آن را فقط زمانی اضافه کنید که Account واقعاً به مدیریت نیاز دارد و با پایان نقش، حذفش کنید.">On Ubuntu, membership in the sudo group grants broad administrative capability. Add it only when the account genuinely needs administration, and remove it when the role ends.</p></section>
+                <section id="account-lifecycle" class="article-section"><h2 data-en="02 — Account lifecycle" data-fa="۰۲ — چرخهٔ عمر Account">02 — Account lifecycle</h2><p data-en="Locking an account blocks password-based login for that account but is not a complete access-removal procedure on every system. Review SSH keys, running sessions, scheduled jobs, group membership, and service credentials as part of offboarding." data-fa="Lock کردن یک Account، ورود مبتنی بر Password آن را مسدود می‌کند، اما در همهٔ سیستم‌ها یک فرآیند کامل حذف دسترسی نیست. به‌عنوان بخشی از Offboarding، SSH Keyها، Sessionهای فعال، Scheduled Jobها، Group Membership و Service Credentialها را بررسی کنید.">Locking an account blocks password-based login for that account but is not a complete access-removal procedure on every system. Review SSH keys, running sessions, scheduled jobs, group membership, and service credentials as part of offboarding.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">sudo passwd -l username
+sudo passwd -u username
+sudo chage -l username</code></pre></div></section>
+                <section id="sudo" class="article-section"><h2 data-en="03 — sudo and controlled privilege" data-fa="۰۳ — sudo و دسترسی کنترل‌شده">03 — sudo and controlled privilege</h2><p data-en="Use sudo for specific approved commands instead of long-lived root sessions. Review the effective policy with sudo -l. Edit sudoers only through visudo because it validates syntax and helps prevent a broken sudo configuration from locking administrators out." data-fa="برای Commandهای مشخص و تأییدشده از sudo استفاده کنید، نه Root Session طولانی. Policy مؤثر را با sudo -l بررسی کنید. sudoers را فقط با visudo ویرایش کنید، چون Syntax را اعتبارسنجی می‌کند و از قفل‌شدن Administratorها به‌دلیل پیکربندی خراب sudo جلوگیری می‌کند.">Use sudo for specific approved commands instead of long-lived root sessions. Review the effective policy with sudo -l. Edit sudoers only through visudo because it validates syntax and helps prevent a broken sudo configuration from locking administrators out.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Terminal" data-fa="ترمینال">Terminal</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">sudo -l
+sudo visudo</code></pre></div><div class="article-callout article-callout--warning"><p data-en="Do not edit sudoers with a regular text editor. Test an additional administrator account and retain a console recovery path before changing sudo policy." data-fa="sudoers را با Text Editor معمولی ویرایش نکنید. پیش از تغییر sudo Policy، یک Administrator Account دیگر را تست و Console Recovery Path را حفظ کنید.">Do not edit sudoers with a regular text editor. Test an additional administrator account and retain a console recovery path before changing sudo policy.</p></div></section>
+                <section id="ssh" class="article-section"><h2 data-en="04 — SSH keys and SSH hardening" data-fa="۰۴ — SSH Key و SSH Hardening">04 — SSH keys and SSH hardening</h2><p data-en="Use unique SSH key pairs per administrator, protect private keys with a passphrase, and remove public keys when access is no longer required. OpenSSH reads user public keys from authorized-key files; protect account home and .ssh permissions so untrusted users cannot modify authorized keys." data-fa="برای هر Administrator از SSH Key Pair یکتا استفاده کنید، Private Key را با Passphrase محافظت و Public Key را هنگام پایان دسترسی حذف کنید. OpenSSH، Public Keyهای User را از Authorized-key File می‌خواند؛ Permissionهای Home و .ssh را محافظت کنید تا Userهای غیرمورداعتماد نتوانند Authorized Keyها را تغییر دهند.">Use unique SSH key pairs per administrator, protect private keys with a passphrase, and remove public keys when access is no longer required. OpenSSH reads user public keys from authorized-key files; protect account home and .ssh permissions so untrusted users cannot modify authorized keys.</p><p data-en="After verifying key-based login in a second session, harden root access in the SSH server configuration and validate the configuration before reloading the service." data-fa="پس از تأیید ورود مبتنی بر Key در یک Session دوم، Root Access را در SSH Server Configuration سخت‌سازی و پیش از Reload Service، Configuration را اعتبارسنجی کنید.">After verifying key-based login in a second session, harden root access in the SSH server configuration and validate the configuration before reloading the service.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="OpenSSH configuration" data-fa="پیکربندی OpenSSH">OpenSSH configuration</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">PermitRootLogin no
+PubkeyAuthentication yes</code></pre></div><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Validate and reload" data-fa="اعتبارسنجی و Reload">Validate and reload</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">sudo sshd -t
+sudo systemctl reload ssh</code></pre></div><div class="article-callout article-callout--warning"><p data-en="Do not disable password authentication or root login until a separate key-based administrator session has been tested. Keep the original session open while validating the change." data-fa="Password Authentication یا Root Login را تا زمانی که یک Administrator Session مبتنی بر Key و جداگانه تست نشده است غیرفعال نکنید. هنگام اعتبارسنجی تغییر، Session اصلی را باز نگه دارید.">Do not disable password authentication or root login until a separate key-based administrator session has been tested. Keep the original session open while validating the change.</p></div></section>
+                <section id="permissions-audit" class="article-section"><h2 data-en="05 — Permissions and audit" data-fa="۰۵ — Permission و Audit">05 — Permissions and audit</h2><p data-en="Use owner, group, and mode permissions to protect files and directories. Service accounts should be non-interactive where practical and must not receive sudo without a documented requirement. Audit local accounts, group membership, sudo policy, SSH authorized keys, authentication logs, and privileged actions on a regular schedule." data-fa="برای محافظت از فایل و Directory از Owner، Group و Mode Permission استفاده کنید. Service Accountها تا حد امکان باید Non-interactive باشند و بدون نیاز مستندشده sudo دریافت نکنند. Local Accountها، Group Membership، sudo Policy، SSH Authorized Keyها، Authentication Logها و Privileged Actionها را در یک Schedule منظم Audit کنید.">Use owner, group, and mode permissions to protect files and directories. Service accounts should be non-interactive where practical and must not receive sudo without a documented requirement. Audit local accounts, group membership, sudo policy, SSH authorized keys, authentication logs, and privileged actions on a regular schedule.</p></section>
+                <section id="test" class="article-section"><h2 data-en="06 — Test the access model" data-fa="۰۶ — تست مدل دسترسی">06 — Test the access model</h2><ol><li data-en="Log in with the new account and run id newuser to confirm intended groups." data-fa="با Account جدید وارد شوید و id newuser را برای تأیید Groupهای موردنظر اجرا کنید.">Log in with the new account and run id newuser to confirm intended groups.</li><li data-en="Run sudo -l as that account and verify that the displayed privileges match the approved role." data-fa="با همان Account، sudo -l را اجرا و بررسی کنید Privilegeهای نمایش‌داده‌شده با نقش تأییدشده منطبق هستند.">Run sudo -l as that account and verify that the displayed privileges match the approved role.</li><li data-en="Test SSH key login in a separate session; after SSH hardening, confirm root login is denied and the approved administrator access still works." data-fa="ورود با SSH Key را در Session جداگانه تست کنید؛ پس از SSH Hardening، ردشدن Root Login و فعال‌ماندن دسترسی Administrator تأییدشده را بررسی کنید.">Test SSH key login in a separate session; after SSH hardening, confirm root login is denied and the approved administrator access still works.</li></ol></section>
+                <section id="troubleshooting" class="article-section"><h2 data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</h2><ul><li data-en="New user cannot use sudo: check id, the intended group or sudoers policy, and the output of sudo -l." data-fa="User جدید نمی‌تواند sudo استفاده کند: id، Group یا sudoers Policy موردنظر و خروجی sudo -l را بررسی کنید.">New user cannot use sudo: check id, the intended group or sudoers policy, and the output of sudo -l.</li><li data-en="SSH key is rejected: verify the correct username, public-key contents, authorized_keys location, account home/.ssh permissions, and sshd logs." data-fa="SSH Key رد می‌شود: Username درست، محتوای Public Key، محل authorized_keys، Permissionهای Home/.ssh و sshd Logها را بررسی کنید.">SSH key is rejected: verify the correct username, public-key contents, authorized_keys location, account home/.ssh permissions, and sshd logs.</li><li data-en="Access was removed but a session remains: terminate or review active sessions according to the organization’s approved incident and offboarding process." data-fa="دسترسی حذف شده اما Session باقی است: Sessionهای فعال را مطابق Incident Process و Offboarding Process تأییدشدهٔ سازمان بررسی یا خاتمه دهید.">Access was removed but a session remains: terminate or review active sessions according to the organization’s approved incident and offboarding process.</li></ul></section>
+                <section id="best-practices" class="article-section"><h2 data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</h2><ul><li data-en="Use named accounts, MFA where available, unique SSH keys, and time-bound privileged access." data-fa="از Account نام‌دار، MFA در صورت موجودبودن، SSH Key یکتا و Privileged Access زمان‌دار استفاده کنید.">Use named accounts, MFA where available, unique SSH keys, and time-bound privileged access.</li><li data-en="Keep an emergency administrator process that is documented, protected, audited, and regularly tested." data-fa="یک فرآیند Emergency Administrator داشته باشید که مستند، محافظت‌شده، Audit‌شده و مرتباً تست می‌شود.">Keep an emergency administrator process that is documented, protected, audited, and regularly tested.</li><li data-en="Review and remove dormant accounts, unused group memberships, stale SSH keys, and unnecessary sudo permissions." data-fa="Accountهای غیرفعال، Group Membershipهای بلااستفاده، SSH Keyهای قدیمی و sudo Permissionهای غیرضروری را بازبینی و حذف کنید.">Review and remove dormant accounts, unused group memberships, stale SSH keys, and unnecessary sudo permissions.</li></ul></section>
+                <section id="faq" class="article-section"><h2 data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</h2><div class="article-faq"><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Should sudoers be edited with a text editor?" data-fa="آیا sudoers باید با Text Editor ویرایش شود؟">Should sudoers be edited with a text editor?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. Use sudo visudo so syntax is validated before the change is saved." data-fa="خیر. از sudo visudo استفاده کنید تا Syntax پیش از ذخیرهٔ تغییر اعتبارسنجی شود.">No. Use sudo visudo so syntax is validated before the change is saved.</p></div></div><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Does locking a password remove all access?" data-fa="آیا Lock کردن Password همهٔ دسترسی‌ها را حذف می‌کند؟">Does locking a password remove all access?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. Review SSH keys, active sessions, group membership, scheduled jobs, and service credentials as part of offboarding." data-fa="خیر. به‌عنوان بخشی از Offboarding، SSH Keyها، Sessionهای فعال، Group Membership، Scheduled Jobها و Service Credentialها را بررسی کنید.">No. Review SSH keys, active sessions, group membership, scheduled jobs, and service credentials as part of offboarding.</p></div></div></div></section>
+                <section id="conclusion" class="article-section"><h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2><p data-en="Secure Linux access management combines named accounts, minimal group and sudo rights, protected SSH keys, disabled root SSH login where appropriate, and regular audit. Make every access change reversible, documented, and tested from a separate administrative session." data-fa="مدیریت امن دسترسی در Linux، Account نام‌دار، حداقل Group و sudo Permission، SSH Key محافظت‌شده، غیرفعال‌سازی Root SSH Login در صورت مناسب‌بودن و Audit منظم را ترکیب می‌کند. هر تغییر دسترسی را برگشت‌پذیر، مستند و از یک Administrator Session جداگانه تست کنید.">Secure Linux access management combines named accounts, minimal group and sudo rights, protected SSH keys, disabled root SSH login where appropriate, and regular audit. Make every access change reversible, documented, and tested from a separate administrative session.</p></section>
+                <section id="references" class="article-section"><h2 data-en="Official references" data-fa="منابع رسمی">Official references</h2><ul><li><a href="https://documentation.ubuntu.com/desktop/en/latest/tutorial/the-linux-command-line-for-beginners/" target="_blank" rel="noopener noreferrer" data-en="Ubuntu Documentation — sudo and the superuser" data-fa="مستندات Ubuntu — sudo و Superuser">Ubuntu Documentation — sudo and the superuser</a></li><li><a href="https://man.openbsd.org/sshd_config" target="_blank" rel="noopener noreferrer" data-en="OpenSSH manual — sshd_config" data-fa="راهنمای OpenSSH — sshd_config">OpenSSH manual — sshd_config</a></li></ul></section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

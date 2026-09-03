@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Blocking Port Scanners on MikroTik | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Firewall rules to detect and block port scanners on RouterOS" />
+    <meta
+      name="description"
+      content="Firewall rules to detect and block port scanners on RouterOS"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/mikrotik-block-port-scanners.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/mikrotik-block-port-scanners.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-mikrotik">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,99 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Scope protection" data-fa="۰۱ — تعیین Scope صحیح">Scope protection</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#connection-tracking"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Connection Tracking and psd" data-fa="۰۲ — Connection Tracking و psd">Connection Tracking and psd</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#rules"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Detection and Drop rules" data-fa="۰۳ — Ruleهای Detection و Drop">Detection and Drop rules</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#rule-order"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Rule order and logging" data-fa="۰۴ — Rule Order و Logging">Rule order and logging</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#test"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Test safely" data-fa="۰۵ — تست ایمن">Test safely</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#references"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official references" data-fa="منابع رسمی">Official references</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,147 +289,360 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>MikroTik</span></nav>
-          <div class="article-meta"><span class="article-category">MikroTik</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">MikroTik</time></span></div>
-          <h1 class="article-title hero-title">Blocking Port Scanners on MikroTik</h1>
-          <p class="article-excerpt hero-subtitle">Firewall rules to detect and block port scanners on RouterOS</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/mikrotik-3.png" alt="Blocking Port Scanners on MikroTik" /><div class="banner-content"><h2 class="banner-title">MikroTik</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Firewall rules to detect and block port scanners on RouterOS</p></section>
-          <section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section>
-          <section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">MikroTik</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">MikroTik</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Detecting and blocking port scanners in MikroTik RouterOS"
+                data-fa="شناسایی و مسدودسازی Port Scanner در MikroTik RouterOS"
+              >
+                Blocking Port Scanners on MikroTik
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Firewall rules to detect and block port scanners on RouterOS"
+                data-fa="قوانین Firewall برای شناسایی و مسدودسازی Port Scannerها در RouterOS"
+              >
+                Firewall rules to detect and block port scanners on RouterOS
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/mikrotik-3.png"
+                    alt="Blocking Port Scanners on MikroTik"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">MikroTik</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section"><h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2><p data-en="A port scan probes multiple TCP or UDP ports to identify exposed services. RouterOS can classify a TCP scanning pattern with the psd matcher, add the source address to a Dynamic Address List, and then drop later input traffic from that address. This is a supplementary control, not a substitute for allowing only required management access." data-fa="Port Scan چند TCP یا UDP Port را برای شناسایی Serviceهای در معرض دسترس بررسی می‌کند. RouterOS می‌تواند یک الگوی TCP Scan را با psd Matcher تشخیص دهد، Source Address را به Dynamic Address List اضافه کند و سپس ترافیک input بعدیِ آن Address را Drop کند. این یک کنترل تکمیلی است، نه جایگزین Allow کردن فقط Management Access موردنیاز.">A port scan probes multiple TCP or UDP ports to identify exposed services. RouterOS can classify a TCP scanning pattern with the psd matcher, add the source address to a Dynamic Address List, and then drop later input traffic from that address. This is a supplementary control, not a substitute for allowing only required management access.</p></section>
+                <section id="article-status" class="article-section"><h2 data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</h2><ul><li data-en="A current RouterOS configuration backup and verified out-of-band, local, or allowlisted management access." data-fa="Backup به‌روز RouterOS و Management Access تأییدشدهٔ out-of-band، محلی یا Allowlist‌شده.">A current RouterOS configuration backup and verified out-of-band, local, or allowlisted management access.</li><li data-en="A correctly defined public interface or Interface List named WAN." data-fa="یک Interface عمومی درست تعریف‌شده یا Interface List با نام WAN.">A correctly defined public interface or Interface List named WAN.</li><li data-en="Connection Tracking enabled and a reviewed input-chain firewall policy." data-fa="Connection Tracking فعال و Firewall Policy مربوط به input chain که بازبینی شده است.">Connection Tracking enabled and a reviewed input-chain firewall policy.</li></ul></section>
+                <section id="planned-sections" class="article-section"><h2 data-en="01 — Scope the protection correctly" data-fa="۰۱ — تعیین Scope صحیح برای حفاظت">01 — Scope the protection correctly</h2><p data-en="The input chain processes packets whose destination is the router itself. It does not process packets merely passing through the router; those use the forward chain. For port-scan protection of RouterOS management services, scope the rule to input and the public WAN interface or WAN Interface List." data-fa="input chain Packetهایی را پردازش می‌کند که مقصدشان خود Router است. این Chain Packetهایی را که صرفاً از Router عبور می‌کنند پردازش نمی‌کند؛ آن‌ها از forward chain می‌گذرند. برای حفاظت Port Scan از Serviceهای مدیریتی RouterOS، Rule را به input و Interface عمومی WAN یا WAN Interface List محدود کنید.">The input chain processes packets whose destination is the router itself. It does not process packets merely passing through the router; those use the forward chain. For port-scan protection of RouterOS management services, scope the rule to input and the public WAN interface or WAN Interface List.</p><div class="article-callout article-callout--warning"><p data-en="Do not apply this detection blindly to LAN interfaces. Internal security tools, monitoring systems, or normal administrative activity can otherwise produce false positives and block legitimate users." data-fa="این Detection را بی‌هدف روی LAN Interfaceها اعمال نکنید. در غیر این صورت Security Toolهای داخلی، Monitoring Systemها یا فعالیت مدیریتی عادی ممکن است False Positive ایجاد و Userهای مجاز را Block کنند.">Do not apply this detection blindly to LAN interfaces. Internal security tools, monitoring systems, or normal administrative activity can otherwise produce false positives and block legitimate users.</p></div></section>
+                <section id="connection-tracking" class="article-section"><h2 data-en="02 — Connection Tracking and psd" data-fa="۰۲ — Connection Tracking و psd">02 — Connection Tracking and psd</h2><p data-en="Connection Tracking maintains state information for tracked connections and supports several firewall features. The psd matcher is a heuristic port-scan detector: its parameters express a weight threshold, a delay window, and separate weights for low and high ports. Tune it for the actual exposure and traffic patterns rather than treating one value as universal." data-fa="Connection Tracking اطلاعات State مربوط به Connectionهای Trackشده را نگه می‌دارد و از چند قابلیت Firewall پشتیبانی می‌کند. psd Matcher یک Port-scan Detector ابتکاری است: Parameterهای آن Weight Threshold، Delay Window و Weightهای جداگانه برای Low و High Port را مشخص می‌کنند. به‌جای درنظرگرفتن یک مقدار ثابت برای همه، آن را براساس Exposure و Traffic Pattern واقعی تنظیم کنید.">Connection Tracking maintains state information for tracked connections and supports several firewall features. The psd matcher is a heuristic port-scan detector: its parameters express a weight threshold, a delay window, and separate weights for low and high ports. Tune it for the actual exposure and traffic patterns rather than treating one value as universal.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="RouterOS" data-fa="RouterOS">RouterOS</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">/ip firewall connection tracking print
+/ip firewall connection print</code></pre></div></section>
+                <section id="rules" class="article-section"><h2 data-en="03 — Add the detection and drop rules" data-fa="۰۳ — افزودن Ruleهای Detection و Drop">03 — Add the detection and drop rules</h2><p data-en="The first rule identifies a new TCP pattern from WAN and dynamically adds its source to port_scanners for one day. The second rule drops source addresses already on that list. Replace WAN with the correct Interface List name if your configuration uses another name." data-fa="Rule اول یک TCP Pattern جدید از WAN را شناسایی و Source آن را برای یک روز به‌صورت Dynamic به port_scanners اضافه می‌کند. Rule دوم Source Addressهای موجود در آن List را Drop می‌کند. اگر پیکربندی شما نام دیگری دارد، WAN را با نام درست Interface List جایگزین کنید.">The first rule identifies a new TCP pattern from WAN and dynamically adds its source to port_scanners for one day. The second rule drops source addresses already on that list. Replace WAN with the correct Interface List name if your configuration uses another name.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="RouterOS" data-fa="RouterOS">RouterOS</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">/ip firewall filter
+add chain=input in-interface-list=WAN protocol=tcp connection-state=new psd=21,3s,3,1 \
+action=add-src-to-address-list address-list=port_scanners \
+address-list-timeout=1d comment="Detect TCP port scanners from WAN"
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+add chain=input in-interface-list=WAN src-address-list=port_scanners \
+action=drop comment="Drop detected port scanners from WAN"</code></pre></div></section>
+                <section id="rule-order" class="article-section"><h2 data-en="04 — Rule order, logging, and review" data-fa="۰۴ — Rule Order، Logging و بازبینی">04 — Rule order, logging, and review</h2><p data-en="Firewall filters are evaluated in rule order. Keep established and related input acceptance before detailed new-connection analysis where it matches the reviewed policy. Place the scanner detection before the drop rule, and place both before a final WAN input drop. Retain explicit allow rules for approved management sources and required services before the final deny rule." data-fa="Firewall Filterها به‌ترتیب Rule ارزیابی می‌شوند. هرجا با Policy بازبینی‌شده منطبق است، Accept مربوط به established و related input را پیش از تحلیل دقیق New Connection نگه دارید. Scanner Detection را پیش از Drop Rule و هر دو را پیش از Final WAN input drop قرار دهید. Allow Rule صریح برای Management Sourceهای تأییدشده و Serviceهای لازم را پیش از Final Deny Rule حفظ کنید.">Firewall filters are evaluated in rule order. Keep established and related input acceptance before detailed new-connection analysis where it matches the reviewed policy. Place the scanner detection before the drop rule, and place both before a final WAN input drop. Retain explicit allow rules for approved management sources and required services before the final deny rule.</p><p data-en="A logging rule can be placed immediately before the terminating drop rule for investigation, but it must be rate-limited to avoid excessive CPU, storage, or log noise during an attack." data-fa="برای بررسی Incident، یک Logging Rule را می‌توان درست پیش از Terminating Drop Rule قرار داد، اما باید Rate-limit شود تا هنگام Attack باعث مصرف بیش‌ازحد CPU، Storage یا Log Noise نشود.">A logging rule can be placed immediately before the terminating drop rule for investigation, but it must be rate-limited to avoid excessive CPU, storage, or log noise during an attack.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Optional rate-limited logging" data-fa="Logging اختیاری با Rate Limit">Optional rate-limited logging</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">/ip firewall filter
+add chain=input in-interface-list=WAN src-address-list=port_scanners \
+action=log log-prefix="port-scan " limit=5/1m,5 comment="Log detected scanners"</code></pre></div></section>
+                <section id="test" class="article-section"><h2 data-en="05 — Test safely" data-fa="۰۵ — تست ایمن">05 — Test safely</h2><ol><li data-en="Export or back up the current firewall configuration and preserve a trusted management path before changing rules." data-fa="پیش از تغییر Ruleها، Firewall Configuration فعلی را Export یا Backup کنید و Trusted Management Path را حفظ کنید.">Export or back up the current firewall configuration and preserve a trusted management path before changing rules.</li><li data-en="Verify that a normal approved management connection from an allowlisted source remains available." data-fa="بررسی کنید Normal Management Connection تأییدشده از یک Allowlisted Source همچنان در دسترس است.">Verify that a normal approved management connection from an allowlisted source remains available.</li><li data-en="In an authorized isolated lab, generate a controlled test that matches the intended policy, then inspect the Dynamic Address List, rule counters, and rate-limited logs." data-fa="در یک Lab ایزوله و مجاز، یک Test کنترل‌شده که با Policy موردنظر منطبق است ایجاد و سپس Dynamic Address List، Rule Counterها و Rate-limited Logها را بررسی کنید.">In an authorized isolated lab, generate a controlled test that matches the intended policy, then inspect the Dynamic Address List, rule counters, and rate-limited logs.</li><li data-en="Wait for the configured address-list timeout or remove only the specific test entry after verifying the result." data-fa="برای Address-list Timeout تنظیم‌شده صبر کنید یا پس از بررسی نتیجه فقط Test Entry مشخص را حذف کنید.">Wait for the configured address-list timeout or remove only the specific test entry after verifying the result.</li></ol></section>
+                <section id="troubleshooting" class="article-section"><h2 data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</h2><ul><li data-en="No matches: verify that traffic is actually destined for the router, reaches the selected WAN interface, uses TCP, and meets the psd threshold within its delay window." data-fa="هیچ Matchی وجود ندارد: بررسی کنید Traffic واقعاً مقصد Router است، به WAN Interface انتخاب‌شده می‌رسد، TCP است و در Delay Window به psd Threshold می‌رسد.">No matches: verify that traffic is actually destined for the router, reaches the selected WAN interface, uses TCP, and meets the psd threshold within its delay window.</li><li data-en="False positives: review the address-list entries and logs, then narrow the interface scope, raise the threshold, shorten the timeout, or allowlist approved management systems according to policy." data-fa="False Positive: Address-list Entryها و Logها را بررسی، سپس Scope Interface را محدود، Threshold را افزایش، Timeout را کوتاه یا Management Systemهای تأییدشده را طبق Policy Allowlist کنید.">False positives: review the address-list entries and logs, then narrow the interface scope, raise the threshold, shorten the timeout, or allowlist approved management systems according to policy.</li><li data-en="Unexpected lockout: use the pre-verified console or trusted management path, inspect rule order, and restore the approved configuration rather than making blind changes from WAN." data-fa="Lockout غیرمنتظره: از Console یا Trusted Management Path که از قبل تأیید شده استفاده کنید، Rule Order را بررسی و به‌جای تغییر کورکورانه از WAN، Configuration تأییدشده را Restore کنید.">Unexpected lockout: use the pre-verified console or trusted management path, inspect rule order, and restore the approved configuration rather than making blind changes from WAN.</li></ul></section>
+                <section id="best-practices" class="article-section"><h2 data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</h2><ul><li data-en="Expose no router management service to WAN unless there is an explicit need; restrict allowed services and sources first." data-fa="هیچ Router Management Service را بدون نیاز صریح در WAN در معرض دسترس قرار ندهید؛ ابتدا Serviceها و Sourceهای مجاز را محدود کنید.">Expose no router management service to WAN unless there is an explicit need; restrict allowed services and sources first.</li><li data-en="Apply scanner detection only to the intended public ingress path and review Dynamic Address List entries periodically." data-fa="Scanner Detection را فقط روی Public Ingress Path موردنظر اعمال و Dynamic Address List Entryها را دوره‌ای بازبینی کنید.">Apply scanner detection only to the intended public ingress path and review Dynamic Address List entries periodically.</li><li data-en="Use logging sparingly and rate-limit it; monitor firewall counters and logs rather than relying on one detection rule alone." data-fa="از Logging با احتیاط و Rate Limit استفاده کنید؛ Firewall Counterها و Logها را پایش کنید و فقط به یک Detection Rule تکیه نکنید.">Use logging sparingly and rate-limit it; monitor firewall counters and logs rather than relying on one detection rule alone.</li></ul></section>
+                <section id="faq" class="article-section"><h2 data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</h2><div class="article-faq"><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Does an input rule protect LAN clients?" data-fa="آیا input Rule از LAN Clientها محافظت می‌کند؟">Does an input rule protect LAN clients?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. The input chain protects traffic addressed to the router itself. Traffic passing through the router is evaluated in the forward chain." data-fa="خیر. input chain از Traffic دارای مقصد خود Router محافظت می‌کند. Traffic عبوری از Router در forward chain ارزیابی می‌شود.">No. The input chain protects traffic addressed to the router itself. Traffic passing through the router is evaluated in the forward chain.</p></div></div><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Is psd a complete protection against attacks?" data-fa="آیا psd محافظت کامل در برابر Attackها است؟">Is psd a complete protection against attacks?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. It is a heuristic detector for a pattern. Pair it with minimal exposed services, source restrictions, strong authentication, updates, and monitoring." data-fa="خیر. این یک Detector ابتکاری برای یک Pattern است. آن را با حداقل Serviceهای در معرض دسترس، محدودیت Source، احراز هویت قوی، Update و Monitoring همراه کنید.">No. It is a heuristic detector for a pattern. Pair it with minimal exposed services, source restrictions, strong authentication, updates, and monitoring.</p></div></div></div></section>
+                <section id="conclusion" class="article-section"><h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2><p data-en="A WAN-scoped RouterOS input policy can use psd to identify a scanning pattern, place the source in a timed Dynamic Address List, and drop subsequent router-directed traffic. Protect management services with explicit allow rules and final deny rules first, then tune and monitor scan detection to control false positives." data-fa="RouterOS input Policy محدودشده به WAN می‌تواند با psd یک Scanning Pattern را شناسایی، Source را در Dynamic Address List زمان‌دار قرار و Traffic بعدیِ مقصد Router را Drop کند. ابتدا Management Serviceها را با Allow Rule صریح و Final Deny Rule محافظت، سپس Scan Detection را برای کنترل False Positive تنظیم و پایش کنید.">A WAN-scoped RouterOS input policy can use psd to identify a scanning pattern, place the source in a timed Dynamic Address List, and drop subsequent router-directed traffic. Protect management services with explicit allow rules and final deny rules first, then tune and monitor scan detection to control false positives.</p></section>
+                <section id="references" class="article-section"><h2 data-en="Official references" data-fa="منابع رسمی">Official references</h2><ul><li><a href="https://help.mikrotik.com/docs/spaces/ROS/pages/48660574/Filter" target="_blank" rel="noopener noreferrer" data-en="MikroTik Documentation — Firewall Filter" data-fa="مستندات MikroTik — Firewall Filter">MikroTik Documentation — Firewall Filter</a></li><li><a href="https://help.mikrotik.com/docs/spaces/ROS/pages/130220087/Connection%2Btracking" target="_blank" rel="noopener noreferrer" data-en="MikroTik Documentation — Connection Tracking" data-fa="مستندات MikroTik — Connection Tracking">MikroTik Documentation — Connection Tracking</a></li><li><a href="https://help.mikrotik.com/docs/spaces/ROS/pages/250708064/Common%2BFirewall%2BMatchers%2Band%2BActions" target="_blank" rel="noopener noreferrer" data-en="MikroTik Documentation — Firewall matchers and actions" data-fa="مستندات MikroTik — Firewall Matcherها و Actionها">MikroTik Documentation — Firewall matchers and actions</a></li></ul></section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>IMAP vs POP3: Email Protocol Comparison | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Key differences, security, and best practices for IMAP and POP3 mail access" />
+    <meta
+      name="description"
+      content="Key differences, security, and best practices for IMAP and POP3 mail access"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/imap-vs-pop3-email-protocol-comparison.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/imap-vs-pop3-email-protocol-comparison.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-security">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,105 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Protocols and ports" data-fa="۰۱ — پروتکل‌ها و پورت‌ها">Protocols and ports</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#imap"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="IMAP synchronization" data-fa="۰۲ — IMAP و همگام‌سازی">IMAP synchronization</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#pop3"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="POP3 offline access" data-fa="۰۳ — POP3 و دسترسی آفلاین">POP3 offline access</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#smtp"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="SMTP" data-fa="۰۴ — SMTP برای ارسال ایمیل">SMTP</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#comparison"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Comparison" data-fa="۰۵ — مقایسه IMAP و POP3">Comparison</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#test"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Test" data-fa="۰۶ — تست">Test</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#references"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official references" data-fa="منابع رسمی">Official references</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,145 +295,387 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Other</span></nav>
-          <div class="article-meta"><span class="article-category">Other</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Other</time></span></div>
-          <h1 class="article-title hero-title">IMAP vs POP3: Email Protocol Comparison</h1>
-          <p class="article-excerpt hero-subtitle">Key differences, security, and best practices for IMAP and POP3 mail access</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/other-3.png" alt="IMAP vs POP3: Email Protocol Comparison" /><div class="banner-content"><h2 class="banner-title">Other</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Key differences, security, and best practices for IMAP and POP3 mail access</p></section><section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section><section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category" data-en="Other" data-fa="سایر"
+                  >Other</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="" data-en="Other" data-fa="سایر"
+                    >Other</time
+                  ></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="IMAP vs POP3: Email Protocol Comparison"
+                data-fa="مقایسه IMAP و POP3 در سرویس ایمیل"
+              >
+                IMAP vs POP3: Email Protocol Comparison
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Key differences, security, and best practices for IMAP and POP3 mail access"
+                data-fa="مقایسه همگام‌سازی، دسترسی چنددستگاهی و فضای ذخیره‌سازی در IMAP و POP3"
+              >
+                Key differences, security, and best practices for IMAP and POP3
+                mail access
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/other-3.png"
+                    alt="IMAP vs POP3: Email Protocol Comparison"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title" data-en="Other" data-fa="سایر">
+                      Other
+                    </h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section">
+                  <h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2>
+                  <p data-en="IMAP and POP3 retrieve email, while SMTP sends it. Choosing the protocol affects synchronization, offline access, storage, and security." data-fa="IMAP و POP3 برای دریافت ایمیل استفاده می‌شوند و SMTP وظیفهٔ ارسال را دارد. انتخاب پروتکل بر همگام‌سازی، دسترسی آفلاین، فضای ذخیره‌سازی و امنیت اثر می‌گذارد.">IMAP and POP3 retrieve email, while SMTP sends it. Choosing the protocol affects synchronization, offline access, storage, and security.</p>
+                </section>
+                <section id="article-status" class="article-section">
+                  <h2 data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</h2>
+                  <ul>
+                    <li data-en="The provider’s documented server names, ports, and authentication method." data-fa="نام سرور، پورت و روش احراز هویتِ اعلام‌شده توسط ارائه‌دهنده ایمیل.">The provider’s documented server names, ports, and authentication method.</li>
+                    <li data-en="A mail client that supports TLS and the provider’s required authentication method." data-fa="یک Email Client با پشتیبانی از TLS و روش احراز هویت موردنیاز ارائه‌دهنده.">A mail client that supports TLS and the provider’s required authentication method.</li>
+                    <li data-en="Local space for offline mail and sufficient server quota for IMAP." data-fa="فضای محلی برای ایمیل آفلاین و سهمیهٔ کافی روی سرور برای IMAP.">Local space for offline mail and sufficient server quota for IMAP.</li>
+                  </ul>
+                </section>
+                <section id="planned-sections" class="article-section">
+                  <h2 data-en="01 — Protocols and secure ports" data-fa="۰۱ — پروتکل‌ها و پورت‌های امن">01 — Protocols and secure ports</h2>
+                  <p data-en="Use the provider’s published settings for a specific mailbox. The following ports are common protocol values." data-fa="برای هر صندوق ایمیل از تنظیمات منتشرشدهٔ همان ارائه‌دهنده استفاده کنید. پورت‌های زیر مقادیر رایج پروتکل‌ها هستند.">Use the provider’s published settings for a specific mailbox. The following ports are common protocol values.</p>
+                  <div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Protocol ports" data-fa="پورت‌های پروتکل">Protocol ports</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-yaml">IMAP: 143 / IMAPS: 993
+POP3: 110 / POP3S: 995
+SMTP: 25 / Submission: 587 / SMTPS: 465</code></pre></div>
+                  <div class="article-callout article-callout--warning"><p data-en="Prefer TLS-capable settings. Unencrypted authentication can expose credentials and message data on the network." data-fa="تنظیمات دارای TLS را ترجیح دهید. احراز هویت بدون رمزنگاری می‌تواند رمز عبور و دادهٔ ایمیل را در شبکه افشا کند.">Prefer TLS-capable settings. Unencrypted authentication can expose credentials and message data on the network.</p></div>
+                </section>
+                <section id="imap" class="article-section">
+                  <h2 data-en="02 — IMAP and synchronization" data-fa="۰۲ — IMAP و همگام‌سازی">02 — IMAP and synchronization</h2>
+                  <p data-en="IMAP keeps the mailbox and folders on the server, then synchronizes their state with the client. It is generally the practical choice for Multi-Device access. Clients can cache selected data locally for Offline Access, while the primary mailbox remains on the server." data-fa="IMAP صندوق ایمیل و پوشه‌ها را روی سرور نگه می‌دارد و سپس وضعیت آن‌ها را با Client همگام می‌کند. معمولاً گزینهٔ عملی برای دسترسی Multi-Device است. Clientها می‌توانند دادهٔ انتخاب‌شده را برای Offline Access به‌صورت محلی Cache کنند، اما صندوق اصلی روی سرور باقی می‌ماند.">IMAP keeps the mailbox and folders on the server, then synchronizes their state with the client. It is generally the practical choice for Multi-Device access. Clients can cache selected data locally for Offline Access, while the primary mailbox remains on the server.</p>
+                </section>
+                <section id="pop3" class="article-section">
+                  <h2 data-en="03 — POP3 and offline access" data-fa="۰۳ — POP3 و دسترسی آفلاین">03 — POP3 and offline access</h2>
+                  <p data-en="POP3 downloads messages to a client, commonly from the Inbox. A POP3 client can remove downloaded messages from the server or be configured to leave a copy. This makes its retention and backup behavior especially important, and usually less convenient for several devices." data-fa="POP3 پیام‌ها را، معمولاً از Inbox، روی Client دانلود می‌کند. Client POP3 می‌تواند پیام دانلودشده را از سرور حذف کند یا برای نگه‌داشتن کپی روی سرور تنظیم شود. به همین دلیل رفتار Retention و Backup آن اهمیت ویژه دارد و معمولاً برای چند دستگاه کم‌مناسب‌تر است.">POP3 downloads messages to a client, commonly from the Inbox. A POP3 client can remove downloaded messages from the server or be configured to leave a copy. This makes its retention and backup behavior especially important, and usually less convenient for several devices.</p>
+                </section>
+                <section id="smtp" class="article-section">
+                  <h2 data-en="04 — SMTP sends mail" data-fa="۰۴ — SMTP برای ارسال ایمیل">04 — SMTP sends mail</h2>
+                  <p data-en="IMAP and POP3 do not send messages to the mail server. A mail client uses SMTP for outgoing mail, commonly through an authenticated submission service. Do not assume incoming and outgoing server names or encryption settings are identical." data-fa="IMAP و POP3 پیام را به Mail Server ارسال نمی‌کنند. Email Client برای پیام خروجی از SMTP استفاده می‌کند که معمولاً یک سرویس Submission احراز هویت‌شده است. نام سرور و تنظیمات رمزنگاری ورودی و خروجی را یکسان فرض نکنید.">IMAP and POP3 do not send messages to the mail server. A mail client uses SMTP for outgoing mail, commonly through an authenticated submission service. Do not assume incoming and outgoing server names or encryption settings are identical.</p>
+                </section>
+                <section id="comparison" class="article-section">
+                  <h2 data-en="05 — IMAP and POP3 comparison" data-fa="۰۵ — مقایسه IMAP و POP3">05 — IMAP and POP3 comparison</h2>
+                  <div class="article-table-wrap"><table class="article-table"><thead><tr><th data-en="Criterion" data-fa="معیار">Criterion</th><th>IMAP</th><th>POP3</th></tr></thead><tbody><tr><td data-en="Synchronization" data-fa="همگام‌سازی">Synchronization</td><td data-en="Server folders and message state synchronize." data-fa="پوشه‌ها و وضعیت پیام روی سرور همگام می‌شود.">Server folders and message state synchronize.</td><td data-en="Mainly downloads messages to the client." data-fa="عمدتاً پیام را روی Client دانلود می‌کند.">Mainly downloads messages to the client.</td></tr><tr><td data-en="Multiple devices" data-fa="چند دستگاه">Multiple devices</td><td data-en="Usually suitable." data-fa="معمولاً مناسب است.">Usually suitable.</td><td data-en="Needs careful leave-on-server settings." data-fa="نیازمند تنظیم دقیق نگه‌داشتن کپی روی سرور است.">Needs careful leave-on-server settings.</td></tr><tr><td data-en="Server storage" data-fa="فضای سرور">Server storage</td><td data-en="Generally higher because mail remains on the server." data-fa="معمولاً بیشتر است، چون ایمیل روی سرور می‌ماند.">Generally higher because mail remains on the server.</td><td data-en="Can be lower when messages are removed after download." data-fa="با حذف پیام پس از دانلود می‌تواند کمتر باشد.">Can be lower when messages are removed after download.</td></tr><tr><td data-en="Backup" data-fa="Backup">Backup</td><td data-en="Server mailbox, retention, and client cache." data-fa="صندوق سرور، Retention و Cache Client.">Server mailbox, retention, and client cache.</td><td data-en="Local client data and retained server copies." data-fa="دادهٔ محلی Client و کپی‌های باقی‌ماندهٔ سرور.">Local client data and retained server copies.</td></tr><tr><td data-en="Organization use" data-fa="کاربرد سازمانی">Organization use</td><td data-en="Common for synchronized mailboxes." data-fa="رایج برای صندوق‌های همگام‌شده.">Common for synchronized mailboxes.</td><td data-en="Suitable for simple local-download scenarios." data-fa="مناسب سناریوهای سادهٔ دانلود محلی.">Suitable for simple local-download scenarios.</td></tr><tr><td data-en="Security" data-fa="امنیت">Security</td><td colspan="2" data-en="Use TLS and the provider’s supported authentication method." data-fa="از TLS و روش احراز هویت پشتیبانی‌شده توسط ارائه‌دهنده استفاده کنید.">Use TLS and the provider’s supported authentication method.</td></tr></tbody></table></div>
+                </section>
+                <section id="test" class="article-section"><h2 data-en="06 — Test" data-fa="۰۶ — تست">06 — Test</h2><ol><li data-en="Configure the mail client with the provider’s exact secure settings." data-fa="Email Client را با تنظیمات دقیق و امنِ ارائه‌دهنده پیکربندی کنید.">Configure the mail client with the provider’s exact secure settings.</li><li data-en="Send a test message through SMTP and verify receipt on a second device." data-fa="یک پیام آزمایشی با SMTP ارسال و دریافت آن را در دستگاه دوم بررسی کنید.">Send a test message through SMTP and verify receipt on a second device.</li><li data-en="For IMAP, confirm folder and read-state synchronization. For POP3, confirm the selected server-retention behavior." data-fa="برای IMAP همگام‌شدن پوشه و وضعیت خوانده‌شدن را تأیید کنید. برای POP3، رفتار انتخاب‌شدهٔ نگه‌داری روی سرور را بررسی کنید.">For IMAP, confirm folder and read-state synchronization. For POP3, confirm the selected server-retention behavior.</li></ol></section>
+                <section id="troubleshooting" class="article-section"><h2 data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</h2><ul><li data-en="Authentication failure: recheck username format, required modern authentication, and whether POP3/IMAP is enabled for the mailbox." data-fa="خطای احراز هویت: فرمت نام کاربری، Modern Authentication موردنیاز و فعال بودن POP3/IMAP برای صندوق را بررسی کنید.">Authentication failure: recheck username format, required modern authentication, and whether POP3/IMAP is enabled for the mailbox.</li><li data-en="TLS failure: verify server name, port, device time, and the trusted certificate chain." data-fa="خطای TLS: نام سرور، پورت، زمان دستگاه و زنجیرهٔ Certificate مورداعتماد را بررسی کنید.">TLS failure: verify server name, port, device time, and the trusted certificate chain.</li><li data-en="Messages absent on another device: check POP3 removal settings or IMAP folder subscriptions." data-fa="نبودن پیام در دستگاه دیگر: تنظیمات حذف POP3 یا Folder Subscriptionهای IMAP را بررسی کنید.">Messages absent on another device: check POP3 removal settings or IMAP folder subscriptions.</li></ul></section>
+                <section id="best-practices" class="article-section"><h2 data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</h2><ul><li data-en="Prefer IMAP for standard multi-device mailboxes." data-fa="برای صندوق‌های استاندارد چنددستگاهی، IMAP را ترجیح دهید.">Prefer IMAP for standard multi-device mailboxes.</li><li data-en="Require TLS, use provider-supported authentication, and disable unused legacy access where policy permits." data-fa="TLS و احراز هویت پشتیبانی‌شده را الزامی کنید و در صورت مجازبودن Policy، دسترسی قدیمی و بدون استفاده را غیرفعال کنید.">Require TLS, use provider-supported authentication, and disable unused legacy access where policy permits.</li><li data-en="Define quota, retention, backup, and tested restore procedures independently of the selected protocol." data-fa="رویه‌های Quota، Retention، Backup و Restore آزموده‌شده را مستقل از پروتکل انتخابی تعریف کنید.">Define quota, retention, backup, and tested restore procedures independently of the selected protocol.</li></ul></section>
+                <section id="faq" class="article-section"><h2 data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</h2><div class="article-faq"><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Is IMAP a sending protocol?" data-fa="آیا IMAP پروتکل ارسال است؟">Is IMAP a sending protocol?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. IMAP retrieves and synchronizes mail; SMTP sends mail." data-fa="خیر. IMAP ایمیل را دریافت و همگام می‌کند؛ SMTP آن را ارسال می‌کند.">No. IMAP retrieves and synchronizes mail; SMTP sends mail.</p></div></div><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Does POP3 always delete mail from the server?" data-fa="آیا POP3 همیشه ایمیل را از سرور حذف می‌کند؟">Does POP3 always delete mail from the server?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="Many clients can leave copies on the server, but the selected behavior must be tested and backed up." data-fa="بسیاری از Clientها می‌توانند کپی را روی سرور نگه دارند، اما رفتار انتخاب‌شده باید تست و Backup شود.">Many clients can leave copies on the server, but the selected behavior must be tested and backed up.</p></div></div></div></section>
+                <section id="conclusion" class="article-section"><h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2><p data-en="IMAP is normally the practical choice for synchronized mail across several devices; POP3 remains useful for specific local-download cases. In either case, use secure provider-approved settings and maintain tested backups." data-fa="IMAP معمولاً انتخاب عملی برای ایمیل همگام در چند دستگاه است و POP3 برای موارد خاص دانلود محلی کاربرد دارد. در هر دو حالت، از تنظیمات امن و تأییدشدهٔ ارائه‌دهنده استفاده کنید و Backup آزموده‌شده داشته باشید.">IMAP is normally the practical choice for synchronized mail across several devices; POP3 remains useful for specific local-download cases. In either case, use secure provider-approved settings and maintain tested backups.</p></section>
+                <section id="references" class="article-section"><h2 data-en="Official references" data-fa="منابع رسمی">Official references</h2><ul><li><a href="https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/pop3-and-imap4/pop3-and-imap4" target="_blank" rel="noopener noreferrer" data-en="Microsoft Learn — POP3 and IMAP4 in Exchange Online" data-fa="Microsoft Learn — POP3 و IMAP4 در Exchange Online">Microsoft Learn — POP3 and IMAP4 in Exchange Online</a></li><li><a href="https://learn.microsoft.com/en-us/exchange/clients/pop3-and-imap4/pop3-and-imap4" target="_blank" rel="noopener noreferrer" data-en="Microsoft Learn — POP3 and IMAP4 in Exchange Server" data-fa="Microsoft Learn — POP3 و IMAP4 در Exchange Server">Microsoft Learn — POP3 and IMAP4 in Exchange Server</a></li></ul></section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

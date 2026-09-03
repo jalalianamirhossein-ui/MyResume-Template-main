@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Install VMware ESXi on VMware Workstation (VMCisr) | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="How to deploy and configure an ESXi VM on VMware Workstation for lab use" />
+    <meta
+      name="description"
+      content="How to deploy and configure an ESXi VM on VMware Workstation for lab use"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/install-vmware-esxi-vmware-workstation-vmcisr.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/install-vmware-esxi-vmware-workstation-vmcisr.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-vmware">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,99 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Nested Virtualization" data-fa="۰۱ — آماده‌سازی Nested Virtualization">Nested Virtualization</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#vm"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Create ESXi VM" data-fa="۰۲ — ساخت ESXi VM">Create ESXi VM</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#install"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Install ESXi" data-fa="۰۳ — نصب ESXi">Install ESXi</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#management"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Management Network" data-fa="۰۴ — پیکربندی Management Network">Management Network</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#test"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Test Host Client" data-fa="۰۵ — تست Host Client">Test Host Client</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#references"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official references" data-fa="منابع رسمی">Official references</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,145 +289,352 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>VMware</span></nav>
-          <div class="article-meta"><span class="article-category">VMware</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">VMware</time></span></div>
-          <h1 class="article-title hero-title">Install VMware ESXi on VMware Workstation (VMCisr)</h1>
-          <p class="article-excerpt hero-subtitle">How to deploy and configure an ESXi VM on VMware Workstation for lab use</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/vmware-2.png" alt="Install VMware ESXi on VMware Workstation (VMCisr)" /><div class="banner-content"><h2 class="banner-title">VMware</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>How to deploy and configure an ESXi VM on VMware Workstation for lab use</p></section><section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section><section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">VMware</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">VMware</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Install VMware ESXi inside VMware Workstation"
+                data-fa="نصب VMware ESXi داخل VMware Workstation"
+              >
+                Install VMware ESXi on VMware Workstation (VMCisr)
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="How to deploy and configure an ESXi VM on VMware Workstation for lab use"
+                data-fa="راهنمای نصب و پیکربندی VM مربوط به ESXi در VMware Workstation برای محیط آزمایشی"
+              >
+                How to deploy and configure an ESXi VM on VMware Workstation for
+                lab use
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/vmware-2.png"
+                    alt="Install VMware ESXi on VMware Workstation (VMCisr)"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">VMware</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section"><h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2><p data-en="Running ESXi as a virtual machine in VMware Workstation is a Nested Virtualization lab scenario. Broadcom documents that nested ESXi is not supported for production on Workstation, but it can be used for learning, demonstrations, and testing." data-fa="اجرای ESXi به‌صورت Virtual Machine در VMware Workstation یک سناریوی Nested Virtualization برای Lab است. Broadcom اعلام می‌کند Nested ESXi روی Workstation برای Production پشتیبانی نمی‌شود، اما برای یادگیری، Demo و تست قابل استفاده است.">Running ESXi as a virtual machine in VMware Workstation is a Nested Virtualization lab scenario. Broadcom documents that nested ESXi is not supported for production on Workstation, but it can be used for learning, demonstrations, and testing.</p><div class="article-callout article-callout--warning"><p data-en="Use this setup only in a non-production lab. Do not treat a nested Workstation ESXi host as a supported production platform." data-fa="این راه‌اندازی را فقط در Lab غیرProduction استفاده کنید. ESXi داخل Workstation را یک پلتفرم Production پشتیبانی‌شده در نظر نگیرید.">Use this setup only in a non-production lab. Do not treat a nested Workstation ESXi host as a supported production platform.</p></div></section>
+                <section id="article-status" class="article-section"><h2 data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</h2><ul><li data-en="A current VMware Workstation version compatible with the intended ESXi release; Broadcom lists Workstation 16.0 or later for ESXi 8.0 lab nesting." data-fa="یک نسخهٔ VMware Workstation سازگار با ESXi موردنظر؛ Broadcom برای Nested ESXi 8.0، Workstation 16.0 یا جدیدتر را فهرست کرده است.">A current VMware Workstation version compatible with the intended ESXi release; Broadcom lists Workstation 16.0 or later for ESXi 8.0 lab nesting.</li><li data-en="A supported 64-bit CPU with Intel VT-x/EPT or AMD-V/RVI enabled in firmware." data-fa="CPU ۶۴بیتی پشتیبانی‌شده با Intel VT-x/EPT یا AMD-V/RVI که در Firmware فعال شده است.">A supported 64-bit CPU with Intel VT-x/EPT or AMD-V/RVI enabled in firmware.</li><li data-en="Official ESXi ISO, sufficient RAM/disk for the host and lab workloads, and a planned management network." data-fa="ISO رسمی ESXi، RAM و Disk کافی برای Host و Workloadهای Lab و یک Management Network برنامه‌ریزی‌شده.">Official ESXi ISO, sufficient RAM/disk for the host and lab workloads, and a planned management network.</li></ul></section>
+                <section id="planned-sections" class="article-section"><h2 data-en="01 — Prepare Nested Virtualization" data-fa="۰۱ — آماده‌سازی Nested Virtualization">01 — Prepare Nested Virtualization</h2><ol><li data-en="Enable Intel VT-x or AMD-V in the physical host BIOS/UEFI, then fully restart the host if the firmware requires it." data-fa="Intel VT-x یا AMD-V را در BIOS/UEFI مربوط به Host فیزیکی فعال و در صورت نیاز Firmware، سیستم را به‌طور کامل Restart کنید.">Enable Intel VT-x or AMD-V in the physical host BIOS/UEFI, then fully restart the host if the firmware requires it.</li><li data-en="In the Workstation VM settings, enable the processor virtualization option named Virtualize Intel VT-x/EPT or AMD-V/RVI." data-fa="در تنظیمات VM در Workstation، گزینهٔ پردازنده با نام Virtualize Intel VT-x/EPT or AMD-V/RVI را فعال کنید.">In the Workstation VM settings, enable the processor virtualization option named Virtualize Intel VT-x/EPT or AMD-V/RVI.</li><li data-en="If Workstation cannot obtain hardware virtualization, inspect host Hyper-V/VBS conflicts and follow the supported Broadcom guidance for that host configuration." data-fa="اگر Workstation نتواند Hardware Virtualization را دریافت کند، تداخل‌های Hyper-V/VBS در Host را بررسی و راهنمایی پشتیبانی‌شدهٔ Broadcom را برای آن پیکربندی دنبال کنید.">If Workstation cannot obtain hardware virtualization, inspect host Hyper-V/VBS conflicts and follow the supported Broadcom guidance for that host configuration.</li></ol></section>
+                <section id="vm" class="article-section"><h2 data-en="02 — Create the ESXi VM" data-fa="۰۲ — ساخت ESXi VM">02 — Create the ESXi VM</h2><ol><li data-en="Create a new virtual machine and select the matching VMware ESXi version as the guest type when available." data-fa="یک Virtual Machine جدید بسازید و در صورت وجود، نسخهٔ متناظر VMware ESXi را به‌عنوان Guest Type انتخاب کنید.">Create a new virtual machine and select the matching VMware ESXi version as the guest type when available.</li><li data-en="Attach the official ESXi ISO to the virtual CD/DVD drive." data-fa="ISO رسمی ESXi را به Virtual CD/DVD Drive متصل کنید.">Attach the official ESXi ISO to the virtual CD/DVD drive.</li><li data-en="Assign CPU, RAM, disk, and NIC resources for the intended lab. Start small for a basic host, but reserve enough capacity for the nested test VM that will run inside ESXi." data-fa="CPU، RAM، Disk و NIC را برای Lab موردنظر اختصاص دهید. برای Host پایه می‌توانید کوچک شروع کنید، اما برای Test VM داخل ESXi ظرفیت کافی کنار بگذارید.">Assign CPU, RAM, disk, and NIC resources for the intended lab. Start small for a basic host, but reserve enough capacity for the nested test VM that will run inside ESXi.</li><li data-en="Choose the Workstation NAT, Bridged, or isolated network intentionally; the selected NIC must reach the management client according to the lab design." data-fa="شبکهٔ NAT، Bridged یا ایزولهٔ Workstation را آگاهانه انتخاب کنید؛ NIC انتخابی باید طبق طراحی Lab به Management Client دسترسی داشته باشد.">Choose the Workstation NAT, Bridged, or isolated network intentionally; the selected NIC must reach the management client according to the lab design.</li></ol></section>
+                <section id="install" class="article-section"><h2 data-en="03 — Install ESXi" data-fa="۰۳ — نصب ESXi">03 — Install ESXi</h2><p data-en="Power on the VM and boot from the ISO. In the installer, accept the license agreement, select the virtual disk, choose the keyboard layout, set a strong root password, and confirm installation. Remove or disconnect the ISO after installation and reboot into ESXi." data-fa="VM را روشن و از ISO Boot کنید. در Installer، License Agreement را بپذیرید، Virtual Disk را انتخاب کنید، Keyboard Layout را تعیین و Root Password قوی تنظیم کنید، سپس Installation را تأیید کنید. پس از نصب، ISO را Remove یا Disconnect و به ESXi Restart کنید.">Power on the VM and boot from the ISO. In the installer, accept the license agreement, select the virtual disk, choose the keyboard layout, set a strong root password, and confirm installation. Remove or disconnect the ISO after installation and reboot into ESXi.</p></section>
+                <section id="management" class="article-section"><h2 data-en="04 — Configure Management Network" data-fa="۰۴ — پیکربندی Management Network">04 — Configure Management Network</h2><p data-en="At the Direct Console User Interface (DCUI), press F2 and sign in as root. Configure the address information under this path:" data-fa="در Direct Console User Interface یا DCUI، کلید F2 را بزنید و با root وارد شوید. اطلاعات Address را از مسیر زیر پیکربندی کنید:">At the Direct Console User Interface (DCUI), press F2 and sign in as root. Configure the address information under this path:</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="DCUI path" data-fa="مسیر DCUI">DCUI path</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-text">F2 &gt; Configure Management Network</code></pre></div><p data-en="Set the correct NIC, Static IP address, subnet mask, Default Gateway, DNS servers, and hostname for the lab. Apply the change and confirm the management network restart message." data-fa="NIC درست، Static IP Address، Subnet Mask، Default Gateway، DNS Serverها و Hostname را برای Lab تنظیم کنید. تغییر را Apply و پیام Restart شدن Management Network را تأیید کنید.">Set the correct NIC, Static IP address, subnet mask, Default Gateway, DNS servers, and hostname for the lab. Apply the change and confirm the management network restart message.</p></section>
+                <section id="test" class="article-section"><h2 data-en="05 — Test the Host Client and lab resources" data-fa="۰۵ — تست Host Client و منابع Lab">05 — Test the Host Client and lab resources</h2><ol><li data-en="Ping the ESXi management IP from the designated management client; then confirm gateway and DNS reachability from the DCUI test tools when available." data-fa="از Management Client تعیین‌شده، ESXi Management IP را Ping کنید؛ سپس در صورت وجود، دسترسی Gateway و DNS را با ابزارهای تست DCUI بررسی کنید.">Ping the ESXi management IP from the designated management client; then confirm gateway and DNS reachability from the DCUI test tools when available.</li><li data-en="Open the Host Client using the management IP address:" data-fa="Host Client را با Management IP Address باز کنید:">Open the Host Client using the management IP address:</li></ol><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="URL" data-fa="آدرس">URL</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-yaml">https://ESXI-IP/</code></pre></div><ol start="3"><li data-en="In the Host Client, verify the datastore is visible, create a small test VM, attach an appropriate ISO, and power it on to validate nested compute and network behavior." data-fa="در Host Client، دیده‌شدن Datastore را بررسی کنید، یک Test VM کوچک بسازید، ISO مناسب را متصل و آن را روشن کنید تا Nested Compute و رفتار شبکه اعتبارسنجی شود.">In the Host Client, verify the datastore is visible, create a small test VM, attach an appropriate ISO, and power it on to validate nested compute and network behavior.</li></ol></section>
+                <section id="troubleshooting" class="article-section"><h2 data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</h2><ul><li data-en="ESXi VM does not start: check BIOS/UEFI VT-x or AMD-V, Workstation processor virtualization settings, and host Hyper-V/VBS conflicts." data-fa="ESXi VM شروع نمی‌شود: VT-x یا AMD-V در BIOS/UEFI، تنظیمات Processor Virtualization در Workstation و تداخل‌های Hyper-V/VBS در Host را بررسی کنید.">ESXi VM does not start: check BIOS/UEFI VT-x or AMD-V, Workstation processor virtualization settings, and host Hyper-V/VBS conflicts.</li><li data-en="Host Client is unreachable: verify the ESXi management IP, subnet, gateway, Workstation network mode, NIC connection state, and local firewall path." data-fa="Host Client در دسترس نیست: ESXi Management IP، Subnet، Gateway، Workstation Network Mode، وضعیت اتصال NIC و مسیر Firewall محلی را بررسی کنید.">Host Client is unreachable: verify the ESXi management IP, subnet, gateway, Workstation network mode, NIC connection state, and local firewall path.</li><li data-en="Test VM cannot run: check resource allocation on both the physical host and nested ESXi host, datastore free space, and the selected virtual-network connection." data-fa="Test VM اجرا نمی‌شود: تخصیص منابع روی Host فیزیکی و ESXi تو در تو، فضای آزاد Datastore و Virtual Network Connection انتخاب‌شده را بررسی کنید.">Test VM cannot run: check resource allocation on both the physical host and nested ESXi host, datastore free space, and the selected virtual-network connection.</li></ul></section>
+                <section id="best-practices" class="article-section"><h2 data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</h2><ul><li data-en="Keep the setup isolated from production and document the physical-to-Workstation-to-ESXi network mapping." data-fa="این راه‌اندازی را از Production جدا نگه دارید و Network Mapping از Physical تا Workstation و ESXi را مستند کنید.">Keep the setup isolated from production and document the physical-to-Workstation-to-ESXi network mapping.</li><li data-en="Use a dedicated management subnet where practical, strong root credentials, and restricted management access." data-fa="در صورت امکان از Management Subnet اختصاصی، Root Credential قوی و Management Access محدود استفاده کنید.">Use a dedicated management subnet where practical, strong root credentials, and restricted management access.</li><li data-en="Treat snapshots as a lab convenience, not as a backup strategy; retain tested backups of important lab configurations." data-fa="Snapshot را یک ابزار راحتی برای Lab بدانید، نه Backup Strategy؛ از پیکربندی‌های مهم Lab، Backup آزموده‌شده نگه دارید.">Treat snapshots as a lab convenience, not as a backup strategy; retain tested backups of important lab configurations.</li></ul></section>
+                <section id="faq" class="article-section"><h2 data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</h2><div class="article-faq"><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Is nested ESXi in Workstation supported for production?" data-fa="آیا ESXi تو در تو در Workstation برای Production پشتیبانی می‌شود؟">Is nested ESXi in Workstation supported for production?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. Broadcom documents it as unsupported for production, while recognizing learning, testing, and demonstration use cases." data-fa="خیر. Broadcom آن را برای Production پشتیبانی‌نشده اعلام می‌کند، اما کاربردهای یادگیری، تست و Demo را مطرح می‌کند.">No. Broadcom documents it as unsupported for production, while recognizing learning, testing, and demonstration use cases.</p></div></div><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Why is VT-x/EPT or AMD-V/RVI needed?" data-fa="چرا VT-x/EPT یا AMD-V/RVI لازم است؟">Why is VT-x/EPT or AMD-V/RVI needed?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="Nested Virtualization requires the hypervisor to virtualize and expose hardware-assisted virtualization instructions to the guest." data-fa="Nested Virtualization نیاز دارد Hypervisor دستورهای Hardware-assisted Virtualization را مجازی و در اختیار Guest قرار دهد.">Nested Virtualization requires the hypervisor to virtualize and expose hardware-assisted virtualization instructions to the guest.</p></div></div></div></section>
+                <section id="conclusion" class="article-section"><h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2><p data-en="A nested ESXi host in Workstation is valuable for a controlled lab: enable virtualization support, create the VM deliberately, install from the official ISO, configure the management network, then validate Host Client, datastore, and a small test VM. Keep it outside production." data-fa="یک ESXi Host تو در تو در Workstation برای Lab کنترل‌شده ارزشمند است: Virtualization Support را فعال کنید، VM را آگاهانه بسازید، با ISO رسمی نصب کنید، Management Network را پیکربندی و سپس Host Client، Datastore و یک Test VM کوچک را اعتبارسنجی کنید. آن را خارج از Production نگه دارید.">A nested ESXi host in Workstation is valuable for a controlled lab: enable virtualization support, create the VM deliberately, install from the official ISO, configure the management network, then validate Host Client, datastore, and a small test VM. Keep it outside production.</p></section>
+                <section id="references" class="article-section"><h2 data-en="Official references" data-fa="منابع رسمی">Official references</h2><ul><li><a href="https://knowledge.broadcom.com/external/article/313547/support-for-running-esxi-as-a-nested-vir.html" target="_blank" rel="noopener noreferrer" data-en="Broadcom Knowledge Base — Nested ESXi support" data-fa="پایگاه دانش Broadcom — پشتیبانی Nested ESXi">Broadcom Knowledge Base — Nested ESXi support</a></li><li><a href="https://knowledge.broadcom.com/external/article/389469" target="_blank" rel="noopener noreferrer" data-en="Broadcom Knowledge Base — Workstation nested virtualization" data-fa="پایگاه دانش Broadcom — Nested Virtualization در Workstation">Broadcom Knowledge Base — Workstation nested virtualization</a></li><li><a href="https://knowledge.broadcom.com/external/article/318916" target="_blank" rel="noopener noreferrer" data-en="Broadcom Knowledge Base — Enable virtualization technology" data-fa="پایگاه دانش Broadcom — فعال‌سازی Virtualization Technology">Broadcom Knowledge Base — Enable virtualization technology</a></li></ul></section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en" dir="ltr">
   <head>
     <!-- ===============================================
@@ -289,7 +289,9 @@
         color: #fff;
         border-radius: 8px;
         z-index: 10000;
-        transition: top 0.2s ease, left 0.2s ease;
+        transition:
+          top 0.2s ease,
+          left 0.2s ease;
       }
 
       .skip-link:focus-visible {
@@ -4131,11 +4133,26 @@
                     method="post"
                     class="php-email-form"
                   >
-                    <input type="hidden" name="csrf_token" id="csrf_token" value="">
+                    <input
+                      type="hidden"
+                      name="csrf_token"
+                      id="csrf_token"
+                      value=""
+                    />
                     <!-- Honeypot field for bot detection (hidden from humans via CSS) -->
-                    <div class="form-group honeypot" aria-hidden="true" style="display: none;">
-                        <label for="website-field">Website</label>
-                        <input type="text" name="website" id="website-field" tabindex="-1" autocomplete="off">
+                    <div
+                      class="form-group honeypot"
+                      aria-hidden="true"
+                      style="display: none"
+                    >
+                      <label for="website-field">Website</label>
+                      <input
+                        type="text"
+                        name="website"
+                        id="website-field"
+                        tabindex="-1"
+                        autocomplete="off"
+                      />
                     </div>
                     <div class="form-row">
                       <div class="form-group">
@@ -4211,7 +4228,11 @@
                     </div>
 
                     <div class="form-actions">
-                      <div class="form-status" aria-live="polite" aria-atomic="true">
+                      <div
+                        class="form-status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                      >
                         <div
                           class="loading"
                           data-en="Sending..."
@@ -4220,11 +4241,21 @@
                           aria-live="polite"
                           aria-busy="true"
                         >
-                          <i class="bi bi-hourglass-split" aria-hidden="true"></i>
+                          <i
+                            class="bi bi-hourglass-split"
+                            aria-hidden="true"
+                          ></i>
                           <span>Sending...</span>
                         </div>
-                        <div class="error-message" role="alert" aria-live="assertive">
-                          <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+                        <div
+                          class="error-message"
+                          role="alert"
+                          aria-live="assertive"
+                        >
+                          <i
+                            class="bi bi-exclamation-triangle"
+                            aria-hidden="true"
+                          ></i>
                           <span>Error sending message. Please try again.</span>
                         </div>
                         <div

@@ -2,30 +2,70 @@
 <html lang="en" dir="ltr">
   <head>
     <title>Install DFS Server on Windows Server | Meet AJ</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Step-by-step DFS namespace and replication setup for secure file sharing" />
+    <meta
+      name="description"
+      content="Step-by-step DFS namespace and replication setup for secure file sharing"
+    />
     <meta name="author" content="AmirHossein Jalalian" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://meetaj.ir/articles/install-dfs-server-windows-server.html" />
+    <link
+      rel="canonical"
+      href="https://meetaj.ir/articles/install-dfs-server-windows-server.html"
+    />
     <link href="../assets/img/favicon.png" rel="icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
     <link href="../assets/css/main.css?v=1000" rel="stylesheet" />
-    <link href="../assets/css/articles.css?v=1011" rel="stylesheet" />
+    <link href="../assets/css/articles.css?v=1013" rel="stylesheet" />
     <link href="../assets/css/lang-toggle.css?v=1000" rel="stylesheet" />
-    <link id="rtl-style" href="../assets/css/rtl.css?v=1000" rel="stylesheet" disabled />
+    <link
+      id="rtl-style"
+      href="../assets/css/rtl.css?v=1000"
+      rel="stylesheet"
+      disabled
+    />
   </head>
   <body class="article-page theme-microsoft">
-    <a href="#main-content" class="skip-link sr-only sr-only-focusable"><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی">Skip to main content</span></a>
-    <button id="menu-toggle" class="menu-toggle d-xl-none" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header" type="button"><i class="bi bi-list" aria-hidden="true"></i><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span></button>
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable"
+      ><span data-en="Skip to main content" data-fa="رفتن به محتوای اصلی"
+        >Skip to main content</span
+      ></a
+    >
+    <button
+      id="menu-toggle"
+      class="menu-toggle d-xl-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="header"
+      type="button"
+    >
+      <i class="bi bi-list" aria-hidden="true"></i
+      ><span class="sr-only" data-en="Menu" data-fa="منو">Menu</span>
+    </button>
     <header id="header" class="header dark-background d-flex flex-column">
       <!-- ===============================================
       ==================== PROFILE IMAGE =================
@@ -50,7 +90,6 @@
           <img src="../assets/img/logo.png" alt="Aj-Network" loading="lazy" />
           <p class="sitename">Meet AJ</p>
         </a>
-
       </div>
 
       <!-- ===============================================
@@ -142,17 +181,99 @@
         </div>
       </div>
 
-
       <!-- ===============================================
       ==================== NAVIGATION MENU ================
       =============================================== -->
-      <nav id="navmenu" class="navmenu navmenu--article-toc" aria-label="Article navigation">
+      <nav
+        id="navmenu"
+        class="navmenu navmenu--article-toc"
+        aria-label="Article navigation"
+      >
         <ul>
-          <li><a href="../index.html#hero"><i class="bi bi-house navicon" aria-hidden="true"></i><span data-en="Home" data-fa="خانه">Home</span></a></li>
-          <li><a href="../index.html#portfolio"><i class="bi bi-journal-text navicon" aria-hidden="true"></i><span data-en="Articles" data-fa="مقالات">Articles</span></a></li>
-          <li class="article-nav-item"><a href="#overview"><i class="bi bi-info-circle navicon" aria-hidden="true"></i><span data-en="Overview" data-fa="نمای کلی">Overview</span></a></li>
-          <li class="article-nav-item"><a href="#article-status"><i class="bi bi-hourglass-split navicon" aria-hidden="true"></i><span data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</span></a></li>
-          <li class="article-nav-item"><a href="#planned-sections"><i class="bi bi-list-check navicon" aria-hidden="true"></i><span data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</span></a></li>
+          <li>
+            <a href="../index.html#hero"
+              ><i class="bi bi-house navicon" aria-hidden="true"></i
+              ><span data-en="Home" data-fa="خانه">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="../index.html#portfolio"
+              ><i class="bi bi-journal-text navicon" aria-hidden="true"></i
+              ><span data-en="Articles" data-fa="مقالات">Articles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#overview"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Introduction" data-fa="مقدمه">Introduction</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#article-status"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#planned-sections"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Install DFS roles" data-fa="۰۱ — نصب DFS-N و DFS-R">Install DFS roles</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#namespace"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Create Namespace" data-fa="۰۲ — ساخت Namespace">Create Namespace</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#folder-target"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Add Folder Targets" data-fa="۰۳ — افزودن Folder Target">Add Folder Targets</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#replication"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Replication Group" data-fa="۰۴ — ساخت Replication Group">Replication Group</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#test"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Test DFS-R" data-fa="۰۵ — تست DFS-R">Test DFS-R</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#troubleshooting"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#best-practices"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#faq"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#conclusion"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</span></a
+            >
+          </li>
+          <li class="article-nav-item">
+            <a href="#references"
+              ><i class="bi bi-chevron-right navicon" aria-hidden="true"></i
+              ><span data-en="Official references" data-fa="منابع رسمی">Official references</span></a
+            >
+          </li>
         </ul>
       </nav>
       <button
@@ -168,145 +289,354 @@
     </header>
     <main id="main-content" class="main" role="main">
       <section class="article-hero article-header hero" role="banner">
-        <div class="container"><div class="row"><div class="col-lg-10 mx-auto">
-          <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="../index.html#portfolio"><span data-en="Portfolio" data-fa="مقالات">Portfolio</span></a><span aria-hidden="true">/</span><span>Microsoft</span></nav>
-          <div class="article-meta"><span class="article-category">Microsoft</span><span class="meta-date"><span class="article-date" data-en="Article" data-fa="مقاله">Article</span><time datetime="">Microsoft</time></span></div>
-          <h1 class="article-title hero-title">Install DFS Server on Windows Server</h1>
-          <p class="article-excerpt hero-subtitle">Step-by-step DFS namespace and replication setup for secure file sharing</p>
-          <div class="article-banner"><div class="banner-card"><img class="article-hero-thumbnail" src="../assets/img/portfolio/windows-6.png" alt="Install DFS Server on Windows Server" /><div class="banner-content"><h2 class="banner-title">Microsoft</h2><p class="banner-subtitle" data-en="Meet AJ technical article" data-fa="مقاله فنی Meet AJ">Meet AJ technical article</p></div></div></div>
-          <div class="article-actions"><a href="#article-content" class="btn btn-primary btn-lg action-btn"><span class="btn-content"><i class="bi bi-play-circle" aria-hidden="true"></i><span data-en="Start reading" data-fa="شروع مطالعه">Start reading</span></span></a></div>
-        </div></div></div>
-        <div class="hero-background" aria-hidden="true"><div class="bg-shape bg-shape-1"></div><div class="bg-shape bg-shape-2"></div><div class="bg-shape bg-shape-3"></div></div>
-      </section>
-      <section id="article-content" class="article-content article-container" aria-label="Article content">
-        <div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-
-          <article class="article-body">
-<section id="overview" class="article-section"><h2 data-en="Overview" data-fa="نمای کلی">Overview</h2><p>Step-by-step DFS namespace and replication setup for secure file sharing</p></section><section id="article-status" class="article-section"><h2 data-en="Article in progress" data-fa="مقاله در حال آماده‌سازی">Article in progress</h2><div class="article-placeholder"><p>The detailed article content is being prepared. This page currently contains the portfolio summary only.</p></div></section><section id="planned-sections" class="article-section"><h2 data-en="Planned article sections" data-fa="بخش‌های برنامه‌ریزی‌شده مقاله">Planned article sections</h2><div class="article-grid"><div class="article-card article-placeholder"><h3>Introduction</h3><p>Placeholder for the article introduction.</p></div><div class="article-card article-placeholder"><h3>Detailed content</h3><p>Placeholder for the complete article content.</p></div><div class="article-card article-placeholder"><h3>Notes and references</h3><p>Placeholder for supporting notes and references.</p></div></div></section>
-            <footer class="article-footer" aria-label="Article footer">
-              <section id="author" class="article-author" role="complementary" aria-labelledby="author-title">
-                <div class="article-author-card">
-                  <img class="article-author-avatar" src="../assets/img/my-profile-img.jpg" alt="AmirHossein Jalalian" loading="lazy" width="120" height="120" decoding="async" />
-                  <div class="article-author-content">
-                    <p class="article-author-kicker" id="author-title" data-en="About the author" data-fa="درباره نویسنده">About the author</p>
-                    <h2 data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</h2>
-                    <p class="article-author-role" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">IT Infrastructure Specialist</p>
-                    <p class="article-author-description" data-en="Delivering reliable, secure, and scalable IT solutions for your business success." data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">Delivering reliable, secure, and scalable IT solutions for your business success.</p>
-                    <div class="article-author-social" role="group" aria-label="Author links">
-                      <a href="https://linkedin.com/in/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                      <a href="https://github.com/amirhossein-jalalian" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="bi bi-github" aria-hidden="true"></i></a>
-                      <a href="https://twitter.com/amirhossein_j" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-                    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="article-meta">
+                <span class="article-category">Microsoft</span
+                ><span class="meta-date"
+                  ><span class="article-date" data-en="Article" data-fa="مقاله"
+                    >Article</span
+                  ><time datetime="">Microsoft</time></span
+                >
+              </div>
+              <h1
+                class="article-title hero-title"
+                data-en="Install and configure DFS on Windows Server"
+                data-fa="نصب و راه‌اندازی DFS در Windows Server"
+              >
+                Install DFS Server on Windows Server
+              </h1>
+              <p
+                class="article-excerpt hero-subtitle"
+                data-en="Step-by-step DFS namespace and replication setup for secure file sharing"
+                data-fa="نصب DFS-N و DFS-R، ساخت Namespace و همگام‌سازی پوشه‌ها در Windows Server"
+              >
+                Step-by-step DFS namespace and replication setup for secure file
+                sharing
+              </p>
+              <div class="article-banner">
+                <div class="banner-card">
+                  <img
+                    class="article-hero-thumbnail"
+                    src="../assets/img/portfolio/windows-6.png"
+                    alt="Install DFS Server on Windows Server"
+                  />
+                  <div class="banner-content">
+                    <h2 class="banner-title">Microsoft</h2>
+                    <p
+                      class="banner-subtitle"
+                      data-en="Meet AJ technical article"
+                      data-fa="مقاله فنی Meet AJ"
+                    >
+                      Meet AJ technical article
+                    </p>
                   </div>
                 </div>
-              </section>
-              <nav class="article-footer-nav" aria-label="Article footer navigation">
-                <a class="article-back" href="../index.html#portfolio"><i class="bi bi-arrow-left" aria-hidden="true"></i><span data-en="Back to portfolio" data-fa="بازگشت به مقالات">Back to portfolio</span></a>
-              </nav>
-            </footer>
-          </article>
-        </div></div></div>
-      </section>
-    </main>
-    <footer id="footer" class="footer position-relative">
-    <div class="footer-background">
-      <div class="footer-pattern"></div>
-    </div>
-    <div class="container">
-      <div class="footer-content">
-        <!-- Footer Main Content -->
-        <div class="footer-main">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <h3 class="brand-name">
-              <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</span>
-            </h3>
-            <p class="brand-title" data-en="IT Infrastructure Specialist" data-fa="متخصص زیرساخت فناوری اطلاعات">
-              IT Infrastructure Specialist
-            </p>
-            <p class="brand-description"
-              data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
-              data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما.">
-              Delivering reliable, secure, and scalable IT solutions for your
-              business success.
-            </p>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <h4 class="contact-title" data-en="Get In Touch" data-fa="تماس با من">
-              Get In Touch
-            </h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="bi bi-geo-alt"></i>
-                <span data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
               </div>
-              <div class="contact-item">
-                <i class="bi bi-telephone"></i>
-                <a href="tel:+989197276219" data-en="+98 9197276219" data-fa="09197276219">+98 9197276219</a>
-              </div>
-              <div class="contact-item">
-                <i class="bi bi-envelope"></i>
-                <a href="mailto:jalalian.amirhossein@gmail.com">jalalian.amirhossein@gmail.com</a>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-              <h5 class="social-title" data-en="Follow Me" data-fa="دنبال کنید">
-                Follow Me
-              </h5>
-              <div class="social-icons">
-                <a href="https://wa.me/989197276219" target="_blank" rel="noopener" class="social-link whatsapp"
-                  aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="https://t.me/Aj_mercury" target="_blank" rel="noopener" class="social-link telegram"
-                  aria-label="Telegram">
-                  <i class="bi bi-telegram"></i>
-                </a>
-                <a href="mailto:jalalian.amirhossein@gmail.com" class="social-link email" aria-label="Email">
-                  <i class="bi bi-envelope"></i>
-                </a>
+              <div class="article-actions">
+                <a
+                  href="#article-content"
+                  class="btn btn-primary btn-lg action-btn"
+                  ><span class="btn-content"
+                    ><i class="bi bi-play-circle" aria-hidden="true"></i
+                    ><span data-en="Start reading" data-fa="شروع مطالعه"
+                      >Start reading</span
+                    ></span
+                  ></a
+                >
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <div class="copyright">
-              <p>
-                © <span>2025</span>
-                <strong data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان">AmirHossein Jalalian</strong>
-                <span data-en="All Rights Reserved" data-fa="تمام حقوق محفوظ است">All Rights Reserved</span>
+        <div class="hero-background" aria-hidden="true">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+        </div>
+      </section>
+      <section
+        id="article-content"
+        class="article-content article-container"
+        aria-label="Article content"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <article class="article-body">
+                <section id="overview" class="article-section"><h2 data-en="Introduction" data-fa="مقدمه">Introduction</h2><p data-en="DFS Namespaces (DFS-N) presents shared folders through a logical path, while DFS Replication (DFS-R) synchronizes replicated folders between servers. Together they can provide a consistent user path and copies of data on multiple members." data-fa="DFS Namespaces یا DFS-N پوشه‌های اشتراکی را با یک مسیر منطقی نمایش می‌دهد و DFS Replication یا DFS-R پوشه‌های Replicated را میان سرورها همگام می‌کند. این دو در کنار هم می‌توانند مسیر یکنواخت برای کاربر و کپی داده روی چند Member فراهم کنند.">DFS Namespaces (DFS-N) presents shared folders through a logical path, while DFS Replication (DFS-R) synchronizes replicated folders between servers. Together they can provide a consistent user path and copies of data on multiple members.</p></section>
+                <section id="article-status" class="article-section"><h2 data-en="Prerequisites" data-fa="پیش‌نیازها">Prerequisites</h2><ul><li data-en="Supported Windows Server members joined to the same Active Directory forest for DFS-R." data-fa="Windows Serverهای پشتیبانی‌شده که برای DFS-R عضو یک Active Directory forest هستند.">Supported Windows Server members joined to the same Active Directory forest for DFS-R.</li><li data-en="DNS and Active Directory replication are healthy, and an administrator has the necessary permissions." data-fa="DNS و Active Directory Replication سالم هستند و Administrator دسترسی لازم دارد.">DNS and Active Directory replication are healthy, and an administrator has the necessary permissions.</li><li data-en="Replicated folders are on NTFS volumes; DFS-R does not support ReFS or FAT for replicated data." data-fa="پوشه‌های Replicated روی Volumeهای NTFS قرار دارند؛ DFS-R برای دادهٔ Replicated از ReFS یا FAT پشتیبانی نمی‌کند.">Replicated folders are on NTFS volumes; DFS-R does not support ReFS or FAT for replicated data.</li></ul></section>
+                <section id="planned-sections" class="article-section"><h2 data-en="01 — Install DFS-N and DFS-R" data-fa="۰۱ — نصب DFS-N و DFS-R">01 — Install DFS-N and DFS-R</h2><p data-en="Run PowerShell as an administrator on each intended namespace or replication member, then confirm the installed feature state." data-fa="PowerShell را با دسترسی Administrator روی هر Namespace Server یا Replication Member موردنظر اجرا و وضعیت Featureهای نصب‌شده را بررسی کنید.">Run PowerShell as an administrator on each intended namespace or replication member, then confirm the installed feature state.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="PowerShell" data-fa="PowerShell">PowerShell</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-powershell">Install-WindowsFeature FS-DFS-Namespace,FS-DFS-Replication -IncludeManagementTools
+Get-WindowsFeature *DFS*</code></pre></div></section>
+                <section id="namespace" class="article-section"><h2 data-en="02 — Create the Namespace" data-fa="۰۲ — ساخت Namespace">02 — Create the Namespace</h2><ol><li data-en="Open DFS Management and select New Namespace." data-fa="DFS Management را باز و New Namespace را انتخاب کنید.">Open DFS Management and select New Namespace.</li><li data-en="Choose a namespace server and create a domain-based namespace when the organization needs a domain path and centralized referrals." data-fa="یک Namespace Server انتخاب کنید و زمانی که سازمان به مسیر Domain و Referralهای متمرکز نیاز دارد، Domain-based Namespace بسازید.">Choose a namespace server and create a domain-based namespace when the organization needs a domain path and centralized referrals.</li><li data-en="Use a clear namespace path, for example:" data-fa="یک مسیر شفاف برای Namespace انتخاب کنید، برای مثال:">Use a clear namespace path, for example:</li></ol><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Namespace path" data-fa="مسیر Namespace">Namespace path</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-text">\\domain.local\Company</code></pre></div></section>
+                <section id="folder-target" class="article-section"><h2 data-en="03 — Add folder targets" data-fa="۰۳ — افزودن Folder Target">03 — Add folder targets</h2><p data-en="Under the new namespace, create a DFS folder and add one or more Folder Targets that point to the existing shared folders on file servers. The Namespace path is what users access; a Folder Target is the underlying server share." data-fa="زیر Namespace جدید، یک DFS Folder بسازید و یک یا چند Folder Target اضافه کنید که به پوشه‌های Shareشدهٔ موجود روی File Serverها اشاره می‌کنند. مسیر Namespace همان چیزی است که کاربر استفاده می‌کند و Folder Target همان Share زیربنایی سرور است.">Under the new namespace, create a DFS folder and add one or more Folder Targets that point to the existing shared folders on file servers. The Namespace path is what users access; a Folder Target is the underlying server share.</p></section>
+                <section id="replication" class="article-section"><h2 data-en="04 — Create the Replication Group" data-fa="۰۴ — ساخت Replication Group">04 — Create the Replication Group</h2><ol><li data-en="In DFS Management, choose Replicate Folder for a DFS folder that has at least two targets, or create a Multipurpose Replication Group." data-fa="در DFS Management برای DFS Folder دارای دست‌کم دو Target، گزینهٔ Replicate Folder را انتخاب کنید یا یک Multipurpose Replication Group بسازید.">In DFS Management, choose Replicate Folder for a DFS folder that has at least two targets, or create a Multipurpose Replication Group.</li><li data-en="Add the member servers and map the local folder path on every member." data-fa="Member Serverها را اضافه و مسیر پوشهٔ محلی را روی هر Member مشخص کنید.">Add the member servers and map the local folder path on every member.</li><li data-en="Choose a topology: Full Mesh is simple for a small member count; Hub and Spoke can suit branch designs." data-fa="Topology را انتخاب کنید: Full Mesh برای تعداد کم Member ساده است و Hub and Spoke می‌تواند برای طراحی شعب مناسب باشد.">Choose a topology: Full Mesh is simple for a small member count; Hub and Spoke can suit branch designs.</li><li data-en="Select the Primary Member carefully for initial replication; it is the authoritative source used to seed initial content." data-fa="Primary Member را برای Initial Replication با دقت انتخاب کنید؛ این Member منبع اصلی Seed کردن محتوای اولیه است.">Select the Primary Member carefully for initial replication; it is the authoritative source used to seed initial content.</li><li data-en="Set Replication Schedule and bandwidth for the available WAN capacity, and place the Staging folder on a volume with adequate free space." data-fa="Replication Schedule و Bandwidth را متناسب با ظرفیت WAN تنظیم کنید و Staging folder را روی Volume دارای فضای آزاد کافی قرار دهید.">Set Replication Schedule and bandwidth for the available WAN capacity, and place the Staging folder on a volume with adequate free space.</li></ol><div class="article-callout article-callout--warning"><p data-en="Initial synchronization and configuration changes depend on Active Directory replication and member polling. Do not assume a new configuration is applied immediately everywhere." data-fa="همگام‌سازی اولیه و تغییرات پیکربندی به Active Directory Replication و Polling Memberها وابسته است. اعمال فوری یک پیکربندی جدید روی همهٔ سرورها را فرض نکنید.">Initial synchronization and configuration changes depend on Active Directory replication and member polling. Do not assume a new configuration is applied immediately everywhere.</p></div></section>
+                <section id="test" class="article-section"><h2 data-en="05 — Test DFS-R" data-fa="۰۵ — تست DFS-R">05 — Test DFS-R</h2><p data-en="Create a non-production test file in the intended replicated folder, wait for the configured schedule, and confirm it arrives at the other member. Then check the current replication state and backlog." data-fa="یک فایل آزمایشی غیرProduction در پوشهٔ Replicated ایجاد کنید، تا زمان Schedule تنظیم‌شده صبر و رسیدن آن به Member دیگر را تأیید کنید. سپس وضعیت Replication و Backlog را بررسی کنید.">Create a non-production test file in the intended replicated folder, wait for the configured schedule, and confirm it arrives at the other member. Then check the current replication state and backlog.</p><div class="article-code"><div class="article-code-header"><span class="article-code-label" data-en="Command Prompt" data-fa="Command Prompt">Command Prompt</span><button type="button" class="article-copy-button" data-en="Copy" data-fa="کپی">Copy</button></div><pre><code class="language-bash">dfsrdiag ReplicationState
+dfsrdiag backlog /rgname:"Data-RG" /rfname:"Data" /smem:SERVER1 /rmem:SERVER2</code></pre></div></section>
+                <section id="troubleshooting" class="article-section"><h2 data-en="Troubleshooting" data-fa="رفع اشکال">Troubleshooting</h2><ul><li data-en="DNS or AD: verify name resolution, domain membership, AD replication health, and that all DFS-R members are in the same forest." data-fa="DNS یا AD: Name Resolution، Domain Membership، سلامت AD Replication و قرارداشتن تمام DFS-R Memberها در یک forest را بررسی کنید.">DNS or AD: verify name resolution, domain membership, AD replication health, and that all DFS-R members are in the same forest.</li><li data-en="NTFS permissions: verify share and NTFS access separately; DFS-N does not bypass file-system permissions." data-fa="مجوزهای NTFS: مجوز Share و NTFS را جداگانه بررسی کنید؛ DFS-N مجوزهای File System را دور نمی‌زند.">NTFS permissions: verify share and NTFS access separately; DFS-N does not bypass file-system permissions.</li><li data-en="Replication: check the DFS Replication event log, free space for the replicated and Staging folders, schedule, network reachability, and backlog." data-fa="Replication: DFS Replication event log، فضای آزاد پوشه‌های Replicated و Staging، Schedule، دسترسی شبکه و Backlog را بررسی کنید.">Replication: check the DFS Replication event log, free space for the replicated and Staging folders, schedule, network reachability, and backlog.</li></ul></section>
+                <section id="best-practices" class="article-section"><h2 data-en="Best Practices" data-fa="بهترین روش‌ها">Best Practices</h2><ul><li data-en="Use stable domain-based paths, document each target and topology, and monitor quota and backlog." data-fa="از مسیرهای Domain-based پایدار استفاده کنید، Target و Topology را مستند و Quota و Backlog را پایش کنید.">Use stable domain-based paths, document each target and topology, and monitor quota and backlog.</li><li data-en="Keep replicated data on NTFS volumes and test both replication and client referral behavior before production use." data-fa="دادهٔ Replicated را روی Volumeهای NTFS نگه دارید و قبل از Production، Replication و Client Referral را تست کنید.">Keep replicated data on NTFS volumes and test both replication and client referral behavior before production use.</li><li data-en="Plan backups separately; replication propagates changes and is not a replacement for tested backups." data-fa="Backup را جداگانه برنامه‌ریزی کنید؛ Replication تغییرات را منتشر می‌کند و جایگزین Backup آزموده‌شده نیست.">Plan backups separately; replication propagates changes and is not a replacement for tested backups.</li></ul></section>
+                <section id="faq" class="article-section"><h2 data-en="Frequently Asked Questions" data-fa="سوالات متداول">Frequently Asked Questions</h2><div class="article-faq"><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Does DFS-N replicate files?" data-fa="آیا DFS-N فایل‌ها را Replicate می‌کند؟">Does DFS-N replicate files?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. DFS-N provides the logical namespace; DFS-R is the replication service." data-fa="خیر. DFS-N مسیر منطقی را فراهم می‌کند و DFS-R سرویس Replication است.">No. DFS-N provides the logical namespace; DFS-R is the replication service.</p></div></div><div class="article-faq-item"><h3 class="article-faq-question"><span data-en="Can DFS-R use ReFS for replicated folders?" data-fa="آیا DFS-R می‌تواند از ReFS برای پوشهٔ Replicated استفاده کند؟">Can DFS-R use ReFS for replicated folders?</span><i class="bi bi-chevron-down" aria-hidden="true"></i></h3><div class="article-faq-answer"><p data-en="No. Microsoft documents NTFS as the supported file system for replicated folders." data-fa="خیر. Microsoft، NTFS را File System پشتیبانی‌شده برای پوشه‌های Replicated اعلام کرده است.">No. Microsoft documents NTFS as the supported file system for replicated folders.</p></div></div></div></section>
+                <section id="conclusion" class="article-section"><h2 data-en="Conclusion" data-fa="جمع‌بندی">Conclusion</h2><p data-en="Deploy DFS-N for a stable user path and DFS-R for replicated folder content. Select targets, topology, primary member, schedule, and staging capacity deliberately; then validate with a real controlled file test and DFS diagnostics." data-fa="برای مسیر پایدار کاربران، DFS-N و برای محتوای پوشهٔ Replicated، DFS-R را راه‌اندازی کنید. Target، Topology، Primary Member، Schedule و ظرفیت Staging را آگاهانه انتخاب و سپس با یک فایل آزمایشی کنترل‌شده و ابزارهای تشخیصی DFS اعتبارسنجی کنید.">Deploy DFS-N for a stable user path and DFS-R for replicated folder content. Select targets, topology, primary member, schedule, and staging capacity deliberately; then validate with a real controlled file test and DFS diagnostics.</p></section>
+                <section id="references" class="article-section"><h2 data-en="Official references" data-fa="منابع رسمی">Official references</h2><ul><li><a href="https://learn.microsoft.com/en-us/windows-server/storage/dfs-replication/install-dfs-replication" target="_blank" rel="noopener noreferrer" data-en="Microsoft Learn — Install DFS Replication" data-fa="Microsoft Learn — نصب DFS Replication">Microsoft Learn — Install DFS Replication</a></li><li><a href="https://learn.microsoft.com/en-us/windows-server/storage/dfs-replication/dfs-replication-overview" target="_blank" rel="noopener noreferrer" data-en="Microsoft Learn — DFS Replication overview" data-fa="Microsoft Learn — نمای کلی DFS Replication">Microsoft Learn — DFS Replication overview</a></li><li><a href="https://learn.microsoft.com/en-us/windows-server/storage/dfs-namespaces/checklist-deploy-dfs-namespaces" target="_blank" rel="noopener noreferrer" data-en="Microsoft Learn — Deploy DFS Namespaces" data-fa="Microsoft Learn — استقرار DFS Namespaces">Microsoft Learn — Deploy DFS Namespaces</a></li></ul></section>
+                <footer class="article-footer" aria-label="Article footer">
+                  <section
+                    id="author"
+                    class="article-author"
+                    role="complementary"
+                    aria-labelledby="author-title"
+                  >
+                    <div class="article-author-card">
+                      <img
+                        class="article-author-avatar"
+                        src="../assets/img/my-profile-img.jpg"
+                        alt="AmirHossein Jalalian"
+                        loading="lazy"
+                        width="120"
+                        height="120"
+                        decoding="async"
+                      />
+                      <div class="article-author-content">
+                        <p
+                          class="article-author-kicker"
+                          id="author-title"
+                          data-en="About the author"
+                          data-fa="درباره نویسنده"
+                        >
+                          About the author
+                        </p>
+                        <h2
+                          data-en="AmirHossein Jalalian"
+                          data-fa="امیرحسین جلالیان"
+                        >
+                          AmirHossein Jalalian
+                        </h2>
+                        <p
+                          class="article-author-role"
+                          data-en="IT Infrastructure Specialist"
+                          data-fa="متخصص زیرساخت فناوری اطلاعات"
+                        >
+                          IT Infrastructure Specialist
+                        </p>
+                        <p
+                          class="article-author-description"
+                          data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                          data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+                        >
+                          Delivering reliable, secure, and scalable IT solutions
+                          for your business success.
+                        </p>
+                        <div
+                          class="article-author-social"
+                          role="group"
+                          aria-label="Author links"
+                        >
+                          <a
+                            href="https://linkedin.com/in/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile"
+                            ><i class="bi bi-linkedin" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://github.com/amirhossein-jalalian"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub Profile"
+                            ><i class="bi bi-github" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="https://twitter.com/amirhossein_j"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter Profile"
+                            ><i class="bi bi-twitter-x" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <nav
+                    class="article-footer-nav"
+                    aria-label="Article footer navigation"
+                  >
+                    <a class="article-back" href="../index.html#portfolio"
+                      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+                      ><span
+                        data-en="Back to portfolio"
+                        data-fa="بازگشت به مقالات"
+                        >Back to portfolio</span
+                      ></a
+                    >
+                  </nav>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer position-relative">
+      <div class="footer-background">
+        <div class="footer-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Footer Main Content -->
+          <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+              <h3 class="brand-name">
+                <span data-en="AmirHossein Jalalian" data-fa="امیرحسین جلالیان"
+                  >AmirHossein Jalalian</span
+                >
+              </h3>
+              <p
+                class="brand-title"
+                data-en="IT Infrastructure Specialist"
+                data-fa="متخصص زیرساخت فناوری اطلاعات"
+              >
+                IT Infrastructure Specialist
+              </p>
+              <p
+                class="brand-description"
+                data-en="Delivering reliable, secure, and scalable IT solutions for your business success."
+                data-fa="ارائه راهکارهای IT پایدار، امن و مقیاس‌پذیر برای موفقیت کسب‌وکار شما."
+              >
+                Delivering reliable, secure, and scalable IT solutions for your
+                business success.
               </p>
             </div>
-            <div class="footer-heart">
-              <span data-en="Made with" data-fa="ساخته شده با">Made with</span>
-              <i class="bi bi-heart-fill"></i>
-              <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+              <h4
+                class="contact-title"
+                data-en="Get In Touch"
+                data-fa="تماس با من"
+              >
+                Get In Touch
+              </h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span data-en="Tehran, Iran" data-fa="تهران، ایران"
+                    >Tehran, Iran</span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <a
+                    href="tel:+989197276219"
+                    data-en="+98 9197276219"
+                    data-fa="09197276219"
+                    >+98 9197276219</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:jalalian.amirhossein@gmail.com"
+                    >jalalian.amirhossein@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="social-links">
+                <h5
+                  class="social-title"
+                  data-en="Follow Me"
+                  data-fa="دنبال کنید"
+                >
+                  Follow Me
+                </h5>
+                <div class="social-icons">
+                  <a
+                    href="https://wa.me/989197276219"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Aj_mercury"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link telegram"
+                    aria-label="Telegram"
+                  >
+                    <i class="bi bi-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:jalalian.amirhossein@gmail.com"
+                    class="social-link email"
+                    aria-label="Email"
+                  >
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <div class="copyright">
+                <p>
+                  © <span>2025</span>
+                  <strong
+                    data-en="AmirHossein Jalalian"
+                    data-fa="امیرحسین جلالیان"
+                    >AmirHossein Jalalian</strong
+                  >
+                  <span
+                    data-en="All Rights Reserved"
+                    data-fa="تمام حقوق محفوظ است"
+                    >All Rights Reserved</span
+                  >
+                </p>
+              </div>
+              <div class="footer-heart">
+                <span data-en="Made with" data-fa="ساخته شده با"
+                  >Made with</span
+                >
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="in Iran" data-fa="در ایران">in Iran</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div id="preloader"></div>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/aos/aos.js" defer></script>
     <script src="../assets/vendor/typed.js/typed.umd.js" defer></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script
+      src="../assets/vendor/purecounter/purecounter_vanilla.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/waypoints/noframework.waypoints.js"
+      defer
+    ></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script
+      src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+    <script
+      src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"
+      defer
+    ></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/main.js?v=1000" defer></script>
     <script src="../assets/js/i18n.js?v=1000" defer></script>
-
   </body>
 </html>
