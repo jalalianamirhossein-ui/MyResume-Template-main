@@ -372,31 +372,6 @@
   // Run Portfolio after complete DOM load
   window.addEventListener("load", initPortfolio);
 
-  // Improve mobile performance for portfolio
-  function initPortfolioMobile() {
-    if (window.innerWidth <= 768) {
-      // Specific mobile settings for portfolio
-      document.querySelectorAll(".portfolio-content").forEach((item) => {
-        item.style.minHeight = "200px";
-      });
-
-      // Improve touch events performance for portfolio
-      document.querySelectorAll(".portfolio-content").forEach((item) => {
-        item.addEventListener("touchstart", function (e) {
-          this.style.transform = "scale(0.98)";
-        });
-
-        item.addEventListener("touchend", function (e) {
-          this.style.transform = "scale(1)";
-        });
-      });
-    }
-  }
-
-  // Execute mobile settings for portfolio
-  window.addEventListener("load", initPortfolioMobile);
-  window.addEventListener("resize", initPortfolioMobile);
-
   // Safeguard: relayout isotope on resize/orientation to keep articles grid aligned
   window.addEventListener(
     "resize",
@@ -406,174 +381,6 @@
       });
     }, 150),
   );
-
-  // Improve mobile performance for portfolio filters
-  function initPortfolioFiltersMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".portfolio-filters li").forEach((filter) => {
-        filter.style.padding = "8px 12px";
-        filter.style.fontSize = "13px";
-        filter.style.margin = "0 4px 8px 4px";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioFiltersMobile);
-  window.addEventListener("resize", initPortfolioFiltersMobile);
-
-  // Improve mobile performance for portfolio items
-  function initPortfolioItemsMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".portfolio-item").forEach((item) => {
-        item.style.marginBottom = "20px";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioItemsMobile);
-  window.addEventListener("resize", initPortfolioItemsMobile);
-
-  // Improve mobile performance for portfolio content
-  function initPortfolioContentMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".portfolio-content").forEach((content) => {
-        content.style.minHeight = "200px";
-        content.style.borderRadius = "8px";
-        content.style.overflow = "hidden";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioContentMobile);
-  window.addEventListener("resize", initPortfolioContentMobile);
-
-  // Improve mobile performance for portfolio info
-  function initPortfolioInfoMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".portfolio-info").forEach((info) => {
-        info.style.padding = "10px";
-        info.style.fontSize = "12px";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioInfoMobile);
-  window.addEventListener("resize", initPortfolioInfoMobile);
-
-  // Improve mobile performance for portfolio links
-  function initPortfolioLinksMobile() {
-    if (window.innerWidth <= 768) {
-      document
-        .querySelectorAll(
-          ".portfolio-info .preview-link, .portfolio-info .details-link",
-        )
-        .forEach((link) => {
-          link.style.fontSize = "20px";
-          link.style.width = "40px";
-          link.style.height = "40px";
-          link.style.borderRadius = "50%";
-          link.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
-          link.style.display = "flex";
-          link.style.alignItems = "center";
-          link.style.justifyContent = "center";
-        });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioLinksMobile);
-  window.addEventListener("resize", initPortfolioLinksMobile);
-
-  // Improve mobile performance for portfolio images
-  function initPortfolioImagesMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".portfolio-content img").forEach((img) => {
-        img.style.width = "100%";
-        img.style.objectFit = "cover";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioImagesMobile);
-  window.addEventListener("resize", initPortfolioImagesMobile);
-
-  // Improve mobile performance for portfolio titles
-  function initPortfolioTitlesMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".portfolio-info h4").forEach((title) => {
-        title.style.fontSize = "12px";
-        title.style.padding = "4px 8px";
-        title.style.marginBottom = "5px";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioTitlesMobile);
-  window.addEventListener("resize", initPortfolioTitlesMobile);
-
-  // Improve mobile performance for portfolio descriptions
-  function initPortfolioDescriptionsMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".portfolio-info p").forEach((desc) => {
-        desc.style.fontSize = "11px";
-        desc.style.lineHeight = "1.4";
-        desc.style.marginBottom = "8px";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioDescriptionsMobile);
-  window.addEventListener("resize", initPortfolioDescriptionsMobile);
-
-  // Improve mobile performance for portfolio container
-  function initPortfolioContainerMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".isotope-container").forEach((container) => {
-        container.style.padding = "0 10px";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioContainerMobile);
-  window.addEventListener("resize", initPortfolioContainerMobile);
-
-  // Improve mobile performance for portfolio layout
-  function initPortfolioLayoutMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".isotope-layout").forEach((layout) => {
-        layout.style.padding = "0 10px";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioLayoutMobile);
-  window.addEventListener("resize", initPortfolioLayoutMobile);
-
-  // Improve mobile performance for portfolio section
-  function initPortfolioSectionMobile() {
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll(".portfolio.section").forEach((section) => {
-        section.style.padding = "40px 0";
-      });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioSectionMobile);
-  window.addEventListener("resize", initPortfolioSectionMobile);
-
-  // Improve mobile performance for portfolio title
-  function initPortfolioTitleMobile() {
-    if (window.innerWidth <= 768) {
-      document
-        .querySelectorAll(".portfolio .section-title h2")
-        .forEach((title) => {
-          title.style.fontSize = "24px";
-          title.style.marginBottom = "15px";
-        });
-    }
-  }
-
-  window.addEventListener("load", initPortfolioTitleMobile);
-  window.addEventListener("resize", initPortfolioTitleMobile);
 
   // Enable tap-to-reveal overlay for portfolio cards on touch devices
   function initPortfolioTouchToggle() {
@@ -771,9 +578,13 @@
   function throttledResize() {
     if (!resizeTimeout) {
       resizeTimeout = setTimeout(function () {
-        // Re-execute mobile settings
-        initPortfolioMobile();
-        initSwiper();
+        // Swiper already owns its responsive configuration. Refresh existing
+        // instances instead of creating duplicate sliders on every resize.
+        document.querySelectorAll(".init-swiper").forEach((swiperElement) => {
+          if (swiperElement.swiper && typeof swiperElement.swiper.update === "function") {
+            swiperElement.swiper.update();
+          }
+        });
         resizeTimeout = null;
       }, 250);
     }
@@ -857,18 +668,6 @@
       });
     });
 
-    // If Isotope is present, sync after arrange completes
-    if (container._isotopeInstance && container._isotopeInstance.on) {
-      container._isotopeInstance.on("arrangeComplete", updateVisibility);
-    } else {
-      // Retry once Isotope initializes
-      setTimeout(() => {
-        if (container._isotopeInstance && container._isotopeInstance.on) {
-          container._isotopeInstance.on("arrangeComplete", updateVisibility);
-          updateVisibility();
-        }
-      }, 200);
-    }
   }
 
   window.addEventListener("load", initArticlesLoadMore);
